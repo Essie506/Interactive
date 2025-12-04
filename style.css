@@ -28,7 +28,7 @@ body {
 } 
 
 .logo { 
-    width: 20%; /* adjusts automatically */ 
+    width: 100%; /* adjusts automatically */ 
     max-width: 120px; /* never exceed this size */ 
     height: auto; 
 }
