@@ -1,11 +1,11 @@
 body {
-    margin: 0;
+    margin: 50;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #dff9fb, #c7ecee);
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 50vh;
+    height: 100vh;
 }
 
 .container {
