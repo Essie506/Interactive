@@ -25,14 +25,12 @@ body {
     justify-content: center;
     text-align: center;
     padding: 30px;
-}
+} 
 
-/* Logo */
-.logo {
-    width: 100px;
-    max-width: 120px;
-    height: auto;
-    margin-bottom: 20px;
+.logo { 
+    width: 20%; /* adjusts automatically */ 
+    max-width: 120px; /* never exceed this size */ 
+    height: auto; 
 }
 
 /* Heading */
