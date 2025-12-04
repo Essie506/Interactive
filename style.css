@@ -113,22 +113,36 @@ footer {
     }
 }
 
-/* Navbar Links */
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    display: flex;               /* make children horizontal */
+    justify-content: space-between; /* logo left, nav right */
+    align-items: center;         /* vertical centering */
+}
+
 .navbar nav {
-    float: right;
-    margin-top: -35px;  /* adjust vertical alignment */
+    display: flex;              /* display links in a row */
+    gap: 20px;                  /* space between links */
 }
 
 .navbar nav a {
     color: #079992;
     text-decoration: none;
-    margin-left: 20px;
     font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 6px;
+    background-color: #e0f7f7; /* light background to show them */
+    transition: background 0.3s;
 }
 
 .navbar nav a:hover {
-    text-decoration: underline;
+    background-color: #38ada9;
+    color: white;
 }
+
 
 /* Home page buttons */
 .home-buttons {
