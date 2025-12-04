@@ -29,7 +29,7 @@ body {
 
 .logo { 
     width: 100%; /* adjusts automatically */ 
-    max-width: 300px; /* never exceed this size */ 
+    max-width: 200px; /* never exceed this size */ 
     height: auto; 
 }
 
