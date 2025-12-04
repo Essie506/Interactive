@@ -112,3 +112,40 @@ footer {
         width: 80px;
     }
 }
+
+/* Navbar Links */
+.navbar nav {
+    float: right;
+    margin-top: -35px;  /* adjust vertical alignment */
+}
+
+.navbar nav a {
+    color: #079992;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar nav a:hover {
+    text-decoration: underline;
+}
+
+/* Home page buttons */
+.home-buttons {
+    margin-top: 20px;
+}
+
+.home-buttons .btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 25px;
+    background-color: #079992;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.home-buttons .btn:hover {
+    background-color: #38ada9;
+}
