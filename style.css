@@ -18,8 +18,9 @@ body {
 }
 
 .logo {
-    width: 60px;
-    margin-bottom: 100px;
+    width: 20%;        /* adjusts automatically */
+    max-width: 120px;  /* never exceed this size */
+    height: auto;
 }
 
 h1 {
