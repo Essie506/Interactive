@@ -17,29 +17,6 @@
             height: 150px;
             object-fit: cover;
             border-radius: 8px;
-        }
-        .login-form {
-            margin: 30px 0;
-            max-width: 300px;
-        }
-        .login-form input {
-            display: block;
-            width: 100%;
-            padding: 8px;
-            margin: 10px 0;
-        }
-        .login-form button {
-            padding: 10px;
-            width: 100%;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .login-form p {
-            color: red;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -70,42 +47,8 @@
         <img src="images/workout3.jpg" alt="Workout 3">
     </div>
 
-    <!-- Login Form -->
-    <div class="login-form">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <p id="loginMessage"></p>
-    </div>
-</main>
-
 <!-- Footer -->
 <footer>
     © 2025 Interactive Fitness — All Rights Reserved
 </footer>
 
-<script>
-    // Simple login example (replace with server-side login)
-    const loginForm = document.getElementById('loginForm');
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent page reload
-
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-
-        // Example credentials for testing
-        if(username === 'user123' && password === 'pass123') {
-            document.getElementById('loginMessage').style.color = 'green';
-            document.getElementById('loginMessage').textContent = 'Login successful!';
-        } else {
-            document.getElementById('loginMessage').style.color = 'red';
-            document.getElementById('loginMessage').textContent = 'Invalid username or password.';
-        }
-    });
-</script>
-
-</body>
-</html>
