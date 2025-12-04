@@ -1,42 +1,69 @@
+/* ===== Global Styles ===== */
 body {
-    margin: 50px;
+    margin: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #dff9fb, #c7ecee);
     display: flex;
+    flex-direction: column;   /* stack header, main, footer vertically */
+    min-height: 100vh;        /* full viewport height */
+}
+
+/* ===== Header / Navbar ===== */
+.navbar {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== Main Section ===== */
+.hero {
+    flex: 1;                    /* takes remaining space */
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-}
-
-.container {
     text-align: center;
     padding: 30px;
-    background: white;
-    border-radius: 12px;
-    width: 100px;
-    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
 .logo {
-    width: 20%;        /* adjusts automatically */
-    max-width: 120px;  /* never exceed this size */
+    width: 100px;
+    max-width: 120px;
     height: auto;
+    margin-bottom: 20px;
 }
 
+/* Heading */
 h1 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     color: #0a3d62;
 }
 
-.login-form input {
+/* Login Container */
+.login-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
+}
+
+/* Inputs */
+.input-field {
     width: 100%;
     padding: 12px;
     margin: 8px 0;
     border-radius: 8px;
     border: 1px solid #b2bec3;
+    font-size: 15px;
 }
 
-button {
+/* Button */
+.login-button {
     width: 100%;
     padding: 12px;
     margin-top: 15px;
@@ -46,15 +73,44 @@ button {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-button:hover {
+.login-button:hover {
     background-color: #38ada9;
 }
 
-.signup-link {
-    display: block;
+/* Links */
+.links {
     margin-top: 15px;
+    font-size: 14px;
+}
+
+.links a {
     color: #079992;
     text-decoration: none;
+    margin: 0 5px;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f2f2f2;
+    font-size: 14px;
+    color: #555;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 400px) {
+    .login-container {
+        padding: 20px;
+    }
+    .logo {
+        width: 80px;
+    }
 }
