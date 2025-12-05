@@ -52,6 +52,7 @@ h1 {
 /* Inputs */
 .input-field {
     width: 100%;
+    max-width: 360px
     padding: 12px;
     margin: 8px 0;
     border-radius: 8px;
