@@ -4,8 +4,8 @@ body {
     font-family: Arial, sans-serif;
     background: linear-gradient(to bottom right, #dff9fb, #c7ecee);
     display: flex;
-    flex-direction: column;   /* stack header, main, footer vertically */
-    min-height: 100vh;        /* full viewport height */
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 /* ===== Header / Navbar ===== */
@@ -31,8 +31,11 @@ body {
 
 .menu ul li {
     position: relative;
+    display: flex;
+    align-items: center;
 }
 
+/* Parent links */
 .menu ul li a {
     color: #079992;
     text-decoration: none;
@@ -49,19 +52,45 @@ body {
     color: white;
 }
 
-/* ===== DROPDOWN MENU ===== */
+/* ===== DROPDOWN ARROW BUTTON ===== */
+.submenu-toggle {
+    background: none;
+    border: none;
+    color: #079992;
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-left: 4px;
+    padding: 4px;
+    transition: transform 0.3s ease;
+}
+
+.has-submenu.open .submenu-toggle {
+    transform: rotate(180deg);
+}
+
+/* ===== DROPDOWN MENU (Animated) ===== */
 .submenu {
     position: absolute;
     top: 45px;
     left: 0;
     background: white;
-    padding: 10px 0;
     border-radius: 8px;
-    display: none;
-    flex-direction: column;
     min-width: 200px;
     box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-    z-index: 10;
+    overflow: hidden;
+
+    /* Animation properties */
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+}
+
+/* When open */
+.has-submenu.open .submenu {
+    max-height: 500px; /* enough space for all items */
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* Submenu links */
@@ -75,15 +104,17 @@ body {
     background: #e0f7f7;
 }
 
-/* Hover to open (desktop) */
-.has-submenu:hover .submenu {
-    display: flex;
-}
+/* ===== Hover support for desktop ===== */
+@media (hover: hover) {
+    .has-submenu:hover .submenu {
+        max-height: 500px;
+        opacity: 1;
+        pointer-events: auto;
+    }
 
-/* Tap/click to open (mobile) */
-.has-submenu > a:focus + .submenu,
-.has-submenu > a:active + .submenu {
-    display: flex;
+    .has-submenu:hover .submenu-toggle {
+        transform: rotate(180deg);
+    }
 }
 
 /* ===== Main Section ===== */
@@ -95,9 +126,9 @@ body {
     justify-content: center;
     text-align: center;
     padding: 30px;
-} 
+}
 
-.logo { 
+.logo {
     width: 100%;
     max-width: 200px;
     height: auto;
