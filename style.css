@@ -102,22 +102,27 @@ body {
     }
 }
 
-/* Submenu items */
+/* Submenu items — no background, clean minimalist look */
 .submenu li a {
     padding: 10px 20px;
-    background: #f2fdfd;
-    border-radius: 6px;
+    background: none;            /* <-- removed background */
+    border-radius: 0;            /* clean edges */
     color: #079992;
     text-decoration: none;
     font-weight: normal;
-    transition: background 0.25s ease, padding-left 0.25s ease;
+    transition: background 0.25s ease, padding-left 0.25s ease, color 0.25s ease;
     display: block;
+    border-left: 2px solid #07999220;   /* soft thin line similar to your example */
+    border-right: 2px solid #07999220;
 }
 
+/* Hover effect — subtle color + slight slide */
 .submenu li a:hover {
-    background: #dff7f5;
-    padding-left: 25px; /* soft slide-in effect */
+    background: #e0f7f7;         /* very soft aqua highlight */
+    padding-left: 25px;          /* gentle slide */
+    color: #03857f;              /* slightly darker text */
 }
+
 
 /* ===================================================================== */
 
