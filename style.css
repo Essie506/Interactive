@@ -58,7 +58,7 @@ body {
 }
 
 /* ===================================================================== */
-/*            UPDATED CLEAN, FLAT, VERTICAL DROPDOWN (NO BOXES)          */
+/*                    UPDATED VERTICAL DROPDOWN STYLE                    */
 /* ===================================================================== */
 
 .submenu {
@@ -75,8 +75,8 @@ body {
     box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
 
     display: flex;
-    flex-direction: column;
-    gap: 2px;
+    flex-direction: column;   /* vertical list */
+    gap: 5px;
 
     max-height: 0;
     opacity: 0;
@@ -102,26 +102,21 @@ body {
     }
 }
 
-/* Submenu items — CLEAN, FLAT TEXT ONLY */
+/* Submenu items */
 .submenu li a {
     padding: 10px 20px;
-    background: none !important;
+    background: #f2fdfd;
+    border-radius: 6px;
     color: #079992;
     text-decoration: none;
     font-weight: normal;
+    transition: background 0.25s ease, padding-left 0.25s ease;
     display: block;
-
-    border: none !important;
-    border-radius: 0 !important;
-
-    transition: padding-left 0.25s ease, color 0.25s ease;
 }
 
-/* Hover effect — soft highlight only */
 .submenu li a:hover {
-    background: #e8faf9 !important;
-    padding-left: 25px;
-    color: #03857f;
+    background: #dff7f5;
+    padding-left: 25px; /* soft slide-in effect */
 }
 
 /* ===================================================================== */
