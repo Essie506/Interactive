@@ -58,7 +58,7 @@ body {
 }
 
 /* ===================================================================== */
-/*                    UPDATED VERTICAL DROPDOWN STYLE                    */
+/*            UPDATED CLEAN, FLAT, VERTICAL DROPDOWN (NO BOXES)          */
 /* ===================================================================== */
 
 .submenu {
@@ -75,8 +75,8 @@ body {
     box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
 
     display: flex;
-    flex-direction: column;   /* vertical list */
-    gap: 5px;
+    flex-direction: column;
+    gap: 2px;
 
     max-height: 0;
     opacity: 0;
@@ -102,27 +102,27 @@ body {
     }
 }
 
-/* Submenu items — no background, clean minimalist look */
+/* Submenu items — CLEAN, FLAT TEXT ONLY */
 .submenu li a {
     padding: 10px 20px;
-    background: none;            /* <-- removed background */
-    border-radius: 0;            /* clean edges */
+    background: none !important;
     color: #079992;
     text-decoration: none;
     font-weight: normal;
-    transition: background 0.25s ease, padding-left 0.25s ease, color 0.25s ease;
     display: block;
-    border-left: 2px solid #07999220;   /* soft thin line similar to your example */
-    border-right: 2px solid #07999220;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    transition: padding-left 0.25s ease, color 0.25s ease;
 }
 
-/* Hover effect — subtle color + slight slide */
+/* Hover effect — soft highlight only */
 .submenu li a:hover {
-    background: #e0f7f7;         /* very soft aqua highlight */
-    padding-left: 25px;          /* gentle slide */
-    color: #03857f;              /* slightly darker text */
+    background: #e8faf9 !important;
+    padding-left: 25px;
+    color: #03857f;
 }
-
 
 /* ===================================================================== */
 
