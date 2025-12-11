@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive Fitness - Home</title>
+
+  <!-- Link to main stylesheet -->
   <link rel="stylesheet" href="style.css" />
 
   <style>
-    /* Quick inline styles for demo purposes (fixed and closed) */
+    /* Inline-only-small image gallery styles */
     .image-gallery {
       display: flex;
       gap: 15px;
@@ -22,47 +24,15 @@
       border-radius: 8px;
       display: block;
     }
-
-    /* Small accessibility/fallback rules (optional if already in style.css) */
-    .has-submenu > a { cursor: pointer; }
-    .has-submenu:focus-within .submenu { display: flex; } /* keyboard support */
-    .has-submenu.open .submenu { display: flex; } /* JS toggles .open */
   </style>
 </head>
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const parents = document.querySelectorAll(".has-submenu");
-
-  parents.forEach(parent => {
-    const toggle = parent.querySelector(".submenu-toggle");
-
-    // Toggle submenu on arrow click
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-
-      // Close others
-      parents.forEach(p => {
-        if (p !== parent) p.classList.remove("open");
-      });
-
-      // Toggle this one
-      parent.classList.toggle("open");
-    });
-  });
-
-  // Close all submenus when clicking outside
-  document.addEventListener("click", () => {
-    parents.forEach(p => p.classList.remove("open"));
-  });
-});
-</script>
-
 <body>
+
 <header class="navbar">
   <nav class="menu">
     <ul>
+
       <li><a href="home.html">Home</a></li>
 
       <li class="has-submenu">
@@ -106,87 +76,54 @@ document.addEventListener("DOMContentLoaded", () => {
       </li>
 
       <li><a href="#">Logout</a></li>
+
     </ul>
   </nav>
 </header>
 
-  <!-- Main Section -->
-  <main class="hero">
-    <h1>Welcome to Interactive Fitness!</h1>
-    <p>Track your workouts, connect with trainers, and achieve your goals.</p>
+<main class="hero">
+  <h1>Welcome to Interactive Fitness!</h1>
+  <p>Track your workouts, connect with trainers, and achieve your goals.</p>
 
-    <div class="home-buttons">
-      <a href="#" class="btn">View Workouts</a>
-      <a href="#" class="btn">Profile</a>
-    </div>
+  <div class="home-buttons">
+    <a href="#" class="btn">View Workouts</a>
+    <a href="#" class="btn">Profile</a>
+  </div>
 
-    <!-- Image Gallery -->
-    <div class="image-gallery">
-      <img src="images/workout1.jpg" alt="Workout 1" />
-      <img src="images/workout2.jpg" alt="Workout 2" />
-      <img src="images/workout3.jpg" alt="Workout 3" />
-    </div>
-  </main>
+  <div class="image-gallery">
+    <img src="images/workout1.jpg" alt="Workout 1" />
+    <img src="images/workout2.jpg" alt="Workout 2" />
+    <img src="images/workout3.jpg" alt="Workout 3" />
+  </div>
+</main>
 
-  <!-- Footer -->
-  <footer>
-    © 2025 Interactive Fitness — All Rights Reserved
-  </footer>
+<footer>
+  © 2025 Interactive Fitness — All Rights Reserved
+</footer>
 
-  <!-- Dropdown toggle JS (handles click/tap on touch devices and closes on outside click) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const parents = document.querySelectorAll('.has-submenu');
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const parents = document.querySelectorAll(".has-submenu");
 
-      parents.forEach(parent => {
-        const toggle = parent.querySelector(':scope > a');
+  parents.forEach(parent => {
+    const link = parent.querySelector(":scope > a");
 
-        // Prevent immediate navigation and toggle on click/tap
-        toggle.addEventListener('click', function (e) {
-          e.preventDefault();
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
 
-          // Close other open submenus
-          parents.forEach(p => {
-            if (p !== parent) {
-              p.classList.remove('open');
-              const a = p.querySelector(':scope > a');
-              if (a) a.setAttribute('aria-expanded', 'false');
-            }
-          });
+      parents.forEach(p => p !== parent && p.classList.remove("open"));
 
-          // Toggle this submenu
-          parent.classList.toggle('open');
-          const expanded = parent.classList.contains('open');
-          toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-        });
-
-        // Optional: keyboard support (Enter/Space)
-        toggle.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggle.click();
-          }
-        });
-      });
-
-      // Close when clicking outside
-      document.addEventListener('click', function (e) {
-        if (!e.target.closest('.has-submenu')) {
-          parents.forEach(p => {
-            p.classList.remove('open');
-            const a = p.querySelector(':scope > a');
-            if (a) a.setAttribute('aria-expanded', 'false');
-          });
-        }
-      });
-
-      // Close on Escape
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-          parents.forEach(p => p.classList.remove('open'));
-        }
-      });
+      parent.classList.toggle("open");
     });
-  </script>
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".has-submenu")) {
+      parents.forEach(p => p.classList.remove("open"));
+    }
+  });
+});
+</script>
+
 </body>
 </html>
