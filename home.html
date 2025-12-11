@@ -20,6 +20,51 @@
     </style>
 </head>
 <body>
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const parents = document.querySelectorAll('.has-submenu');
+
+  // Toggle on click/tap
+  parents.forEach(parent => {
+    const toggle = parent.querySelector(':scope > a');
+
+    toggle.addEventListener('click', function (e) {
+      // prevent navigating away
+      e.preventDefault();
+
+      // close other open submenus
+      parents.forEach(p => {
+        if (p !== parent) p.classList.remove('open');
+      });
+
+      // toggle this one
+      parent.classList.toggle('open');
+
+      // update aria
+      const expanded = parent.classList.contains('open');
+      toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    });
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.has-submenu')) {
+      parents.forEach(p => p.classList.remove('open'));
+      parents.forEach(p => {
+        const a = p.querySelector(':scope > a');
+        if (a) a.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  // Optional: close on Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      parents.forEach(p => p.classList.remove('open'));
+    }
+  });
+});
+</script>
     
 <header class="navbar">
     <nav class="menu">
