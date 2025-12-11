@@ -29,6 +29,36 @@
     .has-submenu.open .submenu { display: flex; } /* JS toggles .open */
   </style>
 </head>
+
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const parents = document.querySelectorAll(".has-submenu");
+
+  parents.forEach(parent => {
+    const toggle = parent.querySelector(".submenu-toggle");
+
+    // Toggle submenu on arrow click
+    toggle.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+
+      // Close others
+      parents.forEach(p => {
+        if (p !== parent) p.classList.remove("open");
+      });
+
+      // Toggle this one
+      parent.classList.toggle("open");
+    });
+  });
+
+  // Close all submenus when clicking outside
+  document.addEventListener("click", () => {
+    parents.forEach(p => p.classList.remove("open"));
+  });
+});
+</script>
+
 <body>
 <header class="navbar">
   <nav class="menu">
