@@ -54,7 +54,7 @@ body {
     font-size: 0.7rem;
     margin-left: 4px;
     padding: 2px;
-    pointer-events: none; /* does not break hover */
+    pointer-events: none;
 }
 
 /* ===================================================================== */
@@ -65,15 +65,12 @@ body {
     position: absolute;
     top: 45px;
     left: 0;
-
     background: #ffffff;
     border-radius: 10px;
     border: 1px solid #cfeeee;
     padding: 10px 0;
     min-width: 180px;
-
     box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
-
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -86,14 +83,14 @@ body {
     transition: max-height 0.35s ease, opacity 0.25s ease;
 }
 
-/* When open (click or hover) */
+/* When open */
 .has-submenu.open .submenu {
     max-height: 500px;
     opacity: 1;
     pointer-events: auto;
 }
 
-/* Hover version for desktop */
+/* Hover on desktop */
 @media (hover:hover) {
     .has-submenu:hover .submenu {
         max-height: 500px;
@@ -102,7 +99,7 @@ body {
     }
 }
 
-/* Submenu items — CLEAN, FLAT TEXT ONLY */
+/* Submenu items */
 .submenu li a {
     padding: 10px 20px;
     background: none !important;
@@ -117,7 +114,7 @@ body {
     transition: padding-left 0.25s ease, color 0.25s ease;
 }
 
-/* Hover effect — soft highlight only */
+/* Hover effect */
 .submenu li a:hover {
     background: #e8faf9 !important;
     padding-left: 25px;
@@ -133,143 +130,42 @@ body {
     padding: 40px;
 }
 
-/* Buttons */
-.btn {
-  /* ===== Global Styles ===== */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #dff9fb, #c7ecee);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* ===== Navbar ===== */
-.navbar {
-    background: #fff;
-    padding: 15px 30px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.menu ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-.menu ul li {
-    position: relative;
-    display: inline-block;
-}
-
-/* Parent links */
-.menu ul li > a {
-    color: #079992;
-    background: #e0f7f7;
-    padding: 8px 15px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.menu ul li > a:hover {
-    background: #38ada9;
-    color: #fff;
-}
-
-/* Toggle Arrow (visual only) */
-.submenu-toggle {
-    background: none;
+/* ===== LOG IN + HOME BUTTON STYLE (MATCHES YOUR IMAGE) ===== */
+.btn,
+.login-button {
+    background: #e0f7f7;       /* Soft aqua */
+    color: #079992;           /* Teal text */
+    padding: 15px 25px;
     border: none;
-    color: #079992;
+    border-radius: 20px;      /* Rounded like your Home button */
+    font-size: 1.3rem;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 0.7rem;
-    margin-left: 4px;
-    padding: 2px;
-    pointer-events: none; /* does not break hover */
-}
-
-/* ===================================================================== */
-/*            UPDATED CLEAN, FLAT, VERTICAL DROPDOWN (NO BOXES)          */
-/* ===================================================================== */
-
-.submenu {
-    position: absolute;
-    top: 45px;
-    left: 0;
-
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #cfeeee;
-    padding: 10px 0;
-    min-width: 180px;
-
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
-
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-
-    max-height: 0;
-    opacity: 0;
-    pointer-events: none;
-    overflow: hidden;
-
-    transition: max-height 0.35s ease, opacity 0.25s ease;
-}
-
-/* When open (click or hover) */
-.has-submenu.open .submenu {
-    max-height: 500px;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Hover version for desktop */
-@media (hover:hover) {
-    .has-submenu:hover .submenu {
-        max-height: 500px;
-        opacity: 1;
-        pointer-events: auto;
-    }
-}
-
-/* Submenu items — CLEAN, FLAT TEXT ONLY */
-.submenu li a {
-    padding: 10px 20px;
-    background: none !important;
-    color: #079992;
-    text-decoration: none;
-    font-weight: normal;
-    display: block;
-
-    border: none !important;
-    border-radius: 0 !important;
-
-    transition: padding-left 0.25s ease, color 0.25s ease;
-}
-
-/* Hover effect — soft highlight only */
-.submenu li a:hover {
-    background: #e8faf9 !important;
-    padding-left: 25px;
-    color: #03857f;
-}
-
-/* ===================================================================== */
-
-/* ===== Hero Section ===== */
-.hero {
-    flex: 1;
     text-align: center;
-    padding: 40px;
+    transition: background 0.3s, transform 0.15s;
 }
 
-/* Buttons */
-.btn {
-    background: #
+.btn:hover,
+.login-button:hover {
+    background: #c7ecee;
+    transform: translateY(-1px);
+}
+
+/* ===== Input fields (nice and clean) ===== */
+.input-field {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+    border: 1px solid #cfeeee;
+    background: #ffffff;
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #079992;
+    font-weight: bold;
+}
