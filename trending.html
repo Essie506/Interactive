@@ -13,27 +13,69 @@
       justify-content: center;
       margin-top: 20px;
     }
-    .video-gallery iframe {
+    .video-card {
+      position: relative;
+      width: 300px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .video-card img {
       width: 100%;
-      max-width: 560px;
-      height: 315px;
+      height: 170px;
+      border-radius: 8px;
+    }
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 24px;
+      color: white;
+      text-shadow: 0 0 5px black;
+      pointer-events: none;
+    }
+    .video-card p {
+      margin-top: 5px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header class="navbar home-nav"></header>
+
   <main>
     <h1>Trending Workouts</h1>
-    <p>Check out what’s trending right now:</p>
+    <p>Click a workout to unlock it:</p>
 
     <div class="video-gallery">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Trending Workout 1" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" title="Trending Workout 2" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" title="Trending Workout 3" frameborder="0" allowfullscreen></iframe>
+      <div class="video-card">
+        <a href="payments.html">
+          <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="Trending Workout 1" />
+          <div class="play-overlay">▶ Unlock</div>
+        </a>
+        <p>Workout 1 - Basic</p>
+      </div>
+
+      <div class="video-card">
+        <a href="payments.html">
+          <img src="https://img.youtube.com/vi/VIDEO_ID2/0.jpg" alt="Trending Workout 2" />
+          <div class="play-overlay">▶ Unlock</div>
+        </a>
+        <p>Workout 2 - Premium</p>
+      </div>
+
+      <div class="video-card">
+        <a href="payments.html">
+          <img src="https://img.youtube.com/vi/VIDEO_ID3/0.jpg" alt="Trending Workout 3" />
+          <div class="play-overlay">▶ Unlock</div>
+        </a>
+        <p>Workout 3 - Premium</p>
+      </div>
     </div>
 
-    <a href="home.html">Back to Home</a>
+    <a href="home.html" style="display:block; margin-top:20px;">Back to Home</a>
   </main>
+
   <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
 </body>
 </html>
