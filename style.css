@@ -183,3 +183,27 @@ footer {
   max-width: 560px;
   height: 315px;
 }
+
+.video-card {
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+.video-card img {
+  width: 300px;
+  height: 170px;
+  border-radius: 8px;
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: white;
+  text-shadow: 0 0 5px black;
+  pointer-events: none;
+}
