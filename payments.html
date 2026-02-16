@@ -75,21 +75,30 @@
 
   <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
 
+  <!-- Dynamic redirect script -->
   <script>
-   // Get workout number from URL query
-const params = new URLSearchParams(window.location.search);
-const videoId = params.get("video"); // "1", "2", etc.
+    const form = document.getElementById("payment-form");
 
-const form = document.getElementById("payment-form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
+    // Get workout number from URL query
+    const params = new URLSearchParams(window.location.search);
+    const videoId = params.get("video"); // "1", "2", "3"
 
-  const payButton = form.querySelector("button");
-  payButton.textContent = "Processing Payment...";
-  payButton.disabled = true;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-  setTimeout(() => {
-    // Redirect to the correct unlocked workout page
-    window.location.href = `unlock-workout${videoId}.html`;
-  }, 800); // small delay for realism
-});
+      const payButton = form.querySelector("button");
+      payButton.textContent = "Processing Payment...";
+      payButton.disabled = true;
+
+      setTimeout(() => {
+        if (videoId) {
+          // Redirect to the correct unlocked workout page
+          window.location.href = `unlock-workout${videoId}.html`;
+        } else {
+          alert("No workout selected!");
+        }
+      }, 800); // small delay for realism
+    });
+  </script>
+</body>
+</html>
