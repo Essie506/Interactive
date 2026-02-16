@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlocked Workout</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      text-align: center;
+    }
+    iframe {
+      width: 100%;
+      height: 340px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar home-nav"></header>
+
+  <main>
+    <h1 id="workout-title">Unlocked Workout</h1>
+    <p>Enjoy your workout:</p>
+    <iframe id="workout-video" src="" title="Workout Video" frameborder="0" allowfullscreen></iframe>
+    <a href="my-saved-workouts.html" style="display:block; margin-top:20px;">Go to Saved Workouts</a>
+    <a href="home.html" style="display:block; margin-top:10px;">Back to Home</a>
+  </main>
+
+  <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
+
+  <script>
+    // Grab the video ID from the URL query
+    const params = new URLSearchParams(window.location.search);
+    const videoId = params.get("video"); // "1", "2", "3"
+
+    // Map workout numbers to YouTube video IDs
+    const videoMap = {
+      "1": { id: "dQw4w9WgXcQ", title: "Workout 1 - Basic" },
+      "2": { id: "VIDEO_ID2", title: "Workout 2 - Premium" },
+      "3": { id: "VIDEO_ID3", title: "Workout 3 - Advanced" }
+    };
+
+    const iframe = document.getElementById("workout-video");
+    const title = document.getElementById("workout-title");
+
+    if(videoMap[videoId]) {
+      iframe.src = `https://www.youtube.com/embed/${videoMap[videoId].id}`;
+      title.textContent = videoMap[videoId].title;
+    } else {
+      // Fallback if something goes wrong
+      iframe.src = "https://www.youtube.com/embed/dQw4w9WgXcQ";
+      title.textContent = "Workout Unavailable";
+    }
+  </script>
+</body>
+</html>
