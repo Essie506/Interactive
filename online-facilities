@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Facilities</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar home-nav"></header>
+  <main>
+    <h1>Upload Images</h1>
+    <p>This page is under construction.</p>
+    <a href="home.html">Back to Home</a>
+  </main>
+  <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
+</body>
+</html>
