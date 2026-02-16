@@ -3,14 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trending</title>
+  <title>Trending Workouts</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .video-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .video-gallery iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar home-nav"></header>
   <main>
-    <h1>Upload Images</h1>
-    <p>This page is under construction.</p>
+    <h1>Trending Workouts</h1>
+    <p>Check out what’s trending right now:</p>
+
+    <div class="video-gallery">
+      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Trending Workout 1" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" title="Trending Workout 2" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" title="Trending Workout 3" frameborder="0" allowfullscreen></iframe>
+    </div>
+
     <a href="home.html">Back to Home</a>
   </main>
   <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
