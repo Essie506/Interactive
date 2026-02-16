@@ -170,3 +170,16 @@ footer {
     color: #079992;
     font-weight: bold;
 }
+
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-gallery iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+}
