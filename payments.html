@@ -1,114 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Subscribe / Payments</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    main {
-      max-width: 500px;
-      margin: 40px auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      background-color: #f9f9f9;
-      text-align: center;
+<form id="payment-form">
+  <label for="plan">Select Plan:</label>
+  <select id="plan" required>
+    <option value="">--Choose an option--</option>
+    <option value="video only">Video - £4.50</option>
+    <option value="basic">Basic - £15/month</option>
+    <option value="premium">Premium - £25/month</option>
+  </select>
+
+  <label for="card">Card Number:</label>
+  <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
+
+  <label for="expiry">Expiry Date:</label>
+  <input type="text" id="expiry" placeholder="MM/YY" required>
+
+  <label for="cvv">CVV:</label>
+  <input type="text" id="cvv" placeholder="123" required>
+
+  <button type="submit">Pay Now</button>
+</form>
+
+<script>
+const form = document.getElementById("payment-form");
+const params = new URLSearchParams(window.location.search);
+const videoId = params.get("video"); // "1", "2", "3"
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const payButton = form.querySelector("button");
+  payButton.textContent = "Processing Payment...";
+  payButton.disabled = true;
+
+  setTimeout(() => {
+    if (videoId) {
+      // Store unlocked workout in localStorage
+      let unlocked = JSON.parse(localStorage.getItem("unlockedWorkouts")) || [];
+      if (!unlocked.includes(videoId)) {
+        unlocked.push(videoId);
+        localStorage.setItem("unlockedWorkouts", JSON.stringify(unlocked));
+      }
+
+      // Redirect to dynamic unlock page
+      window.location.href = `unlock-workout.html?video=${videoId}`;
+    } else {
+      alert("No workout selected!");
+      payButton.textContent = "Pay Now";
+      payButton.disabled = false;
     }
-    form label {
-      display: block;
-      margin: 15px 0 5px;
-      font-weight: bold;
-    }
-    form input, form select {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-    button {
-      padding: 12px 25px;
-      font-size: 16px;
-      background-color: #FFD700;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    button:hover {
-      background-color: #FFC300;
-    }
-  </style>
-</head>
-<body>
-  <header class="navbar home-nav"></header>
-
-  <main>
-    <h1>Subscribe to Interactive Fitness</h1>
-    <p>Choose your plan and enter payment details (prototype only)</p>
-
-    <form id="payment-form">
-      <label for="plan">Select Plan:</label>
-      <select id="plan" required>
-        <option value="">--Choose an option--</option>
-        <option value="video only">Video - £4.50</option>
-        <option value="basic">Basic - £15/month</option>
-        <option value="premium">Premium - £25/month</option>
-      </select>
-
-      <label for="card">Card Number:</label>
-      <input type="text" id="card" placeholder="1234 5678 9012 3456" required>
-
-      <label for="expiry">Expiry Date:</label>
-      <input type="text" id="expiry" placeholder="MM/YY" required>
-
-      <label for="cvv">CVV:</label>
-      <input type="text" id="cvv" placeholder="123" required>
-
-      <button type="submit">Pay Now</button>
-    </form>
-
-    <a href="home.html" style="display:block; margin-top:20px;">Back to Home</a>
-  </main>
-
-  <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
-
-  <!-- Fixed dynamic redirect script -->
-  <script>
-    const form = document.getElementById("payment-form");
-
-    // Get workout number from URL query
-    const params = new URLSearchParams(window.location.search);
-    const videoId = params.get("video"); // "1", "2", "3"
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const payButton = form.querySelector("button");
-      payButton.textContent = "Processing Payment...";
-      payButton.disabled = true;
-
-      // Delay to simulate payment processing
-      setTimeout(() => {
-        if (videoId) {
-          // Store the unlocked workout in localStorage
-          let unlocked = JSON.parse(localStorage.getItem("unlockedWorkouts")) || [];
-          if (!unlocked.includes(videoId)) {
-            unlocked.push(videoId);
-            localStorage.setItem("unlockedWorkouts", JSON.stringify(unlocked));
-          }
-
-          // Redirect to the unlocked workout page
-          window.location.href = `unlock-workout${videoId}.html`;
-        } else {
-          alert("No workout selected!");
-          payButton.textContent = "Pay Now";
-          payButton.disabled = false;
-        }
-      }, 800); // 0.8s delay for realism
-    });
-  </script>
-</body>
-</html>
+  }, 800);
+});
+</script>
