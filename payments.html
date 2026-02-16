@@ -40,11 +40,6 @@
     button:hover {
       background-color: #FFC300;
     }
-    #confirmation {
-      margin-top: 20px;
-      font-weight: bold;
-      color: green;
-    }
   </style>
 </head>
 <body>
@@ -75,8 +70,6 @@
       <button type="submit">Pay Now</button>
     </form>
 
-    <p id="confirmation" style="display:none;">Thank you! Payment processed (prototype).</p>
-
     <a href="home.html" style="display:block; margin-top:20px;">Back to Home</a>
   </main>
 
@@ -84,17 +77,18 @@
 
   <script>
     const form = document.getElementById("payment-form");
-    const confirmation = document.getElementById("confirmation");
 
-  form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  
-  // Redirect to unlocked video page after payment
-  const plan = document.getElementById("plan").value;
-  
-  // For the prototype, just send all to Workout 1 unlocked page
-  window.location.href = "unlock-workout1.html";
-});
+    form.addEventListener("submit", (e) => {
+      e.preventDefault(); // STOP the page from refreshing
+
+      const payButton = form.querySelector("button");
+      payButton.textContent = "Processing Payment...";
+      payButton.disabled = true;
+
+      // Redirect to the unlocked workout page after a short delay
+      setTimeout(() => {
+        window.location.href = "unlock-workout1.html";
+      }, 800); // 0.8 seconds delay for realism
     });
   </script>
 </body>
