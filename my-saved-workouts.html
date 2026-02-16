@@ -3,37 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Saved Workouts</title>
+  <title>Saved Workouts</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .video-gallery {
+    .saved-gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
-      margin-top: 20px;
+      margin: 40px 0;
     }
-    .video-gallery iframe {
+    .saved-card {
+      max-width: 350px;
+      text-align: center;
+    }
+    .saved-card iframe {
       width: 100%;
-      max-width: 560px;
       height: 315px;
+      border-radius: 8px;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
   <header class="navbar home-nav"></header>
   <main>
-    <h1>My Saved Workouts</h1>
-    <p>Here are some workouts you’ve saved for later:</p>
+    <h1>Saved Workouts</h1>
+    <p>Workouts you’ve unlocked appear here:</p>
 
-    <div class="video-gallery">
-      <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Saved Workout 1" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID2" title="Saved Workout 2" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/VIDEO_ID3" title="Saved Workout 3" frameborder="0" allowfullscreen></iframe>
+    <div class="saved-gallery" id="saved-gallery">
+      <!-- JS will fill this dynamically -->
     </div>
 
-    <a href="home.html">Back to Home</a>
+    <a href="home.html" style="display:block; margin-top:20px;">Back to Home</a>
   </main>
+
   <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
+
+  <script>
+    const savedGallery = document.getElementById("saved-gallery");
+    const unlocked = JSON.parse(localStorage.getItem("unlockedWorkouts")) || [];
+
+    const videoIds = {
+      "1": "dQw4w9WgXcQ",
+      "2": "VIDEO_ID2",
+      "3": "VIDEO_ID3"
+    };
+
+    const titles = {
+      "1": "Workout 1 - Basic",
+      "2": "Workout 2 - Premium",
+      "3": "Workout 3 - Premium"
+    };
+
+    unlocked.forEach(id => {
+      const div = document.createElement("div");
+      div.className = "saved-card";
+      div.innerHTML = `
+        <h3>${titles[id]}</h3>
+        <iframe src="https://www.youtube.com/embed/${videoIds[id]}" frameborder="0" allowfullscreen></iframe>
+      `;
+      savedGallery.appendChild(div);
+    });
+
+    if (unlocked.length === 0) {
+      savedGallery.innerHTML = "<p>No workouts unlocked yet. Go browse and unlock some!</p>";
+    }
+  </script>
 </body>
 </html>
