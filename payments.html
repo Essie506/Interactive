@@ -91,13 +91,21 @@
       payButton.disabled = true;
 
       setTimeout(() => {
-        if (videoId) {
-          // Redirect to the correct unlocked workout page
-          window.location.href = `unlock-workout${videoId}.html`;
-        } else {
-          alert("No workout selected!");
-        }
-      }, 800); // small delay for realism
+       setTimeout(() => {
+  if (videoId) {
+    // Store the unlocked workout
+    let unlocked = JSON.parse(localStorage.getItem("unlockedWorkouts")) || [];
+    if (!unlocked.includes(videoId)) {
+      unlocked.push(videoId);
+      localStorage.setItem("unlockedWorkouts", JSON.stringify(unlocked));
+    }
+
+    // Redirect to the unlocked workout page
+    window.location.href = `unlock-workout${videoId}.html`;
+  } else {
+    alert("No workout selected!");
+  }
+}, 800); // short delay for realism
     });
   </script>
 </body>
