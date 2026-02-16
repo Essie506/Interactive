@@ -3,14 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upload Images</title>
+  <title>Browse Workouts</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Optional: simple video gallery layout */
+    .video-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .video-gallery iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+    }
+  </style>
 </head>
 <body>
   <header class="navbar home-nav"></header>
   <main>
     <h1>Browse Workouts</h1>
-    <p>This page is under construction.</p>
+    
+    <p>Check out some popular workouts from YouTube:</p>
+
+    <div class="video-gallery">
+      <iframe 
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+        title="Workout 1" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+
+      <iframe 
+        src="https://www.youtube.com/embed/VIDEO_ID2" 
+        title="Workout 2" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+
     <a href="home.html">Back to Home</a>
   </main>
   <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
