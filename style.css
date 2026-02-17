@@ -207,3 +207,33 @@ footer {
   text-shadow: 0 0 5px black;
   pointer-events: none;
 }
+
+.category-icons {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+  margin: 40px 0;
+}
+
+.category-card {
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  transition: transform 0.2s ease;
+  font-size: 18px;
+}
+
+.category-card i {
+  font-size: 50px;
+  background: #f4f4f4;
+  padding: 25px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.category-card:hover {
+  transform: scale(1.15);
+}
+
