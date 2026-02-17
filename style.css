@@ -23,6 +23,12 @@ body {
     gap: 20px;
 }
 
+/* DOTS BETWEEN TOP MENU ITEMS ONLY */
+.menu > ul > li:not(:last-child)::after {
+    content: " . ";
+    margin: 0 10px;
+}
+
 .menu ul li {
     position: relative;
     display: inline-block;
