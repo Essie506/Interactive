@@ -29,7 +29,7 @@ body {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 35px;   /* controls spacing between menu items */
+    gap: 40px;   /* controls spacing between menu items */
 
 }
 
