@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive Fitness - Home</title>
 
-  <!-- Link to main stylesheet -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* Inline gallery styles */
@@ -17,6 +16,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .image-gallery img {
       width: 200px;
       height: 150px;
@@ -96,11 +96,26 @@
     <a href="browse-workouts.html" class="btn">View Workouts</a>
   </div>
 
-  <div class="image-gallery">
-    <img src="images/workout1.jpg" alt="Workout 1" />
-    <img src="images/workout2.jpg" alt="Workout 2" />
-    <img src="images/workout3.jpg" alt="Workout 3" />
-  </div>
+  <h2>Browse by Category</h2>
+
+<div class="category-icons">
+
+  <a href="yoga.html" class="category-card">
+    <i class="fa-solid fa-spa"></i>
+    <p>Yoga</p>
+  </a>
+
+  <a href="cycling.html" class="category-card">
+    <i class="fa-solid fa-bicycle"></i>
+    <p>Cycling</p>
+  </a>
+
+  <a href="running.html" class="category-card">
+    <i class="fa-solid fa-person-running"></i>
+    <p>Running</p>
+  </a>
+
+</div>
 </main>
 
 <footer>
