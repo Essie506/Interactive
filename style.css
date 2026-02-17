@@ -209,18 +209,22 @@ footer {
 }
 
 .category-icons {
-  display: flex;
-  justify-content: center;
-  gap: 35px;
-  flex-wrap: wrap;
-  margin: 40px 0;
+  display: grid;
+
+  /* creates responsive columns automatically */
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+  gap: 25px;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
 }
 
 .category-card {
   text-align: center;
   text-decoration: none;
   color: black;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   font-size: 18px;
 }
 
@@ -234,6 +238,7 @@ footer {
 }
 
 .category-card:hover {
-  transform: scale(1.15);
+ transform: translateY(-6px);
+ box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
