@@ -9,127 +9,130 @@ body {
 }
 
 /* ===== Navbar ===== */
+/* ================= NAVBAR ================= */
+
 .navbar {
-    background: #fff;
-    padding: 15px 30px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    width: 100%;
     background: #ffffff;
+    padding: 15px 30px;
+    width: 100%;
     position: relative;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
+
+/* ================= MENU LAYOUT ================= */
 
 .menu ul {
     margin: 0;
     padding: 0;
     list-style: none;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;      /* ✅ mobile fix */
     justify-content: center;
-    gap: 40px;            /* nice balanced spacing */
+    align-items: center;
+    gap: 35px;
+    flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {
-  .menu ul {
-      gap: 12px;
-      font-size: 0.9rem;
-  } 
-}
-
-.menu ul li {
-    position: relative;
-    display: inline-block;
-}
-
-
-.menu ul li > a {
-    color: #079992;
-    background: #e0f7f7;
-    padding: 8px 15px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-    display: inline-block;
-}
-
-.menu ul li > a:hover {
- background-color: #f3f4f6;
-    color: #079992;
-}
-    
-.menu a {
-    text-decoration: none;
-    color: #222;
-    font-weight: 500;
-    padding: 8px 14px;
-    border-radius: 8px;
-    transition: all 0.25s ease;
-    white-space: nowrap;
-}
-
-.submenu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2000;
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #cfeeee;
-    padding: 10px 0;
-    min-width: 180px;
-    box-shadow: 0px 6px 18px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-
-    max-height: 0;
-    opacity: 0;
-    pointer-events: none;
-    overflow: hidden;
-
-    transition: max-height 0.35s ease, opacity 0.25s ease;
-}
-
-/* When open */
-.has-submenu.open .submenu {
-    max-height: 500px;
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* Hover on desktop */
-@media (hover:hover) {
-    .has-submenu:hover .submenu {
-        max-height: 500px;
-        opacity: 1;
-        pointer-events: auto;
+    .menu ul {
+        gap: 12px;
+        font-size: 0.9rem;
     }
 }
 
-/* Submenu items */
-.submenu li a {
-    padding: 10px 20px;
-    background: none !important;
-    color: #079992;
+/* ================= MODERN MENU LINKS ================= */
+
+.menu-link-modern {
     text-decoration: none;
-    font-weight: normal;
-    display: block;
-
-    border: none !important;
-    border-radius: 0 !important;
-
-    transition: padding-left 0.25s ease, color 0.25s ease;
+    color: #079992;
+    background: #e8faf9;
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    display: inline-block;
 }
 
-/* Hover effect */
-.submenu li a:hover {
-    background: #e8faf9 !important;
-    padding-left: 25px;
-    color: #03857f;
+.menu-link-modern:hover {
+    background: #079992;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ================= SUBMENU ================= */
+
+.has-submenu {
+    position: relative;
+}
+
+/* Dropdown container */
+.submenu {
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -10px);
+
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #dff4f3;
+    min-width: 200px;
+    padding: 8px 0;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+
+    display: flex;
+    flex-direction: column;
+
+    /* animation starting state */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+/* SHOW submenu */
+.has-submenu:hover .submenu,
+.has-submenu.open .submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+/* ================= SUBMENU LINKS ================= */
+
+.submenu a {
+    padding: 12px 20px;
+    color: #079992;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.submenu a:hover {
+    background: #e8faf9;
+    padding-left: 26px;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+    .submenu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        display: none;
+    }
+
+    .has-submenu.open .submenu {
+        display: flex;
+    }
 }
 
 /* ===================================================================== */
