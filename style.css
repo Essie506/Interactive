@@ -135,24 +135,22 @@ body {
 }
 
 /* ===== LOG IN + HOME BUTTON STYLE (MATCHES YOUR IMAGE) ===== */
-.btn,
-.login-button {
-    background: #e0f7f7;       /* Soft aqua */
-    color: #079992;           /* Teal text */
-    padding: 15px 25px;
-    border: none;
-    border-radius: 20px;      /* Rounded like your Home button */
-    font-size: 1.3rem;
-    font-weight: bold;
-    cursor: pointer;
-    text-align: center;
-    transition: background 0.3s, transform 0.15s;
+.btn-modern {
+  background: linear-gradient(135deg, #079992, #38ada9);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.btn:hover,
-.login-button:hover {
-    background: #c7ecee;
-    transform: translateY(-1px);
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
 }
 
 /* ===== Input fields (nice and clean) ===== */
