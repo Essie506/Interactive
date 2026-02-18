@@ -115,6 +115,26 @@ body {
     text-decoration: none;
     transition: all 0.25s ease;
 }
+/* ================= FIX: SUBMENU SHOULD NOT BE GREEN BUTTONS ================= */
+
+.submenu li > a {
+    background: none !important;
+    color: #079992 !important;
+
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    padding: 12px 20px;
+    font-weight: 500;
+}
+
+/* hover style for dropdown items */
+.submenu li > a:hover {
+    background: #e8faf9 !important;
+    color: #03857f !important;
+}
+
 
 .submenu a:hover {
     background: #e8faf9;
