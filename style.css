@@ -28,17 +28,17 @@ body {
     padding: 0;
     list-style: none;
     display: flex;
-    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;      /* ✅ mobile fix */
+    justify-content: center;
+    gap: 40px;            /* nice balanced spacing */
 }
 
-.menu ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 40px;   /* controls spacing between menu items */
-
+@media (max-width: 768px) {
+  .menu ul {
+      gap: 12px;
+      font-size: 0.9rem;
+  } 
 }
 
 .menu ul li {
