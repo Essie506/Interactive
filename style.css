@@ -10,6 +10,7 @@ body {
 
 /* ===== Navbar ===== */
 /* ================= NAVBAR ================= */
+/* ================= NAVBAR ================= */
 
 .navbar {
     background: #ffffff;
@@ -23,49 +24,54 @@ body {
 
 /* ================= MENU LAYOUT ================= */
 
-.menu ul li > a {
-    display: inline-block;
-    padding: 10px 18px;
+.menu ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 
-    background: white;
-    color: #079992;
-    text-decoration: none;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    border-radius: 10px;
-    border: 1px solid #dff3f2;
-
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-
-    transition: all 0.25s ease;
+    flex-wrap: nowrap;   /* desktop stays one row */
+    gap: 24px;
 }
-
 
 @media (max-width: 768px) {
     .menu ul {
+        flex-wrap: wrap; /* mobile wraps nicely */
         gap: 12px;
         font-size: 0.9rem;
     }
 }
 
-/* ================= MODERN MENU LINKS ================= */
+.menu ul li {
+    position: relative;
+}
 
-.menu-link-modern {
-    text-decoration: none;
-    color: #079992;
-    background: #e8faf9;
-    padding: 10px 18px;
-    border-radius: 10px;
-    font-weight: 600;
-    transition: all 0.25s ease;
+/* ================= MODERN MENU BUTTONS ================= */
+
+.menu ul li > a {
     display: inline-block;
+    padding: 10px 18px;
+
+    background: linear-gradient(135deg, #079992, #38ada9);
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+
+    border-radius: 10px;
+    border: none;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+    transition: all 0.25s ease;
+    white-space: nowrap;
 }
 
 .menu ul li > a:hover {
-    background: #079992;
-    color: white;
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
 /* ================= SUBMENU ================= */
@@ -74,7 +80,6 @@ body {
     position: relative;
 }
 
-/* Dropdown container */
 .submenu {
     position: absolute;
     top: 120%;
@@ -92,34 +97,19 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* animation starting state */
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
     transition: all 0.3s ease;
 }
 
-/* REMOVE OLD BUTTON / BEVEL STYLES FROM SUBMENU LINKS */
-
+/* remove button styling inside dropdown */
 .submenu a {
     background: none;
     border: none;
     box-shadow: none;
     border-radius: 0;
-}
 
-/* SHOW submenu */
-.has-submenu:hover .submenu,
-.has-submenu.open .submenu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translate(-50%, 0);
-}
-
-/* ================= SUBMENU LINKS ================= */
-
-.submenu a {
     padding: 12px 20px;
     color: #079992;
     text-decoration: none;
@@ -131,7 +121,16 @@ body {
     padding-left: 26px;
 }
 
-/* ================= MOBILE ================= */
+/* show submenu */
+.has-submenu:hover .submenu,
+.has-submenu.open .submenu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
+
+/* ================= MOBILE SUBMENU ================= */
 
 @media (max-width: 768px) {
 
@@ -152,32 +151,38 @@ body {
     }
 }
 
-/* ===================================================================== */
+/* ================= HERO ================= */
 
 .hero {
     flex: 1;
     text-align: center;
     padding: 80px 20px 40px;
-    
+}
+
+/* ================= MODERN BUTTON (LOGIN ETC) ================= */
+
 a.btn-modern,
 button.btn-modern {
-  background: linear-gradient(135deg, #079992, #38ada9);
-  color: white;
-  padding: 14px 28px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  display: inline-block;
-  transition: all 0.25s ease;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg, #079992, #38ada9);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    border: none;
+
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
 a.btn-modern:hover,
 button.btn-modern:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.2);
 }
+
 
 
 /* ===== Input fields (nice and clean) ===== */
