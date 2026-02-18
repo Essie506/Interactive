@@ -15,6 +15,14 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+.navbar {
+    width: 100%;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
 .menu ul {
     margin: 0;
     padding: 0;
@@ -133,11 +141,10 @@ body {
 
 /* ===================================================================== */
 
-/* ===== Hero Section ===== */
 .hero {
     flex: 1;
     text-align: center;
-    padding: 40px;
+    padding: 80px 20px 40px;
 }
 
 /* ===== LOG IN + HOME BUTTON STYLE (MATCHES YOUR IMAGE) ===== */
