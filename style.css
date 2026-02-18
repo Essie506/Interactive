@@ -69,8 +69,9 @@ body {
 
 .submenu {
     position: absolute;
-    top: 45px;
-    left: 0;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     background: #ffffff;
     border-radius: 10px;
     border: 1px solid #cfeeee;
