@@ -56,11 +56,17 @@ body {
 }
 
 .menu ul li > a:hover {
-    background: #38ada9;
-    color: #fff;
+ background-color: #f3f4f6;
+    color: #079992;
 }
-
+    
 .menu a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all 0.25s ease;
     white-space: nowrap;
 }
 
@@ -132,10 +138,9 @@ body {
     flex: 1;
     text-align: center;
     padding: 80px 20px 40px;
-}
-
-/* ===== LOG IN + HOME BUTTON STYLE (MATCHES YOUR IMAGE) ===== */
-.btn-modern {
+    
+a.btn-modern,
+button.btn-modern {
   background: linear-gradient(135deg, #079992, #38ada9);
   color: white;
   padding: 14px 28px;
@@ -148,10 +153,12 @@ body {
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-.btn-modern:hover {
+a.btn-modern:hover,
+button.btn-modern:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0,0,0,0.2);
 }
+
 
 /* ===== Input fields (nice and clean) ===== */
 .input-field {
