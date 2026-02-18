@@ -46,7 +46,7 @@ body {
     display: inline-block;
 }
 
-/* Parent links */
+
 .menu ul li > a {
     color: #079992;
     background: #e0f7f7;
@@ -63,21 +63,9 @@ body {
     color: #fff;
 }
 
-/* Toggle Arrow (visual only) */
-.submenu-toggle {
-    background: none;
-    border: none;
-    color: #079992;
-    cursor: pointer;
-    font-size: 0.7rem;
-    margin-left: 4px;
-    padding: 2px;
-    pointer-events: none;
+.menu a {
+    white-space: nowrap;
 }
-
-/* ===================================================================== */
-/*            UPDATED CLEAN, FLAT, VERTICAL DROPDOWN (NO BOXES)          */
-/* ===================================================================== */
 
 .submenu {
     position: absolute;
