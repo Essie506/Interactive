@@ -91,6 +91,15 @@ body {
     transition: all 0.3s ease;
 }
 
+/* REMOVE OLD BUTTON / BEVEL STYLES FROM SUBMENU LINKS */
+
+.submenu a {
+    background: none;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
 /* SHOW submenu */
 .has-submenu:hover .submenu,
 .has-submenu.open .submenu {
