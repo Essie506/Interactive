@@ -95,7 +95,7 @@ body {
 
     color: #079992;          /* visible text */
     background: transparent; /* removes button look */
-    text-decoration: none;
+    text-decoration: #03857f;
     font-weight: 500;
 
     border: none;
@@ -129,8 +129,8 @@ body {
     flex-direction: column;
 
     opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    visibility: visible;
+    pointer-events: auto;
 
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
