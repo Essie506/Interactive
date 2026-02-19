@@ -80,11 +80,13 @@ body {
     position: relative;
 }
 
+/* ---------- DESKTOP DROPDOWN ---------- */
+
 .submenu {
     position: absolute;
-    top: 120%;
+    top: 110%;
     left: 50%;
-    transform: translate(-50%, -10px);
+    transform: translateX(-50%);
 
     background: #ffffff;
     border-radius: 12px;
@@ -100,76 +102,65 @@ body {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.3s ease;
+
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* remove button styling inside dropdown */
-.submenu a {
-    background: none;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-
-    padding: 12px 20px;
-    color: #079992;
-    text-decoration: none;
-    transition: all 0.25s ease;
-}
-/* ================= FIX: SUBMENU SHOULD NOT BE GREEN BUTTONS ================= */
-
-.submenu li > a {
-    background: none !important;
-    color: #079992 !important;
-
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-
-    padding: 12px 20px;
-    font-weight: 500;
-}
-
-/* hover style for dropdown items */
-.submenu li > a:hover {
-    background: #e8faf9 !important;
-    color: #03857f !important;
-}
-
-
-.submenu a:hover {
-    background: #e8faf9;
-    padding-left: 26px;
-}
-
-/* show submenu */
+/* show submenu (desktop + JS toggle) */
 .has-submenu:hover .submenu,
 .has-submenu.open .submenu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%) translateY(0);
 }
 
-/* ================= MOBILE SUBMENU ================= */
+/* ---------- DROPDOWN LINKS (NOT BUTTONS) ---------- */
+
+.submenu li > a {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+
+    padding: 12px 20px;
+    color: #079992;
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: all 0.25s ease;
+}
+
+.submenu li > a:hover {
+    background: #e8faf9;
+    padding-left: 26px;
+    color: #03857f;
+}
+
+/* ---------- MOBILE VERSION ---------- */
 
 @media (max-width: 768px) {
 
     .submenu {
-        position: static;
+        position: static;        /* stops floating */
         transform: none;
         box-shadow: none;
         border: none;
         background: transparent;
+
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+
         display: none;
+        padding-left: 10px;
     }
 
     .has-submenu.open .submenu {
         display: flex;
     }
 }
+
 
 /* ================= HERO ================= */
 
