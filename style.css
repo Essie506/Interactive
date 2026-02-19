@@ -8,8 +8,6 @@ body {
     flex-direction: column;
 }
 
-/* ===== Navbar ===== */
-/* ================= NAVBAR ================= */
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -66,6 +64,15 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 
     transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.menu ul li {
+    flex: 0 0 auto;   /* prevents stretching */
+}
+
+.menu ul li > a {
+    width: auto;
     white-space: nowrap;
 }
 
@@ -159,8 +166,15 @@ body {
     .has-submenu.open .submenu {
         display: flex;
     }
-}
 
+    .menu ul {
+        justify-content: center;
+        align-content: center;
+    }
+
+    .menu ul li {
+        flex: 0 0 auto;
+    }
 
 /* ================= HERO ================= */
 
