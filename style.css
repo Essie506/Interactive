@@ -112,14 +112,24 @@ body {
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* show submenu (desktop + JS toggle) */
-.has-submenu:hover .submenu,
+/* ===== DESKTOP ONLY DROPDOWN ===== */
+@media (hover: hover) and (pointer: fine) {
+    .has-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* ===== JS CONTROLLED (mobile + click) ===== */
 .has-submenu.open .submenu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
     transform: translateX(-50%) translateY(0);
 }
+
 
 /* ---------- DROPDOWN LINKS (NOT BUTTONS) ---------- */
 
@@ -148,7 +158,8 @@ body {
 @media (max-width: 768px) {
 
     .submenu {
-        position: static;        /* stops floating */
+        position: static; /* stops floating */
+        width: 100%;
         transform: none;
         box-shadow: none;
         border: none;
