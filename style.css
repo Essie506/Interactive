@@ -53,6 +53,8 @@ body {
         flex-direction: column;
         width: 100%;
         gap: 10px;
+        align-items: centre;
+        justify-content: flex start;
     }
 
 
@@ -61,6 +63,7 @@ body {
     flex: 0 0 auto;   /* prevents stretching */
     width: 100%;
     text-align: center;
+    margin: 6px 0;
 }
 
 
