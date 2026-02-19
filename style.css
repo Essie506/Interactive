@@ -86,6 +86,28 @@ body {
     position: relative;
 }
 
+/* ================= SUBMENU TEXT STYLE (FINAL FIX) ================= */
+
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+
+    color: #079992;          /* visible text */
+    background: transparent; /* removes button look */
+    text-decoration: none;
+    font-weight: 500;
+
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+.submenu li a:hover {
+    background: #e8faf9;
+    color: #03857f;
+    padding-left: 26px;
+}
+
 /* ---------- DESKTOP DROPDOWN ---------- */
 
 .submenu {
@@ -185,7 +207,7 @@ body {
     .menu ul li {
         flex: 0 0 auto;
     }
-    }
+}
 
 /* ================= HERO ================= */
 
