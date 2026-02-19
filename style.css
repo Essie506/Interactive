@@ -75,7 +75,6 @@ body {
     width: auto;
     white-space: nowrap;
 }
-
 .menu ul li > a:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0,0,0,0.18);
@@ -174,6 +173,7 @@ body {
 
     .menu ul li {
         flex: 0 0 auto;
+    }
     }
 
 /* ================= HERO ================= */
