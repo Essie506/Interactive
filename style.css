@@ -145,13 +145,17 @@ body {
 }
 
 /* ===== JS CONTROLLED (mobile + click) ===== */
-.has-submenu.open .submenu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: translateX(-50%) translateY(0);
-}
+@media (max-width: 768px) {
 
+    .has-submenu.open .submenu {
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        display: flex;
+        transform: translateX(-50%) translateY(0);
+    }
+}
 
 /* ---------- DROPDOWN LINKS (NOT BUTTONS) ---------- */
 
