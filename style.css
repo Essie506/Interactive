@@ -90,7 +90,7 @@ body {
 
     color: #079992;          /* visible text */
     background: transparent; /* removes button look */
-    text-decoration: #03857f;
+    text-decoration: none;
     font-weight: 500;
 
     border: none;
@@ -192,6 +192,8 @@ body {
     background: #e8faf9;
     padding-left: 26px;
     color: #03857f;
+
+     }
     
 
     .menu ul {
