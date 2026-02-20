@@ -194,6 +194,21 @@ body {
     color: #03857f;
 }
 
+/* ================= MENU LINKS ================= */
+
+.menu-link-modern {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 10px 14px;
+    display: block;
+    transition: 0.3s ease;
+}
+
+.menu-link-modern:hover {
+    color: #0abde3;
+}
+
 /* ================= HERO ================= */
 .hero {
     flex: 1;
