@@ -155,8 +155,11 @@ body {
         box-shadow: none;
         border: none;
         background: transparent;
+        opacity: 1;
+        isibility: visible;
         padding-left: 0;
         margin-top: 5px;
+        text-align: center;
     }
 }
 
