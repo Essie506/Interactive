@@ -39,16 +39,6 @@ body {
     gap: 40px;
 }
 
-@media (max-width: 768px) {
-    .menu ul {
-        flex-wrap: wrap; /* mobile wraps nicely */
-        gap: 12px;
-        font-size: 0.9rem;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
 .menu ul li {
     position: relative;
     flex: 0 0 auto;
@@ -146,7 +136,25 @@ body {
     }
 
     .menu.open {
-        display: flex;
+        display: block;
+    }
+
+     .menu ul {
+        flex-direction: column;     /* ⭐ key fix */
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px 15px;
+    }
+
+    .menu ul li {
+        width: 100%;
+    }
+
+    /* full-width buttons instead of floating ones */
+    .menu ul li a {
+        display: block;
+        width: 100%;
+        text-align: center;
     }
 
     .submenu {
@@ -163,7 +171,7 @@ body {
     }
 
     .has-submenu.open .submenu {
-        display: flex; /* show submenu when open */
+        display: block; /* show submenu when open */
     }
 }
 
