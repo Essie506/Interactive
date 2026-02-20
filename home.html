@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,18 +32,37 @@
       display: flex;
       justify-content: center;
     }
+
+    /* Mobile hamburger button */
+    .menu-toggle {
+      display: none; /* hidden on desktop */
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      padding: 10px 20px;
+      z-index: 1100;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 
 <body>
-
 <header class="navbar">
+  <!-- Hamburger button for mobile -->
+  <button class="menu-toggle">☰</button>
+
   <nav class="menu">
     <ul>
       <li><a href="home.html" class="menu-link-modern">Home</a></li>
 
       <li class="has-submenu">
-      <a href="#" class="menu-link-modern">Profile</a>
+        <a href="#" class="menu-link-modern">Profile</a>
         <ul class="submenu">
           <li><a href="view-profile.html">View Profile</a></li>
           <li><a href="edit-profile.html">Edit Profile</a></li>
@@ -85,64 +106,73 @@
   <h1>Welcome to Interactive Fitness!</h1>
   <p>Track your workouts, connect with trainers, and achieve your goals.</p>
 
-  <!-- ONLY ONE BUTTON NOW -->
-    <a href="browse-workouts.html" class="btn-modern">View Workouts</a>
+  <a href="browse-workouts.html" class="btn-modern">View Workouts</a>
 
   <h2>Browse by Category</h2>
+  <div class="category-icons">
+    <a href="yoga.html" class="category-card">
+      <i class="fa-solid fa-spa"></i>
+      <p>Yoga</p>
+    </a>
 
-<div class="category-icons">
+    <a href="cycling.html" class="category-card">
+      <i class="fa-solid fa-bicycle"></i>
+      <p>Cycling</p>
+    </a>
 
-  <a href="yoga.html" class="category-card">
-    <i class="fa-solid fa-spa"></i>
-    <p>Yoga</p>
-  </a>
+    <a href="running.html" class="category-card">
+      <i class="fa-solid fa-person-running"></i>
+      <p>Running</p>
+    </a>
 
-  <a href="cycling.html" class="category-card">
-    <i class="fa-solid fa-bicycle"></i>
-    <p>Cycling</p>
-  </a>
+    <a href="walking.html" class="category-card">
+      <i class="fa-solid fa-person-walking"></i>
+      <p>Walking</p>
+    </a>
 
-  <a href="running.html" class="category-card">
-    <i class="fa-solid fa-person-running"></i>
-    <p>Running</p>
-  </a>
-
-  <a href="walking.html" class="category-card">
-  <i class="fa-solid fa-person-walking"></i>
-  <p>Walking</p>
-</a>
-
-<a href="hiit.html" class="category-card">
-  <i class="fa-solid fa-bolt"></i>
-  <p>HIIT</p>
-</a>
-
-</div>
+    <a href="hiit.html" class="category-card">
+      <i class="fa-solid fa-bolt"></i>
+      <p>HIIT</p>
+    </a>
+  </div>
 </main>
 
 <footer>
   © 2025 Interactive Fitness — All Rights Reserved
 </footer>
 
+<!-- Mobile Menu JS -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
   const parents = document.querySelectorAll(".has-submenu");
 
+  // Toggle main menu
+  menuToggle.addEventListener("click", () => {
+    menu.classList.toggle("open");
+  });
+
+  // Toggle submenus individually
   parents.forEach(parent => {
     const link = parent.querySelector(":scope > a");
 
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
+      // Close all other submenus
       parents.forEach(p => p !== parent && p.classList.remove("open"));
 
+      // Toggle this submenu
       parent.classList.toggle("open");
     });
   });
 
+  // Close submenus if click outside
   document.addEventListener("click", (e) => {
-    if (!e.target.closest(".has-submenu")) {
+    if (!e.target.closest(".has-submenu") && !e.target.closest(".menu-toggle")) {
       parents.forEach(p => p.classList.remove("open"));
+      menu.classList.remove("open"); // close main menu if clicked outside
     }
   });
 });
