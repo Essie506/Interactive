@@ -8,7 +8,6 @@ body {
 }
 
 /* ================= NAVBAR ================= */
-
 .navbar {
     width: 100%;
     background: #ffffff;
@@ -17,8 +16,18 @@ body {
     z-index: 1000;
 }
 
-/* ================= MENU LAYOUT ================= */
+/* Hamburger button for mobile */
+.menu-toggle {
+    display: none; /* hidden by default; shown only on mobile */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 1100;
+}
 
+/* ================= MENU LAYOUT ================= */
 .menu ul {
     margin: 0;
     padding: 0;
@@ -35,38 +44,30 @@ body {
         flex-wrap: wrap; /* mobile wraps nicely */
         gap: 12px;
         font-size: 0.9rem;
-        gap: 12px;
         align-items: center;
         justify-content: center;
     }
 }
 
-
 .menu ul li {
     position: relative;
     flex: 0 0 auto;
-    width: auto;      /* FIX */
+    width: auto;
     text-align: center;
     margin: 0;
 }
 
-
 /* ================= MODERN MENU BUTTONS ================= */
-
 .menu ul li > a {
     display: inline-block;
     padding: 10px 18px;
-
     background: linear-gradient(135deg, #079992, #38ada9);
     color: white;
     text-decoration: none;
     font-weight: 600;
-
     border-radius: 10px;
     border: none;
-
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-
     transition: all 0.25s ease;
     white-space: nowrap;
     width: auto;
@@ -77,22 +78,18 @@ body {
 }
 
 /* ================= SUBMENU ================= */
-
 .has-submenu {
     position: relative;
 }
 
-/* ================= SUBMENU TEXT STYLE (FINAL FIX) ================= */
-
+/* ================= SUBMENU TEXT STYLE ================= */
 .submenu li a {
     display: block;
     padding: 12px 20px;
-
-    color: #079992;          /* visible text */
-    background: transparent; /* removes button look */
+    color: #079992;
+    background: transparent;
     text-decoration: none;
     font-weight: 500;
-
     border: none;
     box-shadow: none;
     border-radius: 0;
@@ -105,31 +102,25 @@ body {
 }
 
 /* ---------- DESKTOP DROPDOWN ---------- */
-
-/* ===== SUBMENU BASE (SAFE VERSION) ===== */
-
 .submenu {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-
     background: #ffffff;
     border-radius: 12px;
     border: 1px solid #dff4f3;
     min-width: 200px;
     padding: 8px 0;
-
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-
     display: flex;
     flex-direction: column;
-
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
-/* ===== DESKTOP ONLY DROPDOWN ===== */
+
+/* Desktop hover only */
 @media (hover: hover) and (pointer: fine) {
     .has-submenu:hover .submenu {
         opacity: 1;
@@ -138,14 +129,30 @@ body {
     }
 }
 
-
-/* ---------- MOBILE VERSION ---------- */
+/* ================= MOBILE VERSION ================= */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none; /* hidden until toggled */
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background: #ffffff;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .menu.open {
+        display: flex;
+    }
 
     .submenu {
         position: static;
         transform: none;
-        display: none;
+        display: none; /* hidden by default */
         width: 100%;
         background: transparent;
         border: none;
@@ -156,23 +163,20 @@ body {
     }
 
     .has-submenu.open .submenu {
-        display: flex;
+        display: flex; /* show submenu when open */
     }
 }
 
 /* ---------- DROPDOWN LINKS (NOT BUTTONS) ---------- */
-
 .submenu li > a {
     background: none !important;
     border: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
-
     padding: 12px 20px;
     color: #079992;
     text-decoration: none;
     font-weight: 500;
-
     transition: all 0.25s ease;
 }
 
@@ -180,11 +184,9 @@ body {
     background: #e8faf9;
     padding-left: 26px;
     color: #03857f;
+}
 
-     }
-    
 /* ================= HERO ================= */
-
 .hero {
     flex: 1;
     text-align: center;
@@ -192,7 +194,6 @@ body {
 }
 
 /* ================= MODERN BUTTON (LOGIN ETC) ================= */
-
 a.btn-modern,
 button.btn-modern {
     background: linear-gradient(135deg, #079992, #38ada9);
@@ -204,20 +205,16 @@ button.btn-modern {
     letter-spacing: 0.5px;
     display: inline-block;
     border: none;
-
     transition: all 0.25s ease;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
-
 a.btn-modern:hover,
 button.btn-modern:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(0,0,0,0.2);
 }
 
-
-
-/* ===== Input fields (nice and clean) ===== */
+/* ===== Input fields ===== */
 .input-field {
     width: 100%;
     max-width: 280px;
@@ -237,73 +234,65 @@ footer {
     font-weight: bold;
 }
 
+/* Video Gallery */
 .video-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
-
 .video-gallery iframe {
-  width: 100%;
-  max-width: 560px;
-  height: 315px;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
 }
-
 .video-card {
-  position: relative;
-  display: inline-block;
-  margin: 10px;
-  text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    text-align: center;
 }
-
 .video-card img {
-  width: 300px;
-  height: 170px;
-  border-radius: 8px;
+    width: 300px;
+    height: 170px;
+    border-radius: 8px;
 }
-
 .play-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 24px;
-  color: white;
-  text-shadow: 0 0 5px black;
-  pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: white;
+    text-shadow: 0 0 5px black;
+    pointer-events: none;
 }
 
+/* Category Icons */
 .category-icons {
-  display: grid;
-
-  /* creates responsive columns automatically */
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-
-  gap: 25px;
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 25px;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
-
 .category-card {
-  text-align: center;
-  text-decoration: none;
-  color: black;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-size: 18px;
 }
-
 .category-card i {
-  font-size: 50px;
-  background: #f4f4f4;
-  padding: 25px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  display: inline-block;
+    font-size: 50px;
+    background: #f4f4f4;
+    padding: 25px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: inline-block;
 }
-
 .category-card:hover {
- transform: translateY(-6px);
- box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
