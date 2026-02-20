@@ -106,6 +106,8 @@ body {
 
 /* ---------- DESKTOP DROPDOWN ---------- */
 
+/* ===== SUBMENU BASE (SAFE VERSION) ===== */
+
 .submenu {
     position: absolute;
     top: 100%;
@@ -125,52 +127,35 @@ body {
 
     opacity: 0;
     visibility: hidden;
-    pointer-events: auto;
-
-    transition: opacity 0.25s ease, transform 0.25s ease;
-    }
-
-
+    pointer-events: none;
+}
 /* ===== DESKTOP ONLY DROPDOWN ===== */
 @media (hover: hover) and (pointer: fine) {
     .has-submenu:hover .submenu {
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        transform: translateX(-50%) translateY(0);
     }
 }
 
 
 /* ---------- MOBILE VERSION ---------- */
-
-    @media (max-width: 768px) {
-
-    .submenu{
-        position: static;
-        transform: none;
-        width: 100%;
-        display: none;
-        flex-direction: column;
-        box-shadow: none;
-        border: none;
-        background: transparent;
-        opacity: 1;
-        isibility: visible;
-        padding-left: 0;
-        margin-top: 5px;
-        text-align: center;
-    }
-}
-
-/* ===== JS CONTROLLED (mobile + click) ===== */
 @media (max-width: 768px) {
 
-    .has-submenu.open .submenu {
+    .submenu {
+        position: static;
         transform: none;
+        display: none;
+        width: 100%;
+        background: transparent;
+        border: none;
+        box-shadow: none;
         opacity: 1;
         visibility: visible;
-        pointer-events: auto;
+        text-align: center;
+    }
+
+    .has-submenu.open .submenu {
         display: flex;
     }
 }
