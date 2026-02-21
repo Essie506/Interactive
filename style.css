@@ -1,12 +1,19 @@
+/* ================= GLOBAL RESET ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 /* ================= BODY ================= */
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 
-    /* Layered gradient with grey/nav-bar-left feel */
+    /* Soft silver gradient */
     background:
         radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
         radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
@@ -15,13 +22,20 @@ body {
     background-attachment: fixed;
 }
 
+/* GLOBAL SHEEN (YES — this stays) */
 body::after {
     content: "";
     position: fixed;
     inset: 0;
-    background: linear-gradient(120deg, transparent 15%, rgba(255,255,255,0.35), transparent 35%);
     pointer-events: none;
-    z-index: -1;
+    z-index: 0;
+
+    background: linear-gradient(
+        120deg,
+        transparent 15%,
+        rgba(255,255,255,0.35),
+        transparent 35%
+    );
 }
 
 /* ================= NAVBAR ================= */
@@ -31,79 +45,78 @@ body::after {
     min-height: 90px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* hamburger left, content center/right */
+    justify-content: space-between;
     padding: 0 20px;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 10;
 }
 
-/* Navbar background + shine effect */
+/* Navbar background */
 .navbar-bg {
     position: absolute;
     inset: 0;
+    z-index: 1;
+
     background:
         linear-gradient(90deg, #bfc5c7, #e6ecef, #7fc9c5, #cfe7e5),
         url("logo.png");
+
     background-repeat: no-repeat;
     background-position: center, center;
     background-size: cover, contain;
+
     opacity: 0.85;
-    z-index: 0;
     filter: saturate(0.9) brightness(1.05);
 }
 
+/* Navbar shine */
 .navbar::after {
     content: "";
     position: absolute;
     inset: 0;
+    z-index: 2;
+    pointer-events: none;
+
     background:
         radial-gradient(circle at 30% 50%, rgba(255,255,255,0.5), transparent 60%),
         radial-gradient(circle at 70% 40%, rgba(255,255,255,0.3), transparent 60%);
-    pointer-events: none;
-    z-index: 1;
 }
 
 /* ================= NAV CONTENT ================= */
 .nav-content {
     flex: 1;
     display: flex;
-    justify-content: flex-start; /* menu buttons centered */
+    justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 2;
+    z-index: 3;
 }
 
-/* Hamburger menu */
+/* Hamburger */
 .menu-toggle {
-    display: block; /* always visible */
     background: none;
     border: none;
     font-size: 2rem;
     cursor: pointer;
     padding: 10px 20px;
-    z-index: 1100;
-    align-self: center; /* vertical centering */
+    z-index: 4;
 }
 
 /* ================= MENU ================= */
 .menu ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 40px;
-    z-index: 2;
-    flex-wrap: wrap; /* keep desktop in one row */
+    flex-wrap: wrap;
 }
 
 .menu ul li {
     position: relative;
-    text-align: center;
 }
 
-/* Modern menu buttons */
+/* Menu buttons */
 .menu > ul > li > a {
     display: inline-block;
     padding: 10px 18px;
@@ -112,10 +125,10 @@ body::after {
     text-decoration: none;
     font-weight: 600;
     border-radius: 10px;
-    border: none;
+    white-space: nowrap;
+
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     transition: all 0.25s ease;
-    white-space: nowrap;
 }
 
 .menu > ul > li > a:hover {
@@ -124,26 +137,24 @@ body::after {
 }
 
 /* ================= SUBMENU ================= */
-.has-submenu {
-    position: relative;
-}
-
 .submenu {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #ffffff;
+    min-width: 200px;
+
+    background: #fff;
     border-radius: 12px;
     border: 1px solid #dff4f3;
-    min-width: 200px;
     padding: 8px 0;
+
     box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
+
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: 0.2s ease;
 }
 
 .has-submenu.open .submenu {
@@ -152,7 +163,7 @@ body::after {
     pointer-events: auto;
 }
 
-/* Desktop hover submenu */
+/* Desktop hover */
 @media (hover: hover) and (pointer: fine) {
     .has-submenu:hover .submenu {
         opacity: 1;
@@ -161,104 +172,82 @@ body::after {
     }
 }
 
-/* Submenu items */
 .submenu li a {
     display: block;
     padding: 12px 20px;
     color: #079992;
-    background: transparent;
     text-decoration: none;
-    font-weight: 500;
 }
 
 .submenu li a:hover {
     background: #e8faf9;
-    color: #03857f;
     padding-left: 26px;
 }
 
-/* ================= MOBILE VERSION ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
 
     .menu {
-        display: none; /* hidden until toggled */
-        flex-direction: column;
-        text-align: center;
+        display: none;
         width: 100%;
-        background: #ffffff;
-        gap: 10px;
-        padding: 10px 0;
+        background: white;
     }
 
     .menu.open {
         display: block;
     }
 
-     .menu ul {
-        flex-direction: column;     /* ⭐ key fix */
-        align-items: stretch;
+    .menu ul {
+        flex-direction: column;
         gap: 8px;
         padding: 10px 15px;
+        align-items: stretch;
     }
 
-    .menu ul li {
-        width: 100%;
-    }
-
-    /* full-width buttons instead of floating ones */
     .menu > ul > li > a {
-        display: block;
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
     .submenu {
         position: static;
-        transform: none;
-        display: none; /* hidden by default */
-        width: 100%;
-        background: transparent;
-        border: none;
+        display: none;
         box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        text-align: center;
-        transition: opacity 0.25s ease;
-}
+        border: none;
+        padding-left: 15px;
     }
 
-    .has-submenu.open .submenu {
-        display: block; /* show submenu when open */
+    .has-submenu.open > .submenu {
+        display: block;
     }
 }
 
 /* ================= HERO ================= */
 .hero {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     padding: 80px 20px 40px;
 }
 
-/* ================= MODERN BUTTON (LOGIN ETC) ================= */
-a.btn-modern,
-button.btn-modern {
+/* ================= BUTTON ================= */
+.btn-modern {
     background: linear-gradient(135deg, #079992, #38ada9);
     color: white;
     padding: 14px 28px;
     border-radius: 10px;
-    text-decoration: none;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    display: inline-block;
+    text-decoration: none;
     border: none;
-    transition: all 0.25s ease;
+
+    transition: 0.25s ease;
     box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
-a.btn-modern:hover,
-button.btn-modern:hover {
+
+.btn-modern:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(0,0,0,0.2);
 }
