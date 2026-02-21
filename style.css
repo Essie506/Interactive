@@ -5,20 +5,19 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* Matching soft silver gradient */
+    /* Enhanced soft gradient with more depth */
     background:
-        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 20%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 15%),
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
         linear-gradient(
             135deg,
-            #eef2f4,
-            #e6ecef,
-            #dfe6ea,
-            #f5f7f8
+            #e0e5eb, /* slightly darker start */
+            #d4dce2,
+            #c8d2d9,
+            #f5f7f8  /* keep the lightest at the end for contrast */
         );
 
     background-attachment: fixed;
-}
 body::after {
     content: "";
     position: fixed;
@@ -27,9 +26,9 @@ body::after {
     background:
         linear-gradient(
             120deg,
-            transparent 20%,
-            rgba(255,255,255,0.25),
-            transparent 30%
+            transparent 15%,
+            rgba(255,255,255,0.35), /* stronger shimmer */
+            transparent 35%
         );
 
     pointer-events: none;
