@@ -182,7 +182,7 @@ body::after {
     .menu {
         display: none; /* hidden until toggled */
         flex-direction: column;
-        text-align: center;
+        text-align: left;
         width: 100%;
         background: #ffffff;
         gap: 10px;
