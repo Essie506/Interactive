@@ -5,16 +5,35 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* Silver professional gradient */
-    background: 
-            linear-gradient(
-            90deg,
-            #bfc5c7,
+    /* Matching soft silver gradient */
+    background:
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 45%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 40%),
+        linear-gradient(
+            135deg,
+            #eef2f4,
             #e6ecef,
-            #7fc9c5,
-            #cfe7e5
-        ),
+            #dfe6ea,
+            #f5f7f8
+        );
+
     background-attachment: fixed;
+}
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 40%,
+            rgba(255,255,255,0.25),
+            transparent 60%
+        );
+
+    pointer-events: none;
+    z-index: -1;
 }
 /* ================= NAVBAR ================= */
 
