@@ -19,7 +19,7 @@ body::before {
     position: fixed;
     inset: 0;
 
-    background-image: url("images/logo.png"); /* adjust path */
+    background-image: logo.png; 
     background-repeat: no-repeat;
     background-position: center;
     background-size: 420px;
