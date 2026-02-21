@@ -150,37 +150,36 @@
 <!-- Mobile Menu JS -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
-  const parents = document.querySelectorAll(".has-submenu");
 
-  // Toggle main menu
+  /* ===== Hamburger open/close ===== */
   menuToggle.addEventListener("click", () => {
     menu.classList.toggle("open");
   });
 
-  // Toggle submenus individually
-  parents.forEach(parent => {
-    const link = parent.querySelector(":scope > a");
+  /* ===== Submenus ===== */
+  const parents = document.querySelectorAll(".has-submenu > a");
 
+  parents.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
 
-      // Close all other submenus
-      parents.forEach(p => p !== parent && p.classList.remove("open"));
+      const parent = link.parentElement;
+      const isOpen = parent.classList.contains("open");
 
-      // Toggle this submenu
-      parent.classList.toggle("open");
+      /* close ALL */
+      document.querySelectorAll(".has-submenu")
+        .forEach(p => p.classList.remove("open"));
+
+      /* reopen only if previously closed */
+      if (!isOpen) {
+        parent.classList.add("open");
+      }
     });
   });
 
-  // Close submenus if click outside
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest(".has-submenu") && !e.target.closest(".menu-toggle")) {
-      parents.forEach(p => p.classList.remove("open"));
-      menu.classList.remove("open"); // close main menu if clicked outside
-    }
-  });
 });
 </script>
 
