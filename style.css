@@ -67,7 +67,7 @@ body::after {
 .nav-content {
     flex: 1;
     display: flex;
-    justify-content: center; /* menu buttons centered */
+    justify-content: flex-start; /* menu buttons centered */
     align-items: center;
     position: relative;
     z-index: 2;
@@ -226,6 +226,8 @@ body::after {
         opacity: 1;
         visibility: visible;
         text-align: center;
+        transition: opacity 0.25s ease;
+}
     }
 
     .has-submenu.open .submenu {
