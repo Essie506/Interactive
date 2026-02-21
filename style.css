@@ -6,11 +6,14 @@ body {
     flex-direction: column;
 
     /* Silver professional gradient */
-    background:
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,0.7), transparent 40%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 35%),
-        linear-gradient(135deg, #f4f6f7, #e3e8eb, #d4dde1);
-
+    background: 
+            linear-gradient(
+            90deg,
+            #bfc5c7,
+            #e6ecef,
+            #7fc9c5,
+            #cfe7e5
+        ),
     background-attachment: fixed;
 }
 /* ================= NAVBAR ================= */
