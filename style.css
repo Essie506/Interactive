@@ -45,7 +45,7 @@ body {
         url("logo.png");
 
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center, center;
     background-size: cover, contain;
 
     opacity: 0.85;
