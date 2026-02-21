@@ -13,33 +13,69 @@ body {
 
     background-attachment: fixed;
 }
-
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background-image: url("logo.png"); 
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 1000px;
-
-    opacity: 0.05; /* VERY subtle */
-    pointer-events: none;
-    z-index: -1;
-}
 /* ================= NAVBAR ================= */
+
 .navbar {
-    width: 100%;
-    background: #ffffff;
     position: relative;
-    top: 0;
+    width: 100%;
+    min-height: 90px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
     z-index: 1000;
 }
 
-/* Hamburger button for mobile */
+/* ================= BACKGROUND (LOGO + GRADIENT) ================= */
+
+.navbar-bg {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            #bfc5c7,
+            #e6ecef,
+            #7fc9c5,
+            #cfe7e5
+        ),
+        url("logo.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover, contain;
+
+    opacity: 0.9;
+    z-index: 0;
+}
+
+/* Shine / metallic effect */
+.navbar::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 30% 50%, rgba(255,255,255,0.5), transparent 60%),
+        radial-gradient(circle at 70% 40%, rgba(255,255,255,0.3), transparent 60%);
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* ================= NAV CONTENT ================= */
+
+.nav-content {
+    position: relative;
+    z-index: 2;   /* sits ABOVE gradient */
+}
+
+/* Hamburger button */
 .menu-toggle {
-    display: none; /* hidden by default; shown only on mobile */
+    display: none;
     background: none;
     border: none;
     font-size: 2rem;
@@ -47,7 +83,6 @@ body::before {
     padding: 10px 20px;
     z-index: 1100;
 }
-
 /* ================= MENU LAYOUT ================= */
 .menu ul {
     margin: 0;
@@ -58,6 +93,7 @@ body::before {
     justify-content: center;
     flex-wrap: wrap;   /* desktop stays one row */
     gap: 40px;
+    z-index: 2;
 }
 
 .menu ul li {
