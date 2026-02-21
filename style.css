@@ -1,3 +1,4 @@
+/* ================= BODY ================= */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,19 +6,22 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* Enhanced soft gradient with more depth */
+    /* Base layered gradient with grey depth like nav bar */
     background:
         radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
         radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
         linear-gradient(
             135deg,
-            #e0e5eb, /* slightly darker start */
-            #d4dce2,
-            #c8d2d9,
-            #f5f7f8  /* keep the lightest at the end for contrast */
+            #dfe3e8, /* light grey start (matches nav left) */
+            #e6ecef,
+            #f0f4f7,
+            #f5f7f8  /* lightest end for contrast */
         );
 
     background-attachment: fixed;
+}
+
+/* subtle diagonal shimmer overlay */
 body::after {
     content: "";
     position: fixed;
@@ -27,12 +31,21 @@ body::after {
         linear-gradient(
             120deg,
             transparent 15%,
-            rgba(255,255,255,0.35), /* stronger shimmer */
+            rgba(255,255,255,0.35), 
             transparent 35%
         );
 
     pointer-events: none;
     z-index: -1;
+}
+
+/* ================= HEADER ================= */
+header h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 2rem 0;
+    color: #1b262c; /* dark readable contrast */
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.1); /* subtle depth */
 }
 /* ================= NAVBAR ================= */
 
