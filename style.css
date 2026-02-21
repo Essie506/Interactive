@@ -7,8 +7,8 @@ body {
 
     /* Matching soft silver gradient */
     background:
-        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 45%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 40%),
+        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 20%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 15%),
         linear-gradient(
             135deg,
             #eef2f4,
