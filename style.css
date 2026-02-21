@@ -27,9 +27,9 @@ body::after {
     background:
         linear-gradient(
             120deg,
-            transparent 40%,
+            transparent 20%,
             rgba(255,255,255,0.25),
-            transparent 60%
+            transparent 30%
         );
 
     pointer-events: none;
