@@ -14,6 +14,20 @@ body {
     background-attachment: fixed;
 }
 
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background-image: url("images/logo.png"); /* adjust path */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 420px;
+
+    opacity: 0.05; /* VERY subtle */
+    pointer-events: none;
+    z-index: -1;
+}
 /* ================= NAVBAR ================= */
 .navbar {
     width: 100%;
