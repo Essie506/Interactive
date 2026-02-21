@@ -22,7 +22,7 @@ body::before {
     background-image: url("logo.png"); 
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 420px;
+    background-size: 1000px;
 
     opacity: 0.05; /* VERY subtle */
     pointer-events: none;
