@@ -6,119 +6,86 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* Base layered gradient with grey depth like nav bar */
+    /* Layered gradient with grey/nav-bar-left feel */
     background:
         radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
         radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
-        linear-gradient(
-            135deg,
-            #dfe3e8, /* light grey start (matches nav left) */
-            #e6ecef,
-            #f0f4f7,
-            #f5f7f8  /* lightest end for contrast */
-        );
+        linear-gradient(135deg, #dfe3e8, #e6ecef, #f0f4f7, #f5f7f8);
 
     background-attachment: fixed;
 }
 
-/* subtle diagonal shimmer overlay */
 body::after {
     content: "";
     position: fixed;
     inset: 0;
-
-    background:
-        linear-gradient(
-            120deg,
-            transparent 15%,
-            rgba(255,255,255,0.35), 
-            transparent 35%
-        );
-
+    background: linear-gradient(120deg, transparent 15%, rgba(255,255,255,0.35), transparent 35%);
     pointer-events: none;
     z-index: -1;
 }
 
-/* ================= HEADER ================= */
-header h1 {
-    text-align: center;
-    font-size: 3rem;
-    margin: 2rem 0;
-    color: #1b262c; /* dark readable contrast */
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.1); /* subtle depth */
-}
 /* ================= NAVBAR ================= */
-
 .navbar {
     position: relative;
     width: 100%;
     min-height: 90px;
-
     display: flex;
     align-items: center;
-    justify-content: center;
-
+    justify-content: space-between; /* hamburger left, content center/right */
+    padding: 0 20px;
     overflow: hidden;
     z-index: 1000;
 }
 
-/* ================= BACKGROUND (LOGO + GRADIENT) ================= */
-
+/* Navbar background + shine effect */
 .navbar-bg {
     position: absolute;
     inset: 0;
-
     background:
-        linear-gradient(
-            90deg,
-            #bfc5c7,
-            #e6ecef,
-            #7fc9c5,
-            #cfe7e5
-        ),
+        linear-gradient(90deg, #bfc5c7, #e6ecef, #7fc9c5, #cfe7e5),
         url("logo.png");
-
     background-repeat: no-repeat;
     background-position: center, center;
     background-size: cover, contain;
-
     opacity: 0.85;
     z-index: 0;
     filter: saturate(0.9) brightness(1.05);
 }
 
-/* Shine / metallic effect */
 .navbar::after {
     content: "";
     position: absolute;
     inset: 0;
-
     background:
         radial-gradient(circle at 30% 50%, rgba(255,255,255,0.5), transparent 60%),
         radial-gradient(circle at 70% 40%, rgba(255,255,255,0.3), transparent 60%);
-
     pointer-events: none;
     z-index: 1;
 }
 
 /* ================= NAV CONTENT ================= */
-
 .nav-content {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* menu buttons centered */
+    align-items: center;
     position: relative;
-    z-index: 2;   /* sits ABOVE gradient */
+    z-index: 2;
 }
 
-/* Hamburger button */
+/* Hamburger menu */
 .menu-toggle {
-    display: none;
+    display: block; /* always visible */
     background: none;
     border: none;
     font-size: 2rem;
     cursor: pointer;
     padding: 10px 20px;
     z-index: 1100;
+    align-self: center; /* vertical centering */
 }
-/* ================= MENU LAYOUT ================= */
+
+/* ================= MENU ================= */
 .menu ul {
     margin: 0;
     padding: 0;
@@ -126,20 +93,17 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;   /* desktop stays one row */
     gap: 40px;
     z-index: 2;
+    flex-wrap: wrap; /* keep desktop in one row */
 }
 
 .menu ul li {
     position: relative;
-    flex: 0 0 auto;
-    width: auto;
     text-align: center;
-    margin: 0;
 }
 
-/* ================= MODERN MENU BUTTONS ================= */
+/* Modern menu buttons */
 .menu > ul > li > a {
     display: inline-block;
     padding: 10px 18px;
@@ -152,8 +116,8 @@ header h1 {
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
     transition: all 0.25s ease;
     white-space: nowrap;
-    width: auto;
 }
+
 .menu > ul > li > a:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 18px rgba(0,0,0,0.18);
@@ -164,26 +128,6 @@ header h1 {
     position: relative;
 }
 
-/* ================= SUBMENU TEXT STYLE ================= */
-.submenu li a {
-    display: block;
-    padding: 12px 20px;
-    color: #079992;
-    background: transparent;
-    text-decoration: none;
-    font-weight: 500;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-}
-
-.submenu li a:hover {
-    background: #e8faf9;
-    color: #03857f;
-    padding-left: 26px;
-}
-
-/* ---------- DESKTOP DROPDOWN ---------- */
 .submenu {
     position: absolute;
     top: 100%;
@@ -202,10 +146,86 @@ header h1 {
     pointer-events: none;
 }
 
-    .has-submenu.open .submenu {
+.has-submenu.open .submenu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+}
+
+/* Desktop hover submenu */
+@media (hover: hover) and (pointer: fine) {
+    .has-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+/* Submenu items */
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #079992;
+    background: transparent;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.submenu li a:hover {
+    background: #e8faf9;
+    color: #03857f;
+    padding-left: 26px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+    .menu {
+        display: none; /* hidden until toggled */
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background: #ffffff;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .menu.open {
+        display: flex;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding: 10px 15px;
+    }
+
+    .menu ul li {
+        width: 100%;
+    }
+
+    .menu > ul > li > a {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+
+    .submenu {
+        position: static;
+        transform: none;
+        display: none;
+        width: 100%;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        text-align: center;
+    }
+
+    .has-submenu.open .submenu {
+        display: block;
+    }
 }
 
 /* Desktop hover only */
@@ -271,13 +291,6 @@ header h1 {
     .has-submenu.open .submenu {
         display: block; /* show submenu when open */
     }
-}
-..
-
-.submenu li > a:hover {
-    background: #e8faf9;
-    padding-left: 26px;
-    color: #03857f;
 }
 
 /* ================= HERO ================= */
