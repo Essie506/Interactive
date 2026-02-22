@@ -103,7 +103,7 @@ body::after {
     font-size: 2rem;
     cursor: pointer;
     padding: 10px 20px;
-    z-index: 1100;
+    z-index: 2000;
 }
 /* ================= MENU LAYOUT ================= */
 .menu ul {
