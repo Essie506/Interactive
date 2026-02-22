@@ -512,41 +512,6 @@ body::after {
     }
 }
 
-/* ================= MOBILE ================= */
-
-@media (max-width:768px){
-
-    .menu {
-        width: 90%;
-        left: 5%;
-        top: 70px;
-    }
-
-    .menu ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu > ul > li > a {
-        display:block;
-        width:100%;
-        text-align:center;
-    }
-
-    .submenu {
-        position: static;
-        transform:none;
-        display:none;
-        border:none;
-        box-shadow:none;
-        padding-left:15px;
-    }
-
-    .has-submenu.open > .submenu {
-        display:block;
-    }
-}
-
 /* ================= HERO ================= */
 
 .hero {
