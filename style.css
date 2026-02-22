@@ -195,15 +195,6 @@ body::after {
     pointer-events: auto;
 }
 
-/* Desktop hover only */
-@media (hover: hover) and (pointer: fine) {
-    .has-submenu:hover .submenu {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
-    }
-}
-
 
 /* ================= HERO ================= */
 .hero {
