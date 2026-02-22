@@ -204,68 +204,6 @@ body::after {
     }
 }
 
-/* ================= MOBILE VERSION ================= */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
-
-    .menu {
-        display: none; /* hidden until toggled */
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-        background: #ffffff;
-        gap: 10px;
-        padding: 10px 0;
-    }
-
-    .menu.open {
-        display: block;
-    }
-
-     .menu ul {
-        flex-direction: column;     /* ⭐ key fix */
-        align-items: stretch;
-        gap: 8px;
-        padding: 10px 15px;
-    }
-
-    .menu ul li {
-        width: 100%;
-    }
-
-    /* full-width buttons instead of floating ones */
-    .menu > ul > li > a {
-        display: block;
-        width: 100%;
-        text-align: center;
-    }
-
-    .submenu {
-        position: static;
-        transform: none;
-        display: none; /* hidden by default */
-        width: 100%;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        text-align: center;
-    }
-
-    .has-submenu.open .submenu {
-        display: block; /* show submenu when open */
-    }
-}
-..
-
-.submenu li > a:hover {
-    background: #e8faf9;
-    padding-left: 26px;
-    color: #03857f;
-}
 
 /* ================= HERO ================= */
 .hero {
