@@ -96,14 +96,21 @@ body::after {
 }
 
 /* Hamburger button */
+    
 .menu-toggle {
-    display: block;
-    background: none;
+    display: block;          /* always visible */
+    position: fixed;
+    top: 20px;
+    right: 20px;             /* right side */
+    background: rgba(39,174,96,0.85);  /* green */
+    color: white;
     border: none;
+    border-radius: 10px;
     font-size: 2rem;
     cursor: pointer;
-    padding: 10px 20px;
-    z-index: 2000;
+    padding: 10px 14px;
+    z-index: 2000;           /* above all layers */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 /* ================= MENU LAYOUT ================= */
 .menu ul {
