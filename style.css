@@ -362,7 +362,7 @@ body::after {
     list-style: none;
     margin: 0;
     padding: 15px;
-    display: flex;
+    display: block;
     gap: 40px;
     background: #ffffff;
     border-radius: 12px;
