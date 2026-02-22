@@ -8,56 +8,22 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <style>
-    /* Inline gallery styles */
-    .image-gallery {
-      display: flex;
-      gap: 15px;
-      margin: 20px 0;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .image-gallery img {
-      width: 200px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      display: block;
-    }
-
-    /* Mobile hamburger button */
-    .menu-toggle {
-      display: block; /* hidden on desktop */
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      padding: 10px 20px;
-      z-index: 1100;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
 </head>
 
 <body>
-<nav class="navbar">
-    <div class="navbar-bg"></div>
+  <!-- Navbar background / logo -->
+  <nav class="navbar">
+      <div class="navbar-bg"></div>
+      <div class="nav-content">
+          <!-- logo or brand text -->
+      </div>
+  </nav>
 
-    <div class="nav-content">
-        <!-- menu items / logo text / buttons -->
-    </div>
-</nav>
-  <!-- Hamburger button for mobile -->
+  <!-- Hamburger button (fixed) -->
   <button class="menu-toggle">☰</button>
 
-  <nav class="menu-toggle">
+  <!-- Menu panel -->
+  <nav class="menu">
     <ul>
       <li><a href="home.html" class="menu-link-modern">Home</a></li>
 
@@ -100,7 +66,8 @@
       <li><a href="./index.html" class="menu-link-modern">Logout</a></li>
     </ul>
   </nav>
-</header>
+
+  <!-- Hero / main content comes here -->
 
 <main class="hero">
   <h1>Welcome to Interactive Fitness!</h1>
@@ -141,39 +108,32 @@
   © 2025 Interactive Fitness — All Rights Reserved
 </footer>
 
-<!-- Mobile Menu JS -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
 
-  /* ===== Hamburger open/close ===== */
+  // Open/close main menu
   menuToggle.addEventListener("click", () => {
     menu.classList.toggle("open");
   });
 
-  /* ===== Submenus ===== */
-  const parents = document.querySelectorAll(".has-submenu > a");
+  // Handle submenus
+  const parentLinks = document.querySelectorAll(".has-submenu > a");
 
-  parents.forEach(link => {
+  parentLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
-
       const parent = link.parentElement;
       const isOpen = parent.classList.contains("open");
 
-      /* close ALL */
-      document.querySelectorAll(".has-submenu")
-        .forEach(p => p.classList.remove("open"));
+      // Close all submenus
+      document.querySelectorAll(".has-submenu").forEach(p => p.classList.remove("open"));
 
-      /* reopen only if previously closed */
-      if (!isOpen) {
-        parent.classList.add("open");
-      }
+      // Reopen only the clicked submenu if it was previously closed
+      if (!isOpen) parent.classList.add("open");
     });
   });
-
 });
 </script>
 
