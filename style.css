@@ -97,112 +97,84 @@ body::after {
 
 /* Hamburger button */
     
+/* Hamburger button - always top-right */
 .menu-toggle {
-    display: block;          /* always visible */
+    display: block;               /* always visible */
     position: fixed;
     top: 20px;
-    right: 20px;             /* right side */
-    background: rgba(39,174,96,0.85);  /* green */
-    backdrop-filter: blur(6px);
+    right: 20px;                  /* right side */
+    background: rgba(39,174,96,0.85); /* green */
     color: white;
     border: none;
     border-radius: 10px;
     font-size: 2rem;
     cursor: pointer;
     padding: 10px 14px;
-    z-index: 2000;           /* above all layers */
+    z-index: 2000;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
-/* ================= MENU LAYOUT ================= */
+
+/* Menu panel */
+.menu {
+    position: fixed;
+    top: 80px;
+    right: -400px;           /* offscreen initially */
+    width: 300px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 15px;
+    z-index: 1500;
+    transition: right 0.35s ease;
+}
+
+/* Opened state */
+.menu.open {
+    right: 20px;             /* slides in from right */
+}
+
+/* Menu items */
 .menu ul {
+    list-style: none;
     margin: 0;
     padding: 0;
-    list-style: none;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;   /* desktop stays one row */
-    gap: 40px;
-    z-index: 2;
+    flex-direction: column;  /* stack items vertically */
+    gap: 15px;
 }
 
-.menu ul li {
-    position: relative;
-    flex: 0 0 auto;
-    width: auto;
-    text-align: center;
-    margin: 0;
-}
-
-/* ================= MODERN MENU BUTTONS ================= */
 .menu > ul > li > a {
-    display: inline-block;
+    display: block;
     padding: 10px 18px;
-    background: linear-gradient(135deg, #079992, #38ada9);
+    background: linear-gradient(135deg,#079992,#38ada9);
     color: white;
     text-decoration: none;
     font-weight: 600;
     border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    text-align: center;
     transition: all 0.25s ease;
-    white-space: nowrap;
-    width: auto;
 }
+
 .menu > ul > li > a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 18px rgba(0,0,0,.18);
 }
 
-/* ================= SUBMENU ================= */
-.has-submenu {
-    position: relative;
-}
-
-/* ================= SUBMENU TEXT STYLE ================= */
-.submenu li a {
-    display: block;
-    padding: 12px 20px;
-    color: #079992;
-    background: transparent;
-    text-decoration: none;
-    font-weight: 500;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-}
-
-.submenu li a:hover {
-    background: #e8faf9;
-    color: #03857f;
-    padding-left: 26px;
-}
-
-/* ---------- DESKTOP DROPDOWN ---------- */
+/* Submenus stay inside the panel */
 .submenu {
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #dff4f3;
-    min-width: 200px;
-    padding: 8px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    display: none;
+    padding-left: 15px;
+    background: transparent;
+    box-shadow: none;
 }
 
-    .has-submenu.open .submenu {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+.has-submenu.open > .submenu {
+    display: block;
 }
-
 
 /* ================= HERO ================= */
 .hero {
