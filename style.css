@@ -1,3 +1,5 @@
+/* ================= BODY ================= */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -5,314 +7,263 @@ body {
     display: flex;
     flex-direction: column;
 
-    /* Enhanced soft gradient with more depth */
     background:
         radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
         radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
         linear-gradient(
             135deg,
-            #e0e5eb, /* slightly darker start */
+            #e0e5eb,
             #d4dce2,
             #c8d2d9,
-            #f5f7f8  /* keep the lightest at the end for contrast */
+            #f5f7f8
         );
 
     background-attachment: fixed;
+}
+
+/* sheen overlay */
 body::after {
     content: "";
     position: fixed;
     inset: 0;
-
     background:
         linear-gradient(
             120deg,
             transparent 15%,
-            rgba(255,255,255,0.35), /* stronger shimmer */
+            rgba(255,255,255,0.35),
             transparent 35%
         );
-
     pointer-events: none;
     z-index: -1;
 }
+
 /* ================= NAVBAR ================= */
 
 .navbar {
     position: relative;
     width: 100%;
     min-height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
     overflow: hidden;
     z-index: 1000;
 }
 
-/* ================= BACKGROUND (LOGO + GRADIENT) ================= */
-
+/* background gradient + logo */
 .navbar-bg {
     position: absolute;
     inset: 0;
 
     background:
-        linear-gradient(
-            90deg,
-            #bfc5c7,
-            #e6ecef,
-            #7fc9c5,
-            #cfe7e5
-        ),
+        linear-gradient(90deg,#bfc5c7,#e6ecef,#7fc9c5,#cfe7e5),
         url("logo.png");
 
     background-repeat: no-repeat;
-    background-position: center, center;
+    background-position: center;
     background-size: cover, contain;
 
     opacity: 0.85;
-    z-index: 0;
     filter: saturate(0.9) brightness(1.05);
 }
 
-/* Shine / metallic effect */
+/* metallic shine */
 .navbar::after {
     content: "";
     position: absolute;
     inset: 0;
-
     background:
         radial-gradient(circle at 30% 50%, rgba(255,255,255,0.5), transparent 60%),
         radial-gradient(circle at 70% 40%, rgba(255,255,255,0.3), transparent 60%);
-
     pointer-events: none;
-    z-index: 1;
 }
 
-/* ================= NAV CONTENT ================= */
+/* ================= HAMBURGER ================= */
 
-.nav-content {
-    position: relative;
-    z-index: 2;   /* sits ABOVE gradient */
-}
-
-/* Hamburger button */
 .menu-toggle {
-    display: block;
-    background: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+
     border: none;
+    border-radius: 10px;
+
     font-size: 2rem;
     cursor: pointer;
-    padding: 10px 20px;
-    z-index: 1100;
-}
-/* ================= MENU LAYOUT ================= */
-.menu ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;   /* desktop stays one row */
-    gap: 40px;
-    z-index: 2;
+    padding: 10px 14px;
+
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+/* ================= MENU PANEL ================= */
+
+.menu {
+    position: fixed;
+    top: 80px;
+    left: 20px;
+    z-index: 1500;
+    display: none;
+}
+
+.menu.open {
+    display: block;
+}
+
+.menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    gap: 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* menu items */
 .menu ul li {
     position: relative;
-    flex: 0 0 auto;
-    width: auto;
-    text-align: center;
-    margin: 0;
 }
 
-/* ================= MODERN MENU BUTTONS ================= */
+/* buttons */
 .menu > ul > li > a {
     display: inline-block;
     padding: 10px 18px;
-    background: linear-gradient(135deg, #079992, #38ada9);
+    background: linear-gradient(135deg,#079992,#38ada9);
     color: white;
     text-decoration: none;
     font-weight: 600;
     border-radius: 10px;
-    border: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    transition: all 0.25s ease;
-    white-space: nowrap;
-    width: auto;
+    transition: all .25s ease;
 }
+
 .menu > ul > li > a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 18px rgba(0,0,0,.18);
 }
 
 /* ================= SUBMENU ================= */
+
 .has-submenu {
     position: relative;
 }
 
-/* ================= SUBMENU TEXT STYLE ================= */
-.submenu li a {
-    display: block;
-    padding: 12px 20px;
-    color: #079992;
-    background: transparent;
-    text-decoration: none;
-    font-weight: 500;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-}
-
-.submenu li a:hover {
-    background: #e8faf9;
-    color: #03857f;
-    padding-left: 26px;
-}
-
-/* ---------- DESKTOP DROPDOWN ---------- */
 .submenu {
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
-    background: #ffffff;
+    background: #fff;
     border-radius: 12px;
     border: 1px solid #dff4f3;
     min-width: 200px;
     padding: 8px 0;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-    .has-submenu.open .submenu {
+.has-submenu.open .submenu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
 }
 
-/* Desktop hover only */
-@media (hover: hover) and (pointer: fine) {
-    .has-submenu:hover .submenu {
-        opacity: 1;
-        visibility: visible;
-        pointer-events: auto;
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #079992;
+    text-decoration: none;
+}
+
+.submenu li a:hover {
+    background: #e8faf9;
+    padding-left: 26px;
+}
+
+/* desktop hover */
+@media (hover:hover) and (pointer:fine){
+    .has-submenu:hover .submenu{
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
     }
 }
 
-/* ================= MOBILE VERSION ================= */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
 
     .menu {
-        display: none; /* hidden until toggled */
+        width: 90%;
+        left: 5%;
+        top: 70px;
+    }
+
+    .menu ul {
         flex-direction: column;
-        text-align: center;
-        width: 100%;
-        background: #ffffff;
         gap: 10px;
-        padding: 10px 0;
     }
 
-    .menu.open {
-        display: block;
-    }
-
-     .menu ul {
-        flex-direction: column;     /* ⭐ key fix */
-        align-items: stretch;
-        gap: 8px;
-        padding: 10px 15px;
-    }
-
-    .menu ul li {
-        width: 100%;
-    }
-
-    /* full-width buttons instead of floating ones */
     .menu > ul > li > a {
-        display: block;
-        width: 100%;
-        text-align: center;
+        display:block;
+        width:100%;
+        text-align:center;
     }
 
     .submenu {
         position: static;
-        transform: none;
-        display: none; /* hidden by default */
-        width: 100%;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        opacity: 1;
-        visibility: visible;
-        text-align: center;
+        transform:none;
+        display:none;
+        border:none;
+        box-shadow:none;
+        padding-left:15px;
     }
 
-    .has-submenu.open .submenu {
-        display: block; /* show submenu when open */
+    .has-submenu.open > .submenu {
+        display:block;
     }
-}
-..
-
-.submenu li > a:hover {
-    background: #e8faf9;
-    padding-left: 26px;
-    color: #03857f;
 }
 
 /* ================= HERO ================= */
+
 .hero {
     flex: 1;
     text-align: center;
     padding: 80px 20px 40px;
 }
 
-/* ================= MODERN BUTTON (LOGIN ETC) ================= */
+/* ================= BUTTONS ================= */
+
 a.btn-modern,
 button.btn-modern {
-    background: linear-gradient(135deg, #079992, #38ada9);
-    color: white;
-    padding: 14px 28px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    display: inline-block;
-    border: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    background: linear-gradient(135deg,#079992,#38ada9);
+    color:white;
+    padding:14px 28px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    border:none;
+    transition:.25s;
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
 }
+
 a.btn-modern:hover,
-button.btn-modern:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+button.btn-modern:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(0,0,0,.2);
 }
 
-/* ===== Input fields ===== */
-.input-field {
-    width: 100%;
-    max-width: 280px;
-    padding: 12px 15px;
-    margin: 10px 0;
-    border-radius: 12px;
-    border: 1px solid #cfeeee;
-    background: #ffffff;
-    font-size: 1rem;
-}
+/* ================= FOOTER ================= */
 
-/* Footer */
-footer {
-    text-align: center;
-    padding: 20px;
-    color: #079992;
-    font-weight: bold;
+footer{
+    text-align:center;
+    padding:20px;
+    color:#079992;
+    font-weight:bold;
 }
 
 /* Video Gallery */
