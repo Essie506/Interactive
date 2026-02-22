@@ -103,6 +103,7 @@ body::after {
     top: 20px;
     right: 20px;             /* right side */
     background: rgba(39,174,96,0.85);  /* green */
+    backdrop-filter: blur(6px);
     color: white;
     border: none;
     border-radius: 10px;
