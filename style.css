@@ -97,7 +97,7 @@ body::after {
 /* ================= MENU PANEL ================= */
 
 .menu {
-    position: relative;
+    position: fixed;
     top: 80px;
     left: 20px;
     z-index: 1500;
