@@ -96,8 +96,8 @@ body::after {
 
 /* ================= MENU PANEL ================= */
 
-.menu {
-    position: fixed;
+menu {
+    position: relative;
     top: 80px;
     left: 20px;
     z-index: 1500;
@@ -122,7 +122,7 @@ body::after {
 
 /* menu items */
 .menu ul li {
-    position: relative;
+    position: center;
 }
 
 /* buttons */
