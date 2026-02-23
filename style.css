@@ -122,7 +122,7 @@ menu {
 
 /* menu items */
 .menu ul li {
-    position: center;
+    position: relative;
 }
 
 /* buttons */
