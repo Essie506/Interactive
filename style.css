@@ -144,6 +144,7 @@ body::after {
     letter-spacing: 0.3px;
 
     transition: color 0.25s ease;
+    -webkit-font-smoothing: antialiased;
 }
 
 .menu > ul > li > a::after {
