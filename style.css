@@ -87,6 +87,7 @@ body::after {
     border: none;
     background: transparent;
     z-index: 2000;
+    }
 
     .menu-toggle span {
     display: block;
@@ -95,7 +96,6 @@ body::after {
     background: #079992;
     margin: 6px 0;
     transition: all 0.3s ease;
-}
 }
 .menu-toggle::before {
     content: "";
