@@ -269,6 +269,32 @@ body::after {
     padding: 80px 20px 40px;
 }
 
+.logo-wrapper {
+    padding: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
+}
+
+.logo-wrapper img {
+    width: 80px;
+    border-radius: 50%;
+    mask-image: radial-gradient(circle, black 75%, transparent 100%);
+}
+
+.logo {
+    filter:
+        drop-shadow(0 6px 18px rgba(0,0,0,0.15))
+        brightness(1.05)
+        saturate(0.95);
+
+    opacity: 0.92;
+}
+
+.logo {
+    mix-blend-mode: multiply;
+}
+
 /* ================= BUTTONS ================= */
 
 a.btn-modern,
