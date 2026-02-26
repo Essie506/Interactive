@@ -288,9 +288,10 @@ body::after {
         brightness(1.05)
         saturate(0.95);
         transition: all 0.3s ease;
-}
-
-    opacity: 0.92;
+       height: 90px;   /* increase this number */
+       width: auto;    /* keeps proportions correct */
+       display: block;
+       opacity: 0.92;
 }
 
 .logo {
