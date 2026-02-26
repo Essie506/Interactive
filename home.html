@@ -19,8 +19,11 @@
       </div>
   </nav>
 
-  <!-- Hamburger button (fixed) -->
-  <button class="menu-toggle">☰</button>
+ <button class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
 
   <!-- Menu panel -->
   <nav class="menu">
@@ -110,32 +113,42 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
 
-  // Open/close main menu
+  // Safety check
+  if (!menuToggle || !menu) return;
+
+  /* ================= MAIN MENU ================= */
+
   menuToggle.addEventListener("click", () => {
     menu.classList.toggle("open");
+    menuToggle.classList.toggle("active");
   });
 
-  // Handle submenus
+  /* ================= SUBMENUS ================= */
+
   const parentLinks = document.querySelectorAll(".has-submenu > a");
 
   parentLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
+
       const parent = link.parentElement;
       const isOpen = parent.classList.contains("open");
 
       // Close all submenus
-      document.querySelectorAll(".has-submenu").forEach(p => p.classList.remove("open"));
+      document
+        .querySelectorAll(".has-submenu")
+        .forEach(p => p.classList.remove("open"));
 
-      // Reopen only the clicked submenu if it was previously closed
-      if (!isOpen) parent.classList.add("open");
+      // Open clicked submenu
+      if (!isOpen) {
+        parent.classList.add("open");
+      }
     });
   });
+
 });
 </script>
-
-</body>
-</html>
