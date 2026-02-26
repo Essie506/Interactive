@@ -287,12 +287,19 @@ body::after {
         drop-shadow(0 6px 18px rgba(0,0,0,0.15))
         brightness(1.05)
         saturate(0.95);
+        transition: all 0.3s ease;
+}
 
     opacity: 0.92;
 }
 
 .logo {
-    mix-blend-mode: multiply;
+    mix-blend-mode: soft-light;
+}
+
+.logo:hover {
+    opacity: 1;
+    transform: scale(1.02);
 }
 
 /* ================= BUTTONS ================= */
