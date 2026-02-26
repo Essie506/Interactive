@@ -80,20 +80,30 @@ body::after {
     top: 20px;
     left: 20px;
 
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(6px);
-
-    border: none;
-    border-radius: 10px;
-
     font-size: 2rem;
     cursor: pointer;
     padding: 10px 14px;
 
+    border: none;
+    background: transparent;
     z-index: 2000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
+.menu-toggle::before {
+    content: "";
+    position: absolute;
+    inset: -8px;
 
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.35);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    z-index: -1;
+}
 /* ================= MENU PANEL ================= */
 
 .menu {
