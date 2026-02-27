@@ -299,6 +299,27 @@ body::after {
     mix-blend-mode: soft-light;
 }
 
+/* Background logo layer */
+.background-logo {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 80px;
+    pointer-events: none; /* prevents blocking clicks */
+    z-index: -1; /* sits behind everything */
+}
+
+/* Logo styling */
+.background-logo img {
+    width: 60vw;          /* BIG responsive size */
+    max-width: 900px;
+    opacity: 0.06;        /* subtle watermark look */
+    mix-blend-mode: soft-light;
+    filter: blur(2px) saturate(0.8);
+}
+
 .logo:hover {
     opacity: 1;
     transform: scale(1.02);
