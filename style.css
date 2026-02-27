@@ -289,7 +289,7 @@ body::after {
         brightness(1.05);
         saturate(0.95);
         transition: all 0.3s ease;
-       height: 800px;   /* increase this number */
+       height: 500px;   /* increase this number */
        width: auto;    /* keeps proportions correct */
        display: block;
        opacity: 0.92;
