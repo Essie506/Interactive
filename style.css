@@ -42,7 +42,7 @@ body::after {
     width: 100%;
     min-height: 90px;
     overflow: hidden;
-    z-index: 1000;
+    z-index: 1;
 }
 
 /* background gradient + logo */
@@ -267,6 +267,8 @@ body::after {
     flex: 1;
     text-align: center;
     padding: 80px 20px 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .logo-wrapper {
@@ -283,7 +285,6 @@ body::after {
 }
 
 .logo {
-    filter:
         filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
         brightness(1.05)
         saturate(0.95);
@@ -293,10 +294,7 @@ body::after {
        display: block;
        opacity: 0.92;
        margin: 0 auto;  
-}
-
-.logo {
-    mix-blend-mode: soft-light;
+       mix-blend-mode: soft-light;
 }
 
 /* Background logo layer */
@@ -308,7 +306,7 @@ body::after {
     align-items: center;
     padding-bottom: 80px;
     pointer-events: none; /* prevents blocking clicks */
-    z-index: -1; /* sits behind everything */
+    z-index: -0; /* sits behind everything */
 }
 
 /* Logo styling */
@@ -354,6 +352,8 @@ footer{
     padding:20px;
     color:#079992;
     font-weight:bold;
+    position: relative;
+    z-index: 1;
 }
 
 /* Video Gallery */
