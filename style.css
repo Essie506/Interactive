@@ -305,7 +305,7 @@ body::after {
     inset: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     padding-bottom: 80px;
     pointer-events: none; /* prevents blocking clicks */
     z-index: -1; /* sits behind everything */
@@ -317,6 +317,7 @@ body::after {
     max-width: 900px;
     opacity: 0.06;        /* subtle watermark look */
     mix-blend-mode: soft-light;
+    object-fit; contain;
     filter: blur(2px) saturate(0.8);
 }
 
