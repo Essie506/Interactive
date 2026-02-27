@@ -271,28 +271,32 @@ body::after {
     z-index: 1;
 }
 
-/* Background logo layer */
-.background-logo {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 80px;
-    pointer-events: none; /* prevents blocking clicks */
-    z-index: -0; /* sits behind everything */
+
+.logo-wrapper {
+    padding: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(12px);
 }
 
-/* Logo styling */
-.background-logo img {
-    width: 60vw;          /* BIG responsive size */
-    max-width: 900px;
-    opacity: 0.06;        /* subtle watermark look */
-    mix-blend-mode: soft-light;
-    object-fit; contain;
-    filter: blur(2px) saturate(0.8);
+.logo-wrapper img {
+    width: 80px;
+    border-radius: 50%;
+    mask-image: radial-gradient(circle, black 75%, transparent 100%);
 }
 
+.logo {
+        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+        brightness(1.05)
+        saturate(0.95);
+        transition: all 0.3s ease;
+       height: 800px;   /* increase this number */
+       width: auto;    /* keeps proportions correct */
+       display: block;
+       opacity: 0.92;
+       margin: 0 auto;  
+       mix-blend-mode: soft-light;
+}
 .logo:hover {
     opacity: 1;
     transform: scale(1.02);
