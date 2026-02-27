@@ -292,6 +292,7 @@ body::after {
        width: auto;    /* keeps proportions correct */
        display: block;
        opacity: 0.92;
+       margin: 0 auto;  
 }
 
 .logo {
