@@ -269,36 +269,43 @@ body::after {
     padding: 80px 20px 40px;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
-.logo-wrapper {
-    padding: 12px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    backdrop-filter: blur(12px);
-}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
 
-.logo-wrapper img {
-    width: 80px;
-    border-radius: 50%;
-    mask-image: radial-gradient(circle, black 75%, transparent 100%);
-}
+    background-image: url("logo.png");
+    background-repeat: no-repeat;
+    background-position: center 20%;
+    background-size: 700px;
 
-.logo {
-        filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+    opacity: 0.18;
+
+    /* soft blending */
+    filter:
+        blur(2px)
+        saturate(0.9)
         brightness(1.05);
-        saturate(0.95);
-        transition: all 0.3s ease;
-       height: 500px;   /* increase this number */
-       width: auto;    /* keeps proportions correct */
-       display: block;
-       opacity: 0.92;
-       margin: 0 auto;  
-       mix-blend-mode: soft-light;
+
+    mix-blend-mode: soft-light;
+
+    z-index: -1;
 }
-.logo:hover {
-    opacity: 1;
-    transform: scale(1.02);
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(circle,
+            transparent 45%,
+            rgba(255,255,255,0.6) 85%);
+
+    z-index: -1;
 }
 
 /* ================= BUTTONS ================= */
