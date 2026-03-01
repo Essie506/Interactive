@@ -35,6 +35,18 @@ body::after {
     z-index: -1;
 }
 
+@media (max-width: 768px) {
+    body::before {
+        background-size: 120vw;
+        background-position: left -200px center;
+        opacity: 0.06;
+    }
+    }
+
+body::before {
+    animation: slowDrift 40s ease-in-out infinite;
+}
+
 /* ================= NAVBAR ================= */
 
 .navbar {
@@ -265,8 +277,12 @@ body::after {
 
 .hero {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   /* ⭐ vertical centre */
+    align-items: center;       /* ⭐ horizontal centre */
     text-align: center;
-    padding: 80px 20px 40px;
+    padding: 40px 20px;
     position: relative;
     z-index: 1;
     overflow: hidden;
@@ -310,23 +326,38 @@ body::after {
 
 /* ================= BUTTONS ================= */
 
-a.btn-modern,
-button.btn-modern {
-    background: linear-gradient(135deg,#079992,#38ada9);
-    color:white;
-    padding:14px 28px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    border:none;
-    transition:.25s;
-    box-shadow:0 6px 18px rgba(0,0,0,.15);
+/* ================= LOGIN CARD ================= */
+
+.btn-modern {
+    background: rgba(255,255,255,0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-radius: 16px;
+    padding: 30px;
+    display: inline-block;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.12),
+        inset 0 1px rgba(255,255,255,0.6);
 }
 
-a.btn-modern:hover,
-button.btn-modern:hover{
-    transform:translateY(-2px);
-    box-shadow:0 10px 24px rgba(0,0,0,.2);
+/* actual button inside */
+.btn-modern button {
+    background: linear-gradient(135deg,#079992,#38ada9);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 10px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .25s;
+    box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+
+.btn-modern button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.2);
 }
 
 .login-box {
