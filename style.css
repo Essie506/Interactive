@@ -266,9 +266,10 @@ body::after {
     flex: 1;
     display: flex
     flex-direction: column;
-    justify-content: center;   /* ⭐ vertical centre */
+    justify-content: flex-end;   /* ⭐ vertical centre */
     align-items: center;       /* ⭐ horizontal centre */
     text-align: center;
+    padding-bottom: 18vh; 
     padding: 80px 20px 40px;
     position: relative;
     z-index: 1;
@@ -287,7 +288,7 @@ body::after {
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
-    opacity: 0.06;;
+    opacity: 0.12;
     pointer-events: none;
     z-index: -1;
 
