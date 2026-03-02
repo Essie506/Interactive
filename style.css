@@ -321,6 +321,29 @@ body::after {
     letter-spacing: 1px;
 }
 
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 40px 20px;
+    }
+
+    .hero::before {
+        background-size: 110vw;   /* scale logo for mobile */
+        background-position: center 35%;
+        opacity: 0.12;            /* slightly lighter */
+    }
+
+    .hero h1 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .btn-modern {
+        padding: 24px;
+    }
+
+}
+
 /* ================= BUTTONS ================= */
 
 /* ================= LOGIN CARD ================= */
