@@ -332,8 +332,10 @@ body::after {
 
 @media (max-width: 768px) {
 
-    .hero {
-        padding: 40px 20px;
+      .hero {
+    justify-content: flex-end;
+    padding: 0 20px 20vh;
+          
     }
 
     .hero::before {
