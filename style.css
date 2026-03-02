@@ -283,7 +283,7 @@ body::after {
     background-image: url("logo.png");
     background-repeat: no-repeat;
       /* 👇 LEFT alignment */
-    background-position: left -120px center;
+    background-position: left -100px center;
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
@@ -298,6 +298,7 @@ body::after {
         brightness(1.05);
 
     mix-blend-mode: soft-light;
+    animation: slowDrift 18s ease-in-out infinite;
 }
 
  /* soft edges */
@@ -319,6 +320,12 @@ body::after {
     position: relative;
     z-index: 2;
     letter-spacing: 1px;
+}
+
+@keyframes slowDrift {
+    0%   { transform: translateX(0px); }
+    50%  { transform: translateX(20px); }
+    100% { transform: translateX(0px); }
 }
 
 @media (max-width: 768px) {
