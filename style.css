@@ -283,11 +283,11 @@ body::after {
     background-image: url("logo.png");
     background-repeat: no-repeat;
       /* 👇 LEFT alignment */
-    background-position: left -80px center;
+    background-position: left -40px center;
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
-    opacity: 0.07;;
+    opacity: 0.06;;
     pointer-events: none;
     z-index: -1;
 
