@@ -360,38 +360,72 @@ body::after {
 /* ================= LOGIN CARD ================= */
 
 .btn-modern {
-    background: rgba(255,255,255,0.55);
+    background: #e8faf9;   /* soft green background */
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-
-    border-radius: 16px;
-    padding: 30px;
+    border-radius: 30px;   /* more rounded */
+    padding: 40px 35px;
     display: inline-block;
 
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.12),
-        inset 0 1px rgba(255,255,255,0.6);
-
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     margin-top: auto;   /* pushes it downward */
     margin-bottom: 12vh;
 }
 
-/* actual button inside */
+.btn-modern .input-field {
+    width: 100%;
+    padding: 14px 18px;
+    margin: 10px 0;
+
+    border-radius: 25px;
+    border: 2px solid #079992;
+
+    outline: none;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.btn-modern .input-field:focus {
+    border-color: #38ada9;
+    box-shadow: 0 0 0 3px rgba(7,153,146,0.15);
+}
+
 .btn-modern button {
+    width: 100%;
     background: linear-gradient(135deg,#079992,#38ada9);
     color: white;
-    padding: 14px 28px;
-    border-radius: 10px;
+
+    padding: 14px;
+    margin-top: 15px;
+
+    border-radius: 25px;
     border: none;
     font-weight: 600;
+    letter-spacing: 0.5px;
     cursor: pointer;
-    transition: .25s;
-    box-shadow: 0 6px 18px rgba(0,0,0,.15);
+
+    transition: 0.25s ease;
+    box-shadow: 0 8px 20px rgba(7,153,146,0.3);
 }
 
 .btn-modern button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(0,0,0,.2);
+    box-shadow: 0 12px 28px rgba(7,153,146,0.4);
+}
+
+.links {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.links a {
+    color: #079992;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.links a:hover {
+    text-decoration: underline;
 }
 
 /* ================= FOOTER ================= */
