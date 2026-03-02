@@ -40,12 +40,16 @@ body::after {
         background-size: 120vw;
         background-position: left -200px center;
         opacity: 0.06;
+        animation: slowDrift 40s ease-in-out infinite;
     }
     }
 
-body::before {
-    animation: slowDrift 40s ease-in-out infinite;
+@keyframes slowDrift {
+    0%   { transform: translateX(0px); }
+    50%  { transform: translateX(20px); }
+    100% { transform: translateX(0px); }
 }
+
 
 /* ================= NAVBAR ================= */
 
