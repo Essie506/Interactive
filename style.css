@@ -264,9 +264,9 @@ body::after {
 
 .hero {
     flex: 1;
-    display: flex
+    display: flex;
     flex-direction: column;
-    justify-content: flex-end;   /* ⭐ vertical centre */
+    justify-content: center;   /* ⭐ vertical centre */
     align-items: center;       /* ⭐ horizontal centre */
     text-align: center;
     padding-bottom: 18vh; 
@@ -368,6 +368,9 @@ body::after {
     box-shadow:
         0 10px 30px rgba(0,0,0,0.12),
         inset 0 1px rgba(255,255,255,0.6);
+
+    margin-top: auto;   /* pushes it downward */
+    margin-bottom: 12vh;
 }
 
 /* actual button inside */
