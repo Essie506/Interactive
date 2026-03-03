@@ -360,7 +360,6 @@ body::after {
 
 .btn-modern {
     background: #e8faf9;   /* soft green background */
-    backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     border-radius: 30px;   /* more rounded */
     padding: 40px 35px;
