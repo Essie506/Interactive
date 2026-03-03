@@ -339,7 +339,7 @@ body::after {
 
     .hero::before {
         background-size: 110vw;   /* scale logo for mobile */
-        background-position: flex-start 35%;
+        background-position: flex-start;
         opacity: 0.12;            /* slightly lighter */
     }
 
@@ -382,8 +382,8 @@ body::after {
 }
 
 .input-field {
-    width: 75%;
-    padding: 14px 28px;
+    width: 100%;
+    padding: 14px 20px;
     margin: 10px 0;
 
     border-radius: 25px;
@@ -399,7 +399,7 @@ body::after {
     box-shadow: 0 0 0 3px rgba(7,153,146,0.15);
 }
 
-.btn-modern button:hover {
+.btn-modern:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(7,153,146,0.4);
 }
