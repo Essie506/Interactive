@@ -374,7 +374,7 @@ body::after {
 
 .btn-modern .input-field {
     width: 100%;
-    padding: 14px 18px;
+    padding: 14px 28px;
     margin: 10px 0;
 
     border-radius: 25px;
@@ -393,7 +393,7 @@ body::after {
 .btn-modern button {
     width: 100%;
     max-width: 280px;      /* stops it getting too chunky */
-    padding: 14px 20px;
+    padding: 7px 10px;
 
     background: linear-gradient(135deg,#079992,#38ada9);
     color: white;
