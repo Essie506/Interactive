@@ -268,8 +268,7 @@ body::after {
     flex-direction: column;
     justify-content: center;   /* ⭐ vertical centre */
     align-items: center;       /* ⭐ horizontal centre */
-    text-align: center;
-    padding-bottom: 18vh; 
+    text-align: center;    
     padding: 80px 20px 40px;
     position: relative;
     z-index: 1;
@@ -365,7 +364,7 @@ body::after {
     -webkit-backdrop-filter: blur(18px);
     border-radius: 30px;   /* more rounded */
     padding: 40px 35px;
-    display: inline-block;
+    display: flex;
 
     box-shadow: 0 15px 35px rgba(0,0,0,0.12);
     margin-top: auto;   /* pushes it downward */
