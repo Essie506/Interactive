@@ -349,7 +349,9 @@ body::after {
     }
 
     .btn-modern {
-        padding: 20px;
+        width: 100%;
+        max-width: 140px;      /* stops it getting too chunky */
+        padding: 14px 28px;
     }
 
 }
