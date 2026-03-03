@@ -381,7 +381,7 @@ body::after {
     display: block;
 }
 
-.btn-modern .input-field {
+.input-field {
     width: 100%;
     padding: 14px 28px;
     margin: 10px 0;
@@ -394,7 +394,7 @@ body::after {
     transition: 0.25s ease;
 }
 
-.btn-modern .input-field:focus {
+.input-field:focus {
     border-color: #38ada9;
     box-shadow: 0 0 0 3px rgba(7,153,146,0.15);
 }
@@ -402,21 +402,6 @@ body::after {
 .btn-modern button:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(7,153,146,0.4);
-}
-
-.links {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.links a {
-    color: #079992;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.links a:hover {
-    text-decoration: underline;
 }
 
 /* ================= FOOTER ================= */
