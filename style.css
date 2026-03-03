@@ -373,6 +373,7 @@ body::after {
     font-weight: 600;
     letter-spacing: 0.5px;
     cursor: pointer;
+    text-decoration: none;
 
     transition: 0.25s ease;
     box-shadow: 0 8px 20px rgba(7,153,146,0.3);
@@ -381,7 +382,6 @@ body::after {
     display: block;
 }
 
-.btn-modern,
 .btn-modern:visited,
 .btn-modern:hover,
 .btn-modern:active {
