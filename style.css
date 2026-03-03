@@ -381,6 +381,13 @@ body::after {
     display: block;
 }
 
+.btn-modern,
+.btn-modern:visited,
+.btn-modern:hover,
+.btn-modern:active {
+    text-decoration: none;
+}
+
 .input-field {
     width: 100%;
     max-width: 280px;
