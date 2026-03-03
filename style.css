@@ -361,8 +361,8 @@ body::after {
 
 .btn-modern {
     width: 100%;
-    max-width: 140px;      /* stops it getting too chunky */
-    padding: 14px 28px;
+    max-width: 70px;      /* stops it getting too chunky */
+    padding: 7px 10px;
 
     background: linear-gradient(135deg,#079992,#38ada9);
     color: white;
