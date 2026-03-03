@@ -412,7 +412,7 @@ body::after {
     box-shadow: 0 12px 28px rgba(7,153,146,0.4);
 }
 
-.links{ 
+.links { 
      text-align:center;
     color:#079992;
     position: relative;
@@ -422,7 +422,7 @@ body::after {
 
 /* ================= FOOTER ================= */
 
-footer{
+footer {
     text-align:center;
     padding:20px;
     color:#079992;
