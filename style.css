@@ -361,7 +361,7 @@ body::after {
 
 .btn-modern {
     width: 100%;
-    max-width: 100px;      /* stops it getting too chunky */
+    max-width: 180px;      /* stops it getting too chunky */
     padding: 14px 21px;
 
     background: linear-gradient(135deg,#079992,#38ada9);
