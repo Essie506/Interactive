@@ -378,7 +378,7 @@ body::after {
     transition: 0.25s ease;
     box-shadow: 0 8px 20px rgba(7,153,146,0.3);
 
-    margin: 20px auto 0;   /* centers it */
+    margin: 20px auto 70;   /* centers it */
     display: block;
 }
 
@@ -421,7 +421,6 @@ footer{
     font-weight:bold;
     position: relative;
     z-index: 1;
-    margin-top: 60px;
 }
 
 /* Video Gallery */
