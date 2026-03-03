@@ -349,9 +349,7 @@ body::after {
     }
 
     .btn-modern {
-        width: 100%;
-        max-width: 140px;      /* stops it getting too chunky */
-        padding: 14px 28px;
+        padding: 20px
     }
 
 }
@@ -385,6 +383,7 @@ body::after {
 
 .input-field {
     width: 100%;
+    max-width: 350px
     padding: 14px 20px;
     margin: 10px 0;
 
