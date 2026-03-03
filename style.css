@@ -388,28 +388,6 @@ body::after {
     box-shadow: 0 0 0 3px rgba(7,153,146,0.15);
 }
 
-.btn-modern button {
-    width: 100%;
-    max-width: 70px;      /* stops it getting too chunky */
-    padding: 7px 10px;
-
-    background: linear-gradient(135deg,#079992,#38ada9);
-    color: white;
-
-    border-radius: 50px;   /* makes it a proper pill */
-    border: none;
-
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    cursor: pointer;
-
-    transition: 0.25s ease;
-    box-shadow: 0 8px 20px rgba(7,153,146,0.3);
-
-    margin: 20px auto 0;   /* centers it */
-    display: block;
-}
-
 .btn-modern button:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 28px rgba(7,153,146,0.4);
