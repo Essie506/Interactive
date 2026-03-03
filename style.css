@@ -421,6 +421,7 @@ footer{
     font-weight:bold;
     position: relative;
     z-index: 1;
+    margin-top: 60px;
 }
 
 /* Video Gallery */
