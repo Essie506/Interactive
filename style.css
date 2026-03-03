@@ -383,9 +383,9 @@ body::after {
 
 .input-field {
     width: 100%;
-    max-width: 140px
+    max-width: 210px
     padding: 14px 28px;
-    margin: 10px 10px;
+    margin: 10px 0px;
 
     border-radius: 25px;
     border: 2px solid #079992;
