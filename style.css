@@ -358,16 +358,27 @@ body::after {
 
 /* ================= LOGIN CARD ================= */
 
-.btn-modern {
-    background: #e8faf9;   /* soft green background */
-    -webkit-backdrop-filter: blur(18px);
-    border-radius: 30px;   /* more rounded */
-    padding: 40px 35px;
-    display: flex;
 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
-    margin-top: auto;   /* pushes it downward */
-    margin-bottom: 12vh;
+.btn-modern button {
+    width: 100%;
+    max-width: 70px;      /* stops it getting too chunky */
+    padding: 7px 10px;
+
+    background: linear-gradient(135deg,#079992,#38ada9);
+    color: white;
+
+    border-radius: 50px;   /* makes it a proper pill */
+    border: none;
+
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+
+    transition: 0.25s ease;
+    box-shadow: 0 8px 20px rgba(7,153,146,0.3);
+
+    margin: 20px auto 0;   /* centers it */
+    display: block;
 }
 
 .btn-modern .input-field {
