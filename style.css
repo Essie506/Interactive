@@ -330,11 +330,7 @@ body::after {
 }
 
 @media (max-width: 768px) {
-
-    body {
-        background-position: top center;
-    }
-
+    
     .hero {
     justify-content: flex-end;
     padding: 0 20px 20vh;
@@ -343,7 +339,7 @@ body::after {
 
     .hero::before {
         background-size: 110vw;   /* scale logo for mobile */
-        background-position: top-center;
+        background-position: top center;
         opacity: 0.12;            /* slightly lighter */
     }
 
