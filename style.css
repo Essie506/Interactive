@@ -340,7 +340,7 @@ body::after {
 
     .hero::before {
         background-size: 130vw;   /* scale logo for mobile */
-        background-position: top center;
+        background-position: center;
         opacity: 0.50;            /* slightly lighter */
     }
 
