@@ -516,7 +516,7 @@ footer {
     .category-card {
         grid-template-columns: repeat(2, 1fr);
         width: 100%;
-        max-width: 90px;
+        max-width: 50px;
         
     }
 }
