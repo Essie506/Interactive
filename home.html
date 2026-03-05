@@ -1,117 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Interactive Fitness - Home</title>
+<main class="hero">
+  <h1>Welcome to Interactive Fitness!</h1>
+  <p>Track your workouts, connect with trainers, and achieve your goals.</p>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
+  <a href="browse-workouts.html" class="btn-modern">View Workouts</a>
 
-<body>
-  <!-- Navbar background / logo -->
-  <nav class="navbar">
-      <div class="navbar-bg"></div>
-      <div class="nav-content">
-          <!-- logo or brand text -->
-      </div>
-  </nav>
+  <h2>Browse by Category</h2>
+  <div class="category-icons">
+    <a href="yoga.html" class="category-card">
+      <i class="fa-solid fa-spa"></i>
+      <p>Yoga</p>
+    </a>
 
- <button class="menu-toggle" id="menuToggle">
-    <span></span>
-    <span></span>
-    <span></span>
-</button>
+    <a href="cycling.html" class="category-card">
+      <i class="fa-solid fa-bicycle"></i>
+      <p>Cycling</p>
+    </a>
 
-  <!-- Menu panel -->
-  <nav class="menu">
-    <ul>
-      <li><a href="home.html" class="menu-link-modern">Home</a></li>
+    <a href="running.html" class="category-card">
+      <i class="fa-solid fa-person-running"></i>
+      <p>Running</p>
+    </a>
 
-      <li class="has-submenu">
-        <a href="#" class="menu-link-modern">Profile</a>
-        <ul class="submenu">
-          <li><a href="view-profile.html">View Profile</a></li>
-          <li><a href="edit-profile.html">Edit Profile</a></li>
-          <li><a href="upload-images.html">Upload Images</a></li>
-        </ul>
-      </li>
+    <a href="walking.html" class="category-card">
+      <i class="fa-solid fa-person-walking"></i>
+      <p>Walking</p>
+    </a>
 
-      <li class="has-submenu">
-        <a href="#" class="menu-link-modern">Workouts</a>
-        <ul class="submenu">
-          <li><a href="browse-workouts.html">Browse Workouts</a></li>
-          <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
-          <li><a href="trending.html">Trending</a></li>
-        </ul>
-      </li>
-
-      <li class="has-submenu">
-        <a href="#" class="menu-link-modern">Gyms & Studios</a>
-        <ul class="submenu">
-          <li><a href="local-gyms.html">Local Gyms</a></li>
-          <li><a href="studios.html">Studios</a></li>
-          <li><a href="online-facilities.html">Online Facilities</a></li>
-        </ul>
-      </li>
-
-      <li class="has-submenu">
-        <a href="#" class="menu-link-modern">Trainers</a>
-        <ul class="submenu">
-          <li><a href="find-trainers.html">Find Trainers</a></li>
-          <li><a href="top-rated.html">Top Rated</a></li>
-          <li><a href="specialties.html">Specialties</a></li>
-        </ul>
-      </li>
-
-      <li><a href="./index.html" class="menu-link-modern">Logout</a></li>
-    </ul>
-  </nav>
-
-<footer>
-  © 2025 Interactive Fitness — All Rights Reserved
-</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const menuToggle = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-
-  // Safety check
-  if (!menuToggle || !menu) return;
-
-  /* ================= MAIN MENU ================= */
-
-  menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
-    menuToggle.classList.toggle("active");
-  });
-
-  /* ================= SUBMENUS ================= */
-
-  const parentLinks = document.querySelectorAll(".has-submenu > a");
-
-  parentLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const parent = link.parentElement;
-      const isOpen = parent.classList.contains("open");
-
-      // Close all submenus
-      document
-        .querySelectorAll(".has-submenu")
-        .forEach(p => p.classList.remove("open"));
-
-      // Open clicked submenu
-      if (!isOpen) {
-        parent.classList.add("open");
-      }
-    });
-  });
-
-});
-</script>
+    <a href="hiit.html" class="category-card">
+      <i class="fa-solid fa-bolt"></i>
+      <p>HIIT</p>
+    </a>
+  </div>
+</main>
