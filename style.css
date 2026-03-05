@@ -330,6 +330,14 @@ body::after {
     100% { transform: translateX(0px); }
 }
 
+    .hero-subtext {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #555;
+    max-width: 600px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
     
     .hero {
@@ -352,14 +360,6 @@ body::after {
     .btn-modern {
         padding: 24px
     }
-
-    .hero-subtext {
-    margin-top: 40px;
-    font-size: 18px;
-    color: #555;
-    max-width: 600px;
-    text-align: center;
-}
 }
 
 /* ================= BUTTONS ================= */
