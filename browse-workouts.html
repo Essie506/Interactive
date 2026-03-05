@@ -1,70 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Browse Workouts</title>
-<link rel="stylesheet" href="style.css">
-
-<style>
-.video-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browse Workouts</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Optional: simple video gallery layout */
+    .video-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .video-gallery iframe {
+      width: 100%;
+      max-width: 560px;
+      height: 315px;
+    }
   </style>
-  </head>
-<main>
+</head>
 <body>
-  
-<div class="video-card">
-.video-card {
-  width: 250px;
-  text-align: center;
-}
+  <header class="navbar home-nav"></header>
+  <main>
+    <h1>Browse Workouts</h1>
+    
+    <p>Check out some popular workouts from YouTube:</p>
 
-.video-card img {
-  width: 100%;
-  border-radius: 10px;
-}
+   <div class="video-gallery">
+  <div class="video-card">
+    <a href="payments.html?video=1">
+      <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="Workout 1" />
+      <div class="play-overlay">▶ Unlock Workout</div>
+    </a>
+    <p>Workout 1 - Basic</p>
+  </div>
 
-.play-overlay {
-  margin-top: 8px;
-  font-weight: bold;
-}
-
-<header class="navbar home-nav"></header>
-
-<h1>Browse Workouts</h1>
-
-<p>Select a workout to unlock:</p>
-
-<div class="video-gallery">
-<a href="payments.html?video=1">
-<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="Workout 1">
-<div class="play-overlay">▶ Unlock Workout</div>
-</a>
-<p>Workout 1 - Basic</p>
+  <div class="video-card">
+    <a href="payments.html?video=2">
+      <img src="https://img.youtube.com/vi/VIDEO_ID2/0.jpg" alt="Workout 2" />
+      <div class="play-overlay">▶ Unlock Workout</div>
+    </a>
+    <p>Workout 2 - Premium</p>
+  </div>
 </div>
 
-<div class="video-card">
-<a href="payments.html?video=2">
-<img src="https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg" alt="Workout 2">
-<div class="play-overlay">▶ Unlock Workout</div>
-</a>
-<p>Workout 2 - Premium</p>
-</div>
-
-</div>
-
-<br>
-<a href="home.html">Back to Home</a>
-
-</main>
-
-<footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
-
+    <a href="home.html">Back to Home</a>
+  </main>
+  <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
 </body>
 </html>
