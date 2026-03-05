@@ -504,14 +504,19 @@ footer {
 }
 /* Tablet */
 @media (max-width: 768px) {
-    .category-grid {
+    .category-card {
         grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+        max-width: 90px;
     }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
-    .category-grid {
+    .category-card {
         grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        max-width: 90px;
+        
     }
 }
