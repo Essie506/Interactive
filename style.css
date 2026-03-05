@@ -269,7 +269,7 @@ body::after {
     justify-content: center;   /* ⭐ vertical centre */
     align-items: center;       /* ⭐ horizontal centre */
     text-align: center;    
-    padding: 80px 20px 40px;
+    padding: 80px 20px 80px;
     position: relative;
     z-index: 1;
     overflow: hidden;
