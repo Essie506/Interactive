@@ -477,7 +477,7 @@ footer {
 /* Category Icons */
 .category-icons {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 25px;
     max-width: 800px;
     margin: 30px auto;
@@ -505,7 +505,8 @@ footer {
 /* Tablet */
 @media (max-width: 768px) {
     .category-card {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
         width: 100%;
         max-width: 45px;
         
