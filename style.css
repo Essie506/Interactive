@@ -321,7 +321,7 @@ body::after {
     position: relative;
     z-index: 2;
     letter-spacing: 1px;
-    margin-bottom: 60px;   /* space above login */
+    margin-bottom: 40px;   /* space above login */
 }
 
 @keyframes slowDrift {
