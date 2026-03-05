@@ -353,6 +353,13 @@ body::after {
         padding: 24px
     }
 
+    .hero-subtext {
+    margin-top: 40px;
+    font-size: 18px;
+    color: #555;
+    max-width: 600px;
+    text-align: center;
+}
 }
 
 /* ================= BUTTONS ================= */
