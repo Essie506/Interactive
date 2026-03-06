@@ -487,6 +487,7 @@ footer {
 /* Category Card */
 .category-card {
     text-align: center;
+    flex-direction: column;  
     text-decoration: none;
     color: black;
     display: flex;
