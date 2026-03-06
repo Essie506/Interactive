@@ -503,7 +503,7 @@ footer {
     margin-bottom: 10px;
      width: 80px;
     height: 80px;
-    display: flex;
+    display: inline block;
     align-items: center;
     justify-content: center;
  }
