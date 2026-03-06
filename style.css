@@ -559,6 +559,7 @@ footer {
     width: 240px;
     height: 240px;
     margin: 40px auto;
+    animation: spinWheel 30s linear infinite;
 }
 
 .category-card {
@@ -566,8 +567,11 @@ footer {
     top: 50%;
     left: 50%;
     transform-origin: 0 0;
-    margin-top: 6px;
     font-size: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Position icons around circle */
@@ -585,7 +589,7 @@ footer {
 }
 
 }
-    .category-wheel {
+    .category-icons {
     animation: spinWheel 30s linear infinite;
 }
 
@@ -594,4 +598,3 @@ footer {
     to { transform: rotate(360deg); }
 }
 
-}
