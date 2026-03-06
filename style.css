@@ -496,7 +496,7 @@ footer {
     align-items: center;
 
     padding: 20px;
-    border-radius: 16px;
+    border-radius: 50px;
 
     background: rgba(255,255,255,0.6);
     backdrop-filter: blur(8px);
