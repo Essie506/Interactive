@@ -590,6 +590,7 @@ footer {
 }
 .category-icons {
     animation: spinWheel 30s linear infinite;
+}
     .category-icons::after {
     content: "";
     position: absolute;
