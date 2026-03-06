@@ -511,7 +511,7 @@ footer {
         max-width: 45px;
         
         @media (max-width: 480px) {
-    .category-grid {
+    .category-card {
         grid-template-columns: repeat(2, 1fr);
     }
 }
