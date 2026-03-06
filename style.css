@@ -518,6 +518,10 @@ footer {
     justify-content: center;
  }
 
+.category-card:active {
+    transform: scale(0.95);
+}
+
     
 /* Hover effect */
 .category-card:hover {
