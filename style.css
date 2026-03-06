@@ -499,12 +499,16 @@ footer {
     font-size: 40px;
    background: #f4f4f4;
     color: black;
-    padding: 12px;
     border-radius: 50%;
     margin-bottom: 10px;
-    display: inline block
-}
+     width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
 
+    
 /* Hover effect */
 .category-card:hover {
     transform: translateY(-6px);
