@@ -558,7 +558,9 @@ footer {
     position: relative;
     width: 240px;
     height: 240px;
-    margin: 40px auto;
+    margin: 20px auto;
+    animation: spinWheel 30s linear infinite;
+    transform-origin: center;
     animation: spinWheel 30s linear infinite;
 }
 
@@ -568,7 +570,7 @@ footer {
     left: 50%;
     transform-origin: center;
     font-size: 16px;
-    animation: none;
+    animation:  keepUpright 30s linear infinite;
 
     display: flex;
     flex-direction: column;
@@ -604,10 +606,14 @@ footer {
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
-
+    
 @keyframes spinWheel {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
-}
 
+@keyframes keepUpright {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
+}
