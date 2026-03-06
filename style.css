@@ -568,6 +568,7 @@ footer {
     left: 50%;
     transform-origin: center;
     font-size: 16px;
+    animation: none;
 
     display: flex;
     flex-direction: column;
@@ -589,7 +590,7 @@ footer {
 }
 
 }
-    .category-icons {
+.category-icons {
     animation: spinWheel 30s linear infinite;
 }
 
