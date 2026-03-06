@@ -488,7 +488,7 @@ footer {
 .category-card {
     text-align: center;
     text-decoration: none;
-    color: #222;
+    color: black;
     font-size: 18px;
 
     display: flex;
@@ -507,13 +507,13 @@ footer {
 /* Icon */
 .category-card i {
     font-size: 40px;
-    background: linear-gradient(135deg,#079992,#38ada9);
+   background: #f4f4f4;
     color: white;
-
-    padding: 20px;
+    background: #f4f4f4;
+    padding: 25px;
     border-radius: 50%;
 
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 /* Hover effect */
