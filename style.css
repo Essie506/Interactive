@@ -481,7 +481,7 @@ footer {
     gap: 25px;
     max-width: 800px;
     margin: 30px auto;
-    padding: 0 12x;
+    padding: 0 12px;
 }
 
 /* Category Card */
@@ -606,6 +606,7 @@ footer {
     backdrop-filter: blur(8px);
     box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
+}
     
 @keyframes spinWheel {
     from { transform: rotate(0deg); }
@@ -616,4 +617,4 @@ footer {
     from { transform: rotate(0deg); }
     to   { transform: rotate(-360deg); }
 }
-}
+
