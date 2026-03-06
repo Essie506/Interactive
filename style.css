@@ -588,10 +588,21 @@ footer {
     width: 60px;
     height: 60px;
 }
-
-}
 .category-icons {
     animation: spinWheel 30s linear infinite;
+    .category-icons::after {
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
 }
 
 @keyframes spinWheel {
