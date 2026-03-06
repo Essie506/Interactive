@@ -530,7 +530,7 @@ footer {
 @media (max-width: 480px) {
 
 .category-icons {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 14px;           /* smaller spacing between icons */
     margin: 20px auto;
 }
