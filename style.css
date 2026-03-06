@@ -531,16 +531,19 @@ footer {
 
 .category-icons {
     grid-template-columns: repeat(2, 1fr);
+    gap: 14px;           /* smaller spacing between icons */
+    margin: 20px auto;
 }
 
 .category-card {
-    padding: 16px;
+     margin-top: 6px;
     font-size: 16px;
 }
 
 .category-card i {
     font-size: 32px;
-    padding: 16px;
+    width: 60px;         /* smaller circle */
+    height: 60px;
 }
 
 }
