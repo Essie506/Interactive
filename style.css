@@ -606,7 +606,10 @@ justify-content:center;
 
 .segment i{
 font-size:28px;
-color:white;
+color: #079992;  /* or white, depending on design */
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .segment:nth-child(1){ transform: rotate(0deg) translate(120px); }
