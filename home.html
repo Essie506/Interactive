@@ -123,6 +123,57 @@
 
 <div class="hub" onclick="spinWheel()">SPIN</div>
 
+<script>
+
+let wheel = document.getElementById("wheel");
+
+let startAngle = 0;
+let currentRotation = 0;
+let isDragging = false;
+
+wheel.addEventListener("touchstart", startDrag);
+wheel.addEventListener("touchmove", dragWheel);
+wheel.addEventListener("touchend", endDrag);
+
+function getAngle(x,y){
+
+const rect = wheel.getBoundingClientRect();
+const cx = rect.left + rect.width/2;
+const cy = rect.top + rect.height/2;
+
+return Math.atan2(y-cy,x-cx) * 180/Math.PI;
+}
+
+function startDrag(e){
+
+isDragging = true;
+
+const touch = e.touches[0];
+startAngle = getAngle(touch.clientX,touch.clientY) - currentRotation;
+
+}
+
+function dragWheel(e){
+
+if(!isDragging) return;
+
+const touch = e.touches[0];
+
+currentRotation = getAngle(touch.clientX,touch.clientY) - startAngle;
+
+wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+}
+
+function endDrag(){
+
+isDragging = false;
+
+}
+
+</script>
+
+   
 <script>  
 let rotation = 0;
 
