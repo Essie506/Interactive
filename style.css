@@ -524,8 +524,6 @@ display:none;
     font-size: 40px;
 /* ✨ GLASS EFFECT */
     background: rgba(255,255,255,0.55);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 
     border: 1px solid rgba(255,255,255,0.6);
 
