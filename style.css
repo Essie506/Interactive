@@ -493,6 +493,10 @@ footer {
     color: black;
     display: flex;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+@media (min-width: 481px) {
+
+.category-card {
     animation: floatIcon 6s ease-in-out infinite;
 }
 
@@ -500,6 +504,8 @@ footer {
 .category-card:nth-child(3) { animation-delay: 2s; }
 .category-card:nth-child(4) { animation-delay: 3s; }
 .category-card:nth-child(5) { animation-delay: 4s; }
+
+}
 
 @keyframes floatIcon {
     0%   { transform: translateY(0px); }
@@ -561,7 +567,6 @@ footer {
     margin: 20px auto;
     animation: spinWheel 30s linear infinite;
     transform-origin: center;
-    animation: spinWheel 30s linear infinite;
 }
 
 .category-card {
@@ -570,8 +575,6 @@ footer {
     left: 50%;
     transform-origin: center;
     font-size: 16px;
-    animation:  keepUpright 30s linear infinite;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -579,11 +582,11 @@ footer {
 
 /* Position icons around circle */
 
-.category-card:nth-child(1) { transform: rotate(0deg) translate(110px) rotate(0deg); }
-.category-card:nth-child(2) { transform: rotate(72deg) translate(110px) rotate(-72deg); }
-.category-card:nth-child(3) { transform: rotate(144deg) translate(110px) rotate(-144deg); }
-.category-card:nth-child(4) { transform: rotate(216deg) translate(110px) rotate(-216deg); }
-.category-card:nth-child(5) { transform: rotate(288deg) translate(110px) rotate(-288deg); }
+.category-card:nth-child(1) { transform: rotate(0deg) translate(115px) rotate(0deg); }
+.category-card:nth-child(2) { transform: rotate(72deg) translate(115px) rotate(-72deg); }
+.category-card:nth-child(3) { transform: rotate(144deg) translate(115px) rotate(-144deg); }
+.category-card:nth-child(4) { transform: rotate(216deg) translate(115px) rotate(-216deg); }
+.category-card:nth-child(5) { transform: rotate(288deg) translate(115px) rotate(-288deg); }
 
 .category-card i {
     font-size: 32px;
