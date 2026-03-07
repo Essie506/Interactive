@@ -587,11 +587,29 @@ border-radius:50%;
 background: rgba(255,255,255,0.15);
 backdrop-filter: blur(12px);
 border:1px solid rgba(255,255,255,0.3);
+background:
+conic-gradient(
+#38ada9 0deg 60deg,
+#079992 60deg 120deg,
+#38ada9 120deg 180deg,
+#079992 180deg 240deg,
+#38ada9 240deg 300deg,
+#079992 300deg 360deg
+);
 box-shadow:
 0 10px 30px rgba(0,0,0,0.25),
 inset 0 0 20px rgba(255,255,255,0.2);
 position:relative;
 transition:transform 4s cubic-bezier(.17,.67,.35,1);
+}
+
+.wheel::after{
+content:"";
+position:absolute;
+inset:0;
+border-radius:50%;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(6px);
 }
 
 .segment{
@@ -659,6 +677,5 @@ justify-content: center;
 color: white;
 font-weight: bold;
 font-size: 16px;
-}
 }
 }
