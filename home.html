@@ -104,6 +104,8 @@
     </a>
    </div>
 
+  <div class="mobile-wheel">
+
  <div class="wheel-wrapper">
 
 <div class="pointer"></div>
@@ -125,7 +127,10 @@
 
 <button onclick="spinWheel()">Spin</button>
 
-  <script>
+ </div>
+
+<script>
+  
 let rotation = 0;
 
 function spinWheel(){
@@ -134,12 +139,13 @@ rotation += Math.floor(Math.random()*360) + 1080;
 
 document.getElementById("wheel").style.transform =
 `rotate(${rotation}deg)`;
-
 }
+  
 <script> 
-      <p class="hero-subtext">
-    Track your workouts, connect with trainers, and achieve your goals.
-  </p>
+  
+<p class="hero-subtext">
+Track your workouts, connect with trainers, and achieve your goals.
+</p>
     
 </main>
 
