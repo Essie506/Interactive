@@ -125,15 +125,12 @@
 
 <script>
 
-let wheel = document.getElementById("wheel");
+const wheel = document.getElementById("wheel");
 
-let startAngle = 0;
-let currentRotation = 0;
+let rotation = 0;
+let velocity = 0;
 let isDragging = false;
-
-wheel.addEventListener("touchstart", startDrag);
-wheel.addEventListener("touchmove", dragWheel);
-wheel.addEventListener("touchend", endDrag);
+let lastAngle = 0;
 
 function getAngle(x,y){
 
@@ -142,49 +139,69 @@ const cx = rect.left + rect.width/2;
 const cy = rect.top + rect.height/2;
 
 return Math.atan2(y-cy,x-cx) * 180/Math.PI;
+
 }
 
-function startDrag(e){
+wheel.addEventListener("touchstart",(e)=>{
 
 isDragging = true;
+velocity = 0;
 
 const touch = e.touches[0];
-startAngle = getAngle(touch.clientX,touch.clientY) - currentRotation;
+lastAngle = getAngle(touch.clientX,touch.clientY);
 
-}
+});
 
-function dragWheel(e){
+wheel.addEventListener("touchmove",(e)=>{
 
 if(!isDragging) return;
 
 const touch = e.touches[0];
+const angle = getAngle(touch.clientX,touch.clientY);
 
-currentRotation = getAngle(touch.clientX,touch.clientY) - startAngle;
+let delta = angle - lastAngle;
 
-wheel.style.transform = `rotate(${currentRotation}deg)`;
+rotation += delta;
+velocity = delta;
+
+wheel.style.transform = `rotate(${rotation}deg)`;
+
+lastAngle = angle;
+
+});
+
+wheel.addEventListener("touchend",()=>{
+
+isDragging = false;
+spinMomentum();
+
+});
+
+function spinMomentum(){
+
+rotation += velocity;
+
+velocity *= 0.95;   // friction
+
+wheel.style.transform = `rotate(${rotation}deg)`;
+
+if(Math.abs(velocity) > 0.1){
+
+requestAnimationFrame(spinMomentum);
 
 }
 
-function endDrag(){
+}
 
-isDragging = false;
+function spinWheel(){
+
+velocity = Math.random()*20 + 25;
+
+spinMomentum();
 
 }
 
 </script>
-
-   
-<script>  
-let rotation = 0;
-
-function spinWheel(){
-
-rotation += Math.floor(Math.random()*360) + 1080;
-
-document.getElementById("wheel").style.transform =
-`rotate(${rotation}deg)`;
-}  
-</script> 
   
 <p class="hero-subtext">
 Track your workouts, connect with trainers, and achieve your goals.
