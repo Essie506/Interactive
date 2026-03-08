@@ -34,6 +34,11 @@ body::after {
     pointer-events: none;
     z-index: -1;
 }
+
+body.home .hero::before {
+    display: none; /* hides the old background image */
+}
+
 /* ================= NAVBAR ================= */
 
 .navbar {
