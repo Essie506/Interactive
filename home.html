@@ -124,105 +124,62 @@
 <div class="hub" onclick="spinWheel()">SPIN</div>
 
 <script>
-
-const wheel = document.getElementById("wheel");
-
+let wheel = document.getElementById("wheel");
 let rotation = 0;
-let velocity = 0;
 let isDragging = false;
-let lastAngle = 0;
+let startX = 0;
 
-const segments = 6;
+function spinWheel() {
 
-function getAngle(x,y){
+  rotation += Math.floor(Math.random() * 360) + 1080;
 
-const rect = wheel.getBoundingClientRect();
-const cx = rect.left + rect.width/2;
-const cy = rect.top + rect.height/2;
+  wheel.style.transition = "transform 4s ease-out";
+  wheel.style.transform = `rotate(${rotation}deg)`;
 
-return Math.atan2(y-cy,x-cx) * 180/Math.PI;
-
+  setTimeout(function(){
+      window.location.href = "browse-workouts1.html";
+  }, 4000);
 }
 
-wheel.addEventListener("touchstart",(e)=>{
+/* TOUCH + MOUSE DRAG SPIN */
 
-isDragging = true;
-velocity = 0;
+wheel.addEventListener("mousedown", startDrag);
+wheel.addEventListener("touchstart", startDrag);
 
-const touch = e.touches[0];
-lastAngle = getAngle(touch.clientX,touch.clientY);
-
-});
-
-wheel.addEventListener("touchmove",(e)=>{
-
-if(!isDragging) return;
-
-const touch = e.touches[0];
-const angle = getAngle(touch.clientX,touch.clientY);
-
-let delta = angle - lastAngle;
-
-rotation += delta;
-velocity = delta;
-
-wheel.style.transform = `rotate(${rotation}deg)`;
-
-lastAngle = angle;
-
-});
-
-wheel.addEventListener("touchend",()=>{
-
-isDragging = false;
-spinMomentum();
-
-});
-
-function spinMomentum(){
-
-rotation += velocity;
-
-velocity *= 0.95;   // friction
-
-wheel.style.transform = `rotate(${rotation}deg)`;
-
-if(Math.abs(velocity) > 0.1){
-
-requestAnimationFrame(spinMomentum);
-
-}else{  
-
-wheelStopped();
-
-}
+function startDrag(e){
+  isDragging = true;
+  startX = e.touches ? e.touches[0].clientX : e.clientX;
 }
 
-function spinWheel(){
+document.addEventListener("mousemove", dragSpin);
+document.addEventListener("touchmove", dragSpin);
 
-velocity = Math.random()*20 + 25;
+function dragSpin(e){
+  if(!isDragging) return;
 
-spinMomentum();
+  let currentX = e.touches ? e.touches[0].clientX : e.clientX;
+  let diff = currentX - startX;
 
-}
-  function wheelStopped(){
-
-let normalized = rotation % 360;
-
-if(normalized < 0){
-normalized += 360;
+  wheel.style.transition = "none";
+  wheel.style.transform = `rotate(${rotation + diff}deg)`;
 }
 
-const segmentSize = 360 / segments;
+document.addEventListener("mouseup", endDrag);
+document.addEventListener("touchend", endDrag);
 
-const winningSegment = Math.floor((360 - normalized) / segmentSize) % segments;
+function endDrag(e){
+  if(!isDragging) return;
 
-const winPage = "browse-workouts" + (winningSegment + 1) + ".html";
+  isDragging = false;
 
-setTimeout(()=>{
-window.location.href = winPage;
-},800);
+  rotation += Math.random()*720;
 
+  wheel.style.transition = "transform 4s ease-out";
+  wheel.style.transform = `rotate(${rotation}deg)`;
+
+  setTimeout(function(){
+      window.location.href = "browse-workouts1.html";
+  }, 4000);
 }
 </script>
   
