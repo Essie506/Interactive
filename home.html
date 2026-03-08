@@ -112,74 +112,112 @@
 
 <div class="wheel" id="wheel">
 
- <div class="segment"><i class="fa-solid fa-bicycle"></i></div>
- <div class="segment"><i class="fa-solid fa-person-running"></i></div>
- <div class="segment"><i class="fa-solid fa-person-walking"></i></div>
- <div class="segment"><i class="fa-solid fa-spa"></i></div>
- <div class="segment"><i class="fa-solid fa-bolt"></i></div>
- <div class="segment"><i class="fa-solid fa-heart-pulse"></i></div>
+<div class="segment" data-page="browse-workouts1.html">
+  <i class="fa-solid fa-bicycle"></i>
+</div>
+<div class="segment" data-page="browse-workouts2.html">
+  <i class="fa-solid fa-person-running"></i>
+</div>
+<div class="segment" data-page="browse-workouts3.html">
+  <i class="fa-solid fa-person-walking"></i>
+</div>
+<div class="segment" data-page="browse-workouts4.html">
+  <i class="fa-solid fa-spa"></i>
+</div>
+<div class="segment" data-page="browse-workouts5.html">
+  <i class="fa-solid fa-bolt"></i>
+</div>
+<div class="segment" data-page="browse-workouts6.html">
+  <i class="fa-solid fa-heart-pulse"></i>
+</div>
 
 </div>
 
 <div class="hub" onclick="spinWheel()">SPIN</div>
 
 <script>
-let wheel = document.getElementById("wheel");
+const wheel = document.getElementById("wheel");
+const segments = document.querySelectorAll(".wheel .segment");
 let rotation = 0;
+let velocity = 0;
 let isDragging = false;
-let startX = 0;
+let lastAngle = 0;
 
-function spinWheel() {
-
-  rotation += Math.floor(Math.random() * 360) + 1080;
-
-  wheel.style.transition = "transform 4s ease-out";
-  wheel.style.transform = `rotate(${rotation}deg)`;
-
-  setTimeout(function(){
-      window.location.href = "browse-workouts1.html";
-  }, 4000);
+/* ================= HELPER ================= */
+function getAngle(x, y) {
+  const rect = wheel.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  return Math.atan2(y - cy, x - cx) * 180 / Math.PI;
 }
 
-/* TOUCH + MOUSE DRAG SPIN */
-
+/* ================= DRAG / TOUCH ================= */
 wheel.addEventListener("mousedown", startDrag);
 wheel.addEventListener("touchstart", startDrag);
 
-function startDrag(e){
+function startDrag(e) {
   isDragging = true;
-  startX = e.touches ? e.touches[0].clientX : e.clientX;
+  velocity = 0;
+  const touch = e.touches ? e.touches[0] : e;
+  lastAngle = getAngle(touch.clientX, touch.clientY);
 }
 
 document.addEventListener("mousemove", dragSpin);
 document.addEventListener("touchmove", dragSpin);
 
-function dragSpin(e){
-  if(!isDragging) return;
-
-  let currentX = e.touches ? e.touches[0].clientX : e.clientX;
-  let diff = currentX - startX;
-
+function dragSpin(e) {
+  if (!isDragging) return;
+  const touch = e.touches ? e.touches[0] : e;
+  const angle = getAngle(touch.clientX, touch.clientY);
+  let delta = angle - lastAngle;
+  rotation += delta;
+  velocity = delta;
   wheel.style.transition = "none";
-  wheel.style.transform = `rotate(${rotation + diff}deg)`;
+  wheel.style.transform = `rotate(${rotation}deg)`;
+  lastAngle = angle;
 }
 
 document.addEventListener("mouseup", endDrag);
 document.addEventListener("touchend", endDrag);
 
-function endDrag(e){
-  if(!isDragging) return;
-
+function endDrag() {
+  if (!isDragging) return;
   isDragging = false;
+  spinMomentum();
+}
 
-  rotation += Math.random()*720;
+/* ================= SPIN BUTTON ================= */
+function spinWheel() {
+  velocity = Math.random() * 20 + 25; // random initial spin
+  spinMomentum();
+}
 
-  wheel.style.transition = "transform 4s ease-out";
+/* ================= SPIN & FRICTION ================= */
+function spinMomentum() {
+  rotation += velocity;
+  velocity *= 0.95; // friction
+  wheel.style.transition = "transform 0.05s linear";
   wheel.style.transform = `rotate(${rotation}deg)`;
 
-  setTimeout(function(){
-      window.location.href = "browse-workouts1.html";
-  }, 4000);
+  if (Math.abs(velocity) > 0.1) {
+    requestAnimationFrame(spinMomentum);
+  } else {
+    wheelStopped();
+  }
+}
+
+/* ================= DETERMINE WINNING SEGMENT ================= */
+function wheelStopped() {
+  let normalized = rotation % 360;
+  if (normalized < 0) normalized += 360;
+
+  const segmentSize = 360 / segments.length;
+  const winningIndex = Math.floor((360 - normalized) / segmentSize) % segments.length;
+
+  const winPage = segments[winningIndex].dataset.page; // uses data-page attribute
+  setTimeout(() => {
+    window.location.href = winPage;
+  }, 800);
 }
 </script>
   
