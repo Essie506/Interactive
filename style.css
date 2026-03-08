@@ -616,16 +616,6 @@ transparent 1deg 60deg
 );
 }
 
-.wheel::after{
-content:"";
-position:absolute;
-inset:0;
-border-radius:50%;
-background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.4), transparent 60%);
-pointer-events:none;
-backdrop-filter:blur(6px);
-}
-
 .segment{
 position:absolute;
 top:50%;
@@ -670,7 +660,7 @@ width:0;
 height:0;
 border-left:12px solid transparent;
 border-right:12px solid transparent;
-border-bottom:20px solid black;
+border-top:20px solid black;
 z-index:10;
 }
     
