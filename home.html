@@ -191,11 +191,7 @@ requestAnimationFrame(spinMomentum);
 
 }else{  
 
-setTimeout(() => {
-
-window.location.href = "browse-workouts.html";
-
-},4000 );
+wheelStopped();
 
 }
 }
@@ -207,6 +203,26 @@ velocity = Math.random()*20 + 25;
 spinMomentum();
 
 }
+  function wheelStopped(){
+
+let normalized = rotation % 360;
+
+if(normalized < 0){
+normalized += 360;
+}
+
+const segmentSize = 360 / segments;
+
+const winningSegment = Math.floor((360 - normalized) / segmentSize) % segments;
+
+const winPage = "browse-workouts" + (winningSegment + 1) + ".html";
+
+setTimeout(()=>{
+window.location.href = browse-workouts;
+},800);
+
+}
+
 
 </script>
   
