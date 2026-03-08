@@ -189,11 +189,13 @@ if(Math.abs(velocity) > 0.1){
 
 requestAnimationFrame(spinMomentum);
 
-setTimeout(function(){
+}else{  
+
+setTimeout(() => {
 
 window.location.href = "browse-workouts.html";
 
-}, 4000);
+},4000 );
 
 }
 }
