@@ -404,7 +404,7 @@ body.index .hero::after {
     max-width: 180px;      /* stops it getting too chunky */
     padding: 14px 21px;
     margin-bottom: 100px;
-    margin: 50px auto 0;
+    margin: 20px auto 0;
 
     background: linear-gradient(135deg,#079992,#38ada9);
     color: white;
@@ -459,6 +459,7 @@ body.index .hero::after {
     padding: 20px 20px;
     color: #079992;
     text-decoration: none;
+    margin-top: 35px;
     }
 
 /* ================= FOOTER ================= */
