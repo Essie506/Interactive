@@ -204,7 +204,7 @@
 
 <script>
 const wheel = document.getElementById("wheel");
-const segments = document.querySelectorAll(".wheel .segment");
+const segments = document.querySelectorAll(".wheel .segment i"); // select icons directly
 let rotation = 0;
 let velocity = 0;
 let isDragging = false;
@@ -271,89 +271,38 @@ function spinMomentum() {
   if (Math.abs(velocity) > 0.1) {
     requestAnimationFrame(spinMomentum);
   } 
-  // else we stop but do not redirect automatically
+  // stop spinning without auto-redirect
 }
 
 /* ================= ICON ROTATION ================= */
 function updateIconRotation(currentRotation) {
   segments.forEach(icon => {
-    const inner = icon.querySelector('i');
-    if(inner) inner.style.transform = `rotate(${-currentRotation}deg)`;
+    icon.style.transform = `rotate(${-currentRotation}deg)`;
   });
 }
 
-/* ================= CLICK TO REDIRECT ================= */
-segments.forEach(segment => {
-  const icon = segment.querySelector('i'); // target the icon inside the segment
-
-  segment.addEventListener('click', () => {
+/* ================= CLICK POP + REDIRECT ================= */
+segments.forEach(icon => {
+  icon.addEventListener('click', () => {
+    const segment = icon.parentElement; // get the parent segment div
     const page = segment.dataset.page;
     if (!page) return;
 
-    // Add the clicked class to trigger CSS animation
-    icon.classList.add('clicked');
+    // Add pop & color change
+    icon.classList.add("clicked");
 
-    // Remove the clicked class after 200ms so it can animate again next time
+    // Remove pop after short delay
     setTimeout(() => {
-      icon.classList.remove('clicked');
-    }, 200);
+      icon.classList.remove("clicked");
+    }, 250);
 
-    // Redirect after short delay so user sees the animation
+    // Redirect after short delay so user sees animation
     setTimeout(() => {
       window.location.href = page;
-    }, 250);
+    }, 300);
   });
 });
 </script>
-  
-<p class="hero-subtext">
-Track your workouts, connect with trainers, and achieve your goals.
-</p>
-    
-</main>
-
-<footer>
-  © 2025 Interactive Fitness — All Rights Reserved
-</footer>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-
-  const menuToggle = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
-
-  // Safety check
-  if (!menuToggle || !menu) return;
-
-  /* ================= MAIN MENU ================= */
-
-  menuToggle.addEventListener("click", () => {
-    menu.classList.toggle("open");
-    menuToggle.classList.toggle("active");
-  });
-
-  /* ================= SUBMENUS ================= */
-
-  const parentLinks = document.querySelectorAll(".has-submenu > a");
-
-  parentLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      const parent = link.parentElement;
-      const isOpen = parent.classList.contains("open");
-
-      // Close all submenus
-      document
-        .querySelectorAll(".has-submenu")
-        .forEach(p => p.classList.remove("open"));
-
-      // Open clicked submenu
-      if (!isOpen) {
-        parent.classList.add("open");
-      }
-    });
-  });
 
 });
 </script>
