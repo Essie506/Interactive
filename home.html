@@ -278,10 +278,29 @@ function updateIconRotation(currentRotation) {
 segments.forEach(segment => {
   segment.addEventListener('click', () => {
     const page = segment.dataset.page;
-    if(page) window.location.href = page;
+    if (!page) return;
+
+    // Add a quick click animation
+    segment.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
+    segment.style.transform = "scale(1.1)";
+    segment.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
+    segment.style.backgroundColor = "rgba(255,255,255,0.25)";
+
+    // Reset animation back to normal after 200ms
+    setTimeout(() => {
+      segment.style.transform = "";
+      segment.style.boxShadow = "";
+      segment.style.backgroundColor = "";
+    }, 200);
+
+    // Redirect after short delay so user sees the animation
+    setTimeout(() => {
+      window.location.href = page;
+    }, 250);
   });
 });
 </script>
+   
 <p class="hero-subtext">
 Track your workouts, connect with trainers, and achieve your goals.
 </p>
