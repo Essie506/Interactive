@@ -527,7 +527,7 @@ footer {
     text-decoration: none;
     display: flex;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-    color:#e8f8f7;
+    color:black;
     background:transparent;
     padding:20px;
     border-radius:14px;
