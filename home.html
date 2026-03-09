@@ -280,16 +280,18 @@ segments.forEach(segment => {
     const page = segment.dataset.page;
     if (!page) return;
 
+    // Save current transform (rotate + translate)
+    const currentTransform = segment.style.transform || "";
+
     // Add a quick click animation
     segment.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
-    segment.style.transform = "scale(1.1)";
+    segment.style.transform = currentTransform + "scale(1.1) translateY(-5px)";
     segment.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
     segment.style.backgroundColor = "rgba(255,255,255,0.25)";
 
     // Reset animation back to normal after 200ms
     setTimeout(() => {
-      segment.style.transform = "";
-      segment.style.boxShadow = "";
+      segment.style.transform = currentTransform; 
       segment.style.backgroundColor = "";
     }, 200);
 
