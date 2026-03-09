@@ -639,16 +639,15 @@ footer {
     top: -95px;
     left: -30px;
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
-    cursor: pointer;
   }
-
-  /* CLICKED POP ANIMATION */
+    
+ /* Clicked/pop animation */
   .segment i.clicked {
-    transform: scale(1.2) translateY(-8px);
+    transform: scale(1.15) translateY(-5px);
     background: rgba(7,153,146,0.85); /* teal highlight */
     color: white;
   }
-
+  
   .segment:nth-child(1)  { transform: rotate(0deg) translate(100px); }
   .segment:nth-child(2)  { transform: rotate(36deg) translate(100px); }
   .segment:nth-child(3)  { transform: rotate(72deg) translate(100px); }
