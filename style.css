@@ -529,7 +529,7 @@ footer {
     display: flex;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     color:#079992;
-    background:white;
+    background:transparent;
     padding:20px;
     border-radius:14px;
     box-shadow:0 6px 18px rgba(0,0,0,0.08);
