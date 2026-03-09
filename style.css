@@ -696,10 +696,10 @@ position: absolute;
 top: -120px;  /* push icon to middle edge of segment */
 left: -20px;  /* center horizontally relative to rotation */
 }
-.segment:nth-child(1)  { transform: rotate(0deg) translate(120px); }
-.segment:nth-child(2)  { transform: rotate(36deg) translate(120px); }
-.segment:nth-child(3)  { transform: rotate(72deg) translate(120px); }
-.segment:nth-child(4)  { transform: rotate(108deg) translate(120px); }
+.segment:nth-child(1)  { transform: rotate(0deg) translate(100px); }
+.segment:nth-child(2)  { transform: rotate(36deg) translate(100px); }
+.segment:nth-child(3)  { transform: rotate(72deg) translate(100px); }
+.segment:nth-child(4)  { transform: rotate(108deg) translate(100px); }
 .segment:nth-child(5)  { transform: rotate(144deg) translate(120px); }
 .segment:nth-child(6)  { transform: rotate(180deg) translate(120px); }
 .segment:nth-child(7)  { transform: rotate(216deg) translate(120px); }
