@@ -233,6 +233,7 @@ function dragSpin(e) {
   velocity = delta;
   wheel.style.transition = "none";
   wheel.style.transform = `rotate(${rotation}deg)`;
+  updateIconRotation(rotation);
   lastAngle = angle;
 }
 
@@ -257,29 +258,30 @@ function spinMomentum() {
   velocity *= 0.95; // friction
   wheel.style.transition = "transform 0.05s linear";
   wheel.style.transform = `rotate(${rotation}deg)`;
+  updateIconRotation(rotation);
 
   if (Math.abs(velocity) > 0.1) {
     requestAnimationFrame(spinMomentum);
-  } else {
-    wheelStopped();
-  }
+  } 
+  // else we stop but do not redirect automatically
 }
 
-/* ================= DETERMINE WINNING SEGMENT ================= */
-function wheelStopped() {
-  let normalized = rotation % 360;
-  if (normalized < 0) normalized += 360;
-
-  const segmentSize = 360 / segments.length;
-  const winningIndex = Math.floor((360 - normalized) / segmentSize) % segments.length;
-
-  const winPage = segments[winningIndex].dataset.page; // uses data-page attribute
-  setTimeout(() => {
-    window.location.href = winPage;
-  }, 800);
+/* ================= ICON ROTATION ================= */
+function updateIconRotation(currentRotation) {
+  segments.forEach(icon => {
+    const inner = icon.querySelector('i');
+    if(inner) inner.style.transform = `rotate(${-currentRotation}deg)`;
+  });
 }
+
+/* ================= CLICK TO REDIRECT ================= */
+segments.forEach(segment => {
+  segment.addEventListener('click', () => {
+    const page = segment.dataset.page;
+    if(page) window.location.href = page;
+  });
+});
 </script>
-  
 <p class="hero-subtext">
 Track your workouts, connect with trainers, and achieve your goals.
 </p>
