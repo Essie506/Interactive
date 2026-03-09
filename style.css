@@ -538,7 +538,7 @@ footer {
 width:60px;
 height:60px;
 border-radius:50%;
-background:linear-gradient(135deg,#079992,#38ada9);
+background:rgba(56, 173, 169, 0.2);  /* soft teal glass */
 display:flex;
 align-items:center;
 justify-content:center;
