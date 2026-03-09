@@ -284,29 +284,21 @@ function updateIconRotation(currentRotation) {
 
 /* ================= CLICK TO REDIRECT ================= */
 segments.forEach(segment => {
-  const iconWrapper = segment.querySelector('.segment-icon');
+  const icon = segment.querySelector('i'); // target the icon inside the segment
 
   segment.addEventListener('click', () => {
     const page = segment.dataset.page;
     if (!page) return;
 
-    // Save current transform of icon
-    const currentTransform = iconWrapper.style.transform || "";
+    // Add the clicked class to trigger CSS animation
+    icon.classList.add('clicked');
 
-    // Pop animation: scale + move up slightly
-    iconWrapper.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
-    iconWrapper.style.transform = currentTransform + " scale(1.15) translateY(-5px)";
-    iconWrapper.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
-    iconWrapper.style.backgroundColor = "rgba(255,255,255,0.25)";
-
-    // Reset after 200ms
+    // Remove the clicked class after 200ms so it can animate again next time
     setTimeout(() => {
-      iconWrapper.style.transform = currentTransform;
-      iconWrapper.style.boxShadow = "";
-      iconWrapper.style.backgroundColor = "";
+      icon.classList.remove('clicked');
     }, 200);
 
-    // Redirect after short delay so user sees the pop
+    // Redirect after short delay so user sees the animation
     setTimeout(() => {
       window.location.href = page;
     }, 250);
