@@ -160,36 +160,44 @@
 <div class="wheel" id="wheel">
 
 <div class="segment" data-page="yoga.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-spa"></i>
 </div>
 <div class="segment" data-page="strength.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-dumbbell"></i>
 </div>
 <div class="segment" data-page="cardio.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-heart-pulse"></i>
 </div>
 <div class="segment" data-page="hiit.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-bolt"></i>
 </div>
 <div class="segment" data-page="pilates.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-person"></i>
 </div>
 <div class="segment" data-page="mobility.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-arrows-up-down-left-right"></i>
 </div>
 <div class="segment" data-page="stretch.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-child-reaching"></i>
 </div>
 <div class="segment" data-page="core.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-circle-dot"></i>
 </div>
 <div class="segment" data-page="balance.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-scale-balanced"></i>
 </div>
 <div class="segment" data-page="recovery.html">
+   <div class="segment-icon">
   <i class="fa-solid fa-hand-holding-heart"></i>
-</div>
-
 </div>
 
 <div class="hub" onclick="spinWheel()">SPIN</div>
@@ -276,37 +284,36 @@ function updateIconRotation(currentRotation) {
 
 /* ================= CLICK TO REDIRECT ================= */
 segments.forEach(segment => {
+  const iconWrapper = segment.querySelector('.segment-icon');
+
   segment.addEventListener('click', () => {
     const page = segment.dataset.page;
     if (!page) return;
 
-    // Save current transform (rotate + translate)
-    const currentTransform = segment.style.transform || "";
+    // Save current transform of icon
+    const currentTransform = iconWrapper.style.transform || "";
 
-     // Ensure scale pops upward from bottom-center
-    segment.style.transformOrigin = "bottom center";
-    segment.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
+    // Pop animation: scale + move up slightly
+    iconWrapper.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
+    iconWrapper.style.transform = currentTransform + " scale(1.15) translateY(-5px)";
+    iconWrapper.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
+    iconWrapper.style.backgroundColor = "rgba(255,255,255,0.25)";
 
-    // Add a quick click animation
-    segment.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
-    segment.style.transform = currentTransform + "scale(1.1) translateY(-5px)";
-    segment.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
-    segment.style.backgroundColor = "rgba(255,255,255,0.25)";
-
-    // Reset animation back to normal after 200ms
+    // Reset after 200ms
     setTimeout(() => {
-      segment.style.transform = currentTransform; 
-      segment.style.backgroundColor = "";
+      iconWrapper.style.transform = currentTransform;
+      iconWrapper.style.boxShadow = "";
+      iconWrapper.style.backgroundColor = "";
     }, 200);
 
-    // Redirect after short delay so user sees the animation
+    // Redirect after short delay so user sees the pop
     setTimeout(() => {
       window.location.href = page;
     }, 250);
   });
 });
 </script>
-   
+  
 <p class="hero-subtext">
 Track your workouts, connect with trainers, and achieve your goals.
 </p>
