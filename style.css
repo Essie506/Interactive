@@ -700,11 +700,10 @@ transform: rotate(calc(-1 * var(--wheel-rotation, 0deg)));
 transition: transform 0.2s ease, background 0.2s ease;
 cursor: pointer;
 }
-
 .segment i.clicked {
-transform: scale(1.2);          /* small pop */
-background: rgba(7,153,146,0.85); /* teal-ish highlight */
-color: white;                    /* icon color changes */
+  transform: scale(1.2) rotate(calc(-1 * var(--wheel-rotation, 0deg)));
+  background: rgba(7,153,146,0.85); /* teal highlight */
+  color: white;
 }
 
 .segment:nth-child(1)  { transform: rotate(0deg) translate(100px); }
