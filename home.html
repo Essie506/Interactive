@@ -283,6 +283,10 @@ segments.forEach(segment => {
     // Save current transform (rotate + translate)
     const currentTransform = segment.style.transform || "";
 
+     // Ensure scale pops upward from bottom-center
+    segment.style.transformOrigin = "bottom center";
+    segment.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
+
     // Add a quick click animation
     segment.style.transition = "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease";
     segment.style.transform = currentTransform + "scale(1.1) translateY(-5px)";
