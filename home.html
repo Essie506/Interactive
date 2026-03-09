@@ -277,14 +277,16 @@ function spinMomentum() {
 /* ================= ICON ROTATION ================= */
 function updateIconRotation(currentRotation) {
   segments.forEach(icon => {
+    const icon = segment.querySelector("i");
     icon.style.transform = `rotate(${-currentRotation}deg)`;
   });
 }
 
 /* ================= CLICK POP + REDIRECT ================= */
-segments.forEach(icon => {
-  icon.addEventListener('click', () => {
-    const segment = icon.parentElement; // get the parent segment div
+segments.forEach(segment => {
+  const icon = segment.querySelector("i");
+
+  segment.addEventListener("click", () => {
     const page = segment.dataset.page;
     if (!page) return;
 
@@ -300,6 +302,23 @@ segments.forEach(icon => {
     setTimeout(() => {
       window.location.href = page;
     }, 300);
+  });
+});
+  /* ================= HAMBURGER MENU ================= */
+const menuToggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+
+menuToggle.addEventListener("click", () => {
+  menuToggle.classList.toggle("active");
+  menu.classList.toggle("open");
+});
+
+/* ================= SUBMENU ================= */
+document.querySelectorAll(".has-submenu > a").forEach(item => {
+  item.addEventListener("click", (e) => {
+    e.preventDefault();
+    const parent = item.parentElement;
+    parent.classList.toggle("open");
   });
 });
 </script>
