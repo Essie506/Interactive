@@ -581,7 +581,7 @@ display:none;
 .category-card i {
     font-size: 40px;
 /* ✨ GLASS EFFECT */
-    background: rgba(255,255,255,0.55);
+    background: transparent;
 
     border: 1px solid rgba(255,255,255,0.6);
 
