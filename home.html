@@ -151,56 +151,34 @@
 </a>
 
 </div>
-  <div class="mobile-wheel">
+<!-- Mobile wheel -->
+    <div class="mobile-wheel">
+      <div class="wheel-wrapper">
+        <div class="pointer"></div>
+        <div class="wheel" id="wheel">
+          <div class="segment" data-page="yoga.html"><i class="fa-solid fa-spa"></i></div>
+          <div class="segment" data-page="strength.html"><i class="fa-solid fa-dumbbell"></i></div>
+          <div class="segment" data-page="cardio.html"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="segment" data-page="hiit.html"><i class="fa-solid fa-bolt"></i></div>
+          <div class="segment" data-page="pilates.html"><i class="fa-solid fa-person"></i></div>
+          <div class="segment" data-page="mobility.html"><i class="fa-solid fa-arrows-up-down-left-right"></i></div>
+          <div class="segment" data-page="stretch.html"><i class="fa-solid fa-child-reaching"></i></div>
+          <div class="segment" data-page="core.html"><i class="fa-solid fa-circle-dot"></i></div>
+          <div class="segment" data-page="balance.html"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div class="segment" data-page="recovery.html"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        </div>
+        <div class="hub" onclick="spinWheel()">SPIN</div>
+      </div>
+    </div>
 
- <div class="wheel-wrapper">
+    <p class="hero-subtext">
+      Track your workouts, connect with trainers, and achieve your goals.
+    </p>
+  </main>
 
-<div class="pointer"></div>
-
-<div class="wheel" id="wheel">
-
-<div class="segment" data-page="yoga.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-spa"></i>
-</div>
-<div class="segment" data-page="strength.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-dumbbell"></i>
-</div>
-<div class="segment" data-page="cardio.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-heart-pulse"></i>
-</div>
-<div class="segment" data-page="hiit.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-bolt"></i>
-</div>
-<div class="segment" data-page="pilates.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-person"></i>
-</div>
-<div class="segment" data-page="mobility.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-arrows-up-down-left-right"></i>
-</div>
-<div class="segment" data-page="stretch.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-child-reaching"></i>
-</div>
-<div class="segment" data-page="core.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-circle-dot"></i>
-</div>
-<div class="segment" data-page="balance.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-scale-balanced"></i>
-</div>
-<div class="segment" data-page="recovery.html">
-   <div class="segment-icon">
-  <i class="fa-solid fa-hand-holding-heart"></i>
-</div>
-
-<div class="hub" onclick="spinWheel()">SPIN</div>
+  <footer>
+    © 2025 Interactive Fitness — All Rights Reserved
+  </footer>
 
 <script>
 const wheel = document.getElementById("wheel");
