@@ -694,7 +694,7 @@ height: 55px;
 margin-bottom: 5px;
 position: absolute;
 top: -95px;  /* push icon to middle edge of segment */
-left: -20px;  /* center horizontally relative to rotation */
+left: 0px;  /* center horizontally relative to rotation */
 }
 .segment:nth-child(1)  { transform: rotate(0deg) translate(95px); }
 .segment:nth-child(2)  { transform: rotate(36deg) translate(95px); }
