@@ -175,26 +175,48 @@ document.querySelectorAll(".has-submenu > a").forEach(item => {
 /* ================= WHEEL ================= */
 const wheel = document.getElementById("wheel");
 const segments = document.querySelectorAll(".wheel .segment i");
+
 let rotation = 0;
 let velocity = 0;
 let isDragging = false;
 let lastAngle = 0;
 
-function getAngle(x, y){
-  const rect = wheel.getBoundingClientRect();
-  const cx = rect.left + rect.width/2;
-  const cy = rect.top + rect.height/2;
-  return Math.atan2(y-cy, x-cx)*180/Math.PI;
+// Position icons dynamically around the wheel
+function positionIcons() {
+  const radius = wheel.offsetWidth / 2 - 40; // distance from hub
+  const centerOffset = wheel.offsetWidth / 2; // center of wheel
+  segments.forEach((icon, i) => {
+    const angle = (360 / segments.length) * i;
+    const rad = angle * (Math.PI / 180);
+    const x = radius * Math.cos(rad);
+    const y = radius * Math.sin(rad);
+    icon.style.position = "absolute";
+    icon.style.top = `${centerOffset + y - icon.offsetHeight/2}px`;
+    icon.style.left = `${centerOffset + x - icon.offsetWidth/2}px`;
+  });
 }
 
-function startDrag(e){
+// Call initially and on window resize
+positionIcons();
+window.addEventListener("resize", positionIcons);
+
+// Helper to get angle from center
+function getAngle(x, y) {
+  const rect = wheel.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  return Math.atan2(y - cy, x - cx) * 180 / Math.PI;
+}
+
+// Drag handlers
+function startDrag(e) {
   isDragging = true;
   velocity = 0;
   const touch = e.touches ? e.touches[0] : e;
   lastAngle = getAngle(touch.clientX, touch.clientY);
 }
-function dragSpin(e){
-  if(!isDragging) return;
+function dragSpin(e) {
+  if (!isDragging) return;
   const touch = e.touches ? e.touches[0] : e;
   const angle = getAngle(touch.clientX, touch.clientY);
   let delta = angle - lastAngle;
@@ -202,11 +224,15 @@ function dragSpin(e){
   velocity = delta;
   wheel.style.transition = "none";
   wheel.style.transform = `rotate(${rotation}deg)`;
-  segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
   lastAngle = angle;
 }
-function endDrag(){ if(!isDragging) return; isDragging=false; spinMomentum(); }
+function endDrag() {
+  if (!isDragging) return;
+  isDragging = false;
+  spinMomentum();
+}
 
+// Event listeners
 wheel.addEventListener("mousedown", startDrag);
 wheel.addEventListener("touchstart", startDrag);
 document.addEventListener("mousemove", dragSpin);
@@ -214,24 +240,27 @@ document.addEventListener("touchmove", dragSpin);
 document.addEventListener("mouseup", endDrag);
 document.addEventListener("touchend", endDrag);
 
-function spinWheel(){ velocity = Math.random()*20+25; spinMomentum(); }
-function spinMomentum(){
+// Spin with momentum
+function spinWheel() {
+  velocity = Math.random() * 20 + 25;
+  spinMomentum();
+}
+function spinMomentum() {
   rotation += velocity;
   velocity *= 0.95;
   wheel.style.transition = "transform 0.05s linear";
   wheel.style.transform = `rotate(${rotation}deg)`;
-  segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
-  if(Math.abs(velocity)>0.1) requestAnimationFrame(spinMomentum);
+  if (Math.abs(velocity) > 0.1) requestAnimationFrame(spinMomentum);
 }
 
-/* ================= CLICK POP + REDIRECT ================= */
+// Click pop + redirect
 segments.forEach(icon => {
   const segment = icon.parentElement;
   const page = segment.dataset.page;
-  segment.addEventListener("click", ()=>{
+  segment.addEventListener("click", () => {
     icon.classList.add("clicked");
-    setTimeout(()=>icon.classList.remove("clicked"),250);
-    setTimeout(()=>window.location.href=page,300);
+    setTimeout(() => icon.classList.remove("clicked"), 250);
+    setTimeout(() => window.location.href = page, 300);
   });
 });
 </script>
