@@ -653,8 +653,8 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -100%);
-  width: 50%;             /* relative to wheel size */
-  height: 50%;
+  width: 55px;             /* relative to wheel size */
+  height: 55px
   font-size: 1.2em;
   display: flex;
   align-items: center;
