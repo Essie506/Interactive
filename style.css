@@ -655,7 +655,7 @@ footer {
     color: white;
   }
   
-  .segment:nth-child(1)  { transform: rotate(0deg) translate(100px); }
+  .segment:nth-child(1)  { transform: rotate(0deg) translate(45px); }
   .segment:nth-child(2)  { transform: rotate(36deg) translate(100px); }
   .segment:nth-child(3)  { transform: rotate(72deg) translate(100px); }
   .segment:nth-child(4)  { transform: rotate(108deg) translate(100px); }
