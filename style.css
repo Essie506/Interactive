@@ -4,7 +4,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 
     background:
         radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
@@ -562,7 +561,7 @@ footer {
   .mobile-wheel {
     display:block;
     margin: auto;
-    width: (96vw, 70vh)
+    width: min(96vw, 70vh)
     max-width: 420px;
     aspect-ratio:1 / 1;
   }
@@ -639,12 +638,10 @@ footer {
     background: rgba(255,255,255,0.6);
     backdrop-filter: blur(8px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.15),
-                inset 0 1px 2px rgba(255,255,255,0.7);
+    inset 0 1px 2px rgba(255,255,255,0.7);
+    transform: translate(-50%, -50%);
     width: 55px;
     height: 55px;
-    position: absolute;
-    top: -95px;
-    left: -70px;
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
   }
     
@@ -655,16 +652,16 @@ footer {
     color: white;
   }
   
-  .segment:nth-child(1)  { transform: rotate(0deg) translate(120px); }
-  .segment:nth-child(2)  { transform: rotate(36deg) translate(120px); }
-  .segment:nth-child(3)  { transform: rotate(72deg) translate(120px); }
-  .segment:nth-child(4)  { transform: rotate(108deg) translate(120px); }
-  .segment:nth-child(5)  { transform: rotate(144deg) translate(120px); }
-  .segment:nth-child(6)  { transform: rotate(180deg) translate(120px); }
-  .segment:nth-child(7)  { transform: rotate(216deg) translate(120px); }
-  .segment:nth-child(8)  { transform: rotate(252deg) translate(120px); }
-  .segment:nth-child(9)  { transform: rotate(288deg) translate(120px); }
-  .segment:nth-child(10) { transform: rotate(324deg) translate(120px); }
+  .segment:nth-child(1)  { transform: rotate(0deg) translate(160px); }
+  .segment:nth-child(2)  { transform: rotate(36deg) translate(160px); }
+  .segment:nth-child(3)  { transform: rotate(72deg) translate(160px); }
+  .segment:nth-child(4)  { transform: rotate(108deg) translate(160px); }
+  .segment:nth-child(5)  { transform: rotate(144deg) translate(160px); }
+  .segment:nth-child(6)  { transform: rotate(180deg) translate(160px); }
+  .segment:nth-child(7)  { transform: rotate(216deg) translate(160px); }
+  .segment:nth-child(8)  { transform: rotate(252deg) translate(160px); }
+  .segment:nth-child(9)  { transform: rotate(288deg) translate(160px); }
+  .segment:nth-child(10) { transform: rotate(324deg) translate(160px); }
 
 
   .pointer {
