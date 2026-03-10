@@ -375,7 +375,7 @@ body.index .hero::after {
     
     .hero {
     justify-content: center;
-    padding: 0 20px 20vh;
+    padding: 0 0px 20vh;
           
     }
 
