@@ -675,16 +675,16 @@ footer {
 }
 
 /* Rotate segments evenly around wheel */
-.segment:nth-child(1)  { transform: rotate(0deg) translate(42%); }
-.segment:nth-child(2)  { transform: rotate(36deg) translate(42%); }
-.segment:nth-child(3)  { transform: rotate(72deg) translate(42%); }
-.segment:nth-child(4)  { transform: rotate(108deg) translate(42%); }
-.segment:nth-child(5)  { transform: rotate(144deg) translate(42%); }
-.segment:nth-child(6)  { transform: rotate(180deg) translate(42%); }
-.segment:nth-child(7)  { transform: rotate(216deg) translate(42%); }
-.segment:nth-child(8)  { transform: rotate(252deg) translate(42%); }
-.segment:nth-child(9)  { transform: rotate(288deg) translate(42%); }
-.segment:nth-child(10) { transform: rotate(324deg) translate(42%); }
+.segment:nth-child(1)  { transform: rotate(0deg) translate(100%); }
+.segment:nth-child(2)  { transform: rotate(36deg) translate(100%); }
+.segment:nth-child(3)  { transform: rotate(72deg) translate(100%); }
+.segment:nth-child(4)  { transform: rotate(108deg) translate(100%); }
+.segment:nth-child(5)  { transform: rotate(144deg) translate(100%); }
+.segment:nth-child(6)  { transform: rotate(180deg) translate(100%); }
+.segment:nth-child(7)  { transform: rotate(216deg) translate(100%); }
+.segment:nth-child(8)  { transform: rotate(252deg) translate(100%); }
+.segment:nth-child(9)  { transform: rotate(288deg) translate(100%); }
+.segment:nth-child(10) { transform: rotate(324deg) translate(100%); }
 
 /* ================= POINTER ================= */
 .pointer {
