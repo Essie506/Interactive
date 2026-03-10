@@ -656,9 +656,9 @@ footer {
   }
   
   .segment:nth-child(1)  { transform: rotate(0deg) translate(70px); }
-  .segment:nth-child(2)  { transform: rotate(36deg) translate(100px); }
-  .segment:nth-child(3)  { transform: rotate(72deg) translate(100px); }
-  .segment:nth-child(4)  { transform: rotate(108deg) translate(100px); }
+  .segment:nth-child(2)  { transform: rotate(36deg) translate(110px); }
+  .segment:nth-child(3)  { transform: rotate(72deg) translate(110px); }
+  .segment:nth-child(4)  { transform: rotate(108deg) translate(110px); }
   .segment:nth-child(5)  { transform: rotate(144deg) translate(135px); }
   .segment:nth-child(6)  { transform: rotate(180deg) translate(135px); }
   .segment:nth-child(7)  { transform: rotate(216deg) translate(135px); }
