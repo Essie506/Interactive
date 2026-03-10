@@ -375,6 +375,7 @@ body.index .hero::after {
     
     .hero {
     justify-content: flex-end;
+    align-items: center; 
     padding: 0 20px 20vh;
           
     }
@@ -654,7 +655,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -100%);
   width: 55px;             /* relative to wheel size */
-  height: 55px
+  height: 55px;
   font-size: 1.2em;
   display: flex;
   align-items: center;
