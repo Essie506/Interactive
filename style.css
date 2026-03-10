@@ -4,6 +4,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 
     background:
         radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
@@ -560,9 +561,10 @@ footer {
 
   .mobile-wheel {
     display:block;
-    margin: 20px auto;
-    width: 96vw;
+    margin: auto;
+    width: (96vw, 70vh)
     max-width: 420px;
+    aspect-ratio 1 / 1;
   }
 
   .category-icons {
