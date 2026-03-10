@@ -371,13 +371,13 @@ body.index .hero::after {
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    
-    .hero {
-    justify-content: center;
-    padding: 0 0px 20vh;
-          
-    }
+@media (max-width: 480px) {
+  .hero {
+    justify-content: flex-end; /* keeps content towards bottom */
+    padding: 0;                /* remove left/right padding */
+    position: relative;
+    height: 100vh;             /* ensures full height for vertical centering */
+  }
 
     .hero::before {
         background-size: 135vw;   /* scale logo for mobile */
