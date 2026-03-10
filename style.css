@@ -558,6 +558,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    
+  .category-icons {
+    display: none;
+  }
 
 .mobile-wheel {
   display: flex;
