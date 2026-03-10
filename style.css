@@ -560,7 +560,9 @@ footer {
 
   .mobile-wheel {
     display:block;
-    margin: 30px auto;
+    margin: 20px auto;
+    width: 96vw;
+    max-width: 420px;
   }
 
   .category-icons {
@@ -569,9 +571,12 @@ footer {
 
   .wheel-wrapper {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 92vw;
+    height: 92vw;
     margin: auto;
+    max-width: 420px;
+    max-height: 420px;
+    aspect-ratio 1 / 1;
   }
 
   .wheel {
