@@ -560,7 +560,9 @@ footer {
 @media (max-width: 480px) {
 
   .mobile-wheel {
-    display:block;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     margin: auto;
     width: 100%;
     height: 100%;    
@@ -568,6 +570,7 @@ footer {
     aspect-ratio: 1 / 1;
     margin-left: auto;
     margin-right: auto;
+    display:none;
   }
 
   .category-icons {
