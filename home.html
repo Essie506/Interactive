@@ -239,17 +239,24 @@ function spinMomentum(){
 
     segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
 
-    /* FIND WINNING ICON */
-    const index =
-      ((Math.round(rotation / segmentAngle) % segments.length) + segments.length) %
-      segments.length;
+   /* FIND ICON AT POINTER */
+const segmentAngle = 360 / segments.length;
 
-    /* POP ANIMATION */
-    segments[index].classList.add("clicked");
+/* adjust for pointer position (top = -90deg) */
+let adjustedRotation = rotation + 90;
 
-    setTimeout(() => {
-      segments[index].classList.remove("clicked");
-    }, 800);
+/* normalize angle */
+adjustedRotation = ((adjustedRotation % 360) + 360) % 360;
+
+/* find segment index */
+const index = Math.floor(adjustedRotation / segmentAngle);
+
+/* POP ANIMATION */
+segments[index].classList.add("clicked");
+
+setTimeout(() => {
+  segments[index].classList.remove("clicked");
+}, 800);
   }
 }
   </script>
