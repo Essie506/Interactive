@@ -223,23 +223,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 function snapToPointer() {
-  const normalizedRotation = ((rotation % 360) + 360) % 360;
+  const baseTarget = pointerAngle - firstSegmentAngle;
 
-  let winningIndex = Math.round(
-    (pointerAngle - firstSegmentAngle - normalizedRotation) / segmentAngle
-  );
-  winningIndex = ((winningIndex % segments.length) + segments.length) % segments.length;
+  // always snap to the NEXT valid stop in the forward direction
+  const steps = Math.ceil((rotation - baseTarget) / segmentAngle);
+  const targetRotation = baseTarget + (steps * segmentAngle);
 
-  let targetRotation = pointerAngle - firstSegmentAngle - (winningIndex * segmentAngle);
-
-  /* keep target in the same forward direction */
-  while (targetRotation < rotation) {
-    targetRotation += 360;
-  }
-
-  wheel.style.transition = "transform 0.35s ease-out";
   rotation = targetRotation;
+
+  wheel.style.transition = "transform 0.25s ease-out";
   updateWheel();
+
+  // work out which icon is now under the pointer
+  let winningIndex = steps % segments.length;
+  winningIndex = ((-winningIndex % segments.length) + segments.length) % segments.length;
 
   clearClicked();
   segments[winningIndex].classList.add("clicked");
