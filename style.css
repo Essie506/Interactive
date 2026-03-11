@@ -393,7 +393,7 @@ body.index .hero::after {
    .hero h2 {
         font-size: 32px;
         line-height: 1.2;
-        margin-top: 20px;
+        margin-top: 5px;
     }
 }
 
