@@ -660,17 +660,6 @@ footer {
     color: white;
   }
 
-  .segment:nth-child(1)  { transform: rotate(26deg) translateX(120px); }
-  .segment:nth-child(2)  { transform: rotate(62deg) translateX(120px); }
-  .segment:nth-child(3)  { transform: rotate(98deg) translateX(120px); }
-  .segment:nth-child(4)  { transform: rotate(134deg) translateX(120px); }
-  .segment:nth-child(5)  { transform: rotate(170deg) translateX(120px); }
-  .segment:nth-child(6)  { transform: rotate(206deg) translateX(120px); }
-  .segment:nth-child(7)  { transform: rotate(242deg) translateX(120px); }
-  .segment:nth-child(8)  { transform: rotate(278deg) translateX(120px); }
-  .segment:nth-child(9)  { transform: rotate(314deg) translateX(120px); }
-  .segment:nth-child(10) { transform: rotate(350deg) translateX(120px); }
-
   .pointer {
     position: absolute;
     top: 10px;
