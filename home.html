@@ -127,28 +127,55 @@
     <p>Stretch</p>
   </a>
 </div>
+    
+<!-- Mobile wheel -->
+<div class="mobile-wheel">
+  <div class="wheel-wrapper">
+    <div class="pointer"></div>
 
-    <!-- Mobile wheel -->
-    <div class="mobile-wheel">
-      <div class="wheel-wrapper">
-        <div class="pointer"></div>
-        <div class="wheel" id="wheel">
-          <div class="segment" data-page="yoga.html"><i class="fa-solid fa-spa"></i></div>
-          <div class="segment" data-page="strength.html"><i class="fa-solid fa-dumbbell"></i></div>
-          <div class="segment" data-page="cardio.html"><i class="fa-solid fa-heart-pulse"></i></div>
-          <div class="segment" data-page="hiit.html"><i class="fa-solid fa-bolt"></i></div>
-          <div class="segment" data-page="pilates.html"><i class="fa-solid fa-person"></i></div>
-          <div class="segment" data-page="mobility.html"><i class="fa-solid fa-arrows-up-down-left-right"></i></div>
-          <div class="segment" data-page="core.html"><i class="fa-solid fa-circle-dot"></i></div>
-          <div class="segment" data-page="balance.html"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div class="segment" data-page="recovery.html"><i class="fa-solid fa-hand-holding-heart"></i></div>  
-           <div class="segment" data-page="stretch.html"><i class="fa-solid fa-child-reaching"></i></div>
-        </div>
-          
-        <div class="hub" onclick="spinWheel()">SPIN</div>
+    <div class="wheel" id="wheel">
+      <div class="segment">
+        <i class="fa-solid fa-spa" data-page="yoga.html" data-label="Yoga"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-dumbbell" data-page="strength.html" data-label="Strength"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-heart-pulse" data-page="cardio.html" data-label="Cardio"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-bolt" data-page="hiit.html" data-label="HIIT"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-person" data-page="pilates.html" data-label="Pilates"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-arrows-up-down-left-right" data-page="mobility.html" data-label="Mobility"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-circle-dot" data-page="core.html" data-label="Core"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-scale-balanced" data-page="balance.html" data-label="Balance"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-hand-holding-heart" data-page="recovery.html" data-label="Recovery"></i>
+      </div>
+      <div class="segment">
+        <i class="fa-solid fa-child-reaching" data-page="stretch.html" data-label="Stretch"></i>
       </div>
     </div>
 
+    <button type="button" class="hub" onclick="spinWheel()">SPIN</button>
+
+    <div class="wheel-result" id="wheelResult">Spin the wheel</div>
+
+    <div class="wheel-actions">
+      <button type="button" id="acceptBtn" class="wheel-btn">Go</button>
+      <button type="button" id="rejectBtn" class="wheel-btn">No, not that one</button>
+    </div>
+  </div>
+</div>
     <p class="hero-subtext">
       Track your workouts, connect with trainers, and achieve your goals.
     </p>
@@ -179,7 +206,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= WHEEL ================= */
   const wheel = document.getElementById("wheel");
-  const segments = document.querySelectorAll(".wheel .segment i");
+  const segments = Array.from(document.querySelectorAll(".wheel .segment i"));
+  const resultEl = document.getElementById("wheelResult");
+  const acceptBtn = document.getElementById("acceptBtn");
+  const rejectBtn = document.getElementById("rejectBtn");
 
   if (!wheel || !segments.length) return;
 
@@ -189,9 +219,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastAngle = 0;
   let animationFrame = null;
 
+  let currentWinningIndex = null;
+  let excludedIndexes = new Set();
+  let lastTickStep = null;
+
   const segmentAngle = 360 / segments.length;
-  const firstSegmentAngle = 26; // matches your CSS
-  const pointerAngle = 270;     // top pointer
+
+  /* tune this to align pointer to icon centre */
+  const firstSegmentAngle = 10;
+  const pointerAngle = 270;
+
+  if (resultEl) resultEl.textContent = "Spin the wheel";
+  if (acceptBtn) acceptBtn.disabled = true;
+  if (rejectBtn) rejectBtn.disabled = true;
 
   function getAngle(x, y) {
     const rect = wheel.getBoundingClientRect();
@@ -200,12 +240,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return Math.atan2(y - cy, x - cx) * 180 / Math.PI;
   }
 
+  function normalize(angle) {
+    return ((angle % 360) + 360) % 360;
+  }
+
   function updateWheel() {
     wheel.style.transform = `rotate(${rotation}deg)`;
 
     segments.forEach(icon => {
       const isClicked = icon.classList.contains("clicked");
-
       if (isClicked) {
         icon.style.transform = `rotate(${-rotation}deg) scale(1.15) translateY(-5px)`;
       } else {
@@ -222,36 +265,96 @@ document.addEventListener("DOMContentLoaded", () => {
     segments.forEach(icon => icon.classList.remove("active"));
   }
 
+  function getLabelForIcon(icon) {
+    return (
+      icon.dataset.label ||
+      icon.getAttribute("aria-label") ||
+      icon.getAttribute("title") ||
+      icon.dataset.page ||
+      "Selected category"
+    );
+  }
+
   function getWinningIndexFromSteps(steps) {
     let winningIndex = steps % segments.length;
     winningIndex = ((-winningIndex % segments.length) + segments.length) % segments.length;
     return winningIndex;
   }
 
-  function snapToPointer() {
+  function isAllowedIndex(index) {
+    return !excludedIndexes.has(index);
+  }
+
+  function getNextAllowedStop() {
     const baseTarget = pointerAngle - firstSegmentAngle;
+    let steps = Math.ceil((rotation - baseTarget) / segmentAngle);
 
-    /* always snap forward to the next valid stop */
-    const steps = Math.ceil((rotation - baseTarget) / segmentAngle);
-    const targetRotation = baseTarget + (steps * segmentAngle);
+    for (let i = 0; i < segments.length; i++) {
+      const candidateIndex = getWinningIndexFromSteps(steps + i);
+      if (isAllowedIndex(candidateIndex)) {
+        return {
+          steps: steps + i,
+          targetRotation: baseTarget + ((steps + i) * segmentAngle),
+          winningIndex: candidateIndex
+        };
+      }
+    }
 
-    rotation = targetRotation;
+    excludedIndexes.clear();
+
+    return {
+      steps,
+      targetRotation: baseTarget + (steps * segmentAngle),
+      winningIndex: getWinningIndexFromSteps(steps)
+    };
+  }
+
+  function updateResult(winningIndex) {
+    const icon = segments[winningIndex];
+    const label = getLabelForIcon(icon);
+
+    if (resultEl) {
+      resultEl.textContent = `Landed on: ${label}`;
+    }
+
+    if (acceptBtn) acceptBtn.disabled = false;
+    if (rejectBtn) rejectBtn.disabled = false;
+  }
+
+  function snapToPointer() {
+    const stop = getNextAllowedStop();
+
+    rotation = stop.targetRotation;
+    currentWinningIndex = stop.winningIndex;
+
     wheel.style.transition = "transform 0.2s ease-out";
     updateWheel();
-
-    const winningIndex = getWinningIndexFromSteps(steps);
 
     clearClicked();
     clearActive();
 
-    segments[winningIndex].classList.add("active");
-    segments[winningIndex].classList.add("clicked");
+    segments[currentWinningIndex].classList.add("active");
+    segments[currentWinningIndex].classList.add("clicked");
     updateWheel();
 
+    updateResult(currentWinningIndex);
+
     setTimeout(() => {
-      segments[winningIndex].classList.remove("clicked");
-      updateWheel();
+      if (currentWinningIndex !== null) {
+        segments[currentWinningIndex].classList.remove("clicked");
+        updateWheel();
+      }
     }, 800);
+  }
+
+  function doTickFeedback() {
+    const step = Math.floor(normalize(rotation) / segmentAngle);
+    if (step !== lastTickStep) {
+      lastTickStep = step;
+      wheel.classList.remove("tick");
+      void wheel.offsetWidth;
+      wheel.classList.add("tick");
+    }
   }
 
   function startDrag(e) {
@@ -286,6 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     wheel.style.transition = "none";
     updateWheel();
+    doTickFeedback();
   }
 
   function endDrag() {
@@ -300,6 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     wheel.style.transition = "none";
     updateWheel();
+    doTickFeedback();
 
     if (Math.abs(velocity) > 0.15) {
       animationFrame = requestAnimationFrame(spinMomentum);
@@ -317,22 +422,64 @@ document.addEventListener("DOMContentLoaded", () => {
 
     isDragging = false;
     velocity = Math.random() * 18 + 18;
+
+    clearClicked();
+    clearActive();
+    currentWinningIndex = null;
+
+    if (resultEl) resultEl.textContent = "Spinning...";
+    if (acceptBtn) acceptBtn.disabled = true;
+    if (rejectBtn) rejectBtn.disabled = true;
+
     spinMomentum();
   }
 
-  /* MAKE ONLY THE WINNING ICON CLICKABLE */
+  function goToCurrentPage() {
+    if (currentWinningIndex === null) return;
+
+    const page = segments[currentWinningIndex].dataset.page;
+    if (page) {
+      window.location.href = page;
+    }
+  }
+
+  function rejectCurrentCategory() {
+    if (currentWinningIndex === null) return;
+
+    excludedIndexes.add(currentWinningIndex);
+
+    if (resultEl) {
+      const label = getLabelForIcon(segments[currentWinningIndex]);
+      resultEl.textContent = `${label} rejected. Spin again.`;
+    }
+
+    clearClicked();
+    clearActive();
+    currentWinningIndex = null;
+
+    if (acceptBtn) acceptBtn.disabled = true;
+    if (rejectBtn) rejectBtn.disabled = true;
+  }
+
+  /* click active icon to go */
   segments.forEach(icon => {
     icon.addEventListener("click", () => {
       if (!icon.classList.contains("active")) return;
-
-      const link = icon.dataset.page;
+      const page = icon.dataset.page;
       if (page) {
         window.location.href = page;
       }
     });
   });
 
-  /* make button onclick="spinWheel()" work */
+  if (acceptBtn) {
+    acceptBtn.addEventListener("click", goToCurrentPage);
+  }
+
+  if (rejectBtn) {
+    rejectBtn.addEventListener("click", rejectCurrentCategory);
+  }
+
   window.spinWheel = spinWheel;
 
   wheel.addEventListener("mousedown", startDrag);
