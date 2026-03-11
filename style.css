@@ -585,15 +585,15 @@ footer {
     border:1px solid rgba(255,255,255,0.3);
     background:
       conic-gradient(
-        rgba(255,255,255,0.35) 0deg 36deg,
+        rgba(56, 173, 169, 0.2) 0deg 36deg,
         rgba(255,255,255,0.15) 36deg 72deg,
-        rgba(255,255,255,0.35) 72deg 108deg,
+        rgba(56, 173, 169, 0.2) 72deg 108deg,
         rgba(255,255,255,0.15) 108deg 144deg,
-        rgba(255,255,255,0.35) 144deg 180deg,
+        rgba(56, 173, 169, 0.2) 144deg 180deg,
         rgba(255,255,255,0.15) 180deg 216deg,
-        rgba(255,255,255,0.35) 216deg 252deg,
+        rgba(56, 173, 169, 0.2) 216deg 252deg,
         rgba(255,255,255,0.15) 252deg 288deg,
-        rgba(255,255,255,0.35) 288deg 324deg,
+        rgba(56, 173, 169, 0.2) 288deg 324deg,
         rgba(255,255,255,0.15) 324deg 360deg
       );
     box-shadow: 0 10px 30px rgba(0,0,0,0.25),
@@ -609,7 +609,7 @@ footer {
     inset:0;
     border-radius:50%;
     background: repeating-conic-gradient(
-      rgba(56, 173, 169, 0.2); 0deg 1deg,
+     rgba(255,255,255,0.7); 0deg 1deg,
       transparent 1deg 36deg
     );
   }
