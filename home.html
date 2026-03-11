@@ -206,21 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= WHEEL ================= */
   const wheel = document.getElementById("wheel");
-  const segments = Array.from(document.querySelectorAll(".wheel .segment i"));
-  const radius = 120; // distance from centre
-const segmentAngle = 360 / segments.length;
+  const segmentEls = Array.from(document.querySelectorAll(".wheel .segment"));
+  const icons = Array.from(document.querySelectorAll(".wheel .segment i"));
 
-segments.forEach((segment, index) => {
-  const angle = (index * segmentAngle) + segmentAngle / 2;
-
-  segment.style.transform =
-    `rotate(${angle}deg) translateX(${radius}px)`;
-});
   const resultEl = document.getElementById("wheelResult");
   const acceptBtn = document.getElementById("acceptBtn");
   const rejectBtn = document.getElementById("rejectBtn");
+  const spinBtn = document.getElementById("spinBtn");
 
-  if (!wheel || !segments.length) return;
+  if (!wheel || !segmentEls.length || !icons.length) return;
 
   let rotation = 0;
   let velocity = 0;
@@ -232,11 +226,20 @@ segments.forEach((segment, index) => {
   let excludedIndexes = new Set();
   let lastTickStep = null;
 
-  const segmentAngle = 360 / segments.length;
+  const segmentAngle = 360 / segmentEls.length;
+  const radius = 120;
 
-  /* tune this to align pointer to icon centre */
-  const firstSegmentAngle = 10;
+  /* Auto-position the segment containers */
+  segmentEls.forEach((segment, index) => {
+    const angle = (index * segmentAngle) + segmentAngle / 2;
+    segment.style.transform = `rotate(${angle}deg) translateX(${radius}px)`;
+  });
+
+  /* Pointer is at top */
   const pointerAngle = 270;
+
+  /* Since icons are centred in slices now */
+  const firstSegmentAngle = segmentAngle / 2;
 
   if (resultEl) resultEl.textContent = "Spin the wheel";
   if (acceptBtn) acceptBtn.disabled = true;
@@ -256,8 +259,9 @@ segments.forEach((segment, index) => {
   function updateWheel() {
     wheel.style.transform = `rotate(${rotation}deg)`;
 
-    segments.forEach(icon => {
+    icons.forEach(icon => {
       const isClicked = icon.classList.contains("clicked");
+
       if (isClicked) {
         icon.style.transform = `rotate(${-rotation}deg) scale(1.15) translateY(-5px)`;
       } else {
@@ -267,11 +271,11 @@ segments.forEach((segment, index) => {
   }
 
   function clearClicked() {
-    segments.forEach(icon => icon.classList.remove("clicked"));
+    icons.forEach(icon => icon.classList.remove("clicked"));
   }
 
   function clearActive() {
-    segments.forEach(icon => icon.classList.remove("active"));
+    icons.forEach(icon => icon.classList.remove("active"));
   }
 
   function getLabelForIcon(icon) {
@@ -285,8 +289,8 @@ segments.forEach((segment, index) => {
   }
 
   function getWinningIndexFromSteps(steps) {
-    let winningIndex = steps % segments.length;
-    winningIndex = ((-winningIndex % segments.length) + segments.length) % segments.length;
+    let winningIndex = steps % icons.length;
+    winningIndex = ((-winningIndex % icons.length) + icons.length) % icons.length;
     return winningIndex;
   }
 
@@ -298,7 +302,7 @@ segments.forEach((segment, index) => {
     const baseTarget = pointerAngle - firstSegmentAngle;
     let steps = Math.ceil((rotation - baseTarget) / segmentAngle);
 
-    for (let i = 0; i < segments.length; i++) {
+    for (let i = 0; i < icons.length; i++) {
       const candidateIndex = getWinningIndexFromSteps(steps + i);
       if (isAllowedIndex(candidateIndex)) {
         return {
@@ -319,7 +323,7 @@ segments.forEach((segment, index) => {
   }
 
   function updateResult(winningIndex) {
-    const icon = segments[winningIndex];
+    const icon = icons[winningIndex];
     const label = getLabelForIcon(icon);
 
     if (resultEl) {
@@ -342,15 +346,15 @@ segments.forEach((segment, index) => {
     clearClicked();
     clearActive();
 
-    segments[currentWinningIndex].classList.add("active");
-    segments[currentWinningIndex].classList.add("clicked");
+    icons[currentWinningIndex].classList.add("active");
+    icons[currentWinningIndex].classList.add("clicked");
     updateWheel();
 
     updateResult(currentWinningIndex);
 
     setTimeout(() => {
       if (currentWinningIndex !== null) {
-        segments[currentWinningIndex].classList.remove("clicked");
+        icons[currentWinningIndex].classList.remove("clicked");
         updateWheel();
       }
     }, 800);
@@ -446,7 +450,7 @@ segments.forEach((segment, index) => {
   function goToCurrentPage() {
     if (currentWinningIndex === null) return;
 
-    const page = segments[currentWinningIndex].dataset.page;
+    const page = icons[currentWinningIndex].dataset.page;
     if (page) {
       window.location.href = page;
     }
@@ -458,7 +462,7 @@ segments.forEach((segment, index) => {
     excludedIndexes.add(currentWinningIndex);
 
     if (resultEl) {
-      const label = getLabelForIcon(segments[currentWinningIndex]);
+      const label = getLabelForIcon(icons[currentWinningIndex]);
       resultEl.textContent = `${label} rejected. Spin again.`;
     }
 
@@ -471,7 +475,7 @@ segments.forEach((segment, index) => {
   }
 
   /* click active icon to go */
-  segments.forEach(icon => {
+  icons.forEach(icon => {
     icon.addEventListener("click", () => {
       if (!icon.classList.contains("active")) return;
       const page = icon.dataset.page;
@@ -489,6 +493,10 @@ segments.forEach((segment, index) => {
     rejectBtn.addEventListener("click", rejectCurrentCategory);
   }
 
+  if (spinBtn) {
+    spinBtn.addEventListener("click", spinWheel);
+  }
+
   window.spinWheel = spinWheel;
 
   wheel.addEventListener("mousedown", startDrag);
@@ -500,4 +508,5 @@ segments.forEach((segment, index) => {
   document.addEventListener("mouseup", endDrag);
   document.addEventListener("touchend", endDrag);
 });
-</script>    
+</script>
+ 
