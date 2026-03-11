@@ -207,6 +207,15 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ================= WHEEL ================= */
   const wheel = document.getElementById("wheel");
   const segments = Array.from(document.querySelectorAll(".wheel .segment i"));
+  const radius = 120; // distance from centre
+const segmentAngle = 360 / segments.length;
+
+segments.forEach((segment, index) => {
+  const angle = (index * segmentAngle) + segmentAngle / 2;
+
+  segment.style.transform =
+    `rotate(${angle}deg) translateX(${radius}px)`;
+});
   const resultEl = document.getElementById("wheelResult");
   const acceptBtn = document.getElementById("acceptBtn");
   const rejectBtn = document.getElementById("rejectBtn");
