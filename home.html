@@ -232,8 +232,12 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Auto-position the segment containers */
   segmentEls.forEach((segment, index) => {
     const angle = (index * segmentAngle) + segmentAngle / 2;
-    segment.style.transform = `rotate(${angle}deg) translateX(${radius}px)`;
-  });
+    segment.style.transform = `
+    rotate(${angle}deg)
+    translateX(${radius}px)
+    translate(-50%, -50%)
+  `;
+});
 
   /* Pointer is at top */
   const pointerAngle = 270;
