@@ -157,112 +157,156 @@
   <footer>© 2025 Interactive Fitness — All Rights Reserved</footer>
 
 <script>
-/* ================= HAMBURGER MENU ================= */
-const menuToggle = document.querySelector(".menu-toggle");
-const menu = document.querySelector(".menu");
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-  menu.classList.toggle("open");
-});
+document.addEventListener("DOMContentLoaded", () => {
+  /* ================= HAMBURGER MENU ================= */
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
 
-/* ================= SUBMENU ================= */
-document.querySelectorAll(".has-submenu > a").forEach(item => {
-  item.addEventListener("click", (e) => {
-    e.preventDefault();
-    item.parentElement.classList.toggle("open");
+  if (menuToggle && menu) {
+    menuToggle.addEventListener("click", () => {
+      menuToggle.classList.toggle("active");
+      menu.classList.toggle("open");
+    });
+  }
+
+  /* ================= SUBMENU ================= */
+  document.querySelectorAll(".has-submenu > a").forEach(item => {
+    item.addEventListener("click", (e) => {
+      e.preventDefault();
+      item.parentElement.classList.toggle("open");
+    });
   });
-});
 
-/* ================= WHEEL ================= */
-const wheel = document.getElementById("wheel");
-const segments = document.querySelectorAll(".wheel .segment i");
-let rotation = 0;
-let velocity = 0;
-let isDragging = false;
-let lastAngle = 0;
+  /* ================= WHEEL ================= */
+  const wheel = document.getElementById("wheel");
+  const segments = document.querySelectorAll(".wheel .segment i");
 
-function getAngle(x, y){
-  const rect = wheel.getBoundingClientRect();
-  const cx = rect.left + rect.width/2;
-  const cy = rect.top + rect.height/2;
-  return Math.atan2(y-cy, x-cx)*180/Math.PI;
-}
+  if (!wheel || !segments.length) return;
 
-function startDrag(e){
-  isDragging = true;
-  velocity = 0;
-  const touch = e.touches ? e.touches[0] : e;
-  lastAngle = getAngle(touch.clientX, touch.clientY);
-}
-function dragSpin(e){
-  if(!isDragging) return;
-  const touch = e.touches ? e.touches[0] : e;
-  const angle = getAngle(touch.clientX, touch.clientY);
-  let delta = angle - lastAngle;
-  if (delta > 180) delta -= 360;
-  if (delta < -180) delta += 360;
-  rotation += delta;
-  velocity = delta;
-  wheel.style.transition = "none";
-  wheel.style.transform = `rotate(${rotation}deg)`;
-  segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
-  lastAngle = angle;
-}
-function endDrag(){ if(!isDragging) return; isDragging=false; spinMomentum(); }
+  let rotation = 0;
+  let velocity = 0;
+  let isDragging = false;
+  let lastAngle = 0;
+  let animationFrame = null;
 
-wheel.addEventListener("mousedown", startDrag);
-wheel.addEventListener("touchstart", startDrag);
-document.addEventListener("mousemove", dragSpin);
-document.addEventListener("touchmove", dragSpin);
-document.addEventListener("mouseup", endDrag);
-document.addEventListener("touchend", endDrag);
+  const segmentAngle = 360 / segments.length;
+  const firstSegmentAngle = 26;   // matches your CSS
+  const pointerAngle = 270;       // top pointer
 
-function spinWheel(){ velocity = Math.random()*20+25; spinMomentum(); }
-function spinMomentum(){
-  rotation += velocity;
-  velocity *= 0.95;
+  function normalize(angle) {
+    return ((angle % 360) + 360) % 360;
+  }
 
-  wheel.style.transition = "transform 0.05s linear";
-  wheel.style.transform = `rotate(${rotation}deg)`;
+  function getAngle(x, y) {
+    const rect = wheel.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    return Math.atan2(y - cy, x - cx) * 180 / Math.PI;
+  }
 
-  segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
-
-  if(Math.abs(velocity) > 0.1){
-    requestAnimationFrame(spinMomentum);
-  } else {
-
-    /* SNAP TO NEAREST SEGMENT */
-    const segmentAngle = 360 / segments.length;
-    const snapped = Math.round(rotation / segmentAngle) * segmentAngle;
-
-    wheel.style.transition = "transform 0.4s ease-out";
-    rotation = snapped;
+  function updateWheel() {
     wheel.style.transform = `rotate(${rotation}deg)`;
+    segments.forEach(icon => {
+      icon.style.transform = `rotate(${-rotation}deg)`;
+    });
+  }
 
-    segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
+  function clearClicked() {
+    segments.forEach(icon => icon.classList.remove("clicked"));
+  }
 
-   /* FIND ICON AT POINTER */
+  function getWinningIndex() {
+    const normalizedRotation = normalize(rotation);
+    let index = Math.round((pointerAngle - firstSegmentAngle - normalizedRotation) / segmentAngle);
+    index = ((index % segments.length) + segments.length) % segments.length;
+    return index;
+  }
 
-/* adjust for pointer position (top = -90deg) */
-let adjustedRotation = rotation + 90;
+  function snapToPointer() {
+    const winningIndex = getWinningIndex();
+    const targetRotation = pointerAngle - firstSegmentAngle - (winningIndex * segmentAngle);
 
-/* normalize angle */
-adjustedRotation = ((adjustedRotation % 360) + 360) % 360;
+    wheel.style.transition = "transform 0.35s ease-out";
+    rotation = targetRotation;
+    updateWheel();
 
-/* find segment index */
-const index = Math.floor(adjustedRotation / segmentAngle);
+    clearClicked();
+    segments[winningIndex].classList.add("clicked");
 
-/* POP ANIMATION */
-segments[index].classList.add("clicked");
+    setTimeout(() => {
+      segments[winningIndex].classList.remove("clicked");
+    }, 800);
+  }
 
-setTimeout(() => {
-  segments[index].classList.remove("clicked");
-}, 800);
-}
-}
-}
-  
-  </script>
+  function startDrag(e) {
+    isDragging = true;
+    velocity = 0;
+    wheel.style.transition = "none";
 
-</body>
-</html>
+    if (animationFrame) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
+
+    const touch = e.touches ? e.touches[0] : e;
+    lastAngle = getAngle(touch.clientX, touch.clientY);
+  }
+
+  function dragSpin(e) {
+    if (!isDragging) return;
+
+    if (e.cancelable) e.preventDefault();
+
+    const touch = e.touches ? e.touches[0] : e;
+    const angle = getAngle(touch.clientX, touch.clientY);
+
+    let delta = angle - lastAngle;
+    if (delta > 180) delta -= 360;
+    if (delta < -180) delta += 360;
+
+    rotation += delta;
+    velocity = delta;
+    lastAngle = angle;
+
+    updateWheel();
+  }
+
+  function endDrag() {
+    if (!isDragging) return;
+    isDragging = false;
+    spinMomentum();
+  }
+
+  function spinMomentum() {
+    rotation += velocity;
+    velocity *= 0.95;
+
+    wheel.style.transition = "none";
+    updateWheel();
+
+    if (Math.abs(velocity) > 0.15) {
+      animationFrame = requestAnimationFrame(spinMomentum);
+    } else {
+      animationFrame = null;
+      snapToPointer();
+    }
+  }
+
+  function spinWheel() {
+    velocity = Math.random() * 18 + 18;
+    spinMomentum();
+  }
+
+  /* make button onclick="spinWheel()" work */
+  window.spinWheel = spinWheel;
+
+  wheel.addEventListener("mousedown", startDrag);
+  wheel.addEventListener("touchstart", startDrag, { passive: true });
+
+  document.addEventListener("mousemove", dragSpin);
+  document.addEventListener("touchmove", dragSpin, { passive: false });
+
+  document.addEventListener("mouseup", endDrag);
+  document.addEventListener("touchend", endDrag);
+});
+</script>
