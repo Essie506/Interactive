@@ -648,7 +648,7 @@ footer {
   }
     
 .segment:nth-child(1)  { transform: rotate(32deg) translateX(120px); }
-.segment:nth-child(2)  { transform: rotate(628deg) translateX(120px); }
+.segment:nth-child(2)  { transform: rotate(68deg) translateX(120px); }
 .segment:nth-child(3)  { transform: rotate(104deg) translateX(120px); }
 .segment:nth-child(4)  { transform: rotate(140deg) translateX(120px); }
 .segment:nth-child(5)  { transform: rotate(176deg) translateX(120px); }
