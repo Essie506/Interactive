@@ -219,25 +219,40 @@ function spinWheel(){ velocity = Math.random()*20+25; spinMomentum(); }
 function spinMomentum(){
   rotation += velocity;
   velocity *= 0.95;
+
   wheel.style.transition = "transform 0.05s linear";
   wheel.style.transform = `rotate(${rotation}deg)`;
-  segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
-  if(Math.abs(velocity)>0.1) requestAnimationFrame(spinMomentum);
-}
 
-/* ================= CLICK POP + REDIRECT ================= */
-segments.forEach(icon => {
-  const segment = icon.parentElement;
-  const page = segment.dataset.page;
-  segment.addEventListener("click", ()=>{
-    icon.classList.add("clicked");
-    setTimeout(()=>icon.classList.remove("clicked"),250);
-    setTimeout(()=>window.location.href=page,300);
-  });
-});
-</script>
-  
-</script>
+  segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
+
+  if(Math.abs(velocity) > 0.1){
+    requestAnimationFrame(spinMomentum);
+  } else {
+
+    /* SNAP TO NEAREST SEGMENT */
+    const segmentAngle = 360 / segments.length;
+    const snapped = Math.round(rotation / segmentAngle) * segmentAngle;
+
+    wheel.style.transition = "transform 0.4s ease-out";
+    rotation = snapped;
+    wheel.style.transform = `rotate(${rotation}deg)`;
+
+    segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
+
+    /* FIND WINNING ICON */
+    const index =
+      ((Math.round(rotation / segmentAngle) % segments.length) + segments.length) %
+      segments.length;
+
+    /* POP ANIMATION */
+    segments[index].classList.add("clicked");
+
+    setTimeout(() => {
+      segments[index].classList.remove("clicked");
+    }, 800);
+  }
+}
+  </script>
 
 </body>
 </html>
