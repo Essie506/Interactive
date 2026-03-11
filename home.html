@@ -190,12 +190,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let animationFrame = null;
 
   const segmentAngle = 360 / segments.length;
-  const firstSegmentAngle = 26;   // matches your CSS
-  const pointerAngle = 270;       // top pointer
-
-  function normalize(angle) {
-    return ((angle % 360) + 360) % 360;
-  }
+  const firstSegmentAngle = 26; // matches your CSS
+  const pointerAngle = 270;     // top pointer
 
   function getAngle(x, y) {
     const rect = wheel.getBoundingClientRect();
@@ -206,8 +202,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateWheel() {
     wheel.style.transform = `rotate(${rotation}deg)`;
+
     segments.forEach(icon => {
-      icon.style.transform = `rotate(${-rotation}deg)`;
+      const isClicked = icon.classList.contains("clicked");
+
+      if (isClicked) {
+        icon.style.transform = `rotate(${-rotation}deg) scale(1.15) translateY(-5px)`;
+      } else {
+        icon.style.transform = `rotate(${-rotation}deg)`;
+      }
     });
   }
 
@@ -215,36 +218,41 @@ document.addEventListener("DOMContentLoaded", () => {
     segments.forEach(icon => icon.classList.remove("clicked"));
   }
 
-  function getWinningIndex() {
-    const normalizedRotation = normalize(rotation);
-    let index = Math.round((pointerAngle - firstSegmentAngle - normalizedRotation) / segmentAngle);
-    index = ((index % segments.length) + segments.length) % segments.length;
-    return index;
+  function clearActive() {
+    segments.forEach(icon => icon.classList.remove("active"));
   }
 
-function snapToPointer() {
-  const baseTarget = pointerAngle - firstSegmentAngle;
+  function getWinningIndexFromSteps(steps) {
+    let winningIndex = steps % segments.length;
+    winningIndex = ((-winningIndex % segments.length) + segments.length) % segments.length;
+    return winningIndex;
+  }
 
-  // always snap to the NEXT valid stop in the forward direction
-  const steps = Math.ceil((rotation - baseTarget) / segmentAngle);
-  const targetRotation = baseTarget + (steps * segmentAngle);
+  function snapToPointer() {
+    const baseTarget = pointerAngle - firstSegmentAngle;
 
-  rotation = targetRotation;
+    /* always snap forward to the next valid stop */
+    const steps = Math.ceil((rotation - baseTarget) / segmentAngle);
+    const targetRotation = baseTarget + (steps * segmentAngle);
 
-  wheel.style.transition = "transform 0.25s ease-out";
-  updateWheel();
+    rotation = targetRotation;
+    wheel.style.transition = "transform 0.2s ease-out";
+    updateWheel();
 
-  // work out which icon is now under the pointer
-  let winningIndex = steps % segments.length;
-  winningIndex = ((-winningIndex % segments.length) + segments.length) % segments.length;
+    const winningIndex = getWinningIndexFromSteps(steps);
 
-  clearClicked();
-  segments[winningIndex].classList.add("clicked");
+    clearClicked();
+    clearActive();
 
-  setTimeout(() => {
-    segments[winningIndex].classList.remove("clicked");
-  }, 800);
-}
+    segments[winningIndex].classList.add("active");
+    segments[winningIndex].classList.add("clicked");
+    updateWheel();
+
+    setTimeout(() => {
+      segments[winningIndex].classList.remove("clicked");
+      updateWheel();
+    }, 800);
+  }
 
   function startDrag(e) {
     isDragging = true;
@@ -276,6 +284,7 @@ function snapToPointer() {
     velocity = delta;
     lastAngle = angle;
 
+    wheel.style.transition = "none";
     updateWheel();
   }
 
@@ -301,9 +310,27 @@ function snapToPointer() {
   }
 
   function spinWheel() {
+    if (animationFrame) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
+
+    isDragging = false;
     velocity = Math.random() * 18 + 18;
     spinMomentum();
   }
+
+  /* MAKE ONLY THE WINNING ICON CLICKABLE */
+  segments.forEach(icon => {
+    icon.addEventListener("click", () => {
+      if (!icon.classList.contains("active")) return;
+
+      const link = icon.dataset.page;
+      if (page) {
+        window.location.href = page;
+      }
+    });
+  });
 
   /* make button onclick="spinWheel()" work */
   window.spinWheel = spinWheel;
