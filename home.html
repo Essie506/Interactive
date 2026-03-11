@@ -242,7 +242,6 @@ function spinMomentum(){
     segments.forEach(icon => icon.style.transform = `rotate(${-rotation}deg)`);
 
    /* FIND ICON AT POINTER */
-const segmentAngle = 360 / segments.length;
 
 /* adjust for pointer position (top = -90deg) */
 let adjustedRotation = rotation + 90;
@@ -259,8 +258,10 @@ segments[index].classList.add("clicked");
 setTimeout(() => {
   segments[index].classList.remove("clicked");
 }, 800);
-  }
 }
+}
+}
+  
   </script>
 
 </body>
