@@ -222,21 +222,32 @@ document.addEventListener("DOMContentLoaded", () => {
     return index;
   }
 
-  function snapToPointer() {
-    const winningIndex = getWinningIndex();
-    const targetRotation = pointerAngle - firstSegmentAngle - (winningIndex * segmentAngle);
+function snapToPointer() {
+  const normalizedRotation = ((rotation % 360) + 360) % 360;
 
-    wheel.style.transition = "transform 0.35s ease-out";
-    rotation = targetRotation;
-    updateWheel();
+  let winningIndex = Math.round(
+    (pointerAngle - firstSegmentAngle - normalizedRotation) / segmentAngle
+  );
+  winningIndex = ((winningIndex % segments.length) + segments.length) % segments.length;
 
-    clearClicked();
-    segments[winningIndex].classList.add("clicked");
+  let targetRotation = pointerAngle - firstSegmentAngle - (winningIndex * segmentAngle);
 
-    setTimeout(() => {
-      segments[winningIndex].classList.remove("clicked");
-    }, 800);
+  /* keep target in the same forward direction */
+  while (targetRotation < rotation) {
+    targetRotation += 360;
   }
+
+  wheel.style.transition = "transform 0.35s ease-out";
+  rotation = targetRotation;
+  updateWheel();
+
+  clearClicked();
+  segments[winningIndex].classList.add("clicked");
+
+  setTimeout(() => {
+    segments[winningIndex].classList.remove("clicked");
+  }, 800);
+}
 
   function startDrag(e) {
     isDragging = true;
