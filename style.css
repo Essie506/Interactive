@@ -372,7 +372,7 @@ body.index .hero::after {
 
 @media (max-width: 480px) {
   .hero {
-    justify-content: flex-end; /* keeps content towards bottom */
+    justify-content: center; /* keeps content towards bottom */
     padding: 0;                /* remove left/right padding */
     position: relative;
     height: 100vh;             /* ensures full height for vertical centering */
@@ -527,10 +527,13 @@ footer {
   display: flex;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   color:black;
-  background:transparent;
+background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.4);
   padding:20px;
   border-radius:14px;
   box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .icon-circle {
@@ -571,12 +574,12 @@ footer {
   .wheel-wrapper {
     position: relative;
     width: 92vw;
-    height: 92vw;
-    margin: auto;
     max-width: 420px;
-    max-height: 420px;
-    aspect-ratio: 1 / 1;
-  }
+    margin: auto;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
   .wheel {
     position: relative;
@@ -597,12 +600,13 @@ footer {
         rgba(56, 173, 169, 0.2) 288deg 324deg,
         rgba(255,255,255,0.15) 324deg 360deg
       );
-    backdrop-filter: blur(12px);
-    box-shadow:
-      0 10px 30px rgba(0,0,0,0.25),
-      inset 0 0 20px rgba(255,255,255,0.2);
-    transition: transform 4s cubic-bezier(.17,.67,.35,1);
+   backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+   box-shadow:
+    0 8px 20px rgba(0,0,0,0.18),
+    inset 0 0 12px rgba(255,255,255,0.16);
     touch-action: none;
+     will-change: transform;
   }
 
   .wheel::before {
@@ -640,10 +644,11 @@ footer {
     color: black;
     border-radius: 50%;
     background: rgba(255,255,255,0.8);
-    backdrop-filter: blur(8px);
     box-shadow:
       0 4px 10px rgba(0,0,0,0.15),
       inset 0 1px 2px rgba(255,255,255,0.6);
+        backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   }
 
