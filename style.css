@@ -566,13 +566,12 @@ background: rgba(255,255,255,0.35);
     flex-direction: column;
     align-items: center;
     width: 100%;
-  margin-top: 20px;
+    margin-top: 20px;
   }
 
   .category-icons {
     display: none;
   }
-  
 
   .wheel-wrapper {
     position: relative;
@@ -580,14 +579,16 @@ background: rgba(255,255,255,0.35);
     max-width: 420px;
     margin: 0 auto;
     display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    flex-direction: column;
+    align-items: center;
+  }
+
   .wheel-stage {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-}
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
   .wheel {
     position: relative;
     width: 100%;
@@ -607,13 +608,13 @@ background: rgba(255,255,255,0.35);
         rgba(56, 173, 169, 0.2) 288deg 324deg,
         rgba(255,255,255,0.15) 324deg 360deg
       );
-   backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-   box-shadow:
-    0 8px 20px rgba(0,0,0,0.18),
-    inset 0 0 12px rgba(255,255,255,0.16);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow:
+      0 8px 20px rgba(0,0,0,0.18),
+      inset 0 0 12px rgba(255,255,255,0.16);
     touch-action: none;
-     will-change: transform;
+    will-change: transform;
   }
 
   .wheel::before {
@@ -626,6 +627,7 @@ background: rgba(255,255,255,0.35);
       transparent 1deg 36deg
     );
   }
+
   .wheel.tick {
     filter: brightness(1.04);
   }
@@ -653,8 +655,8 @@ background: rgba(255,255,255,0.35);
     box-shadow:
       0 4px 10px rgba(0,0,0,0.15),
       inset 0 1px 2px rgba(255,255,255,0.6);
-        backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   }
 
@@ -706,7 +708,7 @@ background: rgba(255,255,255,0.35);
     font-size: 13px;
     letter-spacing: 0.5px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 11;
   }
 
   .hub:active {
