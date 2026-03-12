@@ -228,10 +228,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const segmentAngle = 360 / segmentEls.length;
   const radius = 138;
+  const offsetAngle = 44; // tweak this number only if you want icons a bit further round
 
   /* Auto-position the segment containers */
   segmentEls.forEach((segment, index) => {
-   const offsetAngle = segmentAngle / 2 + segmentAngle;
+    const angle = (index * segmentAngle) + offsetAngle;
 
     segment.style.transform = `
       rotate(${angle}deg)
@@ -243,8 +244,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* Pointer is at top */
   const pointerAngle = 270;
 
-  /* Since icons are shifted one extra slice */
- =const firstSegmentAngle = offsetAngle;
+  /* Must match the positioning offset above */
+  const firstSegmentAngle = offsetAngle;
 
   if (resultEl) resultEl.textContent = "Spin the wheel";
   if (acceptBtn) acceptBtn.disabled = true;
