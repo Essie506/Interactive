@@ -368,6 +368,7 @@ body.index .hero::after {
     color: #555;
     max-width: 600px;
     text-align: center;
+    padding: 0 12px;
 }
 
 @media (max-width: 480px) {
