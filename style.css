@@ -583,7 +583,11 @@ background: rgba(255,255,255,0.35);
   flex-direction: column;
   align-items: center;
 }
-
+  .wheel-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
   .wheel {
     position: relative;
     width: 100%;
@@ -622,12 +626,6 @@ background: rgba(255,255,255,0.35);
       transparent 1deg 36deg
     );
   }
-
-  .wheel-stage {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-}
   .wheel.tick {
     filter: brightness(1.04);
   }
