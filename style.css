@@ -385,7 +385,7 @@ body.index .hero::after {
     }
 
     .hero h1 {
-        font-size: 18px;
+        font-size: 32px;
         line-height: 1.2;
         margin-top: 10px;
     }
@@ -561,6 +561,7 @@ footer {
   .mobile-wheel {
     display:block;
     margin: 20px auto 40px;
+    margin-top: 10px
   }
 
   .category-icons {
