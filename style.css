@@ -615,7 +615,6 @@ background: rgba(255,255,255,0.35);
       inset 0 0 12px rgba(255,255,255,0.16);
     touch-action: none;
     will-change: transform;
-    opacity: 0;
   }
 
   .wheel::before {
@@ -632,10 +631,6 @@ background: rgba(255,255,255,0.35);
   .wheel.tick {
     filter: brightness(1.04);
   }
-.wheel.ready {
-  opacity: 1;
-}
-
   .segment {
     position: absolute;
     top: 50%;
