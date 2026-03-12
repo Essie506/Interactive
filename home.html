@@ -127,6 +127,7 @@
 <!-- Mobile wheel -->
 <div class="mobile-wheel">
   <div class="wheel-wrapper">
+    <div class="wheel-stage">
     <div class="pointer"></div>
 
     <div class="wheel" id="wheel">
@@ -520,9 +521,12 @@ window.addEventListener("resize", positionSegments);
     rejectBtn.addEventListener("click", rejectCurrentCategory);
   }
 
-  if (spinBtn) {
-    spinBtn.addEventListener("click", spinWheel);
-  }
+ if (spinBtn) {
+  spinBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    spinWheel();
+  });
+}
 
   window.spinWheel = spinWheel;
 
