@@ -247,11 +247,13 @@ function positionSegments() {
   });
 }
 
-/* Run once */
-positionSegments();
+window.addEventListener("load", () => {
+  setTimeout(positionSegments, 50);
+});
 
-/* Run again if screen size changes */
-window.addEventListener("resize", positionSegments);
+window.addEventListener("resize", () => {
+  positionSegments();
+});
 
   /* Pointer is at top */
   const pointerAngle = 270;
