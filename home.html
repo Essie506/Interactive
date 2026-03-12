@@ -201,35 +201,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ================= WHEEL ================= */
-  const wheel = document.getElementById("wheel");
-  const segmentEls = Array.from(document.querySelectorAll(".wheel .segment"));
-  const icons = Array.from(document.querySelectorAll(".wheel .segment i"));
+ /* ================= WHEEL ================= */
+const wheel = document.getElementById("wheel");
+const segmentEls = Array.from(document.querySelectorAll(".wheel .segment"));
+const icons = Array.from(document.querySelectorAll(".wheel .segment i"));
 
-  const resultEl = document.getElementById("wheelResult");
-  const acceptBtn = document.getElementById("acceptBtn");
-  const rejectBtn = document.getElementById("rejectBtn");
-  const spinBtn = document.getElementById("spinBtn");
+const resultEl = document.getElementById("wheelResult");
+const acceptBtn = document.getElementById("acceptBtn");
+const rejectBtn = document.getElementById("rejectBtn");
+const spinBtn = document.getElementById("spinBtn");
 
-  if (!wheel || !segmentEls.length || !icons.length) return;
+if (!wheel || !segmentEls.length || !icons.length) return;
 
-  let rotation = 0;
-  let velocity = 0;
-  let isDragging = false;
-  let lastAngle = 0;
-  let animationFrame = null;
+let rotation = 0;
+let velocity = 0;
+let isDragging = false;
+let lastAngle = 0;
+let animationFrame = null;
 
-  let currentWinningIndex = null;
-  let excludedIndexes = new Set();
-  let lastTickStep = null;
-  
+let currentWinningIndex = null;
+let excludedIndexes = new Set();
+let lastTickStep = null;
+let popTimeout = null;
+
 const segmentAngle = 360 / segmentEls.length;
-const offsetAngle = 50;
+const offsetAngle = 46;
 
 /* Get radius from real wheel size */
 function getRadius() {
   const rect = wheel.getBoundingClientRect();
-  return rect.width * 0.30;
+  return rect.width * 0.28;
 }
 
 /* Position segments based on real radius */
@@ -247,300 +248,327 @@ function positionSegments() {
   });
 }
 
+/* Initial setup after layout settles */
+function setupWheel() {
+  positionSegments();
+  updateWheel();
+}
+
+/* Run after everything has painted */
 window.addEventListener("load", () => {
-  setTimeout(positionSegments, 50);
+  requestAnimationFrame(() => {
+    setupWheel();
+  });
 });
 
 window.addEventListener("resize", () => {
   positionSegments();
+  updateWheel();
 });
 
-  /* Pointer is at top */
-  const pointerAngle = 270;
+/* Pointer is at top */
+const pointerAngle = 270;
 
-  /* Must match the positioning offset above */
-  const firstSegmentAngle = offsetAngle;
+/* Must match the positioning offset above */
+const firstSegmentAngle = offsetAngle;
 
-  if (resultEl) resultEl.textContent = "Spin the wheel";
-  if (acceptBtn) acceptBtn.disabled = true;
-  if (rejectBtn) rejectBtn.disabled = true;
+if (resultEl) resultEl.textContent = "Spin the wheel";
+if (acceptBtn) acceptBtn.disabled = true;
+if (rejectBtn) rejectBtn.disabled = true;
 
-  /* Make icons clickable, not segment wrappers */
-  segmentEls.forEach(segment => {
-    segment.style.pointerEvents = "none";
-  });
+/* Make icons clickable, not segment wrappers */
+segmentEls.forEach(segment => {
+  segment.style.pointerEvents = "none";
+});
+
+icons.forEach(icon => {
+  icon.style.pointerEvents = "auto";
+});
+
+function getAngle(x, y) {
+  const rect = wheel.getBoundingClientRect();
+  const cx = rect.left + rect.width / 2;
+  const cy = rect.top + rect.height / 2;
+  return Math.atan2(y - cy, x - cx) * 180 / Math.PI;
+}
+
+function normalize(angle) {
+  return ((angle % 360) + 360) % 360;
+}
+
+function updateWheel() {
+  wheel.style.transform = `rotate(${rotation}deg)`;
 
   icons.forEach(icon => {
-    icon.style.pointerEvents = "auto";
+    if (icon.classList.contains("clicked")) {
+      icon.style.transform = `rotate(${-rotation}deg) scale(1.12) translateY(-4px)`;
+    } else {
+      icon.style.transform = `rotate(${-rotation}deg)`;
+    }
   });
+}
 
-  function getAngle(x, y) {
-    const rect = wheel.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    return Math.atan2(y - cy, x - cx) * 180 / Math.PI;
+function clearClicked() {
+  icons.forEach(icon => icon.classList.remove("clicked"));
+}
+
+function clearActive() {
+  icons.forEach(icon => icon.classList.remove("active"));
+}
+
+function clearPopTimeout() {
+  if (popTimeout) {
+    clearTimeout(popTimeout);
+    popTimeout = null;
   }
+}
 
-  function normalize(angle) {
-    return ((angle % 360) + 360) % 360;
-  }
+function getLabelForIcon(icon) {
+  return (
+    icon.dataset.label ||
+    icon.getAttribute("aria-label") ||
+    icon.getAttribute("title") ||
+    icon.dataset.page ||
+    "Selected category"
+  );
+}
 
-  function updateWheel() {
-    wheel.style.transform = `rotate(${rotation}deg)`;
+function getWinningIndexFromSteps(steps) {
+  let winningIndex = steps % icons.length;
+  winningIndex = ((-winningIndex % icons.length) + icons.length) % icons.length;
+  return winningIndex;
+}
 
-    icons.forEach(icon => {
-      const isClicked = icon.classList.contains("clicked");
+function isAllowedIndex(index) {
+  return !excludedIndexes.has(index);
+}
 
-      if (isClicked) {
-        icon.style.transform = `rotate(${-rotation}deg) scale(1.15) translateY(-5px)`;
-      } else {
-        icon.style.transform = `rotate(${-rotation}deg)`;
-      }
-    });
-  }
+function getNextAllowedStop() {
+  const baseTarget = pointerAngle - firstSegmentAngle;
+  let steps = Math.ceil((rotation - baseTarget) / segmentAngle);
 
-  function clearClicked() {
-    icons.forEach(icon => icon.classList.remove("clicked"));
-  }
-
-  function clearActive() {
-    icons.forEach(icon => icon.classList.remove("active"));
-  }
-
-  function getLabelForIcon(icon) {
-    return (
-      icon.dataset.label ||
-      icon.getAttribute("aria-label") ||
-      icon.getAttribute("title") ||
-      icon.dataset.page ||
-      "Selected category"
-    );
-  }
-
-  function getWinningIndexFromSteps(steps) {
-    let winningIndex = steps % icons.length;
-    winningIndex = ((-winningIndex % icons.length) + icons.length) % icons.length;
-    return winningIndex;
-  }
-
-  function isAllowedIndex(index) {
-    return !excludedIndexes.has(index);
-  }
-
-  function getNextAllowedStop() {
-    const baseTarget = pointerAngle - firstSegmentAngle;
-    let steps = Math.ceil((rotation - baseTarget) / segmentAngle);
-
-    for (let i = 0; i < icons.length; i++) {
-      const candidateIndex = getWinningIndexFromSteps(steps + i);
-      if (isAllowedIndex(candidateIndex)) {
-        return {
-          steps: steps + i,
-          targetRotation: baseTarget + ((steps + i) * segmentAngle),
-          winningIndex: candidateIndex
-        };
-      }
+  for (let i = 0; i < icons.length; i++) {
+    const candidateIndex = getWinningIndexFromSteps(steps + i);
+    if (isAllowedIndex(candidateIndex)) {
+      return {
+        steps: steps + i,
+        targetRotation: baseTarget + ((steps + i) * segmentAngle),
+        winningIndex: candidateIndex
+      };
     }
-
-    excludedIndexes.clear();
-
-    return {
-      steps,
-      targetRotation: baseTarget + (steps * segmentAngle),
-      winningIndex: getWinningIndexFromSteps(steps)
-    };
   }
 
-  function updateResult(winningIndex) {
-    const icon = icons[winningIndex];
-    const label = getLabelForIcon(icon);
+  excludedIndexes.clear();
 
-    if (resultEl) {
-      resultEl.textContent = `Landed on: ${label}`;
-    }
+  return {
+    steps,
+    targetRotation: baseTarget + (steps * segmentAngle),
+    winningIndex: getWinningIndexFromSteps(steps)
+  };
+}
 
-    if (acceptBtn) acceptBtn.disabled = false;
-    if (rejectBtn) rejectBtn.disabled = false;
+function updateResult(winningIndex) {
+  const icon = icons[winningIndex];
+  const label = getLabelForIcon(icon);
+
+  if (resultEl) {
+    resultEl.textContent = `Landed on: ${label}`;
   }
 
-  function snapToPointer() {
-    const stop = getNextAllowedStop();
+  if (acceptBtn) acceptBtn.disabled = false;
+  if (rejectBtn) rejectBtn.disabled = false;
+}
 
-    rotation = stop.targetRotation;
-    currentWinningIndex = stop.winningIndex;
+function snapToPointer() {
+  const stop = getNextAllowedStop();
 
-    wheel.style.transition = "transform 0.2s ease-out";
-    updateWheel();
+  rotation = stop.targetRotation;
+  currentWinningIndex = stop.winningIndex;
 
-    clearClicked();
-    clearActive();
+  wheel.style.transition = "transform 0.2s ease-out";
 
-    icons[currentWinningIndex].classList.add("active");
+  clearPopTimeout();
+  clearClicked();
+  clearActive();
+
+  icons[currentWinningIndex].classList.add("active");
+  updateWheel();
+  updateResult(currentWinningIndex);
+
+  /* Add pop AFTER the wheel has snapped */
+  popTimeout = setTimeout(() => {
+    if (currentWinningIndex === null) return;
+
     icons[currentWinningIndex].classList.add("clicked");
     updateWheel();
 
-    updateResult(currentWinningIndex);
+    popTimeout = setTimeout(() => {
+      if (currentWinningIndex === null) return;
 
-    setTimeout(() => {
-      if (currentWinningIndex !== null) {
-        icons[currentWinningIndex].classList.remove("clicked");
-        updateWheel();
-      }
-    }, 800);
+      icons[currentWinningIndex].classList.remove("clicked");
+      updateWheel();
+      popTimeout = null;
+    }, 450);
+  }, 120);
+}
+
+function doTickFeedback() {
+  const step = Math.floor(normalize(rotation) / segmentAngle);
+  if (step !== lastTickStep) {
+    lastTickStep = step;
+    wheel.classList.remove("tick");
+    void wheel.offsetWidth;
+    wheel.classList.add("tick");
+  }
+}
+
+function startDrag(e) {
+  if (e.cancelable) e.preventDefault();
+
+  isDragging = true;
+  velocity = 0;
+  wheel.style.transition = "none";
+
+  clearPopTimeout();
+  clearClicked();
+
+  if (animationFrame) {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
   }
 
-  function doTickFeedback() {
-    const step = Math.floor(normalize(rotation) / segmentAngle);
-    if (step !== lastTickStep) {
-      lastTickStep = step;
-      wheel.classList.remove("tick");
-      void wheel.offsetWidth;
-      wheel.classList.add("tick");
-    }
+  const touch = e.touches ? e.touches[0] : e;
+  lastAngle = getAngle(touch.clientX, touch.clientY);
+}
+
+function dragSpin(e) {
+  if (!isDragging) return;
+
+  if (e.cancelable) e.preventDefault();
+
+  const touch = e.touches ? e.touches[0] : e;
+  const angle = getAngle(touch.clientX, touch.clientY);
+
+  let delta = angle - lastAngle;
+  if (delta > 180) delta -= 360;
+  if (delta < -180) delta += 360;
+
+  rotation += delta;
+  velocity = delta;
+  lastAngle = angle;
+
+  wheel.style.transition = "none";
+  updateWheel();
+  doTickFeedback();
+}
+
+function endDrag() {
+  if (!isDragging) return;
+  isDragging = false;
+  spinMomentum();
+}
+
+function spinMomentum() {
+  rotation += velocity;
+  velocity *= 0.95;
+
+  wheel.style.transition = "none";
+  updateWheel();
+  doTickFeedback();
+
+  if (Math.abs(velocity) > 0.15) {
+    animationFrame = requestAnimationFrame(spinMomentum);
+  } else {
+    animationFrame = null;
+    snapToPointer();
+  }
+}
+
+function spinWheel() {
+  if (animationFrame) {
+    cancelAnimationFrame(animationFrame);
+    animationFrame = null;
   }
 
-  function startDrag(e) {
-    if (e.cancelable) e.preventDefault();
+  clearPopTimeout();
+  clearClicked();
+  clearActive();
 
-    isDragging = true;
-    velocity = 0;
-    wheel.style.transition = "none";
+  isDragging = false;
+  currentWinningIndex = null;
+  velocity = Math.random() * 18 + 18;
 
-    if (animationFrame) {
-      cancelAnimationFrame(animationFrame);
-      animationFrame = null;
-    }
+  if (resultEl) resultEl.textContent = "Spinning...";
+  if (acceptBtn) acceptBtn.disabled = true;
+  if (rejectBtn) rejectBtn.disabled = true;
 
-    const touch = e.touches ? e.touches[0] : e;
-    lastAngle = getAngle(touch.clientX, touch.clientY);
+  spinMomentum();
+}
+
+function goToCurrentPage() {
+  if (currentWinningIndex === null) return;
+
+  const page = icons[currentWinningIndex].dataset.page;
+  if (page) {
+    window.location.href = page;
+  }
+}
+
+function rejectCurrentCategory() {
+  if (currentWinningIndex === null) return;
+
+  excludedIndexes.add(currentWinningIndex);
+
+  if (resultEl) {
+    const label = getLabelForIcon(icons[currentWinningIndex]);
+    resultEl.textContent = `${label} rejected. Spin again.`;
   }
 
-  function dragSpin(e) {
-    if (!isDragging) return;
+  clearPopTimeout();
+  clearClicked();
+  clearActive();
+  currentWinningIndex = null;
 
-    if (e.cancelable) e.preventDefault();
+  if (acceptBtn) acceptBtn.disabled = true;
+  if (rejectBtn) rejectBtn.disabled = true;
+}
 
-    const touch = e.touches ? e.touches[0] : e;
-    const angle = getAngle(touch.clientX, touch.clientY);
+/* Click icon to go */
+icons.forEach(icon => {
+  icon.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-    let delta = angle - lastAngle;
-    if (delta > 180) delta -= 360;
-    if (delta < -180) delta += 360;
-
-    rotation += delta;
-    velocity = delta;
-    lastAngle = angle;
-
-    wheel.style.transition = "none";
-    updateWheel();
-    doTickFeedback();
-  }
-
-  function endDrag() {
-    if (!isDragging) return;
-    isDragging = false;
-    spinMomentum();
-  }
-
-  function spinMomentum() {
-    rotation += velocity;
-    velocity *= 0.95;
-
-    wheel.style.transition = "none";
-    updateWheel();
-    doTickFeedback();
-
-    if (Math.abs(velocity) > 0.15) {
-      animationFrame = requestAnimationFrame(spinMomentum);
-    } else {
-      animationFrame = null;
-      snapToPointer();
-    }
-  }
-
-  function spinWheel() {
-    if (animationFrame) {
-      cancelAnimationFrame(animationFrame);
-      animationFrame = null;
-    }
-
-    isDragging = false;
-    velocity = Math.random() * 18 + 18;
-
-    clearClicked();
-    clearActive();
-    currentWinningIndex = null;
-
-    if (resultEl) resultEl.textContent = "Spinning...";
-    if (acceptBtn) acceptBtn.disabled = true;
-    if (rejectBtn) rejectBtn.disabled = true;
-
-    spinMomentum();
-  }
-
-  function goToCurrentPage() {
-    if (currentWinningIndex === null) return;
-
-    const page = icons[currentWinningIndex].dataset.page;
+    const page = icon.dataset.page;
     if (page) {
       window.location.href = page;
     }
-  }
-
-  function rejectCurrentCategory() {
-    if (currentWinningIndex === null) return;
-
-    excludedIndexes.add(currentWinningIndex);
-
-    if (resultEl) {
-      const label = getLabelForIcon(icons[currentWinningIndex]);
-      resultEl.textContent = `${label} rejected. Spin again.`;
-    }
-
-    clearClicked();
-    clearActive();
-    currentWinningIndex = null;
-
-    if (acceptBtn) acceptBtn.disabled = true;
-    if (rejectBtn) rejectBtn.disabled = true;
-  }
-
-  /* Click active icon to go */
-  icons.forEach(icon => {
-    icon.addEventListener("click", (e) => {
-      e.stopPropagation();
-
-      const page = icon.dataset.page;
-      if (page) {
-        window.location.href = page;
-      }
-    });
   });
+});
 
-  if (acceptBtn) {
-    acceptBtn.addEventListener("click", goToCurrentPage);
-  }
+if (acceptBtn) {
+  acceptBtn.addEventListener("click", goToCurrentPage);
+}
 
-  if (rejectBtn) {
-    rejectBtn.addEventListener("click", rejectCurrentCategory);
-  }
+if (rejectBtn) {
+  rejectBtn.addEventListener("click", rejectCurrentCategory);
+}
 
- if (spinBtn) {
+if (spinBtn) {
   spinBtn.addEventListener("click", (e) => {
     e.stopPropagation();
     spinWheel();
   });
 }
 
-  window.spinWheel = spinWheel;
+window.spinWheel = spinWheel;
 
-  wheel.addEventListener("mousedown", startDrag);
-  wheel.addEventListener("touchstart", startDrag, { passive: false });
+wheel.addEventListener("mousedown", startDrag);
+wheel.addEventListener("touchstart", startDrag, { passive: false });
 
-  document.addEventListener("mousemove", dragSpin);
-  document.addEventListener("touchmove", dragSpin, { passive: false });
+document.addEventListener("mousemove", dragSpin);
+document.addEventListener("touchmove", dragSpin, { passive: false });
 
-  document.addEventListener("mouseup", endDrag);
-  document.addEventListener("touchend", endDrag);
-});
+document.addEventListener("mouseup", endDrag);
+document.addEventListener("touchend", endDrag);
+  });
 </script>
