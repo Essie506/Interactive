@@ -122,10 +122,6 @@
     <div class="icon-circle"><i class="fa-solid fa-hand-holding-heart"></i></div>
     <p>Recovery</p>
   </a>
-       <a href="stretch.html" class="category-card">
-    <div class="icon-circle"><i class=""fa-solid fa-child-reaching"></i></div>
-    <p>Stretch</p>
-  </a>
 </div>
     
 <!-- Mobile wheel -->
@@ -166,7 +162,7 @@
       </div>
     </div>
 
-    <button type="button" class="hub" onclick="spinWheel()">SPIN</button>
+    <button type="button" class="hub" id="spinBtn">SPIN</button>
 
     <div class="wheel-result" id="wheelResult">Spin the wheel</div>
 
@@ -225,12 +221,20 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentWinningIndex = null;
   let excludedIndexes = new Set();
   let lastTickStep = null;
+  
+const segmentAngle = 360 / segmentEls.length;
+const offsetAngle = 44;
 
-  const segmentAngle = 360 / segmentEls.length;
-  const radius = 138;
-  const offsetAngle = 44; // tweak this number only if you want icons a bit further round
+/* Get radius from real wheel size */
+function getRadius() {
+  const rect = wheel.getBoundingClientRect();
+  return rect.width * 0.34;
+}
 
-  /* Auto-position the segment containers */
+/* Position segments based on real radius */
+function positionSegments() {
+  const radius = getRadius();
+
   segmentEls.forEach((segment, index) => {
     const angle = (index * segmentAngle) + offsetAngle;
 
@@ -240,6 +244,13 @@ document.addEventListener("DOMContentLoaded", () => {
       translate(-50%, -50%)
     `;
   });
+}
+
+/* Run once */
+positionSegments();
+
+/* Run again if screen size changes */
+window.addEventListener("resize", positionSegments);
 
   /* Pointer is at top */
   const pointerAngle = 270;
