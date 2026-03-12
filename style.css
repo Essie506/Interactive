@@ -572,6 +572,7 @@ background: rgba(255,255,255,0.35);
   .category-icons {
     display: none;
   }
+  
 
   .wheel-wrapper {
     position: relative;
@@ -586,7 +587,7 @@ background: rgba(255,255,255,0.35);
   .wheel {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1;
+    height: 100%
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.3);
     background:
@@ -622,6 +623,11 @@ background: rgba(255,255,255,0.35);
     );
   }
 
+  .wheel-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
   .wheel.tick {
     filter: brightness(1.04);
   }
