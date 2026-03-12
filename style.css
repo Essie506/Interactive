@@ -372,7 +372,7 @@ body.index .hero::after {
 
 @media (max-width: 480px) {
   .hero {
-    justify-content: center; /* keeps content towards bottom */
+    justify-content: flex-start; /* keeps content towards bottom */
     padding: 0;                /* remove left/right padding */
     position: relative;
     height: 100vh;             /* ensures full height for vertical centering */
