@@ -570,7 +570,7 @@ footer {
     position: relative;
     width: 92vw;
     height: 92vw;
-    margin: auto;
+    margin: 20px auto;
     max-width: 420px;
     max-height: 420px;
     aspect-ratio: 1 / 1;
