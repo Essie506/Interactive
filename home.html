@@ -496,8 +496,6 @@ document.addEventListener("DOMContentLoaded", () => {
     icon.addEventListener("click", (e) => {
       e.stopPropagation();
 
-      if (!icon.classList.contains("active")) return;
-
       const page = icon.dataset.page;
       if (page) {
         window.location.href = page;
