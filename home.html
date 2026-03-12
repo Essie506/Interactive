@@ -206,12 +206,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* ================= WHEEL ================= */
   const wheel = document.getElementById("wheel");
-  const segments = Array.from(document.querySelectorAll(".wheel .segment i"));
+
+  const segmentEls = Array.from(
+    document.querySelectorAll(".wheel .segment")
+  );
+
+  const icons = Array.from(
+    document.querySelectorAll(".wheel .segment i")
+  );
+
   const resultEl = document.getElementById("wheelResult");
   const acceptBtn = document.getElementById("acceptBtn");
   const rejectBtn = document.getElementById("rejectBtn");
+  const spinBtn = document.getElementById("spinBtn");
 
-  if (!wheel || !segments.length) return;
+  if (!wheel || !icons.length) return;
+
+  /* click only on icons, not wrapper */
+  segmentEls.forEach(segment => {
+    segment.style.pointerEvents = "none";
+  });
+
+  icons.forEach(icon => {
+    icon.style.pointerEvents = "auto";
+  });
 
   let rotation = 0;
   let velocity = 0;
@@ -223,10 +241,8 @@ document.addEventListener("DOMContentLoaded", () => {
   let excludedIndexes = new Set();
   let lastTickStep = null;
 
-  const segmentAngle = 360 / segments.length;
-
-  /* tune this to align pointer to icon centre */
-  const firstSegmentAngle = 10;
+  const segmentAngle = 360 / icons.length;
+  const firstSegmentAngle = 26; /* matches your CSS nth-child(1) */
   const pointerAngle = 270;
 
   if (resultEl) resultEl.textContent = "Spin the wheel";
@@ -247,7 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateWheel() {
     wheel.style.transform = `rotate(${rotation}deg)`;
 
-    segments.forEach(icon => {
+    icons.forEach(icon => {
       const isClicked = icon.classList.contains("clicked");
       if (isClicked) {
         icon.style.transform = `rotate(${-rotation}deg) scale(1.15) translateY(-5px)`;
@@ -258,11 +274,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function clearClicked() {
-    segments.forEach(icon => icon.classList.remove("clicked"));
+    icons.forEach(icon => icon.classList.remove("clicked"));
   }
 
   function clearActive() {
-    segments.forEach(icon => icon.classList.remove("active"));
+    icons.forEach(icon => icon.classList.remove("active"));
   }
 
   function getLabelForIcon(icon) {
@@ -276,8 +292,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getWinningIndexFromSteps(steps) {
-    let winningIndex = steps % segments.length;
-    winningIndex = ((-winningIndex % segments.length) + segments.length) % segments.length;
+    let winningIndex = steps % icons.length;
+    winningIndex = ((-winningIndex % icons.length) + icons.length) % icons.length;
     return winningIndex;
   }
 
@@ -289,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const baseTarget = pointerAngle - firstSegmentAngle;
     let steps = Math.ceil((rotation - baseTarget) / segmentAngle);
 
-    for (let i = 0; i < segments.length; i++) {
+    for (let i = 0; i < icons.length; i++) {
       const candidateIndex = getWinningIndexFromSteps(steps + i);
       if (isAllowedIndex(candidateIndex)) {
         return {
@@ -310,7 +326,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateResult(winningIndex) {
-    const icon = segments[winningIndex];
+    const icon = icons[winningIndex];
     const label = getLabelForIcon(icon);
 
     if (resultEl) {
@@ -333,15 +349,15 @@ document.addEventListener("DOMContentLoaded", () => {
     clearClicked();
     clearActive();
 
-    segments[currentWinningIndex].classList.add("active");
-    segments[currentWinningIndex].classList.add("clicked");
+    icons[currentWinningIndex].classList.add("active");
+    icons[currentWinningIndex].classList.add("clicked");
     updateWheel();
 
     updateResult(currentWinningIndex);
 
     setTimeout(() => {
       if (currentWinningIndex !== null) {
-        segments[currentWinningIndex].classList.remove("clicked");
+        icons[currentWinningIndex].classList.remove("clicked");
         updateWheel();
       }
     }, 800);
@@ -358,6 +374,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startDrag(e) {
+    const target = e.target;
+
+    if (
+      target.closest(".hub") ||
+      target.closest(".wheel-btn") ||
+      target.closest(".segment i")
+    ) {
+      return;
+    }
+
     isDragging = true;
     velocity = 0;
     wheel.style.transition = "none";
@@ -437,7 +463,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function goToCurrentPage() {
     if (currentWinningIndex === null) return;
 
-    const page = segments[currentWinningIndex].dataset.page;
+    const page = icons[currentWinningIndex].dataset.page;
     if (page) {
       window.location.href = page;
     }
@@ -449,7 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
     excludedIndexes.add(currentWinningIndex);
 
     if (resultEl) {
-      const label = getLabelForIcon(segments[currentWinningIndex]);
+      const label = getLabelForIcon(icons[currentWinningIndex]);
       resultEl.textContent = `${label} rejected. Spin again.`;
     }
 
@@ -461,10 +487,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (rejectBtn) rejectBtn.disabled = true;
   }
 
-  /* click active icon to go */
-  segments.forEach(icon => {
-    icon.addEventListener("click", () => {
-      if (!icon.classList.contains("active")) return;
+  icons.forEach(icon => {
+    icon.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+
       const page = icon.dataset.page;
       if (page) {
         window.location.href = page;
@@ -480,7 +507,12 @@ document.addEventListener("DOMContentLoaded", () => {
     rejectBtn.addEventListener("click", rejectCurrentCategory);
   }
 
-  window.spinWheel = spinWheel;
+  if (spinBtn) {
+    spinBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      spinWheel();
+    });
+  }
 
   wheel.addEventListener("mousedown", startDrag);
   wheel.addEventListener("touchstart", startDrag, { passive: true });
@@ -490,5 +522,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.addEventListener("mouseup", endDrag);
   document.addEventListener("touchend", endDrag);
+
+  updateWheel();
 });
 </script>
