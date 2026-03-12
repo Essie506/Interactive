@@ -560,6 +560,7 @@ footer {
 
   .mobile-wheel {
     display:block;
+    margin: 20px auto;
   }
 
   .category-icons {
