@@ -223,12 +223,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastTickStep = null;
   
 const segmentAngle = 360 / segmentEls.length;
-const offsetAngle = 44;
+const offsetAngle = 40;
 
 /* Get radius from real wheel size */
 function getRadius() {
   const rect = wheel.getBoundingClientRect();
-  return rect.width * 0.34;
+  return rect.width * 0.30;
 }
 
 /* Position segments based on real radius */
