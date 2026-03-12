@@ -227,27 +227,37 @@ document.addEventListener("DOMContentLoaded", () => {
   let lastTickStep = null;
 
   const segmentAngle = 360 / segmentEls.length;
-  const radius = 120;
+  const radius = 138;
 
   /* Auto-position the segment containers */
   segmentEls.forEach((segment, index) => {
-    const angle = (index * segmentAngle) + segmentAngle / 2;
+    const angle = (index * segmentAngle) + segmentAngle / 2 + segmentAngle;
+
     segment.style.transform = `
-    rotate(${angle}deg)
-    translateX(${radius}px)
-    translate(-50%, -50%)
-  `;
-});
+      rotate(${angle}deg)
+      translateX(${radius}px)
+      translate(-50%, -50%)
+    `;
+  });
 
   /* Pointer is at top */
   const pointerAngle = 270;
 
-  /* Since icons are centred in slices now */
-  const firstSegmentAngle = segmentAngle / 2;
+  /* Since icons are shifted one extra slice */
+  const firstSegmentAngle = segmentAngle / 2 + segmentAngle;
 
   if (resultEl) resultEl.textContent = "Spin the wheel";
   if (acceptBtn) acceptBtn.disabled = true;
   if (rejectBtn) rejectBtn.disabled = true;
+
+  /* Make icons clickable, not segment wrappers */
+  segmentEls.forEach(segment => {
+    segment.style.pointerEvents = "none";
+  });
+
+  icons.forEach(icon => {
+    icon.style.pointerEvents = "auto";
+  });
 
   function getAngle(x, y) {
     const rect = wheel.getBoundingClientRect();
@@ -375,6 +385,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startDrag(e) {
+    if (e.cancelable) e.preventDefault();
+
     isDragging = true;
     velocity = 0;
     wheel.style.transition = "none";
@@ -478,10 +490,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (rejectBtn) rejectBtn.disabled = true;
   }
 
-  /* click active icon to go */
+  /* Click active icon to go */
   icons.forEach(icon => {
-    icon.addEventListener("click", () => {
+    icon.addEventListener("click", (e) => {
+      e.stopPropagation();
+
       if (!icon.classList.contains("active")) return;
+
       const page = icon.dataset.page;
       if (page) {
         window.location.href = page;
@@ -504,7 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
   window.spinWheel = spinWheel;
 
   wheel.addEventListener("mousedown", startDrag);
-  wheel.addEventListener("touchstart", startDrag, { passive: true });
+  wheel.addEventListener("touchstart", startDrag, { passive: false });
 
   document.addEventListener("mousemove", dragSpin);
   document.addEventListener("touchmove", dragSpin, { passive: false });
@@ -513,4 +528,3 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("touchend", endDrag);
 });
 </script>
- 
