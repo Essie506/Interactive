@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* Auto-position the segment containers */
   segmentEls.forEach((segment, index) => {
-    const angle = (index * segmentAngle) + segmentAngle / 2 + segmentAngle;
+   const offsetAngle = segmentAngle / 2 + segmentAngle;
 
     segment.style.transform = `
       rotate(${angle}deg)
@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pointerAngle = 270;
 
   /* Since icons are shifted one extra slice */
-  const firstSegmentAngle = segmentAngle / 2 + segmentAngle;
+ =const firstSegmentAngle = offsetAngle;
 
   if (resultEl) resultEl.textContent = "Spin the wheel";
   if (acceptBtn) acceptBtn.disabled = true;
