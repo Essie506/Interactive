@@ -425,6 +425,11 @@ body.index .hero::after {
     display: block;
 }
 
+.btn-login {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 .btn-modern:visited,
 .btn-modern:hover,
 .btn-modern:active {
