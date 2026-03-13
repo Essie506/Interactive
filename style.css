@@ -41,15 +41,14 @@ body.index::before {
   inset: 0;
   z-index: -2;
 
-  background: linear-gradient(
-    120deg,
-    #ff9a9e,
-    #fad0c4,
-    #a1c4fd,
-    #c2ffd8,
-    #fbc2eb,
-    #a6c1ee
-  );
+ background: linear-gradient(
+  120deg,
+  #dff9fb,
+  #c7ecee,
+  #e0e5eb,
+  #f5f7f8,
+  #c7ecee
+);
 
   background-size: 300% 300%;
 
