@@ -76,6 +76,10 @@ body.index .hero::after {
     z-index: 1;
 }
 
+body.index .navbar {
+  min-height: 20px;
+}
+
 /* background gradient + logo */
 .navbar-bg {
     position: absolute;
