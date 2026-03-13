@@ -39,15 +39,17 @@ body.index::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
+ background: linear-gradient(
+120deg,
+    #cfe6f2,
+    #b9d9ea,
+    #e6f3fa,
+    #b9d9ea,
+    #cfe6f2
+  );
 
   background: linear-gradient(
-    135deg,
-    #dcecf5,
-    #c7dfea,
-    #b8d6e6,
-    #dfeef6,
-    #c7dfea
-  );
+   
 
   background-size: 220% 220%;
   animation: satinShimmer 5.5s ease-out forwards;
