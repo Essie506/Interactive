@@ -35,6 +35,43 @@ body::after {
     z-index: -1;
 }
 
+body.index::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+
+  background: linear-gradient(
+    120deg,
+    #ff9a9e,
+    #fad0c4,
+    #a1c4fd,
+    #c2ffd8,
+    #fbc2eb,
+    #a6c1ee
+  );
+
+  background-size: 300% 300%;
+
+  animation: clothMove 6s ease-out forwards;
+}
+
+@keyframes clothMove {
+
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 50% 50%;
+  }
+
+}
+
 body.home .hero::before {
     display: none; /* hides the old background image */
 }
