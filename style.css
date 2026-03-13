@@ -346,7 +346,7 @@ body.index .navbar {
     background-image: url("logo.png");
     background-repeat: no-repeat;
       /* 👇 LEFT alignment */
-    background-position: left -40px 60%;
+    background-position: left -40px 50%;
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
