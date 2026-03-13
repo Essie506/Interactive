@@ -41,15 +41,6 @@ body.index::before {
   inset: 0;
   z-index: -2;
 
- background: linear-gradient(
-  120deg,
-  #c7ecee,
-  #f5f7f8,
- #e0e5eb,
-  #dff9fb,
-  #c7ecee,
- );
-
   background-size: 300% 300%;
 
   animation: clothMove 6s ease-out forwards;
@@ -355,7 +346,7 @@ body.index .navbar {
     background-image: url("logo.png");
     background-repeat: no-repeat;
       /* 👇 LEFT alignment */
-    background-position: left -40px center;
+    background-position: left -40px 68%;
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
@@ -371,7 +362,6 @@ body.index .navbar {
         brightness(1.05);
       
     mix-blend-mode: soft-light;
-    animation: slowDrift 18s ease-in-out infinite;
 }
 
  /* soft edges */
@@ -425,7 +415,7 @@ margin-top: 120px;
 
     .hero::before {
         background-size: 135vw;   /* scale logo for mobile */
-        background-position: top center;
+        background-position: center;
         opacity: 0.30;            /* slightly lighter */
     }
 
