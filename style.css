@@ -353,7 +353,7 @@ body.index .hero::after {
     position: relative;
     z-index: 2;
     letter-spacing: 1px;
-    margin-bottom: 35px;   /* space above login */
+    margin-bottom: 15px;   /* space above login */
 }
 
 @keyframes slowDrift {
@@ -391,7 +391,7 @@ body.index .hero::after {
     }
 
    .hero h2 {
-        font-size: 18px;
+        font-size: 22px;
         line-height: 1.2;
         margin-top: 5px;
     }
