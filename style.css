@@ -384,6 +384,11 @@ margin-top: 120px;
     height: 100vh;             /* ensures full height for vertical centering */
   }
 
+    body.index .hero {
+    justify-content: flex-start;
+    padding-top: 120px;
+}
+
     .hero::before {
         background-size: 135vw;   /* scale logo for mobile */
         background-position: top center;
