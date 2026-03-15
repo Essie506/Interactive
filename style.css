@@ -485,6 +485,11 @@ footer {
     z-index: 1;
 }
 
+body.index footer {
+    padding: 40px
+
+}
+
 /* Video Gallery */
 .video-gallery {
     display: flex;
