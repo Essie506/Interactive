@@ -386,8 +386,11 @@ margin-top: 120px;
 
     body.index .hero {
     justify-content: flex-start;
-    padding-top: 130px;
+    padding-top: 140px;
 }
+
+    body.index footer {
+    padding: 25px
 
     .hero::before {
         background-size: 135vw;   /* scale logo for mobile */
