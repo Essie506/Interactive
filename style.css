@@ -58,8 +58,13 @@ body.index::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-
-
+      120deg,
+    #bdd9e8,
+    #9fc9de,
+    #d8edf8,
+    #9fc9de,
+    #bdd9e8
+  );
      background-size: 220% 220%;
   animation: satinShimmer 3.2s ease-out forwards;
 }
@@ -69,6 +74,7 @@ body.index::before {
   45% { background-position: 100% 45%; }
   100% { background-position: 55% 50%; }
 }
+
 
 /* ================= NAVBAR ================= */
 
@@ -373,7 +379,7 @@ margin-top: 120px;
     font-size: 18px;
     color: #555;
     max-width: 600px;
-    text-align: flex-end;
+    text-align: center;
 }
 
 @media (max-width: 480px) {
@@ -391,6 +397,7 @@ margin-top: 120px;
 
     body.index footer {
     padding: 25px;
+    }
 
     .hero::before {
         background-size: 135vw;   /* scale logo for mobile */
@@ -584,7 +591,7 @@ body.index footer {
   .mobile-wheel {
     display:block;
     margin: 20px auto 40px;
-    margin-top: 10px
+    margin-top: 10px;
   }
 
   .category-icons {
@@ -652,7 +659,7 @@ body.index footer {
   gap: 12px;
   justify-content: center;
   margin-top: 14px;
-margin-bottom: 20px
+margin-bottom: 20px;
 }
 
 .wheel-btn {
