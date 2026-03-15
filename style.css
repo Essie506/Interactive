@@ -17,6 +17,7 @@ body {
             #c8d2d9,
             #f5f7f8
         );
+      display: none; /* hides the old background image */
  }
 
 /* sheen overlay */
