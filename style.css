@@ -4,9 +4,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
 
-    background:
-        radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
+ body.home  {
+     background:
+   radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
         radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
         linear-gradient(
             135deg,
@@ -15,12 +17,10 @@ body {
             #c8d2d9,
             #f5f7f8
         );
-
-    background-attachment: fixed;
-}
+ }
 
 /* sheen overlay */
-body::after {
+body.home::after {
     content: "";
     position: fixed;
     inset: 0;
@@ -35,27 +35,29 @@ body::after {
     z-index: -1;
 }
 
-body.home .hero::before {
-    display: none; /* hides the old background image */
+/* index page satin shimmer */
+body.index {
+  background: linear-gradient(
+     120deg,
+    #bdd9e8,
+    #9fc9de,
+    #d8edf8,
+    #9fc9de,
+    #bdd9e8
+  );
+
+     background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
+
 }
 
-/* index page satin shimmer */
 body.index::before {
-  content: "";
+     content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
   pointer-events: none;
-  background: linear-gradient(
-    120deg,
-    #cfe6f2,
-    #b9d9ea,
-    #e6f3fa,
-    #b9d9ea,
-    #cfe6f2
-  );
-  background-size: 220% 220%;
-  animation: satinShimmer 3.2s ease-out forwards;
+ 
 }
 
 @keyframes satinShimmer {
