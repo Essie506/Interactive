@@ -81,7 +81,7 @@ body.index::before {
 }
 
 body.index .navbar {
-  min-height: 20px;
+  min-height: 40px;
 }
 
 /* background gradient + logo */
