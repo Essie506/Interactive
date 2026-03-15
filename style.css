@@ -17,7 +17,6 @@ body {
             #c8d2d9,
             #f5f7f8
         );
-      display: none; /* hides the old background image */
  }
 
 /* sheen overlay */
@@ -36,6 +35,10 @@ body.home::after {
     z-index: -1;
 }
 
+body.home .hero::before {
+  display: none;
+}
+
 /* index page satin shimmer */
 body.index {
   background: linear-gradient(
@@ -47,9 +50,6 @@ body.index {
     #bdd9e8
   );
 
-     background-size: 220% 220%;
-  animation: satinShimmer 3.2s ease-out forwards;
-
 }
 
 body.index::before {
@@ -58,7 +58,10 @@ body.index::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
- 
+
+
+     background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
 }
 
 @keyframes satinShimmer {
@@ -336,7 +339,6 @@ body.index .navbar {
         brightness(1.05);
       
     mix-blend-mode: soft-light;
-    animation: slowDrift 18s ease-in-out infinite;
 }
 
  /* soft edges */
@@ -366,13 +368,7 @@ margin-top: 120px;
   margin-bottom: 50px;
 }
 
-@keyframes slowDrift {
-    0%   { transform: translateX(0px); }
-    50%  { transform: translateX(20px); }
-    100% { transform: translateX(0px); }
-}
-
-    .hero-subtext {
+.hero-subtext {
     margin-top: 40px;
     font-size: 18px;
     color: #555;
