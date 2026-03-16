@@ -339,7 +339,7 @@ body.index .navbar {
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
-    opacity: 0.40;
+    opacity: 0.70;
     pointer-events: none;
     z-index: -1;
 
