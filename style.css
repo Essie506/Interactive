@@ -399,6 +399,7 @@ margin-bottom: 50px;
 
     body.index .hero {
     padding-top: 0px;
+    justify-content: flex end;
 }
 
     body.index .hero h1 {
@@ -500,7 +501,8 @@ body.index .btn-login {
 @media (max-width: 480px) {
 
 body.index .login-box {
-    margin-top: 120px;
+    margin-top: auto;
+    margin-bottom: 40px;
 }
 
 }
