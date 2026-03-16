@@ -403,8 +403,8 @@ margin-bottom: 50px;
 }
 
     body.index .hero h1 {
-    margin-top: 70px;
-    margin-bottom: 120px;
+    margin-top: 100px;
+    margin-bottom: 50px;
 }
     body.index .hero::before {
         background-size: min(120vw, 700px);  /* scale logo for mobile */
@@ -416,7 +416,7 @@ margin-bottom: 50px;
         font-size: 32px;
         line-height: 1.2;
         margin-top: 10px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
 
    body.home .hero h2 {
