@@ -394,7 +394,7 @@ margin-bottom: 50px;
     justify-content: flex-start; /* keeps content towards bottom */
     padding: 0;                /* remove left/right padding */
     position: relative;
-    height: 500vh;             /* ensures full height for vertical centering */
+    height: 400vh;             /* ensures full height for vertical centering */
   }
 
     body.index .hero {
