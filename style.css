@@ -503,6 +503,7 @@ body.index .btn-login {
 
 body.index .login-box {
     margin-top: 20px;
+    justify-content: flex-end;
 }
 
 }
