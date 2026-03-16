@@ -339,7 +339,7 @@ body.index .navbar {
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
-    opacity: 0.65;
+    opacity: 0.5;
     pointer-events: none;
     z-index: -1;
 
@@ -407,8 +407,8 @@ margin-bottom: 50px;
 }
     body.index .hero::before {
         background-size: min(120vw, 700px);  /* scale logo for mobile */
-        background-position: center, 40%;
-        opacity: 0.5;   /* slightly lighter */
+        background-position: center, 20%;
+        opacity: 0.45;   /* slightly lighter */
     }
 
     body.home .hero h1 {
