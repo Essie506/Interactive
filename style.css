@@ -403,7 +403,7 @@ margin-bottom: 50px;
 }
 
     body.index .hero h1 {
-    margin-top: 100px;
+    margin-top: 150px;
     margin-bottom: 50px;
 }
     body.index .hero::before {
@@ -501,7 +501,7 @@ body.index .btn-login {
 @media (max-width: 480px) {
 
 body.index .login-box {
-    margin-top: 120px;
+    margin-top: 150px;
     margin-bottom: 20px;
 }
 
