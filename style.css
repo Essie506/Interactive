@@ -399,7 +399,7 @@ margin-bottom: 50px;
 
   body.index .hero {
     padding: 60px;
-    justify-content: center;
+    justify-content: flex;
   }
 
   body.index .hero h1 {
