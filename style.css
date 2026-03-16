@@ -335,11 +335,11 @@ body.index .navbar {
     background-image: url("logo.png");
     background-repeat: no-repeat;
       /* 👇 LEFT alignment */
-    background-position: left -70px center;
+    background-position: left -65px center;
 
     /* responsive scaling */
     background-size: min(65vw, 700px);
-    opacity: 0.12;
+    opacity: 0.20;
     pointer-events: none;
     z-index: -1;
 
