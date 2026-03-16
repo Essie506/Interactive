@@ -406,7 +406,7 @@ margin-bottom: 50px;
     margin-bottom: 120px;
 }
     body.index .hero::before {
-        background-size: 100px;   /* scale logo for mobile */
+        background-size: min(70vw, 260px);  /* scale logo for mobile */
         background-position: top center;
         opacity: 0.30;            /* slightly lighter */
     }
