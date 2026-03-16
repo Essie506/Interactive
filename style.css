@@ -501,7 +501,7 @@ body.index .btn-login {
 @media (max-width: 480px) {
 
 body.index .login-box {
-    margin-top: auto;
+    margin-top: 80px;
     margin-bottom: 40px;
 }
 
