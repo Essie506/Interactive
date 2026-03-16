@@ -408,7 +408,7 @@ margin-bottom: 50px;
     body.index .hero::before {
         background-size: min(90vw, 380px);  /* scale logo for mobile */
         background-position: top center;
-        opacity: 0.70;   /* slightly lighter */
+        opacity: 1.0;   /* slightly lighter */
     }
 
     body.home .hero h1 {
