@@ -118,6 +118,11 @@ body.index .navbar {
     pointer-events: none;
 }
 
+@media (max-width: 480px) {
+body.index .navbar {
+  min-height: 50px;
+}
+
 /* ================= HAMBURGER ================= */
 
 .menu-toggle {
@@ -383,7 +388,8 @@ margin-bottom: 50px;
 }
 
 @media (max-width: 480px) {
-  .hero {
+    
+.hero {
     justify-content: flex-start; /* keeps content towards bottom */
     padding: 0;                /* remove left/right padding */
     position: relative;
