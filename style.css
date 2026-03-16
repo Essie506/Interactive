@@ -398,8 +398,8 @@ margin-bottom: 50px;
   }
 
   body.index .hero {
-    padding: 60px;
-    justify-content: flex;
+    padding: 60px, 0px;
+    justify-content: center;
   }
 
   body.index .hero h1 {
