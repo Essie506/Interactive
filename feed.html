@@ -26,22 +26,44 @@
 <nav class="menu">
   <ul>
 
-    <li><a href="home.html">Home</a></li>
-
-    <li><a href="feed.html">Feed</a></li>
-
-    <li class="has-submenu">
-      <a href="#">Profile</a>
-      <ul class="submenu">
-        <li><a href="profile.html">My Profile</a></li>
-      </ul>
+    <li>
+      <a href="home.html" class="menu-link-modern">Home</a>
     </li>
 
-    <li><a href="browse-workouts.html">Workouts</a></li>
+    <li>
+      <a href="feed.html" class="menu-link-modern">Feed</a>
+    </li>
+
+    <li class="has-submenu">
+
+      <a href="#" class="menu-link-modern">Profile</a>
+
+      <ul class="submenu">
+        <li><a href="view-profile.html">View Profile</a></li>
+        <li><a href="edit-profile.html">Edit Profile</a></li>
+        <li><a href="upload-images.html">Upload Images</a></li>
+      </ul>
+
+    </li>
+
+    <li class="has-submenu">
+
+      <a href="#" class="menu-link-modern">Workouts</a>
+
+      <ul class="submenu">
+        <li><a href="browse-workouts.html">Browse Workouts</a></li>
+        <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
+        <li><a href="trending.html">Trending</a></li>
+      </ul>
+
+    </li>
+
+    <li>
+      <a href="./index.html" class="menu-link-modern">Logout</a>
+    </li>
 
   </ul>
 </nav>
-
 
 <!-- MAIN FEED -->
 <main class="feed-page">
@@ -61,7 +83,6 @@
     </button>
 
   </div>
-
 
   <!-- feed container -->
   <div id="feed"></div>
