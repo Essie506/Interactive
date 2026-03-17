@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed - Interactive Fitness</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR (same as home) -->
+<nav class="navbar">
+  <div class="navbar-bg"></div>
+</nav>
+
+<button class="menu-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+
+<nav class="menu">
+  <ul>
+
+    <li><a href="home.html">Home</a></li>
+
+    <li><a href="feed.html">Feed</a></li>
+
+    <li class="has-submenu">
+      <a href="#">Profile</a>
+      <ul class="submenu">
+        <li><a href="profile.html">My Profile</a></li>
+      </ul>
+    </li>
+
+    <li><a href="browse-workouts.html">Workouts</a></li>
+
+  </ul>
+</nav>
+
+
+<!-- MAIN FEED -->
+<main class="feed-page">
+
+  <h1>Community Feed</h1>
+
+  <!-- post composer -->
+  <div class="post-box">
+
+    <input
+      type="text"
+      placeholder="Share your workout..."
+    >
+
+    <button class="btn-modern">
+      Post
+    </button>
+
+  </div>
+
+
+  <!-- feed container -->
+  <div id="feed"></div>
+
+
+</main>
+
+
+<script src="feed.js"></script>
+
+</body>
+</html>
+
+feed.jconst posts = [
+
+  {
+    user: "Esther",
+    text: "Finished HIIT session 🔥",
+    image: "logo.png"
+  },
+
+  {
+    user: "Alex",
+    text: "5K run done",
+    image: "logo.png"
+  },
+
+  {
+    user: "Sam",
+    text: "Leg day complete",
+    image: "logo.png"
+  }
+
+];
+
+
+const feed = document.getElementById("feed");
+
+
+posts.forEach(post => {
+
+  const card = document.createElement("div");
+
+  card.className = "post";
+
+  card.innerHTML = `
+
+    <div class="post-header">
+
+      <i class="fa-solid fa-user"></i>
+
+      <span>${post.user}</span>
+
+    </div>
+
+    <p>${post.text}</p>
+
+    <img src="${post.image}">
+
+  `;
+
+  feed.appendChild(card);
+
+});s
+
+
+
