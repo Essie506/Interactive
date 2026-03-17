@@ -411,7 +411,7 @@ margin-bottom: 50px;
   body.index .hero::before {
     background-size: min(120vw, 700px);
     background-position: center 1px;
-    opacity: 0.3;
+    opacity: 0.15;
   }
 
   body.home .hero h1 {
