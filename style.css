@@ -405,6 +405,7 @@ margin-bottom: 50px;
   body.index .hero h1 {
     margin-top: 20px;
     margin-bottom: 200px;
+    colour: #0b3d91;
   }
 
   body.index .hero::before {
