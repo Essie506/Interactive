@@ -1,35 +1,48 @@
+const posts = [
 
-<script src="feed.js"></script>
+  {
+    user: "Esther",
+    text: "Finished HIIT session 🔥",
+    image: "logo.png"
+  },
 
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
+  {
+    user: "Alex",
+    text: "5K run done",
+    image: "logo.png"
+  },
 
-  if (!menuToggle || !menu) return;
+  {
+    user: "Sam",
+    text: "Leg day complete",
+    image: "logo.png"
+  }
 
-  menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("active");
-    menu.classList.toggle("open");
-  });
+];
 
-  const parentLinks = document.querySelectorAll(".has-submenu > a");
 
-  parentLinks.forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
+const feed = document.getElementById("feed");
 
-      const parent = link.parentElement;
-      const isOpen = parent.classList.contains("open");
+posts.forEach(post => {
+  const card = document.createElement("div");
+  card.className = "post";
 
-      document
-        .querySelectorAll(".has-submenu")
-        .forEach(p => p.classList.remove("open"));
+  card.innerHTML = `
 
-      if (!isOpen) {
-        parent.classList.add("open");
-      }
-    });
-  });
+    <div class="post-header">
+
+      <i class="fa-solid fa-user"></i>
+
+      <span>${post.user}</span>
+
+    </div>
+
+    <p>${post.text}</p>
+
+    <img src="${post.image}">
+
+  `;
+
+  feed.appendChild(card);
+
 });
-</script>
