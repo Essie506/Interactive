@@ -218,6 +218,8 @@ body.index .navbar {
     left: 20px;
     z-index: 1500;
     display: none;
+    width: max-content;
+    max-width: calc(100vw - 40px);
 }
 
 .menu.open {
@@ -229,6 +231,7 @@ body.index .navbar {
     margin: 0;
     padding: 15px;
     display: block;
+    max-width: max-content;
     gap: 40px;
   /* ✨ glass effect */
     background: rgba(255, 255, 255, 0.65);
