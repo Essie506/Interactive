@@ -52,7 +52,7 @@ posts.forEach(post => {
       ${post.text}
     </div>
 
-    <img class="post-image" src="${post.image}">
+    <img class="post-img" src="${post.image}">
 
     <div class="post-actions">
 
