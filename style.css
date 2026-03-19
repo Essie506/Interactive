@@ -926,3 +926,85 @@ body.feed .post {
   font-size: 14px;
 
 }
+
+/* ================= TOP BAR ================= */
+
+.top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1800;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 70px;
+  padding: 0 16px;
+
+  background: rgba(255,255,255,0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+}
+
+.top-bar-title {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #079992;
+  text-align: center;
+  flex: 1;
+  pointer-events: none;
+}
+
+.top-action-btn {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  color: #079992;
+
+  box-shadow:
+    0 4px 10px rgba(0,0,0,0.12),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.top-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 8px 16px rgba(0,0,0,0.14),
+    inset 0 1px 2px rgba(255,255,255,0.7);
+}
+
+/* keep your burger inside the bar instead of fixed page position */
+.top-bar .menu-toggle {
+  position: static;
+  top: auto;
+  left: auto;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.top-bar .menu-toggle::before {
+  inset: -6px;
+}
+
+/* optional: make the search icon size match nicely */
+.search-toggle i {
+  font-size: 1rem;
+}
