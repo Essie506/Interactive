@@ -408,8 +408,8 @@ body.index .navbar {
 }
 
 body.index .hero h1 {
-margin-top: 120px;
-margin-bottom: 50px;
+margin-top: 0px;
+margin-bottom: 24px;
 }
 
 .hero-subtext {
@@ -439,7 +439,7 @@ body.index .hero::before {
   }
 
   body.index .hero h1 {
-    margin-top: 20px;
+    margin-top: 0px;
     margin-bottom: 5px;
     color: #1e3a8a;
   }
