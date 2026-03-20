@@ -431,7 +431,7 @@ margin-bottom: 50px;
 
   body.index .hero {
     padding-bottom: 20px;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
 body.index .hero::before {
@@ -534,7 +534,7 @@ body.index .btn-login {
 
 body.index .login-box {
     margin-top: 20px;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 }
