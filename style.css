@@ -271,12 +271,9 @@ body.index .navbar {
     position: absolute;
     left: 50%;
     bottom: 6px;
-
     width: 0;
     height: 2px;
-
     background: linear-gradient(90deg,#079992,#38ada9);
-
     transform: translateX(-50%);
     transition: width 0.3s ease;
 }
@@ -529,7 +526,7 @@ body.index .btn-login {
      text-align:center;
     color:#079992;
     position: relative;
-    padding: 20px 20px;
+    padding: 0px 20px;
     color: #079992;
     text-decoration: none;
     margin-top: 35px;
