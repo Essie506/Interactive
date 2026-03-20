@@ -8,6 +8,23 @@
   --glass-white-light: rgba(255,255,255,0.8);
   --glass-teal: rgba(56,173,169,0.2);
 
+  --index-bg:
+    linear-gradient(
+      120deg,
+      #bdd9e8,
+    #9fc9de,
+    #d8edf8,
+    #9fc9de,
+    #bdd9e8 );
+
+  --index-bg-before:  linear-gradient(
+      120deg,
+      transparent,
+      rgba(255,255,255,0.4),
+      transparent
+  );
+      
+
   --radius: 12px;
   --radius-round: 50px;
 
@@ -63,14 +80,7 @@ body.home .hero::before {
 
 /* index page satin shimmer */
 body.index {
-  background: linear-gradient(
-     120deg,
-    #bdd9e8,
-    #9fc9de,
-    #d8edf8,
-    #9fc9de,
-    #bdd9e8
-  );
+  background: var(--index-bg);
 
 }
 
@@ -80,14 +90,7 @@ body.index::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-    background: linear-gradient(
-      120deg,
-    #bdd9e8,
-    #9fc9de,
-    #d8edf8,
-    #9fc9de,
-    #bdd9e8
-  );
+    background: var(--index-bg-before);
      background-size: 220% 220%;
   animation: satinShimmer 3.2s ease-out forwards;
 }
