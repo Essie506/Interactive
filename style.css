@@ -1,3 +1,9 @@
+:root {
+  --bar-height: 70px;
+}
+
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -88,7 +94,7 @@ body.index::before {
   align-items: center;
   justify-content: space-between;
 
-  height: 80px;
+  height: var(--bar-height);
   padding: 0 16px;
 }
 
