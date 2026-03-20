@@ -205,7 +205,7 @@ body.index .navbar {
     border-radius: 14px;
     border: 1px solid rgba(255,255,255,0.35);
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    box-shadow: var(--shadow-strong);
 
     z-index: -1;
 }
@@ -639,7 +639,7 @@ body.index footer {
   width:60px;
   height:60px;
   border-radius:50%;
-  background: rgba(56, 173, 169, 0.2);  /* soft teal glass */
+  background: var(--glass-teal);  /* soft teal glass */
   display:flex;
   align-items:center;
   justify-content:center;
@@ -689,15 +689,15 @@ body.index footer {
     border:1px solid rgba(255,255,255,0.3);
     background:
       conic-gradient(
-        rgba(56, 173, 169, 0.2) 0deg 36deg,
+        var(--glass-teal) 0deg 36deg,
         rgba(255,255,255,0.15) 36deg 72deg,
-        rgba(56, 173, 169, 0.2) 72deg 108deg,
+        var(--glass-teal) 72deg 108deg,
         rgba(255,255,255,0.15) 108deg 144deg,
-        rgba(56, 173, 169, 0.2) 144deg 180deg,
+        var(--glass-teal) 144deg 180deg,
         rgba(255,255,255,0.15) 180deg 216deg,
-        rgba(56, 173, 169, 0.2) 216deg 252deg,
+        var(--glass-teal) 216deg 252deg,
         rgba(255,255,255,0.15) 252deg 288deg,
-        rgba(56, 173, 169, 0.2) 288deg 324deg,
+        var(--glass-teal) 288deg 324deg,
         rgba(255,255,255,0.15) 324deg 360deg
       );
     box-shadow: 0 10px 30px rgba(0,0,0,0.25),
@@ -740,7 +740,7 @@ font-size: 14px;
   border: none;
   border-radius: 999px;
   background: rgba(255,255,255,0.9);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  box-shadow: var(--shadow-soft);
   cursor: pointer;
 }
 
