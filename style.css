@@ -1,5 +1,21 @@
 :root {
   --bar-height: 70px;
+
+  --main-color: #079992;
+  --main-color-dark: #047a74;
+
+  --glass-white: rgba(255,255,255,0.6);
+  --glass-white-light: rgba(255,255,255,0.8);
+  --glass-teal: rgba(56,173,169,0.2);
+
+  --radius: 12px;
+  --radius-round: 50px;
+
+  --space: 20px;
+  --space-small: 10px;
+
+  --shadow-soft: 0 4px 10px rgba(0,0,0,0.12);
+  --shadow-strong: 0 8px 20px rgba(0,0,0,0.15);
 }
 
 
@@ -34,8 +50,8 @@ body.home::after {
         linear-gradient(
             120deg,
             transparent 15%,
-            rgba(255,255,255,0.35),
-            transparent 35%
+             var(--glass-white),
+            transparent 35%;
         );
     pointer-events: none;
     z-index: -1;
@@ -130,11 +146,10 @@ body.index::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255,255,255,0.6);
-  color: #079992;
-  box-shadow:
-    0 4px 10px rgba(0,0,0,0.12),
-    inset 0 1px 2px rgba(255,255,255,0.6);
+  background: var(--glass-white);
+  color: var(--main-color);
+  box-shadow: var(--shadow-soft),
+  inset 0 1px 2px rgba(255,255,255,0.6);
     z-index: 2;
 }
 
@@ -167,7 +182,7 @@ body.index .navbar {
     padding: 10px 14px;
     border: none;
     background: transparent;
-    z-index: 2000;
+    z-index: 2;
     }
 
     .menu-toggle span {
@@ -234,7 +249,7 @@ body.index .navbar {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 
-    border-radius: 12px;
+    border-radius: var(--radius);
     box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     border: 1px solid rgba(255,255,255,0.4);
     z-index: 2000;
@@ -474,7 +489,7 @@ body.index .hero::before {
     background: linear-gradient(135deg,#079992,#38ada9);
     color: white;
 
-    border-radius: 50px;   /* makes it a proper pill */
+    border-radius: var(--radius-round);   /* makes it a proper pill */
     border: none;
 
     font-weight: 600;
@@ -558,10 +573,9 @@ body.index footer {
 @media (max-width: 480px) {
 
     body.index footer {
-    padding: 20px;
+    min-height: var(--bar-height);
     }
 }
-
 
 /* Video Gallery */
 .video-gallery {
