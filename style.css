@@ -93,7 +93,7 @@ body.index::before {
 }
 
 body.index .navbar {
-  min-height: 40px;
+  height: 60px;
 }
 
 /* background gradient + logo */
@@ -153,7 +153,7 @@ z-index: 2;
 
 @media (max-width: 480px) {
 body.index .navbar {
-  min-height: 50px;
+  height: 60px;
 }
 }
 
