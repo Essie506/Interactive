@@ -18,6 +18,7 @@
 --navbar-bg: linear-gradient(90deg,#bfc5c7,#e6ecef,#7fc9c5,#cfe7e5);
 --navbar-bg-after: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.5), transparent 60%),
         radial-gradient(circle at 70% 40%, rgba(255,255,255,0.3), transparent 60%);
+  
   --radius: 12px;
   --radius-round: 50px;
 
@@ -28,14 +29,13 @@
   --shadow-strong: 0 8px 20px rgba(0,0,0,0.15);
 
   --btn-modern-bg: linear-gradient(135deg,#079992,#38ada9);
+  
   --input-field: width: 100%;
     max-width: 280px;
     padding: 10px 14px;
     margin: 10px 0px;
-
     border-radius: 25px;
     border: 2px solid #079992;
-
     outline: none;
     font-size: 14px;
     transition: 0.25s ease;
@@ -867,7 +867,7 @@ body.feed h1 {
 }
 
 .post-box input {
-  var(input-field);
+  var(--input-field);
     border: 1px solid #ccc;  
 }
 
