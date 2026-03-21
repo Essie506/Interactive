@@ -826,17 +826,18 @@ font-size: 14px;
 
 body.feed {
   display: block;
+  background: var(--index-bg);
 }
 
 body.feed .feed-page {
   max-width: 600px;
   margin: 0px auto;
   padding: 20px;
-  background: var(--index-bg);
 }
 
 
 body.feed::before {
+  content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
