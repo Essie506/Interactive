@@ -835,6 +835,17 @@ body.feed .feed-page {
   background: var(--index-bg);
 }
 
+
+body.feed::before {
+  z-index: -2;
+  pointer-events: none;
+    background: var(--index-bg-before);
+     background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
+}
+
+
+
 body.feed #feed {
   display: flex;
   flex-direction: column;
