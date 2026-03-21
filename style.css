@@ -10,6 +10,10 @@
 
   --index-bg: linear-gradient(120deg,#bdd9e8,#9fc9de,#d8edf8,#9fc9de,#bdd9e8 );
   --index-bg-before: linear-gradient(120deg,transparent,rgba(255,255,255,0.4),transparent);
+  
+  --home-bg: radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
+        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
+        linear-gradient(135deg,#e0e5eb,#d4dce2,#c8d2d9,#f5f7f8);
       
 --navbar-bg: linear-gradient(90deg,#bfc5c7,#e6ecef,#7fc9c5,#cfe7e5);
 --navbar-bg-after: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.5), transparent 60%),
@@ -35,16 +39,7 @@ body {
 }
 
  body.home  {
-     background:
-   radial-gradient(circle at 20% 15%, rgba(255,255,255,0.7), transparent 25%),
-        radial-gradient(circle at 80% 10%, rgba(255,255,255,0.4), transparent 20%),
-        linear-gradient(
-            135deg,
-            #e0e5eb,
-            #d4dce2,
-            #c8d2d9,
-            #f5f7f8
-        );
+     background: var(--home-bg);
  }
 
 /* sheen overlay */
