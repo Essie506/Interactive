@@ -846,7 +846,6 @@ body.feed::before {
 }
 
 
-
 body.feed #feed {
   display: flex;
   flex-direction: column;
@@ -888,15 +887,13 @@ body.feed .btn-modern {
 @media (max-width: 480px) {
   .post-box input {
     max-width: 280px;
-     padding: 9px auto;
   }
   
   body.feed .btn-modern {
-    max-width: 80px;      /* stops it getting too chunky *
+    max-width: 80px;  
+    padding: 9px auto;  /* stops it getting too chunky *
 }
 }
-
-
 
 
 body.feed .post {
