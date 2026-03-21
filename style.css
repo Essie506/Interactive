@@ -881,6 +881,7 @@ body.feed .btn-modern {
     max-width: 100px;   /* stops it getting too chunky */
     height: 18px
    border-radius: 9px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 480px) {
@@ -888,11 +889,10 @@ body.feed .btn-modern {
     max-width: 280px;
   }
   body.feed .btn-modern {
-     width: 100%;
+    width: 100%;
     max-width: 80px;      /* stops it getting too chunky */
-    padding: 5px 7px;
-    margin: 10px auto 0;
-   border-radius: 25px;
+    height: 18px;
+   border-radius: 9px;
 }
 }
 
