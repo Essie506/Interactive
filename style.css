@@ -54,7 +54,7 @@ body.home::after {
             120deg,
             transparent 15%,
              var(--glass-white),
-            transparent 35%;
+            transparent 35%
         );
     pointer-events: none;
     z-index: -1;
@@ -878,10 +878,10 @@ body.feed h1 {
 body.feed .btn-modern {
      width: 100%;
     max-width: 100px;   /* stops it getting too chunky */
-    height: 18px;
-   border-radius: 9px;
+    height: 36px;
+   border-radius: 18px;
   margin-bottom: 15px;
-  padding: 9px auto;
+  padding: 9px;
 }
 
 @media (max-width: 480px) {
@@ -891,7 +891,7 @@ body.feed .btn-modern {
   
   body.feed .btn-modern {
     max-width: 80px;  
-    padding: 9px auto;  /* stops it getting too chunky *
+    padding: 9px;  /* stops it getting too chunky *
 }
 }
 
@@ -914,6 +914,9 @@ body.feed .post {
 }
 
 .post-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-weight: bold;
   margin-bottom: 8px;
 }
