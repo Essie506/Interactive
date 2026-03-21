@@ -878,10 +878,10 @@ body.feed h1 {
 
 body.feed .btn-modern {
      width: 100%;
-    max-width: 100px;      /* stops it getting too chunky */
+    max-width: 80px;      /* stops it getting too chunky */
     padding: 10px 14px;
     margin: 10px auto 0;
-   border-radius: 25px;
+   border-radius: 10px;
 }
 
 body.feed .post {
