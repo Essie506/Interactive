@@ -830,7 +830,7 @@ body.feed {
 
 body.feed .feed-page {
   max-width: 600px;
-  margin: 60px auto;
+  margin: 0px auto;
   padding: 20px;
   background: var(--index-bg);
 }
