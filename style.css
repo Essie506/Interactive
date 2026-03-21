@@ -880,7 +880,6 @@ body.feed .btn-modern {
      width: 100%;
     max-width: 100px;   /* stops it getting too chunky */
     height: 18px
-    margin: 10px auto 0;
    border-radius: 9px;
 }
 
