@@ -887,6 +887,7 @@ body.feed .btn-modern {
 @media (max-width: 480px) {
   .post-box input {
     max-width: 280px;
+     padding: 9px auto;
   }
   body.feed .btn-modern {
     max-width: 80px;      /* stops it getting too chunky *
