@@ -886,6 +886,14 @@ body.feed .post {
  max-width: 600px;
 }
 
+body.feed .btn-modern {
+     width: 100%;
+    max-width: 100px;      /* stops it getting too chunky */
+    padding: 10px 14px;
+    margin: 10px auto 0;
+}
+  
+
 .post img {
   width: 100%;
   border-radius: 10px;
