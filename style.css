@@ -28,8 +28,18 @@
   --shadow-strong: 0 8px 20px rgba(0,0,0,0.15);
 
   --btn-modern-bg: linear-gradient(135deg,#079992,#38ada9);
-}
+  --input-field: width: 100%;
+    max-width: 280px;
+    padding: 10px 14px;
+    margin: 10px 0px;
 
+    border-radius: 25px;
+    border: 2px solid #079992;
+
+    outline: none;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
 
 
 body {
@@ -495,17 +505,7 @@ body.index .btn-login {
 }
 
 .input-field {
-    width: 100%;
-    max-width: 280px;
-    padding: 10px 14px;
-    margin: 10px 0px;
-
-    border-radius: 25px;
-    border: 2px solid #079992;
-
-    outline: none;
-    font-size: 14px;
-    transition: 0.25s ease;
+    var(--input-field);
 }
 
 .input-field:focus {
@@ -867,15 +867,8 @@ body.feed h1 {
 }
 
 .post-box input {
-  width: 100%;
-    max-width: 280px;
-    padding: 10px 14px;
-    margin: 10px 0px;
-    border-radius: 25px;
-    border: 1px solid #ccc;
-    outline: none;
-    font-size: 14px;
-    transition: 0.25s ease;
+  var(input-field);
+    border: 1px solid #ccc;  
 }
 
 body.feed .post {
