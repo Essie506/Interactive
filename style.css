@@ -866,7 +866,7 @@ body.feed h1 {
 
 .post-box input {
   width: 100%;
-    max-width: 280px;
+    max-width: 400px;
     padding: 10px 14px;
     margin: 10px 0px;
     border-radius: 25px;
@@ -878,11 +878,27 @@ body.feed h1 {
 
 body.feed .btn-modern {
      width: 100%;
-    max-width: 80px;      /* stops it getting too chunky */
+    max-width: 100px;      /* stops it getting too chunky */
     padding: 10px 14px;
     margin: 10px auto 0;
-   border-radius: 10px;
+   border-radius: 25px;
 }
+
+@media (max-width: 480px) {
+  .post-box input {
+    max-width: 280px;
+  }
+  body.feed .btn-modern {
+     width: 100%;
+    max-width: 80px;      /* stops it getting too chunky */
+    padding: 5px 7px;
+    margin: 10px auto 0;
+   border-radius: 25px;
+}
+}
+
+
+
 
 body.feed .post {
   background: rgba(255,255,255,0.6);
