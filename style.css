@@ -556,13 +556,6 @@ body.index footer {
 
 }
 
-@media (max-width: 480px) {
-
-    body.index footer {
-    min-height: var(--bar-height);
-    }
-}
-
 /* Video Gallery */
 .video-gallery {
     display: flex;
