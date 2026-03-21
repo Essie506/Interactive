@@ -988,14 +988,19 @@ body.feed .post {
   justify-content: center;
 
   text-decoration: none;
-  color: #162f6b;
+  color: #0f2a66;
   font-size: 12px;
   gap: 4px;
 }
 
 .bottom-nav i {
-  font-size: 20px;
-  line-height: 1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.6);
 }
 
 body.home footer,
