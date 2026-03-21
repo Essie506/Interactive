@@ -876,6 +876,14 @@ body.feed h1 {
     border: 1px solid #ccc;  
 }
 
+body.feed .btn-modern {
+     width: 100%;
+    max-width: 100px;      /* stops it getting too chunky */
+    padding: 10px 14px;
+    margin: 10px auto 0;
+   border-radius: 25px;
+}
+
 body.feed .post {
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(10px);
@@ -884,13 +892,6 @@ body.feed .post {
   margin-bottom: 20px;
  width: 100%;
  max-width: 600px;
-}
-
-body.feed .btn-modern {
-     width: 100%;
-    max-width: 100px;      /* stops it getting too chunky */
-    padding: 10px 14px;
-    margin: 10px auto 0;
 }
   
 
