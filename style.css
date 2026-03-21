@@ -42,6 +42,7 @@ body {
 
  body.home  {
      background: var(--home-bg);
+   padding-bottom: 90px;
  }
 
 /* sheen overlay */
@@ -542,7 +543,7 @@ footer {
   justify-content: center;
     padding:20px;
     color:#079992;
-    position: sticky;
+    position: relative;
     z-index: 1;
 }
 
@@ -830,7 +831,8 @@ body.feed {
 body.feed .feed-page {
   max-width: 600px;
   margin: 0px auto;
-  padding: 20px;
+  padding-top: 20px;
+   padding-bottom: 90px;
 }
 
 
@@ -954,4 +956,45 @@ body.feed .post {
   gap: 20px;
   margin-top: 10px;
   font-size: 14px;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-top: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 -4px 14px rgba(0,0,0,0.08);
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 12px;
+  gap: 4px;
+}
+
+.bottom-nav i {
+  font-size: 18px;
+}
+
+body.home footer,
+body.feed footer {
+  display: none;
 }
