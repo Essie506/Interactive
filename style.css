@@ -879,7 +879,7 @@ body.feed h1 {
 body.feed .btn-modern {
      width: 100%;
     max-width: 100px;   /* stops it getting too chunky */
-    height: 18px
+    height: 18px;
    border-radius: 9px;
   margin-bottom: 15px;
 }
