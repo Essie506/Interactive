@@ -867,10 +867,15 @@ body.feed h1 {
 }
 
 .post-box input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  width: 100%;
+    max-width: 280px;
+    padding: 10px 14px;
+    margin: 10px 0px;
+    border-radius: 25px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+    transition: 0.25s ease;
 }
 
 body.feed .post {
