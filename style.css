@@ -1009,16 +1009,19 @@ body.feed .post {
 @media (min-width: 768px) {
 
 .bottom-nav {
-  width: 520px;
+  width: 500px;
   left: 50%;
   transform: translateX(-50%);
-
   border-radius: 20px;
+  bottom: -60px;
+}
+
+body:hover .bottom-nav,
+.bottom-nav:hover {
   bottom: 20px;
 }
 
 }
-
 
 body.home footer,
 body.feed footer {
