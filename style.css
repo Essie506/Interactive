@@ -1070,9 +1070,9 @@ body.feed .post {
   }
 
 
-  .nav-right,
+  .nav-left,
   .nav-center,
-  .nav-left {
+  .nav-right {
     display: flex;
     align-items: center;
     gap: 14px;
