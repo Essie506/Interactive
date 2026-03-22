@@ -1049,7 +1049,7 @@ body.feed .post {
     justify-content: space-between;
     box-sizing: border-box;
 
-    padding: 0 10px;
+    padding: 0 5px;
 
     background: var(--navbar-bg);
     backdrop-filter: blur(12px);
