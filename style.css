@@ -991,14 +991,6 @@ body.feed .post {
   box-shadow: 0 -4px 14px rgba(0,0,0,0.08);
 }
 
-.bottom-nav::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--navbar-bg-after);
-  pointer-events: none;
-}
-
 .bottom-nav a {
   flex: 1;
   height: 100%;
