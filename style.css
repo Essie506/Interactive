@@ -1040,7 +1040,6 @@ body.feed .post {
     display: none;
   }
 
- 
   .bottom-rise-zone {
     display: block;
     position: fixed;
@@ -1072,6 +1071,12 @@ body.feed .post {
     box-shadow: 0 -4px 14px rgba(0,0,0,0.08);
     transition: bottom 0.3s ease;
   }
+
+   .bottom-rise-zone:hover + .bottom-nav-desktop,
+  .bottom-nav-desktop:hover {
+    bottom: 0;
+  }
+
 
   .nav-right,
   .nav-center,
@@ -1124,5 +1129,7 @@ body.feed .post {
 
   body.feed .feed-page {
     padding-bottom: 20px;
+  
   }
 }
+
