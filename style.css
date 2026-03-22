@@ -992,7 +992,11 @@ body.feed .post {
 }
 
 .bottom-nav::after {
-  var(--navbar-bg-after);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--navbar-bg-after);
+  pointer-events: none;
 }
 
 .bottom-nav a {
@@ -1004,7 +1008,6 @@ body.feed .post {
   justify-content: center;
   margin: 0;
   padding: 0;
-
   text-decoration: none;
   color: #091a3a;
   font-size: 12px;
@@ -1012,7 +1015,7 @@ body.feed .post {
 }
 
 .bottom-nav i {
- width: 50px;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   border: none;
@@ -1021,7 +1024,7 @@ body.feed .post {
   justify-content: center;
   background: var(--glass-white);
   box-shadow: var(--shadow-soft),
-  inset 0 1px 2px rgba(255,255,255,0.6);
+              inset 0 1px 2px rgba(255,255,255,0.6);
   font-size: 22px;
 }
 
@@ -1030,31 +1033,22 @@ body.feed .post {
 }
 
 @media (min-width: 768px) {
-
-   .bottom-nav-mobile {
+  .bottom-nav-mobile {
     display: none;
   }
-  /* hover trigger zone */
-  body::after {
-    content: "";
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20px;   /* hover area */
-    z-index: 1500;
-  }
+
   .bottom-nav-desktop {
-    position: fixed;
     display: flex;
+    position: fixed;
     left: 0;
     right: 0;
-    bottom: -48px; /* mostly hidden below screen */
+    bottom: -48px;
     width: 100%;
-    height: 52px;  /* thinner bar */
+    height: 52px;
     z-index: 2000;
-    justify-content: space-between; 
-  box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 
     background: var(--navbar-bg);
     backdrop-filter: blur(12px);
@@ -1064,7 +1058,8 @@ body.feed .post {
     box-shadow: 0 -4px 14px rgba(0,0,0,0.08);
 
     transition: bottom 0.3s ease;
-  } 
+  }
+
   .nav-left,
   .nav-center,
   .nav-right {
@@ -1072,27 +1067,27 @@ body.feed .post {
     align-items: center;
     gap: 14px;
   }
-  
-.nav-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-  
+
+  .nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   body:hover .bottom-nav-desktop,
-  .bottom-nav-desktop: hover {
+  .bottom-nav-desktop:hover {
     bottom: 0;
   }
 
   .bottom-nav-desktop a {
-    flex: 1;
-    height: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 8px;
+    height: 100%;
+    text-decoration: none;
+    color: #091a3a;
     font-size: 14px;
     position: relative;
     z-index: 1;
@@ -1110,9 +1105,4 @@ body.feed .post {
   body.feed .feed-page {
     padding-bottom: 20px;
   }
-}
-
-body.home footer,
-body.feed footer {
-  display: none;
 }
