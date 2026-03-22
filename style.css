@@ -1024,8 +1024,7 @@ body.feed .post {
 }
 
 @media (min-width: 768px) {
-
-    
+ 
   /* hover trigger zone */
   body::after {
     content: "";
@@ -1048,6 +1047,7 @@ body.feed .post {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 
     padding: 0 10px;
 
@@ -1061,7 +1061,7 @@ body.feed .post {
     transition: bottom 0.3s ease;
   }
 
-  
+  body:hover .bottom-nav,
   .bottom-nav:hover {
     bottom: 0;
   }
@@ -1092,12 +1092,8 @@ body.feed .post {
     padding-bottom: 20px;
   }
 }
-}
 
 body.home footer,
 body.feed footer {
   display: none;
-}
-.bottom-nav span {
-  line-height: 1;
 }
