@@ -1060,9 +1060,9 @@ body.feed .post {
     transition: bottom 0.3s ease;
   }
 
-  .nav-left,
+  .nav-right,
   .nav-center,
-  .nav-right {
+  .nav-left {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -1076,7 +1076,12 @@ body.feed .post {
 
   body:hover .bottom-nav-desktop,
   .bottom-nav-desktop:hover {
+    position: fixed;
+    left: 0;
     bottom: 0;
+    width: 100%;
+    height: 20px;   /* 0–20px hover zone */
+    z-index: 1999;
   }
 
   .bottom-nav-desktop a {
