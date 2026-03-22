@@ -1002,6 +1002,8 @@ body.feed .post {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 
   text-decoration: none;
   color: #091a3a;
@@ -1048,8 +1050,6 @@ body.feed .post {
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-
-    padding: 0 5px;
 
     background: var(--navbar-bg);
     backdrop-filter: blur(12px);
