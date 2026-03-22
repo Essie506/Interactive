@@ -1031,15 +1031,18 @@ body.feed .post {
 .bottom-nav-desktop {
   display: none;
 }
+.bottom-rise-zone {
+  display: none;
+}
 
 @media (min-width: 768px) {
   .bottom-nav {
     display: none;
   }
 
-  /* bottom 20px hover strip */
-  body::after {
-    content: "";
+ 
+  .bottom-rise-zone {
+    display: block;
     position: fixed;
     left: 0;
     bottom: 0;
@@ -1084,11 +1087,6 @@ body.feed .post {
     transform: translateX(-50%);
   }
 
-  /* show bar on desktop hover */
-  body:hover .bottom-nav-desktop,
-  .bottom-nav-desktop:hover {
-    bottom: 0;
-  }
 
   .bottom-nav-desktop a {
     display: flex;
