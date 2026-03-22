@@ -101,7 +101,7 @@ body.index::before {
   justify-content: center;
 
   height: var(--bar-height);
-  padding: 0 16px;
+  padding: 0 5px;
 }
 
 /* background gradient + logo */
