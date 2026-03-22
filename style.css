@@ -1021,6 +1021,10 @@ body:hover .bottom-nav,
   bottom: 20px;
 }
 
+  body.feed .feed-page {
+  bottom-padding: 60px;
+}
+
 }
 
 body.home footer,
