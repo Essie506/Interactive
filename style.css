@@ -1025,8 +1025,15 @@ body.feed .post {
   font-size: 22px;
 }
 
+.bottom-nav-desktop {
+  display: none;
+  )
+
 @media (min-width: 768px) {
- 
+
+   .bottom-nav-mobile {
+    display: none;
+  }
   /* hover trigger zone */
   body::after {
     content: "";
@@ -1037,8 +1044,7 @@ body.feed .post {
     height: 20px;   /* hover area */
     z-index: 1500;
   }
-
-  .bottom-nav {
+  .bottom-nav-desktop {
     position: fixed;
     left: 0;
     right: 0;
@@ -1053,6 +1059,15 @@ body.feed .post {
     display: flex;
     gap: 12px;
   }
+  
+  .nav-left,
+  .nav-center,
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  
 .nav-center {
   position: absolute;
   left: 50%;
@@ -1070,12 +1085,12 @@ body.feed .post {
     transition: bottom 0.3s ease;
   }
 
-  body:hover .bottom-nav,
+  body:hover .bottom-nav-desktop,
   .bottom-nav:hover {
     bottom: 0;
   }
 
-  .bottom-nav a {
+  .bottom-nav-desktop a {
     flex: 1;
     height: 100%;
     display: flex;
@@ -1088,11 +1103,11 @@ body.feed .post {
     z-index: 1;
   }
 
-  .bottom-nav i {
+  .bottom-nav-desktop i {
     line-height: 1;
   }
 
-  .bottom-nav span {
+  .bottom-nav-desktop span {
     line-height: 1;
     font-size: 13px;
   }
