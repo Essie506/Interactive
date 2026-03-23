@@ -183,6 +183,11 @@ body.index::before {
 z-index: 2;
 }
 
+.navbar.hide-top {
+  transform: translateY(-100%);
+}
+
+
 @media (max-width: 480px) {
 body.index .navbar {
   height: 60px;
@@ -1090,7 +1095,7 @@ body.feed .post {
   box-shadow: 0 -4px 14px rgba(0,0,0,0.08);
 }
 
-.bottom-nav.hide-nav {
+.bottom-nav.hide-bottom {
   transform: translateY(100%);
 }
 
