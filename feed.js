@@ -1,3 +1,6 @@
+
+document.addEventListener("DOMContentLoaded", () => {
+
 const posts = [
 
   {
@@ -25,7 +28,8 @@ const posts = [
 
 
 const feed = document.getElementById("feed");
-
+  
+  if (feed) {
 
 posts.forEach(post => {
 
@@ -65,5 +69,38 @@ posts.forEach(post => {
   `;
 
   feed.appendChild(card);
+
+});
+
+}
+
+  const mediaUpload = document.getElementById("mediaUpload");
+  const postPreview = document.getElementById("postPreview");
+
+  if (!mediaUpload || !postPreview) return;
+
+  mediaUpload.addEventListener("change", function () {
+    postPreview.innerHTML = "";
+
+    Array.from(this.files).forEach(file => {
+
+      const fileURL = URL.createObjectURL(file);
+
+      if (file.type.startsWith("image/")) {
+        const img = document.createElement("img");
+        img.src = fileURL;
+        postPreview.appendChild(img);
+      }
+
+      else if (file.type.startsWith("video/")) {
+        const video = document.createElement("video");
+        video.src = fileURL;
+        video.controls = true;
+        postPreview.appendChild(video);
+      }
+
+    });
+
+  });
 
 });
