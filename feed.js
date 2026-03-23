@@ -74,6 +74,7 @@ posts.forEach(post => {
 
 }
 
+
   const mediaUpload = document.getElementById("mediaUpload");
   const postPreview = document.getElementById("postPreview");
 
@@ -103,8 +104,6 @@ posts.forEach(post => {
 
   });
 
-});
-
 let lastScrollY = window.scrollY;
 const bottomNav = document.querySelector(".bottom-nav");
 
@@ -121,3 +120,5 @@ window.addEventListener("scroll", () => {
 
   lastScrollY = currentScrollY;
 });
+  });
+
