@@ -125,6 +125,13 @@ body.index::before {
     pointer-events: none;
 }
 
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
 .search-toggle {
   width: 42px;
   height: 42px;
