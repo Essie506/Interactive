@@ -860,7 +860,7 @@ body.feed {
 body.feed .feed-page {
   max-width: 600px;
   margin: 0px auto;
-  padding: 8px 20px 90px;
+  padding: 8px 20px calc(76px + env(safe-area-inset-bottom));
 }
 
 
@@ -1088,6 +1088,10 @@ body.feed .post {
   opacity: 0.85;
   border-top: 1px solid rgba(255,255,255,0.4);
   box-shadow: 0 -4px 14px rgba(0,0,0,0.08);
+}
+
+.bottom-nav.hide-nav {
+  transform: translateY(100%);
 }
 
 .bottom-nav a {
