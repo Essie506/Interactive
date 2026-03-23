@@ -187,10 +187,6 @@ z-index: 2;
 body.index .navbar {
   height: 60px;
 }
-
-  .nav-title {
-  text-align: flex-start;
-}
 }
 
 /* ================= HAMBURGER ================= */
@@ -892,7 +888,7 @@ body.feed h1 {
 }
     
 .post-box {
-  width: min(100%, 700px);
+  width: min(92%, 700px);
   margin: 20px auto;
   padding: 16px;
   border-radius: 22px;
@@ -921,7 +917,6 @@ body.feed h1 {
 }
 
 .post-input {
-  flex: 1;
   width: 100%;
   min-height: 90px;
   resize: none;
@@ -1005,8 +1000,8 @@ body.feed .btn-modern {
 }
 
 @media (max-width: 480px) {
-  .post-box input {
-    max-width: 280px;
+  .post-input {
+    max-width: 100%;
   }
   
   body.feed .btn-modern {
