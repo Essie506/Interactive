@@ -921,6 +921,7 @@ body.feed h1 {
 }
 
 .post-input {
+  flex: 1;
   width: 100%;
   min-height: 90px;
   resize: none;
