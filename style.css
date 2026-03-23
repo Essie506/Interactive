@@ -98,7 +98,7 @@ body.index::before {
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
   height: var(--bar-height);
   padding: 0 5px;
