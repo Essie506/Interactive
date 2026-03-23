@@ -104,3 +104,20 @@ posts.forEach(post => {
   });
 
 });
+
+let lastScrollY = window.scrollY;
+const bottomNav = document.querySelector(".bottom-nav");
+
+window.addEventListener("scroll", () => {
+  if (!bottomNav) return;
+
+  const currentScrollY = window.scrollY;
+
+  if (currentScrollY > lastScrollY && currentScrollY > 50) {
+    bottomNav.classList.add("hide-nav");
+  } else {
+    bottomNav.classList.remove("hide-nav");
+  }
+
+  lastScrollY = currentScrollY;
+});
