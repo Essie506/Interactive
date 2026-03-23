@@ -175,6 +175,10 @@ z-index: 2;
 body.index .navbar {
   height: 60px;
 }
+
+  .nav-title {
+  text-align: flex-start;
+}
 }
 
 /* ================= HAMBURGER ================= */
