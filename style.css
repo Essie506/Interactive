@@ -893,7 +893,7 @@ body.feed h1 {
     
 .post-box {
   width: min(100%, 700px);
-  margin: 0px auto;
+  margin: 20px auto;
   padding: 16px;
   border-radius: 22px;
   background: rgba(255,255,255,0.55);
