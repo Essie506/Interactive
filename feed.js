@@ -105,17 +105,27 @@ posts.forEach(post => {
   });
 
 let lastScrollY = window.scrollY;
+const navbar = document.querySelector(".navbar");
 const bottomNav = document.querySelector(".bottom-nav");
 
 window.addEventListener("scroll", () => {
-  if (!bottomNav) return;
-
   const currentScrollY = window.scrollY;
+  const scrollingDown = currentScrollY > lastScrollY;
 
-  if (currentScrollY > lastScrollY && currentScrollY > 50) {
-    bottomNav.classList.add("hide-nav");
-  } else {
-    bottomNav.classList.remove("hide-nav");
+  if (navbar) {
+    if (scrollingDown && currentScrollY > 50) {
+      navbar.classList.add("hide-top");
+    } else {
+      navbar.classList.remove("hide-top");
+    }
+  }
+
+  if (bottomNav) {
+    if (scrollingDown && currentScrollY > 50) {
+      bottomNav.classList.add("hide-bottom");
+    } else {
+      bottomNav.classList.remove("hide-bottom");
+    }
   }
 
   lastScrollY = currentScrollY;
