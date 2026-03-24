@@ -3,6 +3,11 @@
 *::after {
   box-sizing: border-box;
 }
+
+html, body {
+  overflow-x: hidden;
+}
+
 :root {
   --bar-height: 70px;
 
