@@ -932,7 +932,7 @@ body.feed h1 {
   object-fit: cover;
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-  margin-top: 50px;
+  margin-top: 5px;
 }
 
 .post-input {
