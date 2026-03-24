@@ -908,7 +908,7 @@ body.feed h1 {
 
 .post-box-top {
   display: flex;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 10px;
 }
 
@@ -940,6 +940,7 @@ body.feed h1 {
 
 .post-input-wrap {
   flex: 1;
+  display: flex;
 }
 
 .post-input::placeholder {
