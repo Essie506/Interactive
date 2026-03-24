@@ -1028,7 +1028,7 @@ body.feed .post {
   padding: 15px;
   margin-bottom: 20px;
  width: 100%;
- max-width: 600px;
+ max-width: none;
 }
   
 
