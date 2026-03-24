@@ -911,7 +911,7 @@ body.feed h1 {
 
 .post-box-top {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   gap: 10px;
 }
 
@@ -925,8 +925,9 @@ body.feed h1 {
 }
 
 .post-input {
-  width: 85%;
-  min-height: 90px;
+  width: 100%;
+  min-height: 44px;
+  max-height: 120px;
   resize: none;
   border: none;
   outline: none;
@@ -983,19 +984,18 @@ body.feed h1 {
 
 
 .upload-btn {
-  display: inline-flex;
+  width: 42px;
+  height: 42px;
+  display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.72);
+ justify-content: center;
+  border-radius: 50%;
+  background: var(--glass-white);
   color: #091a3a;
   cursor: pointer;
   font-size: 14px;
   font-weight: 600;
-  box-shadow:
-    0 4px 12px rgba(0,0,0,0.08),
-    inset 0 1px 2px rgba(255,255,255,0.65);
+  box-shadow:var(--shadow-soft);
 }
 
 
