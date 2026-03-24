@@ -926,7 +926,7 @@ body.feed h1 {
   object-fit: cover;
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-  margin-top: 20px;
+  margin-top: 50px;
 }
 
 .post-input {
@@ -978,7 +978,7 @@ body.feed h1 {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  margin-top: 0px;
+  margin: 20px, 10px;
 }
 
 .post-side-actions {
@@ -986,7 +986,6 @@ body.feed h1 {
   flex-direction: column;
   justify-content: center;
   gap: 5;
-  margin: 20px, 10px;
 }
 
 .post-tools {
