@@ -884,10 +884,9 @@ body.feed {
 body.feed .feed-page {
   max-width: 600px;
   margin: 0px auto;
-  padding: 8px 0px calc(76px + env(safe-area-inset-bottom));
+  padding: calc(var(--bar-height) + 8px) 8px calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
-
 
 body.feed::before {
   content: "";
