@@ -894,7 +894,7 @@ body.feed h1 {
     
 .post-box {
   width: min(100%, 600px);
-  padding: 16px;
+  padding: 0px;
   border-radius: 22px;
   background: transparent;
  
@@ -925,7 +925,7 @@ body.feed h1 {
 }
 
 .post-input {
-  width: 100%;
+  width: 90%;
   min-height: 90px;
   resize: none;
   border: none;
