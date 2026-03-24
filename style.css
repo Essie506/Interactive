@@ -112,6 +112,7 @@ body.index::before {
 
   height: var(--bar-height);
   padding: 0 5px;
+    transition: transform 0.3s ease;
 }
 
 /* background gradient + logo */
@@ -1108,6 +1109,7 @@ body.feed .post {
   opacity: 0.85;
   border-top: 1px solid rgba(255,255,255,0.4);
   box-shadow: 0 -4px 14px rgba(0,0,0,0.08);
+   transition: transform 0.3s ease;
 }
 
 .bottom-nav.hide-bottom {
