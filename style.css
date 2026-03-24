@@ -101,18 +101,23 @@ body.index::before {
 
 /* ================= NAVBAR ================= */
 
-   .navbar {
+ .navbar {
   position: fixed;
   top: 0;
-  z-index: 1800;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--bar-height);
+  padding: 0 12px;
+  box-sizing: border-box;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  height: var(--bar-height);
-  padding: 0 5px;
-    transition: transform 0.3s ease;
+  z-index: 3000;
+  transition: transform 0.3s ease;
+  overflow: hidden;
 }
 
 /* background gradient + logo */
@@ -125,6 +130,7 @@ body.index::before {
     background-size: cover, contain;
     opacity: 0.85;
     filter: saturate(0.9) brightness(1.05);
+  z-index: 0;
 }
 
 /* metallic shine */
@@ -134,6 +140,7 @@ body.index::before {
     inset: 0;
     background: var(--navbar-bg-after);
     pointer-events: none;
+  z-index: 0;
 }
 
 .nav-right {
@@ -141,7 +148,7 @@ body.index::before {
   flex-direction: row;
   align-items: center;
   gap: 0px;
-  z-index: 2000;
+  z-index: 2;
 }
 
 .search-toggle {
