@@ -926,6 +926,7 @@ body.feed h1 {
   object-fit: cover;
   flex-shrink: 0;
   box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+  margin-top: 20px;
 }
 
 .post-input {
@@ -975,7 +976,7 @@ body.feed h1 {
 .post-actions {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 10px;
   margin-top: 0px;
 }
