@@ -866,7 +866,7 @@ body.feed {
 
 body.feed .feed-page {
   max-width: 600px;
-  margin: 0px auto;
+  margin: 0px;
   padding: 8px 0px calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
