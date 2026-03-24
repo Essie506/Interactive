@@ -104,31 +104,30 @@ posts.forEach(post => {
 
   });
 
-let lastScrollY = window.scrollY;
-const navbar = document.querySelector(".navbar");
-const bottomNav = document.querySelector(".bottom-nav");
+document.addEventListener("DOMContentLoaded", () => {
+  let lastScrollY = window.scrollY;
 
-window.addEventListener("scroll", () => {
-  const currentScrollY = window.scrollY;
-  const scrollingDown = currentScrollY > lastScrollY;
+  const navbar = document.querySelector(".navbar");
+  const bottomNav = document.querySelector(".bottom-nav");
 
-  if (navbar) {
-    if (scrollingDown && currentScrollY > 50) {
-      navbar.classList.add("hide-top");
-    } else {
-      navbar.classList.remove("hide-top");
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 10) {
+      navbar?.classList.remove("hide-top");
+      bottomNav?.classList.remove("hide-bottom");
+      lastScrollY = currentScrollY;
+      return;
     }
-  }
 
-  if (bottomNav) {
-    if (scrollingDown && currentScrollY > 50) {
-      bottomNav.classList.add("hide-bottom");
+    if (currentScrollY > lastScrollY) {
+      navbar?.classList.add("hide-top");
+      bottomNav?.classList.add("hide-bottom");
     } else {
-      bottomNav.classList.remove("hide-bottom");
+      navbar?.classList.remove("hide-top");
+      bottomNav?.classList.remove("hide-bottom");
     }
-  }
 
-  lastScrollY = currentScrollY;
-});
+    lastScrollY = currentScrollY;
   });
-
+});
