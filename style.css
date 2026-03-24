@@ -274,7 +274,6 @@ body.index .navbar {
     padding: 15px;
     display: block;
     max-width: max-content;
-    gap: 40px;
   /* ✨ glass effect */
     background: rgba(255, 255, 255, 0.65);
     backdrop-filter: blur(10px);
@@ -978,14 +977,14 @@ body.feed h1 {
   align-items: center;
   justify-content: flex-start;
   gap: 10px;
-  margin: 20px, 10px;
+  margin: 20px 10px;
 }
 
 .post-side-actions {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5;
+  gap: 5px;
 }
 
 .post-tools {
