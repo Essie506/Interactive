@@ -102,7 +102,7 @@ body.index::before {
 /* ================= NAVBAR ================= */
 
    .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1800;
 
