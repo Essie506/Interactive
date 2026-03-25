@@ -1000,7 +1000,7 @@ body.feed h1 {
   width: 46px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: 10px;
   margin-right: 15px;
 }
