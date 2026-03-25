@@ -886,6 +886,7 @@ body.feed .feed-page {
   margin: 0 auto;
   padding: var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
+    color: white;
 }
 
 body.feed::before {
@@ -896,7 +897,6 @@ body.feed::before {
   pointer-events: none;
     background: var(--index-bg-before);
      background-size: 220% 220%;
-  color: white;
   animation: satinShimmer 3.2s ease-out forwards;
 }
 
