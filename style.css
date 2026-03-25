@@ -894,8 +894,13 @@ body.feed::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-    background: white;
+    background: linear-gradient(
+            120deg,
+            transparent 15%,
+             var(--glass-white),
+            transparent 35%;
      background-size: 220% 220%;
+  var(--home-bg);
 }
 
 
