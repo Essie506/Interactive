@@ -885,7 +885,7 @@ body.feed {
 body.feed .feed-page {
   max-width: 600px;
   margin: 0px auto;
-  padding: calc(var(--bar-height) 0px calc(76px + env(safe-area-inset-bottom));
+  padding: calc(var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
@@ -960,7 +960,6 @@ body.feed h1 {
   background: rgba(255,255,255,0.72);
   color: #091a3a;
   box-shadow: inset 0 1px 2px rgba(255,255,255,0.7);
-  box-size: border-box;
 }
 
 
@@ -1003,7 +1002,7 @@ body.feed h1 {
   width: 46px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .post-tools {
@@ -1115,13 +1114,6 @@ body.feed .post {
 
 .post-text {
   margin: 10px 0;
-}
-
-.post-actions {
-  display: flex;
-  gap: 20px;
-  margin-top: 10px;
-  font-size: 14px;
 }
 
 .bottom-nav {
