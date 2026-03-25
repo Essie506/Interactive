@@ -885,7 +885,7 @@ body.feed {
 body.feed .feed-page {
   max-width: 600px;
   margin: 0px auto;
-  padding: calc(var(--bar-height) + 1px) 0px calc(76px + env(safe-area-inset-bottom));
+  padding: calc(var(--bar-height) 0px calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
@@ -915,6 +915,7 @@ body.feed h1 {
   width: 100%;
   max-width: 100%;
   margin-bottom: 10px;
+  margin-top: -1px;
   padding: 0px;
   border-radius: 22px;
   background: white;
