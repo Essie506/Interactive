@@ -896,6 +896,7 @@ body.feed::before {
   pointer-events: none;
     background: var(--index-bg-before);
      background-size: 220% 220%;
+  color: white;
   animation: satinShimmer 3.2s ease-out forwards;
 }
 
