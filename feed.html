@@ -12,7 +12,7 @@
 <body class="feed">
 
 <nav class="navbar">
-<div class="navbar-bg"></div>
+  <div class="navbar-bg"></div>
   <button class="menu-toggle" id="menuToggle">
     <span></span>
     <span></span>
@@ -21,13 +21,11 @@
 
   <div class="nav-title">Interactive Fitness</div>
 
-
   <div class="navbar-right">
-  <button class="search-toggle">
-    <i class="fa-solid fa-magnifying-glass"></i>
-
-  </button>
-       <a href="messages.html" class="icon-btn">
+    <button class="search-toggle">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+    <a href="messages.html" class="icon-btn">
       <i class="fa-solid fa-comments"></i>
     </a>
   </div>
@@ -35,123 +33,137 @@
 
 <nav class="menu">
   <ul>
-
-    <li>
-      <a href="home.html" class="menu-link-modern">Home</a>
-    </li>
-
-    <li>
-      <a href="feed.html" class="menu-link-modern">Feed</a>
-    </li>
+    <li><a href="home.html" class="menu-link-modern">Home</a></li>
+    <li><a href="feed.html" class="menu-link-modern">Feed</a></li>
 
     <li class="has-submenu">
-
       <a href="#" class="menu-link-modern">Profile</a>
-
       <ul class="submenu">
         <li><a href="view-profile.html">View Profile</a></li>
         <li><a href="edit-profile.html">Edit Profile</a></li>
         <li><a href="upload-images.html">Upload Images</a></li>
       </ul>
-
     </li>
 
     <li class="has-submenu">
-
       <a href="#" class="menu-link-modern">Workouts</a>
-
       <ul class="submenu">
         <li><a href="browse-workouts.html">Browse Workouts</a></li>
         <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
         <li><a href="trending.html">Trending</a></li>
       </ul>
-
     </li>
 
-    <li>
-      <a href="./index.html" class="menu-link-modern">Logout</a>
-    </li>
-
+    <li><a href="./index.html" class="menu-link-modern">Logout</a></li>
   </ul>
 </nav>
 
-<!-- MAIN FEED -->
-<main class="feed-page">
+<div class="page-layout">
 
-  <h1></h1>
+  <aside class="left-col">
+    <div class="side-card">
+      <h3>Featured Partners</h3>
+      <div class="partner-card">
+        <div class="partner-logo">KAL</div>
+        <p>Kirklees Active Leisure</p>
+        <span>Local leisure centres and community fitness</span>
+      </div>
 
-<div class="post-box">
+      <div class="partner-card">
+        <div class="partner-logo">Gym</div>
+        <p>Independent Gym</p>
+        <span>Strength, cardio and beginner-friendly classes</span>
+      </div>
+    </div>
+  </aside>
 
-    
+  <main class="feed-page">
+
+    <h1></h1>
+
+    <div class="post-box">
       <div class="post-box-top">
 
-    <div class="post-input-wrap">
-      <div class="post-avatar-inline">
-    <i class="fa-solid fa-user"></i>
-  </div>
-      <textarea class="post-input" placeholder="What’s on your mind?"></textarea>
+        <div class="post-input-wrap">
+          <div class="post-avatar-inline">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <textarea class="post-input" placeholder="What’s on your mind?"></textarea>
+        </div>
+
+        <div class="post-side-actions">
+          <div class="post-tools">
+            <label for="mediaUpload" class="upload-btn">
+              <i class="fa-solid fa-image"></i>
+            </label>
+          </div>
+
+          <a href="#" class="post-submit-link">Post</a>
+        </div>
+
+      </div>
+
+      <div class="post-preview" id="postPreview"></div>
+
+      <input
+        type="file"
+        id="mediaUpload"
+        accept="image/*,video/*"
+        multiple
+        hidden
+      >
     </div>
-        
- <div class="post-side-actions">
-   
-    <div class="post-tools">
-      <label for="mediaUpload" class="upload-btn">
-        <i class="fa-solid fa-image"></i>
-      </label>
+
+    <div id="feed"></div>
+
+  </main>
+
+  <aside class="right-col">
+    <div class="side-card">
+      <h3>Featured This Week</h3>
+
+      <div class="promo-card">
+        <p class="promo-title">Beginner Fitness Boost</p>
+        <span>New starter sessions from a local partner</span>
+      </div>
+
+      <div class="promo-card">
+        <p class="promo-title">Recommended Near You</p>
+        <span>Classes and facilities based on your interests</span>
+      </div>
     </div>
-   
-<a href="#" class="post-submit-link">Post</a>
-  </div>
-  </div>
-
-  <div class="post-preview" id="postPreview"></div>
-
-
-  <input
-    type="file"
-    id="mediaUpload"
-    accept="image/*,video/*"
-    multiple
-    hidden
-  >
+  </aside>
 
 </div>
 
+<nav class="bottom-nav">
+  <a href="view-profile.html">
+    <i class="fa-solid fa-person"></i>
+  </a>
 
-  <!-- feed container -->
-  <div id="feed"></div>
+  <a href="browse-workouts.html">
+    <i class="fa-solid fa-dumbbell"></i>
+  </a>
 
-</main>
-  
- <nav class="bottom-nav">
+  <a href="find-trainers.html">
+    <i class="fa-solid fa-child-reaching"></i>
+  </a>
 
-     <a href="view-profile.html">
-      <i class="fa-solid fa-person"></i>
-    </a>
+  <a href="notifications.html">
+    <i class="fa-solid fa-bell"></i>
+  </a>
+</nav>
 
-    <a href="browse-workouts.html">
-      <i class="fa-solid fa-dumbbell"></i>
-    </a>
+<div class="bottom-rise-zone"></div>
 
-    <a href="find-trainers.html">
-      <i class="fa-solid fa-child-reaching"></i>
-    </a>
-
-     <a href="notifications.html">
-      <i class="fa-solid fa-bell"></i>
-    </a>
-
-  </nav>
-
-  <div class="bottom-rise-zone"></div>
 <nav class="bottom-nav-desktop">
   <div class="nav-right">
     <a href="notifications.html">
       <i class="fa-solid fa-bell"></i>
     </a>
-    </div>
+  </div>
 
-    <div class="nav-left">
+  <div class="nav-left">
     <a href="view-profile.html">
       <i class="fa-solid fa-person"></i>
     </a>
