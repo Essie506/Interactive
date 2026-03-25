@@ -894,13 +894,9 @@ body.feed::before {
   inset: 0;
   z-index: -2;
   pointer-events: none;
-    background: linear-gradient(
-            120deg,
-            transparent 15%,
-             var(--glass-white),
-            transparent 35%;
+    background: var(--index-bg-before);
      background-size: 220% 220%;
-  var(--home-bg);
+  animation: satinShimmer 3.2s ease-out forwards;
 }
 
 
