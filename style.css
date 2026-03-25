@@ -51,7 +51,7 @@ body {
 }
 
  body.home  {
-     background: var(--home-bg);
+     background: var(--index-bg);
    padding-bottom: 90px;
  }
 
