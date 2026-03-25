@@ -915,7 +915,7 @@ body.feed h1 {
   max-width: 100%;
   margin-bottom: 10px;
   margin-top: -8px;
-  padding: 0px;
+  padding: 12px;
   border-radius: 22px;
   background: white;
 }
@@ -946,9 +946,9 @@ body.feed h1 {
 
 .post-input {
   width: 100%;
-  min-height: 44px;
-  max-height: 120px;
-  resize: none;
+  min-height: 110px;
+  max-height: 180px;
+  resize: vertical;
   border: none;
   outline: none;
   border-radius: 18px;
@@ -1009,7 +1009,9 @@ body.feed h1 {
 
 .post-tools {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
   gap: 10px;
 }
 
