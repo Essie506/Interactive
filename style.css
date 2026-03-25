@@ -1025,7 +1025,6 @@ body.feed h1 {
   font-size: 14px;
   font-weight: 600;
   box-shadow:var(--shadow-soft);
-  margin: 5px 5px;
 }
 
 .post-submit-link {
@@ -1034,8 +1033,8 @@ body.feed h1 {
   font-weight: 700;
   font-size: 15px;
   line-height: 1;
-  padding: 5;
-  margin: 0;
+  padding: 5px;
+  margin: 5px;
   align-self: center;
 }
 
