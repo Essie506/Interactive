@@ -143,7 +143,7 @@ body.index::before {
   z-index: 0;
 }
 
-.nav-right {
+.navbar-right {
   display: flex;
   flex-direction: row;
   align-items: center;
