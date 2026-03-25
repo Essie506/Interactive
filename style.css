@@ -1056,6 +1056,14 @@ body.feed .btn-modern {
 }
 
 @media (max-width: 480px) {
+
+  body.feed .feed-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 60px 0 calc(76px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+  
   .post-input {
     max-width: 100%;
   }
