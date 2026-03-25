@@ -909,7 +909,7 @@ width: 100%;
 body.feed h1 {
   text-align: center;
 }
-    
+
 .post-box {
   width: 100%;
   max-width: 100%;
@@ -1059,6 +1059,11 @@ body.feed .btn-modern {
   .post-input {
     max-width: 100%;
   }
+
+  .post-box {
+  width: 98%;
+  margin: 0 auto 12px auto;
+}
   
   body.feed .btn-modern {
     max-width: 80px;  
