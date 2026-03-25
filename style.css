@@ -918,6 +918,7 @@ body.feed h1 {
   padding: 0px;
   border-radius: 22px;
   background: white;
+  box-shadow: var(--shadow-soft);
 }
 
 .post-box-top {
