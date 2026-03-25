@@ -1350,9 +1350,15 @@ body.feed .post {
     display: block;
   }
 
+   .feed-col {
+    display: flex;
+    justify-content: center;
+  }
+
   body.feed .feed-page {
     margin: 0;
     max-width: 600px;
+    margin: 0;
   }
 
 }
