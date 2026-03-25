@@ -896,7 +896,6 @@ body.feed::before {
   pointer-events: none;
     background: white;
      background-size: 220% 220%;
-  animation: satinShimmer 3.2s ease-out forwards;
 }
 
 
@@ -1068,7 +1067,8 @@ body.feed .btn-modern {
 
 
 body.feed .post {
-  background: rgba(255,255,255,0.6);
+  background: var(--index-bg-before);
+  box-shadow: var(--shadow-soft);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 15px;
