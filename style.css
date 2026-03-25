@@ -1067,7 +1067,7 @@ body.feed .btn-modern {
 
 
 body.feed .post {
-  background: var(--index-bg);
+  background: rgba(255,255,255,0.6);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(10px);
   border-radius: 12px;
