@@ -885,7 +885,7 @@ body.feed {
 body.feed .feed-page {
   max-width: 600px;
   margin: 0px auto;
-  padding: calc(var(--bar-height) + 8px) 8px calc(76px + env(safe-area-inset-bottom));
+  padding: calc(var(--bar-height) + 1px) 0px calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
@@ -922,7 +922,8 @@ body.feed h1 {
 
 .post-box-top {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
+  margin-top: 5px;
   gap: 10px;
 }
 
@@ -989,6 +990,7 @@ body.feed h1 {
 }
 
 .post-side-actions {
+  width: 46px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1017,6 +1019,20 @@ body.feed h1 {
   box-shadow:var(--shadow-soft);
 }
 
+.post-submit-link {
+  color: #079992;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  padding: 0;
+  margin: 0;
+  align-self: center;
+}
+
+.post-submit-link:hover {
+  text-decoration: underline;
+}
 
 body.feed .btn-modern {
      width: 100%;
@@ -1248,11 +1264,6 @@ body.feed .post {
   .bottom-nav-desktop span {
     line-height: 1;
     font-size: 13px;
-  }
-
-  body.feed .feed-page {
-    padding-bottom: 20px;
-  
   }
 }
 
