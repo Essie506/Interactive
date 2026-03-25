@@ -121,7 +121,7 @@ body.index::before {
 }
 
 /* background gradient + logo */
-.navbar-bg {
+-bg {
     position: absolute;
     inset: 0;
     background: var(--navbar-bg);
@@ -875,8 +875,6 @@ font-size: 14px;
 }
     }
 
-
-
 body.feed {
   display: block;
   background: var(--index-bg);
@@ -884,8 +882,8 @@ body.feed {
 
 body.feed .feed-page {
   max-width: 600px;
-  margin: 0px auto;
-  padding: calc(var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
+  margin: 0 auto;
+  padding: var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
