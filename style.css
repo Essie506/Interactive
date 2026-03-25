@@ -1004,8 +1004,6 @@ body.feed h1 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
-  margin-right: 8px;
 }
 
 .post-tools {
