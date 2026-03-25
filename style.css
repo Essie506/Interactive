@@ -881,6 +881,12 @@ body.feed {
   background: var(--index-bg);
 }
 
+
+.left-col,
+.right-col {
+  display: none;
+}
+
 body.feed .feed-page {
   max-width: 600px;
   margin: 0 auto;
