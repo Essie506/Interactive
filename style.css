@@ -913,7 +913,7 @@ body.feed h1 {
   width: 100%;
   max-width: 100%;
   margin-bottom: 10px;
-  margin-top: -1px;
+  margin-top: -8px;
   padding: 0px;
   border-radius: 22px;
   background: white;
@@ -1001,6 +1001,7 @@ body.feed h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top: 5px;
 }
 
 .post-tools {
