@@ -1289,3 +1289,29 @@ body.feed .post {
   }
 }
 
+@media (min-width: 1100px) {
+
+  .page-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 600px) 240px;
+    justify-content: center;
+    gap: 24px;
+    align-items: start;
+
+    max-width: 1400px;
+    margin: 0 auto;
+
+    padding-top: calc(var(--bar-height) + 16px);
+  }
+
+  .left-col,
+  .right-col {
+    display: block;
+  }
+
+  body.feed .feed-page {
+    margin: 0;
+    max-width: 600px;
+  }
+
+}
