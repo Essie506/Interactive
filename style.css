@@ -884,7 +884,7 @@ body.feed {
 body.feed .feed-page {
   max-width: 600px;
   margin: 0 auto;
-  padding: var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
+  padding: 58px 0 calc(76px + env(safe-area-inset-bottom));
   box-sizing: border-box;
 }
 
