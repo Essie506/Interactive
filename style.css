@@ -367,6 +367,7 @@ body.index .navbar {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+  transition: opacity 0.25s ease, visibility 0.25s ease
 }
 
 .has-submenu.open .submenu {
@@ -1001,6 +1002,7 @@ body.feed h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   margin-top: 8px;
   margin-right: 8px;
 }
