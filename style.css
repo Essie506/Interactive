@@ -1002,7 +1002,7 @@ body.feed h1 {
   flex-direction: column;
   justify-content: center;
   margin-top: 10px;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .post-tools {
