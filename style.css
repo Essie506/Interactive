@@ -1177,6 +1177,11 @@ body.feed .partner-promo {
     justify-content: center;
   }
 
+     body.feed .feed-page {
+    padding: 60px 0 calc(76px + env(safe-area-inset-bottom));
+  }
+
+   
   body.feed .post-input {
     max-width: 100%;
   }
