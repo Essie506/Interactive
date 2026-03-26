@@ -334,7 +334,7 @@ body.feed .menu-toggle::before {
   border-radius: 50%;
 }
 body.feed .menu-toggle i {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 
@@ -863,7 +863,7 @@ body.feed .post-box {
 body.feed .post-box-top {
   display: flex;
   align-items: stretch;
-  margin-top: 5px;
+  margin-top: 0px;
   gap: 10px;
 }
 
