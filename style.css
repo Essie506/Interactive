@@ -339,6 +339,7 @@ body.feed .menu-toggle::before {
 body.feed .menu-toggle i {
   font-size: 1rem;
    z-index: 2000;
+    color: #091a3a;
 }
 
 
