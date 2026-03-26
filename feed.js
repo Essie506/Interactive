@@ -4,19 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
       user: "Esther",
       time: "2 min ago",
       text: "Finished HIIT session 🔥",
-      image: "logo.png"
+      image: "logo2.png"
     },
     {
       user: "Alex",
       time: "10 min ago",
       text: "5K run done",
-      image: "logo.png"
+      image: "logo2.png"
     },
     {
-      user: "Sam",
+      user: "Jason",
       time: "1 hr ago",
-      text: "Leg day complete",
-      image: "logo.png"
+      text: "I have man-flu",
+      image: "logo2.png"
     }
   ];
 
