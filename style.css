@@ -855,14 +855,15 @@ body.feed h1 {
 }
 
 body.feed .post-box {
-  width: 100%;
-  max-width: 100%;
+  width: 98%;
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 0;
   border-radius: 22px;
   background: white;
   box-shadow: var(--shadow-soft);
+    margin-left: auto;
+    margin-right: auto;
 }
 
 body.feed .post-box-top {
@@ -1002,9 +1003,16 @@ body.feed .post {
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 15px;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: none;
+  width: 98%;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 12px;
+  }
+
+}
+
+
+   
 }
 
 body.feed .post img {
@@ -1216,27 +1224,15 @@ body.feed .feed-page {
   }
 }
 
-@media (orientation: portrait) {
-  body.feed .post {
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 12px;
-  }
-
-  body.feed .post-box {
-    width: 98%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
 /* =========================
    DESKTOP NAV
 ========================= */
 @media (min-width: 901px) {
   .bottom-nav {
     display: none;
+  }
+  body.feed .feed-page {
+    max-width: 900px;
   }
 
   .bottom-rise-zone {
@@ -1358,5 +1354,10 @@ body.feed .feed-page {
 
    body.feed .post-box {
   margin-top: 0;
+      width: 100%;
 }
+  body.feed .post {
+    width: 100%;
+  }
+   
 }
