@@ -1341,7 +1341,7 @@ body.feed .post {
     max-width: 1400px;
     margin: 0 auto;
 
-    padding-top: calc(var(--bar-height) + 20px);
+    padding-top: calc(var(--bar-height) + 12px);
   }
 
   .post-box-top {
