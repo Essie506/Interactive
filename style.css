@@ -1335,6 +1335,9 @@ body.feed .feed-page {
     line-height: 1;
     font-size: 13px;
   }
+      .bottom-nav {
+  display: none;
+}
 }
 
 /* =========================
