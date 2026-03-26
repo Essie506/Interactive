@@ -320,6 +320,25 @@ body.index::before {
   background: rgba(7,153,146,0.2);
 }
 
+body.feed .menu-toggle {
+  padding: 0;
+  width: 46px;
+  height: 46px;
+  font-size: 0;
+}
+body.feed .menu-toggle span {
+  display: none;
+}
+body.feed .menu-toggle::before {
+  inset: -4px;
+  border-radius: 50%;
+}
+body.feed .menu-toggle i {
+  font-size: 18px;
+}
+
+
+
 /* =========================
    SUBMENU
 ========================= */
