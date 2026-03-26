@@ -1133,10 +1133,7 @@ body.feed .partner-promo {
    MAIN MOBILE / TABLET RULES
 ========================= */
 @media (max-width: 900px) {
-  body.index .navbar {
-    height: 60px;
-  }
-
+   
   .hero {
     justify-content: flex-start;
     padding: 0;
@@ -1144,9 +1141,10 @@ body.feed .partner-promo {
     height: 100vh;
   }
 
-  body.index .hero {
-    justify-content: center;
+  body.home .hero {
+    padding: calc(var(--bar-height) + 20px) 20px 40px;
   }
+}
 
   body.index .hero::before {
     display: none;
