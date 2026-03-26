@@ -6,7 +6,7 @@
 
 html, body {
   overflow-x: hidden;
-}
+}F
 
 :root {
   --bar-height: 70px;
@@ -207,7 +207,7 @@ z-index: 2;
 }
 
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
 body.index .navbar {
   height: 60px;
 }
@@ -473,7 +473,7 @@ margin-bottom: 24px;
     text-align: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
 
   .hero {
     justify-content: flex-start;
@@ -580,7 +580,7 @@ body.index .btn-login {
     margin-top: 35px;
     }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
 
 body.index .login-box {
     margin-top: 20px;
@@ -1060,7 +1060,7 @@ body.feed .btn-modern {
   padding: 9px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 900px) {
 
   body.feed .feed-page {
   padding: 60px 0 calc(76px + env(safe-area-inset-bottom));
@@ -1195,7 +1195,7 @@ body.feed .post {
   display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 901px) {
   .bottom-nav {
     display: none;
   }
