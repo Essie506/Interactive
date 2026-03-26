@@ -1344,6 +1344,10 @@ body.feed .post {
     padding-top: calc(var(--bar-height) + 20px);
   }
 
+  .post-box-top {
+  margin-top: 0px;
+}
+
   .left-col,
   .right-col {
     display: block;
