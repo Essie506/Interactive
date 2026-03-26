@@ -1194,6 +1194,7 @@ body.feed .partner-promo {
 
   body.feed .post {
     width: 98%;
+   margin: 0 auto 12px auto;
   }
    body.feed .post-box {
     width: 98%;
