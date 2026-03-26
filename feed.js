@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       user: "Jason",
       time: "1 hr ago",
-      text: "I have man-flu",
+      text: "I have man-flu! :(",
       image: "logo2.png"
     }
   ];
