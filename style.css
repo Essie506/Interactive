@@ -333,7 +333,7 @@ body.feed .menu-toggle::before {
   border-radius: 50%;
 }
 body.feed .menu-toggle i {
-  font-size: 12px;
+  font-size: 1rem;
    z-index: 2000;
 }
 
