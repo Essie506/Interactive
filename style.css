@@ -1195,13 +1195,17 @@ body.feed .partner-promo {
   }
 }
 
-
 @media (orientation: portrait) {
 
   body.feed .post-input {
     width: 98%;
   }
+}
 
+@media (orientation: landscape) {
+  body.feed .post-box {
+    width: 100%;
+  }
 }
 
 /* =========================
