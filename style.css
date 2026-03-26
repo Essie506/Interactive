@@ -1140,10 +1140,6 @@ body.feed .partner-promo {
     position: relative;
     height: 100vh;
   }
-
-   body.index .navbar {
-  height: 60px;
-}
    
   body.home .hero {
     padding: calc(var(--bar-height) + 20px) 20px 40px;
