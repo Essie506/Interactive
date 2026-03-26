@@ -1192,11 +1192,18 @@ body.feed .feed-page {
     max-width: none;
     margin: 0;
   }
-    .bottom-rise-zone {
-    display: none;
-}
-    .bottom-nav-desktop {
-    bottom: 0;
+   
+  .bottom-rise-zone {
+    display: none !important;
+  }
+
+  .bottom-nav-desktop {
+    display: none !important;
+    bottom: auto !important;
+  }
+
+  .bottom-nav {
+    display: flex !important;
+    transform: translateY(0) !important;
   }
 }
-
