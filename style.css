@@ -1202,10 +1202,8 @@ body.feed .feed-page {
 
   body.feed .post-box {
     width: 98%;
-    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 12px;
   }
 }
 
@@ -1336,4 +1334,9 @@ body.feed .feed-page {
   body.feed .post-box-top {
     margin-top: 0;
   }
+
+   body.feed .post-box {
+  margin-top: 6px;
+}
+
 }
