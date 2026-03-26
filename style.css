@@ -1323,6 +1323,7 @@ body.feed .feed-page {
   body.feed .feed-col {
     display: flex;
     justify-content: center;
+     align-items: flex-start;
   }
 
   body.feed .feed-page {
