@@ -6,7 +6,7 @@
 
 html, body {
   overflow-x: hidden;
-}F
+}
 
 :root {
   --bar-height: 70px;
@@ -367,7 +367,7 @@ body.index .navbar {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-  transition: opacity 0.25s ease, visibility 0.25s ease
+  transition: opacity 0.25s ease, visibility 0.25s ease;
 }
 
 .has-submenu.open .submenu {
