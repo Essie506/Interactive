@@ -1349,7 +1349,7 @@ body.feed .post {
 }
 
   .post-box { 
-    margin-top: 0;
+    margin-top: -20px;
   }
 
   .left-col,
