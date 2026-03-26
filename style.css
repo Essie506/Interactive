@@ -324,7 +324,6 @@ body.feed .menu-toggle {
   padding: 0;
   width: 46px;
   height: 46px;
-  font-size: 0;
 }
 body.feed .menu-toggle span {
   display: none;
