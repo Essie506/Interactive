@@ -1144,7 +1144,6 @@ body.feed .partner-promo {
   body.home .hero {
     padding: calc(var(--bar-height) + 20px) 20px 40px;
   }
-}
 
   body.index .hero::before {
     display: none;
