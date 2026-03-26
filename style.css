@@ -312,6 +312,28 @@ body.index::before {
   transform: translateX(2px);
 }
 
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(9,26,58,0.22);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 2400;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+
+
+
 .menu > ul > li > a:active {
   background: rgba(7,153,146,0.2);
 }
