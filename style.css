@@ -1184,11 +1184,6 @@ body.feed .partner-promo {
     max-width: 100%;
   }
 
-  body.feed .post-box {
-    width: 98%;
-    margin: 0 auto 12px auto;
-  }
-
   body.feed .btn-modern {
     max-width: 80px;
     padding: 9px;
@@ -1197,14 +1192,12 @@ body.feed .partner-promo {
 
 @media (orientation: portrait) {
 
-  body.feed .post-input {
+  body.feed .post {
     width: 98%;
   }
-}
-
-@media (orientation: landscape) {
-  body.feed .post-box {
-    width: 100%;
+   body.feed .post-box {
+    width: 98%;
+    margin: 0 auto 12px auto;
   }
 }
 
