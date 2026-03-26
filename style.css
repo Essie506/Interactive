@@ -1331,11 +1331,7 @@ body.feed .feed-page {
     margin: 0;
   }
 
-  body.feed .post-box-top {
-    margin-top: 0;
-  }
-
    body.feed .post-box {
-  margin-top: 3px;
+  margin-top: 10px;
 }
 }
