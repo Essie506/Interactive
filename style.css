@@ -1032,7 +1032,7 @@ body.feed .feed-page {
 /* =========================
    DESKTOP NAV
 ========================= */
-@media (min-width: 901px) and (max-width: 1099px) {
+@media (min-width: 901px) and (max-width: 1099px) and (orientation: landscape) {
   body.feed .page-layout {
     display: grid;
     grid-template-columns: 180px minmax(0, 1fr) 180px;
