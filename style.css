@@ -325,6 +325,9 @@ body.feed .menu-toggle {
   padding: 0;
   width: 46px;
   height: 46px;
+   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 body.feed .menu-toggle span {
   display: none;
