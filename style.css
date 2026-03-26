@@ -1249,6 +1249,8 @@ body.feed .feed-page {
     margin: 0;
   }
 
+   @media (min-width: 901px) {
+
   .bottom-rise-zone {
     display: block;
     position: fixed;
