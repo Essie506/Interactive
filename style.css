@@ -1348,6 +1348,10 @@ body.feed .post {
   margin-top: 0px;
 }
 
+  .post-box { 
+    margin-top: 0;
+  }
+
   .left-col,
   .right-col {
     display: block;
