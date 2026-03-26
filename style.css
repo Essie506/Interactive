@@ -1195,6 +1195,15 @@ body.feed .partner-promo {
   }
 }
 
+
+@media (orientation: landscape) {
+
+  body.feed .post-box {
+    width: 100%;
+  }
+
+}
+
 /* =========================
    DESKTOP NAV
 ========================= */
