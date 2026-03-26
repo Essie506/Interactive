@@ -1196,10 +1196,10 @@ body.feed .partner-promo {
 }
 
 
-@media (orientation: landscape) {
+@media (orientation: portrait) {
 
-  body.feed .post-box {
-    width: 100%;
+  body.feed .post-input {
+    width: 98%;
   }
 
 }
