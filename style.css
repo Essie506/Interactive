@@ -1353,11 +1353,4 @@ body.feed .post {
     display: flex;
     justify-content: center;
   }
-
-  body.feed .feed-page {
-    margin: 0;
-    max-width: 600px;
-    margin: 0;
-  }
-
 }
