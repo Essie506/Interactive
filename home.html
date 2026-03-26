@@ -185,15 +185,23 @@
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   /* ================= HAMBURGER MENU ================= */
-  const menuToggle = document.querySelector(".menu-toggle");
-  const menu = document.querySelector(".menu");
+ const menuToggle = document.querySelector(".menu-toggle");
+const menu = document.querySelector(".menu");
+const menuOverlay = document.getElementById("menuOverlay");
 
-  if (menuToggle && menu) {
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("active");
-      menu.classList.toggle("open");
-    });
-  }
+if (menuToggle && menu && menuOverlay) {
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    menu.classList.toggle("open");
+    menuOverlay.classList.toggle("open");
+  });
+
+  menuOverlay.addEventListener("click", () => {
+    menuToggle.classList.remove("active");
+    menu.classList.remove("open");
+    menuOverlay.classList.remove("open");
+  });
+}
 
   /* ================= SUBMENU ================= */
   document.querySelectorAll(".has-submenu > a").forEach(item => {
