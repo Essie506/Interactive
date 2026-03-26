@@ -1059,6 +1059,9 @@ body.feed .feed-page {
     max-width: none;
     margin: 0;
   }
+    .bottom-rise-zone {
+    display: none;
+}
 }
 
 /* =========================
