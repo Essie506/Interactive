@@ -253,7 +253,7 @@ body.index::before {
   position: fixed;
   top: 0;
   left: 0;
-  width: min(320px, 86vw);
+  width: min(320px, 60vw);
   height: 100vh;
   padding: calc(var(--bar-height) + 18px) 16px 20px;
   background: rgba(255,255,255,0.82);
@@ -329,11 +329,6 @@ body.index::before {
   visibility: visible;
 }
 
-
-
-
-
-
 .menu > ul > li > a:active {
   background: rgba(7,153,146,0.2);
 }
@@ -391,7 +386,7 @@ body.feed .menu-toggle i {
   display: block;
   padding: 10px 14px 10px 28px;
   border-radius: 12px;
-  color: #079992;
+  color:  #091a3a;
   text-decoration: none;
   transition: background 0.22s ease, transform 0.22s ease;
 }
