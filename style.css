@@ -1141,7 +1141,15 @@ body.feed .partner-promo {
     height: 100vh;
   }
 
+   body.index .navbar {
+  height: 60px;
+}
+   
   body.home .hero {
+    padding: calc(var(--bar-height) + 20px) 20px 40px;
+  }
+
+    body.index .hero {
     padding: calc(var(--bar-height) + 20px) 20px 40px;
   }
 
