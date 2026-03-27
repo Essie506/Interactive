@@ -354,9 +354,9 @@ body.index::before {
 
 .menu-profile {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
    justify-content: flex-start;
-  padding: calc(var(--bar-height) + 12px) 14px 16px;
+  padding: 10px 14px 16px;
   margin: 0 -16px 10px; /* stretch full width */
   
   background: var(--navbar-bg);
@@ -377,7 +377,10 @@ body.index::before {
 .menu-profile-info {
   display: flex;
   flex-direction: column;
+   justify-content: flex-start;
   z-index: 1;
+   line-height: 1.2;
+   margin-top: 2px;
 }
 
 .menu-profile-name {
