@@ -47,6 +47,10 @@ body {
   --btn-modern-bg: linear-gradient(135deg, #079992, #38ada9);
 }
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
