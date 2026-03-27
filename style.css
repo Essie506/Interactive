@@ -291,7 +291,7 @@ body.index::before {
 }
 
 .menu > ul > li:not(:last-child) {
-  border-bottom: 1px solid rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.18);
 }
 
 .menu > ul > li > a {
@@ -299,7 +299,8 @@ body.index::before {
   align-items: center;
   min-height: 46px;
   padding: 12px 14px;
-  border-radius: 14px;
+   display: block;
+   width: 100%;
   color: #091a3a;
   text-decoration: none;
   font-weight: 600;
@@ -308,9 +309,11 @@ body.index::before {
 }
 
 .menu > ul > li > a:hover {
-  background: rgba(7,153,146,0.10);
+  background: rgba(0, 0, 0, 0.06);
   color: #03857f;
   transform: translateX(2px);
+ border-left: 3px solid #079992;
+  padding-left: 11px; 
 }
 
 .menu-overlay {
