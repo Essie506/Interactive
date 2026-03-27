@@ -390,7 +390,7 @@ justify-content: flex-start;
 
 .menu-profile-text {
   display: flex;
-  gap: 12px; /* space between */
+  gap: 70px; /* space between */
   align-items: center;
 }
 
