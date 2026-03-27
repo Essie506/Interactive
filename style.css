@@ -354,14 +354,11 @@ justify-content: flex-start;
 }
 
 .menu-profile {
-  display: flex;
-  align-items: flex-start;
-   justify-content: flex-start;
-  padding: 10px 0px 12px;
+  display: block;
+  padding: 0;
   margin: 0px 0px 8px; /* stretch full width */
   position: relative;
    border-bottom: 1px solid rgba(0,0,0,0.14);
-    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 
@@ -369,11 +366,14 @@ justify-content: flex-start;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  z-index: 1;
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 10px 16px 12px;
   line-height: 1.2;
-  margin-top: 2px;
-  padding-left: 8px;
   text-decoration: none;
+  color: inherit;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .menu-profile-name {
@@ -388,9 +388,12 @@ justify-content: flex-start;
    margin-top: 3px;
 }
 
-.menu-profile:hover {
+.menu-profile-info:hover {
   background: rgba(255, 255, 255, 0.3);
     transform: translateX(2px);
+}
+.menu-profile-info:active {
+  background: rgba(7,153,146,0.2);
 }
 
 body.feed .menu-toggle {
