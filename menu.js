@@ -1,4 +1,3 @@
-<script>
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector(".menu");
@@ -55,4 +54,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-</script>
