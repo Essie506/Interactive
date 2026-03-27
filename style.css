@@ -312,6 +312,7 @@ body.index::before {
 .menu > ul > li > a {
   display: flex;
   align-items: center;
+justify-content: flex-start;
   min-height: 46px;
   padding: 12px 8px;
    display: block;
