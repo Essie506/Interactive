@@ -273,7 +273,7 @@ body.index::before {
   left: 0;
   width: min(320px, 60vw);
   height: calc(100vh - var(--bar-height));
-  padding: 0 16px 20px;
+  padding: 0;
   padding-top: 0;
   background: rgba(255,255,255,0.82);
   backdrop-filter: blur(16px);
@@ -295,7 +295,7 @@ body.index::before {
 .menu ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 0 16px 20px;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -366,7 +366,7 @@ body.index::before {
 .menu-profile {
   display: block;
   padding: 0;
-  margin: 0px 0px 8px; /* stretch full width */
+  margin: 0;
 margin-top: 0;
   position: relative;
 }
@@ -377,9 +377,8 @@ margin-top: 0;
   flex-direction: column;
   justify-content: flex-start;
   width: calc(100% + 32px);
-  margin-left: -16px;
-  margin-right: -16px;
-  padding: 4px 16px 12px;
+   margin: 0 0 0 -16px;
+  padding: 0 16px 12px;
   line-height: 1.2;
   text-decoration: none;
   color: inherit;
