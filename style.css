@@ -360,7 +360,7 @@ justify-content: flex-start;
   align-items: flex-start;
    justify-content: flex-start;
   padding: 8px 8px 12px;
-  margin: 0 -16px 10px; /* stretch full width */
+  margin: 5px -16px 10px; /* stretch full width */
   position: relative;
    border-bottom: 1px solid rgba(0,0,0,0.08)
     transition: background 0.2s ease, transform 0.2s ease;
