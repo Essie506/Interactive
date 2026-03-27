@@ -291,7 +291,7 @@ body.index::before {
 }
 
 .menu > ul > li:not(:last-child) {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
    z-index: 1800;
 }
 
