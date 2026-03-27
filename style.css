@@ -466,9 +466,11 @@ body.feed .menu-toggle i {
 
 .submenu li a {
   display: block;
-  padding: 12px 10px 12px 24px;
   color:  #091a3a;
   text-decoration: none;
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
   transition: background 0.22s ease, transform 0.22s ease;
 }
 
