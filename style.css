@@ -277,7 +277,6 @@ body.index::before {
   background: rgba(255,255,255,0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-right: 1px solid rgba(255,255,255,0.45);
   box-shadow: 12px 0 30px rgba(0,0,0,0.14);
   z-index: 2500;
 
