@@ -313,7 +313,7 @@ body.index::before {
   display: flex;
   align-items: center;
   min-height: 46px;
-  padding: 12px 14px;
+  padding: 12px 8px;
    display: block;
    width: 100%;
   color: #091a3a;
@@ -321,14 +321,14 @@ body.index::before {
   font-weight: 600;
   letter-spacing: 0.2px;
   transition: background 0.22s ease, transform 0.22s ease;
+     border-left: 3px solid transparent;
 }
 
 .menu > ul > li > a:hover {
   background: rgba(0, 0, 0, 0.06);
   color: #03857f;
   transform: translateX(2px);
- border-left: 3px solid #079992;
-  padding-left: 11px; 
+   border-left-color: #079992;
 }
 
 .menu-overlay {
@@ -356,7 +356,7 @@ body.index::before {
   display: flex;
   align-items: flex-start;
    justify-content: flex-start;
-  padding: 10px 14px 16px;
+  padding: 8px 8px 12px;
   margin: 0 -16px 10px; /* stretch full width */
   
   background: var(--navbar-bg);
@@ -381,16 +381,19 @@ body.index::before {
   z-index: 1;
    line-height: 1.2;
    margin-top: 2px;
+   pagging-left: 8px;
 }
 
 .menu-profile-name {
   font-weight: 700;
+   font-size: 16px;
   color: #091a3a;
 }
 
 .menu-profile-sub {
   font-size: 13px;
   color: rgba(9, 26, 58, 0.7);
+   margin-top: 3px;
 }
 
 .menu-profile-info {
@@ -403,6 +406,10 @@ body.index::before {
 .menu-profile:hover {
   background: rgba(255, 255, 255, 0.3);
     transform: translateX(2px);
+}
+
+.menu-profile-info:hover .menu-profile-sub {
+  color: #079992;
 }
 
 body.feed .menu-toggle {
@@ -440,7 +447,7 @@ body.feed .menu-toggle i {
   transform: none;
   min-width: 100%;
   margin-top: 4px;
-  padding: 4px 0 0;
+  padding: 4px 0 4px;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -456,8 +463,7 @@ body.feed .menu-toggle i {
 
 .submenu li a {
   display: block;
-  padding: 10px 14px 0px 28px;
-  border-radius: 12px;
+  padding: 12px 10px 12px 24px;
   color:  #091a3a;
   text-decoration: none;
   transition: background 0.22s ease, transform 0.22s ease;
