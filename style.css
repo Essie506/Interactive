@@ -187,6 +187,7 @@ body.index::before {
     var(--shadow-soft),
     inset 0 1px 2px rgba(255,255,255,0.6);
   z-index: 2;
+   transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .search-toggle {
@@ -200,6 +201,14 @@ body.index::before {
 
 .icon-btn {
   text-decoration: none;
+}
+.search-toggle:hover,
+.icon-btn:hover {
+  box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.12),
+    0 6px 18px rgba(0,0,0,0.14),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+  transform: scale(1.06);
 }
 
 /* =========================
