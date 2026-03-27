@@ -1056,6 +1056,10 @@ body.feed .partner-promo {
   font-size: 22px;
 }
 
+.bottom-nav i:active 
+{transform: scale(0.94);
+}
+
 .bottom-nav-desktop,
 .bottom-rise-zone {
   display: none;
