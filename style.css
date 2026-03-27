@@ -313,23 +313,23 @@ body.index::before {
 }
 
 .menu > ul > li > a {
-justify-content: flex-start;
-   width: 100%;
+  display: block;
+  width: calc(100% + 32px);
+  margin-left: -16px;
+  margin-right: -16px;
+  padding: 12px 16px;
   min-height: 46px;
-  padding: 12px 8px;
-   display: block;
-   width: 100%;
+
   color: #091a3a;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.2px;
-  transition: background 0.22s ease, transform 0.22s ease;
-     border-left: 3px solid transparent;
+
+  transition: background 0.22s ease;
 }
 
 .menu > ul > li > a:hover {
   background: rgba(255, 255, 255, 0.3);
-    transform: translateX(2px);
 }
 
 .menu-overlay {
