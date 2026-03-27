@@ -749,6 +749,7 @@ body.feed .post-box {
   width: 98%;
   margin-top: 10px;
   margin-bottom: 10px;
+border-radius: 22px;
   padding: 0;
   background: white;
   box-shadow: var(--shadow-soft);
@@ -790,6 +791,7 @@ body.feed .post-input {
   min-height: 110px;
   max-height: 180px;
   resize: vertical;
+  border-radius: 18px;
   border: none;
   outline: none;
   padding: 14px 16px 14px 58px;
