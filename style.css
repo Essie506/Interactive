@@ -307,10 +307,6 @@ body.index::before {
   transition: background 0.22s ease, transform 0.22s ease;
 }
 
-.menu > ul > li > a::after {
-  display: none;
-}
-
 .menu > ul > li > a:hover {
   background: rgba(7,153,146,0.10);
   color: #03857f;
