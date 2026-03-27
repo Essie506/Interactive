@@ -338,6 +338,59 @@ body.index::before {
   background: rgba(7,153,146,0.2);
 }
 
+.menu-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(var(--bar-height) + 12px) 14px 16px;
+  margin: -16px -16px 10px; /* stretch full width */
+  
+  background: var(--navbar-bg);
+  position: relative;
+   border-bottom: 1px solid rgba(0,0,0,0.08)
+}
+
+/* shine layer like navbar */
+.menu-profile::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--navbar-bg-after);
+  pointer-events: none;
+}
+
+.menu-profile-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--glass-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #091a3a;
+  box-shadow: var(--shadow-soft);
+  z-index: 1;
+}
+
+.menu-profile-info {
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.menu-profile-name {
+  font-weight: 700;
+  color: #091a3a;
+}
+
+.menu-profile-sub {
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+
+
+
 body.feed .menu-toggle {
   padding: 0;
   width: 46px;
