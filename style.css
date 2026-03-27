@@ -287,6 +287,11 @@ body.index::before {
 .menu ul li {
   position: relative;
   margin-bottom: 6px;
+   padding-bottom: 6px;
+}
+
+.menu > ul > li:not(:last-child) {
+  border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
 .menu > ul > li > a {
