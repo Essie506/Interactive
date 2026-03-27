@@ -291,7 +291,7 @@ body.index::before {
 }
 
 .menu > ul > li:not(:last-child) {
-  border-bottom: 1px solid rgba(255,255,255,0.18);
+  border-bottom: 1px #091a3a;
 }
 
 .menu > ul > li > a {
@@ -396,8 +396,8 @@ body.feed .menu-toggle i {
 }
 
 .submenu li a:hover {
-  background: rgba(7,153,146,0.08);
-  padding-left: 28px;
+ background: rgba(0, 0, 0, 0.06);
+  color: #03857f;
   transform: translateX(2px);
 }
 
