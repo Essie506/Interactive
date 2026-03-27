@@ -356,7 +356,7 @@ body.index::before {
   display: flex;
   align-items: center;
    justify-content: flex-start;
-  padding: calc(var(--bar-height) + 12px) 14px 16px 72px;
+  padding: 12px 14px 16px 0px;
   margin: 0 -16px 10px; /* stretch full width */
   
   background: var(--navbar-bg);
