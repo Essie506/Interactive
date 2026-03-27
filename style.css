@@ -274,6 +274,7 @@ body.index::before {
   width: min(320px, 60vw);
   height: calc(100vh - var(--bar-height));
   padding: 0 16px 20px;
+  padding-top: 0;
   background: rgba(255,255,255,0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -366,6 +367,7 @@ body.index::before {
   display: block;
   padding: 0;
   margin: 0px 0px 8px; /* stretch full width */
+margin-top: 0;
   position: relative;
 }
 
