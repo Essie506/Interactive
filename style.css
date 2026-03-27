@@ -330,10 +330,8 @@ justify-content: flex-start;
 }
 
 .menu > ul > li > a:hover {
-  background: rgba(0, 0, 0, 0.06);
-  color: #03857f;
-  transform: translateX(2px);
-   border-left-color: #079992;
+  background: rgba(255, 255, 255, 0.3);
+    transform: translateX(2px);
 }
 
 .menu-overlay {
