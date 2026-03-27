@@ -389,7 +389,7 @@ body.feed .menu-toggle i {
 
 .submenu li a {
   display: block;
-  padding: 10px 14px 10px 28px;
+  padding: 10px 14px 0px 28px;
   border-radius: 12px;
   color:  #091a3a;
   text-decoration: none;
