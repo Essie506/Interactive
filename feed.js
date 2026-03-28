@@ -54,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== Composer modal elements =====
   const postBox = document.getElementById("postBox");
+  const composerToggle = document.getElementById("composerToggle");
   const composerOverlay = document.getElementById("composerOverlay");
   const composerModal = document.getElementById("composerModal");
   const composerClose = document.getElementById("composerClose");
@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     composerOverlay.classList.add("open");
     composerModal.classList.add("open");
-    composerModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
     if (composerInput) {
@@ -87,7 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     composerOverlay.classList.remove("open");
     composerModal.classList.remove("open");
-    composerModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 
@@ -104,6 +102,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  if (composerToggle) {
+    composerToggle.addEventListener("click", openComposer);
+  }
+
   if (postBox) {
     postBox.addEventListener("click", (e) => {
       e.preventDefault();
@@ -112,15 +114,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (composerClose) {
-    composerClose.addEventListener("click", () => {
-      closeComposer();
-    });
+    composerClose.addEventListener("click", closeComposer);
   }
 
   if (composerOverlay) {
-    composerOverlay.addEventListener("click", () => {
-      closeComposer();
-    });
+    composerOverlay.addEventListener("click", closeComposer);
   }
 
   document.addEventListener("keydown", (e) => {
@@ -195,7 +193,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ===== Navbar / bottom nav scroll behaviour =====
   let lastScrollY = window.scrollY;
   const navbar = document.querySelector(".navbar");
   const bottomNav = document.querySelector(".bottom-nav");
