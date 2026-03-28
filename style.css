@@ -948,6 +948,10 @@ body.feed .post-submit-link:hover {
   text-decoration: underline;
 }
 
+body.feed #postBox textarea {
+  cursor: pointer;
+}
+
 body.feed .composer-overlay {
   position: fixed;
   inset: 0;
