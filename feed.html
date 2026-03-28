@@ -187,6 +187,69 @@
     </a>
   </div>
 </nav>
+
+  <div class="composer-overlay" id="composerOverlay"></div>
+
+<div class="composer-modal" id="composerModal" aria-hidden="true">
+  <div class="composer-card">
+    <div class="composer-header">
+      <h3>Create post</h3>
+      <button type="button" class="composer-close" id="composerClose" aria-label="Close">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="composer-body">
+      <div class="composer-input-wrap">
+        <div class="post-avatar-inline">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <textarea
+          class="post-input composer-input"
+          id="composerInput"
+          placeholder="What’s on your mind?"
+        ></textarea>
+      </div>
+
+      <div class="post-tools composer-tools">
+        <label for="composerMediaUpload" class="upload-btn" title="Add image or video">
+          <i class="fa-solid fa-image"></i>
+        </label>
+
+        <button type="button" class="upload-btn tag-btn" title="Tag people">
+          <i class="fa-solid fa-user-plus"></i>
+        </button>
+
+        <button type="button" class="upload-btn gif-btn" title="Add GIF">
+          <span>GIF</span>
+        </button>
+
+        <button type="button" class="upload-btn emoji-btn" title="Add emoji">
+          <i class="fa-regular fa-face-smile"></i>
+        </button>
+
+        <button type="button" class="upload-btn location-btn" title="Add location">
+          <i class="fa-solid fa-location-dot"></i>
+        </button>
+      </div>
+
+      <div class="post-preview composer-preview" id="composerPreview"></div>
+
+      <input
+        type="file"
+        id="composerMediaUpload"
+        accept="image/*,video/*"
+        multiple
+        hidden
+      >
+    </div>
+
+    <div class="composer-footer">
+      <a href="#" class="post-submit-link composer-submit" id="composerSubmit">Post</a>
+    </div>
+  </div>
+</div>
   
 <script src="feed.js"></script>
 <script src="menu.js"></script>
