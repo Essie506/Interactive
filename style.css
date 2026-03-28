@@ -1405,8 +1405,14 @@ body.feed .feed-page {
     max-width: 80px;
     padding: 9px;
   }
-}
 
+   body.feed .composer-modal {
+   width: 100vw;
+      
+   body.feed .composer-card {
+   padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
+}
+   }
 
 /* =========================
    WIDE DESKTOP FEED LAYOUT
