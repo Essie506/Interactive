@@ -947,7 +947,8 @@ body.feed .post-submit-link {
   line-height: 1;
   padding: 5px;
   align-self: flex-start;
-margin-top: 3px;
+margin-top: 5px;
+   margin-right: 5px;
 }
 
 body.feed .post-submit-link:hover {
