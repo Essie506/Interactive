@@ -869,6 +869,13 @@ body.feed .post-actions {
   margin: 20px 10px;
 }
 
+body.feed .post-tools {
+  display: none;
+}
+body.feed .post-box.expanded .post-tools {
+  display: flex;
+}
+
 body.feed .upload-btn {
   width: 42px;
   height: 42px;
