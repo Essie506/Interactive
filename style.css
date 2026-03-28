@@ -865,10 +865,6 @@ body.feed .post-actions {
   margin: 20px 10px;
 }
 
-body.feed .post-side-actions {
-  display: none;
-}
-
 body.feed .post-tools {
   display: flex;
   align-items: flex-start;
@@ -894,11 +890,16 @@ body.feed .upload-btn {
 }
 
 body.feed .post-tools {
-  display: flex;
-  flex-direction: column;
+  display: none;
   align-items: center;
+  justify-content: flex-start;
   gap: 10px;
-  width: 100%;
+  padding: 10px 14px 0;
+  flex-wrap: wrap;
+}
+
+body.feed .post-box.expanded .post-tools {
+  display: flex;
 }
 
 body.feed .upload-btn {
@@ -951,17 +952,6 @@ body.feed .post-submit-link {
 body.feed .post-submit-link:hover {
   text-decoration: underline;
 }
-
-body.feed .post-box.expanded .post-side-actions {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
-   width: 46px;
-}
-
 
 body.feed .post-box.expanded .post-input {
   min-height: 110px;
