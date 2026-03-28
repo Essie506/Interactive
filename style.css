@@ -789,12 +789,6 @@ border-radius: 22px;
   box-shadow: var(--shadow-soft);
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-  z-index: 1;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
 }
 
 body.feed .post-box-top {
@@ -899,10 +893,6 @@ body.feed .post-tools {
 
 body.feed .post-box.expanded .post-tools {
   display: flex;
-    transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.16);
-  background: rgba(255,255,255,0.96);
-  z-index: 20;
 }
 
 body.feed .upload-btn {
