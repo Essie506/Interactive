@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ${post.text}
         </div>
 
-        <img class="post-img" src="${post.image}">
+        <img class="post-img" src="${post.image}" alt="${post.user} post image">
 
         <div class="post-actions">
           <span><i class="fa-solid fa-heart"></i> 12</span>
@@ -56,10 +56,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const postBox = document.getElementById("postBox");
+  const postInput = document.getElementById("postInput");
   const mediaUpload = document.getElementById("mediaUpload");
   const postPreview = document.getElementById("postPreview");
 
-  if (mediaUpload && postPreview) {
+  if (postBox && postInput) {
+    postInput.addEventListener("focus", () => {
+      postBox.classList.add("expanded");
+    });
+
+    postInput.addEventListener("click", () => {
+      postBox.classList.add("expanded");
+    });
+
+    document.addEventListener("click", (e) => {
+      const clickedInsidePostBox = postBox.contains(e.target);
+      const hasText = postInput.value.trim().length > 0;
+      const hasPreview = postPreview && postPreview.children.length > 0;
+
+      if (!clickedInsidePostBox && !hasText && !hasPreview) {
+        postBox.classList.remove("expanded");
+      }
+    });
+  }
+
+  if (mediaUpload && postPreview && postBox) {
     mediaUpload.addEventListener("change", function () {
       postPreview.innerHTML = "";
 
@@ -69,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (file.type.startsWith("image/")) {
           const img = document.createElement("img");
           img.src = fileURL;
+          img.alt = file.name;
           postPreview.appendChild(img);
         } else if (file.type.startsWith("video/")) {
           const video = document.createElement("video");
@@ -77,6 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
           postPreview.appendChild(video);
         }
       });
+
+      if (this.files.length > 0) {
+        postBox.classList.add("expanded");
+      }
     });
   }
 
