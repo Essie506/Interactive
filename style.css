@@ -974,39 +974,42 @@ body.feed .composer-overlay.open {
 
 body.feed .composer-modal {
   position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity 0.22s ease, visibility 0.22s ease;
+  top: 0;
+  right: 0;
+  width: min(520px, 92vw);
+  height: 100vh;
+  transform: translateX(100%);
   z-index: 4000;
+  flex-direction: column;
+    position: fixed;
+  background: rgba(255,255,255,0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 12px 0 30px rgba(0,0,0,0.14);
+  transition: transform 0.32s ease;
+  overflow-y: auto;
+  display: flex;
+   box-sizing: border-box;
 }
 
 body.feed .composer-modal.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  transform: translateX(0);
 }
 
 body.feed .composer-card {
-  width: min(680px, 94vw);
-  max-height: min(82vh, 900px);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 18px;
   overflow-y: auto;
-  border-radius: 24px;
-  background: rgba(255,255,255,0.96);
-  box-shadow: 0 28px 70px rgba(0,0,0,0.22);
-  padding: 18px 18px 16px;
 }
+
 
 body.feed .composer-header {
    position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 14px;
 }
 
