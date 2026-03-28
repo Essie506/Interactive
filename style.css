@@ -1037,7 +1037,7 @@ body.feed .composer-header h3 {
 body.feed .composer-close {
   grid-column: 3;
   justify-self: end;
-  position: relative;
+  position: static;
   width: 46px;
   height: 46px;
   border: none;
@@ -1143,6 +1143,16 @@ body.feed .composer-footer {
   justify-content: flex-end;
   align-items: center;
 }
+
+
+body.feed .composer-bottom-bar {
+  margin-top: auto;
+  padding-top: 12px;
+  background: #fff;
+  position: sticky;
+  bottom: 0;
+}
+
 
 body.feed .composer-submit {
   color: var(--main-color);
