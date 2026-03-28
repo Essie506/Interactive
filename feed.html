@@ -2,190 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feed - Interactive Fitness</title>
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body class="feed">
 
-<nav class="navbar">
-  <div class="navbar-bg"></div>
-<button class="menu-toggle" id="menuToggle">
-    <i class="fa-solid fa-user"></i>
-</button>
+  <nav class="navbar">
+    <div class="navbar-bg"></div>
 
-  <div class="nav-title">Interactive Fitness</div>
-
-  <div class="navbar-right">
-
-<button class="search-toggle">
-      <i class="fa-solid fa-magnifying-glass"></i>
+    <button class="menu-toggle" id="menuToggle">
+      <i class="fa-solid fa-user"></i>
     </button>
 
-    <button class="icon-btn composer-toggle" id="composerToggle" aria-label="Create post">
-  <i class="fa-solid fa-plus"></i>
-</button>  
-    
-  </div>
-</nav>
+    <div class="nav-title">Interactive Fitness</div>
+
+    <div class="navbar-right">
+      <button class="search-toggle">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <button class="icon-btn composer-toggle" id="composerToggle" aria-label="Create post">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </nav>
 
   <div class="menu-overlay" id="menuOverlay"></div>
-<nav class="menu">
-<ul>
- <li class="menu-profile">
-  <a href="view-profile.html" class="menu-profile-info">
-    <div class="menu-profile-name">Esther</div>
-    <div class="menu-profile-sub">View profile</div>
-  </a>
-</li>
-    <li><a href="home.html" class="menu-link-modern">Home</a></li>
-    <li><a href="feed.html" class="menu-link-modern">Feed</a></li>
-     <li><a href="gyms.html" class="menu-link-modern">Gyms and Studios</a></li>
 
-    <li class="has-submenu">
-      <a href="#" class="menu-link-modern">Workouts</a>
-      <ul class="submenu">
-        <li><a href="browse-workouts.html">Browse Workouts</a></li>
-        <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
-        <li><a href="trending.html">Trending</a></li>
-      </ul>
-    </li>
+  <nav class="menu">
+    <ul>
+      <li class="menu-profile">
+        <a href="view-profile.html" class="menu-profile-info">
+          <div class="menu-profile-name">Esther</div>
+          <div class="menu-profile-sub">View profile</div>
+        </a>
+      </li>
 
-    <li><a href="./index.html" class="menu-link-modern">Logout</a></li>
-  </ul>
-</nav>
+      <li><a href="home.html" class="menu-link-modern">Home</a></li>
+      <li><a href="feed.html" class="menu-link-modern">Feed</a></li>
+      <li><a href="gyms.html" class="menu-link-modern">Gyms and Studios</a></li>
 
-<div class="page-layout">
+      <li class="has-submenu">
+        <a href="#" class="menu-link-modern">Workouts</a>
+        <ul class="submenu">
+          <li><a href="browse-workouts.html">Browse Workouts</a></li>
+          <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
+          <li><a href="trending.html">Trending</a></li>
+        </ul>
+      </li>
 
-  <aside class="left-col">
-    <div class="side-card">
-      <h3>Featured Partners</h3>
-      <div class="partner-card">
-        <div class="partner-logo">KAL</div>
-        <p>Kirklees Active Leisure</p>
-        <span>Local leisure centres and community fitness</span>
-      </div>
+      <li><a href="./index.html" class="menu-link-modern">Logout</a></li>
+    </ul>
+  </nav>
 
-      <div class="partner-card">
-        <div class="partner-logo">Gym</div>
-        <p>Independent Gym</p>
-        <span>Strength, cardio and beginner-friendly classes</span>
-      </div>
-    </div>
-  </aside>
+  <div class="page-layout">
 
-  <main class="feed-page">
+    <aside class="left-col">
+      <div class="side-card">
+        <h3>Featured Partners</h3>
 
-    <div class="post-box" id="postBox">
-      <div class="post-box-top">
-
-        <div class="post-input-wrap">
-          <div class="post-avatar-inline">
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <textarea class="post-input" id="postInput" placeholder="What’s on your mind?"readonly></textarea>
+        <div class="partner-card">
+          <div class="partner-logo">KAL</div>
+          <p>Kirklees Active Leisure</p>
+          <span>Local leisure centres and community fitness</span>
         </div>
 
-          <a href="#" class="post-submit-link">Post</a>
+        <div class="partner-card">
+          <div class="partner-logo">Gym</div>
+          <p>Independent Gym</p>
+          <span>Strength, cardio and beginner-friendly classes</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="feed-page">
+
+      <div class="post-box" id="postBox">
+        <div class="post-box-top">
+          <div class="post-input-wrap">
+            <div class="post-avatar-inline">
+              <i class="fa-solid fa-user"></i>
+            </div>
+
+            <textarea
+              class="post-input"
+              id="postInput"
+              placeholder="What’s on your mind?"
+              readonly
+            ></textarea>
           </div>
-          
-         <div class="post-tools">
-  <label for="mediaUpload" class="upload-btn">
-    <i class="fa-solid fa-image"></i>
-  </label>
 
-  <button type="button" class="upload-btn tag-btn" title="Tag people">
-    <i class="fa-solid fa-user-plus"></i>
-  </button>
+          <a href="#" class="post-submit-link">Post</a>
+        </div>
 
-  <button type="button" class="upload-btn calendar-btn" title="Add to calendar">
-    <i class="fa-regular fa-calendar-days"></i>
-  </button>
+        <div class="post-tools">
+          <label for="mediaUpload" class="upload-btn" title="Add image or video">
+            <i class="fa-solid fa-image"></i>
+          </label>
 
-  <button type="button" class="upload-btn gif-btn" title="Add GIF">
-    <span>GIF</span>
-  </button>
+          <button type="button" class="upload-btn tag-btn" title="Tag people">
+            <i class="fa-solid fa-user-plus"></i>
+          </button>
 
-  <button type="button" class="upload-btn emoji-btn" title="Add emoji">
-    <i class="fa-regular fa-face-smile"></i>
-  </button>
+          <button type="button" class="upload-btn calendar-btn" title="Add to calendar">
+            <i class="fa-regular fa-calendar-days"></i>
+          </button>
 
-  <button type="button" class="upload-btn location-btn" title="Add location">
-    <i class="fa-solid fa-location-dot"></i>
-  </button>
-</div>
+          <button type="button" class="upload-btn gif-btn" title="Add GIF">
+            <span>GIF</span>
+          </button>
 
-      <div class="post-preview" id="postPreview"></div>
+          <button type="button" class="upload-btn emoji-btn" title="Add emoji">
+            <i class="fa-regular fa-face-smile"></i>
+          </button>
 
-      <input
-        type="file"
-        id="mediaUpload"
-        accept="image/*,video/*"
-        multiple
-        hidden
-      >
-    </div>
+          <button type="button" class="upload-btn location-btn" title="Add location">
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
+        </div>
 
-    <div id="feed"></div>
+        <div class="post-preview" id="postPreview"></div>
 
-  </main>
-
-  <aside class="right-col">
-    <div class="side-card">
-      <h3>Featured This Week</h3>
-
-      <div class="promo-card">
-        <p class="promo-title">Beginner Fitness Boost</p>
-        <span>New starter sessions from a local partner</span>
+        <input
+          type="file"
+          id="mediaUpload"
+          accept="image/*,video/*"
+          multiple
+          hidden
+        >
       </div>
 
-      <div class="promo-card">
-        <p class="promo-title">Recommended Near You</p>
-        <span>Classes and facilities based on your interests</span>
+      <div id="feed"></div>
+
+    </main>
+
+    <aside class="right-col">
+      <div class="side-card">
+        <h3>Featured This Week</h3>
+
+        <div class="promo-card">
+          <p class="promo-title">Beginner Fitness Boost</p>
+          <span>New starter sessions from a local partner</span>
+        </div>
+
+        <div class="promo-card">
+          <p class="promo-title">Recommended Near You</p>
+          <span>Classes and facilities based on your interests</span>
+        </div>
       </div>
-    </div>
-  </aside>
+    </aside>
 
-</div>
+  </div>
 
-<nav class="bottom-nav">
-
-  <a href="messages.html">
+  <nav class="bottom-nav">
+    <a href="messages.html">
       <i class="fa-solid fa-comments"></i>
     </a>
 
-  <a href="browse-workouts.html">
-    <i class="fa-solid fa-dumbbell"></i>
-  </a>
-
-  <a href="find-trainers.html">
-    <i class="fa-solid fa-child-reaching"></i>
-  </a>
-
-  <a href="notifications.html">
-    <i class="fa-solid fa-bell"></i>
-  </a>
-</nav>
-
-<div class="bottom-rise-zone"></div>
-
-<nav class="bottom-nav-desktop">
-  <div class="nav-right">
-    <a href="notifications.html">
-      <i class="fa-solid fa-bell"></i>
-    </a>
-  </div>
-
-  <div class="nav-left">
-    <a href="view-profile.html">
-      <i class="fa-solid fa-person"></i>
-    </a>
-  </div>
-
-  <div class="nav-center">
     <a href="browse-workouts.html">
       <i class="fa-solid fa-dumbbell"></i>
     </a>
@@ -193,74 +170,108 @@
     <a href="find-trainers.html">
       <i class="fa-solid fa-child-reaching"></i>
     </a>
-  </div>
-</nav>
+
+    <a href="notifications.html">
+      <i class="fa-solid fa-bell"></i>
+    </a>
+  </nav>
+
+  <div class="bottom-rise-zone"></div>
+
+  <nav class="bottom-nav-desktop">
+    <div class="nav-right">
+      <a href="notifications.html">
+        <i class="fa-solid fa-bell"></i>
+      </a>
+    </div>
+
+    <div class="nav-left">
+      <a href="view-profile.html">
+        <i class="fa-solid fa-person"></i>
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <a href="browse-workouts.html">
+        <i class="fa-solid fa-dumbbell"></i>
+      </a>
+
+      <a href="find-trainers.html">
+        <i class="fa-solid fa-child-reaching"></i>
+      </a>
+    </div>
+  </nav>
 
   <div class="composer-overlay" id="composerOverlay"></div>
 
-<div class="composer-modal" id="composerModal" aria-hidden="true">
-  <div class="composer-card">
-    <div class="composer-header">
-      <h3>Create post</h3>
-      <button type="button" class="composer-close" id="composerClose" aria-label="Close">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
+  <div class="composer-modal" id="composerModal" aria-hidden="true">
+    <div class="composer-card">
+      <div class="composer-header">
+        <h3>Create post</h3>
 
-    <div class="composer-body">
-      <div class="composer-input-wrap">
-        <div class="post-avatar-inline">
-          <i class="fa-solid fa-user"></i>
+        <button type="button" class="composer-close" id="composerClose" aria-label="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="composer-body">
+        <div class="composer-input-wrap">
+          <div class="post-avatar-inline">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <textarea
+            class="post-input composer-input"
+            id="composerInput"
+            placeholder="What’s on your mind?"
+          ></textarea>
         </div>
 
-        <textarea
-          class="post-input composer-input"
-          id="composerInput"
-          placeholder="What’s on your mind?"
-        ></textarea>
+        <div class="post-tools composer-tools">
+          <label for="composerMediaUpload" class="upload-btn" title="Add image or video">
+            <i class="fa-solid fa-image"></i>
+          </label>
+
+          <button type="button" class="upload-btn tag-btn" title="Tag people">
+            <i class="fa-solid fa-user-plus"></i>
+          </button>
+
+          <button type="button" class="upload-btn calendar-btn" title="Add to calendar">
+            <i class="fa-regular fa-calendar-days"></i>
+          </button>
+
+          <button type="button" class="upload-btn gif-btn" title="Add GIF">
+            <span>GIF</span>
+          </button>
+
+          <button type="button" class="upload-btn emoji-btn" title="Add emoji">
+            <i class="fa-regular fa-face-smile"></i>
+          </button>
+
+          <button type="button" class="upload-btn location-btn" title="Add location">
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
+        </div>
+
+        <div class="post-preview composer-preview" id="composerPreview"></div>
+
+        <input
+          type="file"
+          id="composerMediaUpload"
+          accept="image/*,video/*"
+          multiple
+          hidden
+        >
       </div>
 
-      <div class="post-tools composer-tools">
-        <label for="composerMediaUpload" class="upload-btn" title="Add image or video">
-          <i class="fa-solid fa-image"></i>
-        </label>
-
-        <button type="button" class="upload-btn tag-btn" title="Tag people">
-          <i class="fa-solid fa-user-plus"></i>
-        </button>
-
-        <button type="button" class="upload-btn gif-btn" title="Add GIF">
-          <span>GIF</span>
-        </button>
-
-        <button type="button" class="upload-btn emoji-btn" title="Add emoji">
-          <i class="fa-regular fa-face-smile"></i>
-        </button>
-
-        <button type="button" class="upload-btn location-btn" title="Add location">
-          <i class="fa-solid fa-location-dot"></i>
-        </button>
+      <div class="composer-footer">
+        <a href="#" class="post-submit-link composer-submit" id="composerSubmit">Post</a>
       </div>
-
-      <div class="post-preview composer-preview" id="composerPreview"></div>
-
-      <input
-        type="file"
-        id="composerMediaUpload"
-        accept="image/*,video/*"
-        multiple
-        hidden
-      >
-    </div>
-
-    <div class="composer-footer">
-      <a href="#" class="post-submit-link composer-submit" id="composerSubmit">Post</a>
     </div>
   </div>
-</div>
-  
-<script src="feed.js"></script>
-<script src="menu.js"></script>
+
+  <script src="feed.js"></script>
+  <script src="menu.js"></script>
 
 </body>
 </html>
