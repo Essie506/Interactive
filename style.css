@@ -994,15 +994,15 @@ body.feed .composer-card {
   max-height: min(82vh, 900px);
   overflow-y: auto;
   border-radius: 24px;
-  background: rgba(255,255,255,0.96);
-  box-shadow: 0 28px 70px rgba(0,0,0,0.22);
+  background: rgba(255,255,255,0.6);
+  box-shadow: var(--shadow-soft);
   padding: 18px 18px 16px;
 }
 
 body.feed .composer-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-bottom: 14px;
 }
 
