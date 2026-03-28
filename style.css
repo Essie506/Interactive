@@ -789,12 +789,12 @@ border-radius: 22px;
   box-shadow: var(--shadow-soft);
     margin-left: auto;
     margin-right: auto;
+    transition: all 0.25s ease;
 }
 
 body.feed .post-box-top {
   display: flex;
   align-items: stretch;
-  margin-top: 0px;
   gap: 10px;
 }
 
@@ -822,8 +822,9 @@ body.feed .post-avatar-inline {
 
 body.feed .post-input {
   width: 100%;
-  min-height: 110px;
-  max-height: 180px;
+  min-height: 58x;
+  height: 58px;
+   max-height: 180px;
   resize: vertical;
   border-radius: 18px;
   border: none;
@@ -835,6 +836,7 @@ body.feed .post-input {
   background: rgba(255,255,255,0.72);
   color: #091a3a;
   box-shadow: inset 0 1px 2px rgba(255,255,255,0.7);
+ transition: height 0.25s ease, min-height 0.25s ease;
 }
 
 body.feed .post-input::placeholder {
@@ -842,10 +844,7 @@ body.feed .post-input::placeholder {
 }
 
 body.feed .post-preview {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
+  display: none
 }
 
 body.feed .post-preview img,
@@ -867,13 +866,7 @@ body.feed .post-actions {
 }
 
 body.feed .post-side-actions {
-  width: 46px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-  margin-right: 10px;
+  display: none;
 }
 
 body.feed .post-tools {
@@ -911,6 +904,29 @@ body.feed .post-submit-link {
 
 body.feed .post-submit-link:hover {
   text-decoration: underline;
+}
+
+body.feed .post-box.expanded .post-side-actions {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 10px;
+   width: 46px;
+}
+
+
+body.feed .post-box.expanded .post-input {
+  min-height: 110px;
+  height: 110px;
+}
+
+body.feed .post-box.expanded .post-preview {
+  display: flex;
+    flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px
 }
 
 body.feed .btn-modern {
