@@ -936,6 +936,10 @@ body.feed .gif-btn span {
   letter-spacing: 0.4px;
 }
 
+body.feed .calendar-btn i {
+  color: var(--main-color);
+}
+
 body.feed .post-submit-link {
   color: #079992;
   text-decoration: none;
