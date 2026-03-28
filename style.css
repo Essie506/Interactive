@@ -427,6 +427,7 @@ body.feed .menu-toggle {
   align-items: center;
   justify-content: center;
    transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
+   border-radius: 50%;
 }
 body.feed .menu-toggle span {
   display: none;
