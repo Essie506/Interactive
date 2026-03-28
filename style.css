@@ -1058,18 +1058,6 @@ body.feed .composer-close {
   z-index: 1;
 }
 
-body.feed .composer-close::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.35);
-  box-shadow: var(--shadow-strong);
-  z-index: -1;
-}
 
 body.feed .composer-close i {
   font-size: 1rem;
