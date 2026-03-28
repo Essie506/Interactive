@@ -246,7 +246,7 @@ body.index::before {
   transition: all 0.3s ease;
 }
 
-.ggle::before {
+.menu-toggle::before {
   content: "";
   position: absolute;
   inset: -8px;
@@ -822,7 +822,7 @@ body.feed .post-avatar-inline {
 
 body.feed .post-input {
   width: 100%;
-  min-height: 58x;
+  min-height: 58px;
   height: 58px;
    max-height: 180px;
   resize: vertical;
@@ -950,8 +950,11 @@ margin-right: auto;
 margin-bottom: 12px;
 }
 
-body.feed .post img {
+ body.feed .post-img {
+  display: block;
   width: 100%;
+  max-height: 420px;
+  object-fit: cover;
   border-radius: 10px;
   margin-top: 10px;
 }
