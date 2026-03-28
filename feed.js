@@ -39,9 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
           </div>
         </div>
 
-        <div class="post-text">
-          ${post.text}
-        </div>
+        <div class="post-text">${post.text}</div>
 
         <img class="post-img" src="${post.image}" alt="${post.user} post image">
 
@@ -56,65 +54,88 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ===== Composer modal elements =====
   const postBox = document.getElementById("postBox");
-  const postInput = document.getElementById("postInput");
-  const mediaUpload = document.getElementById("mediaUpload");
-  const postPreview = document.getElementById("postPreview");
-  const emojiBtn = document.querySelector(".emoji-btn");
-  const tagBtn = document.querySelector(".tag-btn");
-const gifBtn = document.querySelector(".gif-btn");
-const locationBtn = document.querySelector(".location-btn");
+  const composerOverlay = document.getElementById("composerOverlay");
+  const composerModal = document.getElementById("composerModal");
+  const composerClose = document.getElementById("composerClose");
+  const composerInput = document.getElementById("composerInput");
+  const composerPreview = document.getElementById("composerPreview");
+  const composerMediaUpload = document.getElementById("composerMediaUpload");
+  const composerSubmit = document.getElementById("composerSubmit");
 
-if (tagBtn) {
-  tagBtn.addEventListener("click", () => {
-    alert("Tag people feature coming next");
-  });
-}
+  const emojiBtn = document.querySelector(".composer-tools .emoji-btn");
+  const tagBtn = document.querySelector(".composer-tools .tag-btn");
+  const gifBtn = document.querySelector(".composer-tools .gif-btn");
+  const locationBtn = document.querySelector(".composer-tools .location-btn");
 
-if (gifBtn) {
-  gifBtn.addEventListener("click", () => {
-    alert("GIF feature coming next");
-  });
-}
+  function openComposer() {
+    if (!composerOverlay || !composerModal) return;
 
-if (locationBtn) {
-  locationBtn.addEventListener("click", () => {
-    alert("Location feature coming next");
-  });
-}
+    composerOverlay.classList.add("open");
+    composerModal.classList.add("open");
+    composerModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
 
-if (emojiBtn && postInput) {
-  emojiBtn.addEventListener("click", () => {
-    postBox.classList.add("expanded");
-    postInput.value += " 😊";
-    postInput.focus();
-    postInput.dispatchEvent(new Event("input"));
-  });
-}
+    if (composerInput) {
+      composerInput.focus();
+    }
+  }
 
-  if (postBox && postInput) {
-    postInput.addEventListener("focus", () => {
-      postBox.classList.add("expanded");
-    });
+  function closeComposer() {
+    if (!composerOverlay || !composerModal) return;
 
-    postInput.addEventListener("click", () => {
-      postBox.classList.add("expanded");
-    });
+    composerOverlay.classList.remove("open");
+    composerModal.classList.remove("open");
+    composerModal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
 
-    document.addEventListener("click", (e) => {
-      const clickedInsidePostBox = postBox.contains(e.target);
-      const hasText = postInput.value.trim().length > 0;
-      const hasPreview = postPreview && postPreview.children.length > 0;
+  function updateComposerState() {
+    if (!composerInput || !composerSubmit) return;
 
-      if (!clickedInsidePostBox && !hasText && !hasPreview) {
-        postBox.classList.remove("expanded");
-      }
+    const hasText = composerInput.value.trim().length > 0;
+    const hasMedia = composerPreview && composerPreview.children.length > 0;
+
+    if (hasText || hasMedia) {
+      composerSubmit.classList.add("ready");
+    } else {
+      composerSubmit.classList.remove("ready");
+    }
+  }
+
+  if (postBox) {
+    postBox.addEventListener("click", (e) => {
+      e.preventDefault();
+      openComposer();
     });
   }
 
-  if (mediaUpload && postPreview && postBox) {
-    mediaUpload.addEventListener("change", function () {
-      postPreview.innerHTML = "";
+  if (composerClose) {
+    composerClose.addEventListener("click", () => {
+      closeComposer();
+    });
+  }
+
+  if (composerOverlay) {
+    composerOverlay.addEventListener("click", () => {
+      closeComposer();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") {
+      closeComposer();
+    }
+  });
+
+  if (composerInput) {
+    composerInput.addEventListener("input", updateComposerState);
+  }
+
+  if (composerMediaUpload && composerPreview) {
+    composerMediaUpload.addEventListener("change", function () {
+      composerPreview.innerHTML = "";
 
       Array.from(this.files).forEach(file => {
         const fileURL = URL.createObjectURL(file);
@@ -123,21 +144,58 @@ if (emojiBtn && postInput) {
           const img = document.createElement("img");
           img.src = fileURL;
           img.alt = file.name;
-          postPreview.appendChild(img);
+          composerPreview.appendChild(img);
         } else if (file.type.startsWith("video/")) {
           const video = document.createElement("video");
           video.src = fileURL;
           video.controls = true;
-          postPreview.appendChild(video);
+          composerPreview.appendChild(video);
         }
       });
 
-      if (this.files.length > 0) {
-        postBox.classList.add("expanded");
+      if (composerPreview.children.length > 0) {
+        composerPreview.classList.add("has-media");
+      } else {
+        composerPreview.classList.remove("has-media");
       }
+
+      updateComposerState();
     });
   }
 
+  if (emojiBtn && composerInput) {
+    emojiBtn.addEventListener("click", () => {
+      composerInput.value += " 😊";
+      composerInput.focus();
+      updateComposerState();
+    });
+  }
+
+  if (tagBtn && composerInput) {
+    tagBtn.addEventListener("click", () => {
+      composerInput.value += " @";
+      composerInput.focus();
+      updateComposerState();
+    });
+  }
+
+  if (gifBtn && composerInput) {
+    gifBtn.addEventListener("click", () => {
+      composerInput.value += " [GIF] ";
+      composerInput.focus();
+      updateComposerState();
+    });
+  }
+
+  if (locationBtn && composerInput) {
+    locationBtn.addEventListener("click", () => {
+      composerInput.value += " 📍";
+      composerInput.focus();
+      updateComposerState();
+    });
+  }
+
+  // ===== Navbar / bottom nav scroll behaviour =====
   let lastScrollY = window.scrollY;
   const navbar = document.querySelector(".navbar");
   const bottomNav = document.querySelector(".bottom-nav");
