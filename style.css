@@ -957,7 +957,7 @@ body.feed .composer-overlay.open {
 body.feed .composer-modal {
   top: 0;
   right: 0;
-  width: min(520px, 92vw);
+  width: min(520px, 96vw);
   height: 100vh;
   transform: translateX(100%);
   z-index: 4000;
@@ -994,12 +994,24 @@ body.feed .composer-header {
   margin-bottom: 14px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(9, 26, 58, 0.08);
+   
+  background: var(--navbar-bg);
+  overflow: hidden;
+}
+
+body.feed .composer-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--navbar-bg-after);
+  pointer-events: none;
 }
 
 body.feed .composer-header-spacer {
   width: 46px;
   height: 46px;
 }
+   
 
 body.feed .composer-header h3 {
   grid-column: 2;
@@ -1008,6 +1020,7 @@ body.feed .composer-header h3 {
   color: #091a3a;
   text-align: center;
   font-weight: 700;
+   z-index: 1;
 }
 
 body.feed .composer-close {
