@@ -825,7 +825,7 @@ body.feed .post-input {
   min-height: 58px;
   height: 58px;
    max-height: 180px;
-  resize: vertical;
+  resize: none;
   border-radius: 18px;
   border: none;
   outline: none;
