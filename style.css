@@ -1017,7 +1017,7 @@ body.feed .composer-close {
    position: absolute;
    right: 0;
    top: 50%
-   transform: translateY(-50%)
+   transform: translateY(-50%);
   width: 42px;
   height: 42px;
   border: none;
