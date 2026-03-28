@@ -60,6 +60,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const postInput = document.getElementById("postInput");
   const mediaUpload = document.getElementById("mediaUpload");
   const postPreview = document.getElementById("postPreview");
+  const emojiBtn = document.querySelector(".emoji-btn");
+  const tagBtn = document.querySelector(".tag-btn");
+const gifBtn = document.querySelector(".gif-btn");
+const locationBtn = document.querySelector(".location-btn");
+
+if (tagBtn) {
+  tagBtn.addEventListener("click", () => {
+    alert("Tag people feature coming next");
+  });
+}
+
+if (gifBtn) {
+  gifBtn.addEventListener("click", () => {
+    alert("GIF feature coming next");
+  });
+}
+
+if (locationBtn) {
+  locationBtn.addEventListener("click", () => {
+    alert("Location feature coming next");
+  });
+}
+
+if (emojiBtn && postInput) {
+  emojiBtn.addEventListener("click", () => {
+    postBox.classList.add("expanded");
+    postInput.value += " 😊";
+    postInput.focus();
+    postInput.dispatchEvent(new Event("input"));
+  });
+}
 
   if (postBox && postInput) {
     postInput.addEventListener("focus", () => {
