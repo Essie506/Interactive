@@ -917,20 +917,29 @@ body.feed .calendar-btn i {
   color: var(--main-color);
 }
 
-body.feed .post-submit-link {
-  color: #079992;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 15px;
-  line-height: 1;
-  padding: 5px;
-  align-self: flex-start;
-margin-top: 18px;
-   margin-right: 8px;
+body.feed .composer-footer .btn-modern {
+  width: 100%;
+  max-width: none;
+  height: 48px;
+
+  margin: 0;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
 }
 
-body.feed .post-submit-link:hover {
-  text-decoration: underline;
+body.feed .composer-submit {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body.feed .composer-submit.ready {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 body.feed #postBox textarea {
