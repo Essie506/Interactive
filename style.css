@@ -876,36 +876,6 @@ body.feed .upload-btn {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--glass-white);
-  color: #091a3a;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
-  box-shadow: var(--shadow-soft);
-   transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
-}
-
-body.feed .post-tools {
-  display: none;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 10px;
-  padding: 10px 14px 0;
-  flex-wrap: wrap;
-  width: 100%;
-}
-
-body.feed .post-box.expanded .post-tools {
-  display: flex;
-}
-
-body.feed .upload-btn {
-  width: 42px;
-  height: 42px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
   border: none;
   background: var(--glass-white);
   color: #091a3a;
@@ -978,7 +948,6 @@ body.feed .composer-overlay.open {
 }
 
 body.feed .composer-modal {
-  position: fixed;
   top: 0;
   right: 0;
   width: min(520px, 92vw);
@@ -1095,12 +1064,13 @@ body.feed .composer-input {
 
 body.feed .composer-tools {
   display: flex;
-  justify-content: flex-start;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 10px;
   flex-wrap: wrap;
-margin-top: auto;
-  padding: 10px;
+  padding: 0;
+  margin: 0;
+  flex: 1;
 }
 
 body.feed .composer-preview {
@@ -1123,19 +1093,24 @@ body.feed .composer-preview video {
   box-shadow: 0 4px 12px rgba(0,0,0,0.10);
 }
 
-body.feed .composer-footer {
-  margin-top: auto;
-  padding-top: 14px;
-  background: #fff;
-    display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
+body.feed .composer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  flex-shrink: 0;
+}
 
 body.feed .composer-bottom-bar {
   margin-top: auto;
   padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   background: #fff;
   position: sticky;
   bottom: 0;
@@ -1148,10 +1123,12 @@ body.feed .composer-submit {
   font-weight: 700;
   font-size: 18px;
   line-height: 1;
-  padding: 8px 4px;
+  padding: 0;
   margin: 0;
   opacity: 0.45;
   pointer-events: none;
+  position: relative;
+  top: -1px;
 }
 
 body.feed .composer-submit.ready {
