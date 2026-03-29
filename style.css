@@ -1526,9 +1526,6 @@ body.feed .partner-promo {
     display: flex;
     transform: translateY(0);
   }
-    body.feed .composer-footer {
-   margin-left: 20px;
-  }
 }
 
 
@@ -1560,3 +1557,9 @@ body.feed .partner-promo {
     min-width: 110px;
   }
 }
+
+@media (min-width: 768px) and (max-width: 900px) {
+    body.feed .composer-footer {
+  margin-left: 50px;
+  }
+   
