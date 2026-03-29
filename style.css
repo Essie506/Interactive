@@ -1014,7 +1014,7 @@ body.feed .composer-header-spacer {
 body.feed .composer-header h3 {
   grid-column: 2;
   margin: 0;
-  font-size: 20px;
+  font-size: 16px;
   color: #091a3a;
   text-align: center;
   font-weight: 700;
