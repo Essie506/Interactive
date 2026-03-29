@@ -71,6 +71,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
   const bottomNav = document.querySelector(".bottom-nav");
 
+  const DESKTOP_BREAKPOINT = 901;
+  let lastScrollY = window.scrollY;
+
+  function isDesktop() {
+    return window.innerWidth >= DESKTOP_BREAKPOINT;
+  }
+
   function openComposer() {
     if (!composerOverlay || !composerModal) return;
 
@@ -148,6 +155,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateComposerState();
+  }
+
+  function handleScrollUI() {
+    const currentScrollY = window.scrollY;
+    const scrollingDown = currentScrollY > lastScrollY;
+
+    if (currentScrollY <= 10) {
+      if (navbar) navbar.classList.remove("hide-top");
+      if (bottomNav) bottomNav.classList.remove("hide-bottom");
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (scrollingDown) {
+      if (navbar) navbar.classList.add("hide-top");
+
+      if (!isDesktop() && bottomNav) {
+        bottomNav.classList.add("hide-bottom");
+      }
+    } else {
+      if (navbar) navbar.classList.remove("hide-top");
+      if (bottomNav) bottomNav.classList.remove("hide-bottom");
+    }
+
+    lastScrollY = currentScrollY;
+  }
+
+  function handleResize() {
+    if (isDesktop() && bottomNav) {
+      bottomNav.classList.remove("hide-bottom");
+    }
   }
 
   if (composerToggle) {
@@ -257,28 +295,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  window.addEventListener("scroll", handleScrollUI, { passive: true });
+  window.addEventListener("resize", handleResize);
+
   updateComposerState();
-
-  let lastScrollY = window.scrollY;
-
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY <= 10) {
-      if (navbar) navbar.classList.remove("hide-top");
-      if (bottomNav) bottomNav.classList.remove("hide-bottom");
-      lastScrollY = currentScrollY;
-      return;
-    }
-
-    if (currentScrollY > lastScrollY) {
-      if (navbar) navbar.classList.add("hide-top");
-      if (bottomNav) bottomNav.classList.add("hide-bottom");
-    } else {
-      if (navbar) navbar.classList.remove("hide-top");
-      if (bottomNav) bottomNav.classList.remove("hide-bottom");
-    }
-
-    lastScrollY = currentScrollY;
-  });
+  handleResize();
+  handleScrollUI();
 });
