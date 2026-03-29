@@ -935,7 +935,7 @@ body.feed .calendar-btn i {
 }
 
 body.feed .composer-footer .composer-submit.btn-modern {
-  width: 100%;
+  width: 80%;
   max-width: none;
   height: 48px;
   margin: 0;
