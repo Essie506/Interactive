@@ -1512,4 +1512,7 @@ body.feed .partner-promo {
     display: flex;
     transform: translateY(0);
   }
+      body.feed .composer-tools {
+  justify-content: flex-start;
+}
 }
