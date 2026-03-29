@@ -1107,7 +1107,6 @@ body.feed .composer-preview video {
 body.feed .composer-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   margin: 0;
   padding: 0;
   background: transparent;
