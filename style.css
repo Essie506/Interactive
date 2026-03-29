@@ -908,7 +908,7 @@ body.feed .post-actions {
   align-items: center;
   justify-content: center;
   gap: 20px;
-  margin: 16px 10px;
+  margin: 16px 0px;
 }
 
 body.feed .post-tools {
