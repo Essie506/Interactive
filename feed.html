@@ -13,17 +13,33 @@
 </head>
 <body class="feed">
 
-  <nav class="navbar">
-    <div class="navbar-bg"></div>
 
+
+<nav class="navbar">
+  <div class="navbar-bg"></div>
+
+  <div class="nav-left">
     <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
       <i class="fa-solid fa-user"></i>
     </button>
+      </div>
+  
+  <div class="nav-title">Interactive Fitness</div>
 
-    <div class="nav-title">Interactive Fitness</div>
-
-    <div class="navbar-right">
-      <button
+ <div class="nav-center desktop-nav-links">
+    <a href="home.html">Home</a>
+    <a href="feed.html">Feed</a>
+    <a href="gyms.html">Gyms &amp; Studios</a>
+    <a href="browse-workouts.html">Workouts</a>
+  </div>
+  <div class="nav-right">
+      <a href="notifications.html" class="icon-btn desktop-icon-link" aria-label="Notifications">
+      <i class="fa-solid fa-bell"></i>
+    </a>
+     <a href="messages.html" class="icon-btn desktop-icon-link" aria-label="Messages">
+      <i class="fa-solid fa-comments"></i>
+    </a>
+    <button
         class="icon-btn composer-toggle"
         id="composerToggle"
         type="button"
@@ -31,8 +47,8 @@
       >
         <i class="fa-solid fa-plus"></i>
       </button>
-    </div>
-  </nav>
+  </div>
+</nav>
 
   <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -127,32 +143,6 @@
     <a href="notifications.html" aria-label="Notifications">
       <i class="fa-solid fa-bell"></i>
     </a>
-  </nav>
-
-  <div class="bottom-rise-zone"></div>
-
-  <nav class="bottom-nav-desktop" aria-label="Desktop navigation">
-    <div class="nav-right">
-      <a href="notifications.html" aria-label="Notifications">
-        <i class="fa-solid fa-bell"></i>
-      </a>
-    </div>
-
-    <div class="nav-left">
-      <a href="view-profile.html" aria-label="Profile">
-        <i class="fa-solid fa-person"></i>
-      </a>
-    </div>
-
-    <div class="nav-center">
-      <a href="browse-workouts.html" aria-label="Browse workouts">
-        <i class="fa-solid fa-dumbbell"></i>
-      </a>
-
-      <a href="find-trainers.html" aria-label="Find trainers">
-        <i class="fa-solid fa-child-reaching"></i>
-      </a>
-    </div>
   </nav>
 
   <div class="composer-overlay" id="composerOverlay"></div>
