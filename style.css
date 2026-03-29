@@ -1517,18 +1517,24 @@ body.feed .partner-promo {
     transform: translateY(0);
   }
 
-  body.feed .composer-bottom-bar, body.feed .composer-tools {
+  body.feed .composer-bottom-bar {
     align-items: flex-start;
+  }
+
+  body.feed .composer-tools {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    flex: 0 0 auto;
   }
 
   body.feed .composer-footer {
     justify-content: flex-start;
-     width: 100%;
+    width: 100%;
   }
-   
-   body.feed .composer-submit {
+
+  body.feed .composer-submit {
     width: auto;
     margin: 0;
   }
 }
-
