@@ -906,9 +906,9 @@ body.feed .post-preview video {
 body.feed .post-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  margin: 20px 10px;
+  justify-content: center;
+  gap: 20px;
+  margin: 16px 10px;
 }
 
 body.feed .post-tools {
@@ -938,7 +938,7 @@ body.feed .composer-footer .composer-submit.btn-modern {
   width: min(100%, 420px);
   max-width: none;
   height: 36px;
-  margin: 0;
+  margin: 0 auto;
   padding: 0 16px;
    justify-content: center;
   border-radius: 16px;
@@ -1108,6 +1108,7 @@ body.feed .composer-preview video {
 body.feed .composer-footer {
   display: flex;
   align-items: center;
+   justift-content: center;
   margin: 0;
   padding: 0;
   background: transparent;
@@ -1340,12 +1341,6 @@ body.feed .partner-promo {
 
   body.feed .post-input {
     max-width: 100%;
-  }
-
-  /* narrowed so this does not affect composer submit */
-  body.feed .post-actions .btn-modern {
-    max-width: 80px;
-    padding: 9px;
   }
 
   body.feed .composer-modal {
