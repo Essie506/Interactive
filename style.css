@@ -1495,13 +1495,14 @@ body.feed .partner-promo {
   }
 
   .navbar {
-    height: var(--bar-height-large);
-    padding: 0 22px;
-    display: grid;
-    grid-template-columns: 56px 1fr auto;
-    align-items: center;
-    overflow: visible;
-  }
+  height: var(--bar-height-large);
+  padding: 0 22px;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  overflow: visible;
+}
    .nav-left {
     justify-self: start;
   }
@@ -1584,7 +1585,6 @@ body.feed .partner-promo {
   .submenu li a {
     padding: 12px 18px 12px 32px;
   }
-}
 }
 
 @media (min-width: 1100px) {
