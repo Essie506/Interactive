@@ -1138,7 +1138,7 @@ body.feed .composer-footer {
 
 body.feed .composer-bottom-bar {
   margin-top: auto;
-  padding: 12px 10px 16px;
+  padding: 6px 0px 0px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -1525,6 +1525,9 @@ body.feed .partner-promo {
   .bottom-nav {
     display: flex;
     transform: translateY(0);
+  }
+    body.feed .composer-footer {
+   margin-left: 20px;
   }
 }
 
