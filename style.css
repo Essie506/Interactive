@@ -1536,5 +1536,6 @@ body.feed .partner-promo {
   body.feed .composer-submit {
     width: auto;
     margin: 0;
+     display: inline-flex;
   }
 }
