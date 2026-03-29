@@ -54,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const postBox = document.getElementById("postBox");
   const composerToggle = document.getElementById("composerToggle");
   const composerOverlay = document.getElementById("composerOverlay");
   const composerModal = document.getElementById("composerModal");
