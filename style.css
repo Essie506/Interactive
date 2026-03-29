@@ -1516,13 +1516,21 @@ body.feed .partner-promo {
     justify-self: end;
   }
 
-   
-  .nav-title {
-    position: static;
-    transform: none;
-    justify-self: start;
-    font-size: 1.05rem;
-  }
+   .nav-title {
+  position: static;
+  left: auto;
+  transform: none;
+  justify-self: start;
+  font-size: 1.05rem;
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+}
 
   .desktop-nav-links {
     display: flex;
