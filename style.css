@@ -917,7 +917,7 @@ body.feed .calendar-btn i {
   color: var(--main-color);
 }
 
-body.feed .composer-footer .btn-modern {
+body.feed .composer-footer .composer-submit.btn-modern {
   width: 100%;
   max-width: none;
   height: 48px;
@@ -930,16 +930,6 @@ body.feed .composer-footer .btn-modern {
   justify-content: center;
 
   font-size: 16px;
-}
-
-body.feed .composer-submit {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-body.feed .composer-submit.ready {
-  opacity: 1;
-  pointer-events: auto;
 }
 
 body.feed #postBox textarea {
@@ -973,8 +963,6 @@ body.feed .composer-modal {
   flex-direction: column;
     position: fixed;
   background: #ffffff;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   box-shadow: 12px 0 30px rgba(0,0,0,0.14);
   transition: transform 0.32s ease;
   overflow-y: auto;
@@ -1147,17 +1135,9 @@ body.feed .composer-bottom-bar {
 
 
 body.feed .composer-submit {
-  color: var(--main-color);
   text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 1;
-  padding: 0;
-  margin: 0;
-  opacity: 0.45;
+  opacity: 0.5;
   pointer-events: none;
-  position: relative;
-  top: -1px;
 }
 
 body.feed .composer-submit.ready {
@@ -1417,6 +1397,7 @@ body.feed .feed-page {
 
    body.feed .composer-modal {
    width: 100vw;
+   }
       
    body.feed .composer-card {
    padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
