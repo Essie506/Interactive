@@ -109,6 +109,16 @@ body.index::before {
   animation: satinShimmer 3.2s ease-out forwards;
 }
 
+body.index .btn-login {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body.index .btn-login.ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* =========================
    NAVBAR
 ========================= */
