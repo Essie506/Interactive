@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const feed = document.getElementById("feed");
 
   if (feed) {
-    posts.forEach(post => {
+    posts.forEach((post) => {
       const card = document.createElement("div");
       card.className = "post";
 
@@ -68,11 +68,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const gifBtn = document.querySelector(".composer-tools .gif-btn");
   const locationBtn = document.querySelector(".composer-tools .location-btn");
 
+  const navbar = document.querySelector(".navbar");
+  const bottomNav = document.querySelector(".bottom-nav");
+
   function openComposer() {
     if (!composerOverlay || !composerModal) return;
 
     composerOverlay.classList.add("open");
     composerModal.classList.add("open");
+    composerModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
     if (composerInput) {
@@ -85,26 +89,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
     composerOverlay.classList.remove("open");
     composerModal.classList.remove("open");
+    composerModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 
   function updateComposerState() {
-    if (!composerInput || !composerSubmit) return;
+    if (!composerInput || !composerSubmit || !composerPreview) return;
 
     const hasText = composerInput.value.trim().length > 0;
-    const hasMedia = composerPreview && composerPreview.children.length > 0;
+    const hasMedia = composerPreview.children.length > 0;
 
     if (hasText || hasMedia) {
       composerSubmit.classList.add("ready");
+      composerSubmit.disabled = false;
     } else {
       composerSubmit.classList.remove("ready");
+      composerSubmit.disabled = true;
     }
+  }
+
+  function renderMediaPreview(files) {
+    if (!composerPreview) return;
+
+    composerPreview.innerHTML = "";
+
+    Array.from(files).forEach((file) => {
+      const fileURL = URL.createObjectURL(file);
+
+      if (file.type.startsWith("image/")) {
+        const img = document.createElement("img");
+        img.src = fileURL;
+        img.alt = file.name;
+        composerPreview.appendChild(img);
+      } else if (file.type.startsWith("video/")) {
+        const video = document.createElement("video");
+        video.src = fileURL;
+        video.controls = true;
+        composerPreview.appendChild(video);
+      }
+    });
+
+    composerPreview.classList.toggle("has-media", composerPreview.children.length > 0);
+    updateComposerState();
+  }
+
+  function resetComposer() {
+    if (composerInput) {
+      composerInput.value = "";
+    }
+
+    if (composerPreview) {
+      composerPreview.innerHTML = "";
+      composerPreview.classList.remove("has-media");
+    }
+
+    if (composerMediaUpload) {
+      composerMediaUpload.value = "";
+    }
+
+    updateComposerState();
   }
 
   if (composerToggle) {
     composerToggle.addEventListener("click", openComposer);
   }
-
 
   if (composerClose) {
     composerClose.addEventListener("click", closeComposer);
@@ -115,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
+    if (e.key === "Escape" && composerModal?.classList.contains("open")) {
       closeComposer();
     }
   });
@@ -124,33 +172,9 @@ document.addEventListener("DOMContentLoaded", () => {
     composerInput.addEventListener("input", updateComposerState);
   }
 
-  if (composerMediaUpload && composerPreview) {
+  if (composerMediaUpload) {
     composerMediaUpload.addEventListener("change", function () {
-      composerPreview.innerHTML = "";
-
-      Array.from(this.files).forEach(file => {
-        const fileURL = URL.createObjectURL(file);
-
-        if (file.type.startsWith("image/")) {
-          const img = document.createElement("img");
-          img.src = fileURL;
-          img.alt = file.name;
-          composerPreview.appendChild(img);
-        } else if (file.type.startsWith("video/")) {
-          const video = document.createElement("video");
-          video.src = fileURL;
-          video.controls = true;
-          composerPreview.appendChild(video);
-        }
-      });
-
-      if (composerPreview.children.length > 0) {
-        composerPreview.classList.add("has-media");
-      } else {
-        composerPreview.classList.remove("has-media");
-      }
-
-      updateComposerState();
+      renderMediaPreview(this.files);
     });
   }
 
@@ -186,9 +210,56 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (composerSubmit) {
+    composerSubmit.addEventListener("click", () => {
+      if (!composerSubmit.classList.contains("ready") || !feed || !composerInput || !composerPreview) {
+        return;
+      }
+
+      const text = composerInput.value.trim();
+      const firstMedia = composerPreview.querySelector("img, video");
+
+      const card = document.createElement("div");
+      card.className = "post";
+
+      card.innerHTML = `
+        <div class="post-header">
+          <div class="avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <div class="post-info">
+            <span class="username">Esther</span>
+            <span class="time">Just now</span>
+          </div>
+        </div>
+
+        ${text ? `<div class="post-text">${text}</div>` : ""}
+
+        ${
+          firstMedia
+            ? firstMedia.tagName === "IMG"
+              ? `<img class="post-img" src="${firstMedia.src}" alt="New post image">`
+              : `<video class="post-img" src="${firstMedia.src}" controls></video>`
+            : ""
+        }
+
+        <div class="post-actions">
+          <span><i class="fa-solid fa-heart"></i> 0</span>
+          <span><i class="fa-solid fa-comment"></i> 0</span>
+          <span><i class="fa-solid fa-bookmark"></i></span>
+        </div>
+      `;
+
+      feed.prepend(card);
+      resetComposer();
+      closeComposer();
+    });
+  }
+
+  updateComposerState();
+
   let lastScrollY = window.scrollY;
-  const navbar = document.querySelector(".navbar");
-  const bottomNav = document.querySelector(".bottom-nav");
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
