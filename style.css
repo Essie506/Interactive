@@ -18,6 +18,7 @@ body {
 
 :root {
   --bar-height: 70px;
+   --bar-height-large: 76px;
 
   --main-color: #079992;
   --main-color-dark: #047a74;
@@ -1372,8 +1373,10 @@ body.feed .partner-promo {
 /* =========================
    TABLET / COARSE POINTER DESKTOP NAV
 ========================= */
+
 @media (min-width: 901px) and (hover: none) and (pointer: coarse) {
-  body.feed .page-layout {
+  
+   body.feed .page-layout {
     display: grid;
     grid-template-columns: 240px minmax(0, 600px) 240px;
     justify-content: center;
@@ -1400,16 +1403,20 @@ body.feed .partner-promo {
     max-width: 600px;
     margin: 0;
   }
-
-  body.feed .post-box,
-  body.feed .post {
-    width: 100%;
-  }
-
-  body.feed .post-box {
-    margin-top: 0;
-  }   
 }
+
+@media (min-width: 901px) and (max-width: 1099px) and (hover: none) and (pointer: coarse) {
+  body.feed .page-layout {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr) 180px;
+    gap: 16px;
+    align-items: start;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: calc(var(--bar-height) + 16px);
+  }
+}
+
 
 @media (min-width: 500px) {
   body.feed .composer-bottom-bar {
