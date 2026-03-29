@@ -425,8 +425,8 @@ margin-top: 0;
 
 body.feed .menu-toggle {
   padding: 0;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
    display: flex;
   align-items: center;
   justify-content: center;
@@ -1006,8 +1006,8 @@ body.feed .composer-header::after {
 }
 
 body.feed .composer-header-spacer {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
 }
    
 
@@ -1025,8 +1025,8 @@ body.feed .composer-close {
   grid-column: 3;
   justify-self: end;
   position: static;
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   border: none;
   border-radius: 50%;
   background: var(--glass-white);
@@ -1298,8 +1298,8 @@ body.feed .partner-promo {
 }
 
 .bottom-nav i {
-  width: 47px;
-  height: 47px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   border: none;
   display: flex;
