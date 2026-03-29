@@ -958,6 +958,11 @@ body.feed .composer-submit {
   font-size: 14px;
 }
 
+body.feed .composer-submit.ready {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 body.feed #postBox textarea {
   cursor: pointer;
 }
@@ -984,7 +989,7 @@ body.feed .composer-modal {
   top: 0;
   right: 0;
   width: min(520px, 96vw);
-  height: 100vh;
+  height: 100dvh;
   transform: translateX(100%);
   z-index: 4000;
   display: flex;
@@ -992,7 +997,7 @@ body.feed .composer-modal {
   background: #ffffff;
   box-shadow: 12px 0 30px rgba(0, 0, 0, 0.14);
   transition: transform 0.32s ease;
-  overflow-y: auto;
+  overflow-y: hidden;
   box-sizing: border-box;
 }
 
@@ -1062,6 +1067,11 @@ body.feed .composer-body {
   gap: 14px;
   flex: 1;
   min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  padding-bottom: 12px;
+ 
 }
 
 body.feed .composer-input-wrap {
@@ -1092,7 +1102,7 @@ body.feed .composer-tools {
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
-  flex: 1;
+  flex: 0 0 auto;
 }
 
 body.feed .composer-preview {
@@ -1132,11 +1142,11 @@ body.feed .composer-bottom-bar {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  justify-content: space-between;
   gap: 15px;
   background: #fff;
   position: sticky;
   bottom: 0;
+   z-index: 2;
 }
 
 
@@ -1517,37 +1527,33 @@ body.feed .partner-promo {
     transform: translateY(0);
   }
 
+@media (min-width: 481px) {
   body.feed .composer-bottom-bar {
-    align-items: flex-start;
-     position: sticky;
-     bottom: 0;
-     z-index: 2;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
   }
 
   body.feed .composer-tools {
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
-    flex: 0 0 auto;
+    width: auto;
+    flex: 1 1 auto;
   }
 
- body.feed .composer-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  flex-shrink: 0;
-}
-     
+  body.feed .composer-footer {
+    justify-content: flex-end;
+    width: auto;
+    flex: 0 0 auto;
   }
 
   body.feed .composer-submit {
     width: auto;
     margin: 0;
-     display: inline-flex;
+    min-width: 110px;
   }
+}
 }
 
 
