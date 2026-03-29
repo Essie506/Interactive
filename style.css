@@ -1529,7 +1529,7 @@ body.feed .partner-promo {
 }
 
 
-@media (min-width: 500px) {
+@media (min-width: 900px) {
   body.feed .composer-bottom-bar {
     flex-direction: row;
     align-items: center;
@@ -1558,8 +1558,34 @@ body.feed .partner-promo {
   }
 }
 
-@media (min-width: 768px) and (max-width: 900px) {
-    body.feed .composer-footer {
-  margin-left: 50px;
+@media (min-width: 500px) and (max-width: 900px) {
+   
+     body.feed .composer-bottom-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
   }
+
+  body.feed .composer-tools {
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+  body.feed .composer-footer {
+    justify-content: flex-end;
+    width: auto;
+    flex: 0 0 auto;
+       margin-left: 50px;
+  }
+
+  body.feed .composer-submit {
+    width: auto;
+    margin: 0;
+    display: inline-flex;
+    min-width: 110px;
+  }
+}
    
