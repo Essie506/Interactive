@@ -105,12 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     composerToggle.addEventListener("click", openComposer);
   }
 
-  if (postBox) {
-    postBox.addEventListener("click", (e) => {
-      e.preventDefault();
-      openComposer();
-    });
-  }
 
   if (composerClose) {
     composerClose.addEventListener("click", closeComposer);
