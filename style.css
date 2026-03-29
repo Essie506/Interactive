@@ -906,7 +906,7 @@ body.feed .post-preview video {
 body.feed .post-actions {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 20px;
   margin: 16px 0px;
 }
