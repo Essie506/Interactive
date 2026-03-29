@@ -940,6 +940,7 @@ body.feed .composer-footer .composer-submit.btn-modern {
   height: 36px;
   margin: 0;
   padding: 0 16px;
+   justify-content: center;
   border-radius: 16px;
   display: flex;
   align-items: center;
