@@ -948,6 +948,15 @@ body.feed .composer-footer .composer-submit.btn-modern {
   font-size: 14px;
 }
 
+body.feed .composer-submit {
+  text-decoration: none;
+  opacity: 0.5;
+  pointer-events: none;
+  width: 100%;
+   max-width: none;
+   border: none;
+}
+
 body.feed #postBox textarea {
   cursor: pointer;
 }
@@ -1129,14 +1138,6 @@ body.feed .composer-bottom-bar {
   bottom: 0;
 }
 
-body.feed .composer-submit {
-  text-decoration: none;
-  opacity: 0.5;
-  pointer-events: none;
-  width: 100%;
-   max-width: none;
-   border: none;
-}
 
 body.feed .composer-submit.ready {
   opacity: 1;
@@ -1514,8 +1515,16 @@ body.feed .partner-promo {
     display: flex;
     transform: translateY(0);
   }
-   
-   body.feed .composer-tools {
-  justify-content: flex-start;
+  body.feed .composer-footer {
+    justify-content: flex-start;
+  }
+
+  body.feed .composer-footer .composer-submit.btn-modern {
+    width: auto;
+    margin: 0;
+  }
+  body.feed .composer-tools {
+    justify-content: flex-start;
+  }
 }
-}
+
