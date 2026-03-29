@@ -214,6 +214,9 @@ display: flex;
 }
 
 .desktop-nav-links a {
+   display: flex;
+  align-items: center;
+  gap: 6px;
   text-decoration: none;
   color: #091a3a;
   font-weight: 600;
@@ -221,6 +224,10 @@ display: flex;
   line-height: 1;
   position: relative;
   transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.desktop-nav-links i {
+  font-size: 0.95rem;
 }
 
 .desktop-nav-links a:hover {
@@ -1495,13 +1502,25 @@ body.feed .partner-promo {
     align-items: center;
     overflow: visible;
   }
-
-  .nav-title {
-    display: none;
+   .nav-left {
+    justify-self: start;
   }
 
   .nav-center {
     display: flex;
+   justify-content: center;
+  }
+
+    .navbar-right {
+    justify-self: end;
+  }
+
+   
+  .nav-title {
+    position: static;
+    transform: none;
+    justify-self: start;
+    font-size: 1.05rem;
   }
 
   .desktop-nav-links {
@@ -1513,6 +1532,14 @@ body.feed .partner-promo {
     align-items: center;
     justify-content: center;
   }
+
+   .desktop-nav-links a.active {
+  color: var(--main-color);
+}
+
+.desktop-nav-links a.active i {
+  color: var(--main-color);
+}
 
   .navbar-right .icon-btn,
   .navbar-right .composer-toggle,
