@@ -1516,16 +1516,19 @@ body.feed .partner-promo {
     display: flex;
     transform: translateY(0);
   }
-  body.feed .composer-footer {
-    justify-content: flex-start;
+
+  body.feed .composer-bottom-bar, body.feed .composer-tools {
+    align-items: flex-start;
   }
 
-  body.feed .composer-footer .composer-submit.btn-modern {
+  body.feed .composer-footer {
+    justify-content: flex-start;
+     width: 100%;
+  }
+   
+   body.feed .composer-submit {
     width: auto;
     margin: 0;
-  }
-  body.feed .composer-tools {
-    justify-content: flex-start;
   }
 }
 
