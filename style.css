@@ -935,9 +935,9 @@ body.feed .calendar-btn i {
 }
 
 body.feed .composer-footer .composer-submit.btn-modern {
-  width: 80%;
+  width: min(100%, 420px);
   max-width: none;
-  height: 32px;
+  height: 36px;
   margin: 0;
   padding: 0 16px;
   border-radius: 16px;
@@ -1120,7 +1120,7 @@ body.feed .composer-bottom-bar {
   padding: 12px 10px 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between;
   gap: 15px;
   background: #fff;
