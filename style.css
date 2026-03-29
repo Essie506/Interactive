@@ -923,13 +923,14 @@ body.feed .composer-footer .composer-submit.btn-modern {
   height: 48px;
 
   margin: 0;
+   padding: 0 16px;
   border-radius: 16px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  font-size: 16px;
+  font-size: 14px;
 }
 
 body.feed #postBox textarea {
@@ -1123,7 +1124,7 @@ body.feed .composer-footer {
 
 body.feed .composer-bottom-bar {
   margin-top: auto;
-  padding-top: 12px;
+  padding-top: 12px 10px 16px;
   display: flex;
 flex-direction: column;
   align-items: center;
