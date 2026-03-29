@@ -1132,6 +1132,8 @@ body.feed .composer-submit {
   text-decoration: none;
   opacity: 0.5;
   pointer-events: none;
+  width: 100%;
+  max-width: none;
 }
 
 body.feed .composer-submit.ready {
