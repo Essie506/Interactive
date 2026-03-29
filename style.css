@@ -1144,7 +1144,7 @@ body.feed .composer-bottom-bar {
   align-items: stretch;
   gap: 15px;
   background: #fff;
-  position: sticky;
+  position: static;
   bottom: 0;
    z-index: 2;
 }
