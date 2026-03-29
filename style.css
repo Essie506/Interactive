@@ -988,8 +988,8 @@ body.feed .composer-header {
   display: grid;
   grid-template-columns: 42px 1fr 42px;
   align-items: center;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
+ margin: -18px -18px 14px; /* pulls it outside card padding */
+  padding: 14px 18px;
   border-bottom: 1px solid rgba(9, 26, 58, 0.08);
    
   background: var(--navbar-bg);
@@ -1125,6 +1125,7 @@ body.feed .composer-bottom-bar {
   margin-top: auto;
   padding-top: 12px;
   display: flex;
+flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
