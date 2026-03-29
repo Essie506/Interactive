@@ -1369,7 +1369,10 @@ body.feed .partner-promo {
 /* =========================
    WIDE DESKTOP FEED LAYOUT
 ========================= */
-@media (min-width: 1100px) {
+/* =========================
+   TABLET / COARSE POINTER DESKTOP NAV
+========================= */
+@media (min-width: 901px) and (hover: none) and (pointer: coarse) {
   body.feed .page-layout {
     display: grid;
     grid-template-columns: 240px minmax(0, 600px) 240px;
@@ -1405,129 +1408,8 @@ body.feed .partner-promo {
 
   body.feed .post-box {
     margin-top: 0;
-  }
+  }   
 }
-
-@media (hover: hover) and (pointer: fine) {
-  .bottom-nav-desktop {
-    display: flex;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: -48px;
-    width: 100%;
-    height: 52px;
-    z-index: 2000;
-    align-items: center;
-    justify-content: space-between;
-    box-sizing: border-box;
-    background: var(--navbar-bg);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.08);
-    transition: bottom 0.3s ease;
-  }
-
-  .nav-left,
-  .nav-center,
-  .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-
-  .nav-center {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .bottom-nav-desktop a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    height: 100%;
-    text-decoration: none;
-    color: #091a3a;
-    font-size: 14px;
-    position: relative;
-    z-index: 1;
-  }
-
-  .bottom-nav-desktop span {
-    line-height: 1;
-    font-size: 13px;
-  }
-
-  .bottom-nav {
-    display: none;
-  }
-
-  .bottom-rise-zone {
-    display: block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 20px;
-    z-index: 1999;
-  }
-
-  .bottom-rise-zone:hover + .bottom-nav-desktop,
-  .bottom-nav-desktop:hover {
-    bottom: 0;
-  }
-}
-
-/* =========================
-   TABLET / COARSE POINTER DESKTOP NAV
-========================= */
-@media (min-width: 901px) and (max-width: 1099px) and (hover: none) and (pointer: coarse) {
-  body.feed .page-layout {
-    display: grid;
-    grid-template-columns: 180px minmax(0, 1fr) 180px;
-    gap: 16px;
-    align-items: start;
-    max-width: 100%;
-    margin: 0 auto;
-    padding-top: calc(var(--bar-height) + 16px);
-  }
-
-  body.feed .left-col,
-  body.feed .right-col {
-    display: block;
-  }
-
-  body.feed .feed-col {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  body.feed .feed-page {
-    width: 100%;
-    max-width: none;
-    margin: 0;
-  }
-
-  .bottom-rise-zone {
-    display: none;
-  }
-
-  .bottom-nav-desktop {
-    display: none;
-    bottom: auto;
-  }
-
-  .bottom-nav {
-    display: flex;
-    transform: translateY(0);
-  }
-}
-
 
 @media (min-width: 500px) {
   body.feed .composer-bottom-bar {
