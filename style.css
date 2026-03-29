@@ -1554,10 +1554,9 @@ body.feed .partner-promo {
     min-width: 110px;
   }
 }
-}
 
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
   body.feed .composer-bottom-bar {
     flex-direction: row;
     align-items: center;
