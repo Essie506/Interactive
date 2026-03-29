@@ -1557,34 +1557,3 @@ body.feed .partner-promo {
     min-width: 110px;
   }
 }
-
-@media (min-width: 550px) {
-
-  body.feed .composer-bottom-bar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-  }
-
-  body.feed .composer-tools {
-    justify-content: flex-start;
-    align-items: center;
-    width: auto;
-    flex: 1 1 auto;
-  }
-
-  body.feed .composer-footer {
-    justify-content: flex-end;
-    width: auto;
-    flex: 0 0 auto;
-     margin-left: 24px;
-  }
-
-  body.feed .composer-submit {
-    width: auto;
-    margin: 0;
-    display: inline-flex;
-    min-width: 110px;
-  }
-}
