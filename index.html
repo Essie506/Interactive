@@ -1,41 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Fitness</title>
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Fitness</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="index">
-<!-- Header / Navigation -->
 
-<nav class="navbar">
-  <div class="navbar-bg"></div>
-  <div class="nav-title">Interactive Fitness</div>
-</nav>
-    
-    <!-- Main Content --> 
-<main class="hero"> 
-<h1 class="tagline">Move. Train. Connect.</h1>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="nav-title">Interactive Fitness</div>
+  </nav>
+
+  <!-- Main -->
+  <main class="hero">
+    <h1 class="tagline">Move. Train. Connect.</h1>
 
     <div class="login-box">
-        <input type="email" placeholder="Email" class="input-field">
-        <input type="password" placeholder="Password" class="input-field">
-        <button class="btn-modern btn-login" onclick="window.location.href='home.html'">
-            Login
-        </button>
+      <input type="email" placeholder="Email" class="input-field">
+      <input type="password" placeholder="Password" class="input-field">
 
-        <div class="links">
-            <a href="#">Create Account</a> 
-            <a href="#">Forgot Password?</a>
-        </div>
+      <button type="button" class="btn-modern btn-login" id="loginBtn">
+        Login
+      </button>
+
+      <div class="links">
+        <a href="#">Create Account</a>
+        <a href="#">Forgot Password?</a>
+      </div>
     </div>
-</main>
+  </main>
 
-<footer>
+  <footer>
     © 2025 Interactive Fitness — All Rights Reserved
-</footer>
+  </footer>
+
+  <script>
+    const loginBtn = document.getElementById("loginBtn");
+
+    if (loginBtn) {
+      loginBtn.addEventListener("click", () => {
+        window.location.href = "home.html";
+      });
+    }
+  </script>
 
 </body>
+</html>
