@@ -6,23 +6,29 @@
   <title>Feed - Interactive Fitness</title>
 
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 </head>
 <body class="feed">
 
   <nav class="navbar">
     <div class="navbar-bg"></div>
 
-    <button class="menu-toggle" id="menuToggle">
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu">
       <i class="fa-solid fa-user"></i>
     </button>
 
     <div class="nav-title">Interactive Fitness</div>
 
     <div class="navbar-right">
-
-      <button class="icon-btn composer-toggle" id="composerToggle" aria-label="Create post">
+      <button
+        class="icon-btn composer-toggle"
+        id="composerToggle"
+        type="button"
+        aria-label="Create post"
+      >
         <i class="fa-solid fa-plus"></i>
       </button>
     </div>
@@ -30,7 +36,7 @@
 
   <div class="menu-overlay" id="menuOverlay"></div>
 
-  <nav class="menu">
+  <nav class="menu" aria-label="Main menu">
     <ul>
       <li class="menu-profile">
         <a href="view-profile.html" class="menu-profile-info">
@@ -38,6 +44,7 @@
           <div class="menu-profile-sub">View profile</div>
         </a>
       </li>
+
       <li><a href="home.html" class="menu-link-modern">Home</a></li>
       <li><a href="feed.html" class="menu-link-modern">Feed</a></li>
       <li><a href="gyms.html" class="menu-link-modern">Gyms and Studios</a></li>
@@ -51,15 +58,15 @@
         </ul>
       </li>
 
-      <li><a href="./index.html" class="menu-link-modern">Logout</a></li>
-         <li class="menu-search-item">
-  <div class="menu-search">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <input type="text" placeholder="Search workouts, gyms, trainers..." />
-  </div>
-</li>
+      <li><a href="index.html" class="menu-link-modern">Logout</a></li>
+
+      <li class="menu-search-item">
+        <div class="menu-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" placeholder="Search workouts, gyms, trainers..." />
+        </div>
+      </li>
     </ul>
-  </div>
   </nav>
 
   <div class="page-layout">
@@ -70,22 +77,20 @@
 
         <div class="partner-card">
           <div class="partner-logo">KAL</div>
-          <p>Kirklees Active Leisure</p>
-          <span>Local leisure centres and community fitness</span>
+          <p class="partner-name">Kirklees Active Leisure</p>
+          <span class="partner-text">Local leisure centres and community fitness</span>
         </div>
 
         <div class="partner-card">
           <div class="partner-logo">Gym</div>
-          <p>Independent Gym</p>
-          <span>Strength, cardio and beginner-friendly classes</span>
+          <p class="partner-name">Independent Gym</p>
+          <span class="partner-text">Strength, cardio and beginner-friendly classes</span>
         </div>
       </div>
     </aside>
 
     <main class="feed-page">
-
       <div id="feed"></div>
-
     </main>
 
     <aside class="right-col">
@@ -106,45 +111,45 @@
 
   </div>
 
-  <nav class="bottom-nav">
-    <a href="messages.html">
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <a href="messages.html" aria-label="Messages">
       <i class="fa-solid fa-comments"></i>
     </a>
 
-    <a href="browse-workouts.html">
+    <a href="browse-workouts.html" aria-label="Browse workouts">
       <i class="fa-solid fa-dumbbell"></i>
     </a>
 
-    <a href="find-trainers.html">
+    <a href="find-trainers.html" aria-label="Find trainers">
       <i class="fa-solid fa-child-reaching"></i>
     </a>
 
-    <a href="notifications.html">
+    <a href="notifications.html" aria-label="Notifications">
       <i class="fa-solid fa-bell"></i>
     </a>
   </nav>
 
   <div class="bottom-rise-zone"></div>
 
-  <nav class="bottom-nav-desktop">
+  <nav class="bottom-nav-desktop" aria-label="Desktop navigation">
     <div class="nav-right">
-      <a href="notifications.html">
+      <a href="notifications.html" aria-label="Notifications">
         <i class="fa-solid fa-bell"></i>
       </a>
     </div>
 
     <div class="nav-left">
-      <a href="view-profile.html">
+      <a href="view-profile.html" aria-label="Profile">
         <i class="fa-solid fa-person"></i>
       </a>
     </div>
 
     <div class="nav-center">
-      <a href="browse-workouts.html">
+      <a href="browse-workouts.html" aria-label="Browse workouts">
         <i class="fa-solid fa-dumbbell"></i>
       </a>
 
-      <a href="find-trainers.html">
+      <a href="find-trainers.html" aria-label="Find trainers">
         <i class="fa-solid fa-child-reaching"></i>
       </a>
     </div>
@@ -154,6 +159,7 @@
 
   <div class="composer-modal" id="composerModal" aria-hidden="true">
     <div class="composer-card">
+
       <div class="composer-header">
         <div class="composer-header-spacer" aria-hidden="true"></div>
 
@@ -185,39 +191,43 @@
           accept="image/*,video/*"
           multiple
           hidden
-        >
-      
-<div class="composer-bottom-bar">
-  <div class="composer-tools">
-    <label for="composerMediaUpload" class="upload-btn" title="Add image or video">
-      <i class="fa-solid fa-image"></i>
-    </label>
+        />
 
-    <button type="button" class="upload-btn tag-btn" title="Tag people">
-      <i class="fa-solid fa-user-plus"></i>
-    </button>
+        <div class="composer-bottom-bar">
+          <div class="composer-tools">
+            <label for="composerMediaUpload" class="upload-btn" title="Add image or video">
+              <i class="fa-solid fa-image"></i>
+            </label>
 
-    <button type="button" class="upload-btn calendar-btn" title="Add to calendar">
-      <i class="fa-regular fa-calendar-days"></i>
-    </button>
+            <button type="button" class="upload-btn tag-btn" title="Tag people">
+              <i class="fa-solid fa-user-plus"></i>
+            </button>
 
-    <button type="button" class="upload-btn gif-btn" title="Add GIF">
-      <span>GIF</span>
-    </button>
+            <button type="button" class="upload-btn calendar-btn" title="Add to calendar">
+              <i class="fa-regular fa-calendar-days"></i>
+            </button>
 
-    <button type="button" class="upload-btn emoji-btn" title="Add emoji">
-      <i class="fa-regular fa-face-smile"></i>
-    </button>
+            <button type="button" class="upload-btn gif-btn" title="Add GIF">
+              <span>GIF</span>
+            </button>
 
-    <button type="button" class="upload-btn location-btn" title="Add location">
-      <i class="fa-solid fa-location-dot"></i>
-    </button>
-  </div>
+            <button type="button" class="upload-btn emoji-btn" title="Add emoji">
+              <i class="fa-regular fa-face-smile"></i>
+            </button>
 
-    <a href="#" class="btn-modern composer-submit" id="composerSubmit">Post</a>
-  </div>
-</div>
+            <button type="button" class="upload-btn location-btn" title="Add location">
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+
+          <div class="composer-footer">
+            <button type="button" class="btn-modern composer-submit" id="composerSubmit">
+              Post
+            </button>
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 
