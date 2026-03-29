@@ -1556,7 +1556,7 @@ body.feed .partner-promo {
 }
 
 
-@media (min-width: 768px) {
+@media (min-width: 500px) {
   body.feed .composer-bottom-bar {
     flex-direction: row;
     align-items: center;
