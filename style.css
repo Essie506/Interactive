@@ -1509,7 +1509,7 @@ display: none !important;
   }
 
   .nav-title {
-    position: static;
+    position: absolute;
     left: auto;
     transform: none;
     justify-self: start;
@@ -1519,18 +1519,20 @@ display: none !important;
     text-overflow: unset;
   }
 
-  .nav-center {
-    display: flex;
-    justify-content: center;
-   align-items: center;
-  }
+.nav-center {
+  grid-column: 2;
+  justify-self: stretch;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-  .desktop-nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 34px;
-  }
+.desktop-nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: min(600px, 100%);
+}
 
   .desktop-icon-link {
     display: inline-flex;
