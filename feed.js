@@ -63,6 +63,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const composerMediaUpload = document.getElementById("composerMediaUpload");
   const composerSubmit = document.getElementById("composerSubmit");
 
+  const messagesToggle = document.getElementById("messagesToggle");
+  const messagesOverlay = document.getElementById("messagesOverlay");
+  const messagesModal = document.getElementById("messagesModal");
+  const messagesClose = document.getElementById("messagesClose");
+  const messagesInput = document.getElementById("messagesInput");
+  const messagesSend = document.getElementById("messagesSend");
+
   const topSearchToggle = document.getElementById("searchToggle");
   const bottomSearchToggle = document.getElementById("bottomSearchToggle");
   const menuSearchInput = document.getElementById("menuSearchInput");
@@ -75,19 +82,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.querySelector(".menu");
   const menuOverlay = document.getElementById("menuOverlay");
 
-  function openComposer() {
-    if (!composerOverlay || !composerModal) return;
-    composerOverlay.classList.add("open");
-    composerModal.classList.add("open");
+  function lockBodyScroll() {
     document.body.style.overflow = "hidden";
-    if (composerInput) composerInput.focus();
+  }
+
+  function unlockBodyScroll() {
+    const composerOpen = composerModal && composerModal.classList.contains("open");
+    const messagesOpen = messagesModal && messagesModal.classList.contains("open");
+
+    if (!composerOpen && !messagesOpen) {
+      document.body.style.overflow = "";
+    }
   }
 
   function closeComposer() {
     if (!composerOverlay || !composerModal) return;
     composerOverlay.classList.remove("open");
     composerModal.classList.remove("open");
-    document.body.style.overflow = "";
+    composerModal.setAttribute("aria-hidden", "true");
+    unlockBodyScroll();
+  }
+
+  function openComposer() {
+    if (!composerOverlay || !composerModal) return;
+    closeMessages();
+    composerOverlay.classList.add("open");
+    composerModal.classList.add("open");
+    composerModal.setAttribute("aria-hidden", "false");
+    lockBodyScroll();
+    if (composerInput) composerInput.focus();
+  }
+
+  function closeMessages() {
+    if (!messagesOverlay || !messagesModal) return;
+    messagesOverlay.classList.remove("open");
+    messagesModal.classList.remove("open");
+    messagesModal.setAttribute("aria-hidden", "true");
+    unlockBodyScroll();
+  }
+
+  function openMessages() {
+    if (!messagesOverlay || !messagesModal) return;
+    closeComposer();
+    messagesOverlay.classList.add("open");
+    messagesModal.classList.add("open");
+    messagesModal.setAttribute("aria-hidden", "false");
+    lockBodyScroll();
+    if (messagesInput) messagesInput.focus();
   }
 
   function updateComposerState() {
@@ -129,9 +170,22 @@ document.addEventListener("DOMContentLoaded", () => {
     composerOverlay.addEventListener("click", closeComposer);
   }
 
+  if (messagesToggle) {
+    messagesToggle.addEventListener("click", openMessages);
+  }
+
+  if (messagesClose) {
+    messagesClose.addEventListener("click", closeMessages);
+  }
+
+  if (messagesOverlay) {
+    messagesOverlay.addEventListener("click", closeMessages);
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeComposer();
+      closeMessages();
     }
   });
 
@@ -201,6 +255,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (messagesSend && messagesInput) {
+    messagesSend.addEventListener("click", () => {
+      const messageText = messagesInput.value.trim();
+      if (!messageText) return;
+
+      const messageChat = document.querySelector(".message-chat");
+      if (!messageChat) return;
+
+      const newBubble = document.createElement("div");
+      newBubble.className = "message-bubble outgoing";
+      newBubble.textContent = messageText;
+
+      messageChat.appendChild(newBubble);
+      messagesInput.value = "";
+      messageChat.scrollTop = messageChat.scrollHeight;
+      messagesInput.focus();
+    });
+  }
+
+  if (messagesInput) {
+    messagesInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        if (messagesSend) {
+          messagesSend.click();
+        }
+      }
+    });
+  }
+
   if (topSearchToggle) {
     topSearchToggle.addEventListener("click", openMenuSearch);
   }
@@ -225,6 +309,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", () => {
     const currentScrollY = window.scrollY;
+    const composerOpen = composerModal && composerModal.classList.contains("open");
+    const messagesOpen = messagesModal && messagesModal.classList.contains("open");
+
+    if (composerOpen || messagesOpen) return;
 
     if (currentScrollY <= 10) {
       if (navbar) navbar.classList.remove("hide-top");
