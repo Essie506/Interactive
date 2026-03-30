@@ -219,7 +219,7 @@ display: flex;
 .desktop-nav-links a {
    display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   text-decoration: none;
   color: #091a3a;
   font-weight: 600;
@@ -258,7 +258,7 @@ display: flex;
 }
 
 .search-toggle {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .search-toggle i {
