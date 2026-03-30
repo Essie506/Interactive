@@ -176,20 +176,18 @@ body.index .btn-login.ready {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 5px;
+  gap: 8px;
 }
 
 .nav-center {
   display: none;
-  align-items: center;
-  justify-content: center;
 }
 
 .navbar-right {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 2px;
+  gap: 8px;
 }
 
 .nav-title {
@@ -1491,44 +1489,47 @@ display: none !important;
   display: grid;
   grid-template-columns: auto auto 1fr auto;
   align-items: center;
-  gap: 18px;
+  column-gap: 26px;
   overflow: visible;
 }
-   .nav-left {
+
+  .nav-left,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-left {
     justify-self: start;
   }
 
-   .nav-left .desktop-icon-link {
-  margin-left: 2px;
-}
-
-  .nav-center {
-    display: flex;
-   justify-content: center;
-  }
-
-    .navbar-right {
+  .navbar-right {
     justify-self: end;
   }
 
-   .nav-title {
-  position: static;
-  left: auto;
-  transform: none;
-  justify-self: start;
-  font-size: 1.05rem;
-  max-width: none;
-  overflow: visible;
-  text-overflow: unset;
-}
+  .nav-title {
+    position: static;
+    left: auto;
+    transform: none;
+    justify-self: start;
+    font-size: 1.05rem;
+    max-width: none;
+    overflow: visible;
+    text-overflow: unset;
+  }
 
-.nav-center {
-  display: flex;
-  justify-content: center;
-}
+  .nav-center {
+    display: flex;
+    justify-content: center;
+   align-items: center;
+  }
 
   .desktop-nav-links {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
   }
 
   .desktop-icon-link {
@@ -1550,7 +1551,8 @@ display: none !important;
   color: var(--main-color);
 }
 
-  .navbar-right .icon-btn,
+  .nav-left .desktop-icon-link,
+   .navbar-right .icon-btn,
   .navbar-right .composer-toggle,
   body.feed .menu-toggle {
     width: 46px;
@@ -1558,7 +1560,8 @@ display: none !important;
     flex-shrink: 0;
   }
 
-  .navbar-right .icon-btn i,
+  .nav-left .desktop-icon-link,
+   .navbar-right .icon-btn i,
   .navbar-right .composer-toggle i,
   body.feed .menu-toggle i {
     font-size: 1.05rem;
