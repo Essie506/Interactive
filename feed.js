@@ -71,6 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
   const bottomNav = document.querySelector(".bottom-nav");
 
+  const searchToggle = document.getElementById("searchToggle");
+const searchInput = document.getElementById("searchInput");
+
+  if (searchToggle && searchInput) {
+  searchToggle.addEventListener("click", () => {
+    searchInput.classList.toggle("open");
+    searchInput.focus();
+  });
+}
+
   const DESKTOP_BREAKPOINT = 901;
   let lastScrollY = window.scrollY;
 
