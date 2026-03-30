@@ -892,8 +892,7 @@ body.feed .post-input-wrap {
   position: relative;
 }
 
-body.feed .post-avatar-inline, 
-body.feed .message-thread-avatar {
+body.feed .post-avatar-inline {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -907,6 +906,18 @@ body.feed .message-thread-avatar {
   color: #091a3a;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   z-index: 2;
+}
+
+body.feed .message-thread-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(56, 173, 169, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #091a3a;
+  flex-shrink: 0;
 }
 
 body.feed .post-input {
@@ -1046,7 +1057,7 @@ body.feed .messages-modal {
   box-sizing: border-box;
 }
 
-body.feed .composer-modal,
+body.feed .composer-modal {
  transform: translateX(100%);
 }
 
