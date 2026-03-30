@@ -1434,8 +1434,6 @@ display: none;
     display: inline-flex;
   }
 
-   
-
      .nav-left,
   .navbar-right {
     gap: 5px;
@@ -1535,9 +1533,6 @@ display: none;
     text-overflow: unset;
    transform: translateX(30%);
   }
-
-
-
    
 .nav-center {
   display: flex;
