@@ -1543,7 +1543,7 @@ display: none;
   display: flex;
   justify-content: center;
   width: 100%;
-    transform: translateX(-50px);
+    transform: translateX(-55px);
 }
 
 .desktop-nav-links {
