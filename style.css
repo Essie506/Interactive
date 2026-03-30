@@ -214,10 +214,8 @@ display: flex;
 
 .desktop-nav-links {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 520px;
+   align-items: center
+   gap: 22px;
 }
 
 .desktop-nav-links a {
