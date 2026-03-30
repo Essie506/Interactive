@@ -1369,7 +1369,7 @@ body.feed .partner-promo {
 /* =========================
    MAIN MOBILE / TABLET RULES
 ========================= */
-@media (min-width: 768px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .hero {
     justify-content: flex-start;
     padding: 0;
