@@ -1440,6 +1440,10 @@ display: none;
     display: inline-flex;
   }
 
+   .search-toggle {
+    display: none;
+  }
+
      .nav-left,
   .navbar-right {
     gap: 10px;
