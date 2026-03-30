@@ -176,7 +176,7 @@ body.index .btn-login.ready {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 14px;
+  gap: 5px;
 }
 
 .nav-center {
@@ -189,7 +189,7 @@ body.index .btn-login.ready {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 12px;
+  gap: 5px;
 }
 
 .nav-title {
@@ -1426,7 +1426,12 @@ body.feed .partner-promo {
    /* =========================
    PHONE / SMALL TABLET
 ========================= */
-
+.nav-center, 
+.desktop-nav-links, 
+.desktop-icon-link { 
+display: none !important;
+}
+   
   .nav-title {
     display: block;
   }
@@ -1492,10 +1497,6 @@ body.feed .partner-promo {
    .nav-left {
     justify-self: start;
   }
-
-   .nav-left .desktop-icon-link {
-  margin-left: 8px;
-}
 
   .nav-center {
     display: flex;
