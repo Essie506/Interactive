@@ -1493,31 +1493,32 @@ display: none !important;
   overflow: visible;
 }
 
-  .nav-left,
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
+ .nav-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  .nav-left {
-    justify-self: start;
-  }
+.nav-left {
+  grid-column: 1;
+  justify-self: start;
+}
 
-  .navbar-right {
-    justify-self: end;
-  }
+.navbar-right {
+  grid-column: 3;
+  justify-self: end;
+}
 
-  .nav-title {
-    position: absolute;
-    left: auto;
-    transform: none;
-    justify-self: start;
-    font-size: 1.05rem;
-    max-width: none;
-    overflow: visible;
-    text-overflow: unset;
-  }
+.nav-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.05rem;
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+}
 
 .nav-center {
   grid-column: 2;
