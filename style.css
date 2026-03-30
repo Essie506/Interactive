@@ -176,7 +176,6 @@ body.index .btn-login.ready {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 3px;
 }
 
 .nav-center {
@@ -187,7 +186,6 @@ body.index .btn-login.ready {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 3px;
 }
 
 .nav-title {
