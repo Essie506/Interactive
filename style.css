@@ -676,7 +676,7 @@ body.index .hero h1 {
 ========================= */
 .btn-modern {
   width: 100%;
-  max-width: 500px;
+  max-width: 420px;
   padding: 14px 26px;
   margin: 20px auto 0;
   background: var(--btn-modern-bg);
