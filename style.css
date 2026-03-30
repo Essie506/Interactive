@@ -1421,9 +1421,11 @@ body.feed .partner-promo {
   body.feed .composer-card {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
   }
+}
    /* =========================
    PHONE / SMALL TABLET
 ========================= */
+   @media (max-width: 767px) {
 .nav-center, 
 .desktop-nav-links, 
 .desktop-icon-link { 
@@ -1475,10 +1477,13 @@ display: none !important;
   body.feed .post-box {
     margin-top: 0;
   }
+}
 
 /* =========================
    DESKTOP / LAPTOP / TABLET LANDSCAPE
 ========================= */
+
+   @media (min-width: 768px) {
   .bottom-nav {
     display: none;
   }
