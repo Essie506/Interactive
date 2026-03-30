@@ -245,6 +245,7 @@ body.index .btn-login.ready {
 /* =========================
    SHARED ICON BUTTONS
 ========================= */
+.desktop-nav-links a,
 .search-toggle,
 .icon-btn,
 body.feed .upload-btn,
@@ -267,6 +268,7 @@ body.feed .menu-toggle,
   transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
 }
 
+.desktop-nav-links a:hover,
 .search-toggle:hover,
 .search-toggle:focus-visible,
 .icon-btn:hover,
