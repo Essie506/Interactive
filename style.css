@@ -1498,6 +1498,10 @@ display: none !important;
     justify-self: start;
   }
 
+   .nav-left .desktop-icon-link {
+  margin-left: 2px;
+}
+
   .nav-center {
     display: flex;
    justify-content: center;
