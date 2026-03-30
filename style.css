@@ -220,14 +220,10 @@ display: flex;
   text-decoration: none;
   color: #091a3a;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.5rem;
   line-height: 1;
   position: relative;
   transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.desktop-nav-links i {
-  font-size: 0.95rem;
 }
 
 .desktop-nav-links a:hover {
