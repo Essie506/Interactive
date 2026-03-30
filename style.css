@@ -208,6 +208,9 @@ display: flex;
   display: none;
 }
 
+#searchInput {
+  display: none;
+}
 .desktop-nav-links {
   display: none;
   gap: 22px;
@@ -1537,6 +1540,11 @@ body.feed .partner-promo {
     align-items: center;
     justify-content: center;
   }
+
+   #searchInput.open {
+  display: block;
+}
+
 
    .desktop-nav-links a.active {
   color: var(--main-color);
