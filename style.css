@@ -190,8 +190,8 @@ body.index .btn-login.ready {
 
 .nav-title {
   position: absolute;
-  left: 25%;
-  transform: translateX(-50%);
+  left: 50%;
+  transform: translateX(-45%);
   white-space: nowrap;
   pointer-events: none;
   text-align: center;
@@ -1553,7 +1553,7 @@ display: none;
   display: flex;
   justify-content: center;
   width: 100%;
-    transform: translateX(-35px);
+    transform: translateX(-50px);
 }
 
 .desktop-nav-links {
