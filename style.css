@@ -1432,12 +1432,12 @@ body.feed .partner-promo {
 ========================= */
 .nav-center, 
 .desktop-nav-links { 
-display: none !important;
+display: none;
 }
 
-    /* SHOW icons */
-  .desktop-icon-link {
-    display: inline-flex !important;
+   .nav-left a[href="messages.html"],
+  .navbar-right a[href="notifications.html"] {
+    display: inline-flex;
   }
 
      .nav-left,
