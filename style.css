@@ -324,6 +324,10 @@ body.feed .menu-toggle:active,
 ========================= */
 .menu-toggle {
   position: relative;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px 14px;
+  background: transparent;
   z-index: 2;
 }
 
