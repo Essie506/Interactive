@@ -1360,10 +1360,20 @@ body.feed .partner-promo {
   display: none;
 }
 
-@media (max-width: 480px) {
-  .search-btn {
-    display: none;
-  }
+.top-search-btn {
+  display: inline-flex;
+}
+
+.bottom-search-btn {
+  display: inline-flex;
+}
+
+.bottom-nav .bottom-search-btn {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
 }
 
 /* =========================
@@ -1440,9 +1450,7 @@ display: none;
     display: inline-flex;
   }
 
-   .search-toggle {
-    display: none;
-  }
+   
 
      .nav-left,
   .navbar-right {
@@ -1456,6 +1464,9 @@ display: none;
 
   .bottom-nav {
     display: flex;
+  }
+  .top-search-btn {
+    display: none;
   }
 }
 
