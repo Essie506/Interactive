@@ -189,7 +189,7 @@ body.index .btn-login.ready {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 5px;
+  gap: 2px;
 }
 
 .nav-title {
