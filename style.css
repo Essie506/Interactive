@@ -1360,9 +1360,9 @@ body.feed .partner-promo {
   display: none;
 }
 
-@media (max-width: 500px) {
-  #searchToggle {
-    display: none !important;
+@media (max-width: 480px) {
+  .search-toggle {
+    display: none;
   }
 }
 
