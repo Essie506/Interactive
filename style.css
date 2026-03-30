@@ -190,7 +190,7 @@ body.index .btn-login.ready {
 
 .nav-title {
   position: absolute;
-  left: 50%;
+  left: 25%;
   transform: translateX(-50%);
   white-space: nowrap;
   pointer-events: none;
