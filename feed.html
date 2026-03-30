@@ -20,10 +20,10 @@
   <button class="menu-toggle icon-btn" id="menuToggle" type="button" aria-label="Open menu">
     <i class="fa-solid fa-user"></i>
   </button>
-
-  <a href="messages.html" class="icon-btn desktop-icon-link" aria-label="Messages">
-    <i class="fa-solid fa-comments"></i>
-  </a>
+  
+<button class="icon-btn desktop-icon-link messages-toggle" id="messagesToggle" type="button" aria-label="Messages">
+  <i class="fa-solid fa-comments"></i>
+</button>
 </div>
 
   <div class="nav-title">Interactive Fitness</div>
@@ -159,6 +159,71 @@
       <i class="fa-regular fa-calendar-days"></i>
     </a>
   </nav>
+
+  <div class="messages-overlay" id="messagesOverlay"></div>
+
+<div class="messages-modal" id="messagesModal" aria-hidden="true">
+  <div class="messages-card">
+
+    <div class="messages-header">
+      <button type="button" class="messages-close" id="messagesClose" aria-label="Close messages">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <h3>Messages</h3>
+
+      <div class="messages-header-spacer" aria-hidden="true"></div>
+    </div>
+
+    <div class="messages-body">
+      <div class="messages-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" placeholder="Search messages..." />
+      </div>
+
+      <div class="messages-list">
+        <button type="button" class="message-thread active">
+          <div class="message-thread-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="message-thread-content">
+            <div class="message-thread-top">
+              <span class="message-thread-name">Jason</span>
+              <span class="message-thread-time">2m</span>
+            </div>
+            <div class="message-thread-preview">Hey, are you around later?</div>
+          </div>
+        </button>
+
+        <button type="button" class="message-thread">
+          <div class="message-thread-avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="message-thread-content">
+            <div class="message-thread-top">
+              <span class="message-thread-name">Alex</span>
+              <span class="message-thread-time">1h</span>
+            </div>
+            <div class="message-thread-preview">Nice work on your run 🔥</div>
+          </div>
+        </button>
+      </div>
+
+      <div class="message-chat">
+        <div class="message-bubble incoming">Hey, are you around later?</div>
+        <div class="message-bubble outgoing">Yes, I should be.</div>
+      </div>
+    </div>
+
+    <div class="messages-footer">
+      <div class="messages-input-wrap">
+        <input type="text" class="messages-input" id="messagesInput" placeholder="Write a message..." />
+        <button type="button" class="btn-modern messages-send" id="messagesSend">Send</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
   <div class="composer-overlay" id="composerOverlay"></div>
 
