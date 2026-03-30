@@ -70,6 +70,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navbar = document.querySelector(".navbar");
   const bottomNav = document.querySelector(".bottom-nav");
+  const menu = document.querySelector(".menu");
+  const menuOverlay = document.getElementById("menuOverlay");
+  const menuToggle = document.getElementById("menuToggle");
+
+  const topSearchToggle = document.getElementById("searchToggle");
+  const bottomSearchToggle = document.getElementById("bottomSearchToggle");
+  const menuSearchInput = document.getElementById("menuSearchInput");
+
+  function openMenu() {
+    if (!menu || !menuOverlay) return;
+    menu.classList.add("open");
+    menuOverlay.classList.add("open");
+    document.body.classList.add("menu-open");
+  }
+
+  function focusMenuSearch() {
+    if (!menuSearchInput) return;
+    setTimeout(() => {
+      menuSearchInput.focus();
+      menuSearchInput.select();
+    }, 180);
+  }
+
+  function openSearchFromButton() {
+    openMenu();
+    focusMenuSearch();
+  }
+
+  if (topSearchToggle) {
+    topSearchToggle.addEventListener("click", openSearchFromButton);
+  }
+
+  if (bottomSearchToggle) {
+    bottomSearchToggle.addEventListener("click", openSearchFromButton);
+  }
+
+  if (menuSearchInput) {
+    menuSearchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const query = menuSearchInput.value.trim();
+
+        if (!query) return;
+
+        // simple version: go to a search page
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+      }
+    });
+  }
+});
 
   const DESKTOP_BREAKPOINT = 901;
   let lastScrollY = window.scrollY;
