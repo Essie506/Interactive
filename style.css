@@ -1523,6 +1523,7 @@ display: none !important;
   display: flex;
   justify-content: center;
   width: 100%;
+    transform: translateX(-12px);
 }
 
 .desktop-nav-links {
