@@ -1362,7 +1362,7 @@ body.feed .partner-promo {
 
 @media (max-width: 500px) {
   #searchToggle {
-    display: none;
+    display: none !important;
   }
 }
 
