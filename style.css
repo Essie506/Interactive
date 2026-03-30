@@ -208,10 +208,6 @@ display: flex;
   display: none;
 }
 
-#searchInput {
-  display: none;
-}
-
 .desktop-nav-links {
   display: flex;
    align-items: center
@@ -257,15 +253,6 @@ display: flex;
 
 .navbar.menu-open {
   transform: translateY(0) !important;
-}
-
-.search-toggle {
-  margin-left: 10px;
-}
-
-.search-toggle i {
-  font-size: 1rem;
-  color: #091a3a;
 }
 
 .icon-btn {
