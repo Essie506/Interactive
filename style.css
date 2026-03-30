@@ -1493,39 +1493,36 @@ display: none !important;
   overflow: visible;
 }
 
- .nav-left,
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+  .nav-left,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 
-.nav-left {
-  grid-column: 1;
-  justify-self: start;
-}
+  .nav-left {
+    justify-self: start;
+  }
 
-.navbar-right {
-  grid-column: 3;
-  justify-self: end;
-}
+  .navbar-right {
+    justify-self: end;
+  }
 
-.nav-title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1.05rem;
-  max-width: none;
-  overflow: visible;
-  text-overflow: unset;
-}
+  .nav-title {
+    position: static;
+    left: auto;
+    transform: none;
+    justify-self: start;
+    font-size: 1.05rem;
+    max-width: none;
+    overflow: visible;
+    text-overflow: unset;
+  }
 
 .nav-center {
-  grid-column: 2;
-  justify-self: stretch;
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .desktop-nav-links {
@@ -1533,6 +1530,7 @@ display: none !important;
   align-items: center;
   justify-content: space-evenly;
   width: min(600px, 100%);
+margin: 0 auto;
 }
 
   .desktop-icon-link {
