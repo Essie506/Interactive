@@ -211,9 +211,13 @@ display: flex;
 #searchInput {
   display: none;
 }
+
 .desktop-nav-links {
-  display: none;
-  gap: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 520px;
 }
 
 .desktop-nav-links a {
