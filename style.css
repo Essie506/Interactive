@@ -170,23 +170,26 @@ body.index .btn-login.ready {
 .navbar-right {
   position: relative;
   z-index: 2;
-display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
 }
 
 .nav-left {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 14px;
 }
 
 .nav-center {
   display: none;
   align-items: center;
   justify-content: center;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
 }
 
 .nav-title {
@@ -209,19 +212,19 @@ display: flex;
 }
 
 .desktop-nav-links {
-  display: flex;
-   align-items: center
-   gap: 22px;
+  display: none;
+   align-items: center;
+   justify-content: center;
+   gap: 28px;
 }
 
 .desktop-nav-links a {
    display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
   color: #091a3a;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.05rem;
   line-height: 1;
   position: relative;
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -1423,11 +1426,6 @@ body.feed .partner-promo {
    /* =========================
    PHONE / SMALL TABLET
 ========================= */
-  .nav-center,
-  .desktop-nav-links,
-  .desktop-icon-link {
-    display: none !important;
-  }
 
   .nav-title {
     display: block;
@@ -1494,6 +1492,10 @@ body.feed .partner-promo {
    .nav-left {
     justify-self: start;
   }
+
+   .nav-left .desktop-icon-link {
+  margin-left: 8px;
+}
 
   .nav-center {
     display: flex;
