@@ -213,7 +213,7 @@ body.index .btn-login.ready {
   display: none;
    align-items: center;
    justify-content: center;
-   gap: 28px;
+   gap: 8px;
 }
 
 .desktop-nav-links a {
