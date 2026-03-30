@@ -1360,6 +1360,12 @@ body.feed .partner-promo {
   display: none;
 }
 
+@media (max-width: 480px) {
+  #searchToggle {
+    display: none;
+  }
+}
+
 /* =========================
    MAIN MOBILE / TABLET RULES
 ========================= */
@@ -1425,10 +1431,20 @@ body.feed .partner-promo {
    PHONE / SMALL TABLET
 ========================= */
 .nav-center, 
-.desktop-nav-links, 
-.desktop-icon-link { 
+.desktop-nav-links { 
 display: none !important;
 }
+
+    /* SHOW icons */
+  .desktop-icon-link {
+    display: inline-flex !important;
+  }
+
+     .nav-left,
+  .navbar-right {
+    gap: 10px;
+  }
+
    
   .nav-title {
     display: block;
