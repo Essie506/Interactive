@@ -63,177 +63,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const composerMediaUpload = document.getElementById("composerMediaUpload");
   const composerSubmit = document.getElementById("composerSubmit");
 
+  const topSearchToggle = document.getElementById("searchToggle");
+  const bottomSearchToggle = document.getElementById("bottomSearchToggle");
+  const menuSearchInput = document.getElementById("menuSearchInput");
+
   const emojiBtn = document.querySelector(".composer-tools .emoji-btn");
   const tagBtn = document.querySelector(".composer-tools .tag-btn");
   const gifBtn = document.querySelector(".composer-tools .gif-btn");
   const locationBtn = document.querySelector(".composer-tools .location-btn");
 
-  const navbar = document.querySelector(".navbar");
-  const bottomNav = document.querySelector(".bottom-nav");
   const menu = document.querySelector(".menu");
   const menuOverlay = document.getElementById("menuOverlay");
-  const menuToggle = document.getElementById("menuToggle");
-
-  const topSearchToggle = document.getElementById("searchToggle");
-  const bottomSearchToggle = document.getElementById("bottomSearchToggle");
-  const menuSearchInput = document.getElementById("menuSearchInput");
-
-  function openMenu() {
-    if (!menu || !menuOverlay) return;
-    menu.classList.add("open");
-    menuOverlay.classList.add("open");
-    document.body.classList.add("menu-open");
-  }
-
-  function focusMenuSearch() {
-    if (!menuSearchInput) return;
-    setTimeout(() => {
-      menuSearchInput.focus();
-      menuSearchInput.select();
-    }, 180);
-  }
-
-  function openSearchFromButton() {
-    openMenu();
-    focusMenuSearch();
-  }
-
-  if (topSearchToggle) {
-    topSearchToggle.addEventListener("click", openSearchFromButton);
-  }
-
-  if (bottomSearchToggle) {
-    bottomSearchToggle.addEventListener("click", openSearchFromButton);
-  }
-
-  if (menuSearchInput) {
-    menuSearchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        const query = menuSearchInput.value.trim();
-
-        if (!query) return;
-
-        // simple version: go to a search page
-        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
-      }
-    });
-  }
-});
-
-  const DESKTOP_BREAKPOINT = 901;
-  let lastScrollY = window.scrollY;
-
-  function isDesktop() {
-    return window.innerWidth >= DESKTOP_BREAKPOINT;
-  }
 
   function openComposer() {
     if (!composerOverlay || !composerModal) return;
-
     composerOverlay.classList.add("open");
     composerModal.classList.add("open");
-    composerModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-
-    if (composerInput) {
-      composerInput.focus();
-    }
+    if (composerInput) composerInput.focus();
   }
 
   function closeComposer() {
     if (!composerOverlay || !composerModal) return;
-
     composerOverlay.classList.remove("open");
     composerModal.classList.remove("open");
-    composerModal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
   }
 
   function updateComposerState() {
-    if (!composerInput || !composerSubmit || !composerPreview) return;
+    if (!composerInput || !composerSubmit) return;
 
     const hasText = composerInput.value.trim().length > 0;
-    const hasMedia = composerPreview.children.length > 0;
+    const hasMedia = composerPreview && composerPreview.children.length > 0;
 
     if (hasText || hasMedia) {
       composerSubmit.classList.add("ready");
-      composerSubmit.disabled = false;
     } else {
       composerSubmit.classList.remove("ready");
-      composerSubmit.disabled = true;
     }
   }
 
-  function renderMediaPreview(files) {
-    if (!composerPreview) return;
-
-    composerPreview.innerHTML = "";
-
-    Array.from(files).forEach((file) => {
-      const fileURL = URL.createObjectURL(file);
-
-      if (file.type.startsWith("image/")) {
-        const img = document.createElement("img");
-        img.src = fileURL;
-        img.alt = file.name;
-        composerPreview.appendChild(img);
-      } else if (file.type.startsWith("video/")) {
-        const video = document.createElement("video");
-        video.src = fileURL;
-        video.controls = true;
-        composerPreview.appendChild(video);
-      }
-    });
-
-    composerPreview.classList.toggle("has-media", composerPreview.children.length > 0);
-    updateComposerState();
-  }
-
-  function resetComposer() {
-    if (composerInput) {
-      composerInput.value = "";
+  function openMenuSearch() {
+    if (menu && menuOverlay) {
+      menu.classList.add("open");
+      menuOverlay.classList.add("open");
     }
 
-    if (composerPreview) {
-      composerPreview.innerHTML = "";
-      composerPreview.classList.remove("has-media");
-    }
-
-    if (composerMediaUpload) {
-      composerMediaUpload.value = "";
-    }
-
-    updateComposerState();
-  }
-
-  function handleScrollUI() {
-    const currentScrollY = window.scrollY;
-    const scrollingDown = currentScrollY > lastScrollY;
-
-    if (currentScrollY <= 10) {
-      if (navbar) navbar.classList.remove("hide-top");
-      if (bottomNav) bottomNav.classList.remove("hide-bottom");
-      lastScrollY = currentScrollY;
-      return;
-    }
-
-    if (scrollingDown) {
-      if (navbar) navbar.classList.add("hide-top");
-
-      if (!isDesktop() && bottomNav) {
-        bottomNav.classList.add("hide-bottom");
-      }
-    } else {
-      if (navbar) navbar.classList.remove("hide-top");
-      if (bottomNav) bottomNav.classList.remove("hide-bottom");
-    }
-
-    lastScrollY = currentScrollY;
-  }
-
-  function handleResize() {
-    if (isDesktop() && bottomNav) {
-      bottomNav.classList.remove("hide-bottom");
+    if (menuSearchInput) {
+      setTimeout(() => {
+        menuSearchInput.focus();
+        menuSearchInput.select();
+      }, 180);
     }
   }
 
@@ -250,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && composerModal?.classList.contains("open")) {
+    if (e.key === "Escape") {
       closeComposer();
     }
   });
@@ -259,9 +139,33 @@ document.addEventListener("DOMContentLoaded", () => {
     composerInput.addEventListener("input", updateComposerState);
   }
 
-  if (composerMediaUpload) {
+  if (composerMediaUpload && composerPreview) {
     composerMediaUpload.addEventListener("change", function () {
-      renderMediaPreview(this.files);
+      composerPreview.innerHTML = "";
+
+      Array.from(this.files).forEach((file) => {
+        const fileURL = URL.createObjectURL(file);
+
+        if (file.type.startsWith("image/")) {
+          const img = document.createElement("img");
+          img.src = fileURL;
+          img.alt = file.name;
+          composerPreview.appendChild(img);
+        } else if (file.type.startsWith("video/")) {
+          const video = document.createElement("video");
+          video.src = fileURL;
+          video.controls = true;
+          composerPreview.appendChild(video);
+        }
+      });
+
+      if (composerPreview.children.length > 0) {
+        composerPreview.classList.add("has-media");
+      } else {
+        composerPreview.classList.remove("has-media");
+      }
+
+      updateComposerState();
     });
   }
 
@@ -297,57 +201,46 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (composerSubmit) {
-    composerSubmit.addEventListener("click", () => {
-      if (!composerSubmit.classList.contains("ready") || !feed || !composerInput || !composerPreview) {
-        return;
+  if (topSearchToggle) {
+    topSearchToggle.addEventListener("click", openMenuSearch);
+  }
+
+  if (bottomSearchToggle) {
+    bottomSearchToggle.addEventListener("click", openMenuSearch);
+  }
+
+  if (menuSearchInput) {
+    menuSearchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const query = menuSearchInput.value.trim();
+        if (!query) return;
+        alert(`Search for: ${query}`);
       }
-
-      const text = composerInput.value.trim();
-      const firstMedia = composerPreview.querySelector("img, video");
-
-      const card = document.createElement("div");
-      card.className = "post";
-
-      card.innerHTML = `
-        <div class="post-header">
-          <div class="avatar">
-            <i class="fa-solid fa-user"></i>
-          </div>
-
-          <div class="post-info">
-            <span class="username">Esther</span>
-            <span class="time">Just now</span>
-          </div>
-        </div>
-
-        ${text ? `<div class="post-text">${text}</div>` : ""}
-
-        ${
-          firstMedia
-            ? firstMedia.tagName === "IMG"
-              ? `<img class="post-img" src="${firstMedia.src}" alt="New post image">`
-              : `<video class="post-img" src="${firstMedia.src}" controls></video>`
-            : ""
-        }
-
-        <div class="post-actions">
-          <span><i class="fa-solid fa-heart"></i> 0</span>
-          <span><i class="fa-solid fa-comment"></i> 0</span>
-          <span><i class="fa-solid fa-bookmark"></i></span>
-        </div>
-      `;
-
-      feed.prepend(card);
-      resetComposer();
-      closeComposer();
     });
   }
 
-  window.addEventListener("scroll", handleScrollUI, { passive: true });
-  window.addEventListener("resize", handleResize);
+  let lastScrollY = window.scrollY;
+  const navbar = document.querySelector(".navbar");
+  const bottomNav = document.querySelector(".bottom-nav");
 
-  updateComposerState();
-  handleResize();
-  handleScrollUI();
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY <= 10) {
+      if (navbar) navbar.classList.remove("hide-top");
+      if (bottomNav) bottomNav.classList.remove("hide-bottom");
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (currentScrollY > lastScrollY) {
+      if (navbar) navbar.classList.add("hide-top");
+      if (bottomNav) bottomNav.classList.add("hide-bottom");
+    } else {
+      if (navbar) navbar.classList.remove("hide-top");
+      if (bottomNav) bottomNav.classList.remove("hide-bottom");
+    }
+
+    lastScrollY = currentScrollY;
+  });
 });
