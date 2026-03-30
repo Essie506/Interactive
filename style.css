@@ -1104,7 +1104,7 @@ body.feed .messages-header::after {
 
 body.feed .composer-header-spacer, 
 body.feed .messages-close,
-body.feed .messages-header-spacer  {
+body.feed .messages-header-spacer {
   width: 42px;
   height: 42px;
 }
