@@ -81,3 +81,41 @@ body.feed .messages-close:active,
 .bottom-nav-desktop a:active i {
   transform: scale(0.94);
 }
+
+/* =========================
+   BUTTONS / INPUTS
+========================= */
+.btn-modern {
+  width: 100%;
+  max-width: 280px;
+  padding: 14px 26px;
+  margin: 20px auto 0;
+  background: var(--btn-modern-bg);
+  color: white;
+  border-radius: var(--radius-round);
+  border: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.25s ease;
+  box-shadow: 0 8px 20px rgba(7, 153, 146, 0.3);
+  display: block;
+}
+
+body.index .btn-login {
+  margin-top: 25px;
+}
+
+.btn-modern:visited,
+.btn-modern:hover,
+.btn-modern:active {
+  text-decoration: none;
+}
+
+.btn-modern:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(7, 153, 146, 0.4);
+}
+
+
