@@ -26,3 +26,44 @@ body.index .btn-login.ready {
   opacity: 1;
   pointer-events: auto;
 }
+.input-field {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 14px;
+  margin: 10px 0;
+  border-radius: 25px;
+  border: 2px solid #079992;
+  outline: none;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.input-field:focus {
+  border-color: #38ada9;
+  box-shadow: 0 0 0 3px rgba(7, 153, 146, 0.15);
+}
+
+.links {
+  text-align: center;
+  color: #079992;
+  position: relative;
+  padding: 0 20px;
+  text-decoration: none;
+  margin-top: 35px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  color: #079992;
+  position: relative;
+  z-index: 1;
+}
+
+body.index footer {
+  padding: 20px;
+}
