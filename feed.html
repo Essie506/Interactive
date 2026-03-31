@@ -32,8 +32,8 @@
     <a href="home.html">
       <i class="fa-solid fa-house"></i>
     </a>
-
-    <a href="calendar.html">
+    
+<a href="calendar.html" aria-label="Calendar">
       <i class="fa-regular fa-calendar-days"></i>
     </a>
 
@@ -165,21 +165,22 @@
 <div class="messages-modal" id="messagesModal" aria-hidden="true">
   <div class="messages-card">
 
-    <div class="messages-header">
-
-  <!-- LEFT: BACK -->
-  <button type="button" class="messages-back" id="messagesBack">
+<div class="messages-header">
+  <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
     <i class="fa-solid fa-arrow-left"></i>
   </button>
 
-  <!-- CENTER: TITLE -->
   <h3 id="messagesHeaderTitle">Messages</h3>
 
-  <!-- RIGHT: SPLIT -->
-  <button type="button" class="messages-split" id="splitToggle">
-    <i class="fa-solid fa-table-columns"></i>
-  </button>
+  <div class="messages-header-actions">
+    <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
+      <i class="fa-solid fa-table-columns"></i>
+    </button>
 
+    <button type="button" class="messages-close" id="messagesClose" aria-label="Close messages">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
 </div>
 
     <div class="messages-body">
@@ -222,17 +223,6 @@
 
       <!-- VIEW 2: CHAT -->
       <div class="messages-view messages-chat-view" id="messagesChatView">
-        <div class="messages-chat-header">
-          <button type="button" class="back-btn" id="messagesBack" aria-label="Back to conversations">
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-
-          <span class="chat-title" id="chatTitle">Jason</span>
-
-          <button type="button" class="split-btn" id="splitToggle" aria-label="Split view">
-            <i class="fa-solid fa-table-columns"></i>
-          </button>
-        </div>
 
         <div class="message-chat" id="messageChat">
           <div class="message-bubble incoming">Hey, are you around later?</div>
