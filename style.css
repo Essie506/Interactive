@@ -988,7 +988,8 @@ body.feed .calendar-btn i {
   color: var(--main-color);
 }
 
-body.feed .composer-submit {
+body.feed .composer-submit, 
+body.feed .messages-send {
   /* behaviour */
   text-decoration: none;
   opacity: 0.5;
@@ -1254,13 +1255,6 @@ body.feed .composer-bottom-bar {
   bottom: 0;
    z-index: 2;
 }
-
-
-body.feed .composer-submit.ready {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 
 body.feed .messages-search {
   display: flex;
