@@ -72,6 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesPreview = document.getElementById("messagesPreview");
   const messagesMediaUpload = document.getElementById("messagesMediaUpload");
   const messageChat = document.getElementById("messageChat");
+  const messagesList = document.querySelector(".messages-list");
 
   const messagesListView = document.getElementById("messagesListView");
   const messagesChatView = document.getElementById("messagesChatView");
@@ -151,6 +152,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (timeEl) {
       timeEl.textContent = timeText;
+    }
+  }
+
+  function moveThreadToTop(userName) {
+    if (!messagesList) return;
+
+    const thread = getThreadByUser(userName);
+    if (!thread) return;
+
+    messagesList.prepend(thread);
+  }
+
+  function setActiveThread(userName) {
+    const allThreads = document.querySelectorAll(".message-thread");
+    allThreads.forEach((thread) => thread.classList.remove("active"));
+
+    const activeThread = getThreadByUser(userName);
+    if (activeThread) {
+      activeThread.classList.add("active");
     }
   }
 
@@ -338,9 +358,7 @@ document.addEventListener("DOMContentLoaded", () => {
         activeChatUser = selectedName;
         ensureChatExists(activeChatUser);
 
-        messageThreads.forEach((item) => item.classList.remove("active"));
-        thread.classList.add("active");
-
+        setActiveThread(activeChatUser);
         renderActiveChat();
         showMessagesChatView(selectedName);
 
@@ -543,6 +561,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       updateMessagesState();
       updateThreadPreview(activeChatUser, latestPreviewText, "now");
+      moveThreadToTop(activeChatUser);
+      setActiveThread(activeChatUser);
       renderActiveChat();
 
       if (messagesInput) {
