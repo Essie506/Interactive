@@ -1,0 +1,28 @@
+
+/* =========================
+   INDEX PAGE
+========================= */
+body.index {
+  background: var(--index-bg);
+}
+
+body.index::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--index-bg-before);
+  background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
+}
+
+body.index .btn-login {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+body.index .btn-login.ready {
+  opacity: 1;
+  pointer-events: auto;
+}
