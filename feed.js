@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const splitToggle = document.getElementById("splitToggle");
   const chatTitle = document.getElementById("chatTitle");
   const messageThreads = document.querySelectorAll(".message-thread");
+  const messagesHeaderTitle = document.querySelector(".messages-header h3");
 
   const topSearchToggle = document.getElementById("searchToggle");
   const bottomSearchToggle = document.getElementById("bottomSearchToggle");
@@ -221,9 +222,15 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesOverlay.addEventListener("click", closeMessages);
   }
 
-  if (messagesBack) {
-    messagesBack.addEventListener("click", showMessagesListView);
-  }
+ if (messagesBack) {
+  messagesBack.addEventListener("click", () => {
+    showMessagesListView();
+
+    if (messagesHeaderTitle) {
+      messagesHeaderTitle.textContent = "Messages";
+    }
+  });
+}
 
   if (splitToggle && messagesModal) {
     splitToggle.addEventListener("click", () => {
@@ -239,9 +246,9 @@ document.addEventListener("DOMContentLoaded", () => {
         messageThreads.forEach((item) => item.classList.remove("active"));
         thread.classList.add("active");
 
-        if (chatTitle) {
-          chatTitle.textContent = selectedName;
-        }
+  if (messagesHeaderTitle) {
+  messagesHeaderTitle.textContent = selectedName;
+}
 
         showMessagesChatView();
 
