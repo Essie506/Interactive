@@ -73,6 +73,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesMediaUpload = document.getElementById("messagesMediaUpload");
   const messageChat = document.getElementById("messageChat");
 
+  const messagesListView = document.getElementById("messagesListView");
+  const messagesChatView = document.getElementById("messagesChatView");
+  const messagesBack = document.getElementById("messagesBack");
+  const splitToggle = document.getElementById("splitToggle");
+  const chatTitle = document.getElementById("chatTitle");
+  const messageThreads = document.querySelectorAll(".message-thread");
+
   const topSearchToggle = document.getElementById("searchToggle");
   const bottomSearchToggle = document.getElementById("bottomSearchToggle");
   const menuSearchInput = document.getElementById("menuSearchInput");
@@ -102,6 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function showMessagesListView() {
+    if (messagesListView) messagesListView.classList.add("active");
+    if (messagesChatView) messagesChatView.classList.remove("active");
+  }
+
+  function showMessagesChatView() {
+    if (messagesListView) messagesListView.classList.remove("active");
+    if (messagesChatView) messagesChatView.classList.add("active");
+  }
+
   function closeComposer() {
     if (!composerOverlay || !composerModal) return;
     composerOverlay.classList.remove("open");
@@ -125,6 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesOverlay.classList.remove("open");
     messagesModal.classList.remove("open");
     messagesModal.setAttribute("aria-hidden", "true");
+    messagesModal.classList.remove("split-mode");
+    showMessagesListView();
     unlockBodyScroll();
   }
 
@@ -134,8 +153,8 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesOverlay.classList.add("open");
     messagesModal.classList.add("open");
     messagesModal.setAttribute("aria-hidden", "false");
+    showMessagesListView();
     lockBodyScroll();
-    if (messagesInput) messagesInput.focus();
   }
 
   function updateComposerState() {
@@ -200,6 +219,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (messagesOverlay) {
     messagesOverlay.addEventListener("click", closeMessages);
+  }
+
+  if (messagesBack) {
+    messagesBack.addEventListener("click", showMessagesListView);
+  }
+
+  if (splitToggle && messagesModal) {
+    splitToggle.addEventListener("click", () => {
+      messagesModal.classList.toggle("split-mode");
+    });
+  }
+
+  if (messageThreads.length) {
+    messageThreads.forEach((thread) => {
+      thread.addEventListener("click", () => {
+        const selectedName = thread.querySelector(".message-thread-name")?.textContent?.trim() || "Chat";
+
+        messageThreads.forEach((item) => item.classList.remove("active"));
+        thread.classList.add("active");
+
+        if (chatTitle) {
+          chatTitle.textContent = selectedName;
+        }
+
+        showMessagesChatView();
+
+        if (messagesInput) {
+          setTimeout(() => messagesInput.focus(), 100);
+        }
+      });
+    });
   }
 
   document.addEventListener("keydown", (e) => {
@@ -361,6 +411,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       messagesInput.value = "";
+
       if (messagesPreview) {
         messagesPreview.innerHTML = "";
         messagesPreview.classList.remove("has-media");
