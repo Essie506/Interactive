@@ -291,3 +291,35 @@ body.feed .menu-toggle i {
 .submenu li + li a {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
+
+@media (min-width: 901px) {
+  .menu {
+    top: var(--bar-height-large);
+    width: min(360px, 32vw);
+    height: calc(100vh - var(--bar-height-large));
+    padding: 0 18px 24px;
+  }
+
+  .menu > ul > li > a,
+  .menu-profile-info,
+  .menu-search,
+  .submenu li a {
+    width: calc(100% + 36px);
+    margin-left: -18px;
+    margin-right: -18px;
+  }
+
+  .menu-profile-info {
+    padding: 12px 18px 14px;
+  }
+
+  .menu > ul > li > a,
+  .menu-search {
+    padding: 14px 18px;
+    min-height: 50px;
+  }
+
+  .submenu li a {
+    padding: 12px 18px 12px 32px;
+  }
+}
