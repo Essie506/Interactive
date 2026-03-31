@@ -218,6 +218,93 @@
           </div>
         </div>
 
+          <div class="messages-popup" id="messagesPopup" aria-hidden="true">
+    <div class="messages-popup-header">
+      <div class="messages-popup-title" id="popupHeaderTitle">Jason</div>
+
+      <div class="messages-popup-actions">
+        <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <button type="button" class="icon-btn" id="popupDrawerBtn" aria-label="Open in drawer">
+          <i class="fa-solid fa-table-columns"></i>
+        </button>
+
+        <button type="button" class="icon-btn" id="popupPopoutBtn" aria-label="Open popout">
+          <i class="fa-solid fa-up-right-from-square"></i>
+        </button>
+
+        <button type="button" class="icon-btn" id="popupCloseBtn" aria-label="Close chat">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="messages-popup-body" id="popupMessageChat"></div>
+
+    <div class="messages-popup-footer">
+      <textarea
+        id="popupMessagesInput"
+        class="messages-input"
+        placeholder="Write a message..."
+      ></textarea>
+
+      <button type="button" class="btn-modern messages-send" id="popupMessagesSend">
+        Send
+      </button>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="messages-minimized"
+    id="messagesMinimized"
+    aria-hidden="true"
+    aria-label="Reopen chat"
+  >
+    <span id="minimizedLabel">Jason</span>
+    <span class="messages-minimized-dot"></span>
+  </button>
+
+  <div class="messages-popout" id="messagesPopout" aria-hidden="true">
+    <div class="messages-popout-header">
+      <div class="messages-popout-title" id="popoutHeaderTitle">Jason</div>
+
+      <div class="messages-popout-actions">
+        <button type="button" class="icon-btn" id="popoutMinimizeBtn" aria-label="Minimize chat">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <button type="button" class="icon-btn" id="popoutDrawerBtn" aria-label="Send to drawer">
+          <i class="fa-solid fa-table-columns"></i>
+        </button>
+
+        <button type="button" class="icon-btn" id="popoutFullscreenBtn" aria-label="Fullscreen chat">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+
+        <button type="button" class="icon-btn" id="popoutCloseBtn" aria-label="Close chat">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="messages-popout-body" id="popoutMessageChat"></div>
+
+    <div class="messages-popout-footer">
+      <textarea
+        id="popoutMessagesInput"
+        class="messages-input"
+        placeholder="Write a message..."
+      ></textarea>
+
+      <button type="button" class="btn-modern messages-send" id="popoutMessagesSend">
+        Send
+      </button>
+    </div>
+  </div>
+
         <div class="messages-view messages-chat-view" id="messagesChatView">
           <div class="message-chat" id="messageChat">
             <div class="message-bubble incoming">Hey, are you around later?</div>
