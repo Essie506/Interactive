@@ -1,0 +1,66 @@
+/* =========================
+   BOTTOM NAV
+========================= */
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  z-index: 1800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  box-sizing: border-box;
+  background: var(--navbar-bg);
+  opacity: 0.85;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.bottom-nav.hide-bottom {
+  transform: translateY(100%);
+}
+
+.bottom-nav a {
+  flex: 0 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: #091a3a;
+  font-size: 12px;
+}
+
+.bottom-nav i,
+.bottom-nav-desktop i {
+  font-size: 22px;
+}
+
+.bottom-nav-desktop,
+.bottom-rise-zone {
+  display: none;
+}
+
+.top-search-btn {
+  display: inline-flex;
+}
+
+.bottom-search-btn {
+  display: inline-flex;
+}
+
+.bottom-nav .bottom-search-btn {
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  width: auto;
+  height: auto;
+}
+
