@@ -892,7 +892,8 @@ body.feed .post-input-wrap {
   position: relative;
 }
 
-body.feed .post-avatar-inline {
+body.feed .post-avatar-inline, 
+body.feed .message-avatar-inline {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -978,7 +979,8 @@ body.feed .upload-btn {
   font-size: 14px;
 }
 
-body.feed .gif-btn span {
+body.feed .gif-btn span, 
+body.feed .messages-gif-btn span {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.4px;
@@ -1013,7 +1015,8 @@ body.feed .messages-send {
   font-size: 14px;
 }
 
-body.feed .composer-submit.ready {
+body.feed .composer-submit.ready,
+body.feed .messages-send.ready  {
   opacity: 1;
   pointer-events: auto;
 }
@@ -1189,6 +1192,24 @@ body.feed .composer-input {
 
 body.feed .messages-input {
   width: 100%;
+  min-height: 58px;
+  max-height: 180px;
+  resize: none;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  padding: 14px 16px 14px 58px;
+  font-size: 15px;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.72);
+  color: #091a3a;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
+}
+
+
+
+body.feed .messages-input {
+  width: 100%;
   height: 46px;
   border-radius: 18px;
   border: none;
@@ -1201,7 +1222,8 @@ body.feed .messages-input {
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 
-body.feed .composer-tools {
+body.feed .composer-tools, 
+body.feed .messages-tools {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1212,19 +1234,23 @@ body.feed .composer-tools {
   flex: 0 0 auto;
 }
 
-body.feed .composer-preview {
+body.feed .composer-preview, 
+body.feed .messages-preview {
   display: none;
   flex-wrap: wrap;
   gap: 10px;
   margin: 0;
 }
 
-body.feed .composer-preview.has-media {
+body.feed .composer-preview.has-media,
+body.feed .messages-preview.has-media {
   display: flex;
 }
 
 body.feed .composer-preview img,
-body.feed .composer-preview video {
+body.feed .composer-preview video,
+body.feed .messages-preview img,
+body.feed .messages-preview video {
   width: 110px;
   height: 110px;
   object-fit: cover;
@@ -1243,7 +1269,8 @@ body.feed .composer-footer {
    width: 100%;
 }
 
-body.feed .composer-bottom-bar {
+body.feed .composer-bottom-bar, 
+body.feed .messages-bottom-bar  {
   margin-top: auto;
   padding: 6px 0px 0px;
   display: flex;
@@ -1793,21 +1820,24 @@ margin: 0 auto;
 }
 
 @media (min-width: 500px) {
-  body.feed .composer-bottom-bar {
+  body.feed .composer-bottom-bar,
+    body.feed .messages-bottom-bar {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 14px;
   }
 
-  body.feed .composer-tools {
+  body.feed .composer-tools, 
+   body.feed .messages-tools {
     justify-content: flex-start;
     align-items: center;
     width: auto;
     flex: 1 1 auto;
   }
 
-  body.feed .composer-footer {
+  body.feed .composer-footer, 
+body.feed .messages-footer {
     justify-content: flex-end;
     width: auto;
     flex: 0 0 auto;
