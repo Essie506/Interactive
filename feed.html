@@ -217,8 +217,49 @@
 
     <div class="messages-footer">
       <div class="messages-input-wrap">
-        <input type="text" class="messages-input" id="messagesInput" placeholder="Write a message..." />
-        <button type="button" class="btn-modern messages-send" id="messagesSend">Send</button>
+       <div class="message-avatar-inline">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+        <textarea
+          class="messages-input"
+          id="messagesInput"
+          placeholder="Write a message..."
+        ></textarea>
+      </div>
+
+      <div class="messages-preview" id="messagesPreview"></div>
+
+      <input
+        type="file"
+        id="messagesMediaUpload"
+        accept="image/*,video/*"
+        multiple
+        hidden
+      />
+
+      <div class="messages-bottom-bar">
+        <div class="messages-tools">
+          <label for="messagesMediaUpload" class="upload-btn" title="Add image or video">
+            <i class="fa-solid fa-image"></i>
+          </label>
+
+          <button type="button" class="upload-btn messages-gif-btn" title="Add GIF">
+            <span>GIF</span>
+          </button>
+
+          <button type="button" class="upload-btn messages-emoji-btn" title="Add emoji">
+            <i class="fa-regular fa-face-smile"></i>
+          </button>
+
+          <button type="button" class="upload-btn messages-location-btn" title="Add location">
+            <i class="fa-solid fa-location-dot"></i>
+          </button>
+        </div>
+
+        <button type="button" class="btn-modern messages-send" id="messagesSend">
+          Send
+        </button>
       </div>
     </div>
 
