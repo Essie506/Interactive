@@ -121,6 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const splitToggle = document.getElementById("splitToggle");
   const messagesHeaderTitle = document.getElementById("messagesHeaderTitle");
 
+  const drawerPopupBtn = document.getElementById("drawerPopupBtn");
+  const drawerPopoutBtn = document.getElementById("drawerPopoutBtn");
+  const drawerMinimizeBtn = document.getElementById("drawerMinimizeBtn");
+
   const messagesPopup = document.getElementById("messagesPopup");
   const popupMessageChat = document.getElementById("popupMessageChat");
   const popupHeaderTitle = document.getElementById("popupHeaderTitle");
@@ -480,6 +484,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (splitToggle) {
       splitToggle.style.display = isChatView ? "flex" : "none";
+    }
+
+    if (drawerPopupBtn) {
+      drawerPopupBtn.style.display = isChatView ? "flex" : "none";
+    }
+
+    if (drawerPopoutBtn) {
+      drawerPopoutBtn.style.display = isChatView ? "flex" : "none";
+    }
+
+    if (drawerMinimizeBtn) {
+      drawerMinimizeBtn.style.display = isChatView ? "flex" : "none";
     }
   }
 
@@ -967,6 +983,24 @@ document.addEventListener("DOMContentLoaded", () => {
   if (splitToggle && messagesModal) {
     splitToggle.addEventListener("click", () => {
       messagesModal.classList.toggle("split-mode");
+    });
+  }
+
+  if (drawerPopupBtn) {
+    drawerPopupBtn.addEventListener("click", () => {
+      openPopup(getActiveChatUser());
+    });
+  }
+
+  if (drawerPopoutBtn) {
+    drawerPopoutBtn.addEventListener("click", () => {
+      openPopout(getActiveChatUser());
+    });
+  }
+
+  if (drawerMinimizeBtn) {
+    drawerMinimizeBtn.addEventListener("click", () => {
+      minimizeMessages();
     });
   }
 
