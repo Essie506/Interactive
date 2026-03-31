@@ -13,58 +13,53 @@
 </head>
 <body class="feed">
 
-<nav class="navbar">
-  <div class="navbar-bg"></div>
+  <nav class="navbar">
+    <div class="navbar-bg"></div>
 
-<div class="nav-left">
-  <button class="menu-toggle icon-btn" id="menuToggle" type="button" aria-label="Open menu">
-    <i class="fa-solid fa-user"></i>
-  </button>
-  
-<button class="icon-btn desktop-icon-link messages-toggle" id="messagesToggle" type="button" aria-label="Messages">
-  <i class="fa-solid fa-comments"></i>
-</button>
-</div>
+    <div class="nav-left">
+      <button class="menu-toggle icon-btn" id="menuToggle" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-user"></i>
+      </button>
 
-  <div class="nav-title">Interactive Fitness</div>
+      <button class="icon-btn desktop-icon-link messages-toggle" id="messagesToggle" type="button" aria-label="Messages">
+        <i class="fa-solid fa-comments"></i>
+      </button>
+    </div>
 
-  <div class="nav-center desktop-nav-links">
-    <a href="home.html">
-      <i class="fa-solid fa-house"></i>
-    </a>
-    
-<a href="calendar.html" aria-label="Calendar">
-      <i class="fa-regular fa-calendar-days"></i>
-    </a>
+    <div class="nav-title">Interactive Fitness</div>
 
-    <a href="gyms.html">
-      <i class="fa-solid fa-child-reaching"></i>
-    </a>
+    <div class="nav-center desktop-nav-links">
+      <a href="home.html" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
 
-    <a href="browse-workouts.html">
-      <i class="fa-solid fa-dumbbell"></i>
-    </a>
-  </div>
+      <a href="calendar.html" aria-label="Calendar">
+        <i class="fa-regular fa-calendar-days"></i>
+      </a>
 
-<div class="navbar-right">
-<button class="icon-btn desktop-icon-link top-search-btn" id="searchToggle" type="button" aria-label="Search">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
+      <a href="gyms.html" aria-label="Gyms">
+        <i class="fa-solid fa-child-reaching"></i>
+      </a>
 
-  <button
-    class="icon-btn composer-toggle"
-    id="composerToggle"
-    type="button"
-    aria-label="Create post"
-  >
-    <i class="fa-solid fa-plus"></i>
-  </button>
+      <a href="browse-workouts.html" aria-label="Browse workouts">
+        <i class="fa-solid fa-dumbbell"></i>
+      </a>
+    </div>
 
-  <a href="notifications.html" class="icon-btn desktop-icon-link" aria-label="Notifications">
-    <i class="fa-solid fa-bell"></i>
-  </a>
-</div>
-</nav>
+    <div class="navbar-right">
+      <button class="icon-btn desktop-icon-link top-search-btn" id="searchToggle" type="button" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <button class="icon-btn composer-toggle" id="composerToggle" type="button" aria-label="Create post">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+
+      <a href="notifications.html" class="icon-btn desktop-icon-link" aria-label="Notifications">
+        <i class="fa-solid fa-bell"></i>
+      </a>
+    </div>
+  </nav>
 
   <div class="menu-overlay" id="menuOverlay"></div>
 
@@ -91,7 +86,6 @@
       </li>
 
       <li><a href="settings.html" class="menu-link-modern">Settings</a></li>
-
       <li><a href="index.html" class="menu-link-modern">Logout</a></li>
 
       <li class="menu-search-item">
@@ -104,7 +98,6 @@
   </nav>
 
   <div class="page-layout">
-
     <aside class="left-col">
       <div class="side-card">
         <h3>Featured Partners</h3>
@@ -142,156 +135,154 @@
         </div>
       </div>
     </aside>
-
   </div>
 
   <nav class="bottom-nav" aria-label="Mobile navigation">
- <button class="icon-btn desktop-icon-link bottom-search-btn" id="bottomSearchToggle" type="button" aria-label="Search">
-  <i class="fa-solid fa-magnifying-glass"></i>
-</button>
+    <button class="icon-btn bottom-search-btn" id="bottomSearchToggle" type="button" aria-label="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
     <a href="browse-workouts.html" aria-label="Browse workouts">
       <i class="fa-solid fa-dumbbell"></i>
     </a>
+
     <a href="find-trainers.html" aria-label="Find trainers">
       <i class="fa-solid fa-child-reaching"></i>
     </a>
-     <a href="calendar.html">
+
+    <a href="calendar.html" aria-label="Calendar">
       <i class="fa-regular fa-calendar-days"></i>
     </a>
   </nav>
 
-<div class="messages-overlay" id="messagesOverlay"></div>
+  <div class="messages-overlay" id="messagesOverlay"></div>
 
-<div class="messages-modal" id="messagesModal" aria-hidden="true">
-  <div class="messages-card">
+  <div class="messages-modal" id="messagesModal" aria-hidden="true">
+    <div class="messages-card">
 
-<div class="messages-header">
-  <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
-    <i class="fa-solid fa-arrow-left"></i>
-  </button>
+      <div class="messages-header">
+        <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
 
-  <h3 id="messagesHeaderTitle">Messages</h3>
+        <h3 id="messagesHeaderTitle">Messages</h3>
 
-  <div class="messages-header-actions">
-    <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
-      <i class="fa-solid fa-table-columns"></i>
-    </button>
-
-    <button type="button" class="messages-close" id="messagesClose" aria-label="Close messages">
-      <i class="fa-solid fa-xmark"></i>
-    </button>
-  </div>
-</div>
-
-    <div class="messages-body">
-
-      <!-- VIEW 1: THREAD LIST -->
-      <div class="messages-view messages-list-view active" id="messagesListView">
-        <div class="messages-search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" placeholder="Search messages..." />
-        </div>
-
-        <div class="messages-list">
-        <button type="button" class="message-thread active" data-user="Jason">
-            <div class="message-thread-avatar">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="message-thread-content">
-              <div class="message-thread-top">
-                <span class="message-thread-name">Jason</span>
-                <span class="message-thread-time">2m</span>
-              </div>
-              <div class="message-thread-preview">Hey, are you around later?</div>
-            </div>
+        <div class="messages-header-actions">
+          <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
+            <i class="fa-solid fa-table-columns"></i>
           </button>
 
-          <button type="button" class="message-thread" data-user="Alex">
-            <div class="message-thread-avatar">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="message-thread-content">
-              <div class="message-thread-top">
-                <span class="message-thread-name">Alex</span>
-                <span class="message-thread-time">1h</span>
-              </div>
-              <div class="message-thread-preview">Nice work on your run 🔥</div>
-            </div>
+          <button type="button" class="messages-close" id="messagesClose" aria-label="Close messages">
+            <i class="fa-solid fa-xmark"></i>
           </button>
         </div>
       </div>
 
-      <!-- VIEW 2: CHAT -->
-      <div class="messages-view messages-chat-view" id="messagesChatView">
-
-        <div class="message-chat" id="messageChat">
-          <div class="message-bubble incoming">Hey, are you around later?</div>
-          <div class="message-bubble outgoing">Yes, I should be.</div>
-        </div>
-
-        <div class="messages-footer">
-          <div class="messages-input-wrap">
-            <div class="message-avatar-inline">
-              <i class="fa-solid fa-user"></i>
-            </div>
-
-            <textarea
-              class="messages-input"
-              id="messagesInput"
-              placeholder="Write a message..."
-            ></textarea>
+      <div class="messages-body">
+        <div class="messages-view messages-list-view active" id="messagesListView">
+          <div class="messages-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="messagesSearchInput" placeholder="Search messages..." />
           </div>
 
-          <div class="messages-preview" id="messagesPreview"></div>
+          <div class="messages-list">
+            <button type="button" class="message-thread active" data-user="Jason">
+              <div class="message-thread-avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="message-thread-content">
+                <div class="message-thread-top">
+                  <div class="message-thread-name-row">
+                    <span class="message-thread-name">Jason</span>
+                  </div>
+                  <span class="message-thread-time">2m</span>
+                </div>
+                <div class="message-thread-preview">Hey, are you around later?</div>
+              </div>
+            </button>
 
-          <input
-            type="file"
-            id="messagesMediaUpload"
-            accept="image/*,video/*"
-            multiple
-            hidden
-          />
-
-          <div class="messages-bottom-bar">
-            <div class="messages-tools">
-              <label for="messagesMediaUpload" class="upload-btn" title="Add image or video">
-                <i class="fa-solid fa-image"></i>
-              </label>
-
-              <button type="button" class="upload-btn messages-gif-btn" title="Add GIF">
-                <span>GIF</span>
-              </button>
-
-              <button type="button" class="upload-btn messages-emoji-btn" title="Add emoji">
-                <i class="fa-regular fa-face-smile"></i>
-              </button>
-
-              <button type="button" class="upload-btn messages-location-btn" title="Add location">
-                <i class="fa-solid fa-location-dot"></i>
-              </button>
-            </div>
-
-            <button type="button" class="btn-modern messages-send" id="messagesSend">
-              Send
+            <button type="button" class="message-thread" data-user="Alex">
+              <div class="message-thread-avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="message-thread-content">
+                <div class="message-thread-top">
+                  <div class="message-thread-name-row">
+                    <span class="message-thread-name">Alex</span>
+                  </div>
+                  <span class="message-thread-time">1h</span>
+                </div>
+                <div class="message-thread-preview">Nice work on your run 🔥</div>
+              </div>
             </button>
           </div>
         </div>
-      </div>
 
+        <div class="messages-view messages-chat-view" id="messagesChatView">
+          <div class="message-chat" id="messageChat">
+            <div class="message-bubble incoming">Hey, are you around later?</div>
+            <div class="message-bubble outgoing">Yes, I should be.</div>
+          </div>
+
+          <div class="messages-footer">
+            <div class="messages-input-wrap">
+              <div class="message-avatar-inline">
+                <i class="fa-solid fa-user"></i>
+              </div>
+
+              <textarea
+                class="messages-input"
+                id="messagesInput"
+                placeholder="Write a message..."
+              ></textarea>
+            </div>
+
+            <div class="messages-preview" id="messagesPreview"></div>
+
+            <input
+              type="file"
+              id="messagesMediaUpload"
+              accept="image/*,video/*"
+              multiple
+              hidden
+            />
+
+            <div class="messages-bottom-bar">
+              <div class="messages-tools">
+                <label for="messagesMediaUpload" class="upload-btn" title="Add image or video">
+                  <i class="fa-solid fa-image"></i>
+                </label>
+
+                <button type="button" class="upload-btn messages-gif-btn" title="Add GIF">
+                  <span>GIF</span>
+                </button>
+
+                <button type="button" class="upload-btn messages-emoji-btn" title="Add emoji">
+                  <i class="fa-regular fa-face-smile"></i>
+                </button>
+
+                <button type="button" class="upload-btn messages-location-btn" title="Add location">
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
+              </div>
+
+              <button type="button" class="btn-modern messages-send" id="messagesSend">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</div>
 
   <div class="composer-overlay" id="composerOverlay"></div>
 
   <div class="composer-modal" id="composerModal" aria-hidden="true">
     <div class="composer-card">
-
       <div class="composer-header">
         <div class="composer-header-spacer" aria-hidden="true"></div>
-
         <h3>Create post</h3>
-
         <button type="button" class="composer-close" id="composerClose" aria-label="Close">
           <i class="fa-solid fa-xmark"></i>
         </button>
@@ -354,12 +345,10 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 
   <script src="feed.js"></script>
   <script src="menu.js"></script>
-
 </body>
 </html>
