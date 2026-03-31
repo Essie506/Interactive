@@ -1385,6 +1385,11 @@ body.feed .message-bubble.outgoing {
  body.feed .messages-footer {
   padding-top: 14px;
   flex-shrink: 0;
+   margin-top: auto;
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  z-index: 2;
 }
 
 body.messages-open {
@@ -1821,18 +1826,19 @@ margin: 0 auto;
 .messages-view.active {
   display: flex;
 }
-.messages-chat-header {
-  display: flex;
+
+.messages-header {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 12px;
-  background: var(--navbar-bg);
-  border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.messages-chat-header .chat-title {
-  font-weight: 700;
-  color: #091a3a;
+.messages-back {
+  justify-self: start;
+}
+
+.messages-split {
+  justify-self: end;
 }
 .messages-modal.split-mode .messages-body {
   display: grid;
@@ -1848,6 +1854,10 @@ margin: 0 auto;
 /* right side = chat */
 .messages-modal.split-mode .messages-chat-view {
   display: flex;
+}
+   .messages-back,
+.messages-split {
+  display: none;
 }
 }
 
