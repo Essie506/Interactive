@@ -166,14 +166,21 @@
   <div class="messages-card">
 
     <div class="messages-header">
-      <button type="button" class="messages-close" id="messagesClose" aria-label="Close messages">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
 
-      <h3>Messages</h3>
+  <!-- LEFT: BACK -->
+  <button type="button" class="messages-back" id="messagesBack">
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
 
-      <div class="messages-header-spacer" aria-hidden="true"></div>
-    </div>
+  <!-- CENTER: TITLE -->
+  <h3 id="messagesHeaderTitle">Messages</h3>
+
+  <!-- RIGHT: SPLIT -->
+  <button type="button" class="messages-split" id="splitToggle">
+    <i class="fa-solid fa-table-columns"></i>
+  </button>
+
+</div>
 
     <div class="messages-body">
 
