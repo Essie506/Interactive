@@ -1530,7 +1530,6 @@ body.feed .messages-minimized {
   overflow: hidden;
   z-index: 4100;
 }
-}
 
 body.feed .messages-popup.open {
   display: flex;
