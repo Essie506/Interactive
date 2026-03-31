@@ -135,6 +135,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 
+  function autoResizeTextarea(textarea, maxHeight = 260) {
+    if (!textarea) return;
+
+    textarea.style.height = "auto";
+    textarea.style.height = Math.min(textarea.scrollHeight, maxHeight) + "px";
+
+    if (textarea.scrollHeight > maxHeight) {
+      textarea.style.overflowY = "auto";
+    } else {
+      textarea.style.overflowY = "hidden";
+    }
+  }
+
   function getThreadByUser(userName) {
     return document.querySelector(`.message-thread[data-user="${userName}"]`);
   }
@@ -241,6 +254,12 @@ document.addEventListener("DOMContentLoaded", () => {
     composerOverlay.classList.remove("open");
     composerModal.classList.remove("open");
     composerModal.setAttribute("aria-hidden", "true");
+
+    if (composerInput) {
+      composerInput.style.height = "";
+      composerInput.style.overflowY = "hidden";
+    }
+
     unlockBodyScroll();
   }
 
@@ -251,7 +270,11 @@ document.addEventListener("DOMContentLoaded", () => {
     composerModal.classList.add("open");
     composerModal.setAttribute("aria-hidden", "false");
     lockBodyScroll();
-    if (composerInput) composerInput.focus();
+
+    if (composerInput) {
+      composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
+    }
   }
 
   function closeMessages() {
@@ -377,7 +400,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (composerInput) {
-    composerInput.addEventListener("input", updateComposerState);
+    composerInput.addEventListener("input", () => {
+      autoResizeTextarea(composerInput, 260);
+      updateComposerState();
+    });
   }
 
   if (messagesInput) {
@@ -448,6 +474,7 @@ document.addEventListener("DOMContentLoaded", () => {
     emojiBtn.addEventListener("click", () => {
       composerInput.value += " 😊";
       composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
       updateComposerState();
     });
   }
@@ -456,6 +483,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tagBtn.addEventListener("click", () => {
       composerInput.value += " @";
       composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
       updateComposerState();
     });
   }
@@ -464,6 +492,7 @@ document.addEventListener("DOMContentLoaded", () => {
     gifBtn.addEventListener("click", () => {
       composerInput.value += " [GIF] ";
       composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
       updateComposerState();
     });
   }
@@ -472,6 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
     locationBtn.addEventListener("click", () => {
       composerInput.value += " 📍";
       composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
       updateComposerState();
     });
   }
