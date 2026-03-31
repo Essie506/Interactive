@@ -1685,9 +1685,9 @@ display: none;
     margin-top: 0;
   }
 
-/* =========================
+/* ====================================
    DESKTOP / LAPTOP / TABLET LANDSCAPE
-========================= */
+======================================= */
 
   .bottom-nav {
     display: none;
@@ -1755,7 +1755,6 @@ margin: 0 auto;
   display: block;
 }
 
-
    .desktop-nav-links a.active {
   color: var(--main-color);
 }
@@ -1809,6 +1808,47 @@ margin: 0 auto;
   .submenu li a {
     padding: 12px 18px 12px 32px;
   }
+   
+/* =====================================
+   CHAT FEATURE / MESSAGES / VIDEOS
+======================================= */
+.messages-view {
+  display: none;
+  height: 100%;
+  flex-direction: column;
+}
+
+.messages-view.active {
+  display: flex;
+}
+.messages-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: var(--navbar-bg);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.messages-chat-header .chat-title {
+  font-weight: 700;
+  color: #091a3a;
+}
+.messages-modal.split-mode .messages-body {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+/* left side = list */
+.messages-modal.split-mode .messages-list-view {
+  display: flex;
+  border-right: 1px solid rgba(0,0,0,0.08);
+}
+
+/* right side = chat */
+.messages-modal.split-mode .messages-chat-view {
+  display: flex;
+}
 }
 
 @media (min-width: 1100px) {
