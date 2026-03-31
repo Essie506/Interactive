@@ -96,6 +96,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.querySelector(".menu");
   const menuOverlay = document.getElementById("menuOverlay");
 
+  let activeChatUser = "Jason";
+
+  const chatData = {
+    Jason: [
+      { type: "incoming", text: "Hey, are you around later?" },
+      { type: "outgoing", text: "Yes, I should be." }
+    ],
+    Alex: [
+      { type: "incoming", text: "Nice work on your run 🔥" },
+      { type: "outgoing", text: "Thank you! It felt good today." }
+    ]
+  };
+
   function lockBodyScroll() {
     document.body.style.overflow = "hidden";
   }
@@ -107,6 +120,54 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!composerOpen && !messagesOpen) {
       document.body.style.overflow = "";
     }
+  }
+
+  function ensureChatExists(userName) {
+    if (!chatData[userName]) {
+      chatData[userName] = [];
+    }
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  function renderActiveChat() {
+    if (!messageChat) return;
+
+    const messages = chatData[activeChatUser] || [];
+    messageChat.innerHTML = "";
+
+    messages.forEach((message) => {
+      const bubble = document.createElement("div");
+      bubble.className = `message-bubble ${message.type}`;
+
+      if (message.media) {
+        if (message.media.type === "image") {
+          const img = document.createElement("img");
+          img.src = message.media.src;
+          img.alt = message.media.alt || "Shared image";
+          bubble.appendChild(img);
+        } else if (message.media.type === "video") {
+          const video = document.createElement("video");
+          video.src = message.media.src;
+          video.controls = true;
+          bubble.appendChild(video);
+        }
+      }
+
+      if (message.text) {
+        const textWrap = document.createElement("div");
+        textWrap.innerHTML = escapeHtml(message.text).replace(/\n/g, "<br>");
+        bubble.appendChild(textWrap);
+      }
+
+      messageChat.appendChild(bubble);
+    });
+
+    messageChat.scrollTop = messageChat.scrollHeight;
   }
 
   function updateMessagesHeader(isChatView, title = "Messages") {
@@ -252,12 +313,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (messageThreads.length) {
     messageThreads.forEach((thread) => {
       thread.addEventListener("click", () => {
-        const selectedName =
-          thread.querySelector(".message-thread-name")?.textContent?.trim() || "Chat";
+        const selectedName = thread.dataset.user || "Chat";
+
+        activeChatUser = selectedName;
+        ensureChatExists(activeChatUser);
 
         messageThreads.forEach((item) => item.classList.remove("active"));
         thread.classList.add("active");
 
+        renderActiveChat();
         showMessagesChatView(selectedName);
 
         if (messagesInput) {
@@ -404,24 +468,37 @@ document.addEventListener("DOMContentLoaded", () => {
       const hasMedia = messagesPreview && messagesPreview.children.length > 0;
 
       if (!messageText && !hasMedia) return;
-      if (!messageChat) return;
+      if (!activeChatUser) return;
+
+      ensureChatExists(activeChatUser);
 
       if (messageText) {
-        const newBubble = document.createElement("div");
-        newBubble.className = "message-bubble outgoing";
-        newBubble.textContent = messageText;
-        messageChat.appendChild(newBubble);
+        chatData[activeChatUser].push({
+          type: "outgoing",
+          text: messageText
+        });
       }
 
       if (hasMedia) {
         Array.from(messagesPreview.children).forEach((node) => {
-          const mediaBubble = document.createElement("div");
-          mediaBubble.className = "message-bubble outgoing";
-
-          const clone = node.cloneNode(true);
-          mediaBubble.appendChild(clone);
-
-          messageChat.appendChild(mediaBubble);
+          if (node.tagName === "IMG") {
+            chatData[activeChatUser].push({
+              type: "outgoing",
+              media: {
+                type: "image",
+                src: node.src,
+                alt: node.alt || "Shared image"
+              }
+            });
+          } else if (node.tagName === "VIDEO") {
+            chatData[activeChatUser].push({
+              type: "outgoing",
+              media: {
+                type: "video",
+                src: node.src
+              }
+            });
+          }
         });
       }
 
@@ -433,8 +510,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       updateMessagesState();
-      messageChat.scrollTop = messageChat.scrollHeight;
-      messagesInput.focus();
+      renderActiveChat();
+
+      if (messagesInput) {
+        messagesInput.focus();
+      }
     });
   }
 
@@ -496,5 +576,7 @@ document.addEventListener("DOMContentLoaded", () => {
     lastScrollY = currentScrollY;
   });
 
+  ensureChatExists(activeChatUser);
+  renderActiveChat();
   updateMessagesHeader(false, "Messages");
 });
