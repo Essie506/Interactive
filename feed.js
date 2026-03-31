@@ -473,31 +473,31 @@ document.addEventListener("DOMContentLoaded", () => {
     renderChatBody(popoutMessageChat, activeUser);
   }
 
-  function updateMessagesHeader(isChatView, title = "Messages") {
-    if (messagesHeaderTitle) {
-      messagesHeaderTitle.textContent = title;
-    }
-
-    if (messagesBack) {
-      messagesBack.style.display = isChatView ? "flex" : "none";
-    }
-
-    if (splitToggle) {
-      splitToggle.style.display = isChatView ? "flex" : "none";
-    }
-
-    if (drawerPopupBtn) {
-      drawerPopupBtn.style.display = isChatView ? "flex" : "none";
-    }
-
-    if (drawerPopoutBtn) {
-      drawerPopoutBtn.style.display = isChatView ? "flex" : "none";
-    }
-
-    if (drawerMinimizeBtn) {
-      drawerMinimizeBtn.style.display = isChatView ? "flex" : "none";
-    }
+function updateMessagesHeader(isChatView, title = "Messages") {
+  if (messagesHeaderTitle) {
+    messagesHeaderTitle.textContent = title;
   }
+
+  if (messagesBack) {
+    messagesBack.style.display = isChatView ? "flex" : "none";
+  }
+
+  if (splitToggle) {
+    splitToggle.style.display = isChatView ? "flex" : "none";
+  }
+
+  if (drawerPopupBtn) {
+    drawerPopupBtn.style.display = "flex";
+  }
+
+  if (drawerPopoutBtn) {
+    drawerPopoutBtn.style.display = "flex";
+  }
+
+  if (drawerMinimizeBtn) {
+    drawerMinimizeBtn.style.display = isChatView ? "flex" : "none";
+  }
+}
 
   function showMessagesListView() {
     messagesListView?.classList.add("active");
