@@ -77,9 +77,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesChatView = document.getElementById("messagesChatView");
   const messagesBack = document.getElementById("messagesBack");
   const splitToggle = document.getElementById("splitToggle");
-  const chatTitle = document.getElementById("chatTitle");
   const messageThreads = document.querySelectorAll(".message-thread");
-  const messagesHeaderTitle = document.querySelector(".messages-header h3");
+  const messagesHeaderTitle = document.getElementById("messagesHeaderTitle");
 
   const topSearchToggle = document.getElementById("searchToggle");
   const bottomSearchToggle = document.getElementById("bottomSearchToggle");
@@ -110,14 +109,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function updateMessagesHeader(isChatView, title = "Messages") {
+    if (messagesHeaderTitle) {
+      messagesHeaderTitle.textContent = title;
+    }
+
+    if (messagesBack) {
+      messagesBack.style.display = isChatView ? "flex" : "none";
+    }
+
+    if (splitToggle) {
+      splitToggle.style.display = isChatView ? "flex" : "none";
+    }
+  }
+
   function showMessagesListView() {
     if (messagesListView) messagesListView.classList.add("active");
     if (messagesChatView) messagesChatView.classList.remove("active");
+    updateMessagesHeader(false, "Messages");
   }
 
-  function showMessagesChatView() {
+  function showMessagesChatView(selectedName = "Chat") {
     if (messagesListView) messagesListView.classList.remove("active");
     if (messagesChatView) messagesChatView.classList.add("active");
+    updateMessagesHeader(true, selectedName);
   }
 
   function closeComposer() {
@@ -222,15 +237,11 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesOverlay.addEventListener("click", closeMessages);
   }
 
- if (messagesBack) {
-  messagesBack.addEventListener("click", () => {
-    showMessagesListView();
-
-    if (messagesHeaderTitle) {
-      messagesHeaderTitle.textContent = "Messages";
-    }
-  });
-}
+  if (messagesBack) {
+    messagesBack.addEventListener("click", () => {
+      showMessagesListView();
+    });
+  }
 
   if (splitToggle && messagesModal) {
     splitToggle.addEventListener("click", () => {
@@ -241,16 +252,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (messageThreads.length) {
     messageThreads.forEach((thread) => {
       thread.addEventListener("click", () => {
-        const selectedName = thread.querySelector(".message-thread-name")?.textContent?.trim() || "Chat";
+        const selectedName =
+          thread.querySelector(".message-thread-name")?.textContent?.trim() || "Chat";
 
         messageThreads.forEach((item) => item.classList.remove("active"));
         thread.classList.add("active");
 
-  if (messagesHeaderTitle) {
-  messagesHeaderTitle.textContent = selectedName;
-}
-
-        showMessagesChatView();
+        showMessagesChatView(selectedName);
 
         if (messagesInput) {
           setTimeout(() => messagesInput.focus(), 100);
@@ -487,4 +495,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     lastScrollY = currentScrollY;
   });
+
+  updateMessagesHeader(false, "Messages");
 });
