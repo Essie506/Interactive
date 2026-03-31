@@ -69,6 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesClose = document.getElementById("messagesClose");
   const messagesInput = document.getElementById("messagesInput");
   const messagesSend = document.getElementById("messagesSend");
+  const messagesPreview = document.getElementById("messagesPreview");
+  const messagesMediaUpload = document.getElementById("messagesMediaUpload");
+  const messageChat = document.getElementById("messageChat");
 
   const topSearchToggle = document.getElementById("searchToggle");
   const bottomSearchToggle = document.getElementById("bottomSearchToggle");
@@ -78,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const tagBtn = document.querySelector(".composer-tools .tag-btn");
   const gifBtn = document.querySelector(".composer-tools .gif-btn");
   const locationBtn = document.querySelector(".composer-tools .location-btn");
+
+  const messagesEmojiBtn = document.querySelector(".messages-emoji-btn");
+  const messagesGifBtn = document.querySelector(".messages-gif-btn");
+  const messagesLocationBtn = document.querySelector(".messages-location-btn");
 
   const menu = document.querySelector(".menu");
   const menuOverlay = document.getElementById("menuOverlay");
@@ -144,6 +151,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function updateMessagesState() {
+    if (!messagesInput || !messagesSend) return;
+
+    const hasText = messagesInput.value.trim().length > 0;
+    const hasMedia = messagesPreview && messagesPreview.children.length > 0;
+
+    if (hasText || hasMedia) {
+      messagesSend.classList.add("ready");
+    } else {
+      messagesSend.classList.remove("ready");
+    }
+  }
+
   function openMenuSearch() {
     if (menu && menuOverlay) {
       menu.classList.add("open");
@@ -193,6 +213,10 @@ document.addEventListener("DOMContentLoaded", () => {
     composerInput.addEventListener("input", updateComposerState);
   }
 
+  if (messagesInput) {
+    messagesInput.addEventListener("input", updateMessagesState);
+  }
+
   if (composerMediaUpload && composerPreview) {
     composerMediaUpload.addEventListener("change", function () {
       composerPreview.innerHTML = "";
@@ -220,6 +244,36 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       updateComposerState();
+    });
+  }
+
+  if (messagesMediaUpload && messagesPreview) {
+    messagesMediaUpload.addEventListener("change", function () {
+      messagesPreview.innerHTML = "";
+
+      Array.from(this.files).forEach((file) => {
+        const fileURL = URL.createObjectURL(file);
+
+        if (file.type.startsWith("image/")) {
+          const img = document.createElement("img");
+          img.src = fileURL;
+          img.alt = file.name;
+          messagesPreview.appendChild(img);
+        } else if (file.type.startsWith("video/")) {
+          const video = document.createElement("video");
+          video.src = fileURL;
+          video.controls = true;
+          messagesPreview.appendChild(video);
+        }
+      });
+
+      if (messagesPreview.children.length > 0) {
+        messagesPreview.classList.add("has-media");
+      } else {
+        messagesPreview.classList.remove("has-media");
+      }
+
+      updateMessagesState();
     });
   }
 
@@ -255,20 +309,64 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (messagesEmojiBtn && messagesInput) {
+    messagesEmojiBtn.addEventListener("click", () => {
+      messagesInput.value += " 😊";
+      messagesInput.focus();
+      updateMessagesState();
+    });
+  }
+
+  if (messagesGifBtn && messagesInput) {
+    messagesGifBtn.addEventListener("click", () => {
+      messagesInput.value += " [GIF] ";
+      messagesInput.focus();
+      updateMessagesState();
+    });
+  }
+
+  if (messagesLocationBtn && messagesInput) {
+    messagesLocationBtn.addEventListener("click", () => {
+      messagesInput.value += " 📍";
+      messagesInput.focus();
+      updateMessagesState();
+    });
+  }
+
   if (messagesSend && messagesInput) {
     messagesSend.addEventListener("click", () => {
       const messageText = messagesInput.value.trim();
-      if (!messageText) return;
+      const hasMedia = messagesPreview && messagesPreview.children.length > 0;
 
-      const messageChat = document.querySelector(".message-chat");
+      if (!messageText && !hasMedia) return;
       if (!messageChat) return;
 
-      const newBubble = document.createElement("div");
-      newBubble.className = "message-bubble outgoing";
-      newBubble.textContent = messageText;
+      if (messageText) {
+        const newBubble = document.createElement("div");
+        newBubble.className = "message-bubble outgoing";
+        newBubble.textContent = messageText;
+        messageChat.appendChild(newBubble);
+      }
 
-      messageChat.appendChild(newBubble);
+      if (hasMedia) {
+        Array.from(messagesPreview.children).forEach((node) => {
+          const mediaBubble = document.createElement("div");
+          mediaBubble.className = "message-bubble outgoing";
+
+          const clone = node.cloneNode(true);
+          mediaBubble.appendChild(clone);
+
+          messageChat.appendChild(mediaBubble);
+        });
+      }
+
       messagesInput.value = "";
+      if (messagesPreview) {
+        messagesPreview.innerHTML = "";
+        messagesPreview.classList.remove("has-media");
+      }
+
+      updateMessagesState();
       messageChat.scrollTop = messageChat.scrollHeight;
       messagesInput.focus();
     });
@@ -276,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (messagesInput) {
     messagesInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
+      if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
         if (messagesSend) {
           messagesSend.click();
