@@ -1179,6 +1179,7 @@ body.feed .composer-input {
   min-height: 110px;
   max-height: 260px;
   resize: none;
+  overflow-y: hidden;
   border-radius: 22px;
   border: none;
   outline: none;
