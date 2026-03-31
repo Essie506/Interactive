@@ -134,6 +134,26 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 
+  function getThreadByUser(userName) {
+    return document.querySelector(`.message-thread[data-user="${userName}"]`);
+  }
+
+  function updateThreadPreview(userName, previewText, timeText = "now") {
+    const thread = getThreadByUser(userName);
+    if (!thread) return;
+
+    const previewEl = thread.querySelector(".message-thread-preview");
+    const timeEl = thread.querySelector(".message-thread-time");
+
+    if (previewEl) {
+      previewEl.textContent = previewText;
+    }
+
+    if (timeEl) {
+      timeEl.textContent = timeText;
+    }
+  }
+
   function renderActiveChat() {
     if (!messageChat) return;
 
@@ -472,11 +492,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
       ensureChatExists(activeChatUser);
 
+      let latestPreviewText = "Sent a message";
+
       if (messageText) {
         chatData[activeChatUser].push({
           type: "outgoing",
           text: messageText
         });
+
+        latestPreviewText = messageText;
       }
 
       if (hasMedia) {
@@ -490,6 +514,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 alt: node.alt || "Shared image"
               }
             });
+
+            if (!messageText) {
+              latestPreviewText = "📷 Photo";
+            }
           } else if (node.tagName === "VIDEO") {
             chatData[activeChatUser].push({
               type: "outgoing",
@@ -498,6 +526,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 src: node.src
               }
             });
+
+            if (!messageText) {
+              latestPreviewText = "🎥 Video";
+            }
           }
         });
       }
@@ -510,6 +542,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       updateMessagesState();
+      updateThreadPreview(activeChatUser, latestPreviewText, "now");
       renderActiveChat();
 
       if (messagesInput) {
