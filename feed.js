@@ -22,6 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
+  function createId() {
+    if (window.crypto?.randomUUID) {
+      return window.crypto.randomUUID();
+    }
+    return `msg_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
+  }
+
+  function cloneData(value) {
+    if (window.structuredClone) return window.structuredClone(value);
+    return JSON.parse(JSON.stringify(value));
+  }
+
   const defaultUsers = {
     Jason: {
       status: "online",
@@ -170,36 +182,24 @@ document.addEventListener("DOMContentLoaded", () => {
   updateComposerState();
   updateAllMessageSendStates();
 
-  function createId() {
-    if (window.crypto?.randomUUID) {
-      return window.crypto.randomUUID();
-    }
-    return `msg_${Date.now()}_${Math.random().toString(36).slice(2, 10)}`;
-  }
-
-  function structuredCloneFallback(value) {
-    if (window.structuredClone) return window.structuredClone(value);
-    return JSON.parse(JSON.stringify(value));
-  }
-
   function loadUsers() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return structuredCloneFallback(defaultUsers);
+      if (!raw) return cloneData(defaultUsers);
 
       const parsed = JSON.parse(raw);
       if (!parsed || typeof parsed !== "object") {
-        return structuredCloneFallback(defaultUsers);
+        return cloneData(defaultUsers);
       }
 
       return mergeWithDefaults(parsed);
     } catch {
-      return structuredCloneFallback(defaultUsers);
+      return cloneData(defaultUsers);
     }
   }
 
   function mergeWithDefaults(saved) {
-    const merged = structuredCloneFallback(defaultUsers);
+    const merged = cloneData(defaultUsers);
 
     Object.entries(saved).forEach(([userName, data]) => {
       merged[userName] = {
@@ -286,8 +286,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getLastMessageTime(userName) {
-    const lastMessage = getLastMessage(userName);
-    return lastMessage?.createdAt ?? 0;
+    return getLastMessage(userName)?.createdAt ?? 0;
   }
 
   function formatRelativeTime(timestamp) {
@@ -496,33 +495,16 @@ document.addEventListener("DOMContentLoaded", () => {
     updateMessagesHeader(true, selectedName);
   }
 
-  function getOpenMessagingInputs() {
-    const mode = messagingState.mode;
-    const inputs = [];
-
-    if (mode === "drawer" && messagesInput) inputs.push(messagesInput);
-    if (mode === "popup" && popupMessagesInput) inputs.push(popupMessagesInput);
-    if ((mode === "popout" || mode === "fullscreen") && popoutMessagesInput) {
-      inputs.push(popoutMessagesInput);
-    }
-
-    return inputs;
-  }
-
-  function clearAllMessageInputs() {
-    [messagesInput, popupMessagesInput, popoutMessagesInput].forEach((input) => {
-      if (!input) return;
-      input.value = "";
-      autoResizeTextarea(input, 180);
-    });
-  }
-
   function setAllMessageInputsValue(value) {
     [messagesInput, popupMessagesInput, popoutMessagesInput].forEach((input) => {
       if (!input) return;
       input.value = value;
       autoResizeTextarea(input, 180);
     });
+  }
+
+  function clearAllMessageInputs() {
+    setAllMessageInputsValue("");
   }
 
   function restoreDraftAcrossInputs() {
@@ -583,12 +565,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function focusActiveMessagingInput() {
-    const mode = messagingState.mode;
-
     let targetInput = null;
-    if (mode === "drawer") targetInput = messagesInput;
-    if (mode === "popup") targetInput = popupMessagesInput;
-    if (mode === "popout" || mode === "fullscreen") targetInput = popoutMessagesInput;
+
+    if (messagingState.mode === "drawer") targetInput = messagesInput;
+    if (messagingState.mode === "popup") targetInput = popupMessagesInput;
+    if (messagingState.mode === "popout" || messagingState.mode === "fullscreen") {
+      targetInput = popoutMessagesInput;
+    }
 
     if (targetInput) {
       setTimeout(() => targetInput.focus(), 80);
@@ -601,9 +584,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (messagesModal) {
       messagesModal.classList.remove("open");
       messagesModal.setAttribute("aria-hidden", "true");
-      if (messagingState.mode !== "drawer" || messagingState.drawerView !== "thread-chat") {
-        messagesModal.classList.remove("split-mode");
-      }
     }
 
     if (messagesPopup) {
@@ -735,11 +715,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function closeMessagesEverywhere() {
-    const openInput = getPreferredInputForCurrentMode();
-    if (openInput) {
-      saveDraftForActiveUser(openInput.value);
+    const activeInput = getPreferredInputForCurrentMode();
+    if (activeInput) {
+      saveDraftForActiveUser(activeInput.value);
     }
-
     setMessagingMode("closed");
   }
 
@@ -807,32 +786,29 @@ document.addEventListener("DOMContentLoaded", () => {
     return messagesInput;
   }
 
-  function getPreferredPreviewForCurrentMode() {
-    if (messagingState.mode === "drawer") return messagesPreview;
-    return null;
-  }
-
   function collectMediaFromPreview(previewEl) {
     if (!previewEl) return [];
 
-    return Array.from(previewEl.children).map((node) => {
-      if (node.tagName === "IMG") {
-        return {
-          type: "image",
-          src: node.src,
-          alt: node.alt || "Shared image"
-        };
-      }
+    return Array.from(previewEl.children)
+      .map((node) => {
+        if (node.tagName === "IMG") {
+          return {
+            type: "image",
+            src: node.src,
+            alt: node.alt || "Shared image"
+          };
+        }
 
-      if (node.tagName === "VIDEO") {
-        return {
-          type: "video",
-          src: node.src
-        };
-      }
+        if (node.tagName === "VIDEO") {
+          return {
+            type: "video",
+            src: node.src
+          };
+        }
 
-      return null;
-    }).filter(Boolean);
+        return null;
+      })
+      .filter(Boolean);
   }
 
   function clearDrawerMediaPreview() {
@@ -884,10 +860,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function handleSendMessage(source = "drawer") {
     const activeUser = getActiveChatUser();
+
     const inputEl =
-      source === "popup" ? popupMessagesInput :
-      source === "popout" ? popoutMessagesInput :
-      messagesInput;
+      source === "popup"
+        ? popupMessagesInput
+        : source === "popout"
+          ? popoutMessagesInput
+          : messagesInput;
 
     const previewEl = source === "drawer" ? messagesPreview : null;
 
@@ -938,7 +917,7 @@ document.addEventListener("DOMContentLoaded", () => {
     activeInput.focus();
   }
 
-  function bindMessageInput(inputEl) {
+  function bindMessageInput(inputEl, sourceName) {
     if (!inputEl) return;
 
     inputEl.addEventListener("input", () => {
@@ -949,18 +928,7 @@ document.addEventListener("DOMContentLoaded", () => {
     inputEl.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
-
-        if (inputEl === popupMessagesInput) {
-          handleSendMessage("popup");
-          return;
-        }
-
-        if (inputEl === popoutMessagesInput) {
-          handleSendMessage("popout");
-          return;
-        }
-
-        handleSendMessage("drawer");
+        handleSendMessage(sourceName);
       }
     });
   }
@@ -1066,9 +1034,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  bindMessageInput(messagesInput);
-  bindMessageInput(popupMessagesInput);
-  bindMessageInput(popoutMessagesInput);
+  bindMessageInput(messagesInput, "drawer");
+  bindMessageInput(popupMessagesInput, "popup");
+  bindMessageInput(popoutMessagesInput, "popout");
 
   if (messagesSend) {
     messagesSend.addEventListener("click", () => handleSendMessage("drawer"));
