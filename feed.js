@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const STORAGE_KEY = "interactiveFitnessMessages_v2";
+  const STORAGE_KEY = "interactiveFitnessMessages_v3";
 
   const posts = [
     {
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const splitToggle = document.getElementById("splitToggle");
   const messagesHeaderTitle = document.getElementById("messagesHeaderTitle");
 
-  const drawerPopupBtn = document.getElementById("drawerPopupBtn");
+  const drawerMediumBtn = document.getElementById("drawerMediumBtn");
   const drawerPopoutBtn = document.getElementById("drawerPopoutBtn");
   const drawerMinimizeBtn = document.getElementById("drawerMinimizeBtn");
 
@@ -473,31 +473,31 @@ document.addEventListener("DOMContentLoaded", () => {
     renderChatBody(popoutMessageChat, activeUser);
   }
 
-function updateMessagesHeader(isChatView, title = "Messages") {
-  if (messagesHeaderTitle) {
-    messagesHeaderTitle.textContent = title;
-  }
+  function updateMessagesHeader(isChatView, title = "Messages") {
+    if (messagesHeaderTitle) {
+      messagesHeaderTitle.textContent = title;
+    }
 
-  if (messagesBack) {
-    messagesBack.style.display = isChatView ? "flex" : "none";
-  }
+    if (messagesBack) {
+      messagesBack.style.display = isChatView ? "flex" : "none";
+    }
 
-  if (splitToggle) {
-    splitToggle.style.display = isChatView ? "flex" : "none";
-  }
+    if (splitToggle) {
+      splitToggle.style.display = "flex";
+    }
 
-  if (drawerPopupBtn) {
-    drawerPopupBtn.style.display = "flex";
-  }
+    if (drawerMediumBtn) {
+      drawerMediumBtn.style.display = "flex";
+    }
 
-  if (drawerPopoutBtn) {
-    drawerPopoutBtn.style.display = "flex";
-  }
+    if (drawerPopoutBtn) {
+      drawerPopoutBtn.style.display = "flex";
+    }
 
-  if (drawerMinimizeBtn) {
-    drawerMinimizeBtn.style.display = isChatView ? "flex" : "none";
+    if (drawerMinimizeBtn) {
+      drawerMinimizeBtn.style.display = "flex";
+    }
   }
-}
 
   function showMessagesListView() {
     messagesListView?.classList.add("active");
@@ -743,7 +743,24 @@ function updateMessagesHeader(isChatView, title = "Messages") {
   }
 
   function openMessages() {
-    openDrawer("thread-list", getActiveChatUser());
+    const activeUser = getActiveChatUser();
+
+    if (messagingState.mode === "minimized") {
+      openPopup(activeUser);
+      return;
+    }
+
+    if (messagingState.mode === "popup") {
+      openPopup(activeUser);
+      return;
+    }
+
+    if (messagingState.mode === "popout" || messagingState.mode === "fullscreen") {
+      openPopout(activeUser);
+      return;
+    }
+
+    openDrawer("thread-list", activeUser);
   }
 
   function openThread(userName, source = "drawer") {
@@ -986,8 +1003,8 @@ function updateMessagesHeader(isChatView, title = "Messages") {
     });
   }
 
-  if (drawerPopupBtn) {
-    drawerPopupBtn.addEventListener("click", () => {
+  if (drawerMediumBtn) {
+    drawerMediumBtn.addEventListener("click", () => {
       openPopup(getActiveChatUser());
     });
   }
@@ -1005,7 +1022,9 @@ function updateMessagesHeader(isChatView, title = "Messages") {
   }
 
   if (popupMinimizeBtn) {
-    popupMinimizeBtn.addEventListener("click", minimizeMessages);
+    popupMinimizeBtn.addEventListener("click", () => {
+      minimizeMessages();
+    });
   }
 
   if (popupDrawerBtn) {
@@ -1021,7 +1040,9 @@ function updateMessagesHeader(isChatView, title = "Messages") {
   }
 
   if (popupCloseBtn) {
-    popupCloseBtn.addEventListener("click", closeMessagesEverywhere);
+    popupCloseBtn.addEventListener("click", () => {
+      closeMessagesEverywhere();
+    });
   }
 
   if (messagesMinimized) {
@@ -1031,7 +1052,9 @@ function updateMessagesHeader(isChatView, title = "Messages") {
   }
 
   if (popoutMinimizeBtn) {
-    popoutMinimizeBtn.addEventListener("click", minimizeMessages);
+    popoutMinimizeBtn.addEventListener("click", () => {
+      minimizeMessages();
+    });
   }
 
   if (popoutDrawerBtn) {
@@ -1051,7 +1074,9 @@ function updateMessagesHeader(isChatView, title = "Messages") {
   }
 
   if (popoutCloseBtn) {
-    popoutCloseBtn.addEventListener("click", closeMessagesEverywhere);
+    popoutCloseBtn.addEventListener("click", () => {
+      closeMessagesEverywhere();
+    });
   }
 
   document.addEventListener("keydown", (e) => {
