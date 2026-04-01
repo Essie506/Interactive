@@ -461,19 +461,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (splitToggle) {
-    splitToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
+if (splitToggle) {
+  splitToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-      if (state.mode !== "drawer") {
-        openDrawer();
-      }
+    if (state.mode !== "drawer") {
+      openDrawer();
+    }
 
-      state.split = !state.split;
-      updateDrawerLayout();
-      syncAllChats();
-    });
-  }
+    const wasSplit = state.split;
+    state.split = !state.split;
+
+    // 👇 Only when turning split OFF
+    if (wasSplit && !state.split) {
+      const chatIsActive = messagesChatView?.classList.contains("active");
+
+      state.lastDrawerView = chatIsActive ? "chat" : "list";
+    }
+
+    updateDrawerLayout();
+    syncAllChats();
+  });
+}
 
   if (messagesMinimized) {
     messagesMinimized.addEventListener("click", (e) => {
