@@ -743,7 +743,7 @@ body.feed .messages-popout-footer {
 }
 
 body.feed .messages-minimized {
-  left: 16px;
+  left: 5px;
   bottom: calc(5px + env(safe-area-inset-bottom));
   min-width: 240px;
   height: 44px;
