@@ -193,33 +193,48 @@ document.addEventListener("DOMContentLoaded", () => {
     syncTitles();
   }
 
-  function showDrawerList() {
-    messagesListView?.classList.add("active");
-    messagesChatView?.classList.remove("active");
-    if (messagesBack) messagesBack.style.visibility = "hidden";
-    state.lastDrawerView = "list";
-    syncTitles();
+function showDrawerList() {
+  messagesListView?.classList.add("active");
+  messagesChatView?.classList.remove("active");
+
+  if (messagesBack) {
+    messagesBack.style.visibility = "visible";
+    messagesBack.setAttribute("aria-label", "Close messages");
   }
 
-  function showDrawerChat() {
-    messagesListView?.classList.remove("active");
-    messagesChatView?.classList.add("active");
-    if (messagesBack) messagesBack.style.visibility = "visible";
-    state.lastDrawerView = "chat";
-    syncTitles();
+  state.lastDrawerView = "list";
+  syncTitles();
+}
+
+ function showDrawerChat() {
+  messagesListView?.classList.remove("active");
+  messagesChatView?.classList.add("active");
+
+  if (messagesBack) {
+    messagesBack.style.visibility = "visible";
+    messagesBack.setAttribute("aria-label", "Back to conversations");
   }
+
+  state.lastDrawerView = "chat";
+  syncTitles();
+}
   
   function updateDrawerLayout() {
   messagesModal.classList.toggle("split-mode", state.split);
 
-  if (state.split) {
-    messagesListView?.classList.add("active");
-    messagesChatView?.classList.add("active");
-    if (messagesBack) messagesBack.style.visibility = "hidden";
-    state.lastDrawerView = "chat";
-    syncTitles();
-    return;
+ if (state.split) {
+  messagesListView?.classList.add("active");
+  messagesChatView?.classList.add("active");
+
+  if (messagesBack) {
+    messagesBack.style.visibility = "visible";
+    messagesBack.setAttribute("aria-label", "Close messages");
   }
+
+  state.lastDrawerView = "chat";
+  syncTitles();
+  return;
+}
 
   if (state.lastDrawerView === "chat") {
     showDrawerChat();
@@ -476,11 +491,25 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (messagesBack) {
-    messagesBack.addEventListener("click", (e) => {
-      e.stopPropagation();
+  messagesBack.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    if (state.mode !== "drawer") return;
+
+    if (state.split) {
+      closeAll();
+      return;
+    }
+
+    const isChatView = messagesChatView?.classList.contains("active");
+
+    if (isChatView) {
       showDrawerList();
-    });
-  }
+    } else {
+      closeAll();
+    }
+  });
+}
 
 if (splitToggle) {
   splitToggle.addEventListener("click", (e) => {
