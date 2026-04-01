@@ -590,14 +590,14 @@ body.feed .messages-view.active {
 
 body.feed .messages-modal.split-mode .messages-body {
   display: grid;
-  grid-template-columns: minmax(220px, 40%) minmax(0, 60%);
+  grid-template-columns: minmax(140px, 28%) minmax(0, 72%);
   gap: 0;
 }
 
 body.feed .messages-modal.split-mode .messages-list-view {
   display: flex;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
-  padding-right: 12px;
+  padding-right: 8px;
   min-width: 0;
 }
 
@@ -606,6 +606,39 @@ body.feed .messages-modal.split-mode .messages-chat-view {
   padding-left: 12px;
   min-width: 0;
 }
+
+body.feed .messages-modal.split-mode .message-thread {
+  padding: 10px 12px;
+}
+
+body.feed .messages-modal.split-mode .message-thread-top {
+  display: block;
+  margin-bottom: 0;
+}
+
+body.feed .messages-modal.split-mode .message-thread-time,
+body.feed .messages-modal.split-mode .message-thread-preview {
+  display: none;
+}
+
+body.feed .messages-modal.split-mode .message-thread-content {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+body.feed .messages-modal.split-mode .message-thread-name-row {
+  min-width: 0;
+}
+
+body.feed .messages-modal.split-mode .message-thread-name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
 
 /* =========================
    STATUS / BADGES PREP
