@@ -294,12 +294,20 @@ body.feed .composer-header-spacer {
   height: 42px;
 }
 
-body.feed .composer-header h3,
-body.feed .messages-header h3 {
+body.feed .composer-header h3 {
   margin: 0;
   font-size: 16px;
   color: #091a3a;
   text-align: center;
+  font-weight: 700;
+  z-index: 1;
+}
+
+body.feed .messages-header h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #091a3a;
+  text-align: flex-start;
   font-weight: 700;
   z-index: 1;
 }
@@ -1039,6 +1047,11 @@ body.feed .messages-split,
 body.feed .messages-close {
    width: 32px;
   height: 32px;
+}
+   
+   body.feed .composer-header-spacer {
+  width: 42px;
+  height: 42px;
 }
 }
 
