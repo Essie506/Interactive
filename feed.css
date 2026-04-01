@@ -261,7 +261,7 @@ body.feed .composer-header,
 body.feed .messages-header  {
   position: relative;
   display: grid;
-  grid-template-columns: 42px 1fr 42px;
+  grid-template-columns: 42px 1fr auto;
   align-items: center;
   margin: -18px -18px 14px;
   padding: 14px 18px;
@@ -320,12 +320,13 @@ body.feed .messages-back {
 body.feed .messages-split {
   display: inline-flex;
  align-items: center;
-   justift-content: center;
+   justify-content: center;
 }
 
 body.feed .messages-header-actions {
   display: flex;
   align-items: center;
+   justify-content: flex-end;
   justify-self: end;
   gap: 8px;
   z-index: 1;
