@@ -316,14 +316,29 @@
 
   <div class="messages-popup-body" id="popupMessageChat"></div>
 
-  <div class="messages-popup-footer">
-    <textarea
-      id="popupMessagesInput"
-      class="messages-input"
-      placeholder="Write a message..."
-    ></textarea>
+<div class="messages-popout-footer">
+  <textarea
+    id="popoutMessagesInput"
+    class="messages-input"
+    placeholder="Write a message..."
+  ></textarea>
 
-    <button type="button" class="btn-modern messages-send" id="popupMessagesSend">
+  <div class="messages-bottom-bar">
+    <div class="messages-tools">
+      <button type="button" class="upload-btn popout-gif-btn" title="Add GIF">
+        <span>GIF</span>
+      </button>
+
+      <button type="button" class="upload-btn popout-emoji-btn" title="Add emoji">
+        <i class="fa-regular fa-face-smile"></i>
+      </button>
+
+      <button type="button" class="upload-btn popout-location-btn" title="Add location">
+        <i class="fa-solid fa-location-dot"></i>
+      </button>
+    </div>
+
+    <button type="button" class="btn-modern messages-send" id="popoutMessagesSend">
       Send
     </button>
   </div>
