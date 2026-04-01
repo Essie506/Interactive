@@ -329,7 +329,7 @@ body.feed .messages-close i {
 
 body.feed .messages-back {
   justify-self: start;
-  display: none;
+  display: inline-flex;
   z-index: 1;
 }
 
