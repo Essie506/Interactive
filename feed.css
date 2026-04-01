@@ -980,7 +980,8 @@ body.feed .partner-promo {
 
   body.feed .messages-minimized {
     left: 12px;
-     bottom: calc(12px + env(safe-area-inset-bottom));
+     bottom: calc(42px + env(safe-area-inset-bottom));
+     min-width(180px);
   }
 
   body.feed .messages-popout {
