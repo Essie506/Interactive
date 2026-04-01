@@ -745,7 +745,7 @@ body.feed .messages-popout-footer {
 body.feed .messages-minimized {
   left: 16px;
   bottom: calc(5px + env(safe-area-inset-bottom));
-  min-width: 180px;
+  min-width: 240px;
   height: 44px;
   padding: 12px 14px;
   background: var(--glass-teal);
@@ -980,6 +980,7 @@ body.feed .partner-promo {
 
   body.feed .messages-minimized {
     left: 12px;
+     bottom: calc(12px + env(safe-area-inset-bottom));
   }
 
   body.feed .messages-popout {
