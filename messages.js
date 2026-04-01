@@ -119,6 +119,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function moveThreadToTop(user) {
+  const messagesList = document.getElementById("messagesList");
+  if (!messagesList) return;
+
+  const thread = threadButtons.find((btn) => btn.dataset.user === user);
+  if (!thread) return;
+
+  messagesList.prepend(thread);
+}
+
+function updateThreadPreview(user, text, time = "now") {
+  const thread = threadButtons.find((btn) => btn.dataset.user === user);
+  if (!thread) return;
+
+  const preview = thread.querySelector(".message-thread-preview");
+  const timeEl = thread.querySelector(".message-thread-time");
+
+  if (preview) {
+    preview.textContent = text;
+  }
+
+  if (timeEl) {
+    timeEl.textContent = time;
+  }
+}
+
   function syncTitles() {
     if (messagesHeaderTitle) {
       if (state.mode === "drawer" && state.split) {
@@ -241,49 +267,52 @@ document.addEventListener("DOMContentLoaded", () => {
     setBodyLock();
   }
 
-  function selectThread(user) {
-    state.currentUser = user;
-    syncAllChats();
+function selectThread(user) {
+  state.currentUser = user;
+  moveThreadToTop(user);
+  syncAllChats();
 
-    if (state.mode === "drawer") {
-      if (state.split) {
-        messagesInput?.focus();
-        return;
-      }
-
-      showDrawerChat();
+  if (state.mode === "drawer") {
+    if (state.split) {
       messagesInput?.focus();
       return;
     }
 
-    if (state.mode === "popup") {
-      popupMessagesInput?.focus();
-      return;
-    }
-
-    if (state.mode === "popout") {
-      popoutMessagesInput?.focus();
-      return;
-    }
-
-    openDrawer();
     showDrawerChat();
     messagesInput?.focus();
+    return;
   }
 
-  function sendMessage(text) {
-    const clean = text.trim();
-    if (!clean) return false;
-
-    ensureThread(state.currentUser);
-    messageStore[state.currentUser].push({
-      type: "outgoing",
-      text: clean
-    });
-
-    syncAllChats();
-    return true;
+  if (state.mode === "popup") {
+    popupMessagesInput?.focus();
+    return;
   }
+
+  if (state.mode === "popout") {
+    popoutMessagesInput?.focus();
+    return;
+  }
+
+  openDrawer();
+  showDrawerChat();
+  messagesInput?.focus();
+}
+
+ function sendMessage(text) {
+  const clean = text.trim();
+  if (!clean) return false;
+
+  ensureThread(state.currentUser);
+  messageStore[state.currentUser].push({
+    type: "outgoing",
+    text: clean
+  });
+
+  updateThreadPreview(state.currentUser, clean, "now");
+  moveThreadToTop(state.currentUser);
+  syncAllChats();
+  return true;
+}
 
   function clearDrawerInput() {
     if (messagesInput) {
@@ -598,8 +627,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  syncAllChats();
-  updateDrawerLayout();
+ moveThreadToTop(state.currentUser);
+syncAllChats();
+updateDrawerLayout();
 
   window.interactiveMessages = {
     openDrawer,
