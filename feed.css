@@ -334,7 +334,9 @@ body.feed .messages-back {
 }
 
 body.feed .messages-split {
-  display: none;
+  display: inline-flex;
+ align-items: center;
+   justift-content: center;
 }
 
 body.feed .messages-header-actions {
