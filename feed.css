@@ -668,8 +668,8 @@ body.feed .messages-minimized {
 }
 
 body.feed .messages-popup {
-  left: 16px;
-  bottom: calc(86px + env(safe-area-inset-bottom));
+  left: 5px;
+  bottom: calc(5px + env(safe-area-inset-bottom));
   width: min(380px, calc(100vw - 32px));
   height: 520px;
   background: #fff;
