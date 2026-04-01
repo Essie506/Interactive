@@ -421,7 +421,7 @@ body.index .btn-login {
   .navbar-right .icon-btn i,
   .navbar-right .composer-toggle i,
   body.feed .menu-toggle i {
-    font-size: 1.05rem;
+    font-size: 22px;
   }
 }
 
