@@ -86,7 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function ensureThread(user) {
-    if (!messageStore[user]) messageStore[user] = [];
+    if (!messageStore[user]) {
+      messageStore[user] = [];
+    }
   }
 
   function setBodyLock() {
@@ -111,9 +113,25 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesMinimized?.setAttribute("aria-hidden", "true");
   }
 
+  function updateThreadActiveState() {
+    threadButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
+    });
+  }
+
   function syncTitles() {
     if (messagesHeaderTitle) {
-      messagesHeaderTitle.textContent = state.split ? state.currentUser : "Messages";
+      if (state.mode === "drawer" && state.split) {
+        messagesHeaderTitle.textContent = state.currentUser;
+      } else if (
+        state.mode === "drawer" &&
+        messagesChatView?.classList.contains("active") &&
+        !state.split
+      ) {
+        messagesHeaderTitle.textContent = state.currentUser;
+      } else {
+        messagesHeaderTitle.textContent = "Messages";
+      }
     }
 
     if (popupHeaderTitle) popupHeaderTitle.textContent = state.currentUser;
@@ -138,18 +156,26 @@ document.addEventListener("DOMContentLoaded", () => {
     container.scrollTop = container.scrollHeight;
   }
 
-  function updateThreadActiveState() {
-    threadButtons.forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
-    });
-  }
-
   function syncAllChats() {
     renderChat(messageChat, state.currentUser);
     renderChat(popupMessageChat, state.currentUser);
     renderChat(popoutMessageChat, state.currentUser);
-    syncTitles();
     updateThreadActiveState();
+    syncTitles();
+  }
+
+  function showDrawerList() {
+    messagesListView?.classList.add("active");
+    messagesChatView?.classList.remove("active");
+    if (messagesBack) messagesBack.style.visibility = "hidden";
+    syncTitles();
+  }
+
+  function showDrawerChat() {
+    messagesListView?.classList.remove("active");
+    messagesChatView?.classList.add("active");
+    if (messagesBack) messagesBack.style.visibility = "visible";
+    syncTitles();
   }
 
   function updateDrawerLayout() {
@@ -159,12 +185,12 @@ document.addEventListener("DOMContentLoaded", () => {
       messagesListView?.classList.add("active");
       messagesChatView?.classList.add("active");
       if (messagesBack) messagesBack.style.visibility = "hidden";
+      syncTitles();
       return;
     }
 
-    messagesListView?.classList.add("active");
-    messagesChatView?.classList.remove("active");
-    if (messagesBack) messagesBack.style.visibility = "hidden";
+    // Default non-split drawer state = list only
+    showDrawerList();
   }
 
   function openDrawer() {
@@ -219,8 +245,13 @@ document.addEventListener("DOMContentLoaded", () => {
     state.currentUser = user;
     syncAllChats();
 
-    if (state.mode === "drawer" && state.split) {
-      updateDrawerLayout();
+    if (state.mode === "drawer") {
+      if (state.split) {
+        messagesInput?.focus();
+        return;
+      }
+
+      showDrawerChat();
       messagesInput?.focus();
       return;
     }
@@ -235,7 +266,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    openPopup();
+    openDrawer();
+    showDrawerChat();
+    messagesInput?.focus();
   }
 
   function sendMessage(text) {
@@ -355,6 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (messagesBack) {
     messagesBack.addEventListener("click", (e) => {
       e.stopPropagation();
+      showDrawerList();
     });
   }
 
@@ -379,7 +413,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (messagesMinimized) {
     messagesMinimized.addEventListener("click", (e) => {
       e.stopPropagation();
-      openPopup();
+      openDrawer();
+
+      if (state.split) {
+        messagesInput?.focus();
+      } else {
+        showDrawerChat();
+        messagesInput?.focus();
+      }
     });
   }
 
@@ -394,6 +435,13 @@ document.addEventListener("DOMContentLoaded", () => {
     popupDrawerBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       openDrawer();
+
+      if (state.split) {
+        messagesInput?.focus();
+      } else {
+        showDrawerChat();
+        messagesInput?.focus();
+      }
     });
   }
 
@@ -422,6 +470,13 @@ document.addEventListener("DOMContentLoaded", () => {
     popoutDrawerBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       openDrawer();
+
+      if (state.split) {
+        messagesInput?.focus();
+      } else {
+        showDrawerChat();
+        messagesInput?.focus();
+      }
     });
   }
 
@@ -472,6 +527,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   [messagesInput, popupMessagesInput, popoutMessagesInput].forEach((input) => {
     if (!input) return;
+
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
