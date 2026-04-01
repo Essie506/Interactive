@@ -319,18 +319,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updatePopupLayout() {
-    messagesPopup?.classList.toggle("split-mode", state.popupSplit);
+  messagesPopup?.classList.toggle("split-mode", state.popupSplit);
 
-    if (popupListView) {
-      popupListView.style.display = state.popupSplit ? "flex" : "none";
-    }
-
-    if (popupChatView) {
-      popupChatView.style.display = "flex";
-    }
-
-    syncTitles();
+  if (popupListView) {
+    popupListView.style.display = state.popupSplit ? "flex" : "none";
   }
+
+  if (popupChatView) {
+    popupChatView.style.display = "flex";
+  }
+
+  // 👇 NEW TITLE LOGIC
+  if (popupHeaderTitle) {
+  popupHeaderTitle.textContent = state.currentUser;
+}
 
   function rememberCurrentStateBeforeMinimize() {
     if (state.mode === "drawer" || state.mode === "popup" || state.mode === "popout") {
