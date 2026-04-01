@@ -744,13 +744,12 @@ body.feed .messages-popout-footer {
 
 body.feed .messages-minimized {
   left: 16px;
-  bottom: calc(86px + env(safe-area-inset-bottom));
+  bottom: calc(5px + env(safe-area-inset-bottom));
   min-width: 180px;
   height: 44px;
   padding: 0 14px;
   border: none;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--glass-teal);
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
   display: none;
   align-items: center;
