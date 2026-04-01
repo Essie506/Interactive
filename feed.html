@@ -283,9 +283,13 @@
 
 <div class="messages-popup" id="messagesPopup" aria-hidden="true">
   <div class="messages-popup-header">
-    <div class="messages-popup-title" id="popupHeaderTitle">Jason</div>
+    <div class="messages-popup-title" id="popupHeaderTitle">Messages</div>
 
     <div class="messages-popup-actions">
+      <button type="button" class="icon-btn" id="popupSplitBtn" aria-label="Split view">
+        <i class="fa-solid fa-table-columns"></i>
+      </button>
+
       <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
         <i class="fa-solid fa-minus"></i>
       </button>
@@ -304,33 +308,46 @@
     </div>
   </div>
 
-  <div class="messages-popup-body" id="popupMessageChat"></div>
-
-  <div class="messages-popup-footer">
-    <textarea
-      id="popupMessagesInput"
-      class="messages-input"
-      placeholder="Write a message..."
-    ></textarea>
-
-    <div class="messages-bottom-bar">
-      <div class="messages-tools">
-        <button type="button" class="upload-btn popup-gif-btn" title="Add GIF">
-          <span>GIF</span>
-        </button>
-
-        <button type="button" class="upload-btn popup-emoji-btn" title="Add emoji">
-          <i class="fa-regular fa-face-smile"></i>
-        </button>
-
-        <button type="button" class="upload-btn popup-location-btn" title="Add location">
-          <i class="fa-solid fa-location-dot"></i>
-        </button>
+  <div class="messages-popup-main" id="messagesPopupMain">
+    <div class="messages-popup-list-view" id="popupListView">
+      <div class="messages-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="popupMessagesSearchInput" placeholder="Search messages..." />
       </div>
 
-      <button type="button" class="btn-modern messages-send" id="popupMessagesSend">
-        Send
-      </button>
+      <div class="messages-list" id="popupMessagesList"></div>
+    </div>
+
+    <div class="messages-popup-chat-view" id="popupChatView">
+      <div class="messages-popup-body" id="popupMessageChat"></div>
+
+      <div class="messages-popup-footer">
+        <textarea
+          id="popupMessagesInput"
+          class="messages-input"
+          placeholder="Write a message..."
+        ></textarea>
+
+        <div class="messages-bottom-bar">
+          <div class="messages-tools">
+            <button type="button" class="upload-btn popup-gif-btn" title="Add GIF">
+              <span>GIF</span>
+            </button>
+
+            <button type="button" class="upload-btn popup-emoji-btn" title="Add emoji">
+              <i class="fa-regular fa-face-smile"></i>
+            </button>
+
+            <button type="button" class="upload-btn popup-location-btn" title="Add location">
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+
+          <button type="button" class="btn-modern messages-send" id="popupMessagesSend">
+            Send
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
