@@ -979,7 +979,7 @@ body.feed .partner-promo {
   }
 
   body.feed .messages-minimized {
-    left: 12px;
+    left: 5px;
      bottom: calc(70px + env(safe-area-inset-bottom));
      min-width: 90px;
       z-index: 4100;
