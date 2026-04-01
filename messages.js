@@ -362,19 +362,6 @@ function selectThread(user) {
     });
   });
 
-  if (messagesChatView) {
-    messagesChatView.addEventListener("click", (e) => {
-      const clickedInsideControls = e.target.closest(
-        ".messages-footer, textarea, button, label, input"
-      );
-      if (clickedInsideControls) return;
-
-      if (state.mode === "drawer" && state.split) {
-        openPopup();
-      }
-    });
-  }
-
   if (messagesToggle) {
     messagesToggle.addEventListener("click", (e) => {
       e.stopPropagation();
