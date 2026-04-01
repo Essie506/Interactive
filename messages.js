@@ -207,21 +207,25 @@ document.addEventListener("DOMContentLoaded", () => {
     state.lastDrawerView = "chat";
     syncTitles();
   }
-
+  
   function updateDrawerLayout() {
-    messagesModal.classList.toggle("split-mode", state.split);
+  messagesModal.classList.toggle("split-mode", state.split);
 
-    if (state.split) {
-      messagesListView?.classList.add("active");
-      messagesChatView?.classList.add("active");
-      if (messagesBack) messagesBack.style.visibility = "hidden";
-      state.lastDrawerView = "chat";
-      syncTitles();
-      return;
-    }
+  if (state.split) {
+    messagesListView?.classList.add("active");
+    messagesChatView?.classList.add("active");
+    if (messagesBack) messagesBack.style.visibility = "hidden";
+    state.lastDrawerView = "chat";
+    syncTitles();
+    return;
+  }
 
+  if (state.lastDrawerView === "chat") {
+    showDrawerChat();
+  } else {
     showDrawerList();
   }
+}
 
   function rememberCurrentStateBeforeMinimize() {
     if (state.mode === "drawer" || state.mode === "popup" || state.mode === "popout") {
