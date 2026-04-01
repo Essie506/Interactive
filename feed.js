@@ -1,85 +1,53 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const messagesToggle = document.getElementById("messagesToggle");
-  const messagesOverlay = document.getElementById("messagesOverlay");
-  const messagesModal = document.getElementById("messagesModal");
-  const messagesBody = document.getElementById("messagesBody");
+  const posts = [
+    {
+      user: "Esther",
+      time: "2 min ago",
+      text: "Finished HIIT session 🔥",
+      image: "logo2.png"
+    },
+    {
+      user: "Alex",
+      time: "10 min ago",
+      text: "5K run done",
+      image: "logo2.png"
+    },
+    {
+      user: "Jason",
+      time: "1 hr ago",
+      text: "I have man-flu! :(",
+      image: "logo2.png"
+    }
+  ];
 
-  const messagesBack = document.getElementById("messagesBack");
-  const messagesClose = document.getElementById("messagesClose");
-  const splitToggle = document.getElementById("splitToggle");
-  const drawerMediumBtn = document.getElementById("drawerMediumBtn");
-  const drawerPopoutBtn = document.getElementById("drawerPopoutBtn");
-  const drawerMinimizeBtn = document.getElementById("drawerMinimizeBtn");
+  const feed = document.getElementById("feed");
 
-  const messagesHeaderTitle = document.getElementById("messagesHeaderTitle");
-  const messagesListView = document.getElementById("messagesListView");
-  const messagesChatView = document.getElementById("messagesChatView");
-  const messageChat = document.getElementById("messageChat");
-  const messagesInput = document.getElementById("messagesInput");
-  const messagesSend = document.getElementById("messagesSend");
-  const messagesMediaUpload = document.getElementById("messagesMediaUpload");
-  const messagesPreview = document.getElementById("messagesPreview");
-  const messagesSearchInput = document.getElementById("messagesSearchInput");
+  const composerToggle = document.getElementById("composerToggle");
+  const composerOverlay = document.getElementById("composerOverlay");
+  const composerModal = document.getElementById("composerModal");
+  const composerClose = document.getElementById("composerClose");
+  const composerInput = document.getElementById("composerInput");
+  const composerPreview = document.getElementById("composerPreview");
+  const composerMediaUpload = document.getElementById("composerMediaUpload");
+  const composerSubmit = document.getElementById("composerSubmit");
 
-  const messagesPopup = document.getElementById("messagesPopup");
-  const popupHeaderTitle = document.getElementById("popupHeaderTitle");
-  const popupMessageChat = document.getElementById("popupMessageChat");
-  const popupMessagesInput = document.getElementById("popupMessagesInput");
-  const popupMessagesSend = document.getElementById("popupMessagesSend");
-  const popupMinimizeBtn = document.getElementById("popupMinimizeBtn");
-  const popupDrawerBtn = document.getElementById("popupDrawerBtn");
-  const popupPopoutBtn = document.getElementById("popupPopoutBtn");
-  const popupCloseBtn = document.getElementById("popupCloseBtn");
+  const topSearchToggle = document.getElementById("searchToggle");
+  const bottomSearchToggle = document.getElementById("bottomSearchToggle");
+  const menuSearchInput = document.getElementById("menuSearchInput");
 
-  const messagesMinimized = document.getElementById("messagesMinimized");
-  const minimizedLabel = document.getElementById("minimizedLabel");
+  const emojiBtn = document.querySelector(".composer-tools .emoji-btn");
+  const tagBtn = document.querySelector(".composer-tools .tag-btn");
+  const gifBtn = document.querySelector(".composer-tools .gif-btn");
+  const locationBtn = document.querySelector(".composer-tools .location-btn");
 
-  const messagesPopout = document.getElementById("messagesPopout");
-  const popoutHeaderTitle = document.getElementById("popoutHeaderTitle");
-  const popoutMessageChat = document.getElementById("popoutMessageChat");
-  const popoutMessagesInput = document.getElementById("popoutMessagesInput");
-  const popoutMessagesSend = document.getElementById("popoutMessagesSend");
-  const popoutMinimizeBtn = document.getElementById("popoutMinimizeBtn");
-  const popoutDrawerBtn = document.getElementById("popoutDrawerBtn");
-  const popoutFullscreenBtn = document.getElementById("popoutFullscreenBtn");
-  const popoutCloseBtn = document.getElementById("popoutCloseBtn");
+  const menu = document.querySelector(".menu");
+  const menuOverlay = document.getElementById("menuOverlay");
+  const menuToggle = document.getElementById("menuToggle");
 
-  const gifBtn = document.querySelector(".messages-gif-btn");
-  const emojiBtn = document.querySelector(".messages-emoji-btn");
-  const locationBtn = document.querySelector(".messages-location-btn");
+  const navbar = document.querySelector(".navbar");
+  const bottomNav = document.querySelector(".bottom-nav");
 
-  const popupGifBtn = document.querySelector(".popup-gif-btn");
-  const popupEmojiBtn = document.querySelector(".popup-emoji-btn");
-  const popupLocationBtn = document.querySelector(".popup-location-btn");
-
-  const threadButtons = Array.from(document.querySelectorAll(".message-thread"));
-
-  if (!messagesModal) return;
-
-  const messageStore = {
-    Jason: [
-      { type: "incoming", text: "Hey, are you around later?" },
-      { type: "outgoing", text: "Yes, I should be." }
-    ],
-    Alex: [
-      { type: "incoming", text: "Nice work on your run 🔥" }
-    ]
-  };
-
-  const state = {
-    currentUser: "Jason",
-    mode: "closed", // closed | drawer | popup | popout | minimized
-    split: false,
-    mobileChatOpen: false,
-    popoutFullscreen: false
-  };
-
-  function autoResizeTextarea(textarea, maxHeight = 180) {
-    if (!textarea) return;
-    textarea.style.height = "auto";
-    textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
-    textarea.style.overflowY = textarea.scrollHeight > maxHeight ? "auto" : "hidden";
-  }
+  let lastScrollY = window.scrollY;
 
   function escapeHtml(text) {
     const div = document.createElement("div");
@@ -87,403 +55,136 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 
-  function ensureThread(user) {
-    if (!messageStore[user]) messageStore[user] = [];
+  function escapeAttribute(text) {
+    return String(text ?? "").replace(/"/g, "&quot;");
   }
 
-  function setBodyLock() {
-    const anythingOpen =
-      state.mode === "drawer" ||
-      state.mode === "popup" ||
-      state.mode === "popout";
-
-    document.body.style.overflow = anythingOpen ? "hidden" : "";
+  function autoResizeTextarea(textarea, maxHeight = 260) {
+    if (!textarea) return;
+    textarea.style.height = "auto";
+    textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
+    textarea.style.overflowY = textarea.scrollHeight > maxHeight ? "auto" : "hidden";
   }
 
-  function hideAllContainers() {
-    messagesOverlay?.classList.remove("open");
-    messagesModal?.classList.remove("open");
-    messagesPopup?.classList.remove("open");
-    messagesPopout?.classList.remove("open");
-    messagesMinimized?.classList.remove("open");
+  function renderFeed() {
+    if (!feed) return;
 
-    messagesModal?.setAttribute("aria-hidden", "true");
-    messagesPopup?.setAttribute("aria-hidden", "true");
-    messagesPopout?.setAttribute("aria-hidden", "true");
-    messagesMinimized?.setAttribute("aria-hidden", "true");
-  }
+    feed.innerHTML = "";
 
-  function syncTitles() {
-    if (messagesHeaderTitle) {
-      messagesHeaderTitle.textContent = state.mobileChatOpen || state.split
-        ? state.currentUser
-        : "Messages";
-    }
+    posts.forEach((post) => {
+      const card = document.createElement("div");
+      card.className = "post";
 
-    if (popupHeaderTitle) popupHeaderTitle.textContent = state.currentUser;
-    if (popoutHeaderTitle) popoutHeaderTitle.textContent = state.currentUser;
-    if (minimizedLabel) minimizedLabel.textContent = state.currentUser;
-  }
-
-  function renderChat(container, user) {
-    if (!container) return;
-    ensureThread(user);
-
-    container.innerHTML = messageStore[user]
-      .map(
-        (msg) => `
-          <div class="message-bubble ${msg.type}">
-            ${escapeHtml(msg.text)}
+      card.innerHTML = `
+        <div class="post-header">
+          <div class="avatar">
+            <i class="fa-solid fa-user"></i>
           </div>
-        `
-      )
-      .join("");
 
-    container.scrollTop = container.scrollHeight;
-  }
+          <div class="post-info">
+            <span class="username">${escapeHtml(post.user)}</span>
+            <span class="time">${escapeHtml(post.time)}</span>
+          </div>
+        </div>
 
-  function syncAllChats() {
-    renderChat(messageChat, state.currentUser);
-    renderChat(popupMessageChat, state.currentUser);
-    renderChat(popoutMessageChat, state.currentUser);
-    syncTitles();
-    updateThreadActiveState();
-  }
+        <div class="post-text">${escapeHtml(post.text)}</div>
 
-  function updateThreadActiveState() {
-    threadButtons.forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
+        <img class="post-img" src="${escapeAttribute(post.image)}" alt="${escapeAttribute(post.user)} post image">
+
+        <div class="post-actions">
+          <span><i class="fa-solid fa-heart"></i> 12</span>
+          <span><i class="fa-solid fa-comment"></i> 3</span>
+          <span><i class="fa-solid fa-bookmark"></i></span>
+        </div>
+      `;
+
+      feed.appendChild(card);
     });
   }
 
-  function updateDrawerLayout() {
-    const isMobile = window.innerWidth <= 768;
+  function updateComposerState() {
+    if (!composerInput || !composerSubmit) return;
 
-    messagesModal.classList.toggle("split-mode", state.split);
-    messagesModal.classList.toggle("chat-open", state.mobileChatOpen);
+    const hasText = composerInput.value.trim().length > 0;
+    const hasMedia = composerPreview && composerPreview.children.length > 0;
 
-    if (state.split) {
-      messagesListView?.classList.add("active");
-      messagesChatView?.classList.add("active");
-      if (messagesBack) messagesBack.style.visibility = "hidden";
-      return;
-    }
+    composerSubmit.classList.toggle("ready", hasText || hasMedia);
+  }
 
-    if (isMobile) {
-      if (state.mobileChatOpen) {
-        messagesListView?.classList.remove("active");
-        messagesChatView?.classList.add("active");
-        if (messagesBack) messagesBack.style.visibility = "visible";
-      } else {
-        messagesListView?.classList.add("active");
-        messagesChatView?.classList.remove("active");
-        if (messagesBack) messagesBack.style.visibility = "hidden";
-      }
-    } else {
-      messagesListView?.classList.add("active");
-      messagesChatView?.classList.add("active");
-      if (messagesBack) messagesBack.style.visibility = "hidden";
+  function unlockBodyScroll() {
+    const messagesOpen = document.getElementById("messagesModal")?.classList.contains("open");
+    if (!messagesOpen) {
+      document.body.style.overflow = "";
     }
   }
 
-  function openDrawer() {
-    state.mode = "drawer";
-    hideAllContainers();
-    messagesOverlay?.classList.add("open");
-    messagesModal?.classList.add("open");
-    messagesModal?.setAttribute("aria-hidden", "false");
-    updateDrawerLayout();
-    syncAllChats();
-    setBodyLock();
+  function closeComposer() {
+    if (!composerOverlay || !composerModal) return;
+
+    composerOverlay.classList.remove("open");
+    composerModal.classList.remove("open");
+    composerModal.setAttribute("aria-hidden", "true");
+
+    if (composerInput) {
+      composerInput.style.height = "";
+      composerInput.style.overflowY = "hidden";
+    }
+
+    unlockBodyScroll();
   }
 
-  function openPopup() {
-    state.mode = "popup";
-    hideAllContainers();
-    messagesPopup?.classList.add("open");
-    messagesPopup?.setAttribute("aria-hidden", "false");
-    syncAllChats();
-    setBodyLock();
-    popupMessagesInput?.focus();
-  }
+  function openComposer() {
+    if (!composerOverlay || !composerModal) return;
 
-  function openPopout() {
-    state.mode = "popout";
-    hideAllContainers();
-    messagesPopout?.classList.add("open");
-    messagesPopout?.setAttribute("aria-hidden", "false");
-    messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
-    syncAllChats();
-    setBodyLock();
-    popoutMessagesInput?.focus();
-  }
+    window.interactiveMessages?.closeAll?.();
+    composerOverlay.classList.add("open");
+    composerModal.classList.add("open");
+    composerModal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
 
-  function openMinimized() {
-    state.mode = "minimized";
-    hideAllContainers();
-    messagesMinimized?.classList.add("open");
-    messagesMinimized?.setAttribute("aria-hidden", "false");
-    syncTitles();
-    setBodyLock();
-  }
-
-  function closeAll() {
-    state.mode = "closed";
-    state.mobileChatOpen = false;
-    state.popoutFullscreen = false;
-    hideAllContainers();
-    setBodyLock();
-  }
-
-  function selectThread(user) {
-    state.currentUser = user;
-    state.mobileChatOpen = true;
-    syncAllChats();
-
-    if (state.mode === "drawer") {
-      updateDrawerLayout();
-      messagesInput?.focus();
-    } else if (state.mode === "popup") {
-      popupMessagesInput?.focus();
-    } else if (state.mode === "popout") {
-      popoutMessagesInput?.focus();
+    if (composerInput) {
+      composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
     }
   }
 
-  function sendMessage(text) {
-    const clean = text.trim();
-    if (!clean) return false;
-
-    ensureThread(state.currentUser);
-    messageStore[state.currentUser].push({
-      type: "outgoing",
-      text: clean
-    });
-
-    syncAllChats();
-    return true;
-  }
-
-  function clearDrawerInput() {
-    if (messagesInput) {
-      messagesInput.value = "";
-      messagesInput.style.height = "";
-      messagesInput.style.overflowY = "hidden";
+  function openMenuSearch() {
+    if (menu && menuOverlay) {
+      menu.classList.add("open");
+      menuOverlay.classList.add("open");
+      menuToggle?.classList.add("active");
     }
-    if (messagesPreview) {
-      messagesPreview.innerHTML = "";
-      messagesPreview.classList.remove("has-media");
-    }
-    if (messagesMediaUpload) {
-      messagesMediaUpload.value = "";
+
+    if (menuSearchInput) {
+      setTimeout(() => {
+        menuSearchInput.focus();
+        menuSearchInput.select();
+      }, 180);
     }
   }
 
-  function clearPopupInput() {
-    if (popupMessagesInput) {
-      popupMessagesInput.value = "";
-      popupMessagesInput.style.height = "";
-      popupMessagesInput.style.overflowY = "hidden";
-    }
+  if (composerToggle) {
+    composerToggle.addEventListener("click", openComposer);
   }
 
-  function clearPopoutInput() {
-    if (popoutMessagesInput) {
-      popoutMessagesInput.value = "";
-      popoutMessagesInput.style.height = "";
-      popoutMessagesInput.style.overflowY = "hidden";
-    }
+  if (composerClose) {
+    composerClose.addEventListener("click", closeComposer);
   }
 
-  function bindToolInsert(button, targetInput, textToInsert) {
-    if (!button || !targetInput) return;
-    button.addEventListener("click", (e) => {
-      e.stopPropagation();
-      targetInput.value += textToInsert;
-      targetInput.focus();
-      autoResizeTextarea(targetInput);
+  if (composerOverlay) {
+    composerOverlay.addEventListener("click", closeComposer);
+  }
+
+  if (composerInput) {
+    composerInput.addEventListener("input", () => {
+      autoResizeTextarea(composerInput, 260);
+      updateComposerState();
     });
   }
 
-  threadButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      selectThread(btn.dataset.user);
-    });
-  });
-
-  if (messagesToggle) {
-    messagesToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      state.mobileChatOpen = window.innerWidth > 768;
-      openDrawer();
-    });
-  }
-
-  if (messagesOverlay) {
-    messagesOverlay.addEventListener("click", closeAll);
-  }
-
-  if (messagesClose) {
-    messagesClose.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-    });
-  }
-
-  if (drawerMinimizeBtn) {
-    drawerMinimizeBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openMinimized();
-    });
-  }
-
-  if (drawerMediumBtn) {
-    drawerMediumBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openPopup();
-    });
-  }
-
-  if (drawerPopoutBtn) {
-    drawerPopoutBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openPopout();
-    });
-  }
-
-  if (messagesBack) {
-    messagesBack.addEventListener("click", (e) => {
-      e.stopPropagation();
-      state.mobileChatOpen = false;
-      updateDrawerLayout();
-      syncTitles();
-    });
-  }
-
-  if (splitToggle) {
-    splitToggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      state.split = !state.split;
-      if (state.split) state.mobileChatOpen = true;
-      updateDrawerLayout();
-      syncTitles();
-    });
-  }
-
-  if (messagesMinimized) {
-    messagesMinimized.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openDrawer();
-    });
-  }
-
-  if (popupMinimizeBtn) {
-    popupMinimizeBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openMinimized();
-    });
-  }
-
-  if (popupDrawerBtn) {
-    popupDrawerBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openDrawer();
-    });
-  }
-
-  if (popupPopoutBtn) {
-    popupPopoutBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openPopout();
-    });
-  }
-
-  if (popupCloseBtn) {
-    popupCloseBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-    });
-  }
-
-  if (popoutMinimizeBtn) {
-    popoutMinimizeBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openMinimized();
-    });
-  }
-
-  if (popoutDrawerBtn) {
-    popoutDrawerBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openDrawer();
-    });
-  }
-
-  if (popoutCloseBtn) {
-    popoutCloseBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-    });
-  }
-
-  if (popoutFullscreenBtn) {
-    popoutFullscreenBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      state.popoutFullscreen = !state.popoutFullscreen;
-      messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
-    });
-  }
-
-  if (messagesInput && messagesSend) {
-    messagesInput.addEventListener("input", () => autoResizeTextarea(messagesInput));
-    messagesSend.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (sendMessage(messagesInput.value)) {
-        clearDrawerInput();
-      }
-    });
-  }
-
-  if (popupMessagesInput && popupMessagesSend) {
-    popupMessagesInput.addEventListener("input", () => autoResizeTextarea(popupMessagesInput));
-    popupMessagesSend.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (sendMessage(popupMessagesInput.value)) {
-        clearPopupInput();
-      }
-    });
-  }
-
-  if (popoutMessagesInput && popoutMessagesSend) {
-    popoutMessagesInput.addEventListener("input", () => autoResizeTextarea(popoutMessagesInput));
-    popoutMessagesSend.addEventListener("click", (e) => {
-      e.stopPropagation();
-      if (sendMessage(popoutMessagesInput.value)) {
-        clearPopoutInput();
-      }
-    });
-  }
-
-  [messagesInput, popupMessagesInput, popoutMessagesInput].forEach((input) => {
-    if (!input) return;
-    input.addEventListener("keydown", (e) => {
-      if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        if (input === messagesInput) {
-          if (sendMessage(messagesInput.value)) clearDrawerInput();
-        } else if (input === popupMessagesInput) {
-          if (sendMessage(popupMessagesInput.value)) clearPopupInput();
-        } else if (input === popoutMessagesInput) {
-          if (sendMessage(popoutMessagesInput.value)) clearPopoutInput();
-        }
-      }
-    });
-  });
-
-  if (messagesMediaUpload && messagesPreview) {
-    messagesMediaUpload.addEventListener("change", function () {
-      messagesPreview.innerHTML = "";
+  if (composerMediaUpload && composerPreview) {
+    composerMediaUpload.addEventListener("change", function () {
+      composerPreview.innerHTML = "";
 
       Array.from(this.files).forEach((file) => {
         const fileURL = URL.createObjectURL(file);
@@ -492,62 +193,111 @@ document.addEventListener("DOMContentLoaded", () => {
           const img = document.createElement("img");
           img.src = fileURL;
           img.alt = file.name;
-          messagesPreview.appendChild(img);
+          composerPreview.appendChild(img);
         } else if (file.type.startsWith("video/")) {
           const video = document.createElement("video");
           video.src = fileURL;
           video.controls = true;
-          messagesPreview.appendChild(video);
+          composerPreview.appendChild(video);
         }
       });
 
-      messagesPreview.classList.toggle("has-media", messagesPreview.children.length > 0);
+      composerPreview.classList.toggle("has-media", composerPreview.children.length > 0);
+      updateComposerState();
     });
   }
 
-  bindToolInsert(emojiBtn, messagesInput, " 😊");
-  bindToolInsert(gifBtn, messagesInput, " [GIF] ");
-  bindToolInsert(locationBtn, messagesInput, " 📍");
+  if (emojiBtn && composerInput) {
+    emojiBtn.addEventListener("click", () => {
+      composerInput.value += " 😊";
+      composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
+      updateComposerState();
+    });
+  }
 
-  bindToolInsert(popupEmojiBtn, popupMessagesInput, " 😊");
-  bindToolInsert(popupGifBtn, popupMessagesInput, " [GIF] ");
-  bindToolInsert(popupLocationBtn, popupMessagesInput, " 📍");
+  if (tagBtn && composerInput) {
+    tagBtn.addEventListener("click", () => {
+      composerInput.value += " @";
+      composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
+      updateComposerState();
+    });
+  }
 
-  if (messagesSearchInput) {
-    messagesSearchInput.addEventListener("input", () => {
-      const query = messagesSearchInput.value.trim().toLowerCase();
+  if (gifBtn && composerInput) {
+    gifBtn.addEventListener("click", () => {
+      composerInput.value += " [GIF] ";
+      composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
+      updateComposerState();
+    });
+  }
 
-      threadButtons.forEach((btn) => {
-        const name = (btn.dataset.user || "").toLowerCase();
-        const preview = (btn.textContent || "").toLowerCase();
-        const show = !query || name.includes(query) || preview.includes(query);
-        btn.style.display = show ? "" : "none";
-      });
+  if (locationBtn && composerInput) {
+    locationBtn.addEventListener("click", () => {
+      composerInput.value += " 📍";
+      composerInput.focus();
+      autoResizeTextarea(composerInput, 260);
+      updateComposerState();
+    });
+  }
+
+  if (topSearchToggle) {
+    topSearchToggle.addEventListener("click", openMenuSearch);
+  }
+
+  if (bottomSearchToggle) {
+    bottomSearchToggle.addEventListener("click", openMenuSearch);
+  }
+
+  if (menuSearchInput) {
+    menuSearchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const query = menuSearchInput.value.trim();
+        if (!query) return;
+        alert(`Search for: ${query}`);
+      }
     });
   }
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeAll();
-  });
-
-  window.addEventListener("resize", () => {
-    if (state.mode === "drawer") {
-      if (window.innerWidth > 768 && !state.split) {
-        state.mobileChatOpen = true;
-      }
-      updateDrawerLayout();
+    if (e.key === "Escape") {
+      closeComposer();
     }
   });
 
-  syncAllChats();
-  updateDrawerLayout();
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
+    const composerOpen = composerModal?.classList.contains("open");
+    const drawerOpen = document.getElementById("messagesModal")?.classList.contains("open");
 
-  window.interactiveMessages = {
-    openDrawer,
-    openPopup,
-    openPopout,
-    openMinimized,
-    closeAll,
-    selectThread
+    if (composerOpen || drawerOpen) return;
+
+    if (currentScrollY <= 10) {
+      navbar?.classList.remove("hide-top");
+      bottomNav?.classList.remove("hide-bottom");
+      lastScrollY = currentScrollY;
+      return;
+    }
+
+    if (currentScrollY > lastScrollY) {
+      navbar?.classList.add("hide-top");
+      bottomNav?.classList.add("hide-bottom");
+    } else {
+      navbar?.classList.remove("hide-top");
+      bottomNav?.classList.remove("hide-bottom");
+    }
+
+    lastScrollY = currentScrollY;
+  });
+
+  window.interactiveFeed = {
+    closeComposer,
+    openComposer,
+    openMenuSearch
   };
+
+  renderFeed();
+  updateComposerState();
 });
