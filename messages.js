@@ -131,6 +131,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesGifBtn = document.querySelector(".messages-gif-btn");
   const messagesLocationBtn = document.querySelector(".messages-location-btn");
 
+  const popupEmojiBtn = document.querySelector(".popup-emoji-btn");
+  const popupGifBtn = document.querySelector(".popup-gif-btn");
+  const popupLocationBtn = document.querySelector(".popup-location-btn");
+
+  const popoutEmojiBtn = document.querySelector(".popout-emoji-btn");
+  const popoutGifBtn = document.querySelector(".popout-gif-btn");
+  const popoutLocationBtn = document.querySelector(".popout-location-btn");
+
   let users = loadUsers();
   let currentThreadFilter = "";
   const pendingReplyTimeouts = new Map();
@@ -228,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!timestamp) return "";
     const diffMs = Date.now() - timestamp;
     const diffMin = Math.floor(diffMs / 60000);
+
     if (diffMin < 1) return "now";
     if (diffMin < 60) return `${diffMin}m`;
 
@@ -340,10 +349,12 @@ document.addEventListener("DOMContentLoaded", () => {
           openThread(userName, "popup");
           return;
         }
+
         if (messagingState.mode === "popout" || messagingState.mode === "fullscreen") {
           openThread(userName, "popout");
           return;
         }
+
         openThread(userName, "drawer");
       });
 
@@ -613,7 +624,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getPreferredInputForCurrentMode() {
     if (messagingState.mode === "popup") return popupMessagesInput;
-    if (messagingState.mode === "popout" || messagingState.mode === "fullscreen") return popoutMessagesInput;
+    if (messagingState.mode === "popout" || messagingState.mode === "fullscreen") {
+      return popoutMessagesInput;
+    }
     return messagesInput;
   }
 
@@ -952,6 +965,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (messagesLocationBtn) {
     messagesLocationBtn.addEventListener("click", () => addTextToMessageDraft(" 📍"));
+  }
+
+  if (popupEmojiBtn) {
+    popupEmojiBtn.addEventListener("click", () => addTextToMessageDraft(" 😊"));
+  }
+
+  if (popupGifBtn) {
+    popupGifBtn.addEventListener("click", () => addTextToMessageDraft(" [GIF] "));
+  }
+
+  if (popupLocationBtn) {
+    popupLocationBtn.addEventListener("click", () => addTextToMessageDraft(" 📍"));
+  }
+
+  if (popoutEmojiBtn) {
+    popoutEmojiBtn.addEventListener("click", () => addTextToMessageDraft(" 😊"));
+  }
+
+  if (popoutGifBtn) {
+    popoutGifBtn.addEventListener("click", () => addTextToMessageDraft(" [GIF] "));
+  }
+
+  if (popoutLocationBtn) {
+    popoutLocationBtn.addEventListener("click", () => addTextToMessageDraft(" 📍"));
   }
 
   document.addEventListener("keydown", (e) => {
