@@ -812,7 +812,7 @@ body.feed .messages-popup .messages-popup-footer {
   body.feed .messages-popup.split-mode .messages-popup-list-view {
     width: 40%;
   }
-}
+
 
 body.feed .messages-minimized {
   left: 5px;
