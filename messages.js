@@ -71,7 +71,8 @@ document.addEventListener("DOMContentLoaded", () => {
     split: false,
     popoutFullscreen: false,
     lastOpenMode: "drawer", // drawer | popup | popout
-    lastDrawerView: "list"  // list | chat
+    lastDrawerView: "list", // list | chat
+    lastFocusedPane: "list" // list | chat
   };
 
   function autoResizeTextarea(textarea, maxHeight = 180) {
@@ -374,6 +375,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  if (messagesInput) {
+  messagesInput.addEventListener("focus", () => {
+    state.lastFocusedPane = "chat";
+  });
+}
+
+  
   function clearPopupInput() {
     if (popupMessagesInput) {
       popupMessagesInput.value = "";
@@ -411,9 +419,22 @@ document.addEventListener("DOMContentLoaded", () => {
   threadButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
+      state.lastFocusedPane = "list";
       selectThread(btn.dataset.user);
     });
   });
+
+  if (messagesChatView) {
+  messagesChatView.addEventListener("click", (e) => {
+    const clickedInsideControls = e.target.closest(
+      ".messages-footer, textarea, button, label, input"
+    );
+    if (clickedInsideControls) return;
+
+    state.lastFocusedPane = "chat";
+  });
+}
+
 
   if (messagesToggle) {
     messagesToggle.addEventListener("click", (e) => {
@@ -472,11 +493,8 @@ if (splitToggle) {
     const wasSplit = state.split;
     state.split = !state.split;
 
-    // 👇 Only when turning split OFF
     if (wasSplit && !state.split) {
-      const chatIsActive = messagesChatView?.classList.contains("active");
-
-      state.lastDrawerView = chatIsActive ? "chat" : "list";
+      state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
     }
 
     updateDrawerLayout();
