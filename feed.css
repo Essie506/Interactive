@@ -668,10 +668,10 @@ body.feed .messages-minimized {
 }
 
 body.feed .messages-popup {
-  left: 5px;
-  bottom: calc(5px + env(safe-area-inset-bottom));
-  width: min(380px, calc(100vw - 32px));
-  height: 520px;
+  left: 2px;
+  bottom: calc(2px + env(safe-area-inset-bottom));
+  width: min(340px, calc(100vw - 32px));
+  height: 360px;
   background: #fff;
   border-radius: 20px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
