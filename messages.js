@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesMediaUpload = document.getElementById("messagesMediaUpload");
   const messagesPreview = document.getElementById("messagesPreview");
   const messagesSearchInput = document.getElementById("messagesSearchInput");
+  const messagesList = document.getElementById("messagesList");
 
   const messagesPopup = document.getElementById("messagesPopup");
   const popupHeaderTitle = document.getElementById("popupHeaderTitle");
@@ -29,6 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupDrawerBtn = document.getElementById("popupDrawerBtn");
   const popupPopoutBtn = document.getElementById("popupPopoutBtn");
   const popupCloseBtn = document.getElementById("popupCloseBtn");
+
+  const popupSplitBtn = document.getElementById("popupSplitBtn");
+  const popupListView = document.getElementById("popupListView");
+  const popupChatView = document.getElementById("popupChatView");
+  const popupMessagesList = document.getElementById("popupMessagesList");
+  const popupMessagesSearchInput = document.getElementById("popupMessagesSearchInput");
 
   const messagesMinimized = document.getElementById("messagesMinimized");
   const minimizedLabel = document.getElementById("minimizedLabel");
@@ -51,9 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupEmojiBtn = document.querySelector(".popup-emoji-btn");
   const popupLocationBtn = document.querySelector(".popup-location-btn");
 
-  const threadButtons = Array.from(document.querySelectorAll(".message-thread"));
-
   if (!messagesModal) return;
+
+  let threadButtons = Array.from(document.querySelectorAll("#messagesList .message-thread"));
 
   const messageStore = {
     Jason: [
@@ -69,6 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentUser: "Jason",
     mode: "closed", // closed | drawer | popup | popout | minimized
     split: false,
+    popupSplit: false,
     popoutFullscreen: false,
     lastOpenMode: "drawer", // drawer | popup | popout
     lastDrawerView: "list", // list | chat
@@ -116,17 +124,23 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesMinimized?.setAttribute("aria-hidden", "true");
   }
 
+  function refreshThreadButtons() {
+    threadButtons = Array.from(document.querySelectorAll("#messagesList .message-thread"));
+  }
+
   function moveThreadToTop(user) {
-    const messagesList = document.getElementById("messagesList");
     if (!messagesList) return;
 
+    refreshThreadButtons();
     const thread = threadButtons.find((btn) => btn.dataset.user === user);
     if (!thread) return;
 
     messagesList.prepend(thread);
+    refreshThreadButtons();
   }
 
   function updateThreadPreview(user, text, time = "now") {
+    refreshThreadButtons();
     const thread = threadButtons.find((btn) => btn.dataset.user === user);
     if (!thread) return;
 
@@ -143,7 +157,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateThreadActiveState() {
+    refreshThreadButtons();
+
     threadButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
+    });
+
+    Array.from(popupMessagesList?.querySelectorAll(".message-thread") || []).forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.user === state.currentUser);
     });
   }
@@ -163,7 +183,10 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    if (popupHeaderTitle) popupHeaderTitle.textContent = state.currentUser;
+    if (popupHeaderTitle) {
+      popupHeaderTitle.textContent = state.popupSplit ? "Messages" : state.currentUser;
+    }
+
     if (popoutHeaderTitle) popoutHeaderTitle.textContent = state.currentUser;
     if (minimizedLabel) minimizedLabel.textContent = state.currentUser;
   }
@@ -185,63 +208,129 @@ document.addEventListener("DOMContentLoaded", () => {
     container.scrollTop = container.scrollHeight;
   }
 
+  function getThreadPreview(user) {
+    ensureThread(user);
+    const messages = messageStore[user];
+    const lastMessage = messages[messages.length - 1];
+
+    return {
+      text: lastMessage ? lastMessage.text : "No messages yet",
+      time: "now"
+    };
+  }
+
+  function renderPopupThreadList() {
+    if (!popupMessagesList) return;
+
+    refreshThreadButtons();
+    popupMessagesList.innerHTML = "";
+
+    threadButtons.forEach((btn) => {
+      const user = btn.dataset.user;
+      const preview = getThreadPreview(user);
+
+      const thread = document.createElement("button");
+      thread.type = "button";
+      thread.className = `message-thread ${user === state.currentUser ? "active" : ""}`;
+      thread.dataset.user = user;
+
+      thread.innerHTML = `
+        <div class="message-thread-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div class="message-thread-content">
+          <div class="message-thread-top">
+            <div class="message-thread-name-row">
+              <span class="message-thread-name">${escapeHtml(user)}</span>
+            </div>
+            <span class="message-thread-time">${preview.time}</span>
+          </div>
+          <div class="message-thread-preview">${escapeHtml(preview.text)}</div>
+        </div>
+      `;
+
+      thread.addEventListener("click", (e) => {
+        e.stopPropagation();
+        state.currentUser = user;
+        syncAllChats();
+      });
+
+      popupMessagesList.appendChild(thread);
+    });
+  }
+
   function syncAllChats() {
     renderChat(messageChat, state.currentUser);
     renderChat(popupMessageChat, state.currentUser);
     renderChat(popoutMessageChat, state.currentUser);
+    renderPopupThreadList();
     updateThreadActiveState();
     syncTitles();
   }
 
-function showDrawerList() {
-  messagesListView?.classList.add("active");
-  messagesChatView?.classList.remove("active");
+  function showDrawerList() {
+    messagesListView?.classList.add("active");
+    messagesChatView?.classList.remove("active");
 
-  if (messagesBack) {
-    messagesBack.style.visibility = "visible";
-    messagesBack.setAttribute("aria-label", "Close messages");
+    if (messagesBack) {
+      messagesBack.style.visibility = "visible";
+      messagesBack.setAttribute("aria-label", "Close messages");
+    }
+
+    state.lastDrawerView = "list";
+    syncTitles();
   }
 
-  state.lastDrawerView = "list";
-  syncTitles();
-}
+  function showDrawerChat() {
+    messagesListView?.classList.remove("active");
+    messagesChatView?.classList.add("active");
 
- function showDrawerChat() {
-  messagesListView?.classList.remove("active");
-  messagesChatView?.classList.add("active");
+    if (messagesBack) {
+      messagesBack.style.visibility = "visible";
+      messagesBack.setAttribute("aria-label", "Back to conversations");
+    }
 
-  if (messagesBack) {
-    messagesBack.style.visibility = "visible";
-    messagesBack.setAttribute("aria-label", "Back to conversations");
+    state.lastDrawerView = "chat";
+    syncTitles();
   }
 
-  state.lastDrawerView = "chat";
-  syncTitles();
-}
-  
   function updateDrawerLayout() {
-  messagesModal.classList.toggle("split-mode", state.split);
+    messagesModal?.classList.toggle("split-mode", state.split);
 
- if (state.split) {
-  messagesListView?.classList.add("active");
-  messagesChatView?.classList.add("active");
+    if (state.split) {
+      messagesListView?.classList.add("active");
+      messagesChatView?.classList.add("active");
 
-  if (messagesBack) {
-    messagesBack.style.visibility = "visible";
-    messagesBack.setAttribute("aria-label", "Close messages");
+      if (messagesBack) {
+        messagesBack.style.visibility = "visible";
+        messagesBack.setAttribute("aria-label", "Close messages");
+      }
+
+      state.lastDrawerView = "chat";
+      syncTitles();
+      return;
+    }
+
+    if (state.lastDrawerView === "chat") {
+      showDrawerChat();
+    } else {
+      showDrawerList();
+    }
   }
 
-  state.lastDrawerView = "chat";
-  syncTitles();
-  return;
-}
+  function updatePopupLayout() {
+    messagesPopup?.classList.toggle("split-mode", state.popupSplit);
 
-  if (state.lastDrawerView === "chat") {
-    showDrawerChat();
-  } else {
-    showDrawerList();
+    if (popupListView) {
+      popupListView.style.display = state.popupSplit ? "flex" : "none";
+    }
+
+    if (popupChatView) {
+      popupChatView.style.display = "flex";
+    }
+
+    syncTitles();
   }
-}
 
   function rememberCurrentStateBeforeMinimize() {
     if (state.mode === "drawer" || state.mode === "popup" || state.mode === "popout") {
@@ -277,6 +366,7 @@ function showDrawerList() {
     hideAllContainers();
     messagesPopup?.classList.add("open");
     messagesPopup?.setAttribute("aria-hidden", "false");
+    updatePopupLayout();
     syncAllChats();
     setBodyLock();
   }
@@ -315,9 +405,7 @@ function showDrawerList() {
 
     openDrawer();
 
-    if (state.split) {
-      return;
-    }
+    if (state.split) return;
 
     if (state.lastDrawerView === "chat") {
       showDrawerChat();
@@ -339,21 +427,13 @@ function showDrawerList() {
     syncAllChats();
 
     if (state.mode === "drawer") {
-      if (state.split) {
-        return;
-      }
-
+      if (state.split) return;
       showDrawerChat();
       return;
     }
 
-    if (state.mode === "popup") {
-      return;
-    }
-
-    if (state.mode === "popout") {
-      return;
-    }
+    if (state.mode === "popup") return;
+    if (state.mode === "popout") return;
 
     openDrawer();
     showDrawerChat();
@@ -381,22 +461,17 @@ function showDrawerList() {
       messagesInput.style.height = "";
       messagesInput.style.overflowY = "hidden";
     }
+
     if (messagesPreview) {
       messagesPreview.innerHTML = "";
       messagesPreview.classList.remove("has-media");
     }
+
     if (messagesMediaUpload) {
       messagesMediaUpload.value = "";
     }
   }
 
-  if (messagesInput) {
-  messagesInput.addEventListener("focus", () => {
-    state.lastFocusedPane = "chat";
-  });
-}
-
-  
   function clearPopupInput() {
     if (popupMessagesInput) {
       popupMessagesInput.value = "";
@@ -415,11 +490,13 @@ function showDrawerList() {
 
   function bindToolInsert(button, targetInput, textToInsert) {
     if (!button || !targetInput) return;
+
     button.addEventListener("click", (e) => {
       e.stopPropagation();
       targetInput.value += textToInsert;
       targetInput.focus();
       autoResizeTextarea(targetInput);
+
       updateSendButtonState(
         targetInput,
         targetInput === messagesInput
@@ -431,25 +508,36 @@ function showDrawerList() {
     });
   }
 
-  threadButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      state.lastFocusedPane = "list";
-      selectThread(btn.dataset.user);
+  function bindThreadButtons() {
+    refreshThreadButtons();
+
+    threadButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        state.lastFocusedPane = "list";
+        selectThread(btn.dataset.user);
+      });
     });
-  });
+  }
+
+  bindThreadButtons();
+
+  if (messagesInput) {
+    messagesInput.addEventListener("focus", () => {
+      state.lastFocusedPane = "chat";
+    });
+  }
 
   if (messagesChatView) {
-  messagesChatView.addEventListener("click", (e) => {
-    const clickedInsideControls = e.target.closest(
-      ".messages-footer, textarea, button, label, input"
-    );
-    if (clickedInsideControls) return;
+    messagesChatView.addEventListener("click", (e) => {
+      const clickedInsideControls = e.target.closest(
+        ".messages-footer, textarea, button, label, input"
+      );
+      if (clickedInsideControls) return;
 
-    state.lastFocusedPane = "chat";
-  });
-}
-
+      state.lastFocusedPane = "chat";
+    });
+  }
 
   if (messagesToggle) {
     messagesToggle.addEventListener("click", (e) => {
@@ -491,45 +579,54 @@ function showDrawerList() {
   }
 
   if (messagesBack) {
-  messagesBack.addEventListener("click", (e) => {
-    e.stopPropagation();
+    messagesBack.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    if (state.mode !== "drawer") return;
+      if (state.mode !== "drawer") return;
 
-    if (state.split) {
-      closeAll();
-      return;
-    }
+      if (state.split) {
+        closeAll();
+        return;
+      }
 
-    const isChatView = messagesChatView?.classList.contains("active");
+      const isChatView = messagesChatView?.classList.contains("active");
 
-    if (isChatView) {
-      showDrawerList();
-    } else {
-      closeAll();
-    }
-  });
-}
+      if (isChatView) {
+        showDrawerList();
+      } else {
+        closeAll();
+      }
+    });
+  }
 
-if (splitToggle) {
-  splitToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
+  if (splitToggle) {
+    splitToggle.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    if (state.mode !== "drawer") {
-      openDrawer();
-    }
+      if (state.mode !== "drawer") {
+        openDrawer();
+      }
 
-    const wasSplit = state.split;
-    state.split = !state.split;
+      const wasSplit = state.split;
+      state.split = !state.split;
 
-    if (wasSplit && !state.split) {
-      state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
-    }
+      if (wasSplit && !state.split) {
+        state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
+      }
 
-    updateDrawerLayout();
-    syncAllChats();
-  });
-}
+      updateDrawerLayout();
+      syncAllChats();
+    });
+  }
+
+  if (popupSplitBtn) {
+    popupSplitBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      state.popupSplit = !state.popupSplit;
+      updatePopupLayout();
+      syncAllChats();
+    });
+  }
 
   if (messagesMinimized) {
     messagesMinimized.addEventListener("click", (e) => {
@@ -550,10 +647,7 @@ if (splitToggle) {
       e.stopPropagation();
       openDrawer();
 
-      if (state.split) {
-        return;
-      }
-
+      if (state.split) return;
       showDrawerChat();
     });
   }
@@ -584,10 +678,7 @@ if (splitToggle) {
       e.stopPropagation();
       openDrawer();
 
-      if (state.split) {
-        return;
-      }
-
+      if (state.split) return;
       showDrawerChat();
     });
   }
@@ -715,7 +806,21 @@ if (splitToggle) {
     messagesSearchInput.addEventListener("input", () => {
       const query = messagesSearchInput.value.trim().toLowerCase();
 
+      refreshThreadButtons();
       threadButtons.forEach((btn) => {
+        const name = (btn.dataset.user || "").toLowerCase();
+        const preview = (btn.textContent || "").toLowerCase();
+        const show = !query || name.includes(query) || preview.includes(query);
+        btn.style.display = show ? "" : "none";
+      });
+    });
+  }
+
+  if (popupMessagesSearchInput) {
+    popupMessagesSearchInput.addEventListener("input", () => {
+      const query = popupMessagesSearchInput.value.trim().toLowerCase();
+
+      Array.from(popupMessagesList?.querySelectorAll(".message-thread") || []).forEach((btn) => {
         const name = (btn.dataset.user || "").toLowerCase();
         const preview = (btn.textContent || "").toLowerCase();
         const show = !query || name.includes(query) || preview.includes(query);
@@ -732,11 +837,16 @@ if (splitToggle) {
     if (state.mode === "drawer") {
       updateDrawerLayout();
     }
+
+    if (state.mode === "popup") {
+      updatePopupLayout();
+    }
   });
 
   moveThreadToTop(state.currentUser);
   syncAllChats();
   updateDrawerLayout();
+  updatePopupLayout();
   updateSendButtonState(messagesInput, messagesSend);
   updateSendButtonState(popupMessagesInput, popupMessagesSend);
   updateSendButtonState(popoutMessagesInput, popoutMessagesSend);
