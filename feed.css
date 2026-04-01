@@ -257,7 +257,8 @@ body.feed .messages-card {
 /* =========================
    HEADERS
 ========================= */
-body.feed .composer-header {
+body.feed .composer-header, 
+body.feed .messages-header  {
   position: relative;
   display: grid;
   grid-template-columns: 42px 1fr 42px;
@@ -266,18 +267,7 @@ body.feed .composer-header {
   padding: 14px 18px;
   background: var(--navbar-bg);
   overflow: hidden;
-}
-
-body.feed .messages-header {
-  position: relative;
-  display: grid;
-  grid-template-columns: 42px 1fr auto;
-  align-items: center;
-  gap: 10px;
-  margin: -18px -18px 14px;
-  padding: 14px 18px;
-  background: var(--navbar-bg);
-  overflow: hidden;
+ min-height: 70px;
 }
 
 body.feed .composer-header::after,
@@ -1047,11 +1037,6 @@ body.feed .messages-split,
 body.feed .messages-close {
    width: 32px;
   height: 32px;
-}
-   
-   body.feed .composer-header-spacer {
-  width: 42px;
-  height: 42px;
 }
 }
 
