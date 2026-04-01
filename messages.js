@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesToggle = document.getElementById("messagesToggle");
   const messagesOverlay = document.getElementById("messagesOverlay");
   const messagesModal = document.getElementById("messagesModal");
-  const messagesBody = document.getElementById("messagesBody");
 
   const messagesBack = document.getElementById("messagesBack");
   const messagesClose = document.getElementById("messagesClose");
@@ -70,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     currentUser: "Jason",
     mode: "closed", // closed | drawer | popup | popout | minimized
     split: false,
-    mobileChatOpen: false,
     popoutFullscreen: false
   };
 
@@ -115,9 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function syncTitles() {
     if (messagesHeaderTitle) {
-      messagesHeaderTitle.textContent = state.mobileChatOpen || state.split
-        ? state.currentUser
-        : "Messages";
+      messagesHeaderTitle.textContent = state.split ? state.currentUser : "Messages";
     }
 
     if (popupHeaderTitle) popupHeaderTitle.textContent = state.currentUser;
@@ -142,6 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
     container.scrollTop = container.scrollHeight;
   }
 
+  function updateThreadActiveState() {
+    threadButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
+    });
+  }
+
   function syncAllChats() {
     renderChat(messageChat, state.currentUser);
     renderChat(popupMessageChat, state.currentUser);
@@ -150,17 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
     updateThreadActiveState();
   }
 
-  function updateThreadActiveState() {
-    threadButtons.forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
-    });
-  }
-
   function updateDrawerLayout() {
-    const isMobile = window.innerWidth <= 768;
-
     messagesModal.classList.toggle("split-mode", state.split);
-    messagesModal.classList.toggle("chat-open", state.mobileChatOpen);
 
     if (state.split) {
       messagesListView?.classList.add("active");
@@ -169,21 +162,9 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (isMobile) {
-      if (state.mobileChatOpen) {
-        messagesListView?.classList.remove("active");
-        messagesChatView?.classList.add("active");
-        if (messagesBack) messagesBack.style.visibility = "visible";
-      } else {
-        messagesListView?.classList.add("active");
-        messagesChatView?.classList.remove("active");
-        if (messagesBack) messagesBack.style.visibility = "hidden";
-      }
-    } else {
-      messagesListView?.classList.add("active");
-      messagesChatView?.classList.add("active");
-      if (messagesBack) messagesBack.style.visibility = "hidden";
-    }
+    messagesListView?.classList.add("active");
+    messagesChatView?.classList.remove("active");
+    if (messagesBack) messagesBack.style.visibility = "hidden";
   }
 
   function openDrawer() {
@@ -229,7 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function closeAll() {
     state.mode = "closed";
-    state.mobileChatOpen = false;
     state.popoutFullscreen = false;
     hideAllContainers();
     setBodyLock();
@@ -237,17 +217,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function selectThread(user) {
     state.currentUser = user;
-    state.mobileChatOpen = true;
     syncAllChats();
 
-    if (state.mode === "drawer") {
+    if (state.mode === "drawer" && state.split) {
       updateDrawerLayout();
       messagesInput?.focus();
-    } else if (state.mode === "popup") {
-      popupMessagesInput?.focus();
-    } else if (state.mode === "popout") {
-      popoutMessagesInput?.focus();
+      return;
     }
+
+    if (state.mode === "popup") {
+      popupMessagesInput?.focus();
+      return;
+    }
+
+    if (state.mode === "popout") {
+      popoutMessagesInput?.focus();
+      return;
+    }
+
+    openPopup();
   }
 
   function sendMessage(text) {
@@ -312,10 +300,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  if (messagesChatView) {
+    messagesChatView.addEventListener("click", (e) => {
+      const clickedInsideControls = e.target.closest(
+        ".messages-footer, textarea, button, label, input"
+      );
+      if (clickedInsideControls) return;
+
+      if (state.mode === "drawer" && state.split) {
+        openPopup();
+      }
+    });
+  }
+
   if (messagesToggle) {
     messagesToggle.addEventListener("click", (e) => {
       e.stopPropagation();
-      state.mobileChatOpen = window.innerWidth > 768;
       openDrawer();
     });
   }
@@ -355,26 +355,31 @@ document.addEventListener("DOMContentLoaded", () => {
   if (messagesBack) {
     messagesBack.addEventListener("click", (e) => {
       e.stopPropagation();
-      state.mobileChatOpen = false;
-      updateDrawerLayout();
-      syncTitles();
     });
   }
 
   if (splitToggle) {
     splitToggle.addEventListener("click", (e) => {
       e.stopPropagation();
+
+      if (state.mode !== "drawer") {
+        openDrawer();
+      }
+
       state.split = !state.split;
-      if (state.split) state.mobileChatOpen = true;
       updateDrawerLayout();
-      syncTitles();
+      syncAllChats();
+
+      if (state.split) {
+        messagesInput?.focus();
+      }
     });
   }
 
   if (messagesMinimized) {
     messagesMinimized.addEventListener("click", (e) => {
       e.stopPropagation();
-      openDrawer();
+      openPopup();
     });
   }
 
@@ -470,6 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
     input.addEventListener("keydown", (e) => {
       if (e.key === "Enter" && !e.shiftKey) {
         e.preventDefault();
+
         if (input === messagesInput) {
           if (sendMessage(messagesInput.value)) clearDrawerInput();
         } else if (input === popupMessagesInput) {
@@ -532,9 +538,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("resize", () => {
     if (state.mode === "drawer") {
-      if (window.innerWidth > 768 && !state.split) {
-        state.mobileChatOpen = true;
-      }
       updateDrawerLayout();
     }
   });
