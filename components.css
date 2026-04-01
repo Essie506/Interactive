@@ -307,7 +307,7 @@ body.index .btn-login {
 
 .bottom-nav i,
 .bottom-nav-desktop i {
-  font-size: 22px;
+  font-size: 1.3rem;
 }
 
 .bottom-nav-desktop,
@@ -421,7 +421,7 @@ body.index .btn-login {
   .navbar-right .icon-btn i,
   .navbar-right .composer-toggle i,
   body.feed .menu-toggle i {
-    font-size: 22px;
+    font-size: 1.3rem;
   }
 }
 
