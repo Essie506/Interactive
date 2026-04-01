@@ -472,7 +472,7 @@ body.feed .messages-footer {
   padding-top: 14px;
   flex-shrink: 0;
   margin-top: auto;
-  position: sticky;
+  position: flex;
   bottom: 0;
   background: #fff;
   z-index: 2;
