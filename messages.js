@@ -69,7 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
     currentUser: "Jason",
     mode: "closed", // closed | drawer | popup | popout | minimized
     split: false,
-    popoutFullscreen: false
+    popoutFullscreen: false,
+    lastOpenMode: "drawer", // drawer | popup | popout
+    lastDrawerView: "list"  // list | chat
   };
 
   function autoResizeTextarea(textarea, maxHeight = 180) {
@@ -194,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesListView?.classList.add("active");
     messagesChatView?.classList.remove("active");
     if (messagesBack) messagesBack.style.visibility = "hidden";
+    state.lastDrawerView = "list";
     syncTitles();
   }
 
@@ -201,6 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesListView?.classList.remove("active");
     messagesChatView?.classList.add("active");
     if (messagesBack) messagesBack.style.visibility = "visible";
+    state.lastDrawerView = "chat";
     syncTitles();
   }
 
@@ -211,6 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
       messagesListView?.classList.add("active");
       messagesChatView?.classList.add("active");
       if (messagesBack) messagesBack.style.visibility = "hidden";
+      state.lastDrawerView = "chat";
       syncTitles();
       return;
     }
@@ -218,8 +223,25 @@ document.addEventListener("DOMContentLoaded", () => {
     showDrawerList();
   }
 
+  function rememberCurrentStateBeforeMinimize() {
+    if (state.mode === "drawer" || state.mode === "popup" || state.mode === "popout") {
+      state.lastOpenMode = state.mode;
+    }
+
+    if (state.mode === "drawer") {
+      if (state.split) {
+        state.lastDrawerView = "chat";
+      } else if (messagesChatView?.classList.contains("active")) {
+        state.lastDrawerView = "chat";
+      } else {
+        state.lastDrawerView = "list";
+      }
+    }
+  }
+
   function openDrawer() {
     state.mode = "drawer";
+    state.lastOpenMode = "drawer";
     hideAllContainers();
     messagesOverlay?.classList.add("open");
     messagesModal?.classList.add("open");
@@ -231,32 +253,57 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openPopup() {
     state.mode = "popup";
+    state.lastOpenMode = "popup";
     hideAllContainers();
     messagesPopup?.classList.add("open");
     messagesPopup?.setAttribute("aria-hidden", "false");
     syncAllChats();
     setBodyLock();
-    popupMessagesInput?.focus();
   }
 
   function openPopout() {
     state.mode = "popout";
+    state.lastOpenMode = "popout";
     hideAllContainers();
     messagesPopout?.classList.add("open");
     messagesPopout?.setAttribute("aria-hidden", "false");
     messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
     syncAllChats();
     setBodyLock();
-    popoutMessagesInput?.focus();
   }
 
   function openMinimized() {
+    rememberCurrentStateBeforeMinimize();
     state.mode = "minimized";
     hideAllContainers();
     messagesMinimized?.classList.add("open");
     messagesMinimized?.setAttribute("aria-hidden", "false");
     syncTitles();
     setBodyLock();
+  }
+
+  function restoreFromMinimized() {
+    if (state.lastOpenMode === "popup") {
+      openPopup();
+      return;
+    }
+
+    if (state.lastOpenMode === "popout") {
+      openPopout();
+      return;
+    }
+
+    openDrawer();
+
+    if (state.split) {
+      return;
+    }
+
+    if (state.lastDrawerView === "chat") {
+      showDrawerChat();
+    } else {
+      showDrawerList();
+    }
   }
 
   function closeAll() {
@@ -273,28 +320,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (state.mode === "drawer") {
       if (state.split) {
-        messagesInput?.focus();
         return;
       }
 
       showDrawerChat();
-      messagesInput?.focus();
       return;
     }
 
     if (state.mode === "popup") {
-      popupMessagesInput?.focus();
       return;
     }
 
     if (state.mode === "popout") {
-      popoutMessagesInput?.focus();
       return;
     }
 
     openDrawer();
     showDrawerChat();
-    messagesInput?.focus();
   }
 
   function sendMessage(text) {
@@ -351,11 +393,14 @@ document.addEventListener("DOMContentLoaded", () => {
       targetInput.value += textToInsert;
       targetInput.focus();
       autoResizeTextarea(targetInput);
-      updateSendButtonState(targetInput, targetInput === messagesInput
-        ? messagesSend
-        : targetInput === popupMessagesInput
-        ? popupMessagesSend
-        : popoutMessagesSend);
+      updateSendButtonState(
+        targetInput,
+        targetInput === messagesInput
+          ? messagesSend
+          : targetInput === popupMessagesInput
+          ? popupMessagesSend
+          : popoutMessagesSend
+      );
     });
   }
 
@@ -423,24 +468,13 @@ document.addEventListener("DOMContentLoaded", () => {
       state.split = !state.split;
       updateDrawerLayout();
       syncAllChats();
-
-      if (state.split) {
-        messagesInput?.focus();
-      }
     });
   }
 
   if (messagesMinimized) {
     messagesMinimized.addEventListener("click", (e) => {
       e.stopPropagation();
-      openDrawer();
-
-      if (state.split) {
-        messagesInput?.focus();
-      } else {
-        showDrawerChat();
-        messagesInput?.focus();
-      }
+      restoreFromMinimized();
     });
   }
 
@@ -457,11 +491,10 @@ document.addEventListener("DOMContentLoaded", () => {
       openDrawer();
 
       if (state.split) {
-        messagesInput?.focus();
-      } else {
-        showDrawerChat();
-        messagesInput?.focus();
+        return;
       }
+
+      showDrawerChat();
     });
   }
 
@@ -492,11 +525,10 @@ document.addEventListener("DOMContentLoaded", () => {
       openDrawer();
 
       if (state.split) {
-        messagesInput?.focus();
-      } else {
-        showDrawerChat();
-        messagesInput?.focus();
+        return;
       }
+
+      showDrawerChat();
     });
   }
 
