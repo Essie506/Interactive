@@ -316,16 +316,6 @@ body.feed .composer-close {
   z-index: 1;
 }
 
-body.feed .messages-back i,
-body.feed .messages-split i,
-body.feed .messages-open-popup i,
-body.feed .messages-popout-btn i,
-body.feed .messages-minimize-btn i,
-body.feed .messages-close i {
-  font-size: 1rem;
-  color: #091a3a;
-  line-height: 1;
-}
 
 body.feed .messages-back {
   justify-self: start;
@@ -1039,6 +1029,20 @@ body.feed .partner-promo {
     max-width: 1400px;
   }
 }
+
+@media (max-width: 500px) {
+body.feed .messages-open-popup,
+body.feed .messages-popout-btn,
+body.feed .messages-minimize-btn,
+body.feed .messages-back,
+body.feed .messages-split,
+body.feed .messages-close {
+   
+
+
+
+
+   
 
 @media (min-width: 500px) {
   body.feed .composer-bottom-bar,
