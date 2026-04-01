@@ -1035,8 +1035,8 @@ body.feed .messages-minimize-btn,
 body.feed .messages-back,
 body.feed .messages-split,
 body.feed .messages-close {
-   width: 32px;
-  height: 32px;
+   width: 36px;
+  height: 36px;
 }
 }
 
