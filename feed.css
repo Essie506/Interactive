@@ -704,7 +704,7 @@ body.feed .messages-popout-header::after {
 
 body.feed .messages-popup-title,
 body.feed .messages-popout-title {
-  position: relative;
+  position: center;
   z-index: 1;
   font-weight: 700;
   color: #091a3a;
@@ -741,8 +741,8 @@ body.feed .messages-popout-footer {
 }
 
 body.feed .messages-popup {
-  left: 12px;
-  bottom: calc(12px + env(safe-area-inset-bottom));
+  left: 5px;
+  bottom: calc(82px + env(safe-area-inset-bottom));
   width: min(760px, calc(100vw - 24px));
   height: 420px;
   background: #fff;
@@ -795,7 +795,6 @@ body.feed .messages-popup-body {
 
 body.feed .messages-popup.split-mode .messages-popup-list-view {
   display: flex;
-  width: min(280px, 42%);
 }
 
 body.feed .messages-popup.split-mode .messages-popup-chat-view {
@@ -1129,7 +1128,7 @@ body.feed .messages-split,
 body.feed .messages-close {
    width: 36px;
   height: 36px;
-}
+}   
 }
 
 @media (min-width: 500px) {
