@@ -688,10 +688,9 @@ body.feed .messages-minimized {
 
 body.feed .messages-popup-header,
 body.feed .messages-popout-header {
-  display: flex;
+  display: grid;
+   grid-template-columns: 1fr auto;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
   padding: 12px 14px;
   background: var(--navbar-bg);
   position: relative;
@@ -708,10 +707,13 @@ body.feed .messages-popout-header::after {
 
 body.feed .messages-popup-title,
 body.feed .messages-popout-title {
-  text-align: center;
+ position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
   font-weight: 700;
   color: #091a3a;
+  pointer-events: none; /
 }
 
 body.feed .messages-popup-actions,
