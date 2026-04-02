@@ -738,6 +738,15 @@ body.feed .messages-popup .icon-btn i {
   font-size: 14px;
 }
 
+body.feed .messages-popup-header .icon-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
 body.feed .messages-popup-footer,
 body.feed .messages-popout-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
@@ -1073,6 +1082,7 @@ body.feed .partner-promo {
    FEED RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
+   
   body.feed .feed-page {
     padding: var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
   }
@@ -1104,6 +1114,7 @@ body.feed .partner-promo {
      bottom: calc(70px + env(safe-area-inset-bottom));
      min-width: 90px;
       z-index: 4100;
+}
 }
 
 @media (min-width: 901px) {
