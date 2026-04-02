@@ -591,7 +591,8 @@ body.feed .messages-modal.split-mode .messages-body {
   padding: 8px 0;
 }
    body.feed .messages-modal.split-mode .message-thread-content {
-  display: none;
+  display: flex;
+   align-items: center;
 }
 body.feed .messages-modal.split-mode .message-thread-avatar {
   width: 48px;
