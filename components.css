@@ -208,7 +208,7 @@ body.feed .messages-close:active,
 ========================= */
 .btn-modern {
   width: 100%;
-  max-width: 280px;
+  max-width: 120px;
   padding: 14px 26px;
   margin: 20px auto 0;
   background: var(--btn-modern-bg);
