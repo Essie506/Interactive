@@ -625,12 +625,6 @@ body.feed .messages-modal.split-mode .message-thread-preview {
   display: none;
 }
 
-body.feed .messages-modal.split-mode .message-thread-content {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-}
-
 body.feed .messages-modal.split-mode .message-thread-name-row {
   min-width: 0;
 }
