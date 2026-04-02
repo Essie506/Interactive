@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Profile - Interactive Fitness</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body class="profile">
+
+  <nav class="navbar">
+    <div class="navbar-bg"></div>
+
+    <div class="nav-left">
+      <button class="menu-toggle icon-btn" id="menuToggle" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-user"></i>
+      </button>
+
+      <a href="messages.html" class="icon-btn desktop-icon-link" aria-label="Messages">
+        <i class="fa-solid fa-comments"></i>
+      </a>
+    </div>
+
+    <div class="nav-title">Interactive Fitness</div>
+
+    <div class="nav-center">
+      <div class="desktop-nav-links">
+        <a href="home.html"><i class="fa-solid fa-house"></i></a>
+        <a href="feed.html"><i class="fa-solid fa-fire"></i></a>
+        <a href="browse-workouts.html"><i class="fa-solid fa-dumbbell"></i></a>
+        <a href="calendar.html"><i class="fa-solid fa-calendar"></i></a>
+      </div>
+    </div>
+
+    <div class="navbar-right">
+      <button class="icon-btn top-search-btn" type="button" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <a href="edit-profile.html" class="icon-btn" aria-label="Edit profile">
+        <i class="fa-solid fa-pen"></i>
+      </a>
+    </div>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <nav class="menu" id="sideMenu">
+    <ul>
+      <li class="menu-profile">
+        <a href="view-profile.html" class="menu-profile-info">
+          <span class="menu-profile-name">Esther Clarke</span>
+          <span class="menu-profile-sub">@estherfitness</span>
+        </a>
+      </li>
+
+      <li><a href="home.html">Home</a></li>
+      <li><a href="feed.html">Feed</a></li>
+      <li><a href="browse-workouts.html">Browse Workouts</a></li>
+      <li><a href="my-saved-workouts.html">Saved Workouts</a></li>
+      <li><a href="upload-images.html">Your Media</a></li>
+      <li><a href="settings.html">Settings</a></li>
+    </ul>
+  </nav>
+
+  <main class="profile-page">
+    <section class="profile-hero-card">
+      <div class="profile-avatar-wrap">
+        <div class="profile-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+
+      <div class="profile-main-info">
+        <h1>Esther Clarke</h1>
+        <p class="profile-handle">@estherfitness</p>
+        <p class="profile-role">Fitness creator • Trainer</p>
+        <p class="profile-bio">
+          Building strength, confidence and consistency. Sharing workouts, media and progress.
+        </p>
+
+        <div class="profile-quick-stats">
+          <div class="profile-stat">
+            <strong>128</strong>
+            <span>Posts</span>
+          </div>
+          <div class="profile-stat">
+            <strong>42</strong>
+            <span>Saved</span>
+          </div>
+          <div class="profile-stat">
+            <strong>61</strong>
+            <span>Media</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-actions">
+        <a href="edit-profile.html" class="btn-modern">Edit Profile</a>
+      </div>
+    </section>
+
+    <section class="profile-tabs-card">
+      <div class="profile-tabs">
+        <button class="profile-tab active" type="button" data-tab="you">You</button>
+        <button class="profile-tab" type="button" data-tab="saved">Saved Workouts</button>
+        <button class="profile-tab" type="button" data-tab="media">Your Media</button>
+      </div>
+    </section>
+
+    <section class="profile-panel active" id="profile-panel-you">
+      <div class="profile-section-card">
+        <h2>Your Posts</h2>
+
+        <div class="profile-posts">
+          <article class="post">
+            <div class="post-header">
+              <div class="avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="post-info">
+                <span class="username">Esther</span>
+                <span class="time">2 min ago</span>
+              </div>
+            </div>
+            <p class="post-text">Morning run done ✅ Back to routine.</p>
+          </article>
+
+          <article class="post">
+            <div class="post-header">
+              <div class="avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="post-info">
+                <span class="username">Esther</span>
+                <span class="time">1 hour ago</span>
+              </div>
+            </div>
+            <p class="post-text">Leg day today 🔥</p>
+            <img src="logo2.png" alt="Post image" class="post-img">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-panel" id="profile-panel-saved">
+      <div class="profile-section-card">
+        <h2>Saved Workouts</h2>
+
+        <div class="saved-workouts-grid">
+          <article class="saved-workout-card">
+            <div class="saved-workout-icon"><i class="fa-solid fa-dumbbell"></i></div>
+            <h3>Glutes Builder</h3>
+            <p>Strength • 35 mins</p>
+          </article>
+
+          <article class="saved-workout-card">
+            <div class="saved-workout-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3>HIIT Burn</h3>
+            <p>Cardio • 20 mins</p>
+          </article>
+
+          <article class="saved-workout-card">
+            <div class="saved-workout-icon"><i class="fa-solid fa-person-running"></i></div>
+            <h3>5K Prep</h3>
+            <p>Running • 30 mins</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="profile-panel" id="profile-panel-media">
+      <div class="profile-section-card">
+        <h2>Your Media</h2>
+
+        <div class="media-grid">
+          <article class="media-card">
+            <img src="logo2.png" alt="Uploaded media">
+          </article>
+
+          <article class="media-card media-card-video">
+            <img src="logo2.png" alt="Video thumbnail">
+            <span class="media-play-badge">
+              <i class="fa-solid fa-play"></i>
+            </span>
+          </article>
+
+          <article class="media-card">
+            <img src="logo2.png" alt="Uploaded media">
+          </article>
+
+          <article class="media-card media-card-video">
+            <img src="logo2.png" alt="Video thumbnail">
+            <span class="media-play-badge">
+              <i class="fa-solid fa-play"></i>
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <a href="home.html" aria-label="Home">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    <a href="feed.html" aria-label="Feed">
+      <i class="fa-solid fa-fire"></i>
+    </a>
+    <a href="browse-workouts.html" aria-label="Workouts">
+      <i class="fa-solid fa-dumbbell"></i>
+    </a>
+    <a href="view-profile.html" aria-label="Profile">
+      <i class="fa-solid fa-user"></i>
+    </a>
+  </nav>
+
+  <script src="menu.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>
