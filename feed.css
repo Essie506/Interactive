@@ -743,7 +743,7 @@ body.feed .messages-popout-footer {
 body.feed .messages-popup {
   left: 5px;
   bottom: calc(5px + env(safe-area-inset-bottom));
-  width: min(760px, calc(100vw - 24px));
+width: min(340px, calc(100vw - 32px));
   height: 420px;
   background: #fff;
   border-radius: 20px;
