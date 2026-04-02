@@ -587,7 +587,6 @@ body.feed .messages-modal.split-mode .messages-body {
   display: grid;
    grid-template-columns: minmax(140px, 28%) minmax(0, 72%);
   gap: 0;
- justify-content: center;
   padding: 8px 0;
 }
    body.feed .messages-modal.split-mode .message-thread-content {
@@ -1075,37 +1074,133 @@ body.feed .partner-promo {
 }
 
 /* =========================
-   FEED RESPONSIVE
+   MESSAGE MODES RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
-   
-  body.feed .feed-page {
-    padding: var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
-  }
-
-  body.feed .post-input {
-    max-width: 100%;
-  }
-
-  body.feed .composer-modal,
-  body.feed .messages-modal {
+  body.feed .messages-modal,
+  body.feed .composer-modal {
     width: 100vw;
   }
 
-  body.feed .composer-card,
-  body.feed .messages-card {
+  body.feed .messages-card,
+  body.feed .composer-card {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
+  }
+
+  body.feed .messages-popup {
+    left: 12px;
+    right: 12px;
+    bottom: calc(82px + env(safe-area-inset-bottom));
+    width: auto;
+    height: 60dvh;
+    max-height: calc(100dvh - 94px - env(safe-area-inset-bottom));
+  }
+
+  body.feed .messages-popup.split-mode .messages-popup-list-view {
+    width: 40%;
+  }
+
+  body.feed .messages-popout {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    height: calc(100dvh - 24px);
+    max-height: calc(100dvh - 24px);
   }
 
   body.feed .messages-minimized {
     left: 5px;
-     bottom: calc(70px + env(safe-area-inset-bottom));
-     min-width: 90px;
-      z-index: 4100;
-}
+    bottom: calc(70px + env(safe-area-inset-bottom));
+    min-width: 180px;
+    max-width: calc(100vw - 10px);
+    z-index: 4100;
+  }
 }
 
-@media (min-width: 901px) {
+@media (max-width: 900px) and (orientation: landscape) {
+  body.feed .messages-popup,
+  body.feed .messages-popout {
+    top: 6px;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    width: auto;
+    height: auto;
+    max-height: none;
+  }
+
+  body.feed .messages-popup {
+    border-radius: 18px;
+  }
+
+  body.feed .messages-popout {
+    border-radius: 18px;
+  }
+
+  body.feed .messages-popup-main,
+  body.feed .messages-popup-chat-view,
+  body.feed .messages-popup-body,
+  body.feed .messages-popout-body {
+    min-height: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  body.feed .messages-header-actions > button,
+  body.feed .messages-popup-header .icon-btn,
+  body.feed .messages-popout-header .icon-btn,
+  body.feed .messages-back {
+    width: 36px;
+    height: 36px;
+  }
+
+  body.feed .messages-popup-actions,
+  body.feed .messages-popout-actions,
+  body.feed .messages-header-actions {
+    gap: 6px;
+  }
+
+  body.feed .messages-popup-title,
+  body.feed .messages-popout-title {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 500px) {
+  body.feed .messages-bottom-bar,
+  body.feed .composer-bottom-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  body.feed .messages-tools,
+  body.feed .composer-tools {
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+  body.feed .messages-footer,
+  body.feed .composer-footer {
+    justify-content: flex-end;
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+  body.feed .messages-send,
+  body.feed .composer-submit {
+    width: auto;
+    margin: 0;
+    display: inline-flex;
+    min-width: 90px;
+  }
+}
+
+   @media (min-width: 901px) {
   body.feed .page-layout {
     display: grid;
     grid-template-columns: 180px minmax(0, 1fr) 180px;
@@ -1129,15 +1224,6 @@ body.feed .partner-promo {
     max-width: 600px;
     margin: 0 auto;
   }
-
-  body.feed .post-box,
-  body.feed .post {
-    width: 100%;
-  }
-
-  body.feed .post-box {
-    margin-top: 0;
-  }
 }
 
 @media (min-width: 1100px) {
@@ -1145,50 +1231,5 @@ body.feed .partner-promo {
     grid-template-columns: 240px minmax(0, 600px) 240px;
     gap: 24px;
     max-width: 1400px;
-  }
-}
-
-@media (max-width: 500px) {
-body.feed .messages-open-popup,
-body.feed .messages-popout-btn,
-body.feed .messages-minimize-btn,
-body.feed .messages-back,
-body.feed .messages-split,
-body.feed .messages-close {
-   width: 36px;
-  height: 36px;
-}
-}
-
-@media (min-width: 500px) {
-  body.feed .composer-bottom-bar,
-  body.feed .messages-bottom-bar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-  }
-
-  body.feed .composer-tools,
-  body.feed .messages-tools {
-    justify-content: flex-start;
-    align-items: center;
-    width: auto;
-    flex: 1 1 auto;
-  }
-
-  body.feed .composer-footer,
-  body.feed .messages-footer {
-    justify-content: flex-end;
-    width: auto;
-    flex: 0 0 auto;
-  }
-
-  body.feed .composer-submit,
-  body.feed .messages-send {
-    width: auto;
-    margin: 0;
-    display: inline-flex;
-    min-width: 90px;
   }
 }
