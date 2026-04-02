@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (popupHeaderTitle) {
-      popupHeaderTitle.textContent = state.popupSplit ? "Messages" : state.currentUser;
+      popupHeaderTitle.textContent = state.currentUser;
     }
 
     if (popoutHeaderTitle) popoutHeaderTitle.textContent = state.currentUser;
