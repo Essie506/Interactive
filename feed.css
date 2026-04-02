@@ -585,7 +585,7 @@ body.feed .messages-view.active {
 
 body.feed .messages-modal.split-mode .messages-body {
   display: grid;
-  grid-template-columns: 64px 1fr;
+   grid-template-columns: minmax(140px, 28%) minmax(0, 72%);
   gap: 0;
  justify-content: center;
   padding: 8px 0;
