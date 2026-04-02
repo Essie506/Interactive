@@ -1067,15 +1067,6 @@ body.feed .partner-promo {
       z-index: 4100;
 }
 
-  body.feed .messages-popout {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
-    width: auto;
-    height: calc(100dvh - 24px);
-  }
-}
-
 @media (min-width: 901px) {
   body.feed .page-layout {
     display: grid;
