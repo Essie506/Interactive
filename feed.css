@@ -704,7 +704,7 @@ body.feed .messages-popout-header::after {
 
 body.feed .messages-popup-title,
 body.feed .messages-popout-title {
-  position: center;
+  text-align: center;
   z-index: 1;
   font-weight: 700;
   color: #091a3a;
