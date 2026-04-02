@@ -1293,6 +1293,26 @@ body.feed .message-chat .message-bubble video {
   }
 }
 
+@media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
+  body.feed .messages-popup {
+    left: 12px;
+    right: auto;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: min(420px, calc(100vw - 24px));
+    height: 420px;
+    max-height: calc(100dvh - 24px - env(safe-area-inset-bottom));
+  }
+
+  body.feed .messages-popout {
+    right: 12px;
+    left: auto;
+    bottom: calc(12px + env(safe-area-inset-bottom));
+    width: min(420px, calc(100vw - 24px));
+    height: min(520px, calc(100dvh - 24px));
+    max-height: calc(100dvh - 24px);
+  }
+}
+
 @media (max-width: 900px) and (orientation: landscape) {
   body.feed .messages-popup,
   body.feed .messages-popout {
