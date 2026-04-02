@@ -585,8 +585,17 @@ body.feed .messages-view.active {
 
 body.feed .messages-modal.split-mode .messages-body {
   display: grid;
-  grid-template-columns: minmax(140px, 28%) minmax(0, 72%);
+  grid-template-columns: 64px 1fr;
   gap: 0;
+ justify-content: center;
+  padding: 8px 0;
+}
+   body.feed .messages-modal.split-mode .message-thread-content {
+  display: none;
+}
+body.feed .messages-modal.split-mode .message-thread-avatar {
+  width: 48px;
+  height: 48px;
 }
 
 body.feed .messages-modal.split-mode .messages-list-view {
@@ -1119,7 +1128,7 @@ body.feed .messages-split,
 body.feed .messages-close {
    width: 36px;
   height: 36px;
-}   
+}
 }
 
 @media (min-width: 500px) {
