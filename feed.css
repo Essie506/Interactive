@@ -1110,14 +1110,6 @@ body.feed .partner-promo {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
   }
 
-  body.feed .messages-popup {
-    left: 12px;
-    right: 12px;
-    bottom: calc(82px + env(safe-area-inset-bottom));
-    width: auto;
-    height: 60dvh;
-  }
-
   body.feed .messages-minimized {
     left: 5px;
      bottom: calc(70px + env(safe-area-inset-bottom));
