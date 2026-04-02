@@ -1,0 +1,315 @@
+/* =========================
+   PROFILE PAGE
+========================= */
+body.profile {
+  background: var(--index-bg);
+  min-height: 100vh;
+}
+
+body.profile::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--index-bg-before);
+  background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
+}
+
+body.profile .profile-page {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: calc(var(--bar-height) + 16px) 12px calc(90px + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+body.profile .profile-hero-card,
+body.profile .profile-tabs-card,
+body.profile .profile-section-card {
+  background: rgba(255, 255, 255, 0.68);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+  border-radius: 22px;
+}
+
+body.profile .profile-hero-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 18px;
+  margin-bottom: 14px;
+}
+
+body.profile .profile-avatar-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+body.profile .profile-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(56, 173, 169, 0.16);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #091a3a;
+  box-shadow: var(--shadow-soft);
+  font-size: 2rem;
+}
+
+body.profile .profile-main-info {
+  text-align: center;
+}
+
+body.profile .profile-main-info h1 {
+  margin: 0 0 8px;
+  color: #091a3a;
+  font-size: 1.6rem;
+}
+
+body.profile .profile-handle {
+  margin: 0;
+  font-weight: 600;
+  color: rgba(9, 26, 58, 0.75);
+}
+
+body.profile .profile-role {
+  margin: 6px 0 0;
+  color: rgba(9, 26, 58, 0.75);
+  font-weight: 600;
+}
+
+body.profile .profile-bio {
+  margin: 12px auto 0;
+  max-width: 540px;
+  color: #091a3a;
+  line-height: 1.45;
+}
+
+body.profile .profile-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+
+body.profile .profile-stat {
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: 16px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+body.profile .profile-stat strong {
+  display: block;
+  color: #091a3a;
+  font-size: 1.05rem;
+}
+
+body.profile .profile-stat span {
+  display: block;
+  margin-top: 4px;
+  color: rgba(9, 26, 58, 0.7);
+  font-size: 13px;
+}
+
+body.profile .profile-actions {
+  display: flex;
+  justify-content: center;
+}
+
+body.profile .profile-actions .btn-modern {
+  margin: 0;
+}
+
+body.profile .profile-tabs-card {
+  padding: 10px;
+  margin-bottom: 14px;
+}
+
+body.profile .profile-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+body.profile .profile-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+body.profile .profile-tab {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #091a3a;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+body.profile .profile-tab:hover,
+body.profile .profile-tab:focus-visible {
+  transform: translateY(-1px);
+  box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+body.profile .profile-tab.active {
+  background: var(--btn-modern-bg);
+  color: #fff;
+}
+
+body.profile .profile-panel {
+  display: none;
+}
+
+body.profile .profile-panel.active {
+  display: block;
+}
+
+body.profile .profile-section-card {
+  padding: 16px;
+}
+
+body.profile .profile-section-card h2 {
+  margin: 0 0 14px;
+  color: #091a3a;
+  font-size: 1.05rem;
+}
+
+body.profile .profile-posts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+body.profile .saved-workouts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+body.profile .saved-workout-card {
+  background: rgba(255, 255, 255, 0.78);
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+body.profile .saved-workout-card h3 {
+  margin: 0 0 6px;
+  color: #091a3a;
+  font-size: 1rem;
+}
+
+body.profile .saved-workout-card p {
+  margin: 0;
+  color: rgba(9, 26, 58, 0.72);
+}
+
+body.profile .saved-workout-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(56, 173, 169, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #091a3a;
+  margin-bottom: 12px;
+}
+
+body.profile .media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+body.profile .media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow-soft);
+  aspect-ratio: 1 / 1;
+}
+
+body.profile .media-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body.profile .media-play-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.82);
+  color: #091a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-soft);
+}
+
+@media (min-width: 700px) {
+  body.profile .profile-page {
+    padding: calc(var(--bar-height) + 20px) 16px 40px;
+  }
+
+  body.profile .profile-hero-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 22px;
+  }
+
+  body.profile .profile-avatar-wrap {
+    justify-content: flex-start;
+  }
+
+  body.profile .profile-main-info {
+    text-align: left;
+  }
+
+  body.profile .profile-bio {
+    margin-left: 0;
+  }
+
+  body.profile .profile-actions {
+    justify-content: flex-end;
+  }
+
+  body.profile .saved-workouts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  body.profile .media-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 901px) {
+  body.profile .profile-page {
+    max-width: 1100px;
+    padding: calc(var(--bar-height-large) + 18px) 16px 40px;
+  }
+
+  body.profile .media-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
