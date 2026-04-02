@@ -581,26 +581,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (messagesBack) {
-    messagesBack.addEventListener("click", (e) => {
-      e.stopPropagation();
+ if (messagesBack) {
+  messagesBack.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-      if (state.mode !== "drawer") return;
+    if (state.mode !== "drawer") return;
 
-      if (state.split) {
-        closeAll();
-        return;
-      }
+    // ✅ FIRST: handle split mode properly
+    if (state.split) {
+      state.split = false;
 
-      const isChatView = messagesChatView?.classList.contains("active");
+      // decide what view to return to
+      state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
 
-      if (isChatView) {
-        showDrawerList();
-      } else {
-        closeAll();
-      }
-    });
-  }
+      updateDrawerLayout();
+      syncAllChats();
+      return;
+    }
+
+    // ✅ NORMAL behaviour
+    const isChatView = messagesChatView?.classList.contains("active");
+
+    if (isChatView) {
+      showDrawerList();
+    } else {
+      closeAll();
+    }
+  });
+}
 
   if (splitToggle) {
     splitToggle.addEventListener("click", (e) => {
