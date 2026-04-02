@@ -689,7 +689,7 @@ body.feed .messages-minimized {
 body.feed .messages-popup-header,
 body.feed .messages-popout-header {
   display: grid;
-   grid-template-columns: 1fr auto;
+  grid-template-columns: 42px 1fr auto;
   align-items: center;
   padding: 12px 14px;
   background: var(--navbar-bg);
@@ -707,22 +707,29 @@ body.feed .messages-popout-header::after {
 
 body.feed .messages-popup-title,
 body.feed .messages-popout-title {
- position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+ grid-column: 2;
+  justify-self: center;
+  position: relative;
   z-index: 1;
   font-weight: 700;
   color: #091a3a;
-  pointer-events: none; /
+  text-align: center;
+  pointer-events: none;
 }
 
 body.feed .messages-popup-actions,
 body.feed .messages-popout-actions {
+  grid-column: 3;
+  justify-self: end;
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+body.feed .messages-popout-header {
+  position: relative;
 }
 
 body.feed .messages-popup-body,
