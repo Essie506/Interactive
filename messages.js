@@ -333,6 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (popupHeaderTitle) {
   popupHeaderTitle.textContent = state.currentUser;
 }
+  }
 
   function rememberCurrentStateBeforeMinimize() {
     if (state.mode === "drawer" || state.mode === "popup" || state.mode === "popout") {
