@@ -739,6 +739,15 @@ body.feed .messages-popout-body {
   background: #fff;
 }
 
+body.feed .messages-popup-popout-btn,
+body.feed .messages-popup-minimize-btn,
+body.feed .messages-popup-back,
+body.feed .messages-popup-split,
+body.feed .messages-popup-close {
+   width: 36px;
+  height: 36px;
+}
+
 body.feed .messages-popup-footer,
 body.feed .messages-popout-footer {
   border-top: 1px solid rgba(0, 0, 0, 0.08);
