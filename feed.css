@@ -294,10 +294,6 @@ body.feed .messages-header h3 {
   z-index: 1;
 }
 
-body.feed .messages-header h3 {
-  text-align: flex-start;
-}
-
 body.feed .composer-header h3 {
   grid-column: 2;
 }
@@ -459,7 +455,6 @@ body.feed .messages-footer {
   padding-top: 14px;
   flex-shrink: 0;
   margin-top: auto;
-  position: flex;
   bottom: 0;
   background: #fff;
   z-index: 2;
@@ -685,23 +680,6 @@ body.feed .messages-popout,
 body.feed .messages-minimized {
   position: fixed;
   z-index: 4100;
-}
-
-body.feed .messages-popup {
-  left: 2px;
-  bottom: calc(2px + env(safe-area-inset-bottom));
-  width: min(340px, calc(100vw - 32px));
-  height: 360px;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-  display: none;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-body.feed .messages-popup.open {
-  display: flex;
 }
 
 body.feed .messages-popup-header,
