@@ -847,6 +847,16 @@ body.feed .messages-view.active {
   display: flex;
 }
 
+body.feed .messages-chevron-btn i {
+  font-size: 0.95rem;
+  color: #091a3a;
+  line-height: 1;
+}
+body.feed .messages-chevron-btn.open i {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+
 /* =========================
    FEED MESSAGES - DRAWER SPLIT
 ========================= */
