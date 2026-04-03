@@ -847,14 +847,61 @@ body.feed .messages-view.active {
   display: flex;
 }
 
-body.feed .messages-chevron-btn i {
-  font-size: 0.95rem;
-  color: #091a3a;
-  line-height: 1;
+/* =========================
+   MESSAGES CORNER TRIANGLE
+========================= */
+
+body.feed .messages-header,
+body.feed .messages-popup-header,
+body.feed .messages-popout-header {
+  position: relative; /* IMPORTANT */
+  overflow: visible;  /* allow corner */
 }
+
+/* Triangle shape */
+body.feed  .messages-chevron-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 0;
+  height: 0;
+
+  border-bottom: 16px solid rgba(255, 255, 255, 0.9);
+  border-right: 16px solid transparent;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Icon inside triangle */
+body.feed  .messages-chevron-btn i {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+
+  font-size: 11px;
+  color: #091a3a;
+
+  pointer-events: none;
+}
+
+/* Hover effect */
+body.feed .messages-chevron-btn:hover {
+  border-top-color: rgba(255, 255, 255, 1);
+}
+
+/* Optional: active / open state */
+body.feed  .messages-chevron-btn.open i {
+  transform: rotate(180deg);
+}
+/* Optional rotate */
 body.feed .messages-chevron-btn.open i {
   transform: rotate(180deg);
-  transition: transform 0.2s ease;
 }
 
 /* =========================
