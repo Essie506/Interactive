@@ -61,6 +61,19 @@ body.profile .profile-avatar {
   font-size: 2rem;
 }
 
+.btn-soft {
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(7, 153, 146, 0.12);
+  color: var(--text-dark);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  border: none;
+}
+
 body.profile .profile-main-info {
   text-align: center;
 }
@@ -121,15 +134,6 @@ body.profile .profile-actions {
   display: flex;
    gap: 12px;
   justify-content: center;
-}
-
-.profile-actions a,
-.profile-actions button {
-  font: inherit;          /* 👈 KEY FIX */
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--text-dark);
 }
 
 body.profile .profile-tabs-card {
