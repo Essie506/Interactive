@@ -6,9 +6,9 @@
   <title>Your Profile - Interactive Fitness</title>
 
   <link rel="stylesheet" href="base.css" />
-<link rel="stylesheet" href="components.css" />
-<link rel="stylesheet" href="menu.css" />
-<link rel="stylesheet" href="view-profile.css" />
+  <link rel="stylesheet" href="components.css" />
+  <link rel="stylesheet" href="menu.css" />
+  <link rel="stylesheet" href="view-profile.css" />
   
   <link
     rel="stylesheet"
@@ -83,19 +83,24 @@
       <div class="profile-main-info">
         <h1>Esther Clarke</h1>
         <p class="profile-handle">@estherfitness</p>
-        <p class="profile-role">Fitness creator • Trainer</p>
+        <p class="profile-role">
+          <i class="fa-solid fa-dumbbell"></i> Trainer • Strength & Conditioning
+        </p>
+        <p class="profile-gym">
+          <i class="fa-solid fa-location-dot"></i> TrainWell Gym • London
+        </p>
         <p class="profile-bio">
-          Building strength, confidence and consistency. Sharing workouts, media and progress.
+          Helping you build strength, confidence and consistency. PT sessions, custom plans and home workouts available.
         </p>
 
         <div class="profile-quick-stats">
           <div class="profile-stat">
             <strong>128</strong>
-            <span>Posts</span>
+            <span>Followers</span>
           </div>
           <div class="profile-stat">
-            <strong>42</strong>
-            <span>Saved</span>
+            <strong>12</strong>
+            <span>Workouts</span>
           </div>
           <div class="profile-stat">
             <strong>61</strong>
@@ -105,21 +110,26 @@
       </div>
 
       <div class="profile-actions">
-        <a href="edit-profile.html" class="btn-modern">Edit Profile</a>
+        <a href="messages.html" class="btn-modern">
+          <i class="fa-solid fa-comments"></i> Message
+        </a>
+        <button type="button" class="btn-modern">
+          <i class="fa-solid fa-user-plus"></i> Follow
+        </button>
       </div>
     </section>
 
     <section class="profile-tabs-card">
       <div class="profile-tabs">
-        <button class="profile-tab active" type="button" data-tab="you">You</button>
-        <button class="profile-tab" type="button" data-tab="saved">Saved Workouts</button>
-        <button class="profile-tab" type="button" data-tab="media">Your Media</button>
+        <button class="profile-tab active" type="button" data-tab="posts">Posts</button>
+        <button class="profile-tab" type="button" data-tab="workouts">Workouts</button>
+        <button class="profile-tab" type="button" data-tab="media">Media</button>
       </div>
     </section>
 
-    <section class="profile-panel active" id="profile-panel-you">
+    <section class="profile-panel active" id="profile-panel-posts">
       <div class="profile-section-card">
-        <h2>Your Posts</h2>
+        <h2>Posts</h2>
 
         <div class="profile-posts">
           <article class="post">
@@ -152,9 +162,9 @@
       </div>
     </section>
 
-    <section class="profile-panel" id="profile-panel-saved">
+    <section class="profile-panel" id="profile-panel-workouts">
       <div class="profile-section-card">
-        <h2>Saved Workouts</h2>
+        <h2>Workouts</h2>
 
         <div class="saved-workouts-grid">
           <article class="saved-workout-card">
@@ -180,7 +190,7 @@
 
     <section class="profile-panel" id="profile-panel-media">
       <div class="profile-section-card">
-        <h2>Your Media</h2>
+        <h2>Media</h2>
 
         <div class="media-grid">
           <article class="media-card">
