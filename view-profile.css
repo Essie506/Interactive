@@ -61,8 +61,7 @@ body.profile .profile-avatar {
   font-size: 2rem;
 }
 
-.btn-soft, 
-.btn-soft i {
+.btn-soft {
   padding: 10px 14px;
   border-radius: var(--radius-round);
   background: rgba(7, 153, 146, 0.12);
