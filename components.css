@@ -135,7 +135,8 @@ body.feed .messages-back,
 body.feed .messages-split,
 body.feed .messages-close,
 .bottom-nav i,
-.bottom-nav-desktop i {
+.bottom-nav-desktop i,
+.btn-soft i, {
   width: 42px;
   height: 42px;
   border-radius: 50%;
