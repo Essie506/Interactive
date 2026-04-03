@@ -64,7 +64,7 @@ body.profile .profile-avatar {
 .btn-soft, 
 .btn-soft i {
   padding: 10px 14px;
-  border-radius: 10px;
+  border-radius: var(--radius-round);
   background: rgba(7, 153, 146, 0.12);
   color: var(--text-dark);
   font-weight: 700;
@@ -73,7 +73,7 @@ body.profile .profile-avatar {
   gap: 6px;
   cursor: pointer;
   border: none
-   text-decoration: none;
+  text-decoration: none;
 }
 
 body.profile .profile-main-info {
