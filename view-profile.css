@@ -79,12 +79,6 @@ body.profile .profile-main-info {
   text-align: center;
 }
 
-body.profile .profile-main-info h1 {
-  margin: 0 0 8px;
-  color: #091a3a;
-  font-size: 1.6rem;
-}
-
 body.profile .profile-handle {
   margin: 0;
   font-weight: 600;
