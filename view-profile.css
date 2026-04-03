@@ -123,6 +123,15 @@ body.profile .profile-actions {
   justify-content: center;
 }
 
+.profile-actions a,
+.profile-actions button {
+  font: inherit;          /* 👈 KEY FIX */
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
 body.profile .profile-tabs-card {
   padding: 10px;
   margin-bottom: 14px;
@@ -275,10 +284,6 @@ body.profile .media-play-badge {
 
   body.profile .profile-bio {
     margin-left: 0;
-  }
-
-  body.profile .profile-actions {
-    justify-content: flex-end;
   }
 
   body.profile .saved-workouts-grid {
