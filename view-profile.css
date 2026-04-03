@@ -162,6 +162,7 @@ body.profile .profile-tab {
   white-space: nowrap; 
    background: rgba(56, 173, 169, 0.16);
   color: #091a3a;
+   text-decoration: none;
   box-shadow:
     var(--shadow-soft),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
