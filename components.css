@@ -204,8 +204,8 @@ body.feed .messages-split:active,
 body.feed .messages-close:active,
 .bottom-nav a:active i,
 .bottom-nav-desktop a:active i,
-.profile-tab.active, 
-.btn-soft a :active, {
+.profile-tab:active, 
+.btn-soft a:active {
   transform: scale(0.94);
 }
 
