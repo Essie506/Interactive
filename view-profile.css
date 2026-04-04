@@ -313,6 +313,93 @@ body.profile .media-play-badge {
   box-shadow: var(--shadow-soft);
 }
 
+
+@media (max-width: 500px) {
+
+.btn-soft {
+  padding: 8px 14px;
+  border-radius: var(--radius-round);
+  background: rgba(7, 153, 146, 0.12);
+  color: #091a3a;
+  font-weight: 700;
+   min-width: 120px;
+   max-width: 120px;
+   max-height: 35px;
+  display: inline-flex;
+  align-items: center;
+   justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-soft,
+.follow-btn {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: 700;
+    justify-content: flex-start;
+}
+
+.btn-soft i {
+   margin-right: 10px;
+     width: 24px;
+  height: 24px;
+}
+
+   body.profile .profile-stat {
+  background: rgba(255, 255, 255, 0.62);
+  border-radius: 16px;
+  padding: 12px 10px;
+  text-align: center;
+   display: flex;
+  flex-direction: column;
+  align-items: center;     /* horizontal center */
+  justify-content: center; /* vertical center (nice balance) */
+}
+
+body.profile .profile-stat strong {
+  display: flex;
+  color: #091a3a;
+  font-size: 1.05rem;
+}
+
+body.profile .profile-stat span {
+  display: flex;
+  margin-top: 4px;
+  color: rgba(9, 26, 58, 0.7);
+  font-size: 10px;
+}
+
+body.profile .profile-actions {
+  display: flex;
+   align-items: center;
+  flex-direction: column; /* 🔥 stack them */
+   justify-content: center;
+  gap: 12px;
+}
+
+/* buttons row */
+body.profile .profile-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+/* stats row */
+body.profile .profile-quick-stats {
+   position: absolute;
+  display: flex;
+  gap: 8px;
+  bottom: 8px;
+   right: 8px;
+}
+
+
+
+
+
+
 @media (min-width: 901px) {
   body.profile .profile-page {
     max-width: 1100px;
