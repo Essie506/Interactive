@@ -375,7 +375,6 @@ body.profile .profile-quick-stats {
 }
 }
 
-
 @media (min-width: 901px) {
   body.profile .profile-page {
     max-width: 1100px;
@@ -417,5 +416,9 @@ body.profile .profile-tabs-card {
    
   body.profile .profile-hero-card {
   gap: 5px; /* was 18px */
+}
+
+   body.profile .profile-avatar-wrap {
+  margin-bottom: -4px;
 }
 }
