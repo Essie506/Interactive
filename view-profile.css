@@ -69,6 +69,7 @@ body.profile .profile-avatar {
   font-weight: 700;
    min-width: 120px;
    max-width: 120px;
+   max-height: 40px;
   display: inline-flex;
   align-items: center;
    justify-content: center;
