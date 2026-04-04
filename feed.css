@@ -1315,8 +1315,9 @@ body.feed .message-chat .message-bubble video {
   }
 
     body.feed .page-layout {
-    padding-top: calc(var(--bar-height-large);
-     }
+    padding-top: calc(var(--bar-height-large));
+    }
+     
    
   body.feed .composer-card,
   body.feed .messages-card {
