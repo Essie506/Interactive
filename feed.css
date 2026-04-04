@@ -3,7 +3,6 @@
 ========================= */
 body.feed {
   background: var(--index-bg);
-   padding-top: calc(var(--bar-height-large) + 16px);
 }
 
 body.feed::before {
@@ -1315,6 +1314,10 @@ body.feed .message-chat .message-bubble video {
     width: 100vw;
   }
 
+    body.feed .page-layout {
+    padding-top: calc(var(--bar-height-large) + 16px);
+     }
+   
   body.feed .composer-card,
   body.feed .messages-card {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
