@@ -159,6 +159,7 @@ body.profile .profile-tabs {
    margin: 5px auto 0;
   scrollbar-width: none;
   width: 100%;
+   align-items: center;
   justify-content: center; /* or flex-start if you want left aligned */
 }
 
