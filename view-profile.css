@@ -328,3 +328,11 @@ body.profile .profile-quick-stats {
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+
+
+@media (max-width: 900px) {
+body.profile .profile-tabs-card {
+  padding: 8px;
+}
+}
