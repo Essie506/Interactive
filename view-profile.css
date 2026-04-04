@@ -317,28 +317,15 @@ body.profile .media-play-badge {
 @media (max-width: 500px) {
 
 .btn-soft {
-  padding: 8px 14px;
-  border-radius: var(--radius-round);
-  background: rgba(7, 153, 146, 0.12);
-  color: #091a3a;
-  font-weight: 700;
-   min-width: 120px;
-   max-width: 120px;
+   min-width: 135px;
+   max-width: 135px;
    max-height: 35px;
   display: inline-flex;
-  align-items: center;
-   justify-content: center;
   gap: 12px;
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
 }
 
 .btn-soft,
 .follow-btn {
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: 700;
     justify-content: flex-start;
 }
 
@@ -348,15 +335,9 @@ body.profile .media-play-badge {
   height: 24px;
 }
 
-   body.profile .profile-stat {
-  background: rgba(255, 255, 255, 0.62);
+body.profile .profile-stat {
   border-radius: 16px;
   padding: 12px 10px;
-  text-align: center;
-   display: flex;
-  flex-direction: column;
-  align-items: center;     /* horizontal center */
-  justify-content: center; /* vertical center (nice balance) */
 }
 
 body.profile .profile-stat strong {
@@ -376,7 +357,7 @@ body.profile .profile-actions {
   display: flex;
    align-items: center;
   flex-direction: column; /* 🔥 stack them */
-   justify-content: center;
+   justify-content: flex-start;
   gap: 12px;
 }
 
@@ -388,16 +369,15 @@ body.profile .profile-buttons {
 
 /* stats row */
 body.profile .profile-quick-stats {
-   position: absolute;
-  display: flex;
   gap: 8px;
-  bottom: 8px;
-   right: 8px;
+  bottom: 4px;
+   right: 4px;
 }
 
-
-
-
+   body.profile .profile-hero-card {
+  gap: 8px; /* was 18px */
+}
+}
 
 
 @media (min-width: 901px) {
