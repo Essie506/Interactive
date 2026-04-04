@@ -412,6 +412,12 @@ body.profile .profile-quick-stats {
 }
 
 @media (max-width: 900px) {
+
+ body.profile .profile-page {
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+   
 body.profile .profile-tabs-card {
   padding: 8px;
    
@@ -422,4 +428,13 @@ body.profile .profile-tabs-card {
    body.profile .profile-avatar-wrap {
   margin-bottom: -4px;
 }
+  body.profile .profile-hero-card,
+  body.profile .profile-tabs-card,
+  body.profile .profile-section-card {
+    width: 98%;
+    max-width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
 }
