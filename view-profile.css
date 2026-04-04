@@ -167,7 +167,7 @@ body.profile .profile-tabs::-webkit-scrollbar {
 }
 
 body.profile .profile-tab {
-  flex: 1;
+  flex: 0 1 auto;
   border: none;
   border-radius: 999px;
   padding: 10px 8px;
