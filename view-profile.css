@@ -175,6 +175,7 @@ body.profile .profile-tab {
   cursor: pointer;
   white-space: nowrap; 
    flex: 1;
+   z-index: 2;
    background: rgba(56, 173, 169, 0.16);
   color: #091a3a;
    text-decoration: none;
