@@ -152,7 +152,7 @@ body.profile .profile-tabs-card {
 
 body.profile .profile-tabs {
   display: flex;
-  gap: 12px;
+  gap: 20px;
   width: 100%;
   margin: 0;
   overflow-x: auto;
