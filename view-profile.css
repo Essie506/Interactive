@@ -359,6 +359,7 @@ body.profile .profile-actions {
   flex-direction: row;
    justify-content: flex-start;
   gap: 12px;
+   margin-top: 10px
 }
 
 /* buttons row */
