@@ -141,6 +141,8 @@ body.profile .profile-actions {
 body.profile .profile-tabs-card {
   padding: 10px;
   margin-bottom: 14px;
+   display: flex;
+   justify-content: center;
 }
 
 body.profile .profile-tabs {
@@ -148,7 +150,12 @@ body.profile .profile-tabs {
   gap: 8px;
   overflow-x: auto;
   scrollbar-width: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+  width: 100%;
+  justify-content: center; /* or flex-start if you want left aligned */
 }
+
 
 body.profile .profile-tabs::-webkit-scrollbar {
   display: none;
@@ -157,8 +164,7 @@ body.profile .profile-tabs::-webkit-scrollbar {
 body.profile .profile-tab {
   border: none;
   border-radius: 999px;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.72);
+  padding: 10px 12px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap; 
