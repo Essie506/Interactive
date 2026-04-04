@@ -110,7 +110,6 @@ body.profile .profile-quick-stats {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 18px;
-   justify-content: space-between;
 }
 
 body.profile .profile-stat {
@@ -118,6 +117,10 @@ body.profile .profile-stat {
   border-radius: 16px;
   padding: 12px 10px;
   text-align: center;
+   display: flex;
+  flex-direction: column;
+  align-items: center;     /* horizontal center */
+  justify-content: center; /* vertical center (nice balance) */
 }
 
 body.profile .profile-stat strong {
@@ -165,7 +168,7 @@ body.profile .profile-tabs::-webkit-scrollbar {
 body.profile .profile-tab {
   border: none;
   border-radius: 999px;
-  padding: 10px 12px;
+  padding: 10px 8px;
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap; 
