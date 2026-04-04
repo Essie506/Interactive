@@ -180,8 +180,6 @@ body.feed .messages-close:focus-visible,
 .bottom-nav a:focus-visible i,
 .bottom-nav-desktop a:hover i,
 .bottom-nav-desktop a:focus-visible i,
-body.profile .profile-tab:hover,
-body.profile .profile-tab:focus-visible, 
 .btn-soft:hover,
 .btn-soft:focus-visible {
   box-shadow:
