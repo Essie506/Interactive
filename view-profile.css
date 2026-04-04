@@ -147,7 +147,7 @@ body.profile .profile-tabs-card {
 
 body.profile .profile-tabs {
   display: flex;
-  gap: 8px;
+  gap: 12px;
   overflow-x: auto;
   scrollbar-width: none;
   overflow-x: auto;
@@ -168,6 +168,7 @@ body.profile .profile-tab {
   font-weight: 700;
   cursor: pointer;
   white-space: nowrap; 
+   flex: 1;
    background: rgba(56, 173, 169, 0.16);
   color: #091a3a;
    text-decoration: none;
