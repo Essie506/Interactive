@@ -359,7 +359,7 @@ body.profile .profile-actions {
   display: flex;
    align-items: center;
   flex-direction: row;
-   justify-content: flex-start;
+   justify-content: center;
   gap: 12px;
    margin-top: 20px;
    margin-bottom: 10px;
@@ -429,7 +429,7 @@ body.profile .profile-tabs-card {
 }
 
    body.profile .profile-avatar-wrap {
-  margin-bottom: -4px;
+  margin-bottom: -8px;
 }
   body.profile .profile-hero-card,
   body.profile .profile-tabs-card,
