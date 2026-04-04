@@ -145,6 +145,7 @@ body.profile .profile-actions {
   display: flex;
    gap: 12px;
   justify-content: space-between;
+   align-items: center;
 }
 
 body.profile .profile-tabs-card {
