@@ -71,7 +71,6 @@ body.profile .profile-avatar {
    max-width: 160px;
   display: inline-flex;
   align-items: center;
-   justify-content: space-between;
   gap: 12px;
   cursor: pointer;
   border: none;
@@ -83,7 +82,13 @@ body.profile .profile-avatar {
   font-size: 1rem;
   line-height: 1;
   font-weight: 700;
+    justify-content: flex-start;
 }
+
+.btn-soft i {
+   margin-right: 10px;
+}
+
 
 body.profile .profile-main-info {
   text-align: center;
