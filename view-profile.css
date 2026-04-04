@@ -40,7 +40,7 @@ body.profile .profile-hero-card {
   flex-direction: column;
   gap: 18px;
   padding: 18px;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 body.profile .profile-avatar-wrap {
@@ -145,7 +145,7 @@ body.profile .profile-actions {
 body.profile .profile-tabs-card {
    min-height: 65px;
   padding: 10px;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,7 +168,7 @@ body.profile .profile-tabs::-webkit-scrollbar {
 
 body.profile .profile-tab {
   flex: 1;
-  border: none;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-round);
   padding: 12px 8px;
   font-weight: 700;
