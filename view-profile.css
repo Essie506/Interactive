@@ -67,8 +67,8 @@ body.profile .profile-avatar {
   background: rgba(7, 153, 146, 0.12);
   color: #091a3a;
   font-weight: 700;
-   min-width: 150px;
-   max-width: 150px;
+   min-width: 160px;
+   max-width: 160px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
