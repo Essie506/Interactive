@@ -172,7 +172,7 @@ body.profile .profile-tab {
   padding: 10px 8px;
   font-weight: 700;
   cursor: pointer;
-   max-width: 120px;
+   max-width: 300px;
   white-space: nowrap;
   z-index: 2;
   background: rgba(56, 173, 169, 0.16);
