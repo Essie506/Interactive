@@ -144,7 +144,7 @@ body.profile .profile-actions {
 }
 
 body.profile .profile-tabs-card {
-  padding: 5px;
+  padding: 12px;
   margin-bottom: 14px;
    display: flex;
    justify-content: center;
@@ -156,6 +156,7 @@ body.profile .profile-tabs {
   overflow-x: auto;
   scrollbar-width: none;
   overflow-x: auto;
+   margin: 5px auto 0;
   scrollbar-width: none;
   width: 100%;
   justify-content: center; /* or flex-start if you want left aligned */
