@@ -314,10 +314,6 @@ body.profile .media-play-badge {
     padding: 22px;
   }
 
-body.profile .profile-quick-stats {
-  grid-template-columns: repeat(3, 1fr);
-}
-
   body.profile .profile-avatar-wrap {
     justify-content: flex-start;
   }
