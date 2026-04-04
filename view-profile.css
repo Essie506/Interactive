@@ -41,6 +41,7 @@ body.profile .profile-hero-card {
   gap: 18px;
   padding: 18px;
   margin-bottom: 10px;
+   position: relative;
 }
 
 body.profile .profile-avatar-wrap {
@@ -157,9 +158,11 @@ body.profile .profile-buttons {
 
 /* stats row */
 body.profile .profile-quick-stats {
+   position: absolute;
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  gap: 8px;
+  bottom: 16px;
+   right: 16px;
 }
 
 body.profile .profile-tabs-card {
