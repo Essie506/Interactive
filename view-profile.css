@@ -67,6 +67,7 @@ body.profile .profile-avatar {
   background: rgba(7, 153, 146, 0.12);
   color: #091a3a;
   font-weight: 700;
+   min-width: 120px
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -159,6 +160,7 @@ body.profile .profile-tabs {
   scrollbar-width: none;
   align-items: center;
   justify-content: space-between;
+   gap: 5px;
 }
 
 body.profile .profile-tabs::-webkit-scrollbar {
