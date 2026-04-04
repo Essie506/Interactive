@@ -110,7 +110,6 @@ body.profile .profile-quick-stats {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 18px;
-   justify-content: center;
 }
 
 body.profile .profile-stat {
@@ -294,6 +293,10 @@ body.profile .media-play-badge {
     gap: 20px;
     padding: 22px;
   }
+
+body.profile .profile-quick-stats {
+  grid-template-columns: repeat(3, 1fr);
+}
 
   body.profile .profile-avatar-wrap {
     justify-content: flex-start;
