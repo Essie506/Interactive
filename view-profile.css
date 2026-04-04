@@ -161,8 +161,8 @@ body.profile .profile-quick-stats {
    position: absolute;
   display: flex;
   gap: 8px;
-  bottom: 16px;
-   right: 16px;
+  bottom: 8px;
+   right: 8px;
 }
 
 body.profile .profile-tabs-card {
