@@ -324,7 +324,7 @@ body.profile .media-play-badge {
    max-height: 35px;
   display: inline-flex;
   gap: 12px;
-   margin-left: 2px;
+   margin-left: 4px;
 }
 
 .btn-soft,
