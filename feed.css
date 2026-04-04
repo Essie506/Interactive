@@ -3,6 +3,7 @@
 ========================= */
 body.feed {
   background: var(--index-bg);
+   padding-top: calc(var(--bar-height-large) + 16px);
 }
 
 body.feed::before {
