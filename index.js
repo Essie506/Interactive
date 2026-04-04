@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Click handler
   loginBtn.addEventListener("click", () => {
     if (loginBtn.disabled) return; // extra safety
-    window.location.href = "home.html";
+    window.location.href = "feed.html";
   });
 
   // Initial state
