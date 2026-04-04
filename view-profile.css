@@ -120,6 +120,8 @@ body.profile .profile-bio {
 
 body.profile .profile-stat {
   background: rgba(255, 255, 255, 0.68);
+   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 16px;
   padding: 12px 10px;
   text-align: center;
