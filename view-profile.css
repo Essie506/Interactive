@@ -142,7 +142,7 @@ body.profile .profile-stat span {
 }
 
 body.profile .profile-actions {
-  display: inline flex;
+  display: flex;
    gap: 12px;
   justify-content: space-between;
 }
