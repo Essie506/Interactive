@@ -110,6 +110,7 @@ body.profile .profile-quick-stats {
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: 18px;
+   justify-content: center;
 }
 
 body.profile .profile-stat {
