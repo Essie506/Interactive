@@ -357,7 +357,7 @@ body.profile .profile-stat span {
 
 body.profile .profile-actions {
   display: flex;
-   align-items: center;
+   align-items: flex-start;
   flex-direction: row;
    justify-content: center;
   gap: 12px;
