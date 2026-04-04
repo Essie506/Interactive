@@ -175,9 +175,7 @@ body.profile .profile-tab {
   cursor: pointer;
    max-width: 300px;
   white-space: nowrap;
-  z-index: 3;
-  overflow-y: visible;
-   overflow-x: visible;
+ margin-bottom: 5px;
   background: rgba(56, 173, 169, 0.16);
   color: #091a3a;
   text-decoration: none;
