@@ -301,7 +301,7 @@ body.index footer {
 
   body.home .hero,
   body.index .hero
-   body.index .hero {
+   body.feed .hero {
     padding: calc(var(--bar-height) + 20px) 20px 40px;
   }
 
