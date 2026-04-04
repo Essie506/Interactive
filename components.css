@@ -131,6 +131,7 @@ body.feed .messages-minimize-btn,
 body.feed .upload-btn,
 body.feed .composer-close,
 body.feed .menu-toggle,
+ body.view-profile .menu-toggle,
 body.feed .messages-back,
 body.feed .messages-split,
 body.feed .messages-close,
@@ -150,6 +151,11 @@ body.feed .messages-close,
     var(--shadow-soft),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
   transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
+}
+
+body.feed .menu-toggle i,
+body.view-profile .menu-toggle i {
+    font-size: 1.3rem;
 }
 
 .desktop-nav-links a:hover,
@@ -206,6 +212,7 @@ body.feed .messages-close:focus-visible,
 body.feed .upload-btn:active,
 body.feed .composer-close:active,
 body.feed .menu-toggle:active,
+ body.view-profile .menu-toggle:active,
 body.feed .messages-back:active,
 body.feed .messages-open-popup:active,
 body.feed .messages-popout-btn:active,
@@ -427,7 +434,8 @@ body.index .btn-login {
   .nav-left .desktop-icon-link,
   .navbar-right .icon-btn,
   .navbar-right .composer-toggle,
-  body.feed .menu-toggle {
+  body.feed .menu-toggle,
+   body.view-profile .menu-toggle {
     width: 46px;
     height: 46px;
     flex-shrink: 0;
@@ -436,7 +444,8 @@ body.index .btn-login {
   .nav-left .desktop-icon-link,
   .navbar-right .icon-btn i,
   .navbar-right .composer-toggle i,
-  body.feed .menu-toggle i {
+  body.feed .menu-toggle i,
+   body.view-profile .menu-toggle i {
     font-size: 1.3rem;
   }
 }
