@@ -146,40 +146,38 @@ body.profile .profile-actions {
 body.profile .profile-tabs-card {
   padding: 12px;
   margin-bottom: 14px;
-   display: flex;
-   justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body.profile .profile-tabs {
   display: flex;
   gap: 12px;
-  overflow-x: auto;
-  scrollbar-width: none;
-  overflow-x: auto;
-   margin: 5px auto 0;
-  scrollbar-width: none;
   width: 100%;
-   align-items: center;
-  justify-content: center; /* or flex-start if you want left aligned */
+  margin: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+  align-items: center;
+  justify-content: center;
 }
-
 
 body.profile .profile-tabs::-webkit-scrollbar {
   display: none;
 }
 
 body.profile .profile-tab {
+  flex: 1;
   border: none;
   border-radius: 999px;
   padding: 10px 8px;
   font-weight: 700;
   cursor: pointer;
-  white-space: nowrap; 
-   flex: 1;
-   z-index: 2;
-   background: rgba(56, 173, 169, 0.16);
+  white-space: nowrap;
+  z-index: 2;
+  background: rgba(56, 173, 169, 0.16);
   color: #091a3a;
-   text-decoration: none;
+  text-decoration: none;
   box-shadow:
     var(--shadow-soft),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
