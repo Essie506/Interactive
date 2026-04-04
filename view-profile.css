@@ -153,13 +153,12 @@ body.profile .profile-tabs-card {
 
 body.profile .profile-tabs {
   display: flex;
-  gap: 20px;
   width: 100%;
   margin: 0;
   overflow-x: auto;
   scrollbar-width: none;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 body.profile .profile-tabs::-webkit-scrollbar {
