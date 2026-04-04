@@ -131,7 +131,7 @@ body.feed .messages-minimize-btn,
 body.feed .upload-btn,
 body.feed .composer-close,
 body.feed .menu-toggle,
- body.view-profile .menu-toggle,
+ body.profile .menu-toggle,
 body.feed .messages-back,
 body.feed .messages-split,
 body.feed .messages-close,
@@ -154,7 +154,7 @@ body.feed .messages-close,
 }
 
 body.feed .menu-toggle i,
-body.view-profile .menu-toggle i {
+body.profile .menu-toggle i {
     font-size: 1.3rem;
 }
 
@@ -212,7 +212,7 @@ body.feed .messages-close:focus-visible,
 body.feed .upload-btn:active,
 body.feed .composer-close:active,
 body.feed .menu-toggle:active,
- body.view-profile .menu-toggle:active,
+ body.profile .menu-toggle:active,
 body.feed .messages-back:active,
 body.feed .messages-open-popup:active,
 body.feed .messages-popout-btn:active,
@@ -435,9 +435,9 @@ body.index .btn-login {
   .navbar-right .icon-btn,
   .navbar-right .composer-toggle,
   body.feed .menu-toggle,
-   body.view-profile .menu-toggle {
-    width: 46px;
-    height: 46px;
+   body.profile .menu-toggle {
+    width: 42px;
+    height: 42px;
     flex-shrink: 0;
   }
 
