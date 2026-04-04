@@ -67,8 +67,8 @@ body.profile .profile-avatar {
   background: rgba(7, 153, 146, 0.12);
   color: #091a3a;
   font-weight: 700;
-   min-width: 160px;
-   max-width: 160px;
+   min-width: 120px;
+   max-width: 120px;
   display: inline-flex;
   align-items: center;
    justify-content: center;
@@ -116,13 +116,6 @@ body.profile .profile-bio {
   line-height: 1.45;
 }
 
-body.profile .profile-quick-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  margin-top: 18px;
-}
-
 body.profile .profile-stat {
   background: rgba(255, 255, 255, 0.62);
   border-radius: 16px;
@@ -148,9 +141,9 @@ body.profile .profile-stat span {
 }
 
 body.profile .profile-actions {
-  display: flex;
+  display: inline flex;
    gap: 12px;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 body.profile .profile-tabs-card {
