@@ -461,16 +461,13 @@ body.index .btn-login {
     display: none;
   }
 
-.composer-modal,
-.messages-modal {
+.composer-modal {
     width: 100vw;
   }
    
-.composer-card,
-.messages-card {
+.composer-card {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
-  }
-   
+  }   
 }
 /* =========================
    COMPOSER (SHARED)
