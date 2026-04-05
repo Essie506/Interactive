@@ -425,11 +425,12 @@ body.messages-open {
   position: absolute;
   bottom: 5px;
   right: 5px;
-  font-size: 10px;
+  font-size: 14px;
   color: #091a3a;
   line-height: 1;
   transition: transform 0.2s ease;
   pointer-events: none;
+   z-index: 3;
 }
 
 .messages-chevron-btn:hover {
