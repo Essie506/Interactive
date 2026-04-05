@@ -397,23 +397,57 @@ body.messages-open {
 .messages-popup-header,
 .messages-popout-header {
   position: relative;
-  overflow: visible;
+  overflow: hidden;
+}
+/* =========================
+   MESSAGES CORNER TRIANGLE
+========================= */
+
+.messages-header,
+.messages-popup-header,
+.messages-popout-header {
+  position: relative;
+  overflow: hidden;
 }
 
 .messages-chevron-btn {
   position: absolute;
   top: 0;
   right: 0;
-  width: 0;
-  height: 0;
-  border-bottom: 16px solid rgba(255, 255, 255, 0.9);
-  border-right: 16px solid transparent;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   cursor: pointer;
-  z-index: 3;
+  z-index: 5;
+  border-radius: 0;
+  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
 }
+
+.messages-chevron-btn i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 10px;
+  color: #091a3a;
+  line-height: 1;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+}
+
+.messages-chevron-btn:hover {
+  background: rgba(255, 255, 255, 1);
+}
+
+.messages-chevron-btn.open i {
+  transform: rotate(180deg);
+}
+
 
 .messages-chevron-btn i {
   position: absolute;
@@ -424,12 +458,10 @@ body.messages-open {
   pointer-events: none;
 }
 
-.messages-chevron-btn:hover {
-  border-top-color: rgba(255, 255, 255, 1);
-}
-
-.messages-chevron-btn.open i {
-  transform: rotate(180deg);
+.messages-header-actions,
+.messages-popup-actions,
+.messages-popout-actions {
+  padding-right: 22px;
 }
 
 /* =========================
