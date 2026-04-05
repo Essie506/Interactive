@@ -404,8 +404,8 @@ body.messages-open {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 36px;
-  height: 36px;
+  width: 42px;
+  height: 42px;
   padding: 0;
   border: none;
     background: var(--glass-white);
@@ -613,7 +613,7 @@ body.messages-open {
   inset: 0;
   background: linear-gradient(
     45deg,
-    transparent 49.5%,
+    transparent 47%,
     rgba(0,0,0,0.06) 50%,
     transparent 50.5%
   );
