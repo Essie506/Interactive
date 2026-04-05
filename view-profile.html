@@ -17,39 +17,88 @@
   />
 </head>
 <body class="profile">
-
-  <nav class="navbar">
+  
+ <nav class="navbar">
     <div class="navbar-bg"></div>
 
     <div class="nav-left">
       <button class="menu-toggle icon-btn" id="menuToggle" type="button" aria-label="Open menu">
         <i class="fa-solid fa-user"></i>
       </button>
-      
-   <button class="icon-btn desktop-icon-link messages-toggle" id="messagesToggle" type="button" aria-label="Messages">
+
+      <button class="icon-btn desktop-icon-link messages-toggle" id="messagesToggle" type="button" aria-label="Messages">
         <i class="fa-solid fa-comments"></i>
       </button>
     </div>
 
     <div class="nav-title">Interactive Fitness</div>
 
-    <div class="nav-center">
-      <div class="desktop-nav-links">
-        <a href="feed.html"><i class="fa-solid fa-house"></i></a>
-        <a href="home.html"><i class="fa-solid fa-fire"></i></a>
-        <a href="studios.html"><i class="fa-solid fa-dumbbell"></i></a>
-        <a href="calendar.html"><i class="fa-solid fa-calendar"></i></a>
-      </div>
+    <div class="nav-center desktop-nav-links">
+      <a href="feed.html" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+
+      <a href="calendar.html" aria-label="Calendar">
+        <i class="fa-regular fa-calendar-days"></i>
+      </a>
+
+      <a href="studios.html" aria-label="Gyms">
+        <i class="fa-solid fa-child-reaching"></i>
+      </a>
+
+      <a href="browse-workouts.html" aria-label="Browse workouts">
+        <i class="fa-solid fa-dumbbell"></i>
+      </a>
     </div>
 
-    <button class="icon-btn composer-toggle" id="composerToggle" type="button" aria-label="Create post">
+    <div class="navbar-right">
+      <button class="icon-btn desktop-icon-link top-search-btn" id="searchToggle" type="button" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <button class="icon-btn composer-toggle" id="composerToggle" type="button" aria-label="Create post">
         <i class="fa-solid fa-plus"></i>
       </button>
 
-      <a href="edit-profile.html" class="icon-btn" aria-label="Edit profile">
-        <i class="fa-solid fa-pen"></i>
+      <a href="notifications.html" class="icon-btn desktop-icon-link" aria-label="Notifications">
+        <i class="fa-solid fa-bell"></i>
       </a>
     </div>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <nav class="menu" aria-label="Main menu">
+    <ul>
+      <li class="menu-profile">
+        <a href="view-profile.html" class="menu-profile-info">
+          <div class="menu-profile-name">Esther</div>
+          <div class="menu-profile-sub">View profile</div>
+        </a>
+      </li>
+
+      <li><a href="feed.html" class="menu-link-modern">Feed</a></li>
+      <li><a href="gyms.html" class="menu-link-modern">Gyms and Studios</a></li>
+
+      <li class="has-submenu">
+        <a href="#" class="menu-link-modern">Workouts</a>
+        <ul class="submenu">
+          <li><a href="home.html">Browse Workouts</a></li>
+          <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
+          <li><a href="trending.html">Trending</a></li>
+        </ul>
+      </li>
+
+      <li><a href="settings.html" class="menu-link-modern">Settings</a></li>
+      <li><a href="index.html" class="menu-link-modern">Logout</a></li>
+
+      <li class="menu-search-item">
+        <div class="menu-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="menuSearchInput" placeholder="Search..." />
+        </div>
+      </li>
+    </ul>
   </nav>
 
   <div class="menu-overlay" id="menuOverlay"></div>
