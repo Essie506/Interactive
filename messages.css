@@ -567,7 +567,6 @@ body.messages-open {
 
 .messages-popout-header .messages-close-corner i,
 .messages-popup-header .messages-close-corner i {
- .messages-chevron-btn i {
   position: absolute;
    top: 5px;
   left: 5px; 
@@ -620,8 +619,8 @@ body.messages-open {
 .messages-popout-header .messages-chevron-btn {
   box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
 }
-.messages-popout-header. messages-corner-wrap::after,
-.messages-popup-header. messages-corner-wrap::after {
+.messages-popout-header .messages-corner-wrap::after,
+.messages-popup-header .messages-corner-wrap::after {
   content: "";
   position: absolute;
   inset: 0;
