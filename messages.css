@@ -528,12 +528,12 @@ body.messages-open {
 
 
 .messages-corner-wrap {
-  position: absolute;
-  top: 0;
+  position: flex;
+  bottom: 0;
   right: 0;
-  width: 52px;
-  height: 52px;
-  z-index: 5;
+  width: 48px;
+  height: 48px;
+  z-index: 2;
 }
 
 .messages-popout-header .messages-close-corner, 
