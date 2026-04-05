@@ -631,7 +631,7 @@ body.messages-open {
   position: relative;
   z-index: 3;
   display: flex;
-  align-items: space-between;
+  align-items: center;
   gap: 8px;
 }
 
