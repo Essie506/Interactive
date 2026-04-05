@@ -397,7 +397,7 @@ body.messages-open {
 .messages-popup-header,
 .messages-popout-header {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 /* =========================
    MESSAGES CORNER TRIANGLE
