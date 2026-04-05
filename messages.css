@@ -400,28 +400,6 @@ body.messages-open {
   overflow: visible;
 }
 
-.messages-corner-wrap {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 22px;
-  height: 22px;
-  z-index: 5;
-}
-
-.messages-corner-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    transparent 49.5%,
-    rgba(0,0,0,0.06) 50%,
-    transparent 50.5%
-  );
-  pointer-events: none;
-}
-
 .messages-chevron-btn {
   position: absolute;
   bottom: 0;
@@ -541,6 +519,34 @@ body.messages-open {
 .messages-corner-item.msn-mode {
   color: var(--main-color-dark);
   font-weight: 700;
+}
+
+
+
+
+
+
+
+.messages-corner-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  z-index: 5;
+}
+
+.messages-corner-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 49.5%,
+    rgba(0,0,0,0.06) 50%,
+    transparent 50.5%
+  );
+  pointer-events: none;
 }
 
 .messages-popout-header .messages-close-corner, 
