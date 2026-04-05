@@ -400,20 +400,38 @@ body.messages-open {
   overflow: visible;
 }
 
-.messages-chevron-btn {
+.messages-corner-wrap {
   position: absolute;
-  bottom: 0;
+  top: 0;
   right: 0;
-  width: 36px;
-  height: 36px;
-  padding: 0;
+  width: 44px;
+  height: 44px;
+  z-index: 5;
+}
+
+.messages-corner-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 49.5%,
+    rgba(0,0,0,0.06) 50%,
+    transparent 50.5%
+  );
+  pointer-events: none;
+}
+
+ .messages-chevron-btn {
+  position: absolute;
+  inset: 0;
   border: none;
-    background: var(--glass-white);
-  backdrop-filter: blur(4px);
-   clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  background: var(--glass-white);
+  backdrop-filter: blur(6px);
+  clip-path: polygon(0 100%, 100% 100%, 0 0);
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: flex-start;
   cursor: pointer;
   z-index: 3;
   border-radius: 0;
@@ -422,9 +440,8 @@ body.messages-open {
 
 .messages-chevron-btn i {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  font-size: 14px;
+margin: 6px;
+  font-size: 13px;
   color: #091a3a;
   line-height: 1;
   transition: transform 0.2s ease;
@@ -523,30 +540,22 @@ body.messages-open {
 
 .messages-close-corner {
   position: absolute;
-  top: 0;
-  right: 0;
-  width: 36px;
-  height: 36px;
+  inset: 0;
   border: none;
   background: var(--glass-white);
-  backdrop-filter: blur(4px);
-
-  /* top-right triangle */
-  clip-path: polygon(0 100%, 100% 0, 100%, 100%);
-
+  backdrop-filter: blur(6px);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   cursor: pointer;
   z-index: 5;
-
   box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
 }
 
 .messages-close-corner i {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  margin: 6px;
   font-size: 13px;
   color: #091a3a;
 }
