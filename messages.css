@@ -532,7 +532,7 @@ body.messages-open {
   backdrop-filter: blur(4px);
 
   /* top-right triangle */
-  clip-path: polygon(100%, 100%, 0, 100%, 0 0);
+  clip-path: polygon(0 100%, 100% 0, 100%, 100%);
 
   display: flex;
   align-items: flex-start;
