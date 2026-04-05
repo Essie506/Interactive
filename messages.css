@@ -528,7 +528,7 @@ body.messages-open {
 
 
 .messages-corner-wrap {
-  position: flex;
+  position: absolute;
   bottom: 0;
   right: 0;
   width: 48px;
