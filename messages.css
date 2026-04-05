@@ -400,7 +400,7 @@ body.messages-open {
   overflow: visible;
 }
 
-.messages-chevron-btn {
+.messages-header > .messages-chevron-btn {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -420,7 +420,7 @@ body.messages-open {
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
 }
 
-.messages-chevron-btn i {
+.messages-header > .messages-chevron-btn i {
   position: absolute;
    bottom: 5px;
   right: 5px; 
@@ -432,11 +432,7 @@ body.messages-open {
    z-index: 3;
 }
 
-.messages-chevron-btn:hover i {
- background: rgba(255, 255, 255, 0.82);
-}
-
-.messages-chevron-btn:hover {
+.messages-header > .messages-chevron-btn:hover {
   box-shadow:
     0 0 0 3px rgba(7, 153, 146, 0.16),
     0 6px 18px rgba(0, 0, 0, 0.14),
@@ -445,14 +441,17 @@ body.messages-open {
   background: rgba(255, 255, 255, 0.82);
 }
 
-.messages-chevron-btn.open i {
+.messages-header > .messages-chevron-btn.open i {
   transform: rotate(180deg);
 }
 
-.messages-header-actions,
+.messages-header-actions {
+  padding-right: 22px;
+}
+
 .messages-popup-actions,
 .messages-popout-actions {
-  padding-right: 22px;
+  padding-right: 52px;
 }
 
 
@@ -534,6 +533,7 @@ body.messages-open {
   width: 48px;
   height: 48px;
   z-index: 2;
+   pointer-events: none;
 }
 
 .messages-popout-header .messages-close-corner, 
@@ -605,6 +605,7 @@ body.messages-open {
 .messages-popout-header .messages-close-corner,
 .messages-popout-header .messages-chevron-btn {
   box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
+    pointer-events: auto;
 }
 .messages-popout-header .messages-corner-wrap::after,
 .messages-popup-header .messages-corner-wrap::after {
