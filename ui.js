@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "hidden";
 
     if (composerInput) {
-      composerInput.focus();
       autoResizeTextarea(composerInput, 260);
     }
   }
