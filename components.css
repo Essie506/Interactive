@@ -672,6 +672,129 @@ body.index .btn-login {
 }
 
 
+
+/* =========================
+   FEED POSTS
+========================= */
+.post-box,
+.post {
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.post-box {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 22px;
+  padding: 0;
+  background: white;
+  box-shadow: var(--shadow-soft);
+}
+
+.post-box-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.post-input-wrap {
+  flex: 1;
+  display: flex;
+  position: relative;
+}
+
+.post-avatar-inline {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(56, 173, 169, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #091a3a;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+.post-input {
+  width: 100%;
+  min-height: 58px;
+  height: 58px;
+  max-height: 180px;
+  resize: none;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  padding: 14px 16px 14px 58px;
+  font-size: 15px;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.72);
+  color: #091a3a;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
+  transition: height 0.25s ease, min-height 0.25s ease;
+  margin-top: 3px;
+}
+.post-input::placeholder {
+  color: rgba(9, 26, 58, 0.6);
+}
+
+.post-preview {
+  display: none;
+}
+
+.post-preview img,
+.post-preview video {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  margin: 16px 0;
+}
+
+.post-tools {
+  display: none;
+}
+
+.post-box.expanded .post-tools {
+  display: flex;
+}
+
+.upload-btn {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.gif-btn span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+.calendar-btn i {
+  color: var(--main-color);
+}
+
+#postBox textarea {
+  cursor: pointer;
+}
+
+
+
+
+
 @media (min-width: 500px) {
 .composer-bottom-bar {
     flex-direction: row;
