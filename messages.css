@@ -399,16 +399,6 @@ body.messages-open {
   position: relative;
   overflow: visible;
 }
-/* =========================
-   MESSAGES CORNER TRIANGLE
-========================= */
-
-.messages-header,
-.messages-popup-header,
-.messages-popout-header {
-  position: relative;
-  overflow: visible;
-}
 
 .messages-chevron-btn {
   position: absolute;
