@@ -672,3 +672,35 @@ body.index .btn-login {
 }
 
 
+@media (min-width: 500px) {
+.composer-bottom-bar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+.composer-tools {
+    justify-content: flex-start;
+    align-items: center;
+    width: auto;
+    flex: 1 1 auto;
+  }
+
+.composer-footer {
+    justify-content: flex-end;
+    width: auto;
+    flex: 0 0 auto;
+  }
+
+.composer-submit {
+    width: auto;
+    margin: 0;
+    display: inline-flex;
+    min-width: 90px;
+  }
+}
+
+
+
+
