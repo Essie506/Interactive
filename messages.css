@@ -516,10 +516,56 @@ body.messages-open {
   background: rgba(0, 0, 0, 0.08);
 }
 
-
 .messages-corner-item.msn-mode {
   color: var(--main-color-dark);
   font-weight: 700;
+}
+
+.messages-close-corner {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: var(--glass-white);
+  backdrop-filter: blur(4px);
+
+  /* top-right triangle */
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  cursor: pointer;
+  z-index: 5;
+
+  box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
+}
+
+.messages-close-corner i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 13px;
+  color: #091a3a;
+}
+
+.messages-close-corner:hover i {
+ background: rgba(255, 255, 255, 0.82);
+}
+
+.messages-close-corner:hover {
+  box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.16),
+    0 6px 18px rgba(0, 0, 0, 0.14),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px) scale(1.06);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.messages-close-corner.open i {
+  transform: rotate(180deg);
 }
 
 
