@@ -432,6 +432,10 @@ body.messages-open {
    z-index: 3;
 }
 
+.messages-chevron-btn:hover i {
+  color: var(--main-color);
+}
+
 .messages-chevron-btn:hover {
   box-shadow:
     0 0 0 3px rgba(7, 153, 146, 0.12),
