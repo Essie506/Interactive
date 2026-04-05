@@ -152,10 +152,6 @@
   transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
 }
 
-.menu-toggle i {
-  font-size: 1.3rem;
-}
-
 .desktop-nav-links a:hover,
 .desktop-nav-links a:focus-visible,
 .search-toggle:hover,
@@ -425,7 +421,7 @@ body.index .btn-login {
   }
 
  
-..nav-left .desktop-icon-link,
+.nav-left .desktop-icon-link,
 .navbar-right .icon-btn,
 .navbar-right .composer-toggle,
 .menu-toggle {
@@ -790,9 +786,6 @@ post-actions {
 #postBox textarea {
   cursor: pointer;
 }
-
-
-
 
 
 @media (min-width: 500px) {
