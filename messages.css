@@ -429,7 +429,7 @@ body.messages-open {
   line-height: 1;
   transition: transform 0.2s ease;
   pointer-events: none;
-   z-index: 3;
+   z-index: 4000;
 }
 
 .messages-chevron-btn:hover {
