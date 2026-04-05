@@ -603,7 +603,6 @@ body.messages-open {
   align-items: center;
   padding: 12px 8px;
   background: var(--navbar-bg);
-  overflow: hidden;
 }
 
 .messages-popup-header::after,
