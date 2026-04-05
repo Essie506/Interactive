@@ -543,7 +543,8 @@ body.messages-open {
   font-weight: 700;
 }
 
-.messages-popout-header .messages-close-corner {
+.messages-popout-header .messages-close-corner, 
+.messages-popup-header .messages-close-corner {
   position: absolute;
   inset: 0;
   border: none;
@@ -558,18 +559,21 @@ body.messages-open {
   box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
 }
 
-.messages-popout-header .messages-close-corner i {
+.messages-popout-header .messages-close-corner i,
+.messages-popup-header .messages-close-corner i {
   position: absolute;
   margin: 6px;
   font-size: 13px;
   color: #091a3a;
 }
 
-.messages-popout-header .messages-close-corner:hover i {
+.messages-popout-header .messages-close-corner:hover i,
+.messages-popup-header .messages-close-corner:hover i {
  background: rgba(255, 255, 255, 0.82);
 }
 
-.messages-popout-header .messages-close-corner:hover {
+.messages-popout-header .messages-close-corner:hover,
+.messages-popup-header .messages-close-corner:hover {
   box-shadow:
     0 0 0 3px rgba(7, 153, 146, 0.16),
     0 6px 18px rgba(0, 0, 0, 0.14),
@@ -578,11 +582,13 @@ body.messages-open {
   background: rgba(255, 255, 255, 0.82);
 }
 
-.messages-popout-header .messages-close-corner.open i {
+.messages-popout-header .messages-close-corner.open i,
+.messages-popup-header .messages-close-corner.open i {
   transform: rotate(180deg);
 }
 
-.messages-popout-header .messages-chevron-btn {
+.messages-popout-header .messages-chevron-btn,
+.messages-popup-header .messages-chevron-btn {
   position: absolute;
   inset: 0;
   border: none;
@@ -596,16 +602,20 @@ body.messages-open {
   justify-content: flex-start;
 }
 
-.messages-popout-header .messages-chevron-btn i {
+.messages-popout-header .messages-chevron-btn i,
+.messages-popup-header .messages-chevron-btn i {
   margin: 6px;
   font-size: 13px;
 }
 
+.messages-popup-header .messages-close-corner,
+.messages-popup-header .messages-chevron-btn,
 .messages-popout-header .messages-close-corner,
 .messages-popout-header .messages-chevron-btn {
   box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
 }
-.messages-popout-header. messages-corner-wrap::after {
+.messages-popout-header. messages-corner-wrap::after,
+.messages-popup-header. messages-corner-wrap::after {
   content: "";
   position: absolute;
   inset: 0;
