@@ -438,7 +438,7 @@ body.messages-open {
 
 .messages-chevron-btn:hover {
   box-shadow:
-    0 0 0 3px rgba(7, 153, 146, 0.12),
+    0 0 0 3px rgba(7, 153, 146, 0.16),
     0 6px 18px rgba(0, 0, 0, 0.14),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
   transform: translateY(-1px) scale(1.06);
