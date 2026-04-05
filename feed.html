@@ -170,49 +170,51 @@
 
       <h3 id="messagesHeaderTitle">Messages</h3>
 
-   <div class="messages-header-actions">
-  <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
-    <i class="fa-solid fa-table-columns"></i>
-  </button>
-  <button type="button" class="messages-open-popup" id="drawerMediumBtn" aria-label="Open medium window">
-    <i class="fa-regular fa-window-restore"></i>
-  </button>
-      <button type="button" class="messages-minimize-btn" id="drawerMinimizeBtn" aria-label="Minimize chat">
-    <i class="fa-solid fa-minus"></i>
-  </button>
-</div>
+      <div class="messages-header-actions">
+        <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
+          <i class="fa-solid fa-table-columns"></i>
+        </button>
 
-<button type="button" class="messages-chevron-btn" id="drawerChevronBtn" aria-label="More options">
-  <i class="fa-solid fa-angle-down"></i>
-</button>
+        <button type="button" class="messages-open-popup" id="drawerMediumBtn" aria-label="Open medium window">
+          <i class="fa-regular fa-window-restore"></i>
+        </button>
+
+        <button type="button" class="messages-minimize-btn" id="drawerMinimizeBtn" aria-label="Minimize chat">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+      </div>
+
+      <button type="button" class="messages-chevron-btn" id="drawerChevronBtn" aria-label="More options">
+        <i class="fa-solid fa-angle-down"></i>
+      </button>
+
+      <div class="messages-corner-menu" id="drawerCornerMenu">
+        <button type="button" class="messages-corner-item" id="drawerVideoChatBtn">
+          <i class="fa-solid fa-video"></i>
+          <span>Video chat</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="drawerAddPeopleBtn">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Add people</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="drawerPopoutBtn">
+          <i class="fa-solid fa-up-right-from-square"></i>
+          <span>Popout</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="drawerDownloadVideoBtn">
+          <i class="fa-solid fa-download"></i>
+          <span>Download saved video</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="drawerMsnModeBtn">
+          <i class="fa-regular fa-message"></i>
+          <span>MSN mode</span>
+        </button>
+      </div>
     </div>
-
-   <div class="messages-corner-menu" id="drawerCornerMenu">
-  <button type="button" class="messages-corner-item" id="menuVideoChatBtn">
-    <i class="fa-solid fa-video"></i>
-    <span>Video chat</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuAddPeopleBtn">
-    <i class="fa-solid fa-user-plus"></i>
-    <span>Add people</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuPopoutBtn">
-    <i class="fa-solid fa-up-right-from-square"></i>
-    <span>Popout</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuDownloadVideoBtn">
-    <i class="fa-solid fa-download"></i>
-    <span>Download saved video</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuMsnModeBtn">
-    <i class="fa-regular fa-message"></i>
-    <span>MSN mode</span>
-  </button>
-</div>
 
     <div class="messages-body" id="messagesBody">
       <div class="messages-view messages-list-view active" id="messagesListView">
@@ -313,53 +315,55 @@
   <div class="messages-popup-header">
     <div class="messages-popup-title" id="popupHeaderTitle">Messages</div>
 
-<div class="messages-popup-actions">
-  <button type="button" class="icon-btn" id="popupSplitBtn" aria-label="Split view">
-    <i class="fa-solid fa-table-columns"></i>
-  </button>
+    <div class="messages-popup-actions">
+      <button type="button" class="icon-btn" id="popupSplitBtn" aria-label="Split view">
+        <i class="fa-solid fa-table-columns"></i>
+      </button>
 
-  <button type="button" class="icon-btn" id="popupDrawerBtn" aria-label="Open full drawer">
-    <i class="fa-regular fa-window-maximize"></i>
-  </button>
-    <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
-    <i class="fa-solid fa-minus"></i>
-  </button>
-</div>
+      <button type="button" class="icon-btn" id="popupDrawerBtn" aria-label="Open full drawer">
+        <i class="fa-regular fa-window-maximize"></i>
+      </button>
+
+      <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
+        <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
 
     <button type="button" class="icon-btn" id="popupCloseBtn" aria-label="Close chat">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
-<button type="button" class="messages-chevron-btn" id="popupChevronBtn" aria-label="More options">
-  <i class="fa-solid fa-angle-down"></i>
-</button>
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <button type="button" class="messages-chevron-btn" id="popupChevronBtn" aria-label="More options">
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
+
+    <div class="messages-corner-menu" id="popupCornerMenu">
+      <button type="button" class="messages-corner-item" id="popupVideoChatBtn">
+        <i class="fa-solid fa-video"></i>
+        <span>Video chat</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popupAddPeopleBtn">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>Add people</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popupPopoutBtn">
+        <i class="fa-solid fa-up-right-from-square"></i>
+        <span>Popout</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popupDownloadVideoBtn">
+        <i class="fa-solid fa-download"></i>
+        <span>Download saved video</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popupMsnModeBtn">
+        <i class="fa-regular fa-message"></i>
+        <span>MSN mode</span>
+      </button>
+    </div>
   </div>
-
- <div class="messages-corner-menu" id="drawerCornerMenu">
-  <button type="button" class="messages-corner-item" id="menuVideoChatBtn">
-    <i class="fa-solid fa-video"></i>
-    <span>Video chat</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuAddPeopleBtn">
-    <i class="fa-solid fa-user-plus"></i>
-    <span>Add people</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuPopoutBtn">
-    <i class="fa-solid fa-up-right-from-square"></i>
-    <span>Popout</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuDownloadVideoBtn">
-    <i class="fa-solid fa-download"></i>
-    <span>Download saved video</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuMsnModeBtn">
-    <i class="fa-regular fa-message"></i>
-    <span>MSN mode</span>
-  </button>
-</div>
 
   <div class="messages-popup-main" id="messagesPopupMain">
     <div class="messages-popup-list-view" id="popupListView">
@@ -417,54 +421,58 @@
 </button>
 
 <div class="messages-popout" id="messagesPopout" aria-hidden="true">
-  <div class="messages-popout-header
-        <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
-        <i class="fa-solid fa-arrow-left"></i>
-      </button>
+  <div class="messages-popout-header">
+    <button type="button" class="messages-back" id="popoutBack" aria-label="Back to conversations">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
     <div class="messages-popout-title" id="popoutHeaderTitle">Jason</div>
 
-   <div class="messages-popout-actions">
-
+    <div class="messages-popout-actions">
       <button type="button" class="icon-btn" id="popoutFullscreenBtn" aria-label="Fullscreen chat">
-    <i class="fa-solid fa-expand"></i>
-  </button>
+        <i class="fa-solid fa-expand"></i>
+      </button>
 
       <button type="button" class="icon-btn" id="popoutMinimizeBtn" aria-label="Minimize chat">
-    <i class="fa-solid fa-minus"></i>
-  </button>
-</div>
+        <i class="fa-solid fa-minus"></i>
+      </button>
+    </div>
 
-     <button type="button" class="icon-btn" id="popoutCloseBtn" aria-label="Close chat">
-    <i class="fa-solid fa-xmark"></i>
-  </button>
+    <button type="button" class="icon-btn" id="popoutCloseBtn" aria-label="Close chat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
 
-<button type="button" class="messages-chevron-btn" id="popoutChevronBtn" aria-label="More options">
-  <i class="fa-solid fa-angle-down"></i>
-</button>
+    <button type="button" class="messages-chevron-btn" id="popoutChevronBtn" aria-label="More options">
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
+
+    <div class="messages-corner-menu" id="popoutCornerMenu">
+      <button type="button" class="messages-corner-item" id="popoutVideoChatBtn">
+        <i class="fa-solid fa-video"></i>
+        <span>Video chat</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutAddPeopleBtn">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>Add people</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutFullscreenMenuBtn">
+        <i class="fa-solid fa-expand"></i>
+        <span>Fullscreen</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutDownloadVideoBtn">
+        <i class="fa-solid fa-download"></i>
+        <span>Download saved video</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutMsnModeBtn">
+        <i class="fa-regular fa-message"></i>
+        <span>MSN mode</span>
+      </button>
+    </div>
   </div>
-
-<div class="messages-corner-menu" id="drawerCornerMenu">
-  <button type="button" class="messages-corner-item" id="menuVideoChatBtn">
-    <i class="fa-solid fa-video"></i>
-    <span>Video chat</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuAddPeopleBtn">
-    <i class="fa-solid fa-user-plus"></i>
-    <span>Add people</span>
-  </button>
-
-
-  <button type="button" class="messages-corner-item" id="menuDownloadVideoBtn">
-    <i class="fa-solid fa-download"></i>
-    <span>Download saved video</span>
-  </button>
-
-  <button type="button" class="messages-corner-item" id="menuMsnModeBtn">
-    <i class="fa-regular fa-message"></i>
-    <span>MSN mode</span>
-  </button>
-</div>
 
   <div class="messages-popout-body" id="popoutMessageChat"></div>
 
