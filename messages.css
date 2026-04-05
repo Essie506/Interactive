@@ -536,19 +536,6 @@ body.messages-open {
   z-index: 5;
 }
 
-.messages-corner-wrap::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    45deg,
-    transparent 49.5%,
-    rgba(0,0,0,0.06) 50%,
-    transparent 50.5%
-  );
-  pointer-events: none;
-}
-
 .messages-popout-header .messages-close-corner, 
 .messages-popup-header .messages-close-corner {
   position: absolute;
@@ -632,7 +619,6 @@ body.messages-open {
   );
   pointer-events: none;
 }
-
 
 /* =========================
    MESSAGES - DRAWER SPLIT
