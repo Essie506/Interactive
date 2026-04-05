@@ -630,7 +630,7 @@ body.messages-open {
   position: relative;
   z-index: 2;
   display: flex;
-  align-items: center;
+  align-items: space-between;
   gap: 8px;
 }
 
