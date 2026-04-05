@@ -460,6 +460,17 @@ body.index .btn-login {
   .top-search-btn {
     display: none;
   }
+
+.composer-modal,
+.messages-modal {
+    width: 100vw;
+  }
+   
+.composer-card,
+.messages-card {
+    padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
+  }
+   
 }
 /* =========================
    COMPOSER (SHARED)
