@@ -462,7 +462,7 @@ body.index .btn-login {
   }
 
 .composer-modal {
-    width: 100vw;
+    min-width: 100%;
   }
    
 .composer-card {
