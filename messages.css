@@ -531,8 +531,8 @@ body.messages-open {
   position: absolute;
   top: 0;
   right: 0;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   z-index: 5;
 }
 
@@ -626,7 +626,7 @@ body.messages-open {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
+    45deg,
     transparent 49.5%,
     rgba(0,0,0,0.06) 50%,
     transparent 50.5%
