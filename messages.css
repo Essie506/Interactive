@@ -686,7 +686,6 @@ body.messages-open {
   width: min(340px, calc(100vw - 32px));
   height: 420px;
   background: #fff;
-  border-radius: 20px;
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
   display: none;
   flex-direction: column;
