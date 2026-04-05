@@ -452,6 +452,7 @@ body.messages-open {
 .messages-popup-actions,
 .messages-popout-actions {
   padding-right: 22px;
+   margin-right: 5px;
 }
 
 
