@@ -408,7 +408,7 @@ body.messages-open {
   height: 34px;
   padding: 0;
   border: none;
-  background: rgba(255, 255, 255, 0.92);
+    background: var(--glass-white);
   backdrop-filter: blur(4px);
    clip-path: polygon(100% 100%, 0 100%, 100% 0);
   display: flex;
