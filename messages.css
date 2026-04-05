@@ -422,8 +422,8 @@ body.messages-open {
 
 .messages-chevron-btn i {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 3px;
+  right: 3px;
   font-size: 14px;
   color: #091a3a;
   line-height: 1;
