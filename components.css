@@ -125,16 +125,15 @@
 .desktop-nav-links a,
 .search-toggle,
 .icon-btn,
-body.feed .messages-open-popup,
-body.feed .messages-popout-btn,
-body.feed .messages-minimize-btn,
-body.feed .upload-btn,
-body.feed .composer-close,
-body.feed .menu-toggle,
- body.profile .menu-toggle,
-body.feed .messages-back,
-body.feed .messages-split,
-body.feed .messages-close,
+.messages-open-popup,
+.messages-popout-btn,
+.messages-minimize-btn,
+.upload-btn,
+.composer-close,
+.menu-toggle,
+.messages-back,
+.messages-split,
+.messages-close,
 .bottom-nav i,
 .bottom-nav-desktop i,
 .btn-soft i {
@@ -153,9 +152,8 @@ body.feed .messages-close,
   transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
 }
 
-body.feed .menu-toggle i,
-body.profile .menu-toggle i {
-    font-size: 1.3rem;
+.menu-toggle i {
+  font-size: 1.3rem;
 }
 
 .desktop-nav-links a:hover,
@@ -164,24 +162,24 @@ body.profile .menu-toggle i {
 .search-toggle:focus-visible,
 .icon-btn:hover,
 .icon-btn:focus-visible,
-body.feed .upload-btn:hover,
-body.feed .upload-btn:focus-visible,
-body.feed .composer-close:hover,
-body.feed .composer-close:focus-visible,
-body.feed .menu-toggle:hover,
-body.feed .menu-toggle:focus-visible,
-body.feed .messages-back:hover,
-body.feed .messages-back:focus-visible,
-body.feed .messages-split:hover,
-body.feed .messages-split:focus-visible,
-body.feed .messages-open-popup:hover,
-body.feed .messages-open-popup:focus-visible,
-body.feed .messages-popout-btn:hover,
-body.feed .messages-popout-btn:focus-visible,
-body.feed .messages-minimize-btn:hover,
-body.feed .messages-minimize-btn:focus-visible,
-body.feed .messages-close:hover,
-body.feed .messages-close:focus-visible,
+.upload-btn:hover,
+.upload-btn:focus-visible,
+.composer-close:hover,
+.composer-close:focus-visible,
+.menu-toggle:hover,
+.menu-toggle:focus-visible,
+.messages-back:hover,
+.messages-back:focus-visible,
+.messages-split:hover,
+.messages-split:focus-visible,
+.messages-open-popup:hover,
+.messages-open-popup:focus-visible,
+.messages-popout-btn:hover,
+.messages-popout-btn:focus-visible,
+.messages-minimize-btn:hover,
+.messages-minimize-btn:focus-visible,
+.messages-close:hover,
+.messages-close:focus-visible,
 .bottom-nav a:hover i,
 .bottom-nav a:focus-visible i,
 .bottom-nav-desktop a:hover i,
@@ -203,25 +201,20 @@ body.feed .messages-close:focus-visible,
   background: rgba(255, 255, 255, 0.82);
 }
 
-
-
-
-
 .search-toggle:active,
 .icon-btn:active,
-body.feed .upload-btn:active,
-body.feed .composer-close:active,
-body.feed .menu-toggle:active,
- body.profile .menu-toggle:active,
-body.feed .messages-back:active,
-body.feed .messages-open-popup:active,
-body.feed .messages-popout-btn:active,
-body.feed .messages-minimize-btn:active,
-body.feed .messages-split:active,
-body.feed .messages-close:active,
+.upload-btn:active,
+.composer-close:active,
+.menu-toggle:active,
+.messages-back:active,
+.messages-open-popup:active,
+.messages-popout-btn:active,
+.messages-minimize-btn:active,
+.messages-split:active,
+.messages-close:active,
 .bottom-nav a:active i,
 .bottom-nav-desktop a:active i,
-.profile-tab:active, 
+.profile-tab:active,
 .btn-soft a:active {
   transform: scale(0.94);
 }
@@ -431,23 +424,22 @@ body.index .btn-login {
     color: var(--main-color);
   }
 
-  .nav-left .desktop-icon-link,
-  .navbar-right .icon-btn,
-  .navbar-right .composer-toggle,
-  body.feed .menu-toggle,
-   body.profile .menu-toggle {
-    width: 42px;
-    height: 42px;
-    flex-shrink: 0;
-  }
+ 
+..nav-left .desktop-icon-link,
+.navbar-right .icon-btn,
+.navbar-right .composer-toggle,
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
 
-  .nav-left .desktop-icon-link,
-  .navbar-right .icon-btn i,
-  .navbar-right .composer-toggle i,
-  body.feed .menu-toggle i,
-   body.view-profile .menu-toggle i {
-    font-size: 1.3rem;
-  }
+.nav-left .desktop-icon-link,
+.navbar-right .icon-btn i,
+.navbar-right .composer-toggle i,
+.menu-toggle i {
+  font-size: 1.3rem;
+}
 }
 
 @media (max-width: 900px) {
