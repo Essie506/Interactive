@@ -543,7 +543,7 @@ body.messages-open {
   border: none;
   background: var(--glass-white);
   backdrop-filter: blur(6px);
- clip-path: polygon(100% 0, 100% 100%, 0 0);
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -593,7 +593,7 @@ body.messages-open {
   background: var(--glass-white);
   backdrop-filter: blur(6px);
 
-  clip-path: polygon(0 100%, 100% 100%, 0 0);
+ clip-path: polygon(100% 100%, 0 100%, 100% 0);
 
   display: flex;
   align-items: flex-start;
