@@ -517,7 +517,10 @@ body.messages-open {
 }
 
 
-
+.messages-corner-item.msn-mode {
+  color: var(--main-color-dark);
+  font-weight: 700;
+}
 
 
 /* =========================
