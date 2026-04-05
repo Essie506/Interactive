@@ -415,7 +415,7 @@ body.messages-open {
   align-items: flex-start;
   justify-content: flex-end;
   cursor: pointer;
-  z-index: 3;
+  z-index: 2;
   border-radius: 0;
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
 }
