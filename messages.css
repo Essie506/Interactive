@@ -541,7 +541,7 @@ body.messages-open {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
+    45deg,
     transparent 49.5%,
     rgba(0,0,0,0.06) 50%,
     transparent 50.5%
@@ -609,8 +609,8 @@ body.messages-open {
   clip-path: polygon(0 100%, 100% 100%, 0 0);
 
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 .messages-popup-header .messages-close-corner,
