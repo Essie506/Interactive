@@ -433,7 +433,7 @@ body.messages-open {
 }
 
 .messages-chevron-btn:hover i {
-  color: var(--main-color);
+ background: rgba(255, 255, 255, 0.82);
 }
 
 .messages-chevron-btn:hover {
