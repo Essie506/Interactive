@@ -461,7 +461,7 @@ body.feed .composer-submit.ready {
 /* =========================
    FEED MESSAGES - CORE
 ========================= */
-body.feed .message-avatar-inline {
+.message-avatar-inline {
   position: absolute;
   top: 12px;
   left: 12px;
@@ -477,7 +477,7 @@ body.feed .message-avatar-inline {
   z-index: 2;
 }
 
-body.feed .message-thread-avatar {
+.message-thread-avatar {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -489,11 +489,11 @@ body.feed .message-thread-avatar {
   flex-shrink: 0;
 }
 
-body.feed .messages-input-wrap {
+.messages-input-wrap {
   position: relative;
 }
 
-body.feed .messages-input {
+.messages-input {
   width: 100%;
   min-height: 58px;
   max-height: 180px;
@@ -509,7 +509,7 @@ body.feed .messages-input {
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 
-body.feed .messages-send {
+.messages-send {
   text-decoration: none;
   opacity: 0.5;
   pointer-events: none;
@@ -526,12 +526,12 @@ body.feed .messages-send {
   font-size: 14px;
 }
 
-body.feed .messages-send.ready {
+.messages-send.ready {
   opacity: 1;
   pointer-events: auto;
 }
 
-body.feed .messages-tools {
+.messages-tools {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -542,25 +542,25 @@ body.feed .messages-tools {
   flex: 0 0 auto;
 }
 
-body.feed .messages-gif-btn span {
+.messages-gif-btn span {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.4px;
 }
 
-body.feed .messages-preview {
+.messages-preview {
   display: none;
   flex-wrap: wrap;
   gap: 10px;
   margin: 0;
 }
 
-body.feed .messages-preview.has-media {
+.messages-preview.has-media {
   display: flex;
 }
 
-body.feed .messages-preview img,
-body.feed .messages-preview video {
+.messages-preview img,
+.messages-preview video {
   width: 110px;
   height: 110px;
   object-fit: cover;
