@@ -422,16 +422,20 @@ body.messages-open {
   pointer-events: none;
 }
 
- .messages-chevron-btn {
+.messages-chevron-btn {
   position: absolute;
-  inset: 0;
+  bottom: 0;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  padding: 0;
   border: none;
-  background: var(--glass-white);
-  backdrop-filter: blur(6px);
-  clip-path: polygon(0 100%, 100% 100%, 0 0);
+    background: var(--glass-white);
+  backdrop-filter: blur(4px);
+   clip-path: polygon(100% 100%, 0 100%, 100% 0);
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-end;
   cursor: pointer;
   z-index: 3;
   border-radius: 0;
@@ -440,7 +444,8 @@ body.messages-open {
 
 .messages-chevron-btn i {
   position: absolute;
-margin: 6px;
+   bottom: 5px;
+  left: 5px; 
   font-size: 13px;
   color: #091a3a;
   line-height: 1;
@@ -538,7 +543,7 @@ margin: 6px;
   font-weight: 700;
 }
 
-.messages-close-corner {
+.messages-popout-header .messages-close-corner {
   position: absolute;
   inset: 0;
   border: none;
@@ -553,18 +558,18 @@ margin: 6px;
   box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
 }
 
-.messages-close-corner i {
+.messages-popout-header .messages-close-corner i {
   position: absolute;
   margin: 6px;
   font-size: 13px;
   color: #091a3a;
 }
 
-.messages-close-corner:hover i {
+.messages-popout-header .messages-close-corner:hover i {
  background: rgba(255, 255, 255, 0.82);
 }
 
-.messages-close-corner:hover {
+.messages-popout-header .messages-close-corner:hover {
   box-shadow:
     0 0 0 3px rgba(7, 153, 146, 0.16),
     0 6px 18px rgba(0, 0, 0, 0.14),
@@ -573,8 +578,44 @@ margin: 6px;
   background: rgba(255, 255, 255, 0.82);
 }
 
-.messages-close-corner.open i {
+.messages-popout-header .messages-close-corner.open i {
   transform: rotate(180deg);
+}
+
+.messages-popout-header .messages-chevron-btn {
+  position: absolute;
+  inset: 0;
+  border: none;
+  background: var(--glass-white);
+  backdrop-filter: blur(6px);
+
+  clip-path: polygon(0 100%, 100% 100%, 0 0);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.messages-popout-header .messages-chevron-btn i {
+  margin: 6px;
+  font-size: 13px;
+}
+
+.messages-popout-header .messages-close-corner,
+.messages-popout-header .messages-chevron-btn {
+  box-shadow: -1px 1px 6px rgba(0,0,0,0.08);
+}
+.messages-popout-header. messages-corner-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 49.5%,
+    rgba(0,0,0,0.06) 50%,
+    transparent 50.5%
+  );
+  pointer-events: none;
 }
 
 
