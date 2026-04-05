@@ -407,7 +407,7 @@ body.messages-open {
 .messages-popup-header,
 .messages-popout-header {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .messages-chevron-btn {
@@ -419,7 +419,7 @@ body.messages-open {
   padding: 0;
   border: none;
   background: rgba(255, 255, 255, 0.92);
-  clip-path: polygon(100% 0, 0 0, 100% 100%);
+   clip-path: polygon(100% 100%, 0 100%, 100% 0);
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -431,7 +431,7 @@ body.messages-open {
 
 .messages-chevron-btn i {
   position: absolute;
-  top: 5px;
+  bottom: 5px;
   right: 5px;
   font-size: 10px;
   color: #091a3a;
@@ -462,6 +462,11 @@ body.messages-open {
 .messages-popup-actions,
 .messages-popout-actions {
   padding-right: 22px;
+}
+
+.messages-chevron-btn {
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(4px);
 }
 
 /* =========================
