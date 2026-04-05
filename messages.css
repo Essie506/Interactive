@@ -628,7 +628,7 @@ body.messages-open {
   grid-column: 3;
   justify-self: end;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   display: flex;
   align-items: space-between;
   gap: 8px;
