@@ -567,10 +567,16 @@ body.messages-open {
 
 .messages-popout-header .messages-close-corner i,
 .messages-popup-header .messages-close-corner i {
+ .messages-chevron-btn i {
   position: absolute;
-  margin: 6px;
+   top: 5px;
+  left: 5px; 
   font-size: 13px;
   color: #091a3a;
+  line-height: 1;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+   z-index: 3;
 }
 
 .messages-popout-header .messages-close-corner:hover i,
@@ -606,12 +612,6 @@ body.messages-open {
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
-}
-
-.messages-popout-header .messages-chevron-btn i,
-.messages-popup-header .messages-chevron-btn i {
-  margin: 6px;
-  font-size: 13px;
 }
 
 .messages-popup-header .messages-close-corner,
