@@ -404,7 +404,7 @@ body.messages-open {
 
 .messages-resize-drawer {
   top: 0;
-  right: -6;
+  right: -6px;
   width: 18px;
   height: 100%;
   cursor: ew-resize;
