@@ -763,6 +763,8 @@ body.messages-open {
   display: flex;
   flex-direction: column;
   width: 0;
+   flex: flex 1;
+   width: 100%;
   min-width: 0;
   padding: 12px;
   border-right: 1px solid rgba(0, 0, 0, 0.08);
