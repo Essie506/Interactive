@@ -1210,24 +1210,35 @@ if (popupMessagesInput) {
     });
   }
 
-  if (popupBack) {
-    popupBack.addEventListener("click", (e) => {
-      e.stopPropagation();
+ if (popupBack) {
+  popupBack.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-      if (state.mode !== "popup") return;
+    if (state.mode !== "popup") return;
 
-      if (state.popupSplit) {
-        state.split = true;
-        state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
-        openDrawer();
-        return;
-      }
+    // SPLIT MODE → back to drawer
+    if (state.popupSplit) {
+      state.split = true;
+      state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
+      openDrawer();
+      return;
+    }
 
-      state.split = false;
-      state.lastDrawerView = state.popupMode === "chat" ? "chat" : "list";
-      openDrawerFromPreviousState();
-    });
-  }
+    // NORMAL MODE
+    if (state.popupMode === "chat") {
+      // go back to popup list (like drawer)
+      state.popupMode = "list";
+      updatePopupLayout();
+      syncTitles();
+      return;
+    }
+
+    // already in list → go back to drawer
+    state.split = false;
+    state.lastDrawerView = "list";
+    openDrawerFromPreviousState();
+  });
+}
 
   if (popupMinimizeBtn) {
     popupMinimizeBtn.addEventListener("click", (e) => {
