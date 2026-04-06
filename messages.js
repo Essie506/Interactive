@@ -406,7 +406,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.popupSize) {
       messagesPopup.style.width = `${state.popupSize.width}px`;
       messagesPopup.style.height = `${state.popupSize.height}px`;
-    }
       } else {
     messagesPopup.style.width = "";
     messagesPopup.style.height = "";
