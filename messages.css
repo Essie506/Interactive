@@ -770,6 +770,16 @@ body.messages-open {
   overflow: hidden;
 }
 
+.messages-popup.split-mode .messages-popup-list-view {
+  display: flex;
+  width: 40%;
+  flex: 0 0 40%;
+}
+
+.messages-popup:not(.split-mode) .messages-popup-list-view {
+  border-right: none;
+}
+
 .messages-popup-chat-view {
   display: flex;
   flex-direction: column;
