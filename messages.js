@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const state = {
     currentUser: "Jason",
-    hasSelectedThread: false,
+    highlightedThreadUser: null,
     mode: "closed", // closed | drawer | popup | popout | minimized
     split: false,
     popupSplit: false,
@@ -129,12 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setBodyLock() {
-    const anythingOpen =
-      state.mode === "drawer" ||
+    const lockBody =
       state.mode === "popup" ||
       state.mode === "popout";
 
-    document.body.style.overflow = anythingOpen ? "hidden" : "";
+    document.body.style.overflow = lockBody ? "hidden" : "";
   }
 
   function refreshThreadButtons() {
@@ -169,21 +168,31 @@ document.addEventListener("DOMContentLoaded", () => {
     button.classList.toggle("ready", input.value.trim().length > 0);
   }
 
+  function hasHighlightedThread() {
+    return !!state.highlightedThreadUser;
+  }
+
+  function setHighlightedThread(user) {
+    state.highlightedThreadUser = user;
+    updateThreadActiveState();
+    syncTitles();
+  }
+
+  function clearHighlightedThread() {
+    state.highlightedThreadUser = null;
+    updateThreadActiveState();
+    syncTitles();
+  }
+
   function updateThreadActiveState() {
     refreshThreadButtons();
 
     threadButtons.forEach((btn) => {
-      btn.classList.toggle(
-        "active",
-        state.hasSelectedThread && btn.dataset.user === state.currentUser
-      );
+      btn.classList.toggle("active", btn.dataset.user === state.highlightedThreadUser);
     });
 
     Array.from(popupMessagesList?.querySelectorAll(".message-thread") || []).forEach((btn) => {
-      btn.classList.toggle(
-        "active",
-        state.hasSelectedThread && btn.dataset.user === state.currentUser
-      );
+      btn.classList.toggle("active", btn.dataset.user === state.highlightedThreadUser);
     });
   }
 
@@ -332,10 +341,11 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (
         state.mode === "drawer" &&
         messagesChatView?.classList.contains("active") &&
-        !state.split &&
-        state.hasSelectedThread
+        !state.split
       ) {
         messagesHeaderTitle.textContent = state.currentUser;
+      } else if (state.mode === "drawer" && hasHighlightedThread()) {
+        messagesHeaderTitle.textContent = state.highlightedThreadUser;
       } else {
         messagesHeaderTitle.textContent = "Messages";
       }
@@ -347,12 +357,12 @@ document.addEventListener("DOMContentLoaded", () => {
           state.lastFocusedPane === "chat" ? state.currentUser : "Messages";
       } else {
         popupHeaderTitle.textContent =
-          state.popupMode === "chat" && state.hasSelectedThread ? state.currentUser : "Messages";
+          state.popupMode === "chat" ? state.currentUser : "Messages";
       }
     }
 
     if (popoutHeaderTitle) {
-      popoutHeaderTitle.textContent = state.hasSelectedThread ? state.currentUser : "Messages";
+      popoutHeaderTitle.textContent = state.currentUser;
     }
 
     if (minimizedLabel) {
@@ -377,6 +387,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function showDrawerChat() {
     messagesListView?.classList.remove("active");
     messagesChatView?.classList.add("active");
+
+    clearHighlightedThread();
 
     if (messagesBack) {
       messagesBack.style.visibility = "visible";
@@ -405,7 +417,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (state.lastDrawerView === "chat" && state.hasSelectedThread) {
+    if (state.lastDrawerView === "chat") {
       showDrawerChat();
     } else {
       showDrawerList();
@@ -423,7 +435,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (state.popupMode === "list" || !state.hasSelectedThread) {
+    if (state.popupMode === "list") {
       if (popupListView) popupListView.style.display = "flex";
       if (popupChatView) popupChatView.style.display = "none";
     } else {
@@ -441,7 +453,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     hideAllContainers();
 
-    messagesOverlay?.classList.add("open");
     messagesModal?.classList.add("open");
     messagesModal?.setAttribute("aria-hidden", "false");
 
@@ -465,7 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (state.lastDrawerView === "chat" && state.hasSelectedThread) {
+    if (state.lastDrawerView === "chat") {
       showDrawerChat();
     } else {
       showDrawerList();
@@ -551,6 +562,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeAll() {
     state.mode = "closed";
     state.popoutFullscreen = false;
+    clearHighlightedThread();
     hideAllContainers();
     setBodyLock();
   }
@@ -589,7 +601,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const thread = document.createElement("button");
       thread.type = "button";
       thread.className = `message-thread ${
-        state.hasSelectedThread && user === state.currentUser ? "active" : ""
+        user === state.highlightedThreadUser ? "active" : ""
       }`;
       thread.dataset.user = user;
 
@@ -638,7 +650,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function selectThread(user) {
     state.currentUser = user;
-    state.hasSelectedThread = true;
+    setHighlightedThread(user);
 
     moveThreadToTop(user);
     syncAllChats();
@@ -1018,6 +1030,8 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesInput.addEventListener("focus", () => {
       if (state.mode === "drawer" && state.split) {
         setFocusedPane("chat");
+      } else if (state.mode === "drawer") {
+        clearHighlightedThread();
       }
     });
   }
@@ -1026,6 +1040,9 @@ document.addEventListener("DOMContentLoaded", () => {
     messagesChatView.addEventListener("click", () => {
       if (state.mode === "drawer" && state.split) {
         setFocusedPane("chat");
+      } else if (state.mode === "drawer") {
+        clearHighlightedThread();
+        syncTitles();
       }
     });
   }
@@ -1082,7 +1099,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (messagesOverlay) {
-    messagesOverlay.addEventListener("click", closeAll);
+    messagesOverlay.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      if (state.mode === "popup" || state.mode === "popout") {
+        closeAll();
+      }
+    });
   }
 
   if (messagesBack) {
@@ -1238,7 +1261,7 @@ document.addEventListener("DOMContentLoaded", () => {
       state.mode = "drawer";
       state.lastOpenMode = "drawer";
       state.split = false;
-      state.lastDrawerView = state.hasSelectedThread ? "chat" : "list";
+      state.lastDrawerView = "chat";
 
       openDrawer();
     });
@@ -1301,6 +1324,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!clickedInsideCornerMenu) {
       closeCornerMenus();
+    }
+
+    const clickedInsideMessages = e.target.closest(
+      "#messagesModal, #messagesToggle, #messagesPopup, #messagesPopout, #messagesMinimized"
+    );
+
+    if (state.mode === "drawer" && !clickedInsideMessages) {
+      clearHighlightedThread();
+
+      if (!messagesChatView?.classList.contains("active")) {
+        syncTitles();
+      } else {
+        messagesHeaderTitle.textContent = "Messages";
+      }
     }
   });
 
