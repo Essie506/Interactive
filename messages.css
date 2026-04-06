@@ -499,7 +499,7 @@ body.messages-open {
 }
 
 
-back-chevron-btn {
+.back-chevron-btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -519,7 +519,7 @@ back-chevron-btn {
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
 }
 
-back-chevron-btn i {
+.back-chevron-btn i {
   position: absolute;
    top: 5px;
   left: 5px; 
@@ -531,7 +531,7 @@ back-chevron-btn i {
    z-index: 3;
 }
 
-back-chevron-btn:hover {
+.back-chevron-btn:hover {
   box-shadow:
     0 0 0 3px rgba(7, 153, 146, 0.16),
     0 6px 18px rgba(0, 0, 0, 0.14),
@@ -540,7 +540,7 @@ back-chevron-btn:hover {
   background: rgba(255, 255, 255, 0.82);
 }
 
-back-chevron-btn.open i {
+.back-chevron-btn.open i {
   transform: rotate(180deg);
 }
 
