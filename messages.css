@@ -509,7 +509,7 @@ back-chevron-btn {
   border: none;
     background: var(--glass-white);
   backdrop-filter: blur(4px);
-   clip-path: polygon(100% 100%, 0 100%, 100% 0);
+ clip-path: polygon(0 0, 100% 0, 0 100%);
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
@@ -521,8 +521,8 @@ back-chevron-btn {
 
 .messages-chevron-btn i {
   position: absolute;
-   bottom: 5px;
-  right: 5px; 
+   top: 5px;
+  left: 5px; 
   font-size: 13px;
   color: #091a3a;
   line-height: 1;
@@ -543,13 +543,6 @@ back-chevron-btn {
 .messages-chevron-btn.open i {
   transform: rotate(180deg);
 }
-
-
-
-
-
-
-
 
 
 .messages-header-actions {
