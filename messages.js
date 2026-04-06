@@ -407,7 +407,10 @@ document.addEventListener("DOMContentLoaded", () => {
       messagesPopup.style.width = `${state.popupSize.width}px`;
       messagesPopup.style.height = `${state.popupSize.height}px`;
     }
-
+      } else {
+    messagesPopup.style.width = "";
+    messagesPopup.style.height = "";
+  }
     updatePopupLayout();
     syncAllChats();
     setBodyLock();
@@ -428,7 +431,10 @@ document.addEventListener("DOMContentLoaded", () => {
       messagesPopout.style.width = `${state.popoutSize.width}px`;
       messagesPopout.style.height = `${state.popoutSize.height}px`;
     }
-
+    } else {
+    messagesPopout.style.width = "";
+    messagesPopout.style.height = "";
+  }
     messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
 
     syncAllChats();
@@ -1048,13 +1054,20 @@ if (popupBack) {
     });
   }
 
-  if (popoutFullscreenBtn) {
-    popoutFullscreenBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      state.popoutFullscreen = !state.popoutFullscreen;
-      messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
-    });
-  }
+ if (popoutFullscreenBtn) {
+  popoutFullscreenBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const wasFullscreen = state.popoutFullscreen;
+    state.popoutFullscreen = !state.popoutFullscreen;
+
+    if (wasFullscreen) {
+      resetPopoutSize();
+    }
+
+    messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
+  });
+}
 
   if (drawerChevronBtn && drawerCornerMenu) {
     drawerChevronBtn.addEventListener("click", (e) => {
