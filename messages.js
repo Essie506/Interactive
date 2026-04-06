@@ -844,6 +844,37 @@ document.addEventListener("DOMContentLoaded", () => {
   handleEl.addEventListener("pointercancel", stopResizing);
 }
 
+  function resetDrawerSize() {
+  state.drawerWidth = null;
+  if (messagesModal) {
+    messagesModal.style.width = "";
+  }
+}
+
+function resetPopoutSize() {
+  state.popoutSize = null;
+  if (messagesPopout) {
+    messagesPopout.style.width = "";
+    messagesPopout.style.height = "";
+    messagesPopout.style.left = "";
+    messagesPopout.style.top = "";
+    messagesPopout.style.right = "";
+    messagesPopout.style.bottom = "";
+  }
+}
+
+  function resetPopupSize() {
+  state.popupSize = null;
+  if (messagesPopup) {
+    messagesPopup.style.width = "";
+    messagesPopup.style.height = "";
+    messagesPopup.style.left = "";
+    messagesPopup.style.top = "";
+    messagesPopup.style.right = "";
+    messagesPopup.style.bottom = "";
+  }
+}
+
   /* =========================
      EVENT BINDING
   ========================= */
@@ -924,6 +955,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (drawerMediumBtn) {
     drawerMediumBtn.addEventListener("click", (e) => {
       e.stopPropagation();
+       resetPopupSize();
       openPopup();
     });
   }
@@ -938,17 +970,25 @@ document.addEventListener("DOMContentLoaded", () => {
   if (drawerPopoutBtn) {
     drawerPopoutBtn.addEventListener("click", (e) => {
       e.stopPropagation();
+       resetPopoutSize();
       openPopout();
     });
   }
 
-  if (popupBack) {
-    popupBack.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openDrawerFromPreviousState();
-    });
-  }
+if (popupBack) {
+  popupBack.addEventListener("click", (e) => {
+    e.stopPropagation();
+    resetDrawerSize();
 
+    state.mode = "drawer";
+    state.lastOpenMode = "drawer";
+    state.split = !!state.popupSplit;
+    state.lastDrawerView = "chat";
+
+    openDrawer();
+  });
+}
+  
   if (popupMinimizeBtn) {
     popupMinimizeBtn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -975,16 +1015,24 @@ document.addEventListener("DOMContentLoaded", () => {
   if (popupPopoutBtn) {
     popupPopoutBtn.addEventListener("click", (e) => {
       e.stopPropagation();
+       resetPopoutSize();
       openPopout();
     });
   }
 
-  if (popoutBack) {
-    popoutBack.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openDrawerFromPreviousState();
-    });
-  }
+ if (popoutBack) {
+  popoutBack.addEventListener("click", (e) => {
+    e.stopPropagation();
+     resetDrawerSize();
+
+    state.mode = "drawer";
+    state.lastOpenMode = "drawer";
+    state.split = false;
+    state.lastDrawerView = "chat";
+
+    openDrawer();
+  });
+}
 
   if (popoutMinimizeBtn) {
     popoutMinimizeBtn.addEventListener("click", (e) => {
