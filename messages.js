@@ -86,9 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { type: "incoming", text: "Hey, are you around later?" },
       { type: "outgoing", text: "Yes, I should be." }
     ],
-    Alex: [
-      { type: "incoming", text: "Nice work on your run 🔥" }
-    ]
+    Alex: [{ type: "incoming", text: "Nice work on your run 🔥" }]
   };
 
   const state = {
@@ -1037,6 +1035,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (popupBack) {
     popupBack.addEventListener("click", (e) => {
       e.stopPropagation();
+
+      if (state.mode !== "popup") return;
+
+      if (state.popupSplit) {
+        state.split = true;
+        state.lastDrawerView = "chat";
+        state.lastFocusedPane = state.lastFocusedPane === "chat" ? "chat" : "list";
+        openDrawer();
+        return;
+      }
+
+      state.split = false;
+      state.lastDrawerView = state.popupMode === "chat" ? "chat" : "list";
+      state.lastFocusedPane = state.popupMode === "chat" ? "chat" : "list";
       openDrawerFromPreviousState();
     });
   }
@@ -1059,7 +1071,6 @@ document.addEventListener("DOMContentLoaded", () => {
     popupSplitBtn.addEventListener("click", (e) => {
       e.stopPropagation();
 
-      const wasSplit = state.popupSplit;
       state.popupSplit = !state.popupSplit;
 
       if (state.popupSplit) {
