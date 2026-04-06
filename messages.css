@@ -498,6 +498,60 @@ body.messages-open {
   transform: rotate(180deg);
 }
 
+
+back-chevron-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: none;
+    background: var(--glass-white);
+  backdrop-filter: blur(4px);
+   clip-path: polygon(100% 100%, 0 100%, 100% 0);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 0;
+  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
+}
+
+.messages-chevron-btn i {
+  position: absolute;
+   bottom: 5px;
+  right: 5px; 
+  font-size: 13px;
+  color: #091a3a;
+  line-height: 1;
+  transition: transform 0.2s ease;
+  pointer-events: none;
+   z-index: 3;
+}
+
+.messages-chevron-btn:hover {
+  box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.16),
+    0 6px 18px rgba(0, 0, 0, 0.14),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px) scale(1.06);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.messages-chevron-btn.open i {
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
 .messages-header-actions {
   padding-right: 22px;
 }
