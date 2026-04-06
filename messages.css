@@ -900,7 +900,6 @@ body.messages-open {
   max-width: calc(100vw - 12px);
   max-height: calc(100dvh - 12px);
   background: #fff;
-  border-radius: 24px;
   box-shadow: 0 20px 46px rgba(0, 0, 0, 0.2);
   display: none;
   flex-direction: column;
