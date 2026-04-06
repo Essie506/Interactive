@@ -291,7 +291,7 @@ body.messages-open {
   position: fixed;
   top: 0;
   left: 0;
-  width: min(550px, 96vw);
+  width: min(520px, 96vw);
    min-width: 10px;
   max-width: 96vw;
   height: 100dvh;
