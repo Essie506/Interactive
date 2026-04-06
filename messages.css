@@ -338,17 +338,6 @@ body.messages-open {
   pointer-events: none;
 }
 
-.messages-header h3 {
-  margin: 0;
-  font-size: 16px;
-  color: #091a3a;
-  text-align: center;
-   justify-content: center;
-   align-items: center;
-  font-weight: 700;
-  z-index: 1;
-}
-
 .messages-back {
   justify-self: start;
   display: inline-flex;
@@ -714,7 +703,8 @@ body.messages-open {
   pointer-events: none;
 }
 
-.messages-popup-title,
+   .messages-header h3,
+   .messages-popup-title,
 .messages-popout-title {
   grid-column: 2;
   justify-self: center;
