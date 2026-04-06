@@ -1132,31 +1132,26 @@ if (popupMessagesInput) {
     });
   }
 
-  if (messagesBack) {
-    messagesBack.addEventListener("click", (e) => {
-      e.stopPropagation();
+ if (messagesBack) {
+  messagesBack.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-      if (state.mode !== "drawer") return;
+    if (state.mode !== "drawer") return;
 
-      if (state.split) {
-        const activePane = getDrawerActivePane();
-        state.split = false;
-        state.lastDrawerView = activePane;
-        setFocusedPane(activePane);
-        updateDrawerLayout();
-        syncAllChats();
-        return;
-      }
+    if (state.split) {
+      closeAll();
+      return;
+    }
 
-      const isChatView = messagesChatView?.classList.contains("active");
+    const isChatView = messagesChatView?.classList.contains("active");
 
-      if (isChatView) {
-        showDrawerList();
-      } else {
-        closeAll();
-      }
-    });
-  }
+    if (isChatView) {
+      showDrawerList();
+    } else {
+      closeAll();
+    }
+  });
+}
 
   if (splitToggle) {
     splitToggle.addEventListener("click", (e) => {
