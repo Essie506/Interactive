@@ -292,8 +292,8 @@ body.messages-open {
   top: 0;
   left: 0;
   width: min(550px, 96vw);
-   min-width: 320px;
-  max-width: 90vw;
+   min-width: 10px;
+  max-width: 96vw;
   height: 100dvh;
   z-index: 4000;
   display: flex;
