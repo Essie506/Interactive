@@ -1067,22 +1067,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (popupSplitBtn) {
-    popupSplitBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+ if (popupSplitBtn) {
+  popupSplitBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-      state.popupSplit = !state.popupSplit;
+    const enteringSplit = !state.popupSplit;
 
-      if (state.popupSplit) {
-        state.lastFocusedPane = state.popupMode === "list" ? "list" : "chat";
-      } else {
-        state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
-      }
+    if (enteringSplit) {
+      state.popupSplit = true;
+      state.lastFocusedPane = state.popupMode === "list" ? "list" : "chat";
+    } else {
+      state.popupSplit = false;
+      state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
+    }
 
-      updatePopupLayout();
-      syncAllChats();
-    });
-  }
+    updatePopupLayout();
+    syncAllChats();
+  });
+}
 
   if (popupPopoutBtn) {
     popupPopoutBtn.addEventListener("click", (e) => {
