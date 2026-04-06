@@ -627,17 +627,20 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      thread.addEventListener("click", (e) => {
-        e.stopPropagation();
+thread.addEventListener("click", (e) => {
+  e.stopPropagation();
 
-        if (state.mode === "popup" && state.popupSplit) {
-          setFocusedPane("list");
-          setHighlightedThread(user);
-          return;
-        }
+  if (state.mode === "popup" && state.popupSplit) {
+    state.currentUser = user;
+    setHighlightedThread(user);
+    moveThreadToTop(user);
+    syncAllChats();
+    setFocusedPane("list");
+    return;
+  }
 
-        selectThread(user);
-      });
+  selectThread(user);
+});
 
       popupMessagesList.appendChild(thread);
     });
@@ -764,23 +767,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function bindThreadButtons() {
-    refreshThreadButtons();
+ function bindThreadButtons() {
+  refreshThreadButtons();
 
-    threadButtons.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
+  threadButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-        if (state.mode === "drawer" && state.split) {
-          setFocusedPane("list");
-          setHighlightedThread(btn.dataset.user);
-          return;
-        }
+      if (state.mode === "drawer" && state.split) {
+        const user = btn.dataset.user;
 
-        selectThread(btn.dataset.user);
-      });
+        state.currentUser = user;
+        setHighlightedThread(user);
+        moveThreadToTop(user);
+        syncAllChats();
+        setFocusedPane("list");
+        return;
+      }
+
+      selectThread(btn.dataset.user);
     });
-  }
+  });
+}
 
   /* =========================
      DRAGGING
