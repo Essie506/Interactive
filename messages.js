@@ -367,6 +367,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (state.drawerWidth) {
       messagesModal.style.width = `${state.drawerWidth}px`;
+    } else {
+      messagesModal.style.width = "";
     }
 
     updateDrawerLayout();
@@ -392,30 +394,29 @@ document.addEventListener("DOMContentLoaded", () => {
     syncAllChats();
   }
 
-function openPopout() {
-  rememberDrawerState();
+  function openPopup() {
+    rememberDrawerState();
 
-  state.mode = "popout";
-  state.lastOpenMode = "popout";
+    state.mode = "popup";
+    state.lastOpenMode = "popup";
 
-  hideAllContainers();
+    hideAllContainers();
 
-  messagesPopout?.classList.add("open");
-  messagesPopout?.setAttribute("aria-hidden", "false");
+    messagesPopup?.classList.add("open");
+    messagesPopup?.setAttribute("aria-hidden", "false");
 
-  if (state.popoutSize) {
-    messagesPopout.style.width = `${state.popoutSize.width}px`;
-    messagesPopout.style.height = `${state.popoutSize.height}px`;
-  } else {
-    messagesPopout.style.width = "";
-    messagesPopout.style.height = "";
+    if (state.popupSize) {
+      messagesPopup.style.width = `${state.popupSize.width}px`;
+      messagesPopup.style.height = `${state.popupSize.height}px`;
+    } else {
+      messagesPopup.style.width = "";
+      messagesPopup.style.height = "";
+    }
+
+    updatePopupLayout();
+    syncAllChats();
+    setBodyLock();
   }
-
-  messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
-
-  syncAllChats();
-  setBodyLock();
-}
 
   function openPopout() {
     rememberDrawerState();
@@ -431,11 +432,11 @@ function openPopout() {
     if (state.popoutSize) {
       messagesPopout.style.width = `${state.popoutSize.width}px`;
       messagesPopout.style.height = `${state.popoutSize.height}px`;
-    }
     } else {
-    messagesPopout.style.width = "";
-    messagesPopout.style.height = "";
-  }
+      messagesPopout.style.width = "";
+      messagesPopout.style.height = "";
+    }
+
     messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
 
     syncAllChats();
@@ -653,234 +654,234 @@ function openPopout() {
      DRAGGING
   ========================= */
 
- function makeDraggable(windowEl, headerEl) {
-  if (!windowEl || !headerEl) return;
+  function makeDraggable(windowEl, headerEl) {
+    if (!windowEl || !headerEl) return;
 
-  let isDragging = false;
-  let pointerId = null;
-  let startX = 0;
-  let startY = 0;
-  let startLeft = 0;
-  let startTop = 0;
+    let isDragging = false;
+    let pointerId = null;
+    let startX = 0;
+    let startY = 0;
+    let startLeft = 0;
+    let startTop = 0;
 
-  headerEl.style.touchAction = "none";
+    headerEl.style.touchAction = "none";
 
-  headerEl.addEventListener("pointerdown", (e) => {
-    const blocked = e.target.closest("button, input, textarea, label");
-    if (blocked) return;
+    headerEl.addEventListener("pointerdown", (e) => {
+      const blocked = e.target.closest("button, input, textarea, label");
+      if (blocked) return;
 
-    if (windowEl.classList.contains("fullscreen")) return;
-    if (windowEl === messagesModal) return;
+      if (windowEl.classList.contains("fullscreen")) return;
+      if (windowEl === messagesModal) return;
 
-    isDragging = true;
-    pointerId = e.pointerId;
+      isDragging = true;
+      pointerId = e.pointerId;
 
-    const rect = windowEl.getBoundingClientRect();
-    startX = e.clientX;
-    startY = e.clientY;
-    startLeft = rect.left;
-    startTop = rect.top;
+      const rect = windowEl.getBoundingClientRect();
+      startX = e.clientX;
+      startY = e.clientY;
+      startLeft = rect.left;
+      startTop = rect.top;
 
-    windowEl.style.left = `${rect.left}px`;
-    windowEl.style.top = `${rect.top}px`;
-    windowEl.style.right = "auto";
-    windowEl.style.bottom = "auto";
+      windowEl.style.left = `${rect.left}px`;
+      windowEl.style.top = `${rect.top}px`;
+      windowEl.style.right = "auto";
+      windowEl.style.bottom = "auto";
 
-    headerEl.setPointerCapture(pointerId);
-    document.body.style.userSelect = "none";
-  });
+      headerEl.setPointerCapture(pointerId);
+      document.body.style.userSelect = "none";
+    });
 
-  headerEl.addEventListener("pointermove", (e) => {
-    if (!isDragging || e.pointerId !== pointerId) return;
+    headerEl.addEventListener("pointermove", (e) => {
+      if (!isDragging || e.pointerId !== pointerId) return;
 
-    const nextLeft = startLeft + (e.clientX - startX);
-    const nextTop = startTop + (e.clientY - startY);
+      const nextLeft = startLeft + (e.clientX - startX);
+      const nextTop = startTop + (e.clientY - startY);
 
-    const maxLeft = Math.max(0, window.innerWidth - windowEl.offsetWidth);
-    const maxTop = Math.max(0, window.innerHeight - windowEl.offsetHeight);
+      const maxLeft = Math.max(0, window.innerWidth - windowEl.offsetWidth);
+      const maxTop = Math.max(0, window.innerHeight - windowEl.offsetHeight);
 
-    windowEl.style.left = `${Math.max(0, Math.min(nextLeft, maxLeft))}px`;
-    windowEl.style.top = `${Math.max(0, Math.min(nextTop, maxTop))}px`;
-  });
+      windowEl.style.left = `${Math.max(0, Math.min(nextLeft, maxLeft))}px`;
+      windowEl.style.top = `${Math.max(0, Math.min(nextTop, maxTop))}px`;
+    });
 
-  function stopDragging(e) {
-    if (!isDragging) return;
-    if (e.pointerId !== pointerId) return;
+    function stopDragging(e) {
+      if (!isDragging) return;
+      if (e.pointerId !== pointerId) return;
 
-    isDragging = false;
+      isDragging = false;
 
-    try {
-      headerEl.releasePointerCapture(pointerId);
-    } catch (_) {}
+      try {
+        headerEl.releasePointerCapture(pointerId);
+      } catch (_) {}
 
-    pointerId = null;
-    document.body.style.userSelect = "";
+      pointerId = null;
+      document.body.style.userSelect = "";
+    }
+
+    headerEl.addEventListener("pointerup", stopDragging);
+    headerEl.addEventListener("pointercancel", stopDragging);
   }
-
-  headerEl.addEventListener("pointerup", stopDragging);
-  headerEl.addEventListener("pointercancel", stopDragging);
-}
 
   /* =========================
      RESIZING
   ========================= */
 
- function makeDrawerResizable(drawerEl, handleEl) {
-  if (!drawerEl || !handleEl) return;
+  function makeDrawerResizable(drawerEl, handleEl) {
+    if (!drawerEl || !handleEl) return;
 
-  let isResizing = false;
-  let pointerId = null;
-  let startX = 0;
-  let startWidth = 0;
+    let isResizing = false;
+    let pointerId = null;
+    let startX = 0;
+    let startWidth = 0;
 
-  handleEl.style.touchAction = "none";
+    handleEl.style.touchAction = "none";
 
-  handleEl.addEventListener("pointerdown", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
+    handleEl.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
 
-    isResizing = true;
-    pointerId = e.pointerId;
-    startX = e.clientX;
-    startWidth = drawerEl.getBoundingClientRect().width;
+      isResizing = true;
+      pointerId = e.pointerId;
+      startX = e.clientX;
+      startWidth = drawerEl.getBoundingClientRect().width;
 
-    handleEl.setPointerCapture(pointerId);
-    document.body.style.userSelect = "none";
-  });
+      handleEl.setPointerCapture(pointerId);
+      document.body.style.userSelect = "none";
+    });
 
-  handleEl.addEventListener("pointermove", (e) => {
-    if (!isResizing || e.pointerId !== pointerId) return;
+    handleEl.addEventListener("pointermove", (e) => {
+      if (!isResizing || e.pointerId !== pointerId) return;
 
-    const delta = e.clientX - startX;
-    const nextWidth = startWidth + delta;
-    const clampedWidth = Math.max(320, Math.min(nextWidth, window.innerWidth * 0.9));
+      const delta = e.clientX - startX;
+      const nextWidth = startWidth + delta;
+      const clampedWidth = Math.max(320, Math.min(nextWidth, window.innerWidth * 0.9));
 
-    drawerEl.style.width = `${clampedWidth}px`;
-    state.drawerWidth = clampedWidth;
-  });
+      drawerEl.style.width = `${clampedWidth}px`;
+      state.drawerWidth = clampedWidth;
+    });
 
-  function stopResizing(e) {
-    if (!isResizing) return;
-    if (e.pointerId !== pointerId) return;
+    function stopResizing(e) {
+      if (!isResizing) return;
+      if (e.pointerId !== pointerId) return;
 
-    isResizing = false;
+      isResizing = false;
 
-    try {
-      handleEl.releasePointerCapture(pointerId);
-    } catch (_) {}
+      try {
+        handleEl.releasePointerCapture(pointerId);
+      } catch (_) {}
 
-    pointerId = null;
-    document.body.style.userSelect = "";
-  }
-
-  handleEl.addEventListener("pointerup", stopResizing);
-  handleEl.addEventListener("pointercancel", stopResizing);
-}
-
- function makeCornerResizable(windowEl, handleEl, type) {
-  if (!windowEl || !handleEl) return;
-
-  let isResizing = false;
-  let pointerId = null;
-  let startX = 0;
-  let startY = 0;
-  let startWidth = 0;
-  let startHeight = 0;
-
-  const minWidth = type === "popup" ? 300 : 340;
-  const minHeight = type === "popup" ? 320 : 360;
-
-  handleEl.style.touchAction = "none";
-
-  handleEl.addEventListener("pointerdown", (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    if (windowEl.classList.contains("fullscreen")) return;
-
-    isResizing = true;
-    pointerId = e.pointerId;
-
-    const rect = windowEl.getBoundingClientRect();
-    startX = e.clientX;
-    startY = e.clientY;
-    startWidth = rect.width;
-    startHeight = rect.height;
-
-    windowEl.style.width = `${rect.width}px`;
-    windowEl.style.height = `${rect.height}px`;
-
-    handleEl.setPointerCapture(pointerId);
-    document.body.style.userSelect = "none";
-  });
-
-  handleEl.addEventListener("pointermove", (e) => {
-    if (!isResizing || e.pointerId !== pointerId) return;
-
-    const nextWidth = startWidth + (e.clientX - startX);
-    const nextHeight = startHeight + (e.clientY - startY);
-
-    const clampedWidth = Math.max(minWidth, Math.min(nextWidth, window.innerWidth - 12));
-    const clampedHeight = Math.max(minHeight, Math.min(nextHeight, window.innerHeight - 12));
-
-    windowEl.style.width = `${clampedWidth}px`;
-    windowEl.style.height = `${clampedHeight}px`;
-
-    if (type === "popup") {
-      state.popupSize = { width: clampedWidth, height: clampedHeight };
-    } else {
-      state.popoutSize = { width: clampedWidth, height: clampedHeight };
+      pointerId = null;
+      document.body.style.userSelect = "";
     }
-  });
 
-  function stopResizing(e) {
-    if (!isResizing) return;
-    if (e.pointerId !== pointerId) return;
-
-    isResizing = false;
-
-    try {
-      handleEl.releasePointerCapture(pointerId);
-    } catch (_) {}
-
-    pointerId = null;
-    document.body.style.userSelect = "";
+    handleEl.addEventListener("pointerup", stopResizing);
+    handleEl.addEventListener("pointercancel", stopResizing);
   }
 
-  handleEl.addEventListener("pointerup", stopResizing);
-  handleEl.addEventListener("pointercancel", stopResizing);
-}
+  function makeCornerResizable(windowEl, handleEl, type) {
+    if (!windowEl || !handleEl) return;
+
+    let isResizing = false;
+    let pointerId = null;
+    let startX = 0;
+    let startY = 0;
+    let startWidth = 0;
+    let startHeight = 0;
+
+    const minWidth = type === "popup" ? 300 : 340;
+    const minHeight = type === "popup" ? 320 : 360;
+
+    handleEl.style.touchAction = "none";
+
+    handleEl.addEventListener("pointerdown", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      if (windowEl.classList.contains("fullscreen")) return;
+
+      isResizing = true;
+      pointerId = e.pointerId;
+
+      const rect = windowEl.getBoundingClientRect();
+      startX = e.clientX;
+      startY = e.clientY;
+      startWidth = rect.width;
+      startHeight = rect.height;
+
+      windowEl.style.width = `${rect.width}px`;
+      windowEl.style.height = `${rect.height}px`;
+
+      handleEl.setPointerCapture(pointerId);
+      document.body.style.userSelect = "none";
+    });
+
+    handleEl.addEventListener("pointermove", (e) => {
+      if (!isResizing || e.pointerId !== pointerId) return;
+
+      const nextWidth = startWidth + (e.clientX - startX);
+      const nextHeight = startHeight + (e.clientY - startY);
+
+      const clampedWidth = Math.max(minWidth, Math.min(nextWidth, window.innerWidth - 12));
+      const clampedHeight = Math.max(minHeight, Math.min(nextHeight, window.innerHeight - 12));
+
+      windowEl.style.width = `${clampedWidth}px`;
+      windowEl.style.height = `${clampedHeight}px`;
+
+      if (type === "popup") {
+        state.popupSize = { width: clampedWidth, height: clampedHeight };
+      } else {
+        state.popoutSize = { width: clampedWidth, height: clampedHeight };
+      }
+    });
+
+    function stopResizing(e) {
+      if (!isResizing) return;
+      if (e.pointerId !== pointerId) return;
+
+      isResizing = false;
+
+      try {
+        handleEl.releasePointerCapture(pointerId);
+      } catch (_) {}
+
+      pointerId = null;
+      document.body.style.userSelect = "";
+    }
+
+    handleEl.addEventListener("pointerup", stopResizing);
+    handleEl.addEventListener("pointercancel", stopResizing);
+  }
 
   function resetDrawerSize() {
-  state.drawerWidth = null;
-  if (messagesModal) {
-    messagesModal.style.width = "";
+    state.drawerWidth = null;
+    if (messagesModal) {
+      messagesModal.style.width = "";
+    }
   }
-}
 
-function resetPopoutSize() {
-  state.popoutSize = null;
-  if (messagesPopout) {
-    messagesPopout.style.width = "";
-    messagesPopout.style.height = "";
-    messagesPopout.style.left = "";
-    messagesPopout.style.top = "";
-    messagesPopout.style.right = "";
-    messagesPopout.style.bottom = "";
+  function resetPopoutSize() {
+    state.popoutSize = null;
+    if (messagesPopout) {
+      messagesPopout.style.width = "";
+      messagesPopout.style.height = "";
+      messagesPopout.style.left = "";
+      messagesPopout.style.top = "";
+      messagesPopout.style.right = "";
+      messagesPopout.style.bottom = "";
+    }
   }
-}
 
   function resetPopupSize() {
-  state.popupSize = null;
-  if (messagesPopup) {
-    messagesPopup.style.width = "";
-    messagesPopup.style.height = "";
-    messagesPopup.style.left = "";
-    messagesPopup.style.top = "";
-    messagesPopup.style.right = "";
-    messagesPopup.style.bottom = "";
+    state.popupSize = null;
+    if (messagesPopup) {
+      messagesPopup.style.width = "";
+      messagesPopup.style.height = "";
+      messagesPopup.style.left = "";
+      messagesPopup.style.top = "";
+      messagesPopup.style.right = "";
+      messagesPopup.style.bottom = "";
+    }
   }
-}
 
   /* =========================
      EVENT BINDING
@@ -962,7 +963,7 @@ function resetPopoutSize() {
   if (drawerMediumBtn) {
     drawerMediumBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-       resetPopupSize();
+      resetPopupSize();
       openPopup();
     });
   }
@@ -977,25 +978,25 @@ function resetPopoutSize() {
   if (drawerPopoutBtn) {
     drawerPopoutBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-       resetPopoutSize();
+      resetPopoutSize();
       openPopout();
     });
   }
 
-if (popupBack) {
-  popupBack.addEventListener("click", (e) => {
-    e.stopPropagation();
-    resetDrawerSize();
+  if (popupBack) {
+    popupBack.addEventListener("click", (e) => {
+      e.stopPropagation();
+      resetDrawerSize();
 
-    state.mode = "drawer";
-    state.lastOpenMode = "drawer";
-    state.split = !!state.popupSplit;
-    state.lastDrawerView = "chat";
+      state.mode = "drawer";
+      state.lastOpenMode = "drawer";
+      state.split = !!state.popupSplit;
+      state.lastDrawerView = "chat";
 
-    openDrawer();
-  });
-}
-  
+      openDrawer();
+    });
+  }
+
   if (popupMinimizeBtn) {
     popupMinimizeBtn.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -1022,24 +1023,24 @@ if (popupBack) {
   if (popupPopoutBtn) {
     popupPopoutBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-       resetPopoutSize();
+      resetPopoutSize();
       openPopout();
     });
   }
 
- if (popoutBack) {
-  popoutBack.addEventListener("click", (e) => {
-    e.stopPropagation();
-     resetDrawerSize();
+  if (popoutBack) {
+    popoutBack.addEventListener("click", (e) => {
+      e.stopPropagation();
+      resetDrawerSize();
 
-    state.mode = "drawer";
-    state.lastOpenMode = "drawer";
-    state.split = false;
-    state.lastDrawerView = "chat";
+      state.mode = "drawer";
+      state.lastOpenMode = "drawer";
+      state.split = false;
+      state.lastDrawerView = "chat";
 
-    openDrawer();
-  });
-}
+      openDrawer();
+    });
+  }
 
   if (popoutMinimizeBtn) {
     popoutMinimizeBtn.addEventListener("click", (e) => {
@@ -1055,20 +1056,20 @@ if (popupBack) {
     });
   }
 
- if (popoutFullscreenBtn) {
-  popoutFullscreenBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
+  if (popoutFullscreenBtn) {
+    popoutFullscreenBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    const wasFullscreen = state.popoutFullscreen;
-    state.popoutFullscreen = !state.popoutFullscreen;
+      const wasFullscreen = state.popoutFullscreen;
+      state.popoutFullscreen = !state.popoutFullscreen;
 
-    if (wasFullscreen) {
-      resetPopoutSize();
-    }
+      if (wasFullscreen) {
+        resetPopoutSize();
+      }
 
-    messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
-  });
-}
+      messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
+    });
+  }
 
   if (drawerChevronBtn && drawerCornerMenu) {
     drawerChevronBtn.addEventListener("click", (e) => {
