@@ -214,6 +214,22 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePaneHighlights();
   }
 
+  function getPopupActivePane() {
+    const activeEl = document.activeElement;
+
+    const focusedInList =
+      popupListView?.contains(activeEl);
+
+    const focusedInChat =
+      popupChatView?.contains(activeEl) ||
+      activeEl === popupMessagesInput;
+
+    if (focusedInList) return "list";
+    if (focusedInChat) return "chat";
+
+    return state.lastFocusedPane === "list" ? "list" : "chat";
+  }
+
   /* =========================
      CORNER MENUS
   ========================= */
@@ -962,6 +978,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (popupListView) {
+    popupListView.addEventListener("pointerdown", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        setFocusedPane("list");
+      }
+    });
+
     popupListView.addEventListener("click", () => {
       if (state.mode === "popup" && state.popupSplit) {
         setFocusedPane("list");
@@ -970,6 +992,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (popupChatView) {
+    popupChatView.addEventListener("pointerdown", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        setFocusedPane("chat");
+      }
+    });
+
     popupChatView.addEventListener("click", () => {
       if (state.mode === "popup" && state.popupSplit) {
         setFocusedPane("chat");
@@ -1112,6 +1140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     popupSplitBtn.addEventListener("click", (e) => {
       e.stopPropagation();
 
+      const activePane = getPopupActivePane();
       const enteringSplit = !state.popupSplit;
 
       if (enteringSplit) {
@@ -1119,7 +1148,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setFocusedPane(state.popupMode === "list" ? "list" : "chat");
       } else {
         state.popupSplit = false;
-        state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
+        state.popupMode = activePane;
+        setFocusedPane(activePane);
       }
 
       updatePopupLayout();
