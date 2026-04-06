@@ -392,28 +392,30 @@ document.addEventListener("DOMContentLoaded", () => {
     syncAllChats();
   }
 
-  function openPopup() {
-    rememberDrawerState();
+function openPopout() {
+  rememberDrawerState();
 
-    state.mode = "popup";
-    state.lastOpenMode = "popup";
+  state.mode = "popout";
+  state.lastOpenMode = "popout";
 
-    hideAllContainers();
+  hideAllContainers();
 
-    messagesPopup?.classList.add("open");
-    messagesPopup?.setAttribute("aria-hidden", "false");
+  messagesPopout?.classList.add("open");
+  messagesPopout?.setAttribute("aria-hidden", "false");
 
-    if (state.popupSize) {
-      messagesPopup.style.width = `${state.popupSize.width}px`;
-      messagesPopup.style.height = `${state.popupSize.height}px`;
-      } else {
-    messagesPopup.style.width = "";
-    messagesPopup.style.height = "";
+  if (state.popoutSize) {
+    messagesPopout.style.width = `${state.popoutSize.width}px`;
+    messagesPopout.style.height = `${state.popoutSize.height}px`;
+  } else {
+    messagesPopout.style.width = "";
+    messagesPopout.style.height = "";
   }
-    updatePopupLayout();
-    syncAllChats();
-    setBodyLock();
-  }
+
+  messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
+
+  syncAllChats();
+  setBodyLock();
+}
 
   function openPopout() {
     rememberDrawerState();
