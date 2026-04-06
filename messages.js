@@ -1047,6 +1047,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+    if (messageChat) {
+    messageChat.addEventListener("pointerdown", () => {
+      if (state.mode === "drawer" && state.split) {
+        setFocusedPane("chat");
+      }
+    });
+
+    messageChat.addEventListener("click", () => {
+      if (state.mode === "drawer" && state.split) {
+        setFocusedPane("chat");
+      }
+    });
+  }
+
   if (popupListView) {
     popupListView.addEventListener("pointerdown", () => {
       if (state.mode === "popup" && state.popupSplit) {
@@ -1077,6 +1091,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     popupChatView.addEventListener("click", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        setFocusedPane("chat");
+      }
+    });
+  }
+
+    if (popupMessageChat) {
+    popupMessageChat.addEventListener("pointerdown", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        setFocusedPane("chat");
+      }
+    });
+
+    popupMessageChat.addEventListener("click", () => {
       if (state.mode === "popup" && state.popupSplit) {
         setFocusedPane("chat");
       }
