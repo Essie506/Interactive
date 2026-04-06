@@ -344,6 +344,7 @@ body.messages-open {
   color: #091a3a;
   text-align: center;
    justify-content: center;
+   align-items: center;
   font-weight: 700;
   z-index: 1;
 }
