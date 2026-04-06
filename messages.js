@@ -1037,26 +1037,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (messagesInput) {
-    messagesInput.addEventListener("focus", () => {
-      if (state.mode === "drawer" && state.split) {
-        setFocusedPane("chat");
-      } else if (state.mode === "drawer") {
-        clearHighlightedThread();
-      }
-    });
-  }
+ if (messagesInput) {
+  messagesInput.addEventListener("focus", () => {
+    if (state.mode === "drawer" && state.split) {
+      clearHighlightedThread();
+      setFocusedPane("chat");
+    } else if (state.mode === "drawer") {
+      clearHighlightedThread();
+    }
+  });
+}
 
   if (messagesChatView) {
-    messagesChatView.addEventListener("click", () => {
-      if (state.mode === "drawer" && state.split) {
-        setFocusedPane("chat");
-      } else if (state.mode === "drawer") {
-        clearHighlightedThread();
-        syncTitles();
-      }
-    });
-  }
+  messagesChatView.addEventListener("click", () => {
+    if (state.mode === "drawer" && state.split) {
+      clearHighlightedThread();
+      setFocusedPane("chat");
+    } else if (state.mode === "drawer") {
+      clearHighlightedThread();
+      syncTitles();
+    }
+  });
+}
 
   if (popupListView) {
     popupListView.addEventListener("pointerdown", () => {
@@ -1080,27 +1082,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (popupChatView) {
-    popupChatView.addEventListener("pointerdown", () => {
-      if (state.mode === "popup" && state.popupSplit) {
-        setFocusedPane("chat");
-      }
-    });
+if (popupChatView) {
+  popupChatView.addEventListener("pointerdown", () => {
+    if (state.mode === "popup" && state.popupSplit) {
+      clearHighlightedThread();
+      setFocusedPane("chat");
+    }
+  });
 
-    popupChatView.addEventListener("click", () => {
-      if (state.mode === "popup" && state.popupSplit) {
-        setFocusedPane("chat");
-      }
-    });
-  }
+  popupChatView.addEventListener("click", () => {
+    if (state.mode === "popup" && state.popupSplit) {
+      clearHighlightedThread();
+      setFocusedPane("chat");
+    }
+  });
+}
 
-  if (popupMessagesInput) {
-    popupMessagesInput.addEventListener("focus", () => {
-      if (state.mode === "popup" && state.popupSplit) {
-        setFocusedPane("chat");
-      }
-    });
-  }
+if (popupMessagesInput) {
+  popupMessagesInput.addEventListener("focus", () => {
+    if (state.mode === "popup" && state.popupSplit) {
+      clearHighlightedThread();
+      setFocusedPane("chat");
+    }
+  });
+}
 
   if (messagesToggle) {
     messagesToggle.addEventListener("click", (e) => {
