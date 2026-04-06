@@ -91,6 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const state = {
     currentUser: "Jason",
+    hasSelectedThread: false,
     mode: "closed", // closed | drawer | popup | popout | minimized
     split: false,
     popupSplit: false,
@@ -172,11 +173,17 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshThreadButtons();
 
     threadButtons.forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
+      btn.classList.toggle(
+        "active",
+        state.hasSelectedThread && btn.dataset.user === state.currentUser
+      );
     });
 
     Array.from(popupMessagesList?.querySelectorAll(".message-thread") || []).forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.user === state.currentUser);
+      btn.classList.toggle(
+        "active",
+        state.hasSelectedThread && btn.dataset.user === state.currentUser
+      );
     });
   }
 
@@ -214,11 +221,31 @@ document.addEventListener("DOMContentLoaded", () => {
     updatePaneHighlights();
   }
 
+  function getDrawerActivePane() {
+    const activeEl = document.activeElement;
+
+    const focusedInList =
+      messagesListView?.contains(activeEl) ||
+      messagesList?.contains(activeEl) ||
+      activeEl === messagesSearchInput;
+
+    const focusedInChat =
+      messagesChatView?.contains(activeEl) ||
+      activeEl === messagesInput;
+
+    if (focusedInList) return "list";
+    if (focusedInChat) return "chat";
+
+    return state.lastFocusedPane === "list" ? "list" : "chat";
+  }
+
   function getPopupActivePane() {
     const activeEl = document.activeElement;
 
     const focusedInList =
-      popupListView?.contains(activeEl);
+      popupListView?.contains(activeEl) ||
+      popupMessagesList?.contains(activeEl) ||
+      activeEl === popupMessagesSearchInput;
 
     const focusedInChat =
       popupChatView?.contains(activeEl) ||
@@ -278,7 +305,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function rememberDrawerState() {
     if (state.mode !== "drawer") return;
-
     if (state.split) return;
 
     if (messagesChatView?.classList.contains("active")) {
@@ -306,7 +332,8 @@ document.addEventListener("DOMContentLoaded", () => {
       } else if (
         state.mode === "drawer" &&
         messagesChatView?.classList.contains("active") &&
-        !state.split
+        !state.split &&
+        state.hasSelectedThread
       ) {
         messagesHeaderTitle.textContent = state.currentUser;
       } else {
@@ -320,12 +347,12 @@ document.addEventListener("DOMContentLoaded", () => {
           state.lastFocusedPane === "chat" ? state.currentUser : "Messages";
       } else {
         popupHeaderTitle.textContent =
-          state.popupMode === "chat" ? state.currentUser : "Messages";
+          state.popupMode === "chat" && state.hasSelectedThread ? state.currentUser : "Messages";
       }
     }
 
     if (popoutHeaderTitle) {
-      popoutHeaderTitle.textContent = state.currentUser;
+      popoutHeaderTitle.textContent = state.hasSelectedThread ? state.currentUser : "Messages";
     }
 
     if (minimizedLabel) {
@@ -378,7 +405,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (state.lastDrawerView === "chat") {
+    if (state.lastDrawerView === "chat" && state.hasSelectedThread) {
       showDrawerChat();
     } else {
       showDrawerList();
@@ -396,7 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (state.popupMode === "list") {
+    if (state.popupMode === "list" || !state.hasSelectedThread) {
       if (popupListView) popupListView.style.display = "flex";
       if (popupChatView) popupChatView.style.display = "none";
     } else {
@@ -438,7 +465,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (state.lastDrawerView === "chat") {
+    if (state.lastDrawerView === "chat" && state.hasSelectedThread) {
       showDrawerChat();
     } else {
       showDrawerList();
@@ -561,7 +588,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const thread = document.createElement("button");
       thread.type = "button";
-      thread.className = `message-thread ${user === state.currentUser ? "active" : ""}`;
+      thread.className = `message-thread ${
+        state.hasSelectedThread && user === state.currentUser ? "active" : ""
+      }`;
       thread.dataset.user = user;
 
       thread.innerHTML = `
@@ -581,7 +610,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       thread.addEventListener("click", (e) => {
         e.stopPropagation();
-        setFocusedPane("list");
+
+        if (state.mode === "popup" && state.popupSplit) {
+          setFocusedPane("list");
+        }
+
         selectThread(user);
       });
 
@@ -605,19 +638,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function selectThread(user) {
     state.currentUser = user;
+    state.hasSelectedThread = true;
+
     moveThreadToTop(user);
     syncAllChats();
 
     if (state.mode === "drawer") {
       if (state.split) {
-        setFocusedPane("chat");
+        updateDrawerLayout();
         return;
       }
+
       showDrawerChat();
       return;
     }
 
     if (state.mode === "popup") {
+      if (state.popupSplit) {
+        updatePopupLayout();
+        return;
+      }
+
       state.popupMode = "chat";
       setFocusedPane("chat");
       updatePopupLayout();
@@ -708,7 +749,11 @@ document.addEventListener("DOMContentLoaded", () => {
     threadButtons.forEach((btn) => {
       btn.addEventListener("click", (e) => {
         e.stopPropagation();
-        setFocusedPane("list");
+
+        if (state.mode === "drawer" && state.split) {
+          setFocusedPane("list");
+        }
+
         selectThread(btn.dataset.user);
       });
     });
@@ -961,6 +1006,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (messagesList) {
+    messagesList.addEventListener("pointerdown", () => {
+      if (state.mode === "drawer" && state.split) {
+        setFocusedPane("list");
+      }
+    });
+  }
+
   if (messagesInput) {
     messagesInput.addEventListener("focus", () => {
       if (state.mode === "drawer" && state.split) {
@@ -985,6 +1038,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     popupListView.addEventListener("click", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        setFocusedPane("list");
+      }
+    });
+  }
+
+  if (popupMessagesList) {
+    popupMessagesList.addEventListener("pointerdown", () => {
       if (state.mode === "popup" && state.popupSplit) {
         setFocusedPane("list");
       }
@@ -1031,8 +1092,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (state.mode !== "drawer") return;
 
       if (state.split) {
+        const activePane = getDrawerActivePane();
         state.split = false;
-        state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
+        state.lastDrawerView = activePane;
+        setFocusedPane(activePane);
         updateDrawerLayout();
         syncAllChats();
         return;
@@ -1056,6 +1119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         openDrawer();
       }
 
+      const activePane = getDrawerActivePane();
       const enteringSplit = !state.split;
 
       if (enteringSplit) {
@@ -1063,7 +1127,8 @@ document.addEventListener("DOMContentLoaded", () => {
         setFocusedPane(state.lastDrawerView === "list" ? "list" : "chat");
       } else {
         state.split = false;
-        state.lastDrawerView = state.lastFocusedPane === "list" ? "list" : "chat";
+        state.lastDrawerView = activePane;
+        setFocusedPane(activePane);
       }
 
       updateDrawerLayout();
@@ -1173,7 +1238,7 @@ document.addEventListener("DOMContentLoaded", () => {
       state.mode = "drawer";
       state.lastOpenMode = "drawer";
       state.split = false;
-      state.lastDrawerView = "chat";
+      state.lastDrawerView = state.hasSelectedThread ? "chat" : "list";
 
       openDrawer();
     });
@@ -1409,7 +1474,6 @@ document.addEventListener("DOMContentLoaded", () => {
      INIT
   ========================= */
 
-  moveThreadToTop(state.currentUser);
   syncAllChats();
   updateDrawerLayout();
   updatePopupLayout();
