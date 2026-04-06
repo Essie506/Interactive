@@ -333,42 +333,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function syncTitles() {
-    if (messagesHeaderTitle) {
-      if (state.mode === "drawer" && state.split) {
-        messagesHeaderTitle.textContent =
-          state.lastFocusedPane === "chat" ? state.currentUser : "Messages";
-      } else if (
-        state.mode === "drawer" &&
-        messagesChatView?.classList.contains("active") &&
-        !state.split
-      ) {
+ function syncTitles() {
+  if (messagesHeaderTitle) {
+    if (state.mode === "drawer" && state.split) {
+      if (state.lastFocusedPane === "chat") {
         messagesHeaderTitle.textContent = state.currentUser;
-      } else if (state.mode === "drawer" && hasHighlightedThread()) {
+      } else if (state.highlightedThreadUser) {
         messagesHeaderTitle.textContent = state.highlightedThreadUser;
       } else {
         messagesHeaderTitle.textContent = "Messages";
       }
-    }
-
-    if (popupHeaderTitle) {
-      if (state.popupSplit) {
-        popupHeaderTitle.textContent =
-          state.lastFocusedPane === "chat" ? state.currentUser : "Messages";
-      } else {
-        popupHeaderTitle.textContent =
-          state.popupMode === "chat" ? state.currentUser : "Messages";
-      }
-    }
-
-    if (popoutHeaderTitle) {
-      popoutHeaderTitle.textContent = state.currentUser;
-    }
-
-    if (minimizedLabel) {
-      minimizedLabel.textContent = state.currentUser;
+    } else if (
+      state.mode === "drawer" &&
+      messagesChatView?.classList.contains("active") &&
+      !state.split
+    ) {
+      messagesHeaderTitle.textContent = state.currentUser;
+    } else if (state.mode === "drawer" && hasHighlightedThread()) {
+      messagesHeaderTitle.textContent = state.highlightedThreadUser;
+    } else {
+      messagesHeaderTitle.textContent = "Messages";
     }
   }
+
+  if (popupHeaderTitle) {
+    if (state.popupSplit) {
+      if (state.lastFocusedPane === "chat") {
+        popupHeaderTitle.textContent = state.currentUser;
+      } else if (state.highlightedThreadUser) {
+        popupHeaderTitle.textContent = state.highlightedThreadUser;
+      } else {
+        popupHeaderTitle.textContent = "Messages";
+      }
+    } else {
+      popupHeaderTitle.textContent =
+        state.popupMode === "chat" ? state.currentUser : "Messages";
+    }
+  }
+
+  if (popoutHeaderTitle) {
+    popoutHeaderTitle.textContent = state.currentUser;
+  }
+
+  if (minimizedLabel) {
+    minimizedLabel.textContent = state.currentUser;
+  }
+}
 
   function showDrawerList() {
     messagesListView?.classList.add("active");
@@ -620,19 +630,17 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       `;
 
-      thread.addEventListener("click", (e) => {
-        e.stopPropagation();
+     thread.addEventListener("click", (e) => {
+  e.stopPropagation();
 
-        if (state.mode === "popup" && state.popupSplit) {
-          setFocusedPane("list");
-        }
-
-        selectThread(user);
-      });
-
-      popupMessagesList.appendChild(thread);
-    });
+  if (state.mode === "popup" && state.popupSplit) {
+    setFocusedPane("list");
+    setHighlightedThread(user);
+    return;
   }
+
+  selectThread(user);
+});
 
   function syncAllChats() {
     renderChat(messageChat, state.currentUser);
@@ -755,21 +763,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function bindThreadButtons() {
-    refreshThreadButtons();
+ function bindThreadButtons() {
+  refreshThreadButtons();
 
-    threadButtons.forEach((btn) => {
-      btn.addEventListener("click", (e) => {
-        e.stopPropagation();
+  threadButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-        if (state.mode === "drawer" && state.split) {
-          setFocusedPane("list");
-        }
+      if (state.mode === "drawer" && state.split) {
+        setFocusedPane("list");
+        setHighlightedThread(btn.dataset.user);
+        return;
+      }
 
-        selectThread(btn.dataset.user);
-      });
+      selectThread(btn.dataset.user);
     });
-  }
+  });
+}
 
   /* =========================
      DRAGGING
@@ -1345,18 +1355,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  document.addEventListener("click", (e) => {
-    const clickedInsideCornerMenu = e.target.closest(
-      "#drawerChevronBtn, #drawerCornerMenu, #popupChevronBtn, #popupCornerMenu, #popoutChevronBtn, #popoutCornerMenu"
-    );
+document.addEventListener("click", (e) => {
+  const clickedInsideCornerMenu = e.target.closest(
+    "#drawerChevronBtn, #drawerCornerMenu, #popupChevronBtn, #popupCornerMenu, #popoutChevronBtn, #popoutCornerMenu"
+  );
 
-    if (!clickedInsideCornerMenu) {
-      closeCornerMenus();
+  if (!clickedInsideCornerMenu) {
+    closeCornerMenus();
+  }
+
+  const clickedInsideMessages = e.target.closest(
+    "#messagesModal, #messagesToggle, #messagesPopup, #messagesPopout, #messagesMinimized"
+  );
+
+  if (state.mode === "drawer" && !clickedInsideMessages) {
+    clearHighlightedThread();
+
+    if (state.split) {
+      setFocusedPane("list");
+      syncTitles();
+    } else if (!messagesChatView?.classList.contains("active")) {
+      syncTitles();
+    } else {
+      messagesHeaderTitle.textContent = "Messages";
     }
+  }
 
-    const clickedInsideMessages = e.target.closest(
-      "#messagesModal, #messagesToggle, #messagesPopup, #messagesPopout, #messagesMinimized"
-    );
+  if (state.mode === "popup" && !clickedInsideMessages) {
+    clearHighlightedThread();
+
+    if (state.popupSplit) {
+      setFocusedPane("list");
+      syncTitles();
+    }
+  }
+});
 
     if (state.mode === "drawer" && !clickedInsideMessages) {
       clearHighlightedThread();
