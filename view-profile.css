@@ -209,8 +209,9 @@ body.profile .profile-tab {
 }
 
 /* 👇 subtle hover */
-.profile-tab:hover,
-.btn-soft:hover {
+
+body.profile .profile-tab:hover,
+body.profile .btn-soft:hover {
   transform: translateY(-1px); /* VERY small lift */
   box-shadow:
     0 4px 10px rgba(0, 0, 0, 0.08), /* soft outer shadow */
