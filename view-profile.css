@@ -156,6 +156,7 @@ body.profile .profile-actions {
 body.profile .profile-buttons {
   display: flex;
   gap: 12px;
+   justify-content: flex-start;
 }
 
 /* stats row */
