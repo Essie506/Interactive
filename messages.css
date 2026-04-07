@@ -216,6 +216,22 @@
   flex-shrink: 0;
 }
 
+.messages-toggle {
+  position: relative;
+}
+
+.messages-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background: #ff4d4f; /* or your teal accent if you prefer */
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.7);
+  display: none;
+}
+
 .message-unread-badge {
   min-width: 18px;
   height: 18px;
