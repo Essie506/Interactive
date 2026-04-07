@@ -451,6 +451,10 @@ body.index .btn-login {
 .composer-modal {
     min-width: 100%;
   }
+
+.messages-modai {
+   min-width: 100%
+}
    
 .composer-card {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
