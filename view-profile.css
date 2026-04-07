@@ -338,8 +338,8 @@ body.profile .media-play-badge {
 }
 .profile-edit-btn {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 8px;
+  right: 8px;
   z-index: 5;
 }
 
