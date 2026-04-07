@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let threadButtons = Array.from(document.querySelectorAll("#messagesList .message-thread"));
 
-  const messageStore = {
+  const  messageStore = {
     Jason: [
       { type: "incoming", text: "Hey, are you around later?" },
       { type: "outgoing", text: "Yes, I should be." }
@@ -108,6 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      HELPERS
   ========================= */
+
+  function setUnreadDot(show = true) {
+     state.unread = show;
+  document.querySelectorAll(".messages-dot").forEach(dot => {
+    dot.style.display = show ? "block" : "none";
+  });
+}
 
   function autoResizeTextarea(textarea, maxHeight = 180) {
     if (!textarea) return;
@@ -663,6 +670,7 @@ thread.addEventListener("click", (e) => {
   function selectThread(user) {
     state.currentUser = user;
     setHighlightedThread(user);
+     setUnreadDot(false);
 
     moveThreadToTop(user);
     syncAllChats();
@@ -711,8 +719,38 @@ thread.addEventListener("click", (e) => {
     updateThreadPreview(state.currentUser, clean, "now");
     moveThreadToTop(state.currentUser);
     syncAllChats();
+    simulateReply(state.currentUser); 
     return true;
   }
+
+  function simulateReply(user) {
+  showTyping();
+
+  setTimeout(() => {
+    hideTyping();
+
+    messageStore[user].push({
+      type: "incoming",
+      text: "Typing reply 👀"
+    });
+
+    if (state.mode !== "drawer") {
+      setUnreadDot(true); // 👈 this is your dot trigger
+    }
+
+    syncAllChats();
+  }, 2000);
+}
+
+  function showTyping() {
+  const el = document.getElementById("typingIndicator");
+  if (el) el.style.display = "block";
+}
+
+function hideTyping() {
+  const el = document.getElementById("typingIndicator");
+  if (el) el.style.display = "none";
+}
 
   function clearDrawerInput() {
     if (messagesInput) {
