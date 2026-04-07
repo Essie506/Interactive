@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesSend = document.getElementById("messagesSend");
   const messagesMediaUpload = document.getElementById("messagesMediaUpload");
   const messagesPreview = document.getElementById("messagesPreview");
-  earchInput = document.getElementById("messagesSearchInput");
+  const messagesSearchInput = document.getElementById("messagesSearchInput");
   const messagesList = document.getElementById("messagesList");
 
   const drawerChevronBtn = document.getElementById("drawerChevronBtn");
@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupMinimizeBtn = document.getElementById("popupMinimizeBtn");
   const popupCloseBtn = document.getElementById("popupCloseBtn");
   const popupSplitBtn = document.getElementById("popupSplitBtn");
-  const popupPopoutBtn = document.getElementById("popupPopoutBtn");
   const popupListView = document.getElementById("popupListView");
   const popupChatView = document.getElementById("popupChatView");
   const popupMessagesList = document.getElementById("popupMessagesList");
@@ -73,6 +72,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupEmojiBtn = document.querySelector(".popup-emoji-btn");
   const popupLocationBtn = document.querySelector(".popup-location-btn");
 
+  const typingIndicator = document.getElementById("typingIndicator");
+
   if (!messagesModal) return;
 
   /* =========================
@@ -82,22 +83,20 @@ document.addEventListener("DOMContentLoaded", () => {
   let threadButtons = Array.from(document.querySelectorAll("#messagesList .message-thread"));
 
   const messageStore = {
-    Jason: [
-        unread: false,
-        messages: [
-      { type: "incoming", text: "Hey, are you around later?" },
-      { type: "outgoing", text: "Yes, I should be." }
-    ],
-    Alex: [{ type: "incoming", text: "Nice work on your run 🔥" }]
+    Jason: {
+      unread: false,
+      messages: [
+        { type: "incoming", text: "Hey, are you around later?" },
+        { type: "outgoing", text: "Yes, I should be." }
+      ]
+    },
+    Alex: {
+      unread: false,
+      messages: [
+        { type: "incoming", text: "Nice work on your run 🔥" }
+      ]
+    }
   };
-  
-  Alex: {
-    unread: false,
-    messages: [
-      { type: "incoming", text: "Nice work on your run 🔥" }
-    ]
-  }
-};
 
   const state = {
     currentUser: "Jason",
@@ -119,13 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
      HELPERS
   ========================= */
 
-  function setUnreadDot(show = true) {
-     state.unread = show;
-  document.querySelectorAll(".messages-dot").forEach(dot => {
-    dot.style.display = show ? "block" : "none";
-  });
-}
-
   function autoResizeTextarea(textarea, maxHeight = 180) {
     if (!textarea) return;
     textarea.style.height = "auto";
@@ -139,14 +131,40 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 
- function ensureThread(user) {
-  if (!messageStore[user]) {
-    messageStore[user] = {
-      unread: false,
-      messages: []
-    };
+  function ensureThread(user) {
+    if (!messageStore[user]) {
+      messageStore[user] = {
+        unread: false,
+        messages: []
+      };
+    }
   }
-}
+
+  function hasAnyUnread() {
+    return Object.values(messageStore).some((thread) => thread.unread);
+  }
+
+  function setUnreadDot(show = true) {
+    document.querySelectorAll(".messages-dot").forEach((dot) => {
+      dot.style.display = show ? "block" : "none";
+    });
+  }
+
+  function syncNavUnreadDot() {
+    setUnreadDot(hasAnyUnread());
+  }
+
+  function showTyping() {
+    if (typingIndicator) {
+      typingIndicator.style.display = "block";
+    }
+  }
+
+  function hideTyping() {
+    if (typingIndicator) {
+      typingIndicator.style.display = "none";
+    }
+  }
 
   function setBodyLock() {
     const lockBody = state.mode === "popup" || state.mode === "popout";
@@ -205,12 +223,26 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshThreadButtons();
 
     threadButtons.forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.user === state.highlightedThreadUser);
+      const user = btn.dataset.user;
+      btn.classList.toggle("active", user === state.highlightedThreadUser);
+
+      const unreadDot = btn.querySelector(".thread-unread-dot");
+      if (unreadDot) {
+        unreadDot.style.display = messageStore[user]?.unread ? "inline-block" : "none";
+      }
     });
 
     Array.from(popupMessagesList?.querySelectorAll(".message-thread") || []).forEach((btn) => {
-      btn.classList.toggle("active", btn.dataset.user === state.highlightedThreadUser);
+      const user = btn.dataset.user;
+      btn.classList.toggle("active", user === state.highlightedThreadUser);
+
+      const unreadDot = btn.querySelector(".thread-unread-dot");
+      if (unreadDot) {
+        unreadDot.style.display = messageStore[user]?.unread ? "inline-block" : "none";
+      }
     });
+
+    syncNavUnreadDot();
   }
 
   function getThreadPreview(user) {
@@ -477,7 +509,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function openDrawer() {
     state.mode = "drawer";
     state.lastOpenMode = "drawer";
-    setUnreadDot(false);
 
     hideAllContainers();
 
@@ -628,9 +659,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const thread = document.createElement("button");
       thread.type = "button";
-      thread.className = `message-thread ${
-        user === state.highlightedThreadUser ? "active" : ""
-      }`;
+      thread.className = `message-thread ${user === state.highlightedThreadUser ? "active" : ""}`;
       thread.dataset.user = user;
 
       thread.innerHTML = `
@@ -640,31 +669,31 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="message-thread-content">
           <div class="message-thread-top">
             <div class="message-thread-name-row">
-           <span class="message-thread-name">${escapeHtml(user)}</span>
-          <span class="thread-unread-dot" style="display: ${
-          messageStore[user]?.unread ? "inline-block" : "none"
-           };"></span>
-             </div>
+              <span class="message-thread-name">${escapeHtml(user)}</span>
+              <span class="thread-unread-dot" style="display: ${
+                messageStore[user]?.unread ? "inline-block" : "none"
+              };"></span>
+            </div>
             <span class="message-thread-time">${preview.time}</span>
           </div>
           <div class="message-thread-preview">${escapeHtml(preview.text)}</div>
         </div>
       `;
 
-thread.addEventListener("click", (e) => {
-  e.stopPropagation();
+      thread.addEventListener("click", (e) => {
+        e.stopPropagation();
 
-  if (state.mode === "popup" && state.popupSplit) {
-    state.currentUser = user;
-    setHighlightedThread(user);
-    moveThreadToTop(user);
-    syncAllChats();
-    setFocusedPane("list");
-    return;
-  }
+        if (state.mode === "popup" && state.popupSplit) {
+          state.currentUser = user;
+          setHighlightedThread(user);
+          moveThreadToTop(user);
+          syncAllChats();
+          setFocusedPane("list");
+          return;
+        }
 
-  selectThread(user);
-});
+        selectThread(user);
+      });
 
       popupMessagesList.appendChild(thread);
     });
@@ -686,9 +715,9 @@ thread.addEventListener("click", (e) => {
 
   function selectThread(user) {
     state.currentUser = user;
-     ensureThread(user);
-  messageStore[user].unread = false;
-  setHighlightedThread(user);
+    ensureThread(user);
+    messageStore[user].unread = false;
+    setHighlightedThread(user);
 
     moveThreadToTop(user);
     syncAllChats();
@@ -737,43 +766,29 @@ thread.addEventListener("click", (e) => {
     updateThreadPreview(state.currentUser, clean, "now");
     moveThreadToTop(state.currentUser);
     syncAllChats();
-    simulateReply(state.currentUser); 
+    simulateReply(state.currentUser);
+
     return true;
   }
 
   function simulateReply(user) {
-  showTyping();
+    showTyping();
 
-  setTimeout(() => {
-    hideTyping();
+    setTimeout(() => {
+      hideTyping();
 
-    messageStore[user].messages.push({
-      type: "incoming",
-      text: "Typing reply 👀"
-    });
+      ensureThread(user);
+      messageStore[user].messages.push({
+        type: "incoming",
+        text: "Typing reply 👀"
+      });
+      messageStore[user].unread = true;
 
-    messageStore[user].unread = true;
-    syncAllChats();
-  }, 2000);
-}
-
-    if (state.mode !== "drawer") {
-      setUnreadDot(true); // 👈 this is your dot trigger
-    }
-
-    syncAllChats();
-  }, 2000);
-}
-
-  function showTyping() {
-  const el = document.getElementById("typingIndicator");
-  if (el) el.style.display = "block";
-}
-
-function hideTyping() {
-  const el = document.getElementById("typingIndicator");
-  if (el) el.style.display = "none";
-}
+      updateThreadPreview(user, "Typing reply 👀", "now");
+      moveThreadToTop(user);
+      syncAllChats();
+    }, 2000);
+  }
 
   function clearDrawerInput() {
     if (messagesInput) {
@@ -828,28 +843,28 @@ function hideTyping() {
     });
   }
 
- function bindThreadButtons() {
-  refreshThreadButtons();
+  function bindThreadButtons() {
+    refreshThreadButtons();
 
-  threadButtons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      e.stopPropagation();
+    threadButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
 
-      if (state.mode === "drawer" && state.split) {
-        const user = btn.dataset.user;
+        if (state.mode === "drawer" && state.split) {
+          const user = btn.dataset.user;
 
-        state.currentUser = user;
-        setHighlightedThread(user);
-        moveThreadToTop(user);
-        syncAllChats();
-        setFocusedPane("list");
-        return;
-      }
+          state.currentUser = user;
+          setHighlightedThread(user);
+          moveThreadToTop(user);
+          syncAllChats();
+          setFocusedPane("list");
+          return;
+        }
 
-      selectThread(btn.dataset.user);
+        selectThread(btn.dataset.user);
+      });
     });
-  });
-}
+  }
 
   /* =========================
      DRAGGING
@@ -1106,28 +1121,28 @@ function hideTyping() {
     });
   }
 
- if (messagesInput) {
-  messagesInput.addEventListener("focus", () => {
-    if (state.mode === "drawer" && state.split) {
-      clearHighlightedThread();
-      setFocusedPane("chat");
-    } else if (state.mode === "drawer") {
-      clearHighlightedThread();
-    }
-  });
-}
+  if (messagesInput) {
+    messagesInput.addEventListener("focus", () => {
+      if (state.mode === "drawer" && state.split) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      } else if (state.mode === "drawer") {
+        clearHighlightedThread();
+      }
+    });
+  }
 
   if (messagesChatView) {
-  messagesChatView.addEventListener("click", () => {
-    if (state.mode === "drawer" && state.split) {
-      clearHighlightedThread();
-      setFocusedPane("chat");
-    } else if (state.mode === "drawer") {
-      clearHighlightedThread();
-      syncTitles();
-    }
-  });
-}
+    messagesChatView.addEventListener("click", () => {
+      if (state.mode === "drawer" && state.split) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      } else if (state.mode === "drawer") {
+        clearHighlightedThread();
+        syncTitles();
+      }
+    });
+  }
 
   if (popupListView) {
     popupListView.addEventListener("pointerdown", () => {
@@ -1151,39 +1166,39 @@ function hideTyping() {
     });
   }
 
-if (popupChatView) {
-  popupChatView.addEventListener("pointerdown", () => {
-    if (state.mode === "popup" && state.popupSplit) {
-      clearHighlightedThread();
-      setFocusedPane("chat");
-    }
-  });
-
-  popupChatView.addEventListener("click", () => {
-    if (state.mode === "popup" && state.popupSplit) {
-      clearHighlightedThread();
-      setFocusedPane("chat");
-    }
-  });
-}
-
-if (popupMessagesInput) {
-  popupMessagesInput.addEventListener("focus", () => {
-    if (state.mode === "popup" && state.popupSplit) {
-      clearHighlightedThread();
-      setFocusedPane("chat");
-    }
-  });
-}
-
-if (messagesToggles.length) {
-  messagesToggles.forEach((toggle) => {
-    toggle.addEventListener("click", (e) => {
-      e.stopPropagation();
-      openDrawer();
+  if (popupChatView) {
+    popupChatView.addEventListener("pointerdown", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      }
     });
-  });
-}
+
+    popupChatView.addEventListener("click", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      }
+    });
+  }
+
+  if (popupMessagesInput) {
+    popupMessagesInput.addEventListener("focus", () => {
+      if (state.mode === "popup" && state.popupSplit) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      }
+    });
+  }
+
+  if (messagesToggles.length) {
+    messagesToggles.forEach((toggle) => {
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openDrawer();
+      });
+    });
+  }
 
   if (messagesOverlay) {
     messagesOverlay.addEventListener("click", (e) => {
@@ -1195,26 +1210,26 @@ if (messagesToggles.length) {
     });
   }
 
- if (messagesBack) {
-  messagesBack.addEventListener("click", (e) => {
-    e.stopPropagation();
+  if (messagesBack) {
+    messagesBack.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    if (state.mode !== "drawer") return;
+      if (state.mode !== "drawer") return;
 
-    if (state.split) {
-      closeAll();
-      return;
-    }
+      if (state.split) {
+        closeAll();
+        return;
+      }
 
-    const isChatView = messagesChatView?.classList.contains("active");
+      const isChatView = messagesChatView?.classList.contains("active");
 
-    if (isChatView) {
-      showDrawerList();
-    } else {
-      closeAll();
-    }
-  });
-}
+      if (isChatView) {
+        showDrawerList();
+      } else {
+        closeAll();
+      }
+    });
+  }
 
   if (splitToggle) {
     splitToggle.addEventListener("click", (e) => {
@@ -1273,35 +1288,31 @@ if (messagesToggles.length) {
     });
   }
 
- if (popupBack) {
-  popupBack.addEventListener("click", (e) => {
-    e.stopPropagation();
+  if (popupBack) {
+    popupBack.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    if (state.mode !== "popup") return;
+      if (state.mode !== "popup") return;
 
-    // SPLIT MODE → back to drawer
-    if (state.popupSplit) {
-      state.split = true;
-      state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
-      openDrawer();
-      return;
-    }
+      if (state.popupSplit) {
+        state.split = true;
+        state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
+        openDrawer();
+        return;
+      }
 
-    // NORMAL MODE
-    if (state.popupMode === "chat") {
-      // go back to popup list (like drawer)
-      state.popupMode = "list";
-      updatePopupLayout();
-      syncTitles();
-      return;
-    }
+      if (state.popupMode === "chat") {
+        state.popupMode = "list";
+        updatePopupLayout();
+        syncTitles();
+        return;
+      }
 
-    // already in list → go back to drawer
-    state.split = false;
-    state.lastDrawerView = "list";
-    openDrawerFromPreviousState();
-  });
-}
+      state.split = false;
+      state.lastDrawerView = "list";
+      openDrawerFromPreviousState();
+    });
+  }
 
   if (popupMinimizeBtn) {
     popupMinimizeBtn.addEventListener("click", (e) => {
@@ -1338,11 +1349,10 @@ if (messagesToggles.length) {
     });
   }
 
-  if (popupPopoutBtn) {
-    popupPopoutBtn.addEventListener("click", (e) => {
+  if (popupCloseBtn) {
+    popupCloseBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      resetPopoutSize();
-      openPopout();
+      closeAll();
     });
   }
 
