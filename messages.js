@@ -789,23 +789,24 @@ function syncAllChats() {
   }
 
   function simulateReply(user) {
-    showTyping();
+  showTyping();
 
-    setTimeout(() => {
-      hideTyping();
+  setTimeout(() => {
+    hideTyping();
 
-      ensureThread(user);
-      messageStore[user].messages.push({
-        type: "incoming",
-        text: "Typing reply 👀"
-      });
-      messageStore[user].unread = true;
+    ensureThread(user);
+    messageStore[user].messages.push({
+      type: "incoming",
+      text: "Typing reply 👀"
+    });
+    messageStore[user].unread = true;
 
-      updateThreadPreview(user, "Typing reply 👀", "now");
-      moveThreadToTop(user);
-      syncAllChats();
-    }, 2000);
-  }
+    updateThreadPreview(user, "Typing reply 👀", "now");
+    moveThreadToTop(user);
+    refreshThreadButtons();
+    syncAllChats();
+  }, 2000);
+}
 
   function clearDrawerInput() {
     if (messagesInput) {
