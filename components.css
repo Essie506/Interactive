@@ -459,6 +459,11 @@ body.index .btn-login {
 nav-left .messages-toggle {
     display: none;
   }
+   
+.nav-left, 
+.navbar-right {
+margin: 5px;
+}
 }
 
 /* =========================
