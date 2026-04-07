@@ -152,40 +152,37 @@
   transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
 }
 
-.desktop-nav-links a:hover,
-.desktop-nav-links a:focus-visible,
-.search-toggle:hover,
-.search-toggle:focus-visible,
-.icon-btn:hover,
-.icon-btn:focus-visible,
-.upload-btn:hover,
-.upload-btn:focus-visible,
-.composer-close:hover,
-.composer-close:focus-visible,
-.messages-close:focus-visible,
-.messages-close:hover,
-.menu-toggle:hover,
-.menu-toggle:focus-visible,
-.messages-back:hover,
-.messages-back:focus-visible,
-.messages-split:hover,
-.messages-split:focus-visible,
-.messages-open-popup:hover,
-.messages-open-popup:focus-visible,
-.messages-popout-btn:hover,
-.messages-popout-btn:focus-visible,
-.messages-minimize-btn:hover,
-.messages-minimize-btn:focus-visible,
-.bottom-nav a:hover i,
-.bottom-nav a:focus-visible i,
-.bottom-nav-desktop a:hover i,
-.bottom-nav-desktop a:focus-visible i {
+.desktop-nav-links a,
+.search-toggle,
+.icon-btn,
+.messages-open-popup,
+.messages-popout-btn,
+.messages-minimize-btn,
+.upload-btn,
+.composer-close,
+.messages-close,
+.menu-toggle,
+.messages-back,
+.messages-split,
+.bottom-nav a,
+.bottom-nav button,
+.bottom-nav-desktop a,
+.bottom-nav-desktop button,
+.btn-soft i {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--glass-white);
+  color: #091a3a;
   box-shadow:
-    0 0 0 3px rgba(7, 153, 146, 0.12),
-    0 6px 18px rgba(0, 0, 0, 0.14),
+    var(--shadow-soft),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  transform: translateY(-1px) scale(1.06);
-  background: rgba(255, 255, 255, 0.82);
+  transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
+  text-decoration: none;
 }
 
 .btn-soft:hover,
