@@ -460,7 +460,12 @@ body.index .btn-login {
 .composer-card {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
   }   
+   
+nav-left .messages-toggle {
+    display: none;
+  }
 }
+
 /* =========================
    COMPOSER (SHARED)
 ========================= */
