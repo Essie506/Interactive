@@ -61,9 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const popoutChevronBtn = document.getElementById("popoutChevronBtn");
   const popoutCornerMenu = document.getElementById("popoutCornerMenu");
 
-  // FIXED TO MATCH YOUR CURRENT HTML
   const popoutMediumMenuBtn = document.getElementById("popoutMediumMenuBtn");
   const popoutFullscreenBtn = document.getElementById("popoutFullscreenBtn");
+  const popoutSplitBtn = document.getElementById("popoutSplitBtn");
+  const popoutListView = document.getElementById("popoutListView");
+  const popoutChatView = document.getElementById("popoutChatView");
+  const popoutMessagesList = document.getElementById("popoutMessagesList");
+  const popoutMessagesSearchInput = document.getElementById("popoutMessagesSearchInput");
 
   const drawerResizeHandle = document.getElementById("drawerResizeHandle");
   const popupResizeHandle = document.getElementById("popupResizeHandle");
@@ -110,6 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
     split: false,
     popupSplit: false,
     popupMode: "chat", // list | chat
+    popoutSplit: false,
+    popoutMode: "chat", // list | chat
     popoutFullscreen: false,
     lastOpenMode: "drawer",
     lastDrawerView: "list", // list | chat
@@ -259,6 +265,16 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    Array.from(popoutMessagesList?.querySelectorAll(".message-thread") || []).forEach((btn) => {
+      const user = btn.dataset.user;
+      btn.classList.toggle("active", user === state.highlightedThreadUser);
+
+      const unreadDot = btn.querySelector(".thread-unread-dot");
+      if (unreadDot) {
+        unreadDot.style.display = messageStore[user]?.unread ? "inline-block" : "none";
+      }
+    });
+
     syncNavUnreadDot();
   }
 
@@ -282,12 +298,16 @@ document.addEventListener("DOMContentLoaded", () => {
   function updatePaneHighlights() {
     const drawerIsSplit = state.mode === "drawer" && state.split;
     const popupIsSplit = state.mode === "popup" && state.popupSplit;
+    const popoutIsSplit = state.mode === "popout" && state.popoutSplit;
 
     setPaneActiveState(messagesListView, drawerIsSplit && state.lastFocusedPane === "list");
     setPaneActiveState(messagesChatView, drawerIsSplit && state.lastFocusedPane === "chat");
 
     setPaneActiveState(popupListView, popupIsSplit && state.lastFocusedPane === "list");
     setPaneActiveState(popupChatView, popupIsSplit && state.lastFocusedPane === "chat");
+
+    setPaneActiveState(popoutListView, popoutIsSplit && state.lastFocusedPane === "list");
+    setPaneActiveState(popoutChatView, popoutIsSplit && state.lastFocusedPane === "chat");
   }
 
   function setFocusedPane(pane) {
@@ -325,6 +345,24 @@ document.addEventListener("DOMContentLoaded", () => {
     const focusedInChat =
       popupChatView?.contains(activeEl) ||
       activeEl === popupMessagesInput;
+
+    if (focusedInList) return "list";
+    if (focusedInChat) return "chat";
+
+    return state.lastFocusedPane === "list" ? "list" : "chat";
+  }
+
+  function getPopoutActivePane() {
+    const activeEl = document.activeElement;
+
+    const focusedInList =
+      popoutListView?.contains(activeEl) ||
+      popoutMessagesList?.contains(activeEl) ||
+      activeEl === popoutMessagesSearchInput;
+
+    const focusedInChat =
+      popoutChatView?.contains(activeEl) ||
+      activeEl === popoutMessagesInput;
 
     if (focusedInList) return "list";
     if (focusedInChat) return "chat";
@@ -438,7 +476,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (popoutHeaderTitle) {
-      popoutHeaderTitle.textContent = state.currentUser;
+      if (state.popoutSplit) {
+        if (state.lastFocusedPane === "chat") {
+          popoutHeaderTitle.textContent = state.currentUser;
+        } else if (state.highlightedThreadUser) {
+          popoutHeaderTitle.textContent = state.highlightedThreadUser;
+        } else {
+          popoutHeaderTitle.textContent = "Messages";
+        }
+      } else {
+        popoutHeaderTitle.textContent =
+          state.popoutMode === "chat" ? state.currentUser : "Messages";
+      }
     }
 
     if (minimizedLabel) {
@@ -518,6 +567,29 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       if (popupListView) popupListView.style.display = "none";
       if (popupChatView) popupChatView.style.display = "flex";
+    }
+
+    syncTitles();
+    updatePaneHighlights();
+  }
+
+  function updatePopoutLayout() {
+    messagesPopout?.classList.toggle("split-mode", state.popoutSplit);
+
+    if (state.popoutSplit) {
+      if (popoutListView) popoutListView.style.display = "flex";
+      if (popoutChatView) popoutChatView.style.display = "flex";
+      syncTitles();
+      updatePaneHighlights();
+      return;
+    }
+
+    if (state.popoutMode === "list") {
+      if (popoutListView) popoutListView.style.display = "flex";
+      if (popoutChatView) popoutChatView.style.display = "none";
+    } else {
+      if (popoutListView) popoutListView.style.display = "none";
+      if (popoutChatView) popoutChatView.style.display = "flex";
     }
 
     syncTitles();
@@ -607,6 +679,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
 
+    updatePopoutLayout();
     syncAllChats();
     setBodyLock();
   }
@@ -665,6 +738,28 @@ document.addEventListener("DOMContentLoaded", () => {
     container.scrollTop = container.scrollHeight;
   }
 
+  function buildThreadButtonHtml(user) {
+    const preview = getThreadPreview(user);
+
+    return `
+      <div class="message-thread-avatar">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="message-thread-content">
+        <div class="message-thread-top">
+          <div class="message-thread-name-row">
+            <span class="message-thread-name">${escapeHtml(user)}</span>
+            <span class="thread-unread-dot" style="display: ${
+              messageStore[user]?.unread ? "inline-block" : "none"
+            };"></span>
+          </div>
+          <span class="message-thread-time">${preview.time}</span>
+        </div>
+        <div class="message-thread-preview">${escapeHtml(preview.text)}</div>
+      </div>
+    `;
+  }
+
   function renderPopupThreadList() {
     if (!popupMessagesList) return;
 
@@ -673,30 +768,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     threadButtons.forEach((btn) => {
       const user = btn.dataset.user;
-      const preview = getThreadPreview(user);
 
       const thread = document.createElement("button");
       thread.type = "button";
       thread.className = `message-thread ${user === state.highlightedThreadUser ? "active" : ""}`;
       thread.dataset.user = user;
-
-      thread.innerHTML = `
-        <div class="message-thread-avatar">
-          <i class="fa-solid fa-user"></i>
-        </div>
-        <div class="message-thread-content">
-          <div class="message-thread-top">
-            <div class="message-thread-name-row">
-              <span class="message-thread-name">${escapeHtml(user)}</span>
-              <span class="thread-unread-dot" style="display: ${
-                messageStore[user]?.unread ? "inline-block" : "none"
-              };"></span>
-            </div>
-            <span class="message-thread-time">${preview.time}</span>
-          </div>
-          <div class="message-thread-preview">${escapeHtml(preview.text)}</div>
-        </div>
-      `;
+      thread.innerHTML = buildThreadButtonHtml(user);
 
       thread.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -717,12 +794,50 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function renderPopoutThreadList() {
+    if (!popoutMessagesList) return;
+
+    refreshThreadButtons();
+    popoutMessagesList.innerHTML = "";
+
+    threadButtons.forEach((btn) => {
+      const user = btn.dataset.user;
+
+      const thread = document.createElement("button");
+      thread.type = "button";
+      thread.className = `message-thread ${user === state.highlightedThreadUser ? "active" : ""}`;
+      thread.dataset.user = user;
+      thread.innerHTML = buildThreadButtonHtml(user);
+
+      thread.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        if (state.mode === "popout" && state.popoutSplit) {
+          state.currentUser = user;
+          setHighlightedThread(user);
+          moveThreadToTop(user);
+          syncAllChats();
+          setFocusedPane("list");
+          return;
+        }
+
+        state.popoutMode = "chat";
+        selectThread(user);
+        updatePopoutLayout();
+      });
+
+      popoutMessagesList.appendChild(thread);
+    });
+  }
+
   function syncAllChats() {
     renderChat(messageChat, state.currentUser);
     renderChat(popupMessageChat, state.currentUser);
     renderChat(popoutMessageChat, state.currentUser);
 
     renderPopupThreadList();
+    renderPopoutThreadList();
+
     updateThreadActiveState();
     updateThreadDots();
 
@@ -766,6 +881,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (state.mode === "popout") {
+      if (state.popoutSplit) {
+        updatePopoutLayout();
+        return;
+      }
+
+      state.popoutMode = "chat";
+      setFocusedPane("chat");
+      updatePopoutLayout();
       return;
     }
 
@@ -912,6 +1035,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (windowEl.classList.contains("fullscreen")) return;
       if (windowEl === messagesModal) return;
+      if (windowEl === messagesPopup) return; // popup is NOT draggable
 
       isDragging = true;
       pointerId = e.pointerId;
@@ -1186,6 +1310,10 @@ document.addEventListener("DOMContentLoaded", () => {
     popupPopoutBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       resetPopoutSize();
+
+      state.popoutSplit = state.popupSplit;
+      state.popoutMode = state.popupSplit ? state.lastFocusedPane : state.popupMode;
+
       openPopout();
     });
   }
@@ -1219,6 +1347,55 @@ document.addEventListener("DOMContentLoaded", () => {
       if (state.mode === "popup" && state.popupSplit) {
         clearHighlightedThread();
         setFocusedPane("chat");
+      }
+    });
+  }
+
+  if (popoutListView) {
+    popoutListView.addEventListener("pointerdown", () => {
+      if (state.mode === "popout" && state.popoutSplit) {
+        setFocusedPane("list");
+      }
+    });
+
+    popoutListView.addEventListener("click", () => {
+      if (state.mode === "popout" && state.popoutSplit) {
+        setFocusedPane("list");
+      }
+    });
+  }
+
+  if (popoutMessagesList) {
+    popoutMessagesList.addEventListener("pointerdown", () => {
+      if (state.mode === "popout" && state.popoutSplit) {
+        setFocusedPane("list");
+      }
+    });
+  }
+
+  if (popoutChatView) {
+    popoutChatView.addEventListener("pointerdown", () => {
+      if (state.mode === "popout" && state.popoutSplit) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      }
+    });
+
+    popoutChatView.addEventListener("click", () => {
+      if (state.mode === "popout" && state.popoutSplit) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      }
+    });
+  }
+
+  if (popoutMessagesInput) {
+    popoutMessagesInput.addEventListener("focus", () => {
+      if (state.mode === "popout" && state.popoutSplit) {
+        clearHighlightedThread();
+        setFocusedPane("chat");
+      } else if (state.mode === "popout") {
+        clearHighlightedThread();
       }
     });
   }
@@ -1310,13 +1487,8 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       resetPopupSize();
 
-      if (state.split) {
-        state.popupSplit = true;
-        state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
-      } else {
-        state.popupSplit = false;
-        state.popupMode = state.lastDrawerView === "chat" ? "chat" : "list";
-      }
+      state.popupSplit = state.popoutSplit;
+      state.popupMode = state.popoutSplit ? state.lastFocusedPane : state.popoutMode;
 
       popoutCornerMenu?.classList.remove("open");
       openPopup();
@@ -1334,6 +1506,15 @@ document.addEventListener("DOMContentLoaded", () => {
     drawerPopoutBtn.addEventListener("click", (e) => {
       e.stopPropagation();
       resetPopoutSize();
+
+      if (state.split) {
+        state.popoutSplit = true;
+        state.popoutMode = state.lastFocusedPane === "list" ? "list" : "chat";
+      } else {
+        state.popoutSplit = false;
+        state.popoutMode = state.lastDrawerView === "chat" ? "chat" : "list";
+      }
+
       openPopout();
     });
   }
@@ -1404,11 +1585,16 @@ document.addEventListener("DOMContentLoaded", () => {
       e.stopPropagation();
       resetDrawerSize();
 
+      if (state.popoutSplit) {
+        state.split = true;
+        state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
+      } else {
+        state.split = false;
+        state.lastDrawerView = state.popoutMode === "chat" ? "chat" : "list";
+      }
+
       state.mode = "drawer";
       state.lastOpenMode = "drawer";
-      state.split = false;
-      state.lastDrawerView = "chat";
-
       openDrawer();
     });
   }
@@ -1427,20 +1613,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
- if (popoutFullscreenBtn) {
-  popoutFullscreenBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
+  if (popoutSplitBtn) {
+    popoutSplitBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
 
-    const wasFullscreen = state.popoutFullscreen;
-    state.popoutFullscreen = !state.popoutFullscreen;
+      const activePane = getPopoutActivePane();
+      const enteringSplit = !state.popoutSplit;
 
-    if (wasFullscreen) {
-      resetPopoutSize();
-    }
+      if (enteringSplit) {
+        state.popoutSplit = true;
+        setFocusedPane(state.popoutMode === "list" ? "list" : "chat");
+      } else {
+        state.popoutSplit = false;
+        state.popoutMode = activePane;
+        setFocusedPane(activePane);
+      }
 
-    messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
-  });
-}
+      updatePopoutLayout();
+      syncAllChats();
+    });
+  }
+
+  if (popoutFullscreenBtn) {
+    popoutFullscreenBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      const wasFullscreen = state.popoutFullscreen;
+      state.popoutFullscreen = !state.popoutFullscreen;
+
+      if (wasFullscreen) {
+        resetPopoutSize();
+      }
+
+      messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
+    });
+  }
 
   if (drawerChevronBtn && drawerCornerMenu) {
     drawerChevronBtn.addEventListener("click", (e) => {
@@ -1493,6 +1700,15 @@ document.addEventListener("DOMContentLoaded", () => {
       clearHighlightedThread();
 
       if (state.popupSplit) {
+        setFocusedPane("list");
+        syncTitles();
+      }
+    }
+
+    if (state.mode === "popout" && !clickedInsideMessages) {
+      clearHighlightedThread();
+
+      if (state.popoutSplit) {
         setFocusedPane("list");
         syncTitles();
       }
@@ -1637,6 +1853,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  if (popoutMessagesSearchInput) {
+    popoutMessagesSearchInput.addEventListener("input", () => {
+      const query = popoutMessagesSearchInput.value.trim().toLowerCase();
+
+      Array.from(popoutMessagesList?.querySelectorAll(".message-thread") || []).forEach((btn) => {
+        const name = (btn.dataset.user || "").toLowerCase();
+        const preview = (btn.textContent || "").toLowerCase();
+        const show = !query || name.includes(query) || preview.includes(query);
+        btn.style.display = show ? "" : "none";
+      });
+    });
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
       closeCornerMenus();
@@ -1652,15 +1881,17 @@ document.addEventListener("DOMContentLoaded", () => {
     if (state.mode === "popup") {
       updatePopupLayout();
     }
+
+    if (state.mode === "popout") {
+      updatePopoutLayout();
+    }
   });
 
   /* =========================
      INIT DRAG / RESIZE
   ========================= */
 
-  makeDraggable(messagesPopup, messagesPopupHeader);
-  makeDraggable(messagesPopout, messagesPopoutHeader);
-
+  makeDraggable(messagesPopout, messagesPopoutHeader); // popout only
   makeDrawerResizable(messagesModal, drawerResizeHandle);
   makeCornerResizable(messagesPopup, popupResizeHandle, "popup");
   makeCornerResizable(messagesPopout, popoutResizeHandle, "popout");
@@ -1672,6 +1903,7 @@ document.addEventListener("DOMContentLoaded", () => {
   syncAllChats();
   updateDrawerLayout();
   updatePopupLayout();
+  updatePopoutLayout();
   updateSendButtonState(messagesInput, messagesSend);
   updateSendButtonState(popupMessagesInput, popupMessagesSend);
   updateSendButtonState(popoutMessagesInput, popoutMessagesSend);
