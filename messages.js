@@ -126,6 +126,19 @@ document.addEventListener("DOMContentLoaded", () => {
     textarea.style.overflowY = textarea.scrollHeight > maxHeight ? "auto" : "hidden";
   }
 
+  function updateThreadDots() {
+  refreshThreadButtons();
+
+  threadButtons.forEach((btn) => {
+    const user = btn.dataset.user;
+    const dot = btn.querySelector(".thread-unread-dot");
+
+    if (!dot) return;
+
+    dot.style.display = messageStore[user]?.unread ? "inline-block" : "none";
+  });
+}
+
   function escapeHtml(text) {
     const div = document.createElement("div");
     div.textContent = text ?? "";
@@ -700,15 +713,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function syncAllChats() {
-    renderChat(messageChat, state.currentUser);
-    renderChat(popupMessageChat, state.currentUser);
-    renderChat(popoutMessageChat, state.currentUser);
-    renderPopupThreadList();
-    updateThreadActiveState();
-    syncTitles();
-    updatePaneHighlights();
-  }
+function syncAllChats() {
+  renderChat(messageChat, state.currentUser);
+  renderChat(popupMessageChat, state.currentUser);
+  renderChat(popoutMessageChat, state.currentUser);
+
+  renderPopupThreadList();
+  updateThreadActiveState();
+  updateThreadDots(); // 👈 ADD THIS
+
+  syncTitles();
+  updatePaneHighlights();
+}
 
   /* =========================
      MESSAGE ACTIONS
