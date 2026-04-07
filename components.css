@@ -440,11 +440,6 @@ body.index .btn-login {
     display: none;
   }
 
-  .nav-left,
-  .navbar-right {
-    gap: 5px;
-  }
-
   .bottom-nav {
     display: flex;
   }
