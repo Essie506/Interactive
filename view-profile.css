@@ -317,6 +317,26 @@ body.profile .media-play-badge {
   box-shadow: var(--shadow-soft);
 }
 
+.profile-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.profile-name-row h1 {
+  margin: 0;
+}
+
+.profile-verified {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color);
+  font-size: 18px;
+  line-height: 1;
+}
+
 
 @media (max-width: 500px) {
 
