@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ELEMENTS
   ========================= */
 
-  const messagesToggles = document.getElementById(".messages-toggle");
+  const messagesToggles = document.querySelectorAll(".messages-toggle");
   const messagesOverlay = document.getElementById("messagesOverlay");
   const messagesModal = document.getElementById("messagesModal");
 
