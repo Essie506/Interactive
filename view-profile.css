@@ -336,6 +336,13 @@ body.profile .media-play-badge {
   font-size: 18px;
   line-height: 1;
 }
+.profile-edit-btn {
+  opacity: 0.85;
+}
+
+.profile-edit-btn:hover {
+  opacity: 1;
+}
 
 
 @media (max-width: 500px) {
