@@ -337,11 +337,33 @@ body.profile .media-play-badge {
   line-height: 1;
 }
 .profile-edit-btn {
-  opacity: 0.85;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 5;
+    background: var(--glass-white-light);
+}
+
+  /* keep your styling consistent */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--glass-white);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .profile-edit-btn:hover {
-  opacity: 1;
+  transform: translateY(-1px) scale(1.05);
 }
 
 
