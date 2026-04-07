@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
      ELEMENTS
   ========================= */
 
-  const messagesToggle = document.getElementById("messagesToggle");
+  const messagesToggles = document.getElementById(".messages-toggle");
   const messagesOverlay = document.getElementById("messagesOverlay");
   const messagesModal = document.getElementById("messagesModal");
 
@@ -1115,12 +1115,14 @@ if (popupMessagesInput) {
   });
 }
 
-  if (messagesToggle) {
-    messagesToggle.addEventListener("click", (e) => {
+if (messagesToggles.length) {
+  messagesToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
       e.stopPropagation();
       openDrawer();
     });
-  }
+  });
+}
 
   if (messagesOverlay) {
     messagesOverlay.addEventListener("click", (e) => {
@@ -1357,7 +1359,7 @@ if (popupMessagesInput) {
     }
 
     const clickedInsideMessages = e.target.closest(
-      "#messagesModal, #messagesToggle, #messagesPopup, #messagesPopout, #messagesMinimized"
+      "#messagesModal, .messages-toggle, #messagesPopup, #messagesPopout, #messagesMinimized"
     );
 
     if (state.mode === "drawer" && !clickedInsideMessages) {
