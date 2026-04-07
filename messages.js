@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesSend = document.getElementById("messagesSend");
   const messagesMediaUpload = document.getElementById("messagesMediaUpload");
   const messagesPreview = document.getElementById("messagesPreview");
-  const messagesSearchInput = document.getElementById("messagesSearchInput");
+  earchInput = document.getElementById("messagesSearchInput");
   const messagesList = document.getElementById("messagesList");
 
   const drawerChevronBtn = document.getElementById("drawerChevronBtn");
@@ -81,13 +81,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let threadButtons = Array.from(document.querySelectorAll("#messagesList .message-thread"));
 
-  const  messageStore = {
+  const messageStore = {
     Jason: [
+        unread: false,
+        messages: [
       { type: "incoming", text: "Hey, are you around later?" },
       { type: "outgoing", text: "Yes, I should be." }
     ],
     Alex: [{ type: "incoming", text: "Nice work on your run 🔥" }]
   };
+  
+  Alex: {
+    unread: false,
+    messages: [
+      { type: "incoming", text: "Nice work on your run 🔥" }
+    ]
+  }
+};
 
   const state = {
     currentUser: "Jason",
@@ -129,11 +139,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return div.innerHTML;
   }
 
-  function ensureThread(user) {
-    if (!messageStore[user]) {
-      messageStore[user] = [];
-    }
+ function ensureThread(user) {
+  if (!messageStore[user]) {
+    messageStore[user] = {
+      unread: false,
+      messages: []
+    };
   }
+}
 
   function setBodyLock() {
     const lockBody = state.mode === "popup" || state.mode === "popout";
@@ -202,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getThreadPreview(user) {
     ensureThread(user);
-    const messages = messageStore[user];
+    const messages = messageStore[user].messages;
     const lastMessage = messages[messages.length - 1];
 
     return {
@@ -464,6 +477,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function openDrawer() {
     state.mode = "drawer";
     state.lastOpenMode = "drawer";
+    setUnreadDot(false);
 
     hideAllContainers();
 
@@ -589,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!container) return;
     ensureThread(user);
 
-    container.innerHTML = messageStore[user]
+    container.innerHTML = messageStore[user].messages
       .map(
         (msg) => `
           <div class="message-bubble ${msg.type}">
@@ -669,8 +683,9 @@ thread.addEventListener("click", (e) => {
 
   function selectThread(user) {
     state.currentUser = user;
-    setHighlightedThread(user);
-     setUnreadDot(false);
+     ensureThread(user);
+  messageStore[user].unread = false;
+  setHighlightedThread(user);
 
     moveThreadToTop(user);
     syncAllChats();
@@ -711,7 +726,7 @@ thread.addEventListener("click", (e) => {
 
     ensureThread(state.currentUser);
 
-    messageStore[state.currentUser].push({
+    messageStore[state.currentUser].messages.push({
       type: "outgoing",
       text: clean
     });
@@ -729,10 +744,15 @@ thread.addEventListener("click", (e) => {
   setTimeout(() => {
     hideTyping();
 
-    messageStore[user].push({
+    messageStore[user].messages.push({
       type: "incoming",
       text: "Typing reply 👀"
     });
+
+    messageStore[user].unread = true;
+    syncAllChats();
+  }, 2000);
+}
 
     if (state.mode !== "drawer") {
       setUnreadDot(true); // 👈 this is your dot trigger
