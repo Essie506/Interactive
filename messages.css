@@ -216,6 +216,21 @@
   flex-shrink: 0;
 }
 
+.thread-unread-dot {
+  display: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4d4f;
+  margin-left: 6px;
+  flex: 0 0 auto;
+}
+
+.message-thread-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 .messages-toggle {
   position: relative;
 }
