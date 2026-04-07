@@ -56,14 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const popoutMessagesInput = document.getElementById("popoutMessagesInput");
   const popoutMessagesSend = document.getElementById("popoutMessagesSend");
   const popoutMinimizeBtn = document.getElementById("popoutMinimizeBtn");
-  const popoutFullscreenBtn = document.getElementById("popoutFullscreenBtn");
   const popoutCloseBtn = document.getElementById("popoutCloseBtn");
   const popoutChevronBtn = document.getElementById("popoutChevronBtn");
   const popoutCornerMenu = document.getElementById("popoutCornerMenu");
+  const popoutMediumMenuBtn = document.getElementById("PopoutMediumMenuBtn");
 
   const drawerResizeHandle = document.getElementById("drawerResizeHandle");
   const popupResizeHandle = document.getElementById("popupResizeHandle");
-  const popoutResizeHandle = document.getElementById("popoutResizeHandle");
+  ResizeHandle = document.getElementById("popoutResizeHandle");
 
   const gifBtn = document.querySelector(".messages-gif-btn");
   const emojiBtn = document.querySelector(".messages-emoji-btn");
@@ -1282,22 +1282,22 @@ function syncAllChats() {
     });
   }
 
-  if (drawerMediumBtn) {
-    drawerMediumBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      resetPopupSize();
+ if (popoutMediumMenuBtn) {
+  popoutMediumMenuBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    resetPopupSize();
 
-      if (state.split) {
-        state.popupSplit = true;
-        state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
-      } else {
-        state.popupSplit = false;
-        state.popupMode = state.lastDrawerView === "chat" ? "chat" : "list";
-      }
-
-      openPopup();
-    });
-  }
+    if (state.split) {
+      state.popupSplit = true;
+      state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
+    } else {
+      state.popupSplit = false;
+      state.popupMode = state.lastDrawerView === "chat" ? "chat" : "list";
+    }
+    popoutCornerMenu?.classList.remove("open");
+    openPopup();
+  });
+}
 
   if (drawerMinimizeBtn) {
     drawerMinimizeBtn.addEventListener("click", (e) => {
