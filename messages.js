@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messagesPreview = document.getElementById("messagesPreview");
   const messagesSearchInput = document.getElementById("messagesSearchInput");
   const messagesList = document.getElementById("messagesList");
+  const messagesBody = document.getElementById("messagesBody");
 
   const drawerChevronBtn = document.getElementById("drawerChevronBtn");
   const drawerCornerMenu = document.getElementById("drawerCornerMenu");
@@ -59,11 +60,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const popoutCloseBtn = document.getElementById("popoutCloseBtn");
   const popoutChevronBtn = document.getElementById("popoutChevronBtn");
   const popoutCornerMenu = document.getElementById("popoutCornerMenu");
-  const popoutMediumMenuBtn = document.getElementById("PopoutMediumMenuBtn");
+
+  // FIXED TO MATCH YOUR CURRENT HTML
+  const popoutMediumMenuBtn = document.getElementById("popoutMediumMenuBtn");
+  const popoutFullscreenMenuBtn = document.getElementById("popoutFullscreenMenuBtn");
 
   const drawerResizeHandle = document.getElementById("drawerResizeHandle");
   const popupResizeHandle = document.getElementById("popupResizeHandle");
-  ResizeHandle = document.getElementById("popoutResizeHandle");
+  const popoutResizeHandle = document.getElementById("popoutResizeHandle");
 
   const gifBtn = document.querySelector(".messages-gif-btn");
   const emojiBtn = document.querySelector(".messages-emoji-btn");
@@ -127,17 +131,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateThreadDots() {
-  refreshThreadButtons();
+    refreshThreadButtons();
 
-  threadButtons.forEach((btn) => {
-    const user = btn.dataset.user;
-    const dot = btn.querySelector(".thread-unread-dot");
+    threadButtons.forEach((btn) => {
+      const user = btn.dataset.user;
+      const dot = btn.querySelector(".thread-unread-dot");
 
-    if (!dot) return;
-
-    dot.style.display = messageStore[user]?.unread ? "inline-block" : "none";
-  });
-}
+      if (!dot) return;
+      dot.style.display = messageStore[user]?.unread ? "inline-block" : "none";
+    });
+  }
 
   function escapeHtml(text) {
     const div = document.createElement("div");
@@ -475,6 +478,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function updateDrawerLayout() {
     messagesModal?.classList.toggle("split-mode", state.split);
+    messagesBody?.classList.toggle("split-mode", state.split);
 
     if (state.split) {
       messagesListView?.classList.add("active");
@@ -713,18 +717,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-function syncAllChats() {
-  renderChat(messageChat, state.currentUser);
-  renderChat(popupMessageChat, state.currentUser);
-  renderChat(popoutMessageChat, state.currentUser);
+  function syncAllChats() {
+    renderChat(messageChat, state.currentUser);
+    renderChat(popupMessageChat, state.currentUser);
+    renderChat(popoutMessageChat, state.currentUser);
 
-  renderPopupThreadList();
-  updateThreadActiveState();
-  updateThreadDots(); // 👈 ADD THIS
+    renderPopupThreadList();
+    updateThreadActiveState();
+    updateThreadDots();
 
-  syncTitles();
-  updatePaneHighlights();
-}
+    syncTitles();
+    updatePaneHighlights();
+  }
 
   /* =========================
      MESSAGE ACTIONS
@@ -780,6 +784,8 @@ function syncAllChats() {
       text: clean
     });
 
+    messageStore[state.currentUser].unread = false;
+
     updateThreadPreview(state.currentUser, clean, "now");
     moveThreadToTop(state.currentUser);
     syncAllChats();
@@ -789,24 +795,24 @@ function syncAllChats() {
   }
 
   function simulateReply(user) {
-  showTyping();
+    showTyping();
 
-  setTimeout(() => {
-    hideTyping();
+    setTimeout(() => {
+      hideTyping();
 
-    ensureThread(user);
-    messageStore[user].messages.push({
-      type: "incoming",
-      text: "Typing reply 👀"
-    });
-    messageStore[user].unread = true;
+      ensureThread(user);
+      messageStore[user].messages.push({
+        type: "incoming",
+        text: "Typing reply 👀"
+      });
+      messageStore[user].unread = true;
 
-    updateThreadPreview(user, "Typing reply 👀", "now");
-    moveThreadToTop(user);
-    refreshThreadButtons();
-    syncAllChats();
-  }, 2000);
-}
+      updateThreadPreview(user, "Typing reply 👀", "now");
+      moveThreadToTop(user);
+      refreshThreadButtons();
+      syncAllChats();
+    }, 2000);
+  }
 
   function clearDrawerInput() {
     if (messagesInput) {
@@ -1177,12 +1183,12 @@ function syncAllChats() {
   }
 
   if (popupPopoutBtn) {
-  popupPopoutBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    resetPopoutSize();
-    openPopout();
-  });
-}
+    popupPopoutBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      resetPopoutSize();
+      openPopout();
+    });
+  }
 
   if (popupMessagesList) {
     popupMessagesList.addEventListener("pointerdown", () => {
@@ -1282,22 +1288,40 @@ function syncAllChats() {
     });
   }
 
- if (popoutMediumMenuBtn) {
-  popoutMediumMenuBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    resetPopupSize();
+  if (drawerMediumBtn) {
+    drawerMediumBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      resetPopupSize();
 
-    if (state.split) {
-      state.popupSplit = true;
-      state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
-    } else {
-      state.popupSplit = false;
-      state.popupMode = state.lastDrawerView === "chat" ? "chat" : "list";
-    }
-    popoutCornerMenu?.classList.remove("open");
-    openPopup();
-  });
-}
+      if (state.split) {
+        state.popupSplit = true;
+        state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
+      } else {
+        state.popupSplit = false;
+        state.popupMode = state.lastDrawerView === "chat" ? "chat" : "list";
+      }
+
+      openPopup();
+    });
+  }
+
+  if (popoutMediumMenuBtn) {
+    popoutMediumMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      resetPopupSize();
+
+      if (state.split) {
+        state.popupSplit = true;
+        state.popupMode = state.lastFocusedPane === "list" ? "list" : "chat";
+      } else {
+        state.popupSplit = false;
+        state.popupMode = state.lastDrawerView === "chat" ? "chat" : "list";
+      }
+
+      popoutCornerMenu?.classList.remove("open");
+      openPopup();
+    });
+  }
 
   if (drawerMinimizeBtn) {
     drawerMinimizeBtn.addEventListener("click", (e) => {
@@ -1375,13 +1399,6 @@ function syncAllChats() {
     });
   }
 
-  if (popupCloseBtn) {
-    popupCloseBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
-      closeAll();
-    });
-  }
-
   if (popoutBack) {
     popoutBack.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -1410,8 +1427,8 @@ function syncAllChats() {
     });
   }
 
-  if (popoutFullscreenBtn) {
-    popoutFullscreenBtn.addEventListener("click", (e) => {
+  if (popoutFullscreenMenuBtn) {
+    popoutFullscreenMenuBtn.addEventListener("click", (e) => {
       e.stopPropagation();
 
       const wasFullscreen = state.popoutFullscreen;
@@ -1422,6 +1439,8 @@ function syncAllChats() {
       }
 
       messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
+      popoutCornerMenu?.classList.remove("open");
+      popoutChevronBtn?.classList.remove("open");
     });
   }
 
