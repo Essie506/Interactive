@@ -320,6 +320,7 @@ body.profile .media-play-badge {
 .profile-name-row {
   display: flex;
   align-items: center;
+   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
 }
@@ -338,11 +339,11 @@ body.profile .media-play-badge {
 }
 .profile-edit-btn {
   position: absolute;
-  top: 8px;
+  top: 112px;
   right: 8px;
   z-index: 5;
-   width: 32px;
-   height: 32px;
+   width: 42px;
+   height: 42px;
 }
 
 @media (max-width: 500px) {
