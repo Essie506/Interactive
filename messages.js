@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // FIXED TO MATCH YOUR CURRENT HTML
   const popoutMediumMenuBtn = document.getElementById("popoutMediumMenuBtn");
-  const popoutFullscreenMenuBtn = document.getElementById("popoutFullscreenMenuBtn");
+  const popoutFullscreenBtn = document.getElementById("popoutFullscreenBtn");
 
   const drawerResizeHandle = document.getElementById("drawerResizeHandle");
   const popupResizeHandle = document.getElementById("popupResizeHandle");
