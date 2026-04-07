@@ -876,7 +876,6 @@ body.messages-open {
   display: flex;
   flex-direction: column;
   width: 0;
-   flex: flex 1;
    width: 100%;
   min-width: 0;
   padding: 12px;
@@ -980,6 +979,88 @@ body.messages-open {
   width: 100vw;
   height: 100dvh;
   border-radius: 0;
+}
+
+.messages-popout-main {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  background: #fff;
+}
+
+.messages-popout-list-view {
+  display: none;
+  flex-direction: column;
+  width: 0;
+  min-width: 0;
+  padding: 12px;
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  overflow: hidden;
+}
+
+.messages-popout-chat-view {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  background: #fff;
+}
+
+.messages-popout .messages-search {
+  margin-bottom: 10px;
+}
+
+.messages-popout .message-thread {
+  border-radius: 14px;
+  padding: 10px;
+}
+
+.messages-popout.split-mode .messages-popout-list-view {
+  display: flex;
+  width: 40%;
+  flex: 0 0 40%;
+}
+
+.messages-popout.split-mode .messages-popout-chat-view {
+  display: flex;
+  flex: 1;
+}
+
+.messages-popout:not(.split-mode) .messages-popout-list-view {
+  border-right: none;
+}
+
+.messages-popout.split-mode .message-thread {
+  padding: 10px 12px;
+}
+
+.messages-popout.split-mode .message-thread-time,
+.messages-popout.split-mode .message-thread-preview {
+  display: none;
+}
+
+.messages-popout.split-mode .message-thread-top {
+  display: block;
+  margin-bottom: 0;
+}
+
+.messages-popout.split-mode .message-thread-content {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.messages-popout.split-mode .message-thread-name-row {
+  min-width: 0;
+}
+
+.messages-popout.split-mode .message-thread-name {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* ---------- Minimized ---------- */
