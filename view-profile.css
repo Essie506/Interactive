@@ -332,7 +332,6 @@ body.profile .media-play-badge {
 
 .profile-verified {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
   color: var(--main-color);
   font-size: 18px;
