@@ -801,6 +801,7 @@ body.messages-open {
   gap: 8px;
 }
 
+.messages-header .icon-btn, 
 .messages-popup-header .icon-btn,
 .messages-popout-header .icon-btn {
   width: 36px;
