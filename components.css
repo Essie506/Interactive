@@ -122,35 +122,10 @@
 /* =========================
    SHARED ICON BUTTONS
 ========================= */
-.desktop-nav-links a,
-.search-toggle,
-.icon-btn,
-.messages-open-popup,
-.messages-popout-btn,
-.messages-minimize-btn,
-.upload-btn,
-.composer-close,
-.messages-close,
-.menu-toggle,
-.messages-back,
-.messages-split,
-.bottom-nav i,
-.bottom-nav-desktop i,
-.btn-soft i {
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--glass-white);
-  color: #091a3a;
-  box-shadow:
-    var(--shadow-soft),
-    inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
-}
+
+/* =========================
+   ICON BUTTONS (GLOBAL)
+========================= */
 
 .desktop-nav-links a,
 .search-toggle,
@@ -167,8 +142,7 @@
 .bottom-nav a,
 .bottom-nav button,
 .bottom-nav-desktop a,
-.bottom-nav-desktop button,
-.btn-soft i {
+.bottom-nav-desktop button {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -183,15 +157,59 @@
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
   transition: box-shadow 0.25s ease, transform 0.2s ease, background 0.2s ease;
   text-decoration: none;
+  cursor: pointer;
 }
 
-.btn-soft:hover,
-.btn-soft:focus-visible {
+/* HOVER / FOCUS */
+
+.desktop-nav-links a:hover,
+.desktop-nav-links a:focus-visible,
+.search-toggle:hover,
+.search-toggle:focus-visible,
+.icon-btn:hover,
+.icon-btn:focus-visible,
+.upload-btn:hover,
+.upload-btn:focus-visible,
+.composer-close:hover,
+.composer-close:focus-visible,
+.messages-close:hover,
+.messages-close:focus-visible,
+.menu-toggle:hover,
+.menu-toggle:focus-visible,
+.messages-back:hover,
+.messages-back:focus-visible,
+.messages-split:hover,
+.messages-split:focus-visible,
+.messages-open-popup:hover,
+.messages-open-popup:focus-visible,
+.messages-popout-btn:hover,
+.messages-popout-btn:focus-visible,
+.messages-minimize-btn:hover,
+.messages-minimize-btn:focus-visible,
+.bottom-nav a:hover,
+.bottom-nav a:focus-visible,
+.bottom-nav button:hover,
+.bottom-nav button:focus-visible,
+.bottom-nav-desktop a:hover,
+.bottom-nav-desktop a:focus-visible,
+.bottom-nav-desktop button:hover,
+.bottom-nav-desktop button:focus-visible {
   box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.12),
     0 6px 18px rgba(0, 0, 0, 0.14),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
   transform: translateY(-1px) scale(1.06);
   background: rgba(255, 255, 255, 0.82);
+}
+
+/* ICONS INSIDE BUTTONS (NO DOUBLE CIRCLE) */
+
+.bottom-nav i,
+.bottom-nav-desktop i,
+.icon-btn i {
+  font-size: 1rem;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .search-toggle:active,
