@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const drawerMediumBtn = document.getElementById("drawerMediumBtn");
   const drawerMinimizeBtn = document.getElementById("drawerMinimizeBtn");
   const drawerPopoutBtn = document.getElementById("drawerPopoutBtn");
+  const popupPopoutBtn = document.getElementById("popupPopoutBtn");
 
   const messagesHeaderTitle = document.getElementById("messagesHeaderTitle");
   const messagesListView = document.getElementById("messagesListView");
@@ -1157,6 +1158,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  if (popupPopoutBtn) {
+  popupPopoutBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    resetPopoutSize();
+    openPopout();
+  });
+}
 
   if (popupMessagesList) {
     popupMessagesList.addEventListener("pointerdown", () => {
