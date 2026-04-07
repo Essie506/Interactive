@@ -68,11 +68,23 @@
   <nav class="menu" aria-label="Main menu">
     <ul>
 
-      <li><a href="feed.html" class="menu-link-modern">Home</a></li>
-      <li><a href="gyms.html" class="menu-link-modern">Gyms and Studios</a></li>
+     <li>
+  <a href="feed.html" class="menu-link-modern">
+    <i class="fa-solid fa-house"></i>
+    <span>Home</span>
+  </a>
+</li>
+        <a href="gyms.html" class="menu-link-modern">
+          <i class="fa-solid fa-fire"></i>
+          <span>Gyms and Studios</span>
+        </a>
+      </li>
 
       <li class="has-submenu">
-        <a href="#" class="menu-link-modern">Workouts</a>
+        <a href="#" class="menu-link-modern" aria-expanded="false">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span>Workouts</span>
+        </a>
         <ul class="submenu">
           <li><a href="home.html">Browse Workouts</a></li>
           <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
@@ -80,8 +92,19 @@
         </ul>
       </li>
 
-      <li><a href="settings.html" class="menu-link-modern">Settings</a></li>
-      <li><a href="index.html" class="menu-link-modern">Logout</a></li>
+      <li>
+        <a href="settings.html" class="menu-link-modern">
+          <i class="fa-solid fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="index.html" class="menu-link-modern">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </li>
 
       <li class="menu-search-item">
         <div class="menu-search">
@@ -89,25 +112,6 @@
           <input type="text" id="menuSearchInput" placeholder="Search..." />
         </div>
       </li>
-    </ul>
-  </nav>
-
-  <div class="menu-overlay" id="menuOverlay"></div>
-
-  <nav class="menu" id="sideMenu">
-    <ul>
-      <li class="menu-profile">
-        <a href="view-profile.html" class="menu-profile-info">
-          <span class="menu-profile-name">Esther Clarke</span>
-          <span class="menu-profile-sub">@estherfitness</span>
-        </a>
-      </li>
-
-      <li><a href="feed.html">Feed</a></li>
-      <li><a href="home.html">Browse Workouts</a></li>
-      <li><a href="my-saved-workouts.html">Saved Workouts</a></li>
-      <li><a href="upload-images.html">Your Media</a></li>
-      <li><a href="settings.html">Settings</a></li>
     </ul>
   </nav>
 
