@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ]
     },
     Alex: {
-      unread: false,
+      unread: true,
       messages: [
         { type: "incoming", text: "Nice work on your run 🔥" }
       ]
