@@ -247,6 +247,15 @@
   display: none;
 }
 
+.thread-unread-dot {
+  transform: scale(0);
+  transition: transform 0.2s ease;
+}
+
+.thread-unread-dot[style*="inline"] {
+  transform: scale(1);
+}
+
 .typing-indicator {
   display: none;
   padding: 6px 12px 0;
