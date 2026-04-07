@@ -640,8 +640,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="message-thread-content">
           <div class="message-thread-top">
             <div class="message-thread-name-row">
-              <span class="message-thread-name">${escapeHtml(user)}</span>
-            </div>
+           <span class="message-thread-name">${escapeHtml(user)}</span>
+          <span class="thread-unread-dot" style="display: ${
+          messageStore[user]?.unread ? "inline-block" : "none"
+           };"></span>
+             </div>
             <span class="message-thread-time">${preview.time}</span>
           </div>
           <div class="message-thread-preview">${escapeHtml(preview.text)}</div>
