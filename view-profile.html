@@ -256,134 +256,277 @@
     </section>
   </main>
 
-  <nav class="bottom-nav">
-    <a href="feed.html" aria-label="Home">
-      <i class="fa-solid fa-house"></i>
-    </a>
-    <a href="home.html" aria-label="Feed">
-      <i class="fa-solid fa-fire"></i>
-    </a>
-    <a href="studios.html" aria-label="Workouts">
-      <i class="fa-solid fa-dumbbell"></i>
-    </a>
-    <a href="calendar.html" aria-label="Calendar">
-      <i class="fa-solid fa-calendar"></i>
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <button class="icon-btn messages-toggle" type="button" aria-label="Messages">
+      <i class="fa-solid fa-comments"></i>
+      <span class="messages-dot"></span>
+    </button>
+
+    <button class="icon-btn bottom-search-btn" id="bottomSearchToggle" type="button" aria-label="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+   <a href="calendar.html" class="icon-btn" aria-label="Calendar">
+  <i class="fa-regular fa-calendar-days"></i>
+</a>
+
+    <a href="notifications.html" class="icon-btn" aria-label="Notifications">
+      <i class="fa-solid fa-bell"></i>
     </a>
   </nav>
 
-<div class="messages-overlay" id="messagesOverlay"></div>
+  <div class="messages-overlay" id="messagesOverlay"></div>
 
-<div class="messages-modal" id="messagesModal" aria-hidden="true">
-  <div class="messages-card">
-    <div class="messages-header">
-      <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
+  <div class="messages-modal" id="messagesModal" aria-hidden="true">
+    <button type="button" class="messages-resize-handle messages-resize-drawer" id="drawerResizeHandle" aria-label="Resize drawer"></button>
+
+    <div class="messages-card">
+      <div class="messages-header">
+        <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h3 id="messagesHeaderTitle">Messages</h3>
+
+        <div class="messages-header-actions">
+          <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
+            <i class="fa-solid fa-table-columns"></i>
+          </button>
+
+          <button type="button" class="messages-open-popup" id="drawerMediumBtn" aria-label="Open medium window">
+            <i class="fa-regular fa-window-restore"></i>
+          </button>
+
+          <button type="button" class="messages-minimize-btn" id="drawerMinimizeBtn" aria-label="Minimize chat">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+        </div>
+
+        <button type="button" class="messages-chevron-btn" id="drawerChevronBtn" aria-label="More options">
+          <i class="fa-solid fa-angle-down"></i>
+        </button>
+
+        <div class="messages-corner-menu" id="drawerCornerMenu">
+          <button type="button" class="messages-corner-item" id="drawerVideoChatBtn">
+            <i class="fa-solid fa-video"></i>
+            <span>Video chat</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerAddPeopleBtn">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Add people</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerPopoutBtn">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            <span>Popout</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerDownloadVideoBtn">
+            <i class="fa-solid fa-download"></i>
+            <span>Download saved video</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerMsnModeBtn">
+            <i class="fa-regular fa-message"></i>
+            <span>MSN mode</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="messages-body" id="messagesBody">
+        <div class="messages-view messages-list-view active" id="messagesListView">
+          <div class="messages-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="messagesSearchInput" placeholder="Search messages..." />
+          </div>
+
+          <div class="messages-list" id="messagesList">
+            <button type="button" class="message-thread active" data-user="Jason">
+              <div class="message-thread-avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="message-thread-content">
+                <div class="message-thread-top">
+                  <div class="message-thread-name-row">
+                    <span class="message-thread-name">Jason</span>
+                    <span class="thread-unread-dot"></span>
+                  </div>
+                  <span class="message-thread-time">2m</span>
+                </div>
+                <div class="message-thread-preview">Hey, are you around later?</div>
+              </div>
+            </button>
+
+            <button type="button" class="message-thread" data-user="Alex">
+              <div class="message-thread-avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="message-thread-content">
+                <div class="message-thread-top">
+                  <div class="message-thread-name-row">
+                    <span class="message-thread-name">Alex</span>
+                    <span class="thread-unread-dot"></span>
+                  </div>
+                  <span class="message-thread-time">1h</span>
+                </div>
+                <div class="message-thread-preview">Nice work on your run 🔥</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages-view messages-chat-view" id="messagesChatView">
+          <div class="message-chat" id="messageChat"></div>
+
+          <div class="typing-indicator" id="typingIndicator">
+            <span></span><span></span><span></span>
+          </div>
+
+          <div class="messages-footer">
+            <div class="messages-input-wrap">
+              <div class="message-avatar-inline">
+                <i class="fa-solid fa-user"></i>
+              </div>
+
+              <textarea
+                class="messages-input"
+                id="messagesInput"
+                placeholder="Write a message..."
+              ></textarea>
+            </div>
+
+            <div class="messages-preview" id="messagesPreview"></div>
+
+            <input
+              type="file"
+              id="messagesMediaUpload"
+              accept="image/*,video/*"
+              multiple
+              hidden
+            />
+
+            <div class="messages-bottom-bar">
+              <div class="messages-tools">
+                <label for="messagesMediaUpload" class="upload-btn" title="Add image or video">
+                  <i class="fa-solid fa-image"></i>
+                </label>
+
+                <button type="button" class="upload-btn messages-gif-btn" title="Add GIF">
+                  <span>GIF</span>
+                </button>
+
+                <button type="button" class="upload-btn messages-emoji-btn" title="Add emoji">
+                  <i class="fa-regular fa-face-smile"></i>
+                </button>
+
+                <button type="button" class="upload-btn messages-location-btn" title="Add location">
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
+              </div>
+
+              <button type="button" class="btn-modern messages-send" id="messagesSend">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="messages-popup" id="messagesPopup" aria-hidden="true">
+    <button type="button" class="messages-resize-handle messages-resize-corner" id="popupResizeHandle" aria-label="Resize popup"></button>
+
+    <div class="messages-popup-header">
+      <button type="button" class="messages-back" id="popupBack" aria-label="Back to drawer">
         <i class="fa-solid fa-arrow-left"></i>
       </button>
 
-      <h3 id="messagesHeaderTitle">Messages</h3>
+      <div class="messages-popup-title" id="popupHeaderTitle">Messages</div>
 
-      <div class="messages-header-actions">
-        <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
+      <div class="messages-popup-actions">
+        <button type="button" class="icon-btn" id="popupSplitBtn" aria-label="Split view">
           <i class="fa-solid fa-table-columns"></i>
         </button>
-        <button type="button" class="messages-minimize-btn" id="drawerMinimizeBtn" aria-label="Minimize chat">
+
+        <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
           <i class="fa-solid fa-minus"></i>
         </button>
-         <button type="button" class="messages-open-popup" id="drawerMediumBtn" aria-label="Open medium window">
-          <i class="fa-regular fa-window-restore"></i>
+
+        <button type="button" class="icon-btn" id="popupCloseBtn" aria-label="Close chat">
+          <i class="fa-solid fa-xmark"></i>
         </button>
-        <button type="button" class="messages-chevron-btn" id="drawerChevronBtn" aria-label="More options">
- <i class="fa-solid fa-arrow-down-short-wide"></i>
-</button>
+      </div>
+
+      <button type="button" class="messages-chevron-btn" id="popupChevronBtn" aria-label="More options">
+        <i class="fa-solid fa-angle-down"></i>
+      </button>
+
+      <div class="messages-corner-menu" id="popupCornerMenu">
+        <button type="button" class="messages-corner-item" id="popupVideoChatBtn">
+          <i class="fa-solid fa-video"></i>
+          <span>Video chat</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupAddPeopleBtn">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Add people</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupPopoutBtn">
+          <i class="fa-solid fa-up-right-from-square"></i>
+          <span>Popout</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupDownloadVideoBtn">
+          <i class="fa-solid fa-download"></i>
+          <span>Download saved video</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupMsnModeBtn">
+          <i class="fa-regular fa-message"></i>
+          <span>MSN mode</span>
+        </button>
       </div>
     </div>
 
-    <div class="messages-body" id="messagesBody">
-      <div class="messages-view messages-list-view active" id="messagesListView">
+    <div class="messages-popup-main" id="messagesPopupMain">
+      <div class="messages-popup-list-view" id="popupListView">
         <div class="messages-search">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="messagesSearchInput" placeholder="Search messages..." />
+          <input type="text" id="popupMessagesSearchInput" placeholder="Search messages..." />
         </div>
 
-        <div class="messages-list" id="messagesList">
-          <button type="button" class="message-thread active" data-user="Jason">
-            <div class="message-thread-avatar">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="message-thread-content">
-              <div class="message-thread-top">
-                <div class="message-thread-name-row">
-                  <span class="message-thread-name">Jason</span>
-                </div>
-                <span class="message-thread-time">2m</span>
-              </div>
-              <div class="message-thread-preview">Hey, are you around later?</div>
-            </div>
-          </button>
-
-          <button type="button" class="message-thread" data-user="Alex">
-            <div class="message-thread-avatar">
-              <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="message-thread-content">
-              <div class="message-thread-top">
-                <div class="message-thread-name-row">
-                  <span class="message-thread-name">Alex</span>
-                </div>
-                <span class="message-thread-time">1h</span>
-              </div>
-              <div class="message-thread-preview">Nice work on your run 🔥</div>
-            </div>
-          </button>
-        </div>
+        <div class="messages-list" id="popupMessagesList"></div>
       </div>
 
-      <div class="messages-view messages-chat-view" id="messagesChatView">
-        <div class="message-chat" id="messageChat"></div>
+      <div class="messages-popup-chat-view" id="popupChatView">
+        <div class="messages-popup-body" id="popupMessageChat"></div>
 
-        <div class="messages-footer">
-          <div class="messages-input-wrap">
-            <div class="message-avatar-inline">
-              <i class="fa-solid fa-user"></i>
-            </div>
-
-            <textarea
-              class="messages-input"
-              id="messagesInput"
-              placeholder="Write a message..."
-            ></textarea>
-          </div>
-
-          <div class="messages-preview" id="messagesPreview"></div>
-
-          <input
-            type="file"
-            id="messagesMediaUpload"
-            accept="image/*,video/*"
-            multiple
-            hidden
-          />
+        <div class="messages-popup-footer">
+          <textarea
+            id="popupMessagesInput"
+            class="messages-input"
+            placeholder="Write a message..."
+          ></textarea>
 
           <div class="messages-bottom-bar">
             <div class="messages-tools">
-              <label for="messagesMediaUpload" class="upload-btn" title="Add image or video">
-                <i class="fa-solid fa-image"></i>
-              </label>
-
-              <button type="button" class="upload-btn messages-gif-btn" title="Add GIF">
+              <button type="button" class="upload-btn popup-gif-btn" title="Add GIF">
                 <span>GIF</span>
               </button>
 
-              <button type="button" class="upload-btn messages-emoji-btn" title="Add emoji">
+              <button type="button" class="upload-btn popup-emoji-btn" title="Add emoji">
                 <i class="fa-regular fa-face-smile"></i>
               </button>
 
-              <button type="button" class="upload-btn messages-location-btn" title="Add location">
+              <button type="button" class="upload-btn popup-location-btn" title="Add location">
                 <i class="fa-solid fa-location-dot"></i>
               </button>
             </div>
 
-            <button type="button" class="btn-modern messages-send" id="messagesSend">
+            <button type="button" class="btn-modern messages-send" id="popupMessagesSend">
               Send
             </button>
           </div>
@@ -391,133 +534,89 @@
       </div>
     </div>
   </div>
-</div>
 
-<div class="messages-popup" id="messagesPopup" aria-hidden="true">
-  <div class="messages-popup-header">
-    <div class="messages-popup-title" id="popupHeaderTitle">Messages</div>
+  <button
+    type="button"
+    class="messages-minimized"
+    id="messagesMinimized"
+    aria-hidden="true"
+    aria-label="Reopen chat"
+  >
+    <span id="minimizedLabel">Jason</span>
+    <span class="messages-minimized-dot"></span>
+  </button>
 
-    <div class="messages-popup-actions">
-      <button type="button" class="icon-btn" id="popupSplitBtn" aria-label="Split view">
-        <i class="fa-solid fa-table-columns"></i>
+  <div class="messages-popout" id="messagesPopout" aria-hidden="true">
+    <button type="button" class="messages-resize-handle messages-resize-corner" id="popoutResizeHandle" aria-label="Resize popout"></button>
+
+    <div class="messages-popout-header">
+      <button type="button" class="messages-back" id="popoutBack" aria-label="Back to conversations">
+        <i class="fa-solid fa-arrow-left"></i>
       </button>
 
-      <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
-        <i class="fa-solid fa-minus"></i>
-      </button>
+      <div class="messages-popout-title" id="popoutHeaderTitle">Jason</div>
 
-      <button type="button" class="icon-btn" id="popupDrawerBtn" aria-label="Open full drawer">
-        <i class="fa-regular fa-window-maximize"></i>
-      </button>
+      <div class="messages-popout-actions">
+        <button type="button" class="icon-btn" id="popoutFullscreenBtn" aria-label="Fullscreen chat">
+          <i class="fa-solid fa-expand"></i>
+        </button>
 
-      <button type="button" class="icon-btn" id="popupPopoutBtn" aria-label="Detach chat">
-        <i class="fa-solid fa-up-right-from-square"></i>
-      </button>
+        <button type="button" class="icon-btn" id="popoutMinimizeBtn" aria-label="Minimize chat">
+          <i class="fa-solid fa-minus"></i>
+        </button>
 
-      <button type="button" class="icon-btn" id="popupCloseBtn" aria-label="Close chat">
-        <i class="fa-solid fa-xmark"></i>
-        <button type="button" class="icon-btn messages-chevron-btn" id="popupChevronBtn" aria-label="More options">
-  <i class="fa-solid fa-arrow-down-short-wide"></i>
-</button>
-    </div>
-  </div>
-
-  <div class="messages-popup-main" id="messagesPopupMain">
-    <div class="messages-popup-list-view" id="popupListView">
-      <div class="messages-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="popupMessagesSearchInput" placeholder="Search messages..." />
+        <button type="button" class="icon-btn" id="popoutCloseBtn" aria-label="Close chat">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
       </div>
 
-      <div class="messages-list" id="popupMessagesList"></div>
-    </div>
+      <button type="button" class="messages-chevron-btn" id="popoutChevronBtn" aria-label="More options">
+        <i class="fa-solid fa-angle-down"></i>
+      </button>
 
-    <div class="messages-popup-chat-view" id="popupChatView">
-      <div class="messages-popup-body" id="popupMessageChat"></div>
+      <div class="messages-corner-menu" id="popoutCornerMenu">
+        <button type="button" class="messages-corner-item" id="popoutVideoChatBtn">
+          <i class="fa-solid fa-video"></i>
+          <span>Video chat</span>
+        </button>
 
-      <div class="messages-popup-footer">
-        <textarea
-          id="popupMessagesInput"
-          class="messages-input"
-          placeholder="Write a message..."
-        ></textarea>
+        <button type="button" class="messages-corner-item" id="popoutAddPeopleBtn">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Add people</span>
+        </button>
 
-        <div class="messages-bottom-bar">
-          <div class="messages-tools">
-            <button type="button" class="upload-btn popup-gif-btn" title="Add GIF">
-              <span>GIF</span>
-            </button>
+        <button type="button" class="messages-corner-item" id="popoutFullscreenMenuBtn">
+          <i class="fa-solid fa-expand"></i>
+          <span>Fullscreen</span>
+        </button>
 
-            <button type="button" class="upload-btn popup-emoji-btn" title="Add emoji">
-              <i class="fa-regular fa-face-smile"></i>
-            </button>
+        <button type="button" class="messages-corner-item" id="popoutDownloadVideoBtn">
+          <i class="fa-solid fa-download"></i>
+          <span>Download saved video</span>
+        </button>
 
-            <button type="button" class="upload-btn popup-location-btn" title="Add location">
-              <i class="fa-solid fa-location-dot"></i>
-            </button>
-          </div>
-
-          <button type="button" class="btn-modern messages-send" id="popupMessagesSend">
-            Send
-          </button>
-        </div>
+        <button type="button" class="messages-corner-item" id="popoutMsnModeBtn">
+          <i class="fa-regular fa-message"></i>
+          <span>MSN mode</span>
+        </button>
       </div>
     </div>
-  </div>
-</div>
 
-<button
-  type="button"
-  class="messages-minimized"
-  id="messagesMinimized"
-  aria-hidden="true"
-  aria-label="Reopen chat"
->
-  <span id="minimizedLabel">Jason</span>
-  <span class="messages-minimized-dot"></span>
-</button>
+    <div class="messages-popout-body" id="popoutMessageChat"></div>
 
-<div class="messages-popout" id="messagesPopout" aria-hidden="true">
-  <div class="messages-popout-header">
-    <div class="messages-popout-title" id="popoutHeaderTitle">Jason</div>
+    <div class="messages-popout-footer">
+      <textarea
+        id="popoutMessagesInput"
+        class="messages-input"
+        placeholder="Write a message..."
+      ></textarea>
 
-    <div class="messages-popout-actions">
-      <button type="button" class="icon-btn" id="popoutMinimizeBtn" aria-label="Minimize chat">
-        <i class="fa-solid fa-minus"></i>
+      <button type="button" class="btn-modern messages-send" id="popoutMessagesSend">
+        Send
       </button>
-
-      <button type="button" class="icon-btn" id="popoutDrawerBtn" aria-label="Open full drawer">
-        <i class="fa-regular fa-window-maximize"></i>
-      </button>
-
-      <button type="button" class="icon-btn" id="popoutFullscreenBtn" aria-label="Fullscreen chat">
-        <i class="fa-solid fa-expand"></i>
-      </button>
-
-      <button type="button" class="icon-btn" id="popoutCloseBtn" aria-label="Close chat">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      
-        <button type="button" class="icon-btn messages-chevron-btn" id="popoutChevronBtn" aria-label="More options">
-<i class="fa-solid fa-arrow-down-short-wide"></i>
-</button>
     </div>
   </div>
-
-  <div class="messages-popout-body" id="popoutMessageChat"></div>
-
-  <div class="messages-popout-footer">
-    <textarea
-      id="popoutMessagesInput"
-      class="messages-input"
-      placeholder="Write a message..."
-    ></textarea>
-
-    <button type="button" class="btn-modern messages-send" id="popoutMessagesSend">
-      Send
-    </button>
-  </div>
-</div>
+  
   <div class="composer-overlay" id="composerOverlay"></div>
 
   <div class="composer-modal" id="composerModal" aria-hidden="true">
