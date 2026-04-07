@@ -320,7 +320,7 @@ body.profile .media-play-badge {
 .profile-name-row {
   display: flex;
   align-items: center;
-   justify-content: center;
+   justify-content: flex-start;
   gap: 8px;
   flex-wrap: nowrap;
 }
@@ -394,6 +394,18 @@ body.profile .profile-actions {
   gap: 12px;
    margin-top: 20px;
    margin-bottom: 10px;
+}
+   .profile-name-row {
+  display: flex;
+  align-items: center;
+   justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.profile-name-row h1 {
+  margin: 0;
+   white-space: nowrap;
 }
 
 /* buttons row */
