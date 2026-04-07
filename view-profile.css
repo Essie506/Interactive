@@ -313,7 +313,7 @@ body.profile .media-play-badge {
   color: #091a3a;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   box-shadow: var(--shadow-soft);
 }
 
