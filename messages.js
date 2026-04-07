@@ -1427,22 +1427,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (popoutFullscreenMenuBtn) {
-    popoutFullscreenMenuBtn.addEventListener("click", (e) => {
-      e.stopPropagation();
+ if (popoutFullscreenBtn) {
+  popoutFullscreenBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-      const wasFullscreen = state.popoutFullscreen;
-      state.popoutFullscreen = !state.popoutFullscreen;
+    const wasFullscreen = state.popoutFullscreen;
+    state.popoutFullscreen = !state.popoutFullscreen;
 
-      if (wasFullscreen) {
-        resetPopoutSize();
-      }
+    if (wasFullscreen) {
+      resetPopoutSize();
+    }
 
-      messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
-      popoutCornerMenu?.classList.remove("open");
-      popoutChevronBtn?.classList.remove("open");
-    });
-  }
+    messagesPopout?.classList.toggle("fullscreen", state.popoutFullscreen);
+  });
+}
 
   if (drawerChevronBtn && drawerCornerMenu) {
     drawerChevronBtn.addEventListener("click", (e) => {
