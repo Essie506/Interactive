@@ -342,7 +342,7 @@ body.profile .media-play-badge {
   right: 8px;
   z-index: 5;
    width: 32px;
-   height 32px;
+   height: 32px;
 }
 
 @media (max-width: 500px) {
