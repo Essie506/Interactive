@@ -198,14 +198,6 @@
 
 /* ICONS INSIDE BUTTONS (NO DOUBLE CIRCLE) */
 
-.bottom-nav i,
-.bottom-nav-desktop i,
-.icon-btn i {
-  font-size: 1rem;
-  line-height: 1;
-  pointer-events: none;
-}
-
 .search-toggle:active,
 .icon-btn:active,
 .upload-btn:active,
@@ -220,7 +212,7 @@
 .bottom-nav a:active i,
 .bottom-nav-desktop a:active i,
 .profile-tab:active,
-.btn-soft a:active {
+.btn-soft:active {
   transform: scale(0.94);
 }
 
@@ -322,8 +314,11 @@ body.index .btn-login {
 }
 
 .bottom-nav i,
-.bottom-nav-desktop i {
+.bottom-nav-desktop i,
+.icon-btn i {
   font-size: 1.3rem;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .bottom-nav-desktop,
@@ -452,15 +447,15 @@ body.index .btn-login {
     min-width: 100%;
   }
 
-.messages-modai {
-   min-width: 100%
+.messages-modal {
+   min-width: 100%;
 }
    
 .composer-card {
     padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
   }   
    
-nav-left .messages-toggle {
+.nav-left .messages-toggle {
     display: none;
   }
    
@@ -757,7 +752,7 @@ margin: 5px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-post-actions {
+.post-actions {
   display: flex;
   align-items: center;
   justify-content: flex-start;
