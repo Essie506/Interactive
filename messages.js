@@ -1621,19 +1621,28 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
 if (popoutBack) {
   popoutBack.addEventListener("click", (e) => {
     e.stopPropagation();
-    resetDrawerSize();
+
+    if (state.mode !== "popout") return;
 
     if (state.popoutSplit) {
       state.split = true;
       state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
-    } else {
-      state.split = false;
-      state.lastDrawerView = state.popoutMode === "chat" ? "chat" : "list";
+      resetDrawerSize();
+      openDrawer();
+      return;
     }
 
-    state.mode = "drawer";
-    state.lastOpenMode = "drawer";
-    openDrawer();
+    if (state.popoutMode === "chat") {
+      state.popoutMode = "list";
+      updatePopoutLayout();
+      syncTitles();
+      return;
+    }
+
+    resetDrawerSize();
+    state.split = false;
+    state.lastDrawerView = "list";
+    openDrawerFromPreviousState();
   });
 }
 
