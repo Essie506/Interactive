@@ -178,7 +178,7 @@
     </a>
   </nav>
 
-  <div class="messages-overlay" id="messagesOverlay"></div>
+   <div class="messages-overlay" id="messagesOverlay"></div>
 
   <div class="messages-modal" id="messagesModal" aria-hidden="true">
     <button type="button" class="messages-resize-handle messages-resize-drawer" id="drawerResizeHandle" aria-label="Resize drawer"></button>
@@ -192,9 +192,9 @@
         <h3 id="messagesHeaderTitle">Messages</h3>
 
         <div class="messages-header-actions">
-          <button type="button" class="messages-split" id="splitToggle" aria-label="Split view">
-            <i class="fa-solid fa-table-columns"></i>
-          </button>
+          <button type="button" class="icon-btn messages-split" id="splitToggle" aria-label="Split view">
+  <i class="fa-solid fa-table-columns"></i>
+</button>
 
           <button type="button" class="messages-open-popup" id="drawerMediumBtn" aria-label="Open medium window">
             <i class="fa-regular fa-window-restore"></i>
@@ -349,9 +349,9 @@
       <div class="messages-popup-title" id="popupHeaderTitle">Messages</div>
 
       <div class="messages-popup-actions">
-        <button type="button" class="icon-btn" id="popupSplitBtn" aria-label="Split view">
-          <i class="fa-solid fa-table-columns"></i>
-        </button>
+       <button type="button" class="icon-btn messages-split" id="popupSplitBtn" aria-label="Split view">
+  <i class="fa-solid fa-table-columns"></i>
+</button>
 
         <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
           <i class="fa-solid fa-minus"></i>
@@ -513,20 +513,50 @@
       </button>
     </div>
   </div>
-    <div class="messages-popout-body" id="popoutMessageChat"></div>
 
-    <div class="messages-popout-footer">
-      <textarea
-        id="popoutMessagesInput"
-        class="messages-input"
-        placeholder="Write a message..."
-      ></textarea>
+  <div class="messages-popout-main" id="messagesPopoutMain">
+    <div class="messages-popout-list-view" id="popoutListView">
+      <div class="messages-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="popoutMessagesSearchInput" placeholder="Search messages..." />
+      </div>
 
-      <button type="button" class="btn-modern messages-send" id="popoutMessagesSend">
-        Send
-      </button>
+      <div class="messages-list" id="popoutMessagesList"></div>
+    </div>
+
+    <div class="messages-popout-chat-view" id="popoutChatView">
+      <div class="messages-popout-body" id="popoutMessageChat"></div>
+
+      <div class="messages-popout-footer">
+        <textarea
+          id="popoutMessagesInput"
+          class="messages-input"
+          placeholder="Write a message..."
+        ></textarea>
+
+        <div class="messages-bottom-bar">
+          <div class="messages-tools">
+            <button type="button" class="upload-btn popout-gif-btn" title="Add GIF">
+              <span>GIF</span>
+            </button>
+
+            <button type="button" class="upload-btn popout-emoji-btn" title="Add emoji">
+              <i class="fa-regular fa-face-smile"></i>
+            </button>
+
+            <button type="button" class="upload-btn popout-location-btn" title="Add location">
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+
+          <button type="button" class="btn-modern messages-send" id="popoutMessagesSend">
+            Send
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
   <div class="composer-overlay" id="composerOverlay"></div>
 
