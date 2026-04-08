@@ -6,7 +6,9 @@ const signupForm = document.getElementById("signupForm");
 
 if (signupForm) {
   signupForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
+  e.preventDefault();
+
+  console.log("FORM SUBMITTED"); // 👈 add this
 
     const formData = new FormData(signupForm);
     const displayName = formData.get("displayName")?.toString().trim() || "";
