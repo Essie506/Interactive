@@ -427,11 +427,13 @@ body.profile .profile-buttons {
     text-align: left;
   }
 
+   body.profile .profile-buttons {
+   justify-content: flex-start;
+}
+
   body.profile .profile-name-row {
     justify-content: flex-start;  /* ✅ desktop = left */
   }
-
-}
 
   body.profile .profile-bio {
     margin-left: 0;
@@ -440,7 +442,6 @@ body.profile .profile-buttons {
   body.profile .saved-workouts-grid {
     grid-template-columns: repeat(2, 1fr);
 }
-
    
   body.profile .profile-name-row {
     justify-content: flex-start;
