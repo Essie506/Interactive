@@ -417,9 +417,17 @@ body.profile .profile-stat span {
     justify-content: flex-start;
   }
 
+@media (min-width: 901px) {
+
   body.profile .profile-main-info {
     text-align: left;
   }
+
+  body.profile .profile-name-row {
+    justify-content: flex-start;  /* ✅ desktop = left */
+  }
+
+}
 
   body.profile .profile-bio {
     margin-left: 0;
@@ -428,14 +436,12 @@ body.profile .profile-stat span {
   body.profile .saved-workouts-grid {
     grid-template-columns: repeat(2, 1fr);
 }
+
    
-.profile-name-row {
-  display: flex;
-  gap: 8px;
-  flex-wrap: nowrap;
-   justify-content:center;
-   align-items: flex-start;
-}
+  body.profile .profile-name-row {
+    justify-content: flex-start;
+    align-items: center;
+  }
 }
 
 @media (max-width: 900px) {
@@ -465,15 +471,4 @@ body.profile .profile-stat span {
     margin-right: auto;
     box-sizing: border-box;
   }
-}
-
-@media (min-width: 501px) {
-body.profile .profile-buttons {
-  display: flex;
-  gap: 12px;
-   justify-content: center;
-    align-items: center;
-  gap: 12px;
-  width: 100%;
-}
 }
