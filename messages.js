@@ -974,25 +974,45 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
     }
   }
 
-  function bindToolInsert(button, targetInput, textToInsert) {
-    if (!button || !targetInput) return;
+ function bindToolInsert(button, targetInput, textToInsert) {
+  if (!button || !targetInput) return;
 
-    button.addEventListener("click", (e) => {
-      e.stopPropagation();
-      targetInput.value += textToInsert;
-      targetInput.focus();
-      autoResizeTextarea(targetInput);
+  let startX = 0;
+  let startY = 0;
+  let moved = false;
 
-      updateSendButtonState(
-        targetInput,
-        targetInput === messagesInput
-          ? messagesSend
-          : targetInput === popupMessagesInput
-          ? popupMessagesSend
-          : popoutMessagesSend
-      );
-    });
-  }
+  button.addEventListener("pointerdown", (e) => {
+    startX = e.clientX;
+    startY = e.clientY;
+    moved = false;
+  });
+
+  button.addEventListener("pointermove", (e) => {
+    if (Math.abs(e.clientX - startX) > 8 || Math.abs(e.clientY - startY) > 8) {
+      moved = true;
+    }
+  });
+
+  button.addEventListener("pointerup", (e) => {
+    if (moved) return;
+
+    e.preventDefault();
+    e.stopPropagation();
+
+    targetInput.value += textToInsert;
+    targetInput.focus();
+    autoResizeTextarea(targetInput);
+
+    updateSendButtonState(
+      targetInput,
+      targetInput === messagesInput
+        ? messagesSend
+        : targetInput === popupMessagesInput
+        ? popupMessagesSend
+        : popoutMessagesSend
+    );
+  });
+}
 
   function bindThreadButtons() {
     refreshThreadButtons();
