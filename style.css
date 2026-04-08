@@ -702,6 +702,7 @@ body.index .hero h1 {
 body.index .btn-login {
   margin-top: 25px;
    max-width: 120px;
+   border-radius: 35px;
 }
 
 .btn-modern:visited,
