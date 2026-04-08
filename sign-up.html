@@ -1,19 +1,31 @@
-<form id="signupForm" class="auth-form">
-  <h2>Join Interactive Fitness</h2>
+<body class="index">
 
-  <input type="text" name="displayName" placeholder="Full name" required />
-  <input type="email" name="email" placeholder="Email address" required />
-  <input type="password" name="password" placeholder="Password" required />
+  <nav class="navbar">
+    <div class="navbar-bg"></div>
+    <div class="nav-title">Interactive Fitness</div>
+  </nav>
 
-  <select name="accountType" required>
-    <option value="">Select account type</option>
-    <option value="personal">Personal</option>
-    <option value="professional">Professional</option>
-  </select>
+  <main class="hero">
+    <form id="signupForm" class="login-box">
+      <h2>Create Account</h2>
 
-  <button type="submit" class="btn-modern">Create account</button>
+      <input type="text" name="displayName" placeholder="Full name" class="input-field" required>
+      <input type="email" name="email" placeholder="Email" class="input-field" required>
+      <input type="password" name="password" placeholder="Password" class="input-field" required>
 
-  <p>Already have an account? <a href="login.html">Log in</a></p>
-</form>
+      <select name="accountType" class="input-field" required>
+        <option value="">Account type</option>
+        <option value="personal">Personal</option>
+        <option value="professional">Professional</option>
+      </select>
 
-<script src="sign-up.js"></script>
+      <button type="submit" class="btn-modern">Create Account</button>
+
+      <div class="links">
+        <a href="index.html">Already have an account?</a>
+      </div>
+    </form>
+  </main>
+
+  <script src="sign-up.js"></script>
+</body>
