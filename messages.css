@@ -396,7 +396,6 @@ body.messages-open {
   z-index: 4000;
   display: flex;
   flex-direction: column;
-  width: min(520px, 96vw);
   min-width: 10px;
   max-width: 96vw;
   height: 100dvh;
