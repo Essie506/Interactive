@@ -865,6 +865,7 @@ body.messages-open {
   display: none;
   flex-direction: column;
   min-width: 0;
+   flex: 1 1 auto;
    max-width: 100%;
   padding: 12px;
   border-right: 1px solid var(--messages-border);
