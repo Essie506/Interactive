@@ -1618,24 +1618,24 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
     });
   }
 
-  if (popoutBack) {
-    popoutBack.addEventListener("click", (e) => {
-      e.stopPropagation();
-      resetDrawerSize();
+if (popoutBack) {
+  popoutBack.addEventListener("click", (e) => {
+    e.stopPropagation();
+    resetDrawerSize();
 
-      if (state.popoutSplit) {
-        state.split = true;
-        state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
-      } else {
-        state.split = false;
-        state.lastDrawerView = state.popoutMode === "chat" ? "chat" : "list";
-      }
+    if (state.popoutSplit) {
+      state.split = true;
+      state.lastDrawerView = state.lastFocusedPane === "chat" ? "chat" : "list";
+    } else {
+      state.split = false;
+      state.lastDrawerView = state.popoutMode === "chat" ? "chat" : "list";
+    }
 
-      state.mode = "drawer";
-      state.lastOpenMode = "drawer";
-      openDrawer();
-    });
-  }
+    state.mode = "drawer";
+    state.lastOpenMode = "drawer";
+    openDrawer();
+  });
+}
 
   if (popoutMinimizeBtn) {
     popoutMinimizeBtn.addEventListener("click", (e) => {
