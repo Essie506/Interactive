@@ -144,6 +144,7 @@ body.messages-open {
   padding-top: 6px;
   background: #fff;
   z-index: 2;
+   pointer-events: auto;
 }
 
 .messages-footer {
