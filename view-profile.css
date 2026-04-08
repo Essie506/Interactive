@@ -428,6 +428,14 @@ body.profile .profile-stat span {
   body.profile .saved-workouts-grid {
     grid-template-columns: repeat(2, 1fr);
 }
+   
+.profile-name-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap;
+   justify-content:center;
+   align-items: flex-start;
+}
 }
 
 @media (max-width: 900px) {
