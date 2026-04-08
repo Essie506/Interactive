@@ -1100,6 +1100,9 @@ body.messages-open {
   .messages-popout-title {
     font-size: 14px;
   }
+   .messages-send {
+  max-width: 90px;
+}
 }
 
 @media (min-width: 500px) {
