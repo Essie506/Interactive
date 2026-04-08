@@ -81,6 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupEmojiBtn = document.querySelector(".popup-emoji-btn");
   const popupLocationBtn = document.querySelector(".popup-location-btn");
 
+const popoutGifBtn = document.querySelector(".popout-gif-btn");
+const popoutEmojiBtn = document.querySelector(".popout-emoji-btn");
+const popoutLocationBtn = document.querySelector(".popout-location-btn");
+
   const typingIndicator = document.getElementById("typingIndicator");
 
   if (!messagesModal) return;
@@ -1825,6 +1829,10 @@ document.addEventListener("DOMContentLoaded", () => {
   bindToolInsert(popupEmojiBtn, popupMessagesInput, " 😊");
   bindToolInsert(popupGifBtn, popupMessagesInput, " [GIF] ");
   bindToolInsert(popupLocationBtn, popupMessagesInput, " 📍");
+
+bindToolInsert(popoutEmojiBtn, popoutMessagesInput, " 😊");
+bindToolInsert(popoutGifBtn, popoutMessagesInput, " [GIF] ");
+bindToolInsert(popoutLocationBtn, popoutMessagesInput, " 📍");
 
   if (messagesSearchInput) {
     messagesSearchInput.addEventListener("input", () => {
