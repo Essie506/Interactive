@@ -386,42 +386,6 @@ body.profile .profile-stat span {
   color: rgba(9, 26, 58, 0.7);
   font-size: 10px;
 }
-
-body.profile .profile-actions {
-  display: flex;
-   align-items: center;
-  flex-direction: row;
-   justify-content: flex-start;
-  gap: 12px;
-   margin-top: 20px;
-   margin-bottom: 10px;
-}
-   .profile-name-row {
-  display: flex;
-  align-items: center;
-   justify-content: center;
-  gap: 8px;
-  flex-wrap: nowrap;
-}
-
-.profile-name-row h1 {
-  margin: 0;
-   white-space: nowrap;
-}
-
-/* buttons row */
-body.profile .profile-buttons {
-  display: flex;
-  gap: 12px;
-   justify-content: flex-start;
-}
-
-/* stats row */
-body.profile .profile-quick-stats {
-  gap: 8px;
-  bottom: 4px;
-   right: 4px;
-}
 }
 
 @media (min-width: 901px) {
@@ -485,4 +449,40 @@ body.profile .profile-tabs-card {
     margin-right: auto;
     box-sizing: border-box;
   }
+
+   body.profile .profile-actions {
+  display: flex;
+   align-items: center;
+  flex-direction: row;
+   justify-content: flex-start;
+  gap: 12px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+}
+   .profile-name-row {
+  display: flex;
+  align-items: center;
+   justify-content: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+
+.profile-name-row h1 {
+  margin: 0;
+   white-space: nowrap;
+}
+
+/* buttons row */
+body.profile .profile-buttons {
+  display: flex;
+  gap: 12px;
+   justify-content: flex-start;
+}
+
+/* stats row */
+body.profile .profile-quick-stats {
+  gap: 8px;
+  bottom: 4px;
+   right: 4px;
+}
 }
