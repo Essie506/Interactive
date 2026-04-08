@@ -78,6 +78,7 @@ body.profile .profile-avatar {
   cursor: pointer;
   border: none;
   text-decoration: none;
+    box-sizing: border-box;
 }
 
 .btn-soft,
@@ -85,13 +86,16 @@ body.profile .profile-avatar {
   font-size: 1rem;
   line-height: 1;
   font-weight: 700;
-    justify-content: center;
+  justify-content: center;
 }
 
 .btn-soft i {
    margin-right: 10px;
      width: 36px;
   height: 36px;
+   display: inline-flex;
+  align-items: center;
+     flex: 0 0 24px;
 }
 
 
@@ -157,6 +161,9 @@ body.profile .profile-buttons {
   display: flex;
   gap: 12px;
    justify-content: flex-start;
+    align-items: center;
+  gap: 12px;
+  width: 100%;
 }
 
 /* stats row */
@@ -322,6 +329,8 @@ body.profile .media-play-badge {
   display: flex;
   gap: 8px;
   flex-wrap: nowrap;
+   justify-content:center;
+   align-items: center;
 }
 
 .profile-name-row h1 {
@@ -422,22 +431,23 @@ body.profile .profile-stat span {
 }
 
 @media (max-width: 900px) {
-
- body.profile .profile-page {
+  body.profile .profile-page {
     padding-left: 6px;
     padding-right: 6px;
   }
-   
-body.profile .profile-tabs-card {
-  padding: 8px;
-   
-  body.profile .profile-hero-card {
-  gap: 5px; /* was 18px */
-}
 
-   body.profile .profile-avatar-wrap {
-  margin-bottom: -25px;
-}
+  body.profile .profile-tabs-card {
+    padding: 8px;
+  }
+
+  body.profile .profile-hero-card {
+    gap: 5px;
+  }
+
+  body.profile .profile-avatar-wrap {
+    margin-bottom: -25px;
+  }
+
   body.profile .profile-hero-card,
   body.profile .profile-tabs-card,
   body.profile .profile-section-card {
