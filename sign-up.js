@@ -38,10 +38,16 @@ if (signupForm) {
         createdAt: serverTimestamp()
       });
 
+      alert("Account created successfully");
       window.location.href = "profile.html";
     } catch (error) {
       console.error("Signup error:", error);
-      alert(error.message);
+
+      if (error.code === "auth/email-already-in-use") {
+        alert("Account already exists — try logging in");
+      } else {
+        alert(error.message);
+      }
     }
   });
 }
