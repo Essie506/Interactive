@@ -999,9 +999,23 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
     e.preventDefault();
     e.stopPropagation();
 
-    targetInput.value += textToInsert;
-    targetInput.focus();
+    const start = targetInput.selectionStart ?? targetInput.value.length;
+    const end = targetInput.selectionEnd ?? targetInput.value.length;
+
+    const before = targetInput.value.slice(0, start);
+    const after = targetInput.value.slice(end);
+
+    targetInput.value = before + textToInsert + after;
+
+    const newCaret = start + textToInsert.length;
+
     autoResizeTextarea(targetInput);
+
+    targetInput.focus({ preventScroll: true });
+
+    requestAnimationFrame(() => {
+      targetInput.setSelectionRange(newCaret, newCaret);
+    });
 
     updateSendButtonState(
       targetInput,
