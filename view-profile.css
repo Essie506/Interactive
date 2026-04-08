@@ -320,8 +320,6 @@ body.profile .media-play-badge {
 
 .profile-name-row {
   display: flex;
-  align-items: center;
-   justify-content: flex-start;
   gap: 8px;
   flex-wrap: nowrap;
 }
