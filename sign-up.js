@@ -1,16 +1,16 @@
-console.log("sign-up.js loaded");
-const app = initializeApp(firebaseConfig);
+import { auth, db } from "./firebase-config.js";
+import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
-export const auth = getAuth(app);
-export const db = getFirestore(app);
+console.log("sign-up.js loaded");
 
 const signupForm = document.getElementById("signupForm");
+console.log("signupForm:", signupForm);
 
 if (signupForm) {
   signupForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  console.log("FORM SUBMITTED"); // 👈 add this
+    e.preventDefault();
+    console.log("FORM SUBMITTED");
 
     const formData = new FormData(signupForm);
     const displayName = formData.get("displayName")?.toString().trim() || "";
