@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebase
 import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 console.log("sign-up.js loaded");
+console.log("createUserWithEmailAndPassword:", createUserWithEmailAndPassword);
 
 const signupForm = document.getElementById("signupForm");
 console.log("signupForm:", signupForm);
