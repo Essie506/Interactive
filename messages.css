@@ -864,7 +864,7 @@ body.messages-open {
 .messages-popout-list-view {
   display: none;
   flex-direction: column;
-  min-width: 0;
+  min-width: 100%;
   padding: 12px;
   border-right: 1px solid var(--messages-border);
   background: #fff;
