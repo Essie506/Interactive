@@ -100,12 +100,13 @@ body.messages-open {
 .messages-tools {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flext-start;
   gap: 10px;
-  flex: 0 0 auto;
+  flex: 1 1 auto;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
+width: auto;
 }
 
 .messages-gif-btn span {
@@ -136,8 +137,9 @@ body.messages-open {
 
 .messages-bottom-bar {
   display: flex;
-  flex-direction: column;
-  align-items: stretch;
+  flex-direction: row;
+  align-items: center;
+   justify-content: space-between;
   gap: 15px;
   margin-top: auto;
   padding-top: 6px;
@@ -152,6 +154,8 @@ body.messages-open {
   padding-top: 14px;
   background: #fff;
   z-index: 2;
+   justify-content: flex-end;
+    flex: 0 0 auto;
 }
 
 .messages-search {
@@ -1103,26 +1107,4 @@ body.messages-open {
    .messages-send {
   max-width: 80px;
 }
-}
-
-@media (min-width: 500px) {
-  .messages-bottom-bar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-  }
-
-  .messages-tools {
-    flex: 1 1 auto;
-    width: auto;
-    justify-content: flex-start;
-    align-items: center;
-  }
-
-  .messages-footer {
-    flex: 0 0 auto;
-    width: auto;
-    justify-content: flex-end;
-  }
 }
