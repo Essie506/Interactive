@@ -177,6 +177,7 @@ body.messages-open {
   display: flex;
   flex-direction: column;
   gap: 10px;
+   flex: 1 1 auto;
 }
 
 .message-thread {
@@ -191,6 +192,7 @@ body.messages-open {
   text-align: left;
   cursor: pointer;
   box-shadow: var(--shadow-soft);
+   flex: 1 1 auto;
 }
 
 .message-thread.active {
@@ -422,7 +424,7 @@ body.messages-open {
 .messages-body {
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 1 1;
   min-height: 0;
   gap: 14px;
   overflow-y: auto;
