@@ -466,3 +466,14 @@ body.profile .profile-stat span {
     box-sizing: border-box;
   }
 }
+
+@media (min-width: 501px) {
+body.profile .profile-buttons {
+  display: flex;
+  gap: 12px;
+   justify-content: center;
+    align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+}
