@@ -238,6 +238,7 @@
 
 body.index .btn-login {
   margin-top: 25px;
+   max-width: 90px;
 }
 
 .btn-modern:visited,
