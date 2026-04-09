@@ -292,6 +292,16 @@ body.sign-up .login-box {
   align-items: center;
 }
 
+body.sign-up .login-box {
+  position: relative;
+  width: min(100%, 360px);
+  padding: 22px 18px 18px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Hide actual placeholder text */
 .input-field::placeholder {
   color: var(--text-dark);
@@ -337,6 +347,10 @@ body.sign-up .login-box {
   padding: 0 20px;
   text-decoration: none;
   margin-top: 35px;
+}
+
+body.sign-up .input-field {
+  margin: 14px auto;
 }
 
 /* =========================
