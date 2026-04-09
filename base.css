@@ -268,6 +268,11 @@ footer {
       padding: 80px 20px 20px;
   }
 
+   
+.links {
+  margin-top: 0;
+}
+
 body.sign-up .hero, 
    body.index .hero {
   justify-content: center;
