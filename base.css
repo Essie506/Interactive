@@ -269,12 +269,12 @@ footer {
     justify-content: center;
     align-items: center;
     min-height: 0;
-    padding: calc(var(--bar-height) + 12px) 20px 16px;
+    padding: calc(var(--bar-height) + 28px) 20px 16px;
   }
 
   body.sign-up .hero,
   body.index .hero {
-    padding: calc(var(--bar-height) + 12px) 20px 16px;
+    padding: calc(var(--bar-height) + 28px) 20px 16px;
   }
 
   .hero::before {
