@@ -3,7 +3,7 @@ body.sign-up .login-box {
   width: min(100%, 360px);
   padding: 22px 18px 18px;
   overflow: hidden;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 body.sign-up .login-box::before {
