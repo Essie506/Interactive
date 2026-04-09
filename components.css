@@ -830,5 +830,51 @@ margin: 5px;
 }
 
 
+@media (max-width: 900px) {
+  .hero {
+    justify-content: flex-start;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+  }
+
+  body.home .hero,
+  body.index .hero,
+   body.sign-up .hero {
+    padding: calc(var(--bar-height) + 20px) 20px 40px;
+  }
+
+  body.index .hero::before,
+    body.sign-up .hero::before {
+    display: none;
+  }
+
+  body.index .hero h1,  
+   body.sign-up .hero h1 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #1e3a8a;
+  }
+
+  body.home .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  body.home .hero h2 {
+    font-size: 22px;
+    line-height: 1.2;
+    margin-top: 5px;
+  }
+
+.login-box {
+    margin-top: 20px;
+    justify-content: center;
+  }
+}
 
 
