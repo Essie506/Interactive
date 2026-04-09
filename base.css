@@ -258,3 +258,12 @@ body.index footer {
 .mobile-wheel {
   display: none;
 }
+
+@media (max-width: 900px) {
+.hero::before:
+    display: none;
+  }
+}
+
+
+
