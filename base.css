@@ -267,6 +267,10 @@ footer {
     min-height: auto;
   }
 
+   .hero::before {
+  display: none;
+}
+   
 .hero {
     flex: none;
     min-height: auto;
