@@ -271,7 +271,7 @@ body.index footer {
   }
   body.sign-up .hero {
     min-height: auto;
-    padding: calc(var(--bar-height) + 6px) 20px 24px;
+    padding: calc(var(--bar-height) + 10px) 20px 24px;
     justify-content: flex-start;
     align-items: center;
   }
