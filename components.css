@@ -234,6 +234,7 @@
   transition: 0.25s ease;
   box-shadow: 0 8px 20px rgba(7, 153, 146, 0.3);
   display: block;
+   justify-content: center;
 }
 
 body.index .btn-login {
