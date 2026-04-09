@@ -262,23 +262,23 @@ footer {
 }
 
 @media (max-width: 900px) {
-  body.sign-up {
+.hero {
     display: block;
     min-height: auto;
   }
 
-  body.sign-up .hero {
+.hero {
     flex: none;
     min-height: auto;
     height: auto;
     padding: calc(var(--bar-height) + 6px) 20px 8px;
   }
 
-  body.sign-up footer {
+.footer {
     padding: 8px 20px 12px;
   }
 
-body.sign-up .links {
+.links {
   margin-top: 12px;
 }
 }
