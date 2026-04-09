@@ -278,4 +278,10 @@ footer {
 .links {
   margin-top: 12px;
 }
+body.index .btn-login, 
+body.sign-up .btn-modern {
+  margin-top: 25px;
+   max-width: 90px;
+   margin-bottom: 10px;
+}
 }
