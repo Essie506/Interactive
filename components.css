@@ -306,7 +306,7 @@ body.index .btn-login {
 
 /* Animated underline */
 .input-field {
-  background-image: linear-gradient(var(--main-color), var(--main-color));
+  background-image: linear-gradient(var(--text-dark), var(--text-dark);
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: left bottom;
