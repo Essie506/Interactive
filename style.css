@@ -1944,24 +1944,6 @@ body.feed .partner-promo {
     justify-content: center;
   }
 
-  body.feed .feed-page {
-    padding: var(--bar-height) 0 calc(76px + env(safe-area-inset-bottom));
-  }
-
-  body.feed .post-input {
-    max-width: 100%;
-  }
-
-  body.feed .composer-modal,
-  body.feed .messages-modal {
-    width: 100vw;
-  }
-
-  body.feed .composer-card,
-  body.feed .messages-card {
-    padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
-  }
-
   .nav-center,
   .desktop-nav-links {
     display: none;
@@ -1985,38 +1967,6 @@ body.feed .partner-promo {
    LARGER SCREEN FEED LAYOUT
 ========================= */
 @media (min-width: 901px) {
-  body.feed .page-layout {
-    display: grid;
-    grid-template-columns: 180px minmax(0, 1fr) 180px;
-    gap: 16px;
-    align-items: start;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-top: calc(var(--bar-height-large) + 16px);
-    padding-left: 16px;
-    padding-right: 16px;
-    box-sizing: border-box;
-  }
-
-  body.feed .left-col,
-  body.feed .right-col {
-    display: block;
-  }
-
-  body.feed .feed-page {
-    width: 100%;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  body.feed .post-box,
-  body.feed .post {
-    width: 100%;
-  }
-
-  body.feed .post-box {
-    margin-top: 0;
-  }
 
   .bottom-nav {
     display: none;
@@ -2093,8 +2043,7 @@ body.feed .partner-promo {
 
   .nav-left .desktop-icon-link,
   .navbar-right .icon-btn,
-  .navbar-right .composer-toggle,
-  body.feed .menu-toggle {
+  .navbar-right .composer-toggle {
     width: 46px;
     height: 46px;
     flex-shrink: 0;
@@ -2135,46 +2084,5 @@ body.feed .partner-promo {
 
   .submenu li a {
     padding: 12px 18px 12px 32px;
-  }
-}
-
-@media (min-width: 1100px) {
-  body.feed .page-layout {
-    grid-template-columns: 240px minmax(0, 600px) 240px;
-    gap: 24px;
-    max-width: 1400px;
-  }
-}
-
-@media (min-width: 500px) {
-  body.feed .composer-bottom-bar,
-  body.feed .messages-bottom-bar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
-  }
-
-  body.feed .composer-tools,
-  body.feed .messages-tools {
-    justify-content: flex-start;
-    align-items: center;
-    width: auto;
-    flex: 1 1 auto;
-  }
-
-  body.feed .composer-footer,
-  body.feed .messages-footer {
-    justify-content: flex-end;
-    width: auto;
-    flex: 0 0 auto;
-  }
-
-  body.feed .composer-submit,
-  body.feed .messages-send {
-    width: auto;
-    margin: 0;
-    display: inline-flex;
-    min-width: 90px;
   }
 }
