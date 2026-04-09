@@ -1,6 +1,11 @@
-import { auth, db } from "./firebase-config.js";
-import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-import { doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import {
+  auth,
+  db,
+  createUserWithEmailAndPassword,
+  doc,
+  setDoc,
+  serverTimestamp
+} from "./firebase-config.js";
 
 console.log("sign-up.js loaded");
 
