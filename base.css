@@ -272,6 +272,12 @@ footer {
     padding: 25px + 12px 25px;
   }
 
+
+
+body {
+  min-height: 80vh;
+}
+  
   body.sign-up .hero,
   body.index .hero {
     padding: calc(var(--bar-height) + 1px) 16px 16px;
