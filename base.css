@@ -22,6 +22,7 @@ body {
 
   --main-color: #079992;
   --main-color-dark: #047a74;
+  --text-dark: #091a3a; 
 
   --glass-white: rgba(255, 255, 255, 0.6);
   --glass-white-light: rgba(255, 255, 255, 0.8);
