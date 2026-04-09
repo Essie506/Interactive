@@ -1,40 +1,3 @@
-/* =========================
-   SIGN-UP PAGE
-========================= */
-
-body.sign-up {
-  min-height: 100vh;
-  margin: 0;
-  padding:
-    calc(var(--bar-height) + 28px)
-    16px
-    calc(28px + env(safe-area-inset-bottom));
-  background: var(--index-bg);
-  position: relative;
-  overflow-x: hidden;
-}
-
-body.sign-up::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: var(--index-bg-before);
-  background-size: 200% 200%;
-  animation: satinShimmer 10s linear infinite;
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.7;
-}
-
-body.sign-up .hero {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-
 body.sign-up .login-box {
   position: relative;
   width: min(100%, 430px);
@@ -62,16 +25,6 @@ body.sign-up .login-box::before {
 body.sign-up .login-box > * {
   position: relative;
   z-index: 1;
-}
-
-body.sign-up .login-box h2 {
-  margin: 0 0 20px;
-  text-align: center;
-  color: #091a3a;
-  font-size: clamp(1.55rem, 4vw, 2rem);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
 }
 
 body.sign-up .input-field {
@@ -122,17 +75,6 @@ body.sign-up select.input-field {
     calc(100% - 14px) calc(50% - 3px);
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
-}
-
-body.sign-up .btn-modern {
-  width: 100%;
-  max-width: none;
-  min-height: 52px;
-  margin: 8px 0 0;
-  border-radius: 18px;
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
 }
 
 body.sign-up .links {
