@@ -274,7 +274,7 @@ body.index footer {
     overflow: visible;
   }
 
-  body.index .hero, 
+  body.index .hero,
    body.sign-up .hero {
     padding: calc(var(--bar-height) + 20px) 20px 40px;
   }
