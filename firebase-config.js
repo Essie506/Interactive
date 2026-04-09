@@ -6,8 +6,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebas
     signOut,
     onAuthStateChanged
   } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
-
-import { getFirestore } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  serverTimestamp
+} from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDhR7mwSjPT6PXQ0PHJ0z4IwLr0OPmXPNA",
@@ -21,4 +25,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
-export const db = getFirestore(app);
+export const db = getFirestore(app
+
+export {
+  createUserWithEmailAndPassword,
+  doc,
+  setDoc,
+  serverTimestamp
+};
