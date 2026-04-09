@@ -875,26 +875,3 @@ margin: 5px;
     min-width: 90px;
   }
 }
-@media (max-width: 480px) {
-  body.sign-up .hero {
-    padding: calc(var(--bar-height) + 16px) 16px 16px;
-  }
-
-  body.sign-up .login-box {
-    padding: 16px 14px 12px;
-  }
-
-  body.sign-up .input-field {
-    margin: 10px auto;
-    padding: 12px 0 8px;
-  }
-
-  body.sign-up .btn-modern {
-    margin-top: 14px;
-    margin-bottom: 18px;
-  }
-
-  body.sign-up .links {
-    margin-top: 16px;
-  }
-}
