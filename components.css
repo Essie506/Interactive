@@ -284,7 +284,7 @@ body.sign-up .btn-modern {
 body.sign-up .login-box {
   position: relative;
   width: min(100%, 360px);
-  padding: 22px 18px 18px;
+  padding: 22px 0 18px;
   overflow: hidden;
     display: flex;
   flex-direction: column;
