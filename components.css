@@ -296,7 +296,7 @@ body.index .btn-login {
 
 /* We simulate label using background trick */
 .input-field:not(:placeholder-shown) {
-  border-bottom-color: rgba(7, 153, 146, 0.4);
+  border-bottom-color: var(--main-colour-dark);
 }
 
 /* Focus underline */
