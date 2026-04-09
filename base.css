@@ -260,7 +260,7 @@ body.index footer {
 }
 
 @media (max-width: 900px) {
-.hero::before:
+.hero::before {
     display: none;
   }
 }
