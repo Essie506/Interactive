@@ -137,7 +137,10 @@ body::before {
   position: relative;
   z-index: 2;
   letter-spacing: 1px;
+   margin-top: 0;
   margin-bottom: 24px;
+   align-text: center;
+   justify-content: center;
 }
 
 .hero-subtext {
