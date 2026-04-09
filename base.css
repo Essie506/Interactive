@@ -283,4 +283,13 @@ body.index footer {
   body.sign-up .hero {
     padding: calc(var(--bar-height) + 6px) 20px 12px; /* 👈 smaller bottom */
   }
+
+   body.sign-up .btn-modern {
+  margin-bottom: 10px;
+}
+
+body.sign-up .links {
+  margin-top: 12px;
+  margin-bottom: 0;
+}
 }
