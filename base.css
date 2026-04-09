@@ -280,4 +280,7 @@ body.index footer {
   body.sign-up form {
     margin-top: 0;
   }
+  body.sign-up .hero {
+    padding: calc(var(--bar-height) + 6px) 20px 12px; /* 👈 smaller bottom */
+  }
 }
