@@ -3,7 +3,11 @@ body.sign-up .login-box {
   width: min(100%, 360px);
   padding: 22px 18px 18px;
   overflow: hidden;
-   margin-top: clamp(0px, 4vh, 20px);
+    display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertical centering */
+  align-items: center;
+  min-height: 100vh;
 }
 
 body.sign-up .login-box::before {
