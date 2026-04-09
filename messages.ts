@@ -258,11 +258,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return Object.values(messageStore).some((thread) => thread.unread);
   };
 
-  const setUnreadDot = (show = true): void => {
-    document.querySelectorAll<HTMLElement>(".messages-dot").forEach((dot) => {
+ const setUnreadDot = (show = true): void => {
+  document
+    .querySelectorAll<HTMLElement>(".messages-dot, .messages-minimized-dot")
+    .forEach((dot) => {
       dot.style.display = show ? "block" : "none";
     });
-  };
+};
 
   const syncNavUnreadDot = (): void => {
     setUnreadDot(hasAnyUnread());
