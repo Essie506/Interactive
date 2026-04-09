@@ -2,7 +2,6 @@ body.sign-up .login-box {
   position: relative;
   width: min(100%, 430px);
   padding: 30px 22px 24px;
-  border-radius: 28px;
   background: rgba(255, 255, 255, 0.68);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -16,9 +15,7 @@ body.sign-up .login-box::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.34), transparent 38%),
-    linear-gradient(315deg, rgba(56, 173, 169, 0.08), transparent 44%);
+  background:transparent;
   pointer-events: none;
 }
 
