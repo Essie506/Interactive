@@ -238,7 +238,8 @@
   align-items: center; 
 }
 
-body.index .btn-login {
+body.index .btn-login, 
+body.sign-up .btn-login {
   margin-top: 25px;
    max-width: 90px;
    margin-bottom: 75px;
