@@ -290,7 +290,6 @@ body.sign-up .login-box {
   flex-direction: column;
   justify-content: center; /* vertical centering */
   align-items: center;
-   max-height: 70px;
 }
 
 /* Hide actual placeholder text */
@@ -310,7 +309,7 @@ body.sign-up .login-box {
 
 /* We simulate label using background trick */
 .input-field:not(:placeholder-shown) {
-  border-bottom-color: var(--main-colour-dark);
+  border-bottom-color: var(--main-color-dark);
 }
 
 /* Focus underline */
@@ -320,7 +319,7 @@ body.sign-up .login-box {
 
 /* Animated underline */
 .input-field {
-  background-image: linear-gradient(var(--text-dark), var(--text-dark);
+  background-image: linear-gradient(var(--text-dark), var(--text-dark));
   background-size: 0% 2px;
   background-repeat: no-repeat;
   background-position: left bottom;
