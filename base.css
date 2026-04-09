@@ -58,22 +58,20 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+   background: var(--index-bg);
 }
 
 @keyframes satinShimmer {
-  0% { background-position: 0% 50%; }
-  45% { background-position: 100% 45%; }
-  100% { background-position: 55% 50%; }
-}
-
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 
 /* =========================
    INDEX PAGE
 ========================= */
-
-body {
-  background: var(--index-bg);
-}
 
 body::before {
   content: "";
@@ -139,11 +137,6 @@ body::before {
   position: relative;
   z-index: 2;
   letter-spacing: 1px;
-  margin-bottom: 15px;
-}
-
-.hero h1 {
-  margin-top: 0;
   margin-bottom: 24px;
 }
 
