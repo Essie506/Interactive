@@ -114,7 +114,7 @@ body::before {
 
 body.sign-up .hero {
   justify-content: center;
-  padding: calc(var(--bar-height) + 20px) 20px 24px;
+  padding: calc(var(--bar-height) + 20px) 20px 20px;
 }
 
 .hero::before {
@@ -168,10 +168,6 @@ footer {
   color: #079992;
   position: relative;
   z-index: 1;
-}
-
-body.index footer {
-  padding: 20px;
 }
 
 /* =========================
@@ -266,30 +262,23 @@ body.index footer {
 }
 
 @media (max-width: 900px) {
-.hero::before {
-    display: none;
-  }
-  body.sign-up .hero {
+  body.sign-up {
+    display: block;
     min-height: auto;
-    padding: calc(var(--bar-height) + 10px) 20px 24px;
-    justify-content: flex-start;
-    align-items: center;
   }
 
-  body.sign-up .login-box,
-  body.sign-up form {
-    margin-top: 0;
-  }
   body.sign-up .hero {
-    padding: calc(var(--bar-height) + 6px) 20px 12px; /* 👈 smaller bottom */
+    flex: none;
+    min-height: auto;
+    height: auto;
+    padding: calc(var(--bar-height) + 6px) 20px 8px;
   }
 
-   body.sign-up .btn-modern {
-  margin-bottom: 10px;
-}
+  body.sign-up footer {
+    padding: 8px 20px 12px;
+  }
 
 body.sign-up .links {
   margin-top: 12px;
-  margin-bottom: 0;
 }
 }
