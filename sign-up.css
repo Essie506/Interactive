@@ -29,7 +29,6 @@ body.sign-up::before {
 body.sign-up .hero {
   position: relative;
   z-index: 1;
-  min-height: calc(100vh - var(--bar-height) - 28px);
   display: flex;
   align-items: center;
   justify-content: center;
