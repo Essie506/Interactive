@@ -290,6 +290,7 @@ body.sign-up .login-box {
   flex-direction: column;
   justify-content: center; /* vertical centering */
   align-items: center;
+   max-height: 90px;
 }
 
 /* Hide actual placeholder text */
