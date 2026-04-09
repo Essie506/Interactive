@@ -281,7 +281,7 @@ body.index .btn-login {
 
 /* Hide actual placeholder text */
 .input-field::placeholder {
-  color: transparent;
+  color: var(--text-dark);
 }
 
 /* Fake label (using placeholder as content) */
