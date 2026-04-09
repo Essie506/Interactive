@@ -1,7 +1,7 @@
 body.sign-up .login-box {
   position: relative;
-  width: min(100%, 430px);
-  padding: 30px 22px 24px;
+  width: min(100%, 360px);
+  padding: 22px 18px 18px;
   background: rgba(255, 255, 255, 0.68);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
