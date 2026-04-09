@@ -112,6 +112,11 @@ body::before {
   overflow: hidden;
 }
 
+body.sign-up .hero {
+  justify-content: center;
+  padding: calc(var(--bar-height) + 20px) 20px 24px;
+}
+
 .hero::before {
   content: "";
   position: absolute;
