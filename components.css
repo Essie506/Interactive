@@ -523,10 +523,7 @@ body.sign-up .input-field {
 .navbar-right {
 margin: 5px;
 }
-   
-  .navbar {
-    justify-content: center; /* 👈 center everything */
-  }
+
 }
 
 /* =========================
