@@ -438,24 +438,42 @@ body.profile .media-play-badge {
   }
 }
 
-@media (max-width: 900px) {
-  body.profile .profile-page {
+
+   @media (max-width: 900px) and (orientation: landscape) {
+  body.profile .profile-hero-card {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+  }
+
+   body.profile .profile-page {
     padding-left: 0.375rem;
     padding-right: 0.375rem;
   }
 
-  body.profile .profile-tabs-card {
+  body.profile .profile-avatar-wrap {
+    justify-content: flex-start;
+     margin-bottom: 0.3125rem;
+  }
+
+  body.profile .profile-main-info {
+    text-align: left;
+  }
+
+  body.profile .profile-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+        body.profile .profile-tabs-card {
     padding: 0.5rem;
   }
 
   body.profile .profile-hero-card {
     gap: 0.3125rem;
   }
-
-  body.profile .profile-avatar-wrap {
-    margin-bottom: 0.3125rem;
-  }
-
   body.profile .profile-hero-card,
   body.profile .profile-tabs-card,
   body.profile .profile-section-card {
