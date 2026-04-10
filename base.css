@@ -275,8 +275,15 @@ footer {
   }
 
 .login-box {
-    padding: 10px 16px 12px;
-  }
+  position: relative;
+  width: min(100%, 360px);
+  padding: 12px 18px 12px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+   justify-content: center;
+  align-items: center;
+}
    
   .hero {
     justify-content: center;
