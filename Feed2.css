@@ -51,9 +51,9 @@ body.feed .post {
 
 body.feed .post-img {
   display: block;
-  width: 100%;
-  max-height: min(26.25rem, 48vw);
-  object-fit: cover;
+   height: auto;
+  max-height: min(26.25rem, 70dvh);
+  object-fit: contain;
   border-radius: 0.625rem;
   margin-top: 0.625rem;
 }
