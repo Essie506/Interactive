@@ -288,7 +288,6 @@ footer {
 
 body.sign-up .login-box {
   padding: 0 18px 0px;
-   margin-top: -25px;
 }
    
   .hero {
@@ -306,3 +305,8 @@ body.sign-up .login-box {
   }
 }
 
+@media (max-width: 500px) {
+   body.sign-up .login-box {
+   margin-top: -25px;
+}
+}
