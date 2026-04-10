@@ -17,7 +17,7 @@ body {
 }
 
 :root {
-  --bar-height: clamp(64px, 7vh, 70px);
+   --bar-height: clamp(70px, 8vh, 90px);
   --bar-height-large: clamp(70px, 7.5vh, 76px);
 
   --main-color: #079992;
