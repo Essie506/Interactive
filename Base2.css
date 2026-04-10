@@ -17,7 +17,7 @@ body {
 }
 
 :root {
-   --bar-height: clamp(70px, 8vh, 90px);
+   --bar-height: clamp(64px, 7vh, 70px);
   --bar-height-large: clamp(70px, 7.5vh, 76px);
 
   --main-color: #079992;
@@ -56,8 +56,8 @@ body {
   --btn-modern-bg: linear-gradient(135deg, #079992, #38ada9);
 
   --btn-height: clamp(36px, 4vh, 48px);
-  --icon-btn-size: clamp(40px, 4vw, 42px);
-  --icon-size: clamp(1rem, 1.2rem, 1.3rem);
+  --icon-btn-size: calc(var(--bar-height) * 0.6);
+  --messages-btn-size: calc(var(--bar-height) * 0.55);
 
   --content-max: min(1100px, 92vw);
   --card-max: min(900px, 94vw);
