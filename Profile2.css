@@ -353,18 +353,58 @@ body.profile .media-play-badge {
   height: 2.625rem;
 }
 
-/* keep original look, stop right-tail clipping */
-body.profile .post,
-body.profile .post-box {
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
+body.profile .post {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  padding: 0.9375rem;
+  margin-bottom: 0.75rem;
 }
 
-body.profile .post *,
-body.profile .post-box * {
-  box-sizing: border-box;
-  max-width: 100%;
+body.profile .post-img {
+  display: block;
+  height: auto;
+  max-height: min(26.25rem, 70dvh);
+  object-fit: contain;
+  border-radius: 0.625rem;
+  margin-top: 0.625rem;
+}
+
+body.profile .post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+body.profile .avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(56, 173, 169, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.profile .post-info {
+  display: flex;
+  flex-direction: column;
+}
+
+body.profile .username {
+  font-weight: 600;
+}
+
+body.profile .time {
+  font-size: 0.75rem;
+  color: gray;
+}
+
+body.profile .post-text {
+  margin: 0.625rem 0;
 }
 
 @media (max-width: 500px) {
