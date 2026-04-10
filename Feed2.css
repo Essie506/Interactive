@@ -50,7 +50,9 @@ body.feed .post {
 }
 
 body.feed .post-img {
-  display: block;
+  display: flex;
+   align-items: center;
+   justify-content: center;
    height: auto;
   max-height: min(26.25rem, 70dvh);
   object-fit: contain;
