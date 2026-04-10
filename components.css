@@ -527,12 +527,6 @@ margin: 5px;
   .navbar {
     justify-content: center; /* 👈 center everything */
   }
-
-  .nav-title {
-    position: static;
-    transform: none;
-    text-align: center;
-  }
 }
 
 /* =========================
