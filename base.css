@@ -298,10 +298,7 @@ footer {
   .links {
     margin-top: 10px;
   }
-}
-
-@media (max-width: 500px) {
-   body.sign-up .login-box {
-   margin-top: -50px;
+   .hero {
+  min-height: calc(100vh - var(--bar-height));
 }
 }
