@@ -538,7 +538,7 @@ body.messages-open {
 .messages-header .icon-btn i,
 .messages-popup-header .icon-btn i,
 .messages-popout-header .icon-btn i {
-  font-size: 0.875rem;
+   font-size: var(--messages-icon-size);
 }
 
 /* =========================
