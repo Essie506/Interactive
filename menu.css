@@ -48,7 +48,7 @@ body.home .menu-toggle.active span:nth-child(3) {
   position: fixed;
   top: var(--bar-height);
   left: 0;
-  width: min(320px, 60vw);
+  width: var(--menu-width);
   height: calc(100vh - var(--bar-height));
   padding: 0 16px 20px;
   background: rgba(255, 255, 255, 0.82);
@@ -99,8 +99,8 @@ body.home .menu-toggle.active span:nth-child(3) {
 .menu > ul > li > a {
   display: block;
   position: relative;
-  padding: 12px 16px;
-  min-height: 46px;
+   padding: calc(var(--menu-item-height) * 0.3) var(--menu-padding-x);
+  min-height: var(--menu-item-height);
   color: #091a3a;
   text-decoration: none;
   font-weight: 600;
@@ -126,6 +126,19 @@ body.home .menu-toggle.active span:nth-child(3) {
 
 .menu > ul > li > a:active {
   background: rgba(7, 153, 146, 0.2);
+}
+
+.menu-profile-info i {
+  width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
+}
+
+.menu-profile-name {
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+}
+
+.menu-profile-sub {
+  font-size: clamp(0.85rem, 1vw, 1rem);
 }
 
 .menu-overlay {
