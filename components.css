@@ -79,6 +79,12 @@
   text-overflow: ellipsis;
 }
 
+body.index .nav-title, 
+body.sign-up .nav-title {
+   align-items: center;
+   justift-contengt: center;
+}
+
 .desktop-icon-link {
   display: none;
 }
