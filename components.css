@@ -528,13 +528,6 @@ margin: 5px;
     justify-content: center; /* 👈 center everything */
   }
 
-  .nav-left,
-  .navbar-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
   .nav-title {
     position: static;
     transform: none;
