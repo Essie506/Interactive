@@ -274,7 +274,7 @@ body.sign-up .btn-modern {
 }
    
 body.sign-up .login-box {
-  padding: 22px 18px 18px;
+  padding: 15px 18px 18px;
 }
    body {
   min-height: 90vh;
@@ -283,6 +283,7 @@ body.sign-up .login-box {
    .hero {
   justify-content: center;
   padding: calc(var(--bar-height) + 5px + 20px 12px;
+}
 }
 
 
