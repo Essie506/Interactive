@@ -63,6 +63,11 @@ body {
 
   --content-max: min(1100px, 92vw);
   --card-max: min(900px, 94vw);
+
+  --menu-width: min(380px, 75vw);
+  --menu-item-height: calc(var(--bar-height) * 0.7);
+  --menu-icon-size: calc(var(--bar-height) * 0.5);
+  --menu-padding-x: calc(var(--bar-height) * 0.25);
 }
 
 html {
