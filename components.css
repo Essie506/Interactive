@@ -65,9 +65,8 @@
 }
 
 .nav-title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  position: static;
+  transform: none;
   white-space: nowrap;
   pointer-events: none;
   text-align: center;
