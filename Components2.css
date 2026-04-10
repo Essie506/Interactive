@@ -715,9 +715,11 @@ body.sign-up .input-field {
 ========================= */
 .post-box,
 .post {
-  width: 98%;
+  width: 100%;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
 }
 
 .post-box {
