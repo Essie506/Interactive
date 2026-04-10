@@ -483,4 +483,8 @@ body.profile .media-play-badge {
     margin-right: auto;
     box-sizing: border-box;
   }
+      body.profile .profile-avatar {
+  width: clamp(80px, 12vh, 110px);
+  height: clamp(80px, 12vh, 110px);
+}
 }
