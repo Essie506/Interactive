@@ -37,9 +37,9 @@ body.profile .profile-tabs-card {
 body.profile .profile-hero-card {
   display: flex;
   flex-direction: column;
-  gap: 0.625rem;
-  padding: 0.625rem;
-  margin-bottom: 0.625rem;
+  gap: 0.5rem;
+  padding: 0.65rem;
+  margin-bottom: 0.5rem;
   position: relative;
   overflow-x: clip;
 }
