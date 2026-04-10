@@ -65,9 +65,9 @@ body {
   --card-max: min(900px, 94vw);
 
   --menu-width: min(380px, 75vw);
-  --menu-item-height: calc(var(--bar-height) * 0.7);
-  --menu-icon-size: calc(var(--bar-height) * 0.5);
-  --menu-padding-x: calc(var(--bar-height) * 0.25);
+  --menu-item-height: calc(var(--bar-height) * 0.78);
+  --menu-icon-size: calc(var(--bar-height) * 0.52);
+  --menu-padding-x: calc(var(--bar-height) * 0.26);
 }
 
 html {
