@@ -682,6 +682,22 @@ width: auto;
   transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
 }
 
+.messages-corner-item {
+  transition: background 0.2s ease;
+}
+
+.messages-corner-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.messages-corner-item:active {
+  background: rgba(7, 153, 146, 0.2);
+}
+
+.messages-corner-item {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .messages-corner-menu.open {
   opacity: 1;
   visibility: visible;
