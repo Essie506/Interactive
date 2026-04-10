@@ -677,7 +677,7 @@ width: auto;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-100%);
-  transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .messages-corner-item {
@@ -686,6 +686,7 @@ width: auto;
 
 .messages-corner-item:hover {
   background: rgba(255, 255, 255, 0.3);
+  transform: translateX(2px);
 }
 
 .messages-corner-item:active {
@@ -702,9 +703,11 @@ width: auto;
   transform: translateY(0);
 }
 
-.messages-corner-menu button {
+.messages-corner-item {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
   width: 100%;
   min-height: 44px;
   padding: 12px 16px;
@@ -716,16 +719,10 @@ width: auto;
   font-weight: 600;
   letter-spacing: 0.2px;
   cursor: pointer;
-  transition: background 0.22s ease;
+  transition: background 0.22s ease, transform 0.22s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.messages-corner-menu button:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-.messages-corner-menu button:active {
-  background: rgba(7, 153, 146, 0.2);
-}
 
 .messages-corner-menu button:not(:last-child)::after {
   content: "";
