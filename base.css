@@ -270,14 +270,14 @@ footer {
 body.sign-up .btn-modern {
   margin-top: 25px;
    max-width: 90px;
-   margin-bottom: 20px;
+   margin-bottom: 12px;
 }
    
 body.sign-up .login-box {
   padding: 15px 18px 18px;
 }
    body {
-  min-height: 90vh;
+  min-height: 75vh;
    }
    
    .hero {
