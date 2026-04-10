@@ -100,16 +100,19 @@ body::before {
    HERO
 ========================= */
 .hero {
-  flex: 1 0 auto;
+  min-height: calc(100dvh - var(--bar-height));
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 80px 20px 80px;
+
+  padding: clamp(16px, 5vh, 80px) 20px;
+  padding-top: calc(var(--bar-height) + clamp(8px, 2vh, 24px));
+
   position: relative;
   z-index: 1;
-  overflow: hidden;
 }
 
 body.sign-up .hero {
