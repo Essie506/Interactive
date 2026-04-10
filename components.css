@@ -524,6 +524,11 @@ body.sign-up .input-field {
 margin: 5px;
 }
 
+   .navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
 }
 
 /* =========================
