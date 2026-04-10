@@ -288,13 +288,17 @@ footer {
 
 body.sign-up .login-box {
   padding: 0 18px 0px;
-   margin-top: -20px;
 }
    
   .hero {
     justify-content: center;
     padding: 5px + 20px 12px;
   }
+
+    body.sign-up .hero {
+    justify-content: center;
+    padding: 5px + 20px 12px;
+    }
 
   .links {
     margin-top: 10px;
