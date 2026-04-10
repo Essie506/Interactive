@@ -261,29 +261,33 @@ footer {
   display: none;
 }
 
-@media: (max-width 500px){
-   .hero::before {
- display: none;
-   }
-   
-   body.index .btn-login, 
-body.sign-up .btn-modern {
-  margin-top: 25px;
-   max-width: 90px;
-   margin-bottom: 12px;
-}
-   
-body.sign-up .login-box {
-  padding: 15px 18px 18px;
-}
-   body {
-  min-height: 75vh;
-   }
-   
-   .hero {
-  justify-content: center;
-  padding: calc(var(--bar-height) + 5px + 20px 12px;
-}
-}
+@media (max-width: 500px) {
+  .hero::before {
+    display: none;
+  }
 
+  body.index .btn-login,
+  body.sign-up .btn-modern {
+    margin-top: 25px;
+    max-width: 90px;
+    margin-bottom: 12px;
+  }
+
+  body.sign-up .login-box {
+    padding: 15px 18px 18px;
+  }
+
+  body {
+    min-height: 75vh;
+  }
+
+  .hero {
+    justify-content: center;
+    padding: calc(var(--bar-height) + 5px) 20px 12px;
+  }
+
+  .links {
+    margin-top: 10px;
+  }
+}
 
