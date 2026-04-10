@@ -1,0 +1,38 @@
+
+/* =========================
+   SIGN-UP PAGE
+========================= */
+
+body.sign-up .hero {
+  min-height: calc(100dvh - var(--bar-height));
+}
+
+body.sign-up .login-box {
+  width: min(100%, 360px);
+  padding: 16px 18px 12px;
+}
+
+body.sign-up .input-field {
+  margin: 14px auto;
+}
+
+body.sign-up .btn-modern {
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
+body.sign-up .links {
+  margin-top: 8px;
+}
+
+body.sign-up .login-box {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+}
+
+@media (min-width: 901px) {
+  body.sign-up .hero {
+    min-height: calc(100dvh - var(--bar-height-large));
+  }
+}
