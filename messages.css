@@ -685,7 +685,7 @@ width: auto;
 }
 
 .messages-corner-item:hover {
-  background: rgba(9, 26, 58, 0.06);
+  background: rgba(9, 26, 58, 0.04);
   transform: translateX(2px);
 }
 
