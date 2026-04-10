@@ -488,10 +488,6 @@ body.profile .post-text {
     align-items: center;
   }
 
-  body.profile .profile-bio {
-     margin: 0.75rem auto 0;
-  }
-
   body.profile .saved-workouts-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -524,4 +520,11 @@ body.profile .post-text {
     margin-right: auto;
     box-sizing: border-box;
   }
+    body.profile .profile-bio {
+     margin: 0.75rem auto 0;
+  }
+
+   body.profile .profile-actions {
+  margin-top: 0.75rem;
+}
 }
