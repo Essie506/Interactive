@@ -1,7 +1,6 @@
 /* =========================
    MESSAGES - TOKENS / SHARED LOOK
 ========================= */
-
 :root {
   --messages-surface: rgba(255, 255, 255, 0.72);
   --messages-surface-strong: rgba(255, 255, 255, 0.82);
@@ -14,17 +13,16 @@
   --messages-outgoing: rgba(7, 153, 146, 0.14);
   --messages-unread: #ff4d4f;
   --messages-online: #22c55e;
-  --messages-radius: 18px;
-  --messages-radius-sm: 14px;
-  --messages-btn-size: 36px;
-  --messages-header-side: 42px;
+  --messages-radius: 1.125rem;
+  --messages-radius-sm: 0.875rem;
+  --messages-btn-size: clamp(2.25rem, 4vw, 2.625rem);
+  --messages-header-side: clamp(2.25rem, 4vw, 2.625rem);
   --messages-pane-split: 40%;
 }
 
 /* =========================
    MESSAGES - CORE
 ========================= */
-
 body.messages-open {
   overflow: hidden;
 }
@@ -41,17 +39,17 @@ body.messages-open {
 
 .message-avatar-inline {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 36px;
-  height: 36px;
+  top: 0.75rem;
+  left: 0.75rem;
+  width: 2.25rem;
+  height: 2.25rem;
   z-index: 2;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 .message-thread-avatar {
-  width: 42px;
-  height: 42px;
+  width: 2.625rem;
+  height: 2.625rem;
   flex-shrink: 0;
 }
 
@@ -61,16 +59,16 @@ body.messages-open {
 
 .messages-input {
   width: 100%;
-  min-height: 58px;
-  max-height: 180px;
-  padding: 14px 16px 14px 58px;
+  min-height: 3.625rem;
+  max-height: 11.25rem;
+  padding: 0.875rem 1rem 0.875rem 3.625rem;
   border: none;
   outline: none;
   resize: none;
   border-radius: var(--messages-radius);
   background: var(--messages-surface);
   color: var(--messages-text);
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.4;
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
 }
@@ -79,14 +77,14 @@ body.messages-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: min(100%, 420px);
-  max-width: 90px;
-  height: 36px;
+  width: min(100%, 26.25rem);
+  max-width: 5.625rem;
+  min-height: 2.25rem;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 1rem;
   border: none;
-  border-radius: 16px;
-  font-size: 14px;
+  border-radius: 1rem;
+  font-size: 0.875rem;
   text-decoration: none;
   opacity: 0.5;
   pointer-events: none;
@@ -100,17 +98,17 @@ body.messages-open {
 .messages-tools {
   display: flex;
   align-items: center;
-  justify-content: flext-start;
-  gap: 10px;
+  justify-content: flex-start;
+  gap: 0.625rem;
   flex: 1 1 auto;
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-width: auto;
+  width: auto;
 }
 
 .messages-gif-btn span {
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.4px;
 }
@@ -118,7 +116,7 @@ width: auto;
 .messages-preview {
   display: none;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 0.625rem;
   margin: 0;
 }
 
@@ -128,10 +126,10 @@ width: auto;
 
 .messages-preview img,
 .messages-preview video {
-  width: 110px;
-  height: 110px;
+  width: 6.875rem;
+  height: 6.875rem;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 0.875rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -139,30 +137,30 @@ width: auto;
   display: flex;
   flex-direction: row;
   align-items: center;
-   justify-content: space-between;
-  gap: 15px;
+  justify-content: space-between;
+  gap: 0.9375rem;
   margin-top: auto;
-  padding-top: 6px;
+  padding-top: 0.375rem;
   background: #fff;
   z-index: 2;
-   pointer-events: auto;
+  pointer-events: auto;
 }
 
 .messages-footer {
   flex-shrink: 0;
   margin-top: auto;
-  padding-top: 14px;
+  padding-top: 0.875rem;
   background: #fff;
   z-index: 2;
-   justify-content: flex-end;
-    flex: 0 0 auto;
+  justify-content: flex-end;
+  flex: 0 0 auto;
 }
 
 .messages-search {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
+  gap: 0.625rem;
+  padding: 0.75rem 0.875rem;
   border-radius: var(--messages-radius);
   background: var(--messages-surface);
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
@@ -180,15 +178,15 @@ width: auto;
 .messages-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .message-thread {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 0.75rem;
   width: 100%;
-  padding: 12px;
+  padding: 0.75rem;
   border: none;
   border-radius: var(--messages-radius);
   background: var(--messages-surface);
@@ -209,8 +207,8 @@ width: auto;
 .message-thread-top {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 4px;
+  gap: 0.625rem;
+  margin-bottom: 0.25rem;
 }
 
 .message-thread-name {
@@ -220,7 +218,7 @@ width: auto;
 
 .message-thread-time,
 .message-thread-preview {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--messages-text-soft);
 }
 
@@ -233,7 +231,7 @@ width: auto;
 .message-thread-name-row {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.375rem;
   min-width: 0;
 }
 
@@ -246,16 +244,16 @@ width: auto;
 }
 
 .message-status-dot {
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   background: var(--messages-online);
 }
 
 .thread-unread-dot {
   display: none;
-  width: 8px;
-  height: 8px;
-  margin-left: 6px;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.375rem;
   background: var(--messages-unread);
   transform: scale(0);
   transition: transform 0.2s ease;
@@ -271,25 +269,25 @@ width: auto;
 
 .messages-dot {
   position: absolute;
-  top: 6px;
-  right: 6px;
+  top: 0.375rem;
+  right: 0.375rem;
   display: none;
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   background: var(--messages-unread);
   box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.7);
 }
 
 .typing-indicator {
   display: none;
-  padding: 6px 12px 0;
+  padding: 0.375rem 0.75rem 0;
 }
 
 .typing-indicator span {
   display: inline-block;
-  width: 6px;
-  height: 6px;
-  margin-right: 4px;
+  width: 0.375rem;
+  height: 0.375rem;
+  margin-right: 0.25rem;
   border-radius: 50%;
   background: #999;
   animation: typingBounce 1.2s infinite ease-in-out;
@@ -304,7 +302,9 @@ width: auto;
 }
 
 @keyframes typingBounce {
-  0%, 80%, 100% {
+  0%,
+  80%,
+  100% {
     transform: scale(0.6);
     opacity: 0.5;
   }
@@ -318,14 +318,14 @@ width: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 18px;
-  height: 18px;
+  min-width: 1.125rem;
+  height: 1.125rem;
   margin-left: auto;
-  padding: 0 6px;
+  padding: 0 0.375rem;
   border-radius: 999px;
   background: var(--main-color);
   color: #fff;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 700;
 }
 
@@ -334,17 +334,17 @@ width: auto;
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  gap: 10px;
-  margin-top: 6px;
+  gap: 0.625rem;
+  margin-top: 0.375rem;
   overflow-y: auto;
-  padding-right: 2px;
+  padding-right: 0.125rem;
 }
 
 .message-bubble {
   max-width: 82%;
-  padding: 12px 14px;
+  padding: 0.75rem 0.875rem;
   border-radius: var(--messages-radius);
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.35;
 }
 
@@ -368,14 +368,13 @@ width: auto;
 .messages-popout .message-bubble video {
   display: block;
   max-width: 100%;
-  margin-top: 6px;
-  border-radius: 12px;
+  margin-top: 0.375rem;
+  border-radius: 0.75rem;
 }
 
 /* =========================
    DRAWER
 ========================= */
-
 .messages-overlay {
   position: fixed;
   inset: 0;
@@ -400,7 +399,7 @@ width: auto;
   z-index: 4000;
   display: flex;
   flex-direction: column;
-   width: min(520px, 96vw);
+  width: min(32.5rem, 96vw);
   max-width: 96vw;
   height: 100dvh;
   box-sizing: border-box;
@@ -419,7 +418,7 @@ width: auto;
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 18px 18px calc(18px + env(safe-area-inset-bottom));
+  padding: 1.125rem 1.125rem calc(1.125rem + env(safe-area-inset-bottom));
   overflow: hidden;
 }
 
@@ -428,9 +427,9 @@ width: auto;
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  gap: 14px;
+  gap: 0.875rem;
   overflow-y: auto;
-  padding-bottom: 12px;
+  padding-bottom: 0.75rem;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 }
@@ -449,7 +448,6 @@ width: auto;
 /* =========================
    HEADERS / ACTIONS
 ========================= */
-
 .messages-header,
 .messages-popup-header,
 .messages-popout-header {
@@ -462,14 +460,14 @@ width: auto;
 }
 
 .messages-header {
-  min-height: 70px;
-  margin: -18px -18px 14px;
-  padding: 14px 18px;
+  min-height: var(--bar-height);
+  margin: -1.125rem -1.125rem 0.875rem;
+  padding: 0.875rem 1.125rem;
 }
 
 .messages-popup-header,
 .messages-popout-header {
-  padding: 12px 8px;
+  padding: 0.75rem 0.5rem;
 }
 
 .messages-header::after,
@@ -500,14 +498,14 @@ width: auto;
   display: flex;
   align-items: center;
   justify-self: end;
-  gap: 8px;
-  padding-right: 22px;
+  gap: 0.5rem;
+  padding-right: 1.375rem;
   z-index: 3;
 }
 
 .messages-popup-actions,
 .messages-popout-actions {
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 
 .messages-header h3,
@@ -540,13 +538,12 @@ width: auto;
 .messages-header .icon-btn i,
 .messages-popup-header .icon-btn i,
 .messages-popout-header .icon-btn i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 /* =========================
    RESIZE HANDLES
 ========================= */
-
 .messages-resize-handle {
   position: absolute;
   z-index: 20;
@@ -558,8 +555,8 @@ width: auto;
 
 .messages-resize-drawer {
   top: 0;
-  right: -6px;
-  width: 18px;
+  right: -0.375rem;
+  width: 1.125rem;
   height: 100%;
   cursor: ew-resize;
 }
@@ -568,19 +565,19 @@ width: auto;
   content: "";
   position: absolute;
   top: 50%;
-  right: 4px;
-  width: 8px;
-  height: 42px;
+  right: 0.25rem;
+  width: 0.5rem;
+  height: 2.625rem;
   transform: translateY(-50%);
   border-radius: 999px;
   background: rgba(9, 26, 58, 0.12);
 }
 
 .messages-resize-corner {
-  right: 6px;
-  bottom: 6px;
-  width: 22px;
-  height: 22px;
+  right: 0.375rem;
+  bottom: 0.375rem;
+  width: 1.375rem;
+  height: 1.375rem;
   cursor: nwse-resize;
 }
 
@@ -597,7 +594,6 @@ width: auto;
 /* =========================
    CORNER TRIANGLES / MENUS
 ========================= */
-
 .messages-chevron-btn,
 .back-chevron-btn {
   position: absolute;
@@ -614,23 +610,23 @@ width: auto;
 .messages-chevron-btn {
   right: 0;
   bottom: 0;
-  width: 42px;
-  height: 42px;
+  width: 2.625rem;
+  height: 2.625rem;
   clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }
 
 .back-chevron-btn {
   top: 0;
   left: 0;
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
 .messages-chevron-btn i,
 .back-chevron-btn i {
   position: absolute;
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1;
   color: var(--messages-text);
   pointer-events: none;
@@ -639,13 +635,13 @@ width: auto;
 }
 
 .messages-chevron-btn i {
-  right: 5px;
-  bottom: 5px;
+  right: 0.3125rem;
+  bottom: 0.3125rem;
 }
 
 .back-chevron-btn i {
-  top: 5px;
-  left: 5px;
+  top: 0.3125rem;
+  left: 0.3125rem;
 }
 
 .messages-chevron-btn:hover,
@@ -665,27 +661,28 @@ width: auto;
 
 .messages-corner-menu {
   position: absolute;
-  top: calc(100% + 6px);
+  top: calc(100% + 0.375rem);
   right: 0;
   z-index: 40;
-  min-width: 180px;
-  padding: 4px 0 6px;
-  border-radius: 16px;
+  min-width: 11.25rem;
+  padding: 0.25rem 0 0.375rem;
+  border-radius: 1rem;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 12px 0 30px rgba(0, 0, 0, 0.14);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-100%);
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .messages-corner-item:first-child {
-  margin-top: -4px;
+  margin-top: -0.25rem;
 }
 
 .messages-corner-item {
-  transition: background 0.2s ease;
+  transition: background 0.2s ease, transform 0.22s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .messages-corner-item:hover {
@@ -695,10 +692,6 @@ width: auto;
 
 .messages-corner-item:active {
   background: rgba(7, 153, 146, 0.2);
-}
-
-.messages-corner-item {
-  -webkit-tap-highlight-color: transparent;
 }
 
 .messages-corner-menu.open {
@@ -711,11 +704,11 @@ width: auto;
   position: relative;
   display: flex;
   align-items: center;
-  gap: 10px;
-  width: calc(100% + 32px);
-  min-height: 44px;
-  padding: 12px 12px;
-   margin-left: -12px;
+  gap: 0.625rem;
+  width: calc(100% + 2rem);
+  min-height: 2.75rem;
+  padding: 0.75rem 0.75rem;
+  margin-left: -0.75rem;
   border: none;
   background: transparent;
   color: var(--messages-text);
@@ -724,16 +717,13 @@ width: auto;
   font-weight: 600;
   letter-spacing: 0.2px;
   cursor: pointer;
-  transition: background 0.22s ease, transform 0.22s ease;
-  -webkit-tap-highlight-color: transparent;
 }
-
 
 .messages-corner-menu button:not(:last-child)::after {
   content: "";
   position: absolute;
-  left: 16px;
-  right: 16px;
+  left: 1rem;
+  right: 1rem;
   bottom: 0;
   height: 1px;
   background: var(--messages-border);
@@ -747,11 +737,10 @@ width: auto;
 /* =========================
    SPLIT MODE SHARED TONE
 ========================= */
-
 .messages-modal.split-mode .message-thread,
 .messages-popup.split-mode .message-thread,
 .messages-popout.split-mode .message-thread {
-  padding: 10px 12px;
+  padding: 0.625rem 0.75rem;
 }
 
 .messages-modal.split-mode .message-thread-time,
@@ -798,36 +787,34 @@ width: auto;
 /* =========================
    DRAWER SPLIT
 ========================= */
-
 .messages-modal.split-mode .messages-body {
   display: grid;
-  grid-template-columns: minmax(140px, 28%) minmax(0, 72%);
+  grid-template-columns: minmax(8.75rem, 28%) minmax(0, 72%);
   gap: 0;
-  padding: 8px 0;
+  padding: 0.5rem 0;
 }
 
 .messages-modal.split-mode .messages-list-view {
   display: flex;
   min-width: 0;
-  padding-right: 8px;
+  padding-right: 0.5rem;
   border-right: 1px solid var(--messages-border);
 }
 
 .messages-modal.split-mode .messages-chat-view {
   display: flex;
   min-width: 0;
-  padding-left: 12px;
+  padding-left: 0.75rem;
 }
 
 .messages-modal.split-mode .message-thread-avatar {
-  width: 42px;
-  height: 42px;
+  width: 2.625rem;
+  height: 2.625rem;
 }
 
 /* =========================
-   WINDOW FAMILY: POPUP / POPOUT
+   WINDOW FAMILY
 ========================= */
-
 .messages-popup,
 .messages-popout,
 .messages-minimized {
@@ -841,9 +828,9 @@ width: auto;
   flex-direction: column;
   flex: 1;
   min-height: 0;
-  gap: 10px;
+  gap: 0.625rem;
   overflow-y: auto;
-  padding: 14px;
+  padding: 0.875rem;
   background: #fff;
 }
 
@@ -852,8 +839,8 @@ width: auto;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  gap: 10px;
-  padding: 12px;
+  gap: 0.625rem;
+  padding: 0.75rem;
   border-top: 1px solid var(--messages-border);
   background: #fff;
 }
@@ -862,14 +849,14 @@ width: auto;
 .messages-popout .messages-send {
   width: auto;
   margin: 0;
-  padding: 0 16px;
+  padding: 0 1rem;
 }
 
 .messages-popup .messages-input,
 .messages-popout .messages-input {
-  min-height: 58px;
-  max-height: 180px;
-  padding: 14px 16px;
+  min-height: 3.625rem;
+  max-height: 11.25rem;
+  padding: 0.875rem 1rem;
 }
 
 .messages-popup-main,
@@ -884,9 +871,9 @@ width: auto;
   display: none;
   flex-direction: column;
   min-width: 0;
-   flex: 1 1 auto;
-   max-width: 100%;
-  padding: 12px;
+  flex: 1 1 auto;
+  max-width: 100%;
+  padding: 0.75rem;
   border-right: 1px solid var(--messages-border);
   background: #fff;
   overflow: hidden;
@@ -904,12 +891,12 @@ width: auto;
 
 .messages-popup .messages-search,
 .messages-popout .messages-search {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
 }
 
 .messages-popup .message-thread,
 .messages-popout .message-thread {
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: var(--messages-radius-sm);
 }
 
@@ -933,18 +920,17 @@ width: auto;
 /* =========================
    POPUP
 ========================= */
-
 .messages-popup {
-  left: 5px;
-  bottom: calc(5px + env(safe-area-inset-bottom));
+  left: 0.3125rem;
+  bottom: calc(0.3125rem + env(safe-area-inset-bottom));
   display: none;
   flex-direction: column;
-  width: min(340px, calc(100vw - 32px));
-  min-width: 320px;
-  max-width: calc(100vw - 12px);
-  height: 420px;
-  min-height: 320px;
-  max-height: calc(100dvh - 12px);
+  width: min(21.25rem, calc(100vw - 2rem));
+  min-width: 20rem;
+  max-width: calc(100vw - 0.75rem);
+  height: 26.25rem;
+  min-height: 20rem;
+  max-height: calc(100dvh - 0.75rem);
   overflow: hidden;
   background: #fff;
   box-shadow: var(--messages-shadow);
@@ -957,18 +943,17 @@ width: auto;
 /* =========================
    POPOUT
 ========================= */
-
 .messages-popout {
-  right: 24px;
-  bottom: 8px;
+  right: 1.5rem;
+  bottom: 0.5rem;
   display: none;
   flex-direction: column;
-  width: min(420px, calc(100vw - 32px));
-  min-width: 340px;
-  max-width: calc(100vw - 12px);
-  height: min(520px, calc(100vh - 32px));
-  min-height: 360px;
-  max-height: calc(100dvh - 12px);
+  width: min(26.25rem, calc(100vw - 2rem));
+  min-width: 21.25rem;
+  max-width: calc(100vw - 0.75rem);
+  height: min(32.5rem, calc(100vh - 2rem));
+  min-height: 22.5rem;
+  max-height: calc(100dvh - 0.75rem);
   overflow: hidden;
   background: #fff;
   box-shadow: var(--messages-shadow-strong);
@@ -988,17 +973,16 @@ width: auto;
 /* =========================
    MINIMIZED
 ========================= */
-
 .messages-minimized {
-  left: 5px;
-  bottom: calc(5px + env(safe-area-inset-bottom));
+  left: 0.3125rem;
+  bottom: calc(0.3125rem + env(safe-area-inset-bottom));
   display: none;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  min-width: 240px;
-  height: 44px;
-  padding: 12px 14px;
+  gap: 0.75rem;
+  min-width: 15rem;
+  height: 2.75rem;
+  padding: 0.75rem 0.875rem;
   border: 1px solid var(--messages-border);
   background: var(--navbar-bg);
   color: var(--messages-text);
@@ -1012,47 +996,49 @@ width: auto;
 }
 
 .messages-minimized-dot {
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   background: var(--main-color);
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-
 @media (max-width: 900px) {
   .messages-modal {
     width: 100vw;
+    max-width: 100vw;
   }
 
   .messages-card {
-    padding: 16px 14px calc(16px + env(safe-area-inset-bottom));
+    padding: 1rem 0.875rem calc(1rem + env(safe-area-inset-bottom));
   }
 
   .messages-popup {
-    left: 12px;
-    right: 12px;
-    bottom: calc(82px + env(safe-area-inset-bottom));
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: calc(5.125rem + env(safe-area-inset-bottom));
     width: auto;
+    min-width: 0;
     height: 60dvh;
-    max-height: calc(100dvh - 94px - env(safe-area-inset-bottom));
+    max-height: calc(100dvh - 5.875rem - env(safe-area-inset-bottom));
   }
 
   .messages-popout {
-    left: 12px;
-    right: 12px;
-    bottom: 12px;
+    left: 0.75rem;
+    right: 0.75rem;
+    bottom: 0.75rem;
     width: auto;
-    height: calc(100dvh - 24px);
-    max-height: calc(100dvh - 24px);
+    min-width: 0;
+    height: calc(100dvh - 1.5rem);
+    max-height: calc(100dvh - 1.5rem);
   }
 
   .messages-minimized {
-    left: 5px;
-    bottom: calc(70px + env(safe-area-inset-bottom));
-    min-width: 180px;
-    max-width: calc(100vw - 10px);
+    left: 0.3125rem;
+    bottom: calc(4.375rem + env(safe-area-inset-bottom));
+    min-width: 11.25rem;
+    max-width: calc(100vw - 0.625rem);
   }
 
   .nav-left .messages-toggle {
@@ -1062,35 +1048,35 @@ width: auto;
 
 @media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
   .messages-popup {
-    left: 12px;
+    left: 0.75rem;
     right: auto;
-    bottom: calc(12px + env(safe-area-inset-bottom));
-    width: min(420px, calc(100vw - 24px));
-    height: 420px;
-    max-height: calc(100dvh - 24px - env(safe-area-inset-bottom));
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    width: min(26.25rem, calc(100vw - 1.5rem));
+    height: 26.25rem;
+    max-height: calc(100dvh - 1.5rem - env(safe-area-inset-bottom));
   }
 
   .messages-popout {
-    right: 12px;
+    right: 0.75rem;
     left: auto;
-    bottom: calc(12px + env(safe-area-inset-bottom));
-    width: min(420px, calc(100vw - 24px));
-    height: min(520px, calc(100dvh - 24px));
-    max-height: calc(100dvh - 24px);
+    bottom: calc(0.75rem + env(safe-area-inset-bottom));
+    width: min(26.25rem, calc(100vw - 1.5rem));
+    height: min(32.5rem, calc(100dvh - 1.5rem));
+    max-height: calc(100dvh - 1.5rem);
   }
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
   .messages-popup,
   .messages-popout {
-    top: 6px;
-    right: 6px;
-    bottom: 6px;
-    left: 6px;
+    top: 0.375rem;
+    right: 0.375rem;
+    bottom: 0.375rem;
+    left: 0.375rem;
     width: auto;
     height: auto;
     max-height: none;
-    border-radius: 18px;
+    border-radius: 1.125rem;
   }
 
   .messages-popup-main,
@@ -1106,21 +1092,22 @@ width: auto;
   .messages-popup-header .icon-btn,
   .messages-popout-header .icon-btn,
   .messages-back {
-    width: 36px;
-    height: 36px;
+    width: 2.25rem;
+    height: 2.25rem;
   }
 
   .messages-header-actions,
   .messages-popup-actions,
   .messages-popout-actions {
-    gap: 6px;
+    gap: 0.375rem;
   }
 
   .messages-popup-title,
   .messages-popout-title {
-    font-size: 14px;
+    font-size: 0.875rem;
   }
-   .messages-send {
-  max-width: 80px;
-}
+
+  .messages-send {
+    max-width: 5rem;
+  }
 }
