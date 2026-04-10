@@ -680,6 +680,10 @@ width: auto;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
+.messages-corner-item:first-child {
+  margin-top: -4px;
+}
+
 .messages-corner-item {
   transition: background 0.2s ease;
 }
