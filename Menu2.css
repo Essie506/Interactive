@@ -94,6 +94,7 @@ body.home .menu-toggle.active span:nth-child(3) {
   width: calc(100% + 2rem);
   margin-left: -1rem;
   margin-right: -1rem;
+ font-size: var(--main-font-size);
 }
 
 .menu > ul > li > a {
