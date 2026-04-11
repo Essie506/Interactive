@@ -545,15 +545,13 @@ body.profile .post-text {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem 0.75rem;
-    justify-content: center;
-    align-items: start;
+    justify-content: stretch;
   }
 
   body.profile .service-link {
     width: auto;
-    justify-content: center;
-    text-align: center;
-     min-width: 200px;
+    justify-content: flex-start;
+     text-align: left;
   }
   body.profile .profile-hero-card {
     padding-top: 0.65rem;
