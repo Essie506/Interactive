@@ -116,150 +116,169 @@
     </ul>
   </nav>
 
-  <main class="profile-page">
-    <section class="profile-hero-card">
-      <div class="profile-avatar-wrap">
-        <div class="profile-avatar">
-          <i class="fa-solid fa-user"></i>
-        </div>
+ <main class="profile-page">
+  <section class="profile-hero-card">
+    <div class="profile-avatar-wrap">
+      <div class="profile-avatar">
+        <i class="fa-solid fa-user"></i>
       </div>
+    </div>
 
-      <div class="profile-main-info">
-        <div class="profile-name-row">
+    <div class="profile-main-info">
+      <div class="profile-name-row">
         <h1>Esther Clarke</h1>
         <span class="profile-verified" aria-label="Verified professional" title="Verified professional">
-      <i class="fa-solid fa-circle-check"></i>
-    </span>
+          <i class="fa-solid fa-circle-check"></i>
+        </span>
+      </div>
+
+      <p class="profile-handle">@estherfitness</p>
+      <p class="profile-role">
+        <i class="fa-solid fa-dumbbell"></i> Trainer • Strength & Conditioning
+      </p>
+      <p class="profile-gym">
+        <i class="fa-solid fa-location-dot"></i> TrainWell Gym • London
+      </p>
+      <p class="profile-bio">
+        Helping you build strength, confidence and consistency. PT sessions, custom plans and home workouts available.
+      </p>
     </div>
-        <p class="profile-handle">@estherfitness</p>
-        <p class="profile-role">
-          <i class="fa-solid fa-dumbbell"></i> Trainer • Strength & Conditioning
-        </p>
-        <p class="profile-gym">
-          <i class="fa-solid fa-location-dot"></i> TrainWell Gym • London
-        </p>
-        <p class="profile-bio">
-          Helping you build strength, confidence and consistency. PT sessions, custom plans and home workouts available.
-        </p>
+
+    <div class="profile-actions">
+      <div class="profile-buttons">
+        <a href="messages.html" class="btn-soft">
+          <i class="fa-solid fa-comments"></i> Message
+        </a>
+
+        <button type="button" class="btn-soft" id="followBtn">
+          <i class="fa-solid fa-user-plus"></i> Follow
+        </button>
       </div>
 
-<div class="profile-actions"> 
-  <div class="profile-buttons">
-    <a href="messages.html" class="btn-soft">
-      <i class="fa-solid fa-comments"></i> Message
-    </a>
-    <button type="button" class="btn-soft">
-      <i class="fa-solid fa-user-plus"></i> Follow
-    </button>
-  </div>
-  <button class="icon-btn profile-edit-btn" id="editProfileBtn">
-      <i class="fa-solid fa-pen"></i>
-    </button>
-  <div class="profile-quick-stats">
-    <div class="profile-stat">
-      <strong>128</strong>
-      <span>Followers</span>
-    </div>
-  </div>
-</div>
-</section>
+      <button type="button" class="icon-btn profile-edit-btn" id="editProfileBtn">
+        <i class="fa-solid fa-pen"></i>
+      </button>
 
-    <section class="profile-tabs-card">
-      <div class="profile-tabs">
-        <button class="profile-tab active" type="button" data-tab="posts">Posts</button>
-        <button class="profile-tab" type="button" data-tab="workouts">Workouts</button>
-        <button class="profile-tab" type="button" data-tab="media">Media</button>
-      </div>
-    </section>
-
-    <section class="profile-panel active" id="profile-panel-posts">
-
-        <div class="profile-posts">
-          <article class="post">
-            <div class="post-header">
-              <div class="avatar">
-                <i class="fa-solid fa-user"></i>
-              </div>
-              <div class="post-info">
-                <span class="username">Esther</span>
-                <span class="time">2 min ago</span>
-              </div>
-            </div>
-            <p class="post-text">Morning run done ✅ Back to routine.</p>
-          </article>
-
-          <article class="post">
-            <div class="post-header">
-              <div class="avatar">
-                <i class="fa-solid fa-user"></i>
-              </div>
-              <div class="post-info">
-                <span class="username">Esther</span>
-                <span class="time">1 hour ago</span>
-              </div>
-            </div>
-            <p class="post-text">Leg day today 🔥</p>
-            <img src="logo2.png" alt="Post image" class="post-img">
-          </article>
-      </div>
-    </section>
-
-    <section class="profile-panel" id="profile-panel-workouts">
-      <div class="profile-section-card">
-        <h2>Workouts</h2>
-
-        <div class="saved-workouts-grid">
-          <article class="saved-workout-card">
-            <div class="saved-workout-icon"><i class="fa-solid fa-dumbbell"></i></div>
-            <h3>Glutes Builder</h3>
-            <p>Strength • 35 mins</p>
-          </article>
-
-          <article class="saved-workout-card">
-            <div class="saved-workout-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-            <h3>HIIT Burn</h3>
-            <p>Cardio • 20 mins</p>
-          </article>
-
-          <article class="saved-workout-card">
-            <div class="saved-workout-icon"><i class="fa-solid fa-person-running"></i></div>
-            <h3>5K Prep</h3>
-            <p>Running • 30 mins</p>
-          </article>
+      <div class="profile-quick-stats">
+        <div class="profile-stat">
+          <strong>128</strong>
+          <span>Followers</span>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="profile-panel" id="profile-panel-media">
-      <div class="profile-section-card">
-        <h2>Media</h2>
+  <section class="profile-tabs-card">
+    <div class="profile-tabs">
+      <button class="profile-tab active" type="button" data-tab="services">Services</button>
+      <button class="profile-tab" type="button" data-tab="posts">Posts</button>
+      <button class="profile-tab" type="button" data-tab="media">Media</button>
+      <button class="profile-tab" type="button" data-tab="workouts">Workouts</button>
+    </div>
+  </section>
 
-        <div class="media-grid">
-          <article class="media-card">
-            <img src="logo2.png" alt="Uploaded media">
-          </article>
+  <section class="profile-panel active" id="profile-panel-services">
+    <div class="profile-section-card">
+      <h2>Services Offered</h2>
 
-          <article class="media-card media-card-video">
-            <img src="logo2.png" alt="Video thumbnail">
-            <span class="media-play-badge">
-              <i class="fa-solid fa-play"></i>
-            </span>
-          </article>
-
-          <article class="media-card">
-            <img src="logo2.png" alt="Uploaded media">
-          </article>
-
-          <article class="media-card media-card-video">
-            <img src="logo2.png" alt="Video thumbnail">
-            <span class="media-play-badge">
-              <i class="fa-solid fa-play"></i>
-            </span>
-          </article>
-        </div>
+      <div class="profile-service-tags">
+        <span class="service-tag">Workouts</span>
+        <span class="service-tag">Nutrition Advice</span>
+        <span class="service-tag">Coaching Plans</span>
+        <span class="service-tag">Online Coaching</span>
+        <span class="service-tag">1:1 PT Sessions</span>
+        <span class="service-tag">Custom Plans</span>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="profile-panel-posts">
+    <div class="profile-posts">
+      <article class="post">
+        <div class="post-header">
+          <div class="avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="post-info">
+            <span class="username">Esther</span>
+            <span class="time">2 min ago</span>
+          </div>
+        </div>
+        <p class="post-text">Morning run done ✅ Back to routine.</p>
+      </article>
+
+      <article class="post">
+        <div class="post-header">
+          <div class="avatar">
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="post-info">
+            <span class="username">Esther</span>
+            <span class="time">1 hour ago</span>
+          </div>
+        </div>
+        <p class="post-text">Leg day today 🔥</p>
+        <img src="logo2.png" alt="Post image" class="post-img">
+      </article>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="profile-panel-media">
+    <div class="profile-section-card">
+      <h2>Media</h2>
+
+      <div class="media-grid">
+        <article class="media-card">
+          <img src="logo2.png" alt="Uploaded media">
+        </article>
+
+        <article class="media-card media-card-video">
+          <img src="logo2.png" alt="Video thumbnail">
+          <span class="media-play-badge">
+            <i class="fa-solid fa-play"></i>
+          </span>
+        </article>
+
+        <article class="media-card">
+          <img src="logo2.png" alt="Uploaded media">
+        </article>
+
+        <article class="media-card media-card-video">
+          <img src="logo2.png" alt="Video thumbnail">
+          <span class="media-play-badge">
+            <i class="fa-solid fa-play"></i>
+          </span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="profile-panel" id="profile-panel-workouts">
+    <div class="profile-section-card">
+      <h2>Workouts</h2>
+
+      <div class="saved-workouts-grid">
+        <article class="saved-workout-card">
+          <div class="saved-workout-icon"><i class="fa-solid fa-dumbbell"></i></div>
+          <h3>Glutes Builder</h3>
+          <p>Strength • 35 mins</p>
+        </article>
+
+        <article class="saved-workout-card">
+          <div class="saved-workout-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+          <h3>HIIT Burn</h3>
+          <p>Cardio • 20 mins</p>
+        </article>
+
+        <article class="saved-workout-card">
+          <div class="saved-workout-icon"><i class="fa-solid fa-person-running"></i></div>
+          <h3>5K Prep</h3>
+          <p>Running • 30 mins</p>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
 
   <nav class="bottom-nav" aria-label="Mobile navigation">
     <button class="icon-btn messages-toggle" type="button" aria-label="Messages">
