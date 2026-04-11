@@ -449,7 +449,6 @@ body.profile .post-text {
   body.profile #profile-panel-services {
     margin-top: 0;
     margin-bottom: 1rem;
-     display: none;
   }
 
   body.profile #profile-panel-media {
@@ -506,6 +505,9 @@ body.profile .profile-name-row {
 body.profile .profile-bio {
   margin: 0.375rem 0 0;
 }
+   
+body.profile .profile-tabs {
+   display: none;
 }
 
 @media (max-width: 900px) {
