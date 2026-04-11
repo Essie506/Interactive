@@ -409,6 +409,37 @@ body.profile .post-text {
   margin: 0.625rem 0;
 }
 
+
+body.profile .profile-tab.active {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+body.profile .profile-service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+body.profile .service-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.875rem;
+  border-radius: var(--radius-round);
+  background: rgba(7, 153, 146, 0.12);
+  color: #091a3a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1;
+  box-shadow: var(--shadow-soft);
+}
+
+
 @media (max-width: 500px) {
   .btn-soft {
     min-width: 8.4375rem;
