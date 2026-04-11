@@ -526,6 +526,9 @@ body.profile .profile-bio {
   body.profile #profile-panel-media {
     margin-top: 0.75rem;
   }
+  body.profile #profile-panel-posts {
+    margin-bottom: 0.75rem;
+}
 }
 
 @media (max-width: 475px) {
