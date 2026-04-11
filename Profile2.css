@@ -27,7 +27,7 @@ body.profile .profile-page {
 
 body.profile .profile-hero-card,
 body.profile .profile-section-card {
-  background: rgba(255, 255, 255, 0.68);
+  background: white;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--shadow-soft);
