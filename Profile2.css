@@ -187,11 +187,7 @@ body.profile .profile-bio {
 
 .profile-edit-btn {
   position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  z-index: 5;
-  width: 2.625rem;
-  height: 2.625rem;
+   z-index: 3;
 }
 
 body.profile .profile-tabs {
