@@ -109,7 +109,7 @@ gap: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.2px;
   transition: background 0.22s ease;
-   font-size: 1.15rem;
+   font-size: var(--main-font-size);
 }
 
 .menu > ul > li > a i {
@@ -185,13 +185,13 @@ gap: 0.75rem;
   justify-content: center;
   background: rgba(56, 173, 169, 0.15);
   color: var(--text-dark);
-  font-size: 1.2rem;
+  font-size: var(--main-font-size);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
 }
 
 .menu-profile-name {
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: var(--main-font-size);
   color: var(--text-dark);
 }
 
@@ -232,7 +232,7 @@ body.feed .menu-toggle::before {
 }
 
 body.feed .menu-toggle i {
-  font-size: 1.2rem;
+  font-size: var(--main-font-size);
   z-index: 2000;
   color: var(--text-dark);
 }
@@ -257,7 +257,7 @@ body.feed .menu-toggle i {
 }
 
 .menu-search i {
-  font-size: 1.2rem;
+  font-size: var(--main-font-size);
   color: rgba(9, 26, 58, 0.7);
   flex-shrink: 0;
 }
