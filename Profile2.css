@@ -1,6 +1,19 @@
 /* =========================
    PROFILE PAGE
 ========================= */
+body.profile .self-only,
+body.profile .visitor-only {
+  display: none;
+}
+
+body.profile[data-viewer="self"] .self-only {
+  display: inline-flex;
+}
+
+body.profile[data-viewer="visitor"] .visitor-only {
+  display: inline-flex;
+}
+
 body.profile {
   background: var(--index-bg);
   min-height: 100dvh;
