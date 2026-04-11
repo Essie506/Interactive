@@ -91,6 +91,7 @@ body.profile .profile-top-icon-btn i {
 body.profile .profile-avatar-wrap {
   display: flex;
   justify-content: center;
+   
 }
 
 body.profile .profile-avatar {
@@ -220,10 +221,6 @@ body.profile .profile-tabs {
   justify-content: center; /* 👈 THIS is the key */
   align-items: center;
   overflow-x: auto;
-}
-
-body.profile .profile-tabs::-webkit-scrollbar {
-  display: none;
 }
 
 body.profile .profile-tabs-inline {
