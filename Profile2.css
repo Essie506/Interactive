@@ -219,6 +219,9 @@ body.profile .profile-tabs {
   align-items: center;
   justify-content: flex-start;
   gap: 0.25rem;
+  justify-content: center; /* 👈 THIS is the key */
+  align-items: center;
+  overflow-x: auto;
 }
 
 body.profile .profile-tabs::-webkit-scrollbar {
