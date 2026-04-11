@@ -466,14 +466,18 @@ body.profile .post-text {
     text-align: left;
   }
 
-  body.profile .profile-actions {
-    grid-area: stats;
-    justify-content: flex-end;
-  }
-
   body.profile .profile-name-row {
     justify-content: flex-start;
     align-items: center;
+  }
+
+  body.profile .profile-bio {
+    margin: 0.375rem 0 0;
+  }
+
+  body.profile .profile-actions {
+    grid-area: stats;
+    justify-content: flex-end;
   }
 
   body.profile .profile-tabs-inline {
@@ -542,7 +546,7 @@ body.profile .post-text {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem 0.75rem;
     justify-content: center;
-    align-items: left;
+    align-items: start;
   }
 
   body.profile .service-link {
