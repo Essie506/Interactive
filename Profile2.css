@@ -436,6 +436,18 @@ body.profile .post-text {
   margin-top: 0.75rem;
 }
 
+     /* place sections into columns */
+  #profile-panel-services {
+    grid-column: 2;
+  }
+
+  .profile-main-column {
+    grid-column: 1;
+  }
+
+  .profile-side-column {
+    grid-column: 2;
+  }
     body.profile .profile-main-column,
   body.profile .profile-side-column {
     display: flex;
