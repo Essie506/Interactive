@@ -423,41 +423,34 @@ body.profile .post-text {
 }
 
 @media (min-width: 901px) {
-
-body.profile #profile-panel-services,
-body.profile #profile-panel-posts,
-body.profile #profile-panel-media,
-body.profile #profile-panel-workouts {
-  align-self: start;
-  margin-top: 0;
-}
-
-body.profile #profile-panel-posts .profile-section-card,
-body.profile #profile-panel-services .profile-section-card {
-  margin-top: 0;
-   margin-bottom: 0;
-}
-
   body.profile .profile-page {
     max-width: 68.75rem;
     padding: calc(var(--bar-height-large) + 1.125rem) 1rem 2.5rem;
   }
 
-   body.profile .profile-lower-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 0.95fr);
-  gap: 1rem;
-  align-items: start;
-  margin-top: 0.75rem;
-}
-
-     /* place sections into columns */
-  #profile-panel-services {
-    grid-column: 2;
-     grid-row: 1;
+  body.profile .profile-lower-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 0.95fr);
+    gap: 1rem;
+    align-items: start;
+    margin-top: 0.75rem;
   }
 
-    body.profile #profile-panel-posts {
+  body.profile #profile-panel-services,
+  body.profile #profile-panel-posts,
+  body.profile #profile-panel-media,
+  body.profile #profile-panel-workouts {
+    display: block;
+    align-self: start;
+    margin: 0;
+  }
+
+  body.profile #profile-panel-services {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  body.profile #profile-panel-posts {
     grid-column: 1;
     grid-row: 1;
   }
@@ -472,33 +465,15 @@ body.profile #profile-panel-services .profile-section-card {
     grid-row: 2;
   }
 
-
-  .profile-main-column {
-    grid-column: 1;
-  }
-
-  .profile-side-column {
-    grid-column: 2;
-  }
-    body.profile .profile-main-column,
-  body.profile .profile-side-column {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    min-width: 0;
-  }
-
-  body.profile .profile-lower-grid .profile-panel {
-    display: block;
-  }
-
-    body.profile .profile-main-column .profile-posts,
-  body.profile .profile-main-column .profile-section-card,
-  body.profile .profile-side-column .profile-section-card {
+  body.profile #profile-panel-posts .profile-section-card,
+  body.profile #profile-panel-services .profile-section-card,
+  body.profile #profile-panel-media .profile-section-card,
+  body.profile #profile-panel-workouts .profile-section-card {
+    margin: 0;
     width: 100%;
   }
 
-  body.profile .profile-side-column .saved-workouts-grid {
+  body.profile #profile-panel-workouts .saved-workouts-grid {
     grid-template-columns: 1fr;
   }
 
@@ -554,7 +529,7 @@ body.profile #profile-panel-services .profile-section-card {
     grid-template-columns: repeat(2, 1fr);
   }
 
-   body.profile .profile-service-links {
+  body.profile .profile-service-links {
     justify-content: flex-start;
     gap: 0.25rem;
   }
