@@ -163,43 +163,6 @@ body.profile .profile-bio {
   line-height: 1.45;
 }
 
-body.profile .profile-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-}
-
-body.profile .profile-quick-stats {
-  display: flex;
-  gap: 0.5rem;
-}
-
-body.profile .profile-stat {
-  background: transparent;
-  border-radius: 0;
-  padding: 0.75rem 0.875rem;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-width: 6.75rem;
-}
-
-body.profile .profile-stat strong {
-  display: flex;
-  color: #091a3a;
-  font-size: 1.05rem;
-}
-
-body.profile .profile-stat span {
-  display: flex;
-  margin-top: 0.25rem;
-  color: rgba(9, 26, 58, 0.7);
-  font-size: 0.8125rem;
-}
-
 .profile-edit-btn {
   position: absolute;
   top: 0.75rem;
