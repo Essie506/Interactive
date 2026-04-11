@@ -243,17 +243,31 @@ body.profile .profile-tab {
   border: 1px solid transparent;
   border-radius: 0;
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+   opacity: 0.7;
 }
 
-body.profile .profile-tab:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.45);
-  border-color: rgba(9, 26, 58, 0.08);
+.profile-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: #091a3a;
+  transition: width 0.2s ease;
 }
 
-body.profile .profile-tab.active {
-  background: rgba(255, 255, 255, 0.78);
-  border-color: rgba(9, 26, 58, 0.12);
+.profile-tab.active,
+.profile-tab:hover {
+  opacity: 1;
+}
+
+.profile-tab:hover::after {
+  width: 100%;
+}
+
+.profile-tab.active::after {
+  width: 100%;
 }
 
 body.profile .profile-panel {
@@ -303,7 +317,6 @@ body.profile .service-link {
   font-weight: 700;
   line-height: 1;
   border-radius: 0;
-  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
 .service-link:hover {
