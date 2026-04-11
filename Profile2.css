@@ -423,6 +423,20 @@ body.profile .post-text {
 }
 
 @media (min-width: 901px) {
+
+body.profile #profile-panel-services,
+body.profile #profile-panel-posts,
+body.profile #profile-panel-media,
+body.profile #profile-panel-workouts {
+  align-self: start;
+  margin-top: 0;
+}
+
+body.profile #profile-panel-posts .profile-section-card,
+body.profile #profile-panel-services .profile-section-card {
+  margin-top: 0;
+}
+
   body.profile .profile-page {
     max-width: 68.75rem;
     padding: calc(var(--bar-height-large) + 1.125rem) 1rem 2.5rem;
