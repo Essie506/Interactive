@@ -435,6 +435,7 @@ body.profile #profile-panel-workouts {
 body.profile #profile-panel-posts .profile-section-card,
 body.profile #profile-panel-services .profile-section-card {
   margin-top: 0;
+   margin-bottom: 0;
 }
 
   body.profile .profile-page {
@@ -551,6 +552,22 @@ body.profile #profile-panel-services .profile-section-card {
 
   body.profile .saved-workouts-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+   body.profile .profile-service-links {
+    justify-content: flex-start;
+    gap: 0.25rem;
+  }
+
+  body.profile .service-link {
+    padding: 0.5rem 0.75rem;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  body.profile .profile-services-card {
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
   }
 }
 
