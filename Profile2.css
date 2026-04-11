@@ -161,7 +161,6 @@ body.profile .profile-bio {
   width: min(100%, 33.75rem);
   color: #091a3a;
   line-height: 1.45;
-  text-align: center;
 }
 
 .profile-edit-btn {
