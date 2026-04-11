@@ -569,6 +569,7 @@ body.sign-up .input-field {
   background: var(--navbar-bg);
   overflow: hidden;
   min-height: var(--bar-height);
+   font-size: var(main-font-size);
 }
 
 .composer-header::after {
