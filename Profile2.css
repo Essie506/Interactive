@@ -202,11 +202,12 @@ body.profile .profile-stat span {
 }
 
 .profile-edit-btn {
-  position: static;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
   z-index: 5;
-  width: 2.75rem;
-  height: 2.75rem;
-  border-radius: 0;
+  width: 2.625rem;
+  height: 2.625rem;
 }
 
 body.profile .profile-tabs {
