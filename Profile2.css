@@ -287,7 +287,8 @@ body.profile .profile-services-card {
 body.profile .profile-service-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.35rem;
+   justify-content: center;
 }
 
 body.profile .service-link {
@@ -295,8 +296,8 @@ body.profile .service-link {
   align-items: center;
   justify-content: center;
   padding: 0.65rem 0.9rem;
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(9, 26, 58, 0.08);
+ background: transparent;
+  border: 1px solid transparent;
   color: #091a3a;
   text-decoration: none;
   font-weight: 700;
@@ -305,10 +306,10 @@ body.profile .service-link {
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 
-body.profile .service-link:hover {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.82);
-  border-color: rgba(9, 26, 58, 0.14);
+.service-link:hover {
+  background: rgba(255,255,255,0.9);
+  border-color: rgba(9,26,58,0.14);
+  letter-spacing: 0.2px;
 }
 
 body.profile .profile-posts {
