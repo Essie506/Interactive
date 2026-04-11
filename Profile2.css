@@ -236,14 +236,6 @@ body.profile .profile-tab::after {
   content: none;
 }
 
-body.profile .profile-panel {
-  display: none;
-}
-
-body.profile .profile-panel.active {
-  display: block;
-}
-
 body.profile .profile-section-card {
   padding: 1rem;
   overflow-x: clip;
