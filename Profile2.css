@@ -566,4 +566,43 @@ body.profile .post-text {
   body.profile .profile-tabs-inline {
     justify-content: flex-start;
   }
+
+  body.profile .profile-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0.25rem;
+  }
+
+  body.profile .profile-tab {
+    flex: 0 0 auto;
+    min-width: 0;
+    padding: 0.2rem 0;
+    justify-content: center;
+  }
+  body.profile .profile-service-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+    justify-items: center;
+    align-items: center;
+  }
+
+  body.profile .service-link {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+  body.profile .profile-hero-card {
+    padding-top: 0.65rem;
+  }
+
+  body.profile .profile-avatar-wrap {
+    margin-top: -0.35rem;
+    margin-bottom: 0.1rem;
 }
+   }
