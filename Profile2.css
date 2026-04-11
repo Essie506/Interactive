@@ -236,11 +236,10 @@ body.profile .profile-tabs-inline {
 body.profile .profile-tab {
   display: inline-flex;
   align-items: center;
-   justify-content: space-between;
-  gap: 0.5rem; /* 👈 controls space between icon + text */
+  gap: 0.35rem; /* 👈 controls space between icon + text */
   flex: 1;
   min-width: max-content;
-  padding: 0.6rem 0;
+  padding: 0.6rem 0.5;
   font-weight: 700;
   font-size: 1rem;
   color: #091a3a;
@@ -336,6 +335,7 @@ body.profile .service-link {
   font-weight: 700;
   line-height: 1;
   border-radius: 0;
+   gap:0.35rem;
 }
 
 .service-link::before {
