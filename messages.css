@@ -213,6 +213,7 @@ body.messages-open {
 
 .message-thread-name {
   color: var(--messages-text);
+   font-size: 1.05rem;
   font-weight: 700;
 }
 
