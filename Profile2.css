@@ -637,4 +637,7 @@ body.profile #profile-panel-services .profile-section-card {
   body.profile .profile-side-column {
     display: block;
   }
+  body.profile #profile-panel-services .profile-section-card {
+    margin-bottom: 0.75rem;
+  }
 }
