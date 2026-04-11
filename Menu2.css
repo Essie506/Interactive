@@ -324,35 +324,3 @@ body.feed .menu-toggle i {
 .submenu li + li a {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
-
-@media (min-width: 901px) {
-  .menu {
-    top: var(--bar-height-large);
-    width: min(22.5rem, 32vw);
-    height: calc(100dvh - var(--bar-height-large));
-    padding: 0 1.125rem 1.5rem;
-  }
-
-  .menu > ul > li > a,
-  .menu-profile-info,
-  .menu-search,
-  .submenu li a {
-    width: calc(100% + 2.25rem);
-    margin-left: -1.125rem;
-    margin-right: -1.125rem;
-  }
-
-  .menu-profile-info {
-    padding: 0.75rem 1.125rem 0.875rem;
-  }
-
-  .menu > ul > li > a,
-  .menu-search {
-    padding: 0.875rem 1.125rem;
-    min-height: 3.125rem;
-  }
-
-  .submenu li a {
-    padding: 0.75rem 1.125rem 0.75rem 2rem;
-  }
-}
