@@ -428,6 +428,14 @@ body.profile .post-text {
     padding: calc(var(--bar-height-large) + 1.125rem) 1rem 2.5rem;
   }
 
+   body.profile .profile-lower-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 0.95fr);
+  gap: 1rem;
+  align-items: start;
+  margin-top: 0.75rem;
+}
+
     body.profile .profile-main-column,
   body.profile .profile-side-column {
     display: flex;
