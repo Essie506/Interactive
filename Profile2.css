@@ -449,6 +449,7 @@ body.profile .post-text {
   body.profile #profile-panel-services {
     margin-top: 0;
     margin-bottom: 1rem;
+     display: none;
   }
 
   body.profile #profile-panel-media {
@@ -457,13 +458,11 @@ body.profile .post-text {
 
   body.profile .profile-service-links {
     justify-content: flex-start;
-        display: none;
   }
 
   body.profile .service-link {
     justify-content: flex-start;
     text-align: left;
-     display: none;
   }
 
   body.profile .profile-side-column .saved-workouts-grid {
