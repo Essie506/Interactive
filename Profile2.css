@@ -39,9 +39,9 @@
 
   --profile-icon-btn-size: 2.75rem;
   --profile-avatar-size: clamp(5.5rem, 11vw, 6.875rem);
-  --profile-services-width: 14rem;
-  --profile-services-width-min: 12rem;
-  --profile-services-width-max: 16rem;
+  --profile-services-width: 11rem;
+  --profile-services-width-min: 9.5rem;
+  --profile-services-width-max: 12rem;
   --profile-bio-max: 33.75rem;
   --profile-media-badge-size: 2.375rem;
 
@@ -585,27 +585,25 @@ body.profile .post-img {
     display: none;
   }
 
-  body.profile .profile-hero-card {
-    display: grid;
-    grid-template-columns: auto 1fr var(--profile-services-width);
-    gap: var(--profile-gap-2xl);
-    align-items: start;
-  }
+ body.profile .profile-hero-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(9.5rem, 11rem);
+  gap: 1rem;
+  align-items: start;
+}
 
   body.profile .profile-avatar-wrap {
     grid-column: 1;
     align-self: start;
   }
 
-  body.profile .profile-info-inner {
-    display: grid;
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(var(--profile-services-width-min), var(--profile-services-width-max));
-    gap: var(--profile-gap-xl);
-    align-items: start;
-    min-width: 0;
-  }
+body.profile .profile-info-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(9.5rem, 11rem);
+  gap: 1rem;
+  align-items: start;
+  min-width: 0;
+}
 
   body.profile .profile-main-info {
     grid-column: 2;
@@ -654,7 +652,7 @@ body.profile .post-img {
   }
 
   body.profile .profile-side-column .saved-workout-card {
-    aspect-ratio: 4 / 2;
+    aspect-ratio: 4 / 1.2;
     padding: 0;
     overflow: hidden;
   }
@@ -720,9 +718,9 @@ body.profile .post-img {
     box-sizing: border-box;
   }
 
-  body.profile .profile-hero-card {
-    gap: var(--profile-gap-sm);
-  }
+ body.profile .profile-hero-card {
+  margin-bottom: var(--profile-gap-lg);
+}
 
   body.profile .profile-bio {
     margin: 0.75rem auto 0;
