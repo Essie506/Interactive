@@ -392,7 +392,7 @@ body.profile .service-link {
   text-decoration: none;
   font-weight: 700;
   line-height: 1;
-    font-size: clamp(0.85rem, 0.9vw, 0.95rem);
+    font-size: clamp(0.90rem, 0.95vw, 1rem);
 }
 
 body.profile .service-link::before {
@@ -475,8 +475,8 @@ body.profile .saved-workouts-grid::-webkit-scrollbar {
 }
 
 body.profile .saved-workout-card {
-  flex: 0 0 11rem;
-  width: 11rem;
+  flex: 0 0 clamp(9rem, 22vw, 12rem);
+  width: clamp(9rem, 22vw, 12rem);
   aspect-ratio: 1 / 1;
   scroll-snap-align: start;
   text-decoration: none;
@@ -837,16 +837,17 @@ body.profile .profile-bio {
     justify-content: center;
   }
 
-  body.profile .profile-service-links {
+   body.profile .profile-service-links {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-content: stretch;
     gap: 0.6rem 0.75rem;
+    width: 100%;
   }
 
   body.profile .service-link {
-    width: auto;
-    justify-content: flex-start;
-    text-align: left;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: clamp(0.95rem, 1vw, 1.05rem);
   }
 }
