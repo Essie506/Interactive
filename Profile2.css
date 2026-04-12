@@ -420,6 +420,12 @@ body.profile .media-grid {
   gap: var(--profile-gap-md);
 }
 
+body.profile .profile-side-column .saved-workouts-grid {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--profile-gap-md);
+}
+
 body.profile .media-card {
   position: relative;
   overflow: hidden;
