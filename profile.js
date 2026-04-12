@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const followBtn = document.getElementById("followBtn");
   const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
 const profilePhotoInput = document.getElementById("profilePhotoInput");
+  const shareProfileBtn = document.getElementById("shareProfileBtn");
 
   function setActiveProfileTab(tabName) {
     tabs.forEach((tab) => {
@@ -54,5 +55,26 @@ if (uploadPhotoBtn && profilePhotoInput) {
 
     console.log("Selected profile image:", file.name);
     // later: preview + upload to storage
+  });
+}
+
+if (shareProfileBtn) {
+  shareProfileBtn.addEventListener("click", async () => {
+    const shareData = {
+      title: "Interactive Fitness Profile",
+      text: "Check out this profile on Interactive Fitness",
+      url: window.location.href
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        await navigator.clipboard.writeText(window.location.href);
+        alert("Profile link copied");
+      }
+    } catch (error) {
+      console.log("Share cancelled or failed", error);
+    }
   });
 }
