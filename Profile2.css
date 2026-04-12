@@ -324,7 +324,7 @@ body.profile .profile-tab {
 
 body.profile .profile-tab i {
   font-size: 0.85rem;
-  color: var(--dark-blue);
+  color: var(--text-dark);
   transition: color 0.16s ease, transform 0.16s ease;
 }
 
