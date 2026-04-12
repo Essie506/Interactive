@@ -167,10 +167,13 @@ body.profile .profile-gym {
 }
 
 body.profile .profile-info-inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--profile-gap-lg);
-  width: 100%;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(var(--profile-services-width-min), var(--profile-services-width-max));
+  gap: var(--profile-gap-xl);
+  align-items: start;
+  min-width: 0;
 }
 
 body.profile .profile-top-bar {
@@ -654,6 +657,10 @@ body.profile .profile-info-inner {
   gap: var(--profile-gap-xl);
   align-items: start;
   min-width: 0;
+    width: 100%;
+  max-width: none;
+  margin: 0;
+  justify-self: stretch;
 }
    
   body.profile .profile-main-info {
