@@ -627,7 +627,6 @@ body.profile .profile-info-inner {
     display: block;
   }
 }
-}
 
 @media (max-width: 475px) {
   body.profile .profile-page {
