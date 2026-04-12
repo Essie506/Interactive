@@ -39,7 +39,7 @@
 
   --profile-icon-btn-size: 2.75rem;
   --profile-avatar-size: clamp(5.5rem, 11vw, 6.875rem);
- --profile-services-width: 12rem;
+ --profile-services-width: 11rem;
 --profile-services-width-min: 10rem;
 --profile-services-width-max: 13rem;
    
@@ -688,7 +688,8 @@ body.profile .post-img {
     width: 100%;
     min-width: 0;
     align-self: center;
-    justify-self: stretch;
+    justify-self: end;
+     padding-left: 1rem;
   }
 
   body.profile .profile-hero-services .profile-service-links,
