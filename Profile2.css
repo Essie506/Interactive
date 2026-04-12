@@ -204,8 +204,6 @@ body.profile .profile-tabs {
   margin: 0;
   overflow-x: auto;
   scrollbar-width: none;
-  align-items: center;
-  justify-content: center;
   gap: 0.25rem;
   justify-content: center; /* 👈 THIS is the key */
   align-items: center;
