@@ -221,8 +221,25 @@ body.profile .profile-top-icon-btn i {
 }
 
 body.profile .profile-avatar-wrap {
+  position: relative;
   display: flex;
   justify-content: center;
+}
+
+body.profile #uploadPhotoBtn {
+  position: absolute;
+  right: -0.25rem;
+  bottom: -0.25rem;
+  z-index: 2;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+body.profile .profile-top-right-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--profile-gap-sm);
+  margin-left: auto;
 }
 
 body.profile .profile-avatar {
