@@ -207,7 +207,6 @@ body.profile .profile-tabs {
   gap: 0.25rem;
   justify-content: center; /* 👈 THIS is the key */
   align-items: center;
-  overflow-x: auto;
 }
 
 body.profile .profile-tabs-inline {
@@ -448,12 +447,12 @@ body.profile .post-text {
 }
 
 @media (min-width: 901px) {
-  body.profile .profile-content-grid {
+
+    body.profile .profile-info-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.6fr) minmax(18rem, 0.95fr);
-    gap: 1rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1rem 1.25rem;
     align-items: start;
-    margin-top: 1rem;
   }
 
   body.profile .profile-main-column,
@@ -463,10 +462,6 @@ body.profile .post-text {
     gap: 1rem;
     min-width: 0;
   }
-
-
-
-
    
   body.profile #profile-panel-posts,
   body.profile #profile-panel-workouts,
@@ -500,16 +495,10 @@ body.profile .post-text {
     display: none;
   }
 
-  body.profile .profile-hero-card {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
-    grid-template-areas:
-      "info services"
-      "tabs tabs";
-    align-items: start;
-    gap: 1.25rem;
-    padding: 1.375rem;
-  }
+body.profile .profile-hero-card {
+  display: block;
+  padding: 1.375rem;
+}
 
 
 body.profile .profile-hero-services {
