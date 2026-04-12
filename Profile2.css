@@ -563,7 +563,7 @@ body.profile .post-img {
   body.profile .profile-content-grid {
     margin-top: var(--profile-gap-lg);
   }
-   
+
   body.profile #profile-panel-media {
     margin-top: var(--profile-gap-lg);
   }
@@ -571,33 +571,6 @@ body.profile .post-img {
   body.profile .profile-services-card {
     display: none;
   }
-
- body.profile .profile-side-column .saved-workouts-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: var(--profile-gap-md);
-}
-
-body.profile .profile-side-column .saved-workout-card {
-  aspect-ratio: 4 / 2;
-  padding: 0;
-  overflow: hidden;
-}
-
- body.profile .profile-side-column .saved-workouts-grid {
-  grid-template-columns: 1fr;
-}
-
-   body.profile .profile-side-column .saved-workout-card-content {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 0.75rem;
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.92),
-    rgba(255, 255, 255, 0.72),
-    transparent
-  );
 
   body.profile .profile-services-desktop {
     display: block;
@@ -674,7 +647,31 @@ body.profile .profile-side-column .saved-workout-card {
     text-align: left;
   }
 
-  body.profile .saved-workouts-grid {
+  body.profile .profile-side-column .saved-workouts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--profile-gap-md);
+  }
+
+  body.profile .profile-side-column .saved-workout-card {
+    aspect-ratio: 4 / 2;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  body.profile .profile-side-column .saved-workout-card-content {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 0.75rem;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.72),
+      transparent
+    );
+  }
+
+  body.profile #profile-panel-media .media-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -725,11 +722,6 @@ body.profile .profile-side-column .saved-workout-card {
 
   body.profile .profile-hero-card {
     gap: var(--profile-gap-sm);
-  }
-
-  body.profile .profile-avatar-wrap {
-      gap: var(--profile-gap-md);
-
   }
 
   body.profile .profile-bio {
