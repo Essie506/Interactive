@@ -228,8 +228,8 @@ body.profile .profile-avatar-wrap {
 
 body.profile #uploadPhotoBtn {
   position: absolute;
-  right: -0.25rem;
-  bottom: -0.25rem;
+  right: -1rem;
+  bottom: -1rem;
   z-index: 2;
   width: 1rem;
   height: 1rem;
