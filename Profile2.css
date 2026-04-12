@@ -387,7 +387,6 @@ body.profile .service-link::before {
 body.profile .profile-posts {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .saved-workout-card h3 {
@@ -432,7 +431,8 @@ body.profile .media-card {
   aspect-ratio: 1 / 1;
   border-radius: 0;
   background: rgba(255, 255, 255, 0.78);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-soft);  
+  margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .media-card img {
@@ -461,6 +461,7 @@ body.profile .saved-workout-card {
   box-shadow: var(--shadow-soft);
   aspect-ratio: auto;
   padding: 1rem;
+  margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .saved-workout-card-content {
@@ -507,7 +508,8 @@ body.profile .post {
   border-radius: 0;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: var(--profile-blur);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-soft); 
+  margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .post-header {
