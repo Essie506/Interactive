@@ -39,7 +39,8 @@ body.profile .profile-page {
 }
 
 body.profile .profile-hero-card,
-body.profile .profile-section-card {
+body.profile .profile-section-card, 
+body.profile .profile-tabs-card {
   background: rgba(255, 255, 255, 0.76);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
