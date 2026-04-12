@@ -30,7 +30,7 @@
   --profile-hero-pad: 0.25rem;
 
   --profile-gap-xxs: 0.25rem;
-  --profile-gap-xs: 0.35rem;
+  --profile-gap-xs: 0.3rem;
   --profile-gap-sm: 0.5rem;
   --profile-gap-md: 0.5rem;
   --profile-gap-lg: 1rem;
@@ -39,9 +39,9 @@
 
   --profile-icon-btn-size: 2.75rem;
   --profile-avatar-size: clamp(5.5rem, 11vw, 6.875rem);
-  --profile-services-width: 14rem;
-  --profile-services-width-min: 12rem;
-  --profile-services-width-max: 16rem;
+ --profile-services-width: 12rem;
+--profile-services-width-min: 10rem;
+--profile-services-width-max: 13rem;
    
   --profile-bio-max: 33.75rem;
   --profile-media-badge-size: 2.375rem;
@@ -384,7 +384,7 @@ body.profile .service-link {
   align-items: center;
   justify-content: center;
   gap: var(--profile-gap-xs);
-  padding: 0.65rem 0.9rem;
+  padding: 0.5rem 0.75rem;
   border: 1px solid transparent;
   border-radius: 0;
   background: transparent;
@@ -392,6 +392,7 @@ body.profile .service-link {
   text-decoration: none;
   font-weight: 700;
   line-height: 1;
+    font-size: clamp(0.85rem, 0.9vw, 0.95rem);
 }
 
 body.profile .service-link::before {
