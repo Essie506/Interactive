@@ -439,6 +439,7 @@ body.profile .time {
 body.profile .post-text {
   margin: 0.625rem 0;
 }
+}
 
 @media (min-width: 901px) {
   body.profile .profile-content-grid {
