@@ -416,6 +416,7 @@ body.profile .saved-workout-icon {
   align-items: center;
   justify-content: center;
   margin-bottom: var(--profile-gap-md);
+   margin-top: var(--profile-gap-md);
   border-radius: 0;
   background: var(--profile-accent-soft);
   color: var(--profile-text);
