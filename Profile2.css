@@ -647,6 +647,7 @@ body.profile .post-img {
     width: 100%;
     max-width: none;
     margin: 0;
+     padding: 1rem;
   }
 
   body.profile .profile-avatar-wrap {
@@ -685,7 +686,7 @@ body.profile .post-img {
 
      body.profile .profile-services-desktop {
   display: block;
-  text-align: left;
+  text-align: right;
 }
 
 body.profile .profile-hero-services,
