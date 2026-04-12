@@ -730,7 +730,7 @@ body.profile .post-img {
   body.profile #profile-panel-posts,
   body.profile #profile-panel-workouts,
    body.profile #profile-panel-media {
-    margin-bottom: var(--profile-gap-md);
+    margin-top: var(--profile-gap-md);
   }
 
   body.profile .profile-services-desktop {
