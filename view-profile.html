@@ -123,11 +123,26 @@
 <main class="profile-page">
   <section class="profile-hero-card">
     <div class="profile-info-inner">
+        <div class="profile-top-left-actions">
+<button type="button" class="icon-btn" id="shareProfileBtn" aria-label="Share profile">
+  <i class="fa-solid fa-share-nodes"></i>
+</button>
+        </div>      
       <div class="profile-avatar-wrap">
+        <button type="button" class="icon-btn self-only" id="uploadPhotoBtn" aria-label="Upload profile picture">
+  <i class="fa-solid fa-camera"></i>
+</button>
         <div class="profile-avatar">
           <i class="fa-solid fa-user"></i>
         </div>
       </div>
+      
+      <input
+  type="file"
+  id="profilePhotoInput"
+  accept="image/*"
+  hidden
+>
 
       <div class="profile-main-info">
         <div class="profile-name-row">
