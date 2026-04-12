@@ -39,9 +39,10 @@
 
   --profile-icon-btn-size: 2.75rem;
   --profile-avatar-size: clamp(5.5rem, 11vw, 6.875rem);
-  --profile-services-width: 11rem;
-  --profile-services-width-min: 9.5rem;
-  --profile-services-width-max: 12rem;
+  --profile-services-width: 14rem;
+  --profile-services-width-min: 12rem;
+  --profile-services-width-max: 16rem;
+   
   --profile-bio-max: 33.75rem;
   --profile-media-badge-size: 2.375rem;
 
@@ -423,10 +424,15 @@ body.profile .media-card img {
   object-fit: cover;
 }
 
-body.profile .saved-workouts-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--profile-gap-md);
+body.profile .profile-side-column .saved-workouts-grid {
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+}
+
+body.profile .profile-side-column .saved-workout-card {
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  overflow: hidden;
 }
 
 body.profile .saved-workout-card {
@@ -572,23 +578,33 @@ body.profile .post-img {
     display: none;
   }
 
-  body.profile .profile-services-desktop {
-    display: block;
-    grid-column: 3;
-    align-self: start;
-    justify-self: end;
-    width: 100%;
-    max-width: var(--profile-services-width);
-  }
+body.profile .profile-services-desktop {
+  display: block;
+  grid-column: 3;
+  align-self: start;
+  justify-self: end;
+  width: 100%;
+  max-width: var(--profile-services-width);
+  margin-left: auto;
+}
+
+body.profile .profile-hero-services .profile-service-links,
+body.profile .profile-services-desktop .profile-service-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--profile-gap-xs);
+  width: 100%;
+}
 
   body.profile .profile-services-mobile {
     display: none;
   }
 
- body.profile .profile-hero-card {
+body.profile .profile-hero-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) minmax(9.5rem, 11rem);
-  gap: 1rem;
+  grid-template-columns: auto 1fr var(--profile-services-width);
+  gap: var(--profile-gap-2xl);
   align-items: start;
 }
 
@@ -599,12 +615,14 @@ body.profile .post-img {
 
 body.profile .profile-info-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(9.5rem, 11rem);
-  gap: 1rem;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(var(--profile-services-width-min), var(--profile-services-width-max));
+  gap: var(--profile-gap-xl);
   align-items: start;
   min-width: 0;
 }
-
+   
   body.profile .profile-main-info {
     grid-column: 2;
     align-self: start;
@@ -647,7 +665,7 @@ body.profile .profile-info-inner {
 
   body.profile .profile-side-column .saved-workouts-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--profile-gap-md);
   }
 
