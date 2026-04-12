@@ -45,7 +45,10 @@ body.profile .profile-tabs-card {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--shadow-soft);
-  border-radius: 0;
+}
+
+body.profile .profile-tabs-card {
+   margin-bottom: 0.75rem;
 }
 
 /* FRONT LAYER (shared style) */
@@ -264,13 +267,6 @@ body.profile .profile-section-card {
   overflow-x: clip;
 }
 
-body.profile .profile-section-card h2 {
-  margin: 0 0 0.875rem;
-  color: #091a3a;
-  font-size: 1.05rem;
-  font-weight: 700;
-}
-
 body.profile .profile-services-card, 
 body.profile .profile-tabs-card {
   background: rgba(255, 255, 255, 0.68);
@@ -278,6 +274,8 @@ body.profile .profile-tabs-card {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: var(--shadow-soft);
   border-radius: 0;
+    padding: 1rem;
+  overflow-x: clip;
 }
 
 body.profile .profile-service-links {
