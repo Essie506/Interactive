@@ -129,7 +129,7 @@ body.profile .profile-tabs-inner {
 }
 
 body.profile .profile-tabs-card {
-gap: var(--profile-gap-md);
+margin-bottom: var(--profile-gap-md);
 
 }
 
