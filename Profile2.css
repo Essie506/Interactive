@@ -381,7 +381,7 @@ body.profile .saved-workout-card,
 body.profile .media-card {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   border-radius: 0;
   background: rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow-soft);
@@ -526,8 +526,9 @@ body.profile .post-img {
   }
 
   body.profile .saved-workouts-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   }
+}
 
   body.profile .profile-services-desktop {
     display: block;
