@@ -50,7 +50,7 @@ body.profile .profile-section-card {
 /* FRONT LAYER (shared style) */
 body.profile .profile-section-inner,
 body.profile .profile-info-inner, 
-body.profile profile-tabs-inner {
+body.profile .profile-tabs-inner {
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
   padding: 1rem;
@@ -486,13 +486,6 @@ body.profile .post-text {
   body.profile #profile-panel-media .media-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-
-body.profile .profile-info-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  width: 100%;
-}
 
    body.profile .profile-services-desktop {
     display: block;
