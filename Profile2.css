@@ -445,7 +445,6 @@ body.profile .time {
 body.profile .post-text {
   margin: 0.625rem 0;
 }
-}
 
 @media (min-width: 901px) {
   body.profile .profile-content-grid {
@@ -504,7 +503,6 @@ body.profile .profile-info-inner {
   width: 100%;
 }
 
-@media (min-width: 901px) {
   body.profile .profile-hero-card {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
