@@ -236,11 +236,12 @@ body.profile #uploadPhotoBtn {
 }
 
 body.profile .profile-top-right-actions {
-   position: absolute;
+  position: absolute;
+  top: var(--profile-inner-pad);
+  right: var(--profile-inner-pad);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--profile-gap-sm);
-  margin-left: auto;
 }
 
 body.profile .profile-avatar {
