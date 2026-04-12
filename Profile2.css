@@ -150,6 +150,7 @@ margin-bottom: var(--profile-gap-md);
   padding: var(--profile-hero-pad);
   position: relative;
   overflow-x: clip;
+   justify-items: stretch;
 }
 
 body.profile .profile-main-info {
@@ -597,6 +598,7 @@ body.profile .profile-services-desktop {
   width: 100%;
   max-width: var(--profile-services-width);
   margin-left: auto;
+   text-align: left;
 }
 
 body.profile .profile-hero-services .profile-service-links,
@@ -617,6 +619,7 @@ body.profile .profile-hero-card {
   grid-template-columns: auto 1fr var(--profile-services-width);
   gap: var(--profile-gap-2xl);
   align-items: start;
+    width: 100%;
 }
 
   body.profile .profile-avatar-wrap {
