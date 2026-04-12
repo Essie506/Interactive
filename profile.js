@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".profile-tab");
   const panels = document.querySelectorAll(".profile-panel");
   const followBtn = document.getElementById("followBtn");
+  const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
+const profilePhotoInput = document.getElementById("profilePhotoInput");
 
   function setActiveProfileTab(tabName) {
     tabs.forEach((tab) => {
@@ -40,3 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+if (uploadPhotoBtn && profilePhotoInput) {
+  uploadPhotoBtn.addEventListener("click", () => {
+    profilePhotoInput.click();
+  });
+
+  profilePhotoInput.addEventListener("change", (event) => {
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+
+    console.log("Selected profile image:", file.name);
+    // later: preview + upload to storage
+  });
+}
