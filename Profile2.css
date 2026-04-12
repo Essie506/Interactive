@@ -459,7 +459,6 @@ body.profile .media-play-badge {
 }
 
 body.profile .post {
-  margin-bottom: var(--profile-gap-md);
   padding: 0.9375rem;
   border-radius: 0;
   background: rgba(255, 255, 255, 0.6);
@@ -508,7 +507,7 @@ body.profile .post-img {
   width: 100%;
   height: auto;
   max-height: min(26.25rem, 70dvh);
-  margin-top: 0.625rem;
+  margin-top: 0.6rem;
   margin-left: 0;
   margin-right: 0;
   border-radius: 0;
