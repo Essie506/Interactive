@@ -231,13 +231,13 @@ body.profile #uploadPhotoBtn {
   right: -0.25rem;
   bottom: -0.25rem;
   z-index: 2;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1rem;
+  height: 1rem;
 }
 
 body.profile .profile-top-right-actions {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: var(--profile-gap-sm);
   margin-left: auto;
 }
@@ -538,7 +538,7 @@ body.profile .post-header {
   font-weight: bold;
 }
 
-body.profile .post-info {
+body.profile .post- {
   display: flex;
   flex-direction: column;
 }
