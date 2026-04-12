@@ -286,7 +286,7 @@ body.profile .profile-edit-btn {
 body.profile .profile-tabs {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: var(--profile-gap-xxs);
   width: 100%;
   margin: 0;
@@ -305,7 +305,7 @@ body.profile .profile-tab {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  flex: 0 0;
+  flex: 0 0 auto;
   min-width: max-content;
   padding: 0.35rem 0.4rem;
   font-weight: 700;
