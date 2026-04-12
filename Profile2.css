@@ -572,13 +572,32 @@ body.profile .post-img {
     display: none;
   }
 
-  body.profile .profile-side-column .saved-workouts-grid {
-    grid-template-columns: 1fr;
-  }
+ body.profile .profile-side-column .saved-workouts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--profile-gap-md);
+}
+
+body.profile .profile-side-column .saved-workout-card {
+  aspect-ratio: 4 / 2;
+  padding: 0;
+  overflow: hidden;
+}
 
  body.profile .profile-side-column .saved-workouts-grid {
   grid-template-columns: 1fr;
 }
+
+   body.profile .profile-side-column .saved-workout-card-content {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 0.75rem;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.92),
+    rgba(255, 255, 255, 0.72),
+    transparent
+  );
 
   body.profile .profile-services-desktop {
     display: block;
