@@ -480,12 +480,7 @@ body.profile .post-text {
   }
 
   body.profile .profile-service-links {
-    justify-content: flex-start;
-  }
-
-  body.profile .service-link {
-    justify-content: flex-start;
-    text-align: left;
+    display: none;
   }
 
   body.profile .profile-side-column .saved-workouts-grid {
