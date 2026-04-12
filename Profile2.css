@@ -658,7 +658,7 @@ body.profile .profile-info-inner {
   body.profile .profile-main-info {
     grid-column: 2;
     align-self: start;
-    max-width: 34rem;
+    max-width: none;
     text-align: left;
   }
 
@@ -677,7 +677,7 @@ body.profile .profile-info-inner {
   body.profile .profile-bio {
     margin: 0.6rem 0 0;
     width: 100%;
-    max-width: 34rem;
+    max-width: none;
   }
 
   body.profile .profile-hero-services .profile-service-links,
