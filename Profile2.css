@@ -387,7 +387,7 @@ body.profile .service-link::before {
 body.profile .profile-posts {
   display: flex;
   flex-direction: column;
-  gap: var(--profile-gap-md);
+  margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .saved-workout-card h3 {
