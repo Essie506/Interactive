@@ -623,6 +623,15 @@ body.profile .profile-info-inner {
   body.profile #profile-panel-posts {
     margin-bottom: 0.75rem;
 }
+
+  body.profile .profile-services-desktop {
+    display: none;
+  }
+
+  body.profile .profile-services-mobile {
+    display: block;
+  }
+}
 }
 
 @media (max-width: 475px) {
