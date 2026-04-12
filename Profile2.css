@@ -571,7 +571,7 @@ body.profile .profile-info-inner {
     background: rgba(255, 255, 255, 0.5);
     box-shadow: var(--shadow-soft);
   }
-}
+} 
 
 @media (max-width: 900px) {
   body.profile .profile-content-grid {
