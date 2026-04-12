@@ -464,6 +464,10 @@ body.profile .post-text {
     min-width: 0;
   }
 
+
+
+
+   
   body.profile #profile-panel-posts,
   body.profile #profile-panel-workouts,
   body.profile #profile-panel-media {
@@ -507,14 +511,37 @@ body.profile .post-text {
     padding: 1.375rem;
   }
 
-  body.profile .profile-info-inner {
-    grid-area: info;
+
+body.profile .profile-hero-services {
+    align-self: start;
+  }
+   
+   body.profile .profile-hero-services .profile-service-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  body.profile .profile-hero-services .service-link {
+    width: 100%;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+
+  body.profile .profile-info-grid {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
-    align-items: start;
     gap: 1rem 1.25rem;
-    width: 100%;
-    min-width: 0;
+    align-items: start;
+  }
+
+   
+body.profile .profile-info-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem);
+    gap: 1.25rem;
+    align-items: start;
   }
    
   body.profile .profile-avatar-wrap {
@@ -543,39 +570,6 @@ body.profile .post-text {
     margin: 0.375rem 0 0;
     width: 100%;
     max-width: 34rem;
-  }
-
-  body.profile .profile-hero-services .profile-service-links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.35rem;
-    align-items: stretch;
-    justify-content: flex-start;
-  }
-
-  body.profile .profile-hero-services .service-link {
-    width: 100%;
-    justify-content: flex-start;
-    text-align: center;
-    padding: 0.75rem 0.85rem;
-    background: transparent; 
-  }
-     body.profile .profile-tabs-card {
-    padding: 0.85rem 1.375rem;
-  }
-
-  body.profile .profile-tabs {
-    justify-content: flex-start;
-    gap: 0.35rem;
-    overflow-x: auto;
-  }
-
-  body.profile .profile-tab {
-    flex: 0 0 auto;
-    min-width: 0;
-    justify-content: center;
-    text-align: center;
-    padding: 0.7rem 0.85rem;
   }
 }
 
