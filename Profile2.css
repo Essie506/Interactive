@@ -238,7 +238,7 @@ body.profile #uploadPhotoBtn {
 body.profile .profile-top-right-actions {
    position: absolute;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   gap: var(--profile-gap-sm);
   margin-left: auto;
 }
