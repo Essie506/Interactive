@@ -528,6 +528,7 @@ body.profile .profile-bio {
 body.profile .profile-tabs {
    display: none;
 }
+}
 
 @media (max-width: 900px) {
   body.profile .profile-content-grid {
