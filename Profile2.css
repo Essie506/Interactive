@@ -603,10 +603,12 @@ body.profile .post-img {
 ========================= */
 @media (min-width: 901px) {
   body.profile .profile-info-grid {
-    display: grid;
+    display: flex;
     grid-template-columns: auto minmax(0, 1fr);
     gap: 1rem 1.25rem;
     align-items: start;
+    flex-direction: column;
+    gap: var(--profile-gap-md);
   }
 
   body.profile .profile-content-grid,
