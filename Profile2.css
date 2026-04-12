@@ -603,13 +603,11 @@ body.profile .post-img {
 ========================= */
 @media (min-width: 901px) {
   body.profile .profile-info-grid {
-    display: flex;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 1rem 1.25rem;
-    align-items: start;
-    flex-direction: column;
-    gap: var(--profile-gap-md);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: var(--profile-gap-md);
+  align-items: stretch;
+}
 
   body.profile .profile-content-grid,
   body.profile .profile-lower-grid {
@@ -632,11 +630,6 @@ body.profile .post-img {
     display: none;
   }
 
-  body.profile .profile-services-desktop {
-    display: block;
-    width: 100%;
-    text-align: left;
-  }
 
   body.profile .profile-hero-card {
     display: block;
@@ -690,31 +683,37 @@ body.profile .post-img {
     max-width: none;
   }
 
-  body.profile .profile-hero-services,
-  body.profile .profile-services-desktop {
-    grid-column: 3;
-    grid-row: 1;
-    width: 100%;
-    min-width: 0;
-    align-self: center;
-    justify-self: end;
-  }
+     body.profile .profile-services-desktop {
+  display: block;
+  text-align: left;
+}
 
-  body.profile .profile-hero-services .profile-service-links,
-  body.profile .profile-services-desktop .profile-service-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: var(--profile-gap-xs);
-    width: 100%;
-  }
+body.profile .profile-hero-services,
+body.profile .profile-services-desktop {
+  grid-column: 3;
+  grid-row: 1;
+  width: max-content;
+  max-width: 100%;
+  justify-self: end;
+  align-self: center;
+}
 
-  body.profile .profile-hero-services .service-link,
-  body.profile .profile-services-desktop .service-link {
-    width: 100%;
-    justify-content: flex-start;
-    text-align: left;
-  }
+body.profile .profile-hero-services .profile-service-links,
+body.profile .profile-services-desktop .profile-service-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--profile-gap-xs);
+  width: max-content;
+  max-width: 100%;
+}
+
+body.profile .profile-hero-services .service-link,
+body.profile .profile-services-desktop .service-link {
+  width: auto;
+  justify-content: flex-start;
+  text-align: left;
+}
 
   body.profile .saved-workout-card {
     padding: 0;
