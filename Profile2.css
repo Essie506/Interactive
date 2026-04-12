@@ -753,10 +753,6 @@ body.profile .profile-info-inner {
     box-sizing: border-box;
   }
 
- body.profile .profile-hero-card {
-  margin-bottom: var(--profile-gap-lg);
-}
-
   body.profile .profile-bio {
     margin: 0.75rem auto 0;
   }
