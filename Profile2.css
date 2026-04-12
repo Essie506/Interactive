@@ -541,10 +541,6 @@ body.profile .post-img {
     display: block;
   }
 
-  body.profile #profile-panel-media {
-    margin-top: 0.25rem;
-  }
-
   body.profile .profile-services-card {
     display: none;
   }
