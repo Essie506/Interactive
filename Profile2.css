@@ -494,16 +494,15 @@ body.profile .post-text {
 
   body.profile .profile-hero-card {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 1.25rem 1.5rem;
+    grid-template-columns: auto 1fr 14rem;
+    gap: 1.5rem;
     align-items: start;
-    padding: 1.375rem;
-  }
+}
 
-  body.profile .profile-avatar-wrap {
-    justify-content: flex-start;
-    align-self: start;
-  }
+body.profile .profile-avatar-wrap {
+  grid-column: 1;
+  align-self: start;
+}
 
   body.profile .profile-info-inner {
     display: grid;
@@ -514,12 +513,11 @@ body.profile .post-text {
   }
 
   body.profile .profile-main-info {
-    align-self: start;
-    justify-self: start;
-    text-align: left;
-    min-width: 0;
-    max-width: 34rem;
-  }
+  grid-column: 2;
+  text-align: left;
+  align-self: start;
+  max-width: 34rem;
+}
 
   body.profile .profile-name-row {
     justify-content: flex-start;
@@ -539,14 +537,14 @@ body.profile .post-text {
     max-width: 34rem;
   }
 
-  body.profile .profile-hero-services,
-  body.profile .profile-services-desktop {
-    align-self: start;
-    justify-self: end;
-    width: 100%;
-    max-width: 16rem;
-  }
-
+body.profile .profile-services-desktop {
+  grid-column: 3;
+  align-self: start;
+  justify-self: end;
+  width: 100%;
+  max-width: 14rem;
+}
+   
   body.profile .profile-hero-services .profile-service-links,
   body.profile .profile-services-desktop .profile-service-links {
     display: flex;
