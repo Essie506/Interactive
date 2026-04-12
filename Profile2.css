@@ -459,8 +459,6 @@ body.profile .media-card img {
 }
 
 body.profile .saved-workouts-grid {
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 1fr;
   display: flex;
   flex-wrap: nowrap;
   gap: var(--profile-gap-md);
@@ -470,8 +468,6 @@ body.profile .saved-workouts-grid {
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-    display: grid;
-  gap: var(--profile-gap-md);
 }
 
 body.profile .saved-workouts-grid::-webkit-scrollbar {
@@ -482,11 +478,8 @@ body.profile .saved-workout-card {
   flex: 0 0 11rem;
   width: 11rem;
   aspect-ratio: 1 / 1;
-  margin-bottom: 0;
   scroll-snap-align: start;
-  padding: 0;
-  overflow: hidden;
-    text-decoration: none;
+  text-decoration: none;
   color: inherit;
   position: relative;
   overflow: hidden;
@@ -494,10 +487,7 @@ body.profile .saved-workout-card {
   background: rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow-soft);
   padding: 1rem;
-  margin-bottom: var(--profile-gap-md);
-   max-width: 12rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 }
 
 body.profile .saved-workout-card-content {
@@ -705,12 +695,6 @@ body.profile .post-img {
     text-align: left;
   }
 
-  body.profile .saved-workouts-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: var(--profile-gap-md);
-  }
-
   body.profile .saved-workout-card {
     padding: 0;
     overflow: hidden;
@@ -799,15 +783,11 @@ body.profile .profile-bio {
   max-width: var(--profile-bio-max);
 }
 }
-   @media (max-width: 900px) and (orientation: landscape) {
-  body.profile .saved-workouts-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 
+@media (max-width: 900px) and (orientation: landscape) {
   body.profile .saved-workout-card {
-    max-width: 11rem;
-    margin-left: auto;
-    margin-right: auto;
+    flex: 0 0 10rem;
+    width: 10rem;
   }
 }
 
