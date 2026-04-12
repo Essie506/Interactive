@@ -305,9 +305,9 @@ body.profile .profile-tab {
   align-items: center;
   justify-content: center;
   gap: 0.35rem;
-  flex: 1;
+  flex: 0 0;
   min-width: max-content;
-  padding: 0.7rem 0.6rem;
+  padding: 0.35rem 0.4rem;
   font-weight: 700;
   font-size: 1rem;
   color: rgba(9, 26, 58, 0.72);
@@ -324,22 +324,15 @@ body.profile .profile-tab {
 
 body.profile .profile-tab i {
   font-size: 0.85rem;
-  color: rgba(9, 26, 58, 0.5);
+  color: var(--dark-blue);
   transition: color 0.16s ease, transform 0.16s ease;
 }
 
-body.profile .profile-tab:hover {
-  background: rgba(255, 255, 255, 0.38);
-  color: #091a3a;
-  transform: translateY(-1px);
-}
-
 body.profile .profile-tab:hover i {
-  color: rgba(9, 26, 58, 0.72);
+  color: rgba(9, 26, 58, 0.75);
 }
 
 body.profile .profile-tab.active {
-  background: rgba(255, 255, 255, 0.52);
   color: #091a3a;
 }
 
