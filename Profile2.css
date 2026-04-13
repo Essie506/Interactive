@@ -8,12 +8,6 @@
   --profile-page-pad-x-mobile: 0.125rem;
   --profile-page-pad-top: calc(var(--bar-height) + 0.625rem);
   --profile-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
-  
-   @media (max-width: 900px) {
-  :root {
-    --profile-page-pad-top: calc(var(--bar-height);
-  }
-}
 
   --profile-card-bg: rgba(255, 255, 255, 0.76);
   --profile-card-bg-soft: rgba(255, 255, 255, 0.68);
@@ -56,6 +50,11 @@
   --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 }
 
+@media (max-width: 900px) {
+  :root {
+    --profile-page-pad-top: calc(var(--bar-height) + 0.125rem);
+  }
+}
 /* =========================
    VISIBILITY MODES
 ========================= */
