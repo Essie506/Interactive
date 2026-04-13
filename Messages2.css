@@ -18,6 +18,7 @@
   --messages-btn-size: clamp(2.25rem, 4vw, 2.625rem);
   --messages-header-side: clamp(2.25rem, 4vw, 2.625rem);
   --messages-pane-split: 40%;
+   --teal-classy: #079992;
 }
 
 /* =========================
@@ -769,19 +770,6 @@ body.messages-open {
   letter-spacing: 0.25px;
 }
 
-
-.messages-corner-item:hover {
-  background: rgba(9, 26, 58, 0.04); /* your dark blue tint */
-}
-
-.messages-corner-item span {
-  position: relative;
-}
-
-.messages-corner-item:active {
-  background: rgba(7, 153, 146, 0.2);
-}
-
 .messages-corner-item i {
   font-size: 0.9rem;
   opacity: 0.75;
@@ -796,6 +784,7 @@ body.messages-open {
   bottom: 0;
   height: 1px;
   background: var(--messages-border);
+   color: var(--teal-classy);
 }
 
 .messages-corner-item.msn-mode {
