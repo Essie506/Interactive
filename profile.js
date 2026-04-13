@@ -1,13 +1,21 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".profile-tab");
   const panels = document.querySelectorAll(".profile-panel");
+
   const followBtn = document.getElementById("followBtn");
   const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
-const profilePhotoInput = document.getElementById("profilePhotoInput");
-  const shareProfileBtn = document.getElementById("shareProfileBtn");
-  const profileChevronBtn = document.getElementById("profileChevronBtn");
-const profileCornerMenu = document.getElementById("profileCornerMenu");
+  const profilePhotoInput = document.getElementById("profilePhotoInput");
 
+  const shareProfileBtn = document.getElementById("shareProfileBtn");
+
+  const profileChevronBtn = document.getElementById("profileChevronBtn");
+  const profileCornerMenu = document.getElementById("profileCornerMenu");
+
+  const profileBlockMenuBtn = document.getElementById("profileBlockMenuBtn");
+  const blockUserModal = document.getElementById("blockUserModal");
+  const blockCloseBtn = document.getElementById("blockCloseBtn");
+  const cancelBlockBtn = document.getElementById("cancelBlockBtn");
+  const confirmBlockBtn = document.getElementById("confirmBlockBtn");
 
   function setActiveProfileTab(tabName) {
     tabs.forEach((tab) => {
@@ -19,6 +27,37 @@ const profileCornerMenu = document.getElementById("profileCornerMenu");
       const isActive = panel.id === `profile-panel-${tabName}`;
       panel.classList.toggle("active", isActive);
     });
+  }
+
+  function openBlockModal() {
+    if (!blockUserModal) return;
+
+    blockUserModal.hidden = false;
+
+    requestAnimationFrame(() => {
+      blockUserModal.classList.add("open");
+    });
+
+    document.body.classList.add("modal-open");
+
+    if (profileCornerMenu) {
+      profileCornerMenu.classList.remove("open");
+    }
+
+    if (profileChevronBtn) {
+      profileChevronBtn.classList.remove("open");
+    }
+  }
+
+  function closeBlockModal() {
+    if (!blockUserModal) return;
+
+    blockUserModal.classList.remove("open");
+    document.body.classList.remove("modal-open");
+
+    window.setTimeout(() => {
+      blockUserModal.hidden = true;
+    }, 220);
   }
 
   tabs.forEach((tab) => {
@@ -45,56 +84,96 @@ const profileCornerMenu = document.getElementById("profileCornerMenu");
       }
     });
   }
-});
 
-if (uploadPhotoBtn && profilePhotoInput) {
-  uploadPhotoBtn.addEventListener("click", () => {
-    profilePhotoInput.click();
-  });
+  if (uploadPhotoBtn && profilePhotoInput) {
+    uploadPhotoBtn.addEventListener("click", () => {
+      profilePhotoInput.click();
+    });
 
-  profilePhotoInput.addEventListener("change", (event) => {
-    const file = event.target.files && event.target.files[0];
-    if (!file) return;
+    profilePhotoInput.addEventListener("change", (event) => {
+      const file = event.target.files && event.target.files[0];
+      if (!file) return;
 
-    console.log("Selected profile image:", file.name);
-    // later: preview + upload to storage
-  });
-}
+      console.log("Selected profile image:", file.name);
+      // later: preview + upload to storage
+    });
+  }
 
-if (shareProfileBtn) {
-  shareProfileBtn.addEventListener("click", async () => {
-    const shareData = {
-      title: "Interactive Fitness Profile",
-      text: "Check out this profile on Interactive Fitness",
-      url: window.location.href
-    };
+  if (shareProfileBtn) {
+    shareProfileBtn.addEventListener("click", async () => {
+      const shareData = {
+        title: "Interactive Fitness Profile",
+        text: "Check out this profile on Interactive Fitness",
+        url: window.location.href
+      };
 
-    try {
-      if (navigator.share) {
-        await navigator.share(shareData);
-      } else {
-        await navigator.clipboard.writeText(window.location.href);
-        alert("Profile link copied");
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          await navigator.clipboard.writeText(window.location.href);
+          alert("Profile link copied");
+        }
+      } catch (error) {
+        console.log("Share cancelled or failed", error);
       }
-    } catch (error) {
-      console.log("Share cancelled or failed", error);
+    });
+  }
+
+  if (profileChevronBtn && profileCornerMenu) {
+    profileChevronBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      profileCornerMenu.classList.toggle("open");
+      profileChevronBtn.classList.toggle("open");
+    });
+
+    profileCornerMenu.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+
+    document.addEventListener("click", () => {
+      profileCornerMenu.classList.remove("open");
+      profileChevronBtn.classList.remove("open");
+    });
+  }
+
+  if (profileBlockMenuBtn) {
+    profileBlockMenuBtn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      openBlockModal();
+    });
+  }
+
+  if (blockCloseBtn) {
+    blockCloseBtn.addEventListener("click", () => {
+      closeBlockModal();
+    });
+  }
+
+  if (cancelBlockBtn) {
+    cancelBlockBtn.addEventListener("click", () => {
+      closeBlockModal();
+    });
+  }
+
+  if (blockUserModal) {
+    blockUserModal.addEventListener("click", (event) => {
+      if (event.target === blockUserModal) {
+        closeBlockModal();
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && blockUserModal && !blockUserModal.hidden) {
+      closeBlockModal();
     }
   });
-}
 
-if (profileChevronBtn && profileCornerMenu) {
-  profileChevronBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    profileCornerMenu.classList.toggle("open");
-    profileChevronBtn.classList.toggle("open");
-  });
-
-  profileCornerMenu.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
-
-  document.addEventListener("click", () => {
-    profileCornerMenu.classList.remove("open");
-    profileChevronBtn.classList.remove("open");
-  });
-}
+  if (confirmBlockBtn) {
+    confirmBlockBtn.addEventListener("click", () => {
+      console.log("User blocked");
+      closeBlockModal();
+    });
+  }
+});
