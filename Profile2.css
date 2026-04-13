@@ -742,6 +742,10 @@ body.profile .post-img {
     display: block;
   }
 
+  body.profile .profile-info-inner {
+    justify-content: flex-start;
+  }
+
   body.profile .profile-services-desktop {
     display: none;
   }
