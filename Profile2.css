@@ -145,7 +145,7 @@ body.profile .profile-hero-card,
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
-  padding: var(--profile-card-pad);
+    padding: var(--profile-inner-pad);
   overflow-x: clip;
 }
 
@@ -179,7 +179,7 @@ body.profile .profile-info-inner {
   gap: var(--profile-gap-lg);
   width: 100%;
   min-width: 0;
-   padding-bottom: var(--profile-card-pad);
+   padding-bottom: var(--profile-gap-small);
 }
 
 body.profile .profile-top-bar {
@@ -649,7 +649,6 @@ body.profile .post-img {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: var(--profile-inner-pad);
   }
 
   body.profile .profile-avatar-wrap {
