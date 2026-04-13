@@ -634,10 +634,10 @@ body.messages-open {
   position: absolute;
   font-size: 0.8125rem;
   line-height: 1;
-  color: var(--messages-text);
+  color: inherit;
   pointer-events: none;
   z-index: 3;
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 /* Icon positioning */
@@ -667,32 +667,34 @@ body.messages-open {
 .back-chevron-btn.open i {
   transform: rotate(180deg);
 }
+
 #profileChevronBtn {
   overflow: visible;
   position: relative;
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
-   z-index: 1;
-     color: #22c55e;
+  z-index: 1;
+  color: #22c55e;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.2s ease;
 }
 
 #profileChevronBtn::after {
   content: "";
   position: absolute;
-  inset: -2px;
-  border-radius: inherit;
-   z-index: -1;
-
-  box-shadow:
-    0 0 0 1px rgba(34, 197, 94, 0.25),
-    0 0 10px rgba(34, 197, 94, 0.18),
-    0 0 18px rgba(34, 197, 94, 0.12);
-
+  inset: 0;
+  clip-path: inherit;
+  z-index: -1;
+  filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.35))
+          drop-shadow(0 0 12px rgba(34, 197, 94, 0.22));
   opacity: 0;
   transition: opacity 0.25s ease;
   pointer-events: none;
 }
 
-#profileChevronBtn.open::after {
+#profileChevronBtn.open::after,
+#profileChevronBtn:hover::after {
   opacity: 1;
 }
 
