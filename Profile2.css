@@ -112,6 +112,13 @@ body.profile .profile-services-card {
   box-shadow: var(--shadow-soft);
 }
 
+body.profile #profile-panel-services,
+  body.profile #profile-panel-posts,
+  body.profile #profile-panel-workouts,
+  body.profile #profile-panel-media {
+    margin-top: var(--profile-gap-md);
+  }
+
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
   background: var(--profile-card-bg-soft);
