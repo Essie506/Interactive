@@ -499,10 +499,21 @@ body.sign-up .input-field {
     display: none;
   }
 
-  .nav-left,
-  .navbar-right {
-    margin: 0.3125rem;
-  }
+.nav-left,
+.navbar-right {
+  display: flex;
+  align-items: center;
+  width: calc(var(--icon-btn-size) + 0.75rem);
+}
+
+.nav-left {
+  justify-content: flex-start;
+}
+
+.navbar-right {
+  justify-content: flex-end;
+}
+   
 
   .navbar {
     display: flex;
