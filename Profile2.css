@@ -426,8 +426,11 @@ body.profile .service-link {
 }
 
 body.profile .service-link::before {
-  color: #0a0a0a;
-  opacity: 0.6; /* keeps it subtle but not washed out */
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.75rem;
+    color: #0a0a0a;
 }
 
 /* =========================
@@ -491,7 +494,6 @@ body.profile .saved-workouts-grid {
   gap: var(--profile-gap-md);
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 0.25rem;
   scroll-snap-type: x proximity;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -513,20 +515,8 @@ body.profile .saved-workout-card {
   border-radius: 0;
   background: rgba(255, 255, 255, 0.78);
   box-shadow: var(--shadow-soft);
-  padding: 1rem;
+  padding: var(--profile-inner-pad);
   margin: 0;
-}
-
-body.profile .saved-workout-card-content {
-  position: absolute;
-  inset: auto 0 0 0;
-  padding: 0.75rem;
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.92),
-    rgba(255, 255, 255, 0.72),
-    transparent
-  );
 }
 
 body.profile .saved-workout-card h3 {
@@ -556,8 +546,7 @@ body.profile .media-play-badge {
 }
 
 body.profile .post {
-  padding: 0.9375rem;
-  border-radius: 0;
+    padding: 1rem;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
@@ -658,7 +647,7 @@ body.profile .post-img {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 1rem;
+    padding: var(--profile-inner-pad);
   }
 
   body.profile .profile-avatar-wrap {
@@ -729,7 +718,6 @@ body.profile .post-img {
   }
 
   body.profile .saved-workout-card {
-    padding: 0;
     overflow: hidden;
   }
 
