@@ -628,7 +628,6 @@ body.profile .post-img {
   body.profile .profile-lower-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--profile-gap-lg);
   }
 
   body.profile #profile-panel-posts,
