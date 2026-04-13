@@ -135,10 +135,6 @@ body.profile .profile-tabs-inner {
   padding: var(--profile-inner-pad);
 }
 
-body.profile .profile-tabs-card {
-  margin-bottom: var(--profile-gap-md);
-}
-
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
