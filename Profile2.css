@@ -11,7 +11,7 @@
   
    @media (max-width: 900px) {
   :root {
-    --profile-page-pad-top: calc(var(--bar-height)
+    --profile-page-pad-top: calc(var(--bar-height);
   }
 }
 
