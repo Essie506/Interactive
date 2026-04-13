@@ -743,16 +743,20 @@ body.messages-open {
   min-height: 2.75rem;
   padding: 0.75rem 1rem;
   border: none;
-  background: transparent;
-  color: var(--messages-text);
-  text-align: left;
-  font: inherit;
-  font-weight: 600;
+   font-family: inherit;
   font-size: clamp(0.95rem, 1vw, 1.05rem);
-  letter-spacing: 0.01em;
+  font-weight: 500;              /* softer than 600 */
+  letter-spacing: 0.3px;         /* more “title-like” */
+ color: var(--text-dark);       /* use your main text tone */
+  text-align: left;
+  transition:
+    background 0.22s ease,
+    transform 0.18s ease,
+    color 0.2s ease;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   transition: background 0.2s ease, transform 0.22s ease;
+    text-transform: none; 
 }
 
 .messages-corner-item:hover {
@@ -760,8 +764,28 @@ body.messages-open {
   transform: translateX(2px);
 }
 
+.messages-corner-item-danger {
+  color: #b91c1c;
+  letter-spacing: 0.25px;
+}
+
+
+.messages-corner-item:hover {
+  background: rgba(9, 26, 58, 0.04); /* your dark blue tint */
+}
+
+.messages-corner-item span {
+  position: relative;
+}
+
 .messages-corner-item:active {
   background: rgba(7, 153, 146, 0.2);
+}
+
+.messages-corner-item i {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .messages-corner-menu button:not(:last-child)::after {
