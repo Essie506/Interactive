@@ -46,7 +46,7 @@ body.feed .post {
   backdrop-filter: blur(10px);
   border-radius: var(--radius);
   padding: 0.9375rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.125rem;
 }
 
 body.feed .post-img {
