@@ -667,16 +667,18 @@ body.messages-open {
 .back-chevron-btn.open i {
   transform: rotate(180deg);
 }
-
-#profileChevronBtn {
+#profileChevron-btn {
+  overflow: visible;
   position: relative;
   transition: box-shadow 0.25s ease, transform 0.2s ease;
+   z-index: 1;
 }
-#profileChevronBtn::after {
+#profileChevron-btn::after {
   content: "";
   position: absolute;
   inset: -2px;
   border-radius: inherit;
+   z-index: -1;
 
   box-shadow:
     0 0 0 1px rgba(34, 197, 94, 0.25),
@@ -688,11 +690,11 @@ body.messages-open {
   pointer-events: none;
 }
 
-#profileChevronBtn.open::after {
+#profileChevron-btn.open::after {
   opacity: 1;
 }
 
-#profileChevronBtn:hover {
+#profileChevron-btn:hover {
   transform: translateY(-1px);
 }
 
