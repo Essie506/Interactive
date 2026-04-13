@@ -668,6 +668,34 @@ body.messages-open {
   transform: rotate(180deg);
 }
 
+#profileChevronBtn {
+  position: relative;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
+}
+#profileChevronBtn::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+
+  box-shadow:
+    0 0 0 1px rgba(34, 197, 94, 0.25),
+    0 0 10px rgba(34, 197, 94, 0.18),
+    0 0 18px rgba(34, 197, 94, 0.12);
+
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+#profileChevronBtn.open::after {
+  opacity: 1;
+}
+
+#profileChevronBtn:hover {
+  transform: translateY(-1px);
+}
+
 .messages-corner-menu {
   position: absolute;
   top: calc(100% + 0.375rem);
