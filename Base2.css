@@ -1,12 +1,6 @@
 /* =========================
    RESET / ROOT
 ========================= */
-:root {
-  --bar-height: clamp(64px, 7vh, 70px);
-  --bar-height-large: clamp(70px, 7.5vh, 76px);
-  /* ...rest of your variables... */
-}
-
 *,
 *::before,
 *::after {
@@ -21,6 +15,8 @@ html,
 body {
   overflow-x: hidden;
 }
+
+:root {
    --bar-height: clamp(64px, 7vh, 70px);
   --bar-height-large: clamp(70px, 7.5vh, 76px);
 
