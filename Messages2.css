@@ -595,25 +595,10 @@ body.messages-open {
 /* =========================
    CORNER TRIANGLES / MENUS
 ========================= */
-/* =========================
-   CHEVRON BUTTONS
-========================= */
+
+/* Chevron buttons */
 .chevron-btn,
 .back-chevron-btn {
-  position: absolute;
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  background: var(--glass-white);
-  backdrop-filter: blur(4px);
-  cursor: pointer;
-  z-index: 2;
-  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
-}
-
-/* Bottom-right chevron */
-.back-chevron-btn,
-.chevron-btn {
   position: absolute;
   padding: 0;
   border: none;
@@ -652,7 +637,7 @@ body.messages-open {
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
-/* Icons */
+/* Chevron icons */
 .chevron-btn i,
 .back-chevron-btn i {
   position: absolute;
@@ -727,9 +712,10 @@ body.messages-open {
   opacity: 1;
 }
 
-/* Profile corner menu */
+/* Corner menus */
 #profileCornerMenu,
-.profile-corner-menu {
+.profile-corner-menu,
+.messages-corner-menu {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.98),
@@ -745,23 +731,26 @@ body.messages-open {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 0.625rem;
   width: 100%;
   min-height: 2.75rem;
   padding: 0.75rem 1rem;
   border: none;
   background: transparent;
-  color: #091a3a;
+  color: var(--messages-text);
   text-align: left;
-  font: inherit;
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  font-family: inherit;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: none;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition:
     background 0.22s ease,
-    color 0.2s ease,
-    transform 0.18s ease;
+    transform 0.18s ease,
+    color 0.2s ease;
 }
 
 .messages-corner-item span {
@@ -769,15 +758,16 @@ body.messages-open {
 }
 
 .messages-corner-item i {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: currentColor;
-  opacity: 0.82;
+  opacity: 0.75;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .messages-corner-item:hover {
   background: rgba(242, 236, 255, 0.55);
   color: #0f8f79;
+  transform: translateX(2px);
 }
 
 .messages-corner-item:hover i {
@@ -792,7 +782,8 @@ body.messages-open {
 }
 
 .messages-corner-item-danger {
-  color: #a33a4a;
+  color: #b91c1c;
+  letter-spacing: 0.25px;
 }
 
 .messages-corner-item-danger:hover {
@@ -800,68 +791,10 @@ body.messages-open {
   color: #8f2d3f;
 }
 
-.messages-corner-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 0.625rem;
-  width: 100%;
-  min-height: 2.75rem;
-  padding: 0.75rem 1rem;
-  border: none;
-   font-family: inherit;
-  font-size: clamp(0.95rem, 1vw, 1.05rem);
-  font-weight: 500;              /* softer than 600 */
-  letter-spacing: 0.3px;         /* more “title-like” */
- color: var(--text-dark);       /* use your main text tone */
-  text-align: left;
-  transition:
-    background 0.22s ease,
-    transform 0.18s ease,
-    color 0.2s ease;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  transition: background 0.2s ease, transform 0.22s ease;
-    text-transform: none; 
-}
-
-.messages-corner-item:hover {
-  background: rgba(9, 26, 58, 0.04);
-  transform: translateX(2px);
-}
-
-.messages-corner-item-danger {
-  color: #b91c1c;
-  letter-spacing: 0.25px;
-}
-
-.messages-corner-item i {
-  font-size: 0.9rem;
-  opacity: 0.75;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
 .messages-corner-menu button:not(:last-child)::after {
   content: "";
   position: absolute;
-  left: 1rem;
-  right: 1rem;
-  bottom: 0;
-  height: 1px;
-  background: var(--messages-border);
-   color: var(--teal-classy);
-}
-
-.messages-corner-item.msn-mode {
-  color: var(--main-color-dark);
-  font-weight: 700;
-}
-
-.messages-corner-menu button:not(:last-child)::after {
-  content: "";
-  position: absolute;
-   left: 0.5rem;
+  left: 0.5rem;
   right: 0.5rem;
   bottom: 0;
   height: 1px;
@@ -872,6 +805,7 @@ body.messages-open {
   color: var(--main-color-dark);
   font-weight: 700;
 }
+
 
 /* =========================
    SPLIT MODE SHARED TONE
