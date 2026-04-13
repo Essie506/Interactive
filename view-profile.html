@@ -185,7 +185,7 @@
   </button>
 
   <div class="messages-corner-menu profile-corner-menu" id="profileCornerMenu">
-    <div class="menu-block">
+
       <button type="button" class="messages-corner-item" id="profileShareMenuBtn">
         <i class="fa-solid fa-share-nodes"></i>
         <span>Share profile</span>
@@ -200,8 +200,148 @@
         <i class="fa-solid fa-flag"></i>
         <span>Report</span>
       </button>
+
+     <button type="button" class="messages-corner-item messages-corner-item-danger" id="profileBlockMenuBtn">
+  <i class="fa-solid fa-ban"></i>
+  <span>Block user</span>
+</button>
+
+That gives you:
+
+profileViewMenuBtn
+profileShareMenuBtn
+profileMessageBtn
+profileReportBtn
+profileBlockMenuBtn
+
+And now the block button is its own proper item.
+
+Step 2: where block should sit
+
+Put Block user at the bottom of the menu.
+
+That is the best place because it feels like a secondary but serious action.
+So your order should be:
+
+View profile
+Share profile
+Message
+Report
+Block user
+
+That way the ordinary actions sit first, and the safety actions sit lower.
+
+Step 3: style the block button slightly differently
+
+You do not want it screaming bright red, but it should feel a bit more serious.
+
+Add:
+
+.messages-corner-item-danger {
+  color: #7a1020;
+}
+
+.messages-corner-item-danger i {
+  color: inherit;
+}
+
+.messages-corner-item-danger:hover,
+.messages-corner-item-danger:focus-visible {
+  background: rgba(122, 16, 32, 0.08);
+}
+
+That keeps it elegant and in your style, but gives it a warning tone.
+
+Step 4: do not add a hover note
+
+For this one, no hover note.
+
+Reason:
+
+mobile does not really do hover
+important details should not be hidden
+the explanation belongs in a confirmation modal
+
+So the menu button should just say:
+
+<span>Block user</span>
+
+Clean and simple.
+
+Step 5: show the explanation in a confirmation modal
+
+This is the part that teaches the user what “block” means.
+
+A good version would say:
+
+Block user?
+
+They won’t be able to:
+
+message you
+interact with your profile
+see your activity in the same way
+
+You can manage blocked users later in Settings.
+
+Buttons:
+
+Cancel
+Block
+
+That is much better than a tiny T&Cs link.
+
+Step 6: front-end first plan
+
+So your front-end order should be:
+
+First
+
+add the block menu item
+
+Second
+
+style it as a danger action
+
+Third
+
+build the confirmation modal
+
+Fourth
+
+later wire the JS logic
+
+That is the cleanest build order.
+
+Your first exact task
+
+Replace your current menu HTML with this:
+
+<button type="button" class="messages-corner-item" id="profileViewMenuBtn">
+  <i class="fa-solid fa-user"></i>
+  <span>View profile</span>
+</button>
+
+<button type="button" class="messages-corner-item" id="profileShareMenuBtn">
+  <i class="fa-solid fa-share-nodes"></i>
+  <span>Share profile</span>
+</button>
+
+<button type="button" class="messages-corner-item" id="profileMessageBtn">
+  <i class="fa-solid fa-comment"></i>
+  <span>Message</span>
+</button>
+
+<button type="button" class="messages-corner-item" id="profileReportBtn">
+  <i class="fa-solid fa-flag"></i>
+  <span>Report</span>
+</button>
+
+<button type="button" class="messages-corner-item messages-corner-item-danger" id="profileBlockMenuBtn">
+  <i class="fa-solid fa-ban"></i>
+  <span>Block user</span>
+</button>   
     </div>
-  </div>
 </div>
   </section>
 
