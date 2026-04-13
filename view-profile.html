@@ -818,18 +818,28 @@
 
 
 <div class="block-overlay" id="blockUserModal" hidden>
-  <div class="block-modal" role="dialog" aria-modal="true" aria-labelledby="blockUserTitle" aria-describedby="blockUserText">
-    
+  <div
+    class="block-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="blockUserTitle"
+    aria-describedby="blockUserText"
+  >
     <div class="block-modal-header">
-      <h2 id="blockUserTitle">Block user?</h2>
+      <h2 id="blockUserTitle" class="block-modal-title">Block user?</h2>
 
-      <button type="button" class="icon-btn" id="blockCloseBtn" aria-label="Close">
+      <button
+        type="button"
+        class="icon-btn block-modal-close"
+        id="blockCloseBtn"
+        aria-label="Close"
+      >
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
     <div class="block-modal-body">
-      <p id="blockUserText">
+      <p id="blockUserText" class="block-modal-text">
         They won’t be able to message you or interact with your profile in the usual way.
       </p>
 
@@ -838,16 +848,17 @@
       </p>
 
       <div class="block-modal-actions">
-        <button type="button" class="icon-btn btn-secondary" id="cancelBlockBtn">Cancel</button>
-        <button type="button" class="icon-btn btn-danger" id="confirmBlockBtn">Block user</button>
+        <button type="button" class="btn-secondary" id="cancelBlockBtn">
+          Cancel
+        </button>
+
+        <button type="button" class="btn-danger" id="confirmBlockBtn">
+          Block user
+        </button>
       </div>
     </div>
-
   </div>
 </div>
-
-
-  
 
   <script src="menu.js"></script>
   <script src="messages.js"></script>
