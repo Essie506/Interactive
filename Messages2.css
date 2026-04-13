@@ -600,13 +600,8 @@ body.messages-open {
 .messages-header,
 .messages-popup-header,
 .messages-popout-header {
-  position: absolute;
-}
-
-.profile-hero-card {
   position: relative;
 }
-
 /* =========================
    CHEVRON BUTTONS
 ========================= */
