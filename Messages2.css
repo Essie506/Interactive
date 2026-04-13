@@ -672,7 +672,9 @@ body.messages-open {
   position: relative;
   transition: box-shadow 0.25s ease, transform 0.2s ease;
    z-index: 1;
+     color: #22c55e;
 }
+
 #profileChevronBtn::after {
   content: "";
   position: absolute;
