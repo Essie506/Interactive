@@ -707,7 +707,7 @@ body.messages-open {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center; /* 👈 centers text */
+  justify-content: flex-start; /* 👈 centers text */
   gap: 0.625rem;
 
   width: 100%;
