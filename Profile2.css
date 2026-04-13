@@ -420,7 +420,7 @@ body.profile .service-link {
   border: 1px solid transparent;
   border-radius: 0;
   background: transparent;
-  color: var(--profile-text);
+  color: var(--text-dark);
   text-decoration: none;
   font-weight: 700;
   line-height: 1;
