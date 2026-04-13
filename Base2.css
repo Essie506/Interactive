@@ -69,7 +69,7 @@ body {
   --menu-icon-size: calc(var(--bar-height) * 0.60);
   --menu-padding-x: calc(var(--bar-height) * 0.28);
 
-   --main-font-size: 1.15rem
+   --main-font-size: 1.15rem;
 }
 
 html {
