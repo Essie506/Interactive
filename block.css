@@ -1,0 +1,117 @@
+.block-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3990;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 2vw, 1.25rem);
+  background: rgba(9, 26, 58, 0.26);
+  backdrop-filter: blur(0.25rem);
+  -webkit-backdrop-filter: blur(0.25rem);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+
+.block-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.block-overlay.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.block-modal {
+  position: relative;
+  width: min(26rem, 92vw);
+  max-width: 92vw;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--messages-text, #091a3a);
+  box-shadow: 0 1.125rem 2.5rem rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  transform: translateY(0.625rem) scale(0.98);
+  transition: transform 0.22s ease, opacity 0.22s ease;
+  opacity: 0;
+}
+
+.block-overlay.open .block-modal {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.block-modal-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: clamp(3.5rem, 6vh, 4.25rem);
+  padding: clamp(0.75rem, 2vw, 1rem);
+  background: var(--navbar-bg);
+}
+
+.block-modal-title {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.01em;
+}
+
+
+
+.block-modal-close {
+  justify-self: end;
+  color: #fff;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.block-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 0.9rem);
+  padding: clamp(0.9rem, 2vw, 1.1rem);
+}
+
+.block-modal-text {
+  margin: 0;
+  font-size: clamp(0.9rem, 1.1vw, 0.98rem);
+  line-height: 1.5;
+  color: rgba(9, 26, 58, 0.9);
+}
+
+.block-modal-list {
+  margin: 0;
+  padding-left: 1rem;
+  color: rgba(9, 26, 58, 0.9);
+}
+
+.block-modal-list li {
+  margin-bottom: 0.4rem;
+  line-height: 1.45;
+  font-size: clamp(0.88rem, 1vw, 0.95rem);
+}
+
+.block-modal-helper {
+  margin: 0;
+  font-size: clamp(0.8rem, 0.95vw, 0.88rem);
+  line-height: 1.45;
+  color: rgba(9, 26, 58, 0.7);
+}
+
+.block-modal-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.block-modal-actions .btn-secondary,
+.block-modal-actions .btn-danger {
+  flex: 1;
+}
