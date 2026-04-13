@@ -5,6 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
 const profilePhotoInput = document.getElementById("profilePhotoInput");
   const shareProfileBtn = document.getElementById("shareProfileBtn");
+  const profileChevronBtn = document.getElementById("profileChevronBtn");
+const profileCornerMenu = document.getElementById("profileCornerMenu");
+
 
   function setActiveProfileTab(tabName) {
     tabs.forEach((tab) => {
@@ -76,5 +79,22 @@ if (shareProfileBtn) {
     } catch (error) {
       console.log("Share cancelled or failed", error);
     }
+  });
+}
+
+if (profileChevronBtn && profileCornerMenu) {
+  profileChevronBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    profileCornerMenu.classList.toggle("open");
+    profileChevronBtn.classList.toggle("open");
+  });
+
+  profileCornerMenu.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+
+  document.addEventListener("click", () => {
+    profileCornerMenu.classList.remove("open");
+    profileChevronBtn.classList.remove("open");
   });
 }
