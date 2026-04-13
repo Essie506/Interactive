@@ -384,8 +384,7 @@ body.profile .profile-tab {
   transition: color 0.16s ease, transform 0.16s ease;
 }
 
-body.profile .profile-tab:hover,
-body.profile .profile-tab.active {
+body.profile .profile-tab:hover {
   color: #091a3a;
   text-decoration: none;
 }
@@ -396,8 +395,7 @@ body.profile .profile-tab i {
   transition: color 0.16s ease;
 }
 
-body.profile .profile-tab:hover i,
-body.profile .profile-tab.active i {
+body.profile .profile-tab:hover i {
   color: var(--text-dark);
 }
 
