@@ -1,3 +1,22 @@
+.block-root {
+  --messages-surface: rgba(255, 255, 255, 0.72);
+  --messages-surface-strong: rgba(255, 255, 255, 0.82);
+  --messages-border: rgba(0, 0, 0, 0.08);
+  --messages-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+  --messages-shadow-strong: 0 20px 46px rgba(0, 0, 0, 0.2);
+  --messages-text: #091a3a;
+  --messages-text-soft: rgba(9, 26, 58, 0.7);
+  --messages-accent-soft: rgba(56, 173, 169, 0.15);
+  --messages-outgoing: rgba(7, 153, 146, 0.14);
+  --messages-unread: #ff4d4f;
+  --messages-online: #22c55e;
+  --messages-radius: 1.125rem;
+  --messages-radius-sm: 0.875rem;
+  --messages-btn-size: clamp(2.25rem, 4vw, 2.625rem);
+  --messages-header-side: clamp(2.25rem, 4vw, 2.625rem);
+  --messages-pane-split: 40%;
+}
+
 .block-overlay {
   position: fixed;
   inset: 0;
