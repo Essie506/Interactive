@@ -1,4 +1,3 @@
-
 /* =========================
    PROFILE PAGE TOKENS
 ========================= */
@@ -40,10 +39,10 @@
 
   --profile-icon-btn-size: 2.75rem;
   --profile-avatar-size: clamp(5.5rem, 11vw, 6.875rem);
- --profile-services-width: 11rem;
---profile-services-width-min: 10rem;
---profile-services-width-max: 13rem;
-   
+  --profile-services-width: 11rem;
+  --profile-services-width-min: 10rem;
+  --profile-services-width-max: 13rem;
+
   --profile-bio-max: 33.75rem;
   --profile-media-badge-size: 2.375rem;
 
@@ -130,8 +129,7 @@ body.profile .profile-tabs-inner {
 }
 
 body.profile .profile-tabs-card {
-margin-bottom: var(--profile-gap-md);
-
+  margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .profile-section-card,
@@ -147,15 +145,15 @@ body.profile .profile-services-card {
 body.profile .profile-hero-card {
   display: flex;
   flex-direction: column;
-margin-bottom: var(--profile-gap-md);
+  margin-bottom: var(--profile-gap-md);
   padding: var(--profile-hero-pad);
   position: relative;
   overflow-x: clip;
-   justify-items: stretch;
 }
 
 body.profile .profile-main-info {
   line-height: 1.25;
+  text-align: center;
 }
 
 body.profile .profile-handle {
@@ -252,14 +250,12 @@ body.profile #uploadPhotoBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-     width: 2rem;
+  width: 2rem;
   height: 2rem;
   min-width: 2rem;
   min-height: 2rem;
-
   padding: 0;
 }
-
 
 body.profile .profile-top-right-actions {
   position: absolute;
@@ -268,11 +264,6 @@ body.profile .profile-top-right-actions {
   display: flex;
   align-items: center;
   gap: var(--profile-gap-sm);
-}
-
-
-body.profile .profile-main-info {
-  text-align: center;
 }
 
 body.profile .profile-main-info h1 {
@@ -327,10 +318,6 @@ body.profile .profile-edit-btn {
   z-index: 3;
 }
 
-body.profile .profile-hero-card {
-  position: relative;
-}
-
 body.profile .profile-hero-corner {
   position: absolute;
   right: var(--profile-inner-pad);
@@ -360,7 +347,7 @@ body.profile .profile-tabs {
   align-items: center;
   justify-content: space-between;
   gap: var(--profile-gap-xxs);
-padding: 0 0.4rem;
+  padding: 0 0.4rem;
   width: 100%;
   margin: 0;
   overflow-x: auto;
@@ -430,7 +417,7 @@ body.profile .service-link {
   text-decoration: none;
   font-weight: 700;
   line-height: 1;
-    font-size: clamp(0.90rem, 0.95vw, 1rem);
+  font-size: clamp(0.9rem, 0.95vw, 1rem);
 }
 
 body.profile .service-link::before {
@@ -467,7 +454,7 @@ body.profile .saved-workout-icon {
   align-items: center;
   justify-content: center;
   gap: var(--profile-gap-md);
-   margin-top: var(--profile-gap-md);
+  margin-top: var(--profile-gap-md);
   border-radius: 0;
   background: var(--profile-accent-soft);
   color: var(--profile-text);
@@ -485,7 +472,7 @@ body.profile .media-card {
   aspect-ratio: 1 / 1;
   border-radius: 0;
   background: rgba(255, 255, 255, 0.78);
-  box-shadow: var(--shadow-soft);  
+  box-shadow: var(--shadow-soft);
   margin-bottom: var(--profile-gap-md);
 }
 
@@ -551,7 +538,6 @@ body.profile .saved-workout-card p {
   color: rgba(9, 26, 58, 0.72);
 }
 
-
 body.profile .media-play-badge {
   position: absolute;
   top: 0.625rem;
@@ -572,19 +558,18 @@ body.profile .post {
   border-radius: 0;
   background: rgba(255, 255, 255, 0.6);
   backdrop-filter: var(--profile-blur);
-  box-shadow: var(--shadow-soft); 
+  box-shadow: var(--shadow-soft);
   margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .post-header {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
-    gap: var(--profile-gap-md);
+  gap: var(--profile-gap-md);
   font-weight: bold;
 }
 
-body.profile .post- {
+body.profile .post-info {
   display: flex;
   flex-direction: column;
 }
@@ -629,17 +614,17 @@ body.profile .post-img {
 ========================= */
 @media (min-width: 901px) {
   body.profile .profile-info-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--profile-gap-md);
-  align-items: stretch;
-}
+    display: flex;
+    flex-direction: column;
+    gap: var(--profile-gap-md);
+    align-items: stretch;
+  }
 
   body.profile .profile-content-grid,
   body.profile .profile-lower-grid {
     display: flex;
     flex-direction: column;
-    gap: var(--profile-gap-md);
+    gap: var(--profile-gap-lg);
   }
 
   body.profile #profile-panel-posts,
@@ -655,7 +640,6 @@ body.profile .post-img {
   body.profile .profile-services-mobile {
     display: none;
   }
-
 
   body.profile .profile-hero-card {
     display: block;
@@ -673,7 +657,7 @@ body.profile .post-img {
     width: 100%;
     max-width: none;
     margin: 0;
-     padding: 1rem;
+    padding: 1rem;
   }
 
   body.profile .profile-avatar-wrap {
@@ -681,6 +665,7 @@ body.profile .post-img {
     grid-row: 1;
     align-self: center;
     justify-self: start;
+    margin: 0;
   }
 
   body.profile .profile-main-info {
@@ -710,37 +695,37 @@ body.profile .post-img {
     max-width: none;
   }
 
-     body.profile .profile-services-desktop {
-  display: block;
-  text-align: center;
-}
+  body.profile .profile-services-desktop {
+    display: block;
+    text-align: left;
+  }
 
-body.profile .profile-hero-services,
-body.profile .profile-services-desktop {
-  grid-column: 3;
-  grid-row: 1;
-  width: max-content;
-  max-width: 100%;
-  justify-self: end;
-  align-self: center;
-}
+  body.profile .profile-hero-services,
+  body.profile .profile-services-desktop {
+    grid-column: 3;
+    grid-row: 1;
+    width: max-content;
+    max-width: 100%;
+    justify-self: end;
+    align-self: center;
+  }
 
-body.profile .profile-hero-services .profile-service-links,
-body.profile .profile-services-desktop .profile-service-links {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--profile-gap-xs);
-  width: max-content;
-  max-width: 100%;
-}
+  body.profile .profile-hero-services .profile-service-links,
+  body.profile .profile-services-desktop .profile-service-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--profile-gap-xs);
+    width: max-content;
+    max-width: 100%;
+  }
 
-body.profile .profile-hero-services .service-link,
-body.profile .profile-services-desktop .service-link {
-  width: auto;
-  justify-content: flex-start;
-  text-align: left;
-}
+  body.profile .profile-hero-services .service-link,
+  body.profile .profile-services-desktop .service-link {
+    width: auto;
+    justify-content: flex-start;
+    text-align: left;
+  }
 
   body.profile .saved-workout-card {
     padding: 0;
@@ -762,12 +747,6 @@ body.profile .profile-services-desktop .service-link {
   body.profile #profile-panel-media .media-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-  body.profile .profile-lower-grid,
-  body.profile .profile-content-grid {
-    display: flex;
-    flex-direction: column;
-    gap: var(--profile-gap-lg);
-  }
 }
 
 /* =========================
@@ -782,7 +761,7 @@ body.profile .profile-services-desktop .service-link {
   body.profile #profile-panel-services,
   body.profile #profile-panel-posts,
   body.profile #profile-panel-workouts,
-   body.profile #profile-panel-media {
+  body.profile #profile-panel-media {
     margin-top: var(--profile-gap-md);
   }
 
@@ -793,39 +772,39 @@ body.profile .profile-services-desktop .service-link {
   body.profile .profile-services-mobile {
     display: block;
   }
-   
-   body.profile .profile-hero-card {
-  display: flex;
-  flex-direction: column;
-}
 
-body.profile .profile-info-inner {
-  display: flex;
-  flex-direction: column;
-  gap: var(--profile-gap-lg);
-  width: 100%;
-}
+  body.profile .profile-hero-card {
+    display: flex;
+    flex-direction: column;
+  }
 
-body.profile .profile-main-info {
-  text-align: center;
-}
+  body.profile .profile-info-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--profile-gap-lg);
+    width: 100%;
+  }
 
-body.profile .profile-name-row {
-  justify-content: center;
-}
+  body.profile .profile-main-info {
+    text-align: center;
+  }
 
-body.profile .profile-handle,
-body.profile .profile-role,
-body.profile .profile-gym,
-body.profile .profile-bio {
-  text-align: center;
-}
+  body.profile .profile-name-row {
+    justify-content: center;
+  }
 
-body.profile .profile-bio {
-  margin: 0.6rem auto 0;
-  width: min(100%, var(--profile-bio-max));
-  max-width: var(--profile-bio-max);
-}
+  body.profile .profile-handle,
+  body.profile .profile-role,
+  body.profile .profile-gym,
+  body.profile .profile-bio {
+    text-align: center;
+  }
+
+  body.profile .profile-bio {
+    margin: 0.6rem auto 0;
+    width: min(100%, var(--profile-bio-max));
+    max-width: var(--profile-bio-max);
+  }
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
@@ -881,7 +860,7 @@ body.profile .profile-bio {
     justify-content: center;
   }
 
-   body.profile .profile-service-links {
+  body.profile .profile-service-links {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.6rem 0.75rem;
