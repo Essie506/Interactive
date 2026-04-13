@@ -673,7 +673,7 @@ body.messages-open {
   right: 0;
   z-index: 40;
   min-width: 11.25rem;
-  padding: 0.25rem 0 0.375rem;
+  padding: 0.25rem 0.5rem 0.375rem;
   overflow: hidden;
   background: white;
   box-shadow: 12px 0 30px rgba(0, 0, 0, 0.14);
@@ -682,9 +682,6 @@ body.messages-open {
   transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
 }
 
-.messages-corner-item:first-child {
-  margin-top: -0.25rem;
-}
 
 .messages-corner-item {
   transition: background 0.2s ease, transform 0.22s ease;
@@ -692,7 +689,7 @@ body.messages-open {
 }
 
 .messages-corner-item:hover {
-  background: rgba(9, 26, 58, 0.025);
+  background: rgba(9, 26, 58, 0.04);
   transform: translateX(2px);
 }
 
@@ -710,26 +707,31 @@ body.messages-open {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: center; /* 👈 centers text */
   gap: 0.625rem;
-  width: calc(100% + 2rem);
+
+  width: 100%;
   min-height: 2.75rem;
-  padding: 0.75rem 0.75rem;
-  margin-left: -0.75rem;
+
+  padding: 0.75rem 1rem; /* 👈 clean internal spacing */
   border: none;
   background: transparent;
+
   color: var(--messages-text);
-  text-align: left;
+  text-align: center; /* 👈 center text */
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.2px;
   cursor: pointer;
+
+  transition: background 0.2s ease, transform 0.22s ease;
 }
 
 .messages-corner-menu button:not(:last-child)::after {
   content: "";
   position: absolute;
-  left: 1rem;
-  right: 1rem;
+   left: 0.5rem;
+  right: 0.5rem;
   bottom: 0;
   height: 1px;
   background: var(--messages-border);
