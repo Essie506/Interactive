@@ -17,7 +17,7 @@
   --profile-border-soft: rgba(9, 26, 58, 0.08);
   --profile-border-soft-hover: rgba(9, 26, 58, 0.14);
 
-  --profile-text: #091a3a;
+  --profile-text: #0a0a0a;
   --profile-text-soft: rgba(9, 26, 58, 0.75);
   --profile-text-muted: rgba(9, 26, 58, 0.6);
 
@@ -431,8 +431,7 @@ body.profile .service-link::before {
   content: "\f00c";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
-  font-size: 0.75rem;
-  color: var(--profile-text-muted);
+  font-size: 0.75rem
 }
 
 /* =========================
