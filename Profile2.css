@@ -326,6 +326,13 @@ body.profile .profile-edit-btn {
   z-index: 3;
 }
 
+body.profile .profile-hero-corner .messages-corner-menu {
+  right: 0;
+  bottom: calc(100% + 0.4rem);
+  left: auto;
+  top: auto;
+}
+
 /* =========================
    TABS
 ========================= */
