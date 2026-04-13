@@ -713,6 +713,10 @@ body.messages-open {
   align-items: center;
   justify-content: flex-start; /* 👈 centers text */
   gap: 0.625rem;
+       font-weight: 700;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  color: var(--text-dark);
+  letter-spacing: 0.01em;
 
   width: 100%;
   min-height: 2.75rem;
@@ -723,11 +727,7 @@ body.messages-open {
 
   color: var(--messages-text);
   text-align: center; /* 👈 center text */
-  font: inherit;
-  font-weight: 600;
-  letter-spacing: 0.2px;
   cursor: pointer;
-
   transition: background 0.2s ease, transform 0.22s ease;
 }
 
