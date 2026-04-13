@@ -764,13 +764,6 @@ body.profile .post-img {
     display: block;
   }
 
-  body.profile #profile-panel-services,
-  body.profile #profile-panel-posts,
-  body.profile #profile-panel-workouts,
-  body.profile #profile-panel-media {
-    margin-top: var(--profile-gap-md);
-  }
-
   body.profile .profile-services-desktop {
     display: none;
   }
