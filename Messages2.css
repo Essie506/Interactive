@@ -667,15 +667,16 @@ body.messages-open {
 .back-chevron-btn.open i {
   transform: rotate(180deg);
 }
+
 .messages-corner-menu {
   position: absolute;
   top: calc(100% + 0.375rem);
   right: 0;
   z-index: 40;
   min-width: 11.25rem;
-  padding: 0.25rem 0.5rem 0.375rem;
+  padding: 0.25rem 0;
   overflow: hidden;
-    background: linear-gradient(
+  background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.98),
     rgba(242, 236, 255, 0.96)
@@ -683,24 +684,13 @@ body.messages-open {
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  opacity: 0;
   visibility: hidden;
-  transform: translateY(-100%);
-  transition: background 0.2s ease, transform 0.2s ease, opacity 0.2s ease, visibility 0.2s ease;
-}
-
-
-.messages-corner-item {
-  transition: background 0.2s ease, transform 0.22s ease;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.messages-corner-item:hover {
-  background: rgba(9, 26, 58, 0.04);
-  transform: translateX(2px);
-}
-
-.messages-corner-item:active {
-  background: rgba(7, 153, 146, 0.2);
+  transform: translateY(-0.5rem);
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 }
 
 .messages-corner-menu.open {
@@ -713,26 +703,46 @@ body.messages-open {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* 👈 centers text */
+  justify-content: flex-start;
   gap: 0.625rem;
-  font-weight: 600;
-  font-size: clamp(0.95rem, 1vw, 1.05rem);
-  color: var(--text-dark);
-  letter-spacing: 0.01em;
-     width: calc(100% + 1rem);     /* 👈 extend into padding */
-  margin-left: -0.5rem;  
-
   width: 100%;
   min-height: 2.75rem;
-
-  padding: 0.75rem 1rem; /* 👈 clean internal spacing */
+  padding: 0.75rem 1rem;
   border: none;
   background: transparent;
-
   color: var(--messages-text);
-  text-align: center; /* 👈 center text */
+  text-align: left;
+  font: inherit;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
+  letter-spacing: 0.01em;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   transition: background 0.2s ease, transform 0.22s ease;
+}
+
+.messages-corner-item:hover {
+  background: rgba(9, 26, 58, 0.04);
+  transform: translateX(2px);
+}
+
+.messages-corner-item:active {
+  background: rgba(7, 153, 146, 0.2);
+}
+
+.messages-corner-menu button:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  bottom: 0;
+  height: 1px;
+  background: var(--messages-border);
+}
+
+.messages-corner-item.msn-mode {
+  color: var(--main-color-dark);
+  font-weight: 700;
 }
 
 .messages-corner-menu button:not(:last-child)::after {
