@@ -23,12 +23,6 @@
   overflow: hidden;
 }
 
-.block-overlay.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 .block-modal {
   position: relative;
   width: min(26rem, 92vw);
@@ -59,15 +53,17 @@
 }
 
 .block-modal-title {
+  grid-column: 2;
   margin: 0;
   font-weight: 700;
-  font-size: var(--main-font-size);
+  font-size: clamp(0.95rem, 1vw, 1.05rem);
   color: var(--text-dark);
   letter-spacing: 0.01em;
   text-align: center;
 }
 
 .block-modal-close {
+  grid-column: 3;
   justify-self: end;
   color: #fff;
   background: transparent;
