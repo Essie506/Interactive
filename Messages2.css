@@ -667,13 +667,13 @@ body.messages-open {
 .back-chevron-btn.open i {
   transform: rotate(180deg);
 }
-#profileChevron-btn {
+#profileChevronBtn {
   overflow: visible;
   position: relative;
   transition: box-shadow 0.25s ease, transform 0.2s ease;
    z-index: 1;
 }
-#profileChevron-btn::after {
+#profileChevronBtn::after {
   content: "";
   position: absolute;
   inset: -2px;
@@ -690,11 +690,11 @@ body.messages-open {
   pointer-events: none;
 }
 
-#profileChevron-btn.open::after {
+#profileChevronBtn.open::after {
   opacity: 1;
 }
 
-#profileChevron-btn:hover {
+#profileChevronBtn:hover {
   transform: translateY(-1px);
 }
 
