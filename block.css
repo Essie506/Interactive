@@ -63,6 +63,7 @@
   font-weight: 700;
   font-size: var(--main-font-size);
   color: var(--text-dark);
+  align-text: center;
   letter-spacing: 0.01em;
 }
 
