@@ -173,6 +173,7 @@ body.profile .profile-info-inner {
   gap: var(--profile-gap-lg);
   width: 100%;
   min-width: 0;
+   padding-bottom: var(--profile-card-pad);
 }
 
 body.profile .profile-top-bar {
