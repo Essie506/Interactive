@@ -326,11 +326,29 @@ body.profile .profile-edit-btn {
   z-index: 3;
 }
 
+body.profile .profile-hero-card {
+  position: relative;
+}
+
+body.profile .profile-hero-corner {
+  position: absolute;
+  right: var(--profile-inner-pad);
+  bottom: var(--profile-inner-pad);
+  z-index: 4;
+}
+
 body.profile .profile-hero-corner .messages-corner-menu {
+  position: absolute;
   right: 0;
-  bottom: calc(100% + 0.4rem);
-  left: auto;
+  bottom: calc(100% + 0.45rem);
   top: auto;
+  left: auto;
+  min-width: 12rem;
+}
+
+body.profile .profile-hero-corner .menu-block {
+  display: flex;
+  flex-direction: column;
 }
 
 /* =========================
