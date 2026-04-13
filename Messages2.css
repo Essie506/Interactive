@@ -673,12 +673,17 @@ body.messages-open {
   overflow: visible;
   position: relative;
   z-index: 1;
-  color: #22c55e;
+  color: var(--messages-text); 
   transition:
     transform 0.2s ease,
     box-shadow 0.25s ease,
     background 0.25s ease,
     color 0.2s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.92),
+    rgba(242, 236, 255, 0.88)
+  );
 }
 
 #profileChevronBtn::after {
