@@ -607,13 +607,14 @@ body.messages-open {
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
 }
 
-.chevron-btn {
-  right: 0;
-  bottom: 0;
-  width: 2.625rem;
-  height: 2.625rem;
-  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+.back-chevron-btn {
+  top: 0;
+  left: 0;
+  width: 3.125rem;
+  height: 3.125rem;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
 }
+
 
 .chevron-btn {
   top: 0;
