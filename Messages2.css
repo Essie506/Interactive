@@ -679,6 +679,7 @@ body.messages-open {
     180deg,
     rgba(255, 255, 255, 0.98),
     rgba(248, 251, 253, 0.96);
+   );
   box-shadow: var(--shadow-soft);
   visibility: hidden;
   transform: translateY(-100%);
