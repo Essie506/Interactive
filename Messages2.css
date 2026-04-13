@@ -594,6 +594,9 @@ body.messages-open {
 /* =========================
    CORNER TRIANGLES / MENUS
 ========================= */
+/* =========================
+   CHEVRON BUTTONS
+========================= */
 .chevron-btn,
 .back-chevron-btn {
   position: absolute;
@@ -607,6 +610,16 @@ body.messages-open {
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* Bottom-right chevron */
+.chevron-btn {
+  right: 0;
+  bottom: 0;
+  width: 2.625rem;
+  height: 2.625rem;
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+/* Top-left chevron */
 .back-chevron-btn {
   top: 0;
   left: 0;
@@ -615,15 +628,7 @@ body.messages-open {
   clip-path: polygon(0 0, 100% 0, 0 100%);
 }
 
-
-.chevron-btn {
-  top: 0;
-  left: 0;
-  width: 3.125rem;
-  height: 3.125rem;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
-
+/* Icons */
 .chevron-btn i,
 .back-chevron-btn i {
   position: absolute;
@@ -635,6 +640,7 @@ body.messages-open {
   transition: transform 0.2s ease;
 }
 
+/* Icon positioning */
 .chevron-btn i {
   right: 0.3125rem;
   bottom: 0.3125rem;
@@ -645,6 +651,7 @@ body.messages-open {
   left: 0.3125rem;
 }
 
+/* Hover */
 .chevron-btn:hover,
 .back-chevron-btn:hover {
   background: rgba(255, 255, 255, 0.82);
@@ -655,11 +662,11 @@ body.messages-open {
   transform: translateY(-1px) scale(1.06);
 }
 
+/* Open state */
 .chevron-btn.open i,
 .back-chevron-btn.open i {
   transform: rotate(180deg);
 }
-
 .messeges-corner-menu {
   position: absolute;
   top: calc(100% + 0.375rem);
