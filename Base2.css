@@ -1,21 +1,6 @@
 /* =========================
    RESET / ROOT
 ========================= */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
-  -webkit-tap-highlight-color: transparent;
-}
-
-html,
-body {
-  overflow-x: hidden;
-}
-
 :root {
    --bar-height: clamp(64px, 7vh, 70px);
   --bar-height-large: clamp(70px, 7.5vh, 76px);
