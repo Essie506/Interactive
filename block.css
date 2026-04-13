@@ -111,3 +111,13 @@
 .block-modal-actions .btn-danger {
   flex: 1;
 }
+
+.inline-link {
+  color: var(--text-dark);
+  border-bottom: 1px solid rgba(9, 26, 58, 0.3);
+  text-decoration: none;
+}
+
+.inline-link:hover {
+  border-bottom-color: var(--main-color);
+}
