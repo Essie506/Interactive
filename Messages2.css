@@ -591,27 +591,40 @@ body.messages-open {
   transform: rotate(45deg);
   transform-origin: center;
 }
-
 /* =========================
    CORNER TRIANGLES / MENUS
 ========================= */
 
-/* Chevron buttons */
+/* Anchor containers (IMPORTANT) */
+.profile-hero-corner,
+.messages-header,
+.messages-popup-header,
+.messages-popout-header {
+  position: relative;
+}
+
+/* =========================
+   CHEVRON BUTTONS
+========================= */
 .chevron-btn,
 .back-chevron-btn {
   position: absolute;
   padding: 0;
   border: none;
   border-radius: 0;
+
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.96),
     rgba(242, 236, 255, 0.9)
   );
+
   backdrop-filter: blur(4px);
   cursor: pointer;
-  z-index: 2;
+  z-index: 5;
+
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
+
   transition:
     background 0.22s ease,
     box-shadow 0.22s ease,
@@ -645,7 +658,7 @@ body.messages-open {
   line-height: 1;
   color: inherit;
   pointer-events: none;
-  z-index: 3;
+  z-index: 2;
   transition: transform 0.2s ease, color 0.2s ease;
 }
 
@@ -674,17 +687,19 @@ body.messages-open {
   transform: translateY(-1px);
 }
 
-/* Open state */
+/* Open rotation */
 .chevron-btn.open i,
 .back-chevron-btn.open i {
   transform: rotate(180deg);
 }
 
-/* Profile chevron */
+/* =========================
+   PROFILE CHEVRON GLOW
+========================= */
 #profileChevronBtn {
   overflow: visible;
   position: relative;
-  z-index: 1;
+  z-index: 6;
   color: #091a3a;
 }
 
@@ -702,6 +717,7 @@ body.messages-open {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.25s ease;
+
   filter:
     drop-shadow(0 0 6px rgba(7, 153, 146, 0.16))
     drop-shadow(0 0 12px rgba(7, 153, 146, 0.1));
@@ -712,51 +728,89 @@ body.messages-open {
   opacity: 1;
 }
 
-/* Corner menus */
-#profileCornerMenu,
+/* =========================
+   CORNER MENU
+========================= */
+.messages-corner-menu,
 .profile-corner-menu,
-.messages-corner-menu {
+#profileCornerMenu {
+  position: absolute;
+  top: calc(100% + 0.375rem);
+  right: 0;
+
+  z-index: 40;
+  min-width: 11.25rem;
+
+  padding: 0.25rem 0.5rem 0.375rem;
+  overflow: hidden;
+  border-radius: 0.875rem;
+
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.98),
     rgba(242, 236, 255, 0.96)
   );
+
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.14),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+  /* 👇 THIS WAS YOUR MISSING PART */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-0.25rem) scale(0.98);
+
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    visibility 0.18s ease;
 }
 
-/* Menu items */
+/* OPEN STATE */
+.messages-corner-menu.open,
+.profile-corner-menu.open,
+#profileCornerMenu.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+/* =========================
+   MENU ITEMS
+========================= */
 .messages-corner-item {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 0.625rem;
+
   width: 100%;
   min-height: 2.75rem;
   padding: 0.75rem 1rem;
+
   border: none;
   background: transparent;
+
   color: var(--messages-text);
   text-align: left;
+
   font-family: inherit;
   font-size: clamp(0.95rem, 1vw, 1.05rem);
   font-weight: 500;
   letter-spacing: 0.3px;
-  text-transform: none;
+
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+
   transition:
     background 0.22s ease,
     transform 0.18s ease,
     color 0.2s ease;
 }
 
-.messages-corner-item span {
-  position: relative;
-}
-
+/* Icons */
 .messages-corner-item i {
   font-size: 0.9rem;
   color: currentColor;
@@ -764,6 +818,7 @@ body.messages-open {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+/* Hover */
 .messages-corner-item:hover {
   background: rgba(242, 236, 255, 0.55);
   color: #0f8f79;
@@ -781,9 +836,9 @@ body.messages-open {
   text-decoration-thickness: 1px;
 }
 
+/* Danger */
 .messages-corner-item-danger {
   color: #b91c1c;
-  letter-spacing: 0.25px;
 }
 
 .messages-corner-item-danger:hover {
@@ -791,6 +846,7 @@ body.messages-open {
   color: #8f2d3f;
 }
 
+/* Divider */
 .messages-corner-menu button:not(:last-child)::after {
   content: "";
   position: absolute;
@@ -799,11 +855,6 @@ body.messages-open {
   bottom: 0;
   height: 1px;
   background: var(--messages-border);
-}
-
-.messages-corner-item.msn-mode {
-  color: var(--main-color-dark);
-  font-weight: 700;
 }
 
 
