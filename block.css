@@ -28,8 +28,8 @@
 
 .block-modal {
   position: relative;
-  width: min(28rem, 90vw);
-  max-width: 90vw;
+  width: min(28rem, 80vw);
+  max-width: 80vw;
   min-height: clamp(12rem, 36vh, 18rem);
   max-height: 80vh;
 
