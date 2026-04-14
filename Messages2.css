@@ -799,10 +799,7 @@ body.messages-open {
 .messages-corner-item::before {
   content: "";
   position: absolute;
-  top: -0.125rem;
-  bottom: -0.125rem;
-  left: -0.5rem;
-  right: -0.5rem;
+  inset: -0.5rem;
 
   background: rgba(9, 26, 58, 0.06);
   border-radius: 0.5rem;
