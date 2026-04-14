@@ -409,16 +409,6 @@ body.profile .profile-tab:active {
   transform: translateY(0) scale(0.98);
 }
 
-body.profile .profile-tab i {
-  font-size: 0.85rem;
-  color: rgba(9, 26, 58, 0.6);
-  transition: color 0.16s ease;
-}
-
-body.profile .profile-tab:hover i {
-  color: var(--text-dark);
-}
-
 .messages-corner-item-danger {
   color: #7a1020;
 }
