@@ -126,7 +126,7 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
     lastFocusedPane: "list", // list | chat
     drawerWidth: null,
     popupSize: null,
-    popoutSize: null
+    popoutSize: null,
     openedFromProfile: false 
   };
 
