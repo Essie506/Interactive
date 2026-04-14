@@ -646,13 +646,9 @@ body.profile .post-img {
     display: block;
   }
 
-  body.profile .profile-services-card {
-    display: none;
-  }
-
-  body.profile .profile-services-mobile {
-    display: none;
-  }
+   .profile-services-mobile {
+      display: block;
+   }
 
   body.profile .profile-hero-card {
     display: block;
@@ -710,7 +706,7 @@ body.profile .profile-main-info {
 
    
   body.profile .profile-services-desktop {
-    display: block;
+    display: none;
     text-align: left;
   }
 
