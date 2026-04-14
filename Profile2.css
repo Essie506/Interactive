@@ -71,6 +71,10 @@ body.profile[data-viewer="visitor"] .visitor-only {
   display: inline-flex;
 }
 
+body.profile[data-viewer="visitor"] .profile-hero-corner.visitor-only {
+  display: block;
+}
+
 /* =========================
    PAGE SHELL
 ========================= */
