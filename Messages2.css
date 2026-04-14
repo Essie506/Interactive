@@ -19,6 +19,11 @@
   --messages-header-side: clamp(2.25rem, 4vw, 2.625rem);
   --messages-pane-split: 40%;
    --teal-classy: #079992;
+
+  --chevron-size: 2.9rem;
+
+  --chevron-icon-size: calc(var(--chevron-size) * 0.31);
+  --chevron-icon-offset: calc(var(--chevron-size) * 0.12);
 }
 
 /* =========================
@@ -622,8 +627,8 @@ body.messages-open {
     color 0.2s ease;
   right: 0;
   bottom: 0;
-  width: 2.9rem;
-  height: 2.9rem;
+ width: var(--chevron-size);
+  height: var(--chevron-size);
   clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }
 
@@ -645,19 +650,16 @@ body.messages-open {
 /* Chevron icons */
 .chevron-btn i {
   position: absolute;
-  font-size: 0.8125rem;
   line-height: 1;
   color: inherit;
   pointer-events: none;
   z-index: 2;
   transition: transform 0.2s ease, color 0.2s ease;
+   font-size: var(--chevron-icon-size);
+   right: var(--chevron-icon-offset);
+  bottom: var(--chevron-icon-offset);
 }
 
-/* Icon positioning */
-.chevron-btn i {
-  right: 0.3125rem;
-  bottom: 0.3125rem;
-}
 
 /* Hover */
 .profile-hero-corner .chevron-btn:hover {
