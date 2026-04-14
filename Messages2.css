@@ -651,7 +651,7 @@ body.messages-open {
 .chevron-btn i {
   position: absolute;
   line-height: 1;
-  color: inherit;
+  color: var(--text-dark);
   pointer-events: none;
   z-index: 2;
   transition: transform 0.2s ease, color 0.2s ease;
