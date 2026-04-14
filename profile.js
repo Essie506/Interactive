@@ -112,11 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 if (messageProfileBtn) {
   messageProfileBtn.addEventListener("click", () => {
     if (!window.interactiveMessages) return;
-
-    const userName = profileUser.name || "Profile";
-
-    window.interactiveMessages.selectThread(userName);
-    window.interactiveMessages.openedFromProfile = true;
+    window.interactiveMessages.openProfileThread(profileUser.name || "Profile");
   });
 }
 
