@@ -71,22 +71,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setActiveProfileTab("services");
 
- if (followBtn) {
+if (followBtn) {
   followBtn.addEventListener("click", () => {
-    const isConnected = followBtn.classList.toggle("is-connected");
+    // prevent re-click doing anything
+    if (followBtn.classList.contains("is-connected")) return;
 
-    if (isConnected) {
-      // ✅ tick only
-      followBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-      setActiveProfileTab("posts");
-    } else {
-      // ✅ back to Connect
-      followBtn.innerHTML = '<i class="fa-solid fa-user-plus"></i> Connect';
-      setActiveProfileTab("services");
-    }
+    followBtn.classList.add("is-connected");
+
+    // change to tick only
+    followBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+
+    setActiveProfileTab("posts");
   });
 }
 
+  
   if (uploadPhotoBtn && profilePhotoInput) {
     uploadPhotoBtn.addEventListener("click", () => {
       profilePhotoInput.click();
