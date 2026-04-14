@@ -123,38 +123,13 @@
   </nav>
 
 <main class="profile-page">
-
-    <section class="profile-tabs-card">
-     <div class="profile-tabs-inner">
-    <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
-
-<button type="button" class="profile-tab visitor-only" id="messageProfileBtn" aria-label="Message profile">
-  <i class="fa-solid fa-comment"></i>
-  Message
-</button>
-
-<a href="vault.html" class="profile-tab">
-  <i class="fa-solid fa-box-archive"></i>
-  Vault
-</a>
-
-        <a href="calendar.html" class="profile-tab">
-  <i class="fa-regular fa-calendar-days"></i>
-  Calendar
-</a>
-
- <button type="button" class="profile-tab"  id="shareProfileBtn" aria-label="Share profile">
-  <i class="fa-solid fa-share-nodes"></i>
-  Share
-</button>
-      
-    </nav>
-     </div>
-  </section>
-
   <section class="profile-hero-card">
     <div class="profile-info-inner">
         <div class="profile-top-right-actions">
+          
+<button type="button" class="icon-btn visitor-only" id="messageProfileBtn" aria-label="Message profile">
+  <i class="fa-solid fa-comment"></i>
+</button>
           
         </div>      
       <div class="profile-avatar-wrap">
@@ -215,6 +190,11 @@
 
   <div class="messages-corner-menu profile-corner-menu" id="profileCornerMenu">
 
+      <button type="button" class="messages-corner-item"  id="shareProfileBtn" aria-label="Share profile">
+        <i class="fa-solid fa-share-nodes"></i>
+        <span>Share profile</span>
+      </button>
+
       <button type="button" class="messages-corner-item" id="profileMessageBtn">
         <i class="fa-solid fa-comment"></i>
         <span>Message</span>
@@ -233,8 +213,35 @@
 </div>
   </section>
 
+  <section class="profile-tabs-card">
+     <div class="profile-tabs-inner">
+    <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
+      <a href="#" class="profile-tab active" data-tab="services">
+        <i class="fa-solid fa-briefcase"></i>
+        Services
+      </a>
 
-   <section class="profile-panel active profile-services-mobile" id="profile-panel-services">
+        <a href="#" class="profile-tab" data-tab="workouts">
+        <i class="fa-solid fa-dumbbell"></i>
+        Workouts
+      </a>
+
+       <a href="#" class="profile-tab" data-tab="posts">
+        <i class="fa-solid fa-pen"></i>
+        Posts
+      </a>
+
+       <a href="#" class="profile-tab" data-tab="media">
+        <i class="fa-solid fa-photo-film"></i>
+        Media
+      </a>
+      
+    </nav>
+     </div>
+  </section>
+
+  <div class="profile-lower-grid">
+    <section class="profile-panel active profile-services-mobile" id="profile-panel-services">
       <div class="profile-section-card profile-services-card">
         <div class="profile-section-inner">
           <div class="profile-service-links">
@@ -248,10 +255,6 @@
         </div>
       </div>
     </section>
-  
-
-  <div class="profile-lower-grid">
-    
 
  <section class="profile-panel" id="profile-panel-workouts">
           <div class="profile-section-card">
