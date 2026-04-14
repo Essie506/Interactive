@@ -611,8 +611,15 @@ body.messages-open {
   padding: 0;
   border: none;
   border-radius: 0;
+    background: var(--glass-white);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
+}
 
-  background: linear-gradient(
+.profile-hero-corner .chevron-btn {
+     background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.96),
     rgba(242, 236, 255, 0.9)
@@ -630,6 +637,8 @@ body.messages-open {
     transform 0.2s ease,
     color 0.2s ease;
 }
+
+   
 
 /* Bottom-right chevron */
 .chevron-btn {
@@ -695,19 +704,19 @@ body.messages-open {
 /* =========================
    PROFILE CHEVRON GLOW
 ========================= */
-#profileChevronBtn {
+.profile-hero-corner .chevron-btn {
   overflow: visible;
   position: relative;
   z-index: 6;
   color: #091a3a;
 }
 
-#profileChevronBtn:hover,
-#profileChevronBtn.open {
+.profile-hero-corner .chevron-btn:hover,
+.profile-hero-corner .chevron-btn.open {
   color: #0f8f79;
 }
 
-#profileChevronBtn::after {
+.profile-hero-corner .chevron-btn::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -722,8 +731,8 @@ body.messages-open {
     drop-shadow(0 0 12px rgba(7, 153, 146, 0.1));
 }
 
-#profileChevronBtn:hover::after,
-#profileChevronBtn.open::after {
+.profile-hero-corner .chevron-btn:hover::after,
+.profile-hero-corner .chevron-btn::after {
   opacity: 1;
 }
 
