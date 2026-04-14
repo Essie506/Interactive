@@ -656,7 +656,7 @@ body.profile .post-img {
 
 body.profile .profile-info-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+ grid-template-columns: minmax(0, 32rem) auto;
   gap: var(--profile-gap-2xl);
   align-items: center;
   width: 100%;
