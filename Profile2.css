@@ -178,7 +178,7 @@ body.profile .profile-info-inner {
   gap: var(--profile-gap-lg);
   width: 100%;
   min-width: 0;
-   padding-bottom: var(--profile-gap-sm);
+  padding: 0 clamp(1rem, 2vw, 1.75rem);
 }
 
 body.profile .profile-top-bar {
