@@ -123,94 +123,91 @@
   </nav>
 
 <main class="profile-page">
-  <section class="profile-hero-card" style="--hero-bg-image: url('cover.jpg');">
-
-  <!-- ✅ background layer -->
+ <section class="profile-hero-card" style="--hero-bg-image: url('cover.jpg');">
   <div class="profile-hero-bg" id="profileHeroBg"></div>
 
-  <!-- actions -->
-  <button class="profile-cover-upload-btn" id="uploadCoverBtn">
+  <button
+    type="button"
+    class="icon-btn self-only profile-cover-upload-btn"
+    id="uploadCoverBtn"
+    aria-label="Upload cover image"
+  >
     <i class="fa-solid fa-image"></i>
   </button>
 
-  <!-- content -->
+  <input
+    type="file"
+    id="profileCoverInput"
+    accept="image/*"
+    hidden
+  />
+
   <div class="profile-info-inner">
-    ...
+    <div class="profile-avatar-wrap">
+      <button type="button" class="icon-btn self-only" id="uploadPhotoBtn" aria-label="Upload profile picture">
+        <i class="fa-solid fa-camera"></i>
+      </button>
+
+      <div class="profile-avatar">
+        <i class="fa-solid fa-user"></i>
+      </div>
+    </div>
+
+    <input
+      type="file"
+      id="profilePhotoInput"
+      accept="image/*"
+      hidden
+    >
+
+    <div class="profile-main-info">
+      <div class="profile-name-row">
+        <h1>Esther Clarke</h1>
+        <span class="profile-verified" aria-label="Verified professional" title="Verified professional">
+          <i class="fa-solid fa-circle-check"></i>
+        </span>
+      </div>
+
+      <p class="profile-handle">@estherfitness</p>
+
+      <p class="profile-role">
+        <i class="fa-solid fa-dumbbell"></i> Trainer • Strength &amp; Conditioning
+      </p>
+
+      <p class="profile-gym">
+        <i class="fa-solid fa-location-dot"></i> TrainWell Gym • London
+      </p>
+
+      <p class="profile-bio">
+        Helping you build strength, confidence and consistency. PT sessions, custom plans and home workouts available.
+      </p>
+    </div>
   </div>
 
-  <div class="profile-hero-corner">
-    ...
-  </div>
-</section>
-    
-    <div class="profile-info-inner">
-        </div>      
-      <div class="profile-avatar-wrap">
-        <button type="button" class="icon-btn self-only" id="uploadPhotoBtn" aria-label="Upload profile picture">
-  <i class="fa-solid fa-camera"></i>
-</button>
-        <div class="profile-avatar">
-          <i class="fa-solid fa-user"></i>
-        </div>
-      </div>
-      
-      <input
-  type="file"
-  id="profilePhotoInput"
-  accept="image/*"
-  hidden
->
+  <div class="profile-hero-corner visitor-only">
+    <button type="button" class="chevron-btn" id="profileChevronBtn" aria-label="More options">
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
 
-      <div class="profile-main-info">
-        <div class="profile-name-row">
-          <h1>Esther Clarke</h1>
-          <span class="profile-verified" aria-label="Verified professional" title="Verified professional">
-            <i class="fa-solid fa-circle-check"></i>
-          </span>
-        </div>
-
-        <p class="profile-handle">@estherfitness</p>
-
-        <p class="profile-role">
-          <i class="fa-solid fa-dumbbell"></i> Trainer • Strength &amp; Conditioning
-        </p>
-
-        <p class="profile-gym">
-          <i class="fa-solid fa-location-dot"></i> TrainWell Gym • London
-        </p>
-
-        <p class="profile-bio">
-          Helping you build strength, confidence and consistency. PT sessions, custom plans and home workouts available.
-        </p>
-      </div>
-        </div>
-    
-    <div class="profile-hero-corner visitor-only">
-  <button type="button" class="chevron-btn" id="profileChevronBtn" aria-label="More options">
-    <i class="fa-solid fa-angle-down"></i>
-  </button>
-
-  <div class="messages-corner-menu profile-corner-menu" id="profileCornerMenu">
-
-
+    <div class="messages-corner-menu profile-corner-menu" id="profileCornerMenu">
       <button type="button" class="messages-corner-item" id="profileReportBtn">
         <i class="fa-solid fa-flag"></i>
         <span>Report</span>
       </button>
 
-     <button type="button" class="messages-corner-item messages-corner-item-danger" id="profileBlockMenuBtn">
-  <i class="fa-solid fa-ban"></i>
-  <span>Block user</span>
-</button>
+      <button type="button" class="messages-corner-item messages-corner-item-danger" id="profileBlockMenuBtn">
+        <i class="fa-solid fa-ban"></i>
+        <span>Block user</span>
+      </button>
     </div>
-</div>
-  </section>
+  </div>
+</section>
 
   <section class="profile-tabs-card">
      <div class="profile-tabs-inner">
     <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
 
-      <button type="button" class="profile-tab visitor only" id="messageProfileBtn" aria-label="Message profile">
+      <button type="button" class="profile-tab visitor-only" id="messageProfileBtn" aria-label="Message profile">
         <i class="fa-solid fa-comment"></i>
         <span>Message</span>
       </button>
