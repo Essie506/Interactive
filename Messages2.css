@@ -797,17 +797,24 @@ body.messages-open {
     color 0.2s ease;
 }
 
-/* Icons */
-.messages-corner-item i {
-  font-size: 0.9rem;
-  color: var(--text-dark);
-  opacity: 0.75;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+.messages-corner-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  left: -0.5rem;
+  right: -0.5rem;
+
+  border-radius: 0.5rem;
+  background: rgba(9, 26, 58, 0.06);
+
+  opacity: 0;
+  transition: opacity 0.2s ease;
+
+  z-index: -1;
 }
 
 /* Hover */
 .messages-corner-item:hover {
-  background: rgba(242, 236, 255, 0.55);
   color: var(--text-dark);
   transform: translateX(2px);
 }
@@ -815,6 +822,15 @@ body.messages-open {
 .messages-corner-item:hover i {
   opacity: 1;
   transform: translateX(1px);
+}
+
+
+/* Icons */
+.messages-corner-item i {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 /* Danger */
