@@ -743,6 +743,24 @@ body.messages-open {
     visibility 0.18s ease;
 }
 
+.messages-corner-menu:hover {
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.messages-corner-menu {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.messages-corner-menu:hover {
+  transform: translateY(-1px);
+}
+.messages-corner-menu:active {
+  transform: scale(0.995);
+}
+
+
 /* OPEN STATE */
 .messages-corner-menu.open {
   opacity: 1;
@@ -759,7 +777,7 @@ body.messages-open {
   display: flex;
   align-items: center;
   gap: 0.625rem;
-
+z-index: 0;
   width: 100%;
   min-height: 2.75rem;
   padding: 0.75rem 1rem;
@@ -794,7 +812,7 @@ body.messages-open {
   border-radius: 0.5rem;
   background: rgba(9, 26, 58, 0.06);
 
-  opacity: 0;
+  opacity: 1;
   transition: opacity 0.2s ease;
 
   z-index: 0;
