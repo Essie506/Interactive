@@ -716,10 +716,10 @@ body.messages-open {
   position: absolute;
   top: calc(100% + 0.375rem);
   right: 0;
-
   z-index: 40;
+
   min-width: 11.25rem;
-  padding: 0.125rem 0.375rem 0.25rem;
+  padding: 0.125rem 0.375rem 0.125rem;
   overflow: hidden;
 
   background: linear-gradient(
@@ -762,14 +762,6 @@ body.messages-open {
 }
 
 
-/* OPEN STATE */
-.messages-corner-menu.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
-
 /* =========================
    MENU ITEMS
 ========================= */
@@ -807,29 +799,30 @@ body.messages-open {
 .messages-corner-item::before {
   content: "";
   position: absolute;
-
   top: -0.125rem;
   bottom: -0.125rem;
   left: -0.5rem;
   right: -0.5rem;
-  background: rgba(9, 26, 58, 0.06); /* 👈 soft grey */
 
-  opacity: 0; /* 👈 THIS FIXES YOUR ISSUE */
-  transition:  opacity 0.18s ease,
+  background: rgba(9, 26, 58, 0.06);
+  border-radius: 0.5rem;
+
+  opacity: 0;
+  transform: scale(0.985);
+
+  transition:
+    opacity 0.18s ease,
     transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
-    transform: scale(0.96);
 
   z-index: 0;
   pointer-events: none;
 }
 
-/* SHOW ON HOVER + TAP */
 .messages-corner-item:hover::before,
 .messages-corner-item:active::before {
   opacity: 1;
-   transform: scale(1); /* 👈 gently expands in */
+  transform: scale(1);
 }
-
 
 .messages-corner-item:hover {
   color: var(--text-dark);
@@ -848,6 +841,22 @@ body.messages-open {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+
+/* =========================
+   LAST ITEM FIX
+========================= */
+.messages-corner-item:last-child::before {
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.125rem;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
+
+/* =========================
+   DANGER ITEM
+========================= */
 .messages-corner-item-danger {
   color: #b91c1c;
 }
@@ -856,14 +865,10 @@ body.messages-open {
   color: #8f2d3f;
 }
 
-.messages-corner-item:last-child::before {
-  left: -0.5rem;
-  right: -0.5rem;
-  bottom: -0.25rem;
-  border-bottom-left-radius: 0.75rem;
-  border-bottom-right-radius: 0.75rem;
-}
 
+/* =========================
+   DIVIDERS
+========================= */
 .messages-corner-menu button:not(:last-child)::after {
   content: "";
   position: absolute;
