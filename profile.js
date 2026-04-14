@@ -109,17 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
- const messageProfileBtn = document.getElementById("messageProfileBtn");
-
 if (messageProfileBtn) {
   messageProfileBtn.addEventListener("click", () => {
     if (!window.interactiveMessages) return;
 
-    const profileNameEl = document.querySelector(".profile-main-info h1");
-
-    const userName = profileNameEl
-      ? profileNameEl.textContent.trim()
-      : "Profile";
+    const userName = profileUser.name || "Profile";
 
     window.interactiveMessages.selectThread(userName);
     window.interactiveMessages.openedFromProfile = true;
