@@ -856,6 +856,14 @@ body.messages-open {
   color: #8f2d3f;
 }
 
+.messages-corner-item:last-child::before {
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.25rem;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
 .messages-corner-menu button:not(:last-child)::after {
   content: "";
   position: absolute;
