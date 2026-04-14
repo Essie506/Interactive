@@ -817,7 +817,7 @@ body.messages-open {
 /* Icons */
 .messages-corner-item i {
   font-size: 0.9rem;
-  color: currentColor;
+  color: var(--main-color-dark);
   opacity: 0.75;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -832,12 +832,6 @@ body.messages-open {
 .messages-corner-item:hover i {
   opacity: 1;
   transform: translateX(1px);
-}
-
-.messages-corner-item:hover span {
-  text-decoration: underline;
-  text-underline-offset: 0.22em;
-  text-decoration-thickness: 1px;
 }
 
 /* Danger */
