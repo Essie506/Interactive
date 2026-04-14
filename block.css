@@ -28,8 +28,8 @@
 
 .block-modal {
   position: relative;
-  width: min(26rem, 92vw);
-  max-width: 92vw;
+  width: min(27rem, 91vw);
+  max-width: 91vw;
   background: rgba(255, 255, 255, 0.96);
   color: var(--messages-text, #091a3a);
   box-shadow: 0 1.125rem 2.5rem rgba(0, 0, 0, 0.18);
