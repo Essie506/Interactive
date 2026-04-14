@@ -155,7 +155,6 @@ body.profile .profile-services-card {
 body.profile .profile-hero-card {
   display: flex;
   flex-direction: column;
-  margin-bottom: var(--profile-gap-md);
   position: relative;
 }
 
