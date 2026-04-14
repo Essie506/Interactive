@@ -73,15 +73,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 if (followBtn) {
   followBtn.addEventListener("click", () => {
-    // prevent re-click doing anything
-    if (followBtn.classList.contains("is-connected")) return;
+    const isConnected = followBtn.classList.toggle("is-connected");
 
-    followBtn.classList.add("is-connected");
-
-    // change to tick only
-    followBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-
-    setActiveProfileTab("posts");
+    if (isConnected) {
+      // ✅ connected → tick only
+      followBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+      setActiveProfileTab("posts");
+    } else {
+      // 🔁 back to original
+      followBtn.innerHTML = '<i class="fa-solid fa-user-plus"></i> Connect';
+      setActiveProfileTab("services");
+    }
   });
 }
 
