@@ -2,11 +2,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const tabs = document.querySelectorAll(".profile-tab");
   const panels = document.querySelectorAll(".profile-panel");
 
+  const profilePage = document.querySelector(".profile-page");
+  const profileNameEl = document.querySelector(".profile-main-info h1");
+  const profileHandleEl = document.querySelector(".profile-handle");
+
+  const profileUser = {
+    id: profilePage?.dataset.userId || null,
+    name: profileNameEl ? profileNameEl.textContent.trim() : "Profile",
+    handle: profileHandleEl ? profileHandleEl.textContent.trim() : ""
+  };
+
   const followBtn = document.getElementById("followBtn");
   const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
   const profilePhotoInput = document.getElementById("profilePhotoInput");
 
   const shareProfileBtn = document.getElementById("shareProfileBtn");
+  const messageProfileBtn = document.getElementById("messageProfileBtn");
 
   const profileChevronBtn = document.getElementById("profileChevronBtn");
   const profileCornerMenu = document.getElementById("profileCornerMenu");
@@ -71,23 +82,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setActiveProfileTab("services");
 
-if (followBtn) {
-  followBtn.addEventListener("click", () => {
-    const isConnected = followBtn.classList.toggle("is-connected");
+  if (followBtn) {
+    followBtn.addEventListener("click", () => {
+      const isConnected = followBtn.classList.toggle("is-connected");
 
-    if (isConnected) {
-      // ✅ connected → tick only
-      followBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-      setActiveProfileTab("posts");
-    } else {
-      // 🔁 back to original
-      followBtn.innerHTML = '<i class="fa-solid fa-user-plus"></i>';
-      setActiveProfileTab("services");
-    }
-  });
-}
+      if (isConnected) {
+        followBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
+        setActiveProfileTab("posts");
+      } else {
+        followBtn.innerHTML = '<i class="fa-solid fa-user-plus"></i>';
+        setActiveProfileTab("services");
+      }
+    });
+  }
 
-  
   if (uploadPhotoBtn && profilePhotoInput) {
     uploadPhotoBtn.addEventListener("click", () => {
       profilePhotoInput.click();
@@ -98,7 +106,41 @@ if (followBtn) {
       if (!file) return;
 
       console.log("Selected profile image:", file.name);
-      // later: preview + upload to storage
+    });
+  }
+
+  if (messageProfileBtn) {
+    messageProfileBtn.addEventListener("click", () => {
+      const messagesModal = document.getElementById("messagesModal");
+      const messagesOverlay = document.getElementById("messagesOverlay");
+      const messagesHeaderTitle = document.getElementById("messagesHeaderTitle");
+      const messagesListView = document.getElementById("messagesListView");
+      const messagesChatView = document.getElementById("messagesChatView");
+
+      if (messagesModal) {
+        messagesModal.classList.add("open");
+        messagesModal.setAttribute("aria-hidden", "false");
+      }
+
+      if (messagesOverlay) {
+        messagesOverlay.classList.add("open");
+      }
+
+      document.body.classList.add("messages-open");
+
+      if (messagesHeaderTitle) {
+        messagesHeaderTitle.textContent = profileUser.name;
+      }
+
+      if (messagesListView) {
+        messagesListView.classList.remove("active");
+      }
+
+      if (messagesChatView) {
+        messagesChatView.classList.add("active");
+      }
+
+      console.log("Open chat for:", profileUser);
     });
   }
 
