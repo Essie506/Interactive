@@ -123,11 +123,27 @@
   </nav>
 
 <main class="profile-page">
-  <section class="profile-hero-card">
+  <section class="profile-hero-card" style="--hero-bg-image: url('cover.jpg');">
+
+  <!-- ✅ background layer -->
+  <div class="profile-hero-bg" id="profileHeroBg"></div>
+
+  <!-- actions -->
+  <button class="profile-cover-upload-btn" id="uploadCoverBtn">
+    <i class="fa-solid fa-image"></i>
+  </button>
+
+  <!-- content -->
+  <div class="profile-info-inner">
+    ...
+  </div>
+
+  <div class="profile-hero-corner">
+    ...
+  </div>
+</section>
+    
     <div class="profile-info-inner">
-        <div class="profile-top-right-actions">
-  
-          
         </div>      
       <div class="profile-avatar-wrap">
         <button type="button" class="icon-btn self-only" id="uploadPhotoBtn" aria-label="Upload profile picture">
