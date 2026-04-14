@@ -36,23 +36,23 @@
 
     <div class="nav-title">Interactive Fitness</div>
 
-    <div class="nav-center desktop-nav-links">
-      <a href="feed.html" aria-label="Home">
-        <i class="fa-solid fa-house"></i>
-      </a>
+   <div class="nav-center desktop-nav-links">
+  <a href="feed.html" class="icon-btn" aria-label="Home">
+    <i class="fa-solid fa-house"></i>
+  </a>
 
-      <a href="calendar.html" aria-label="Calendar">
-        <i class="fa-regular fa-calendar-days"></i>
-      </a>
+  <a href="vault.html" class="icon-btn" aria-label="Vault">
+    <i class="fa-solid fa-box-archive"></i>
+  </a>
 
-      <a href="studios.html" aria-label="Gyms">
-        <i class="fa-solid fa-fire"></i>
-      </a>
+  <a href="calendar.html" class="icon-btn" aria-label="Calendar">
+    <i class="fa-regular fa-calendar-days"></i>
+  </a>
 
-      <a href="browse-workouts.html" aria-label="Browse workouts">
-        <i class="fa-solid fa-dumbbell"></i>
-      </a>
-    </div>
+  <button type="button" class="icon-btn" id="shareProfileBtn" aria-label="Share profile">
+    <i class="fa-solid fa-share-nodes"></i>
+  </button>
+</div>
 
    <div class="navbar-right">
   <button class="icon-btn desktop-icon-link top-search-btn" id="searchToggle" type="button" aria-label="Search">
@@ -126,10 +126,7 @@
   <section class="profile-hero-card">
     <div class="profile-info-inner">
         <div class="profile-top-right-actions">
-          
-<button type="button" class="icon-btn visitor-only" id="messageProfileBtn" aria-label="Message profile">
-  <i class="fa-solid fa-comment"></i>
-</button>
+  
           
         </div>      
       <div class="profile-avatar-wrap">
@@ -190,15 +187,6 @@
 
   <div class="messages-corner-menu profile-corner-menu" id="profileCornerMenu">
 
-      <button type="button" class="messages-corner-item"  id="shareProfileBtn" aria-label="Share profile">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>Share profile</span>
-      </button>
-
-      <button type="button" class="messages-corner-item" id="profileMessageBtn">
-        <i class="fa-solid fa-comment"></i>
-        <span>Message</span>
-      </button>
 
       <button type="button" class="messages-corner-item" id="profileReportBtn">
         <i class="fa-solid fa-flag"></i>
@@ -216,25 +204,26 @@
   <section class="profile-tabs-card">
      <div class="profile-tabs-inner">
     <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
-      <a href="#" class="profile-tab active" data-tab="services">
-        <i class="fa-solid fa-briefcase"></i>
-        Services
-      </a>
 
-        <a href="#" class="profile-tab" data-tab="workouts">
-        <i class="fa-solid fa-dumbbell"></i>
-        Workouts
-      </a>
+      <button type="button" class="profile-tab visitor only" id="messageProfileBtn" aria-label="Message profile">
+        <i class="fa-solid fa-comment"></i>
+        <span>Message</span>
+      </button>
+      
+    <a href="vault.html" class="profile-tab" aria-label="View vault">
+  <i class="fa-solid fa-box-archive"></i>
+  Vault
+</a>
 
-       <a href="#" class="profile-tab" data-tab="posts">
-        <i class="fa-solid fa-pen"></i>
-        Posts
-      </a>
+<a href="calendar.html" class="profile-tab active" aria-label="View calendar">
+  <i class="fa-regular fa-calendar-days"></i>
+  Calendar
+</a>
 
-       <a href="#" class="profile-tab" data-tab="media">
-        <i class="fa-solid fa-photo-film"></i>
-        Media
-      </a>
+        <button type="button" class="profile-tab"  id="shareProfileBtn" aria-label="Share profile">
+        <i class="fa-solid fa-share-nodes"></i>
+        <span>Share profile</span>
+      </button>
       
     </nav>
      </div>
