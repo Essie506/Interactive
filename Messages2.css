@@ -712,35 +712,38 @@ body.messages-open {
 /* =========================
    CORNER MENU
 ========================= */
-.messages-corner-item {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.625rem;
+.messages-corner-menu {
+  position: absolute;
+  top: calc(100% + 0.375rem);
+  right: 0;
+  z-index: 40;
 
-  width: calc(100% + 0.75rem);
-  margin-left: -0.375rem;
-  margin-right: -0.375rem;
+  min-width: 11.25rem;
+  padding: 0.125rem 0.375rem 0.125rem;
+  overflow: hidden;
 
-  min-height: 2.75rem;
-  padding: 0.75rem 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.995),
+    rgba(255, 255, 255, 0.975)
+  );
 
-  border: none;
-  background: transparent;
-  color: var(--messages-text);
-  text-align: left;
-  font-family: inherit;
-  font-size: clamp(0.95rem, 1vw, 1.05rem);
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-0.25rem) scale(0.98);
 
   transition:
-    background 0.18s ease,
+    opacity 0.18s ease,
     transform 0.18s ease,
-    color 0.2s ease;
+    visibility 0.18s ease,
+    box-shadow 0.2s ease;
 }
+
 .messages-corner-menu.open {
   opacity: 1;
   visibility: visible;
@@ -770,7 +773,10 @@ body.messages-open {
   align-items: center;
   gap: 0.625rem;
 
-  width: 100%;
+  width: calc(100% + 0.75rem);
+  margin-left: -0.375rem;
+  margin-right: -0.375rem;
+
   min-height: 2.75rem;
   padding: 0.75rem 1rem;
 
@@ -796,7 +802,10 @@ body.messages-open {
 .messages-corner-item::before {
   content: "";
   position: absolute;
-  inset: -0.5rem;
+  top: -0.125rem;
+  bottom: -0.125rem;
+  left: -0.5rem;
+  right: -0.5rem;
 
   background: rgba(9, 26, 58, 0.06);
   border-radius: 0.5rem;
