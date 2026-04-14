@@ -812,9 +812,6 @@ body.messages-open {
   bottom: 0;
   left: -0.5rem;
   right: -0.5rem;
-
-  border-radius: 0.5rem;
-
   background: rgba(9, 26, 58, 0.06); /* 👈 soft grey */
 
   opacity: 0; /* 👈 THIS FIXES YOUR ISSUE */
