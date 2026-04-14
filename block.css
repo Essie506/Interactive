@@ -30,13 +30,25 @@
   position: relative;
   width: min(28rem, 90vw);
   max-width: 90vw;
+  min-height: clamp(16rem, 40vh, 22rem);
+  max-height: 80vh;
+
+  display: flex;
+  flex-direction: column;
+
   background: rgba(255, 255, 255, 0.96);
   color: var(--messages-text, #091a3a);
   box-shadow: 0 1.125rem 2.5rem rgba(0, 0, 0, 0.18);
   overflow: hidden;
+
   transform: translateY(0.625rem) scale(0.98);
   transition: transform 0.22s ease, opacity 0.22s ease;
   opacity: 0;
+}
+
+.block-modal-body {
+  flex: 1;
+  overflow-y: auto;
 }
 
 .block-overlay.open .block-modal {
