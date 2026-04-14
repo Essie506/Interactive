@@ -109,40 +109,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (messageProfileBtn) {
-    messageProfileBtn.addEventListener("click", () => {
-      const messagesModal = document.getElementById("messagesModal");
-      const messagesOverlay = document.getElementById("messagesOverlay");
-      const messagesHeaderTitle = document.getElementById("messagesHeaderTitle");
-      const messagesListView = document.getElementById("messagesListView");
-      const messagesChatView = document.getElementById("messagesChatView");
+ const messageProfileBtn = document.getElementById("messageProfileBtn");
 
-      if (messagesModal) {
-        messagesModal.classList.add("open");
-        messagesModal.setAttribute("aria-hidden", "false");
-      }
+if (messageProfileBtn) {
+  messageProfileBtn.addEventListener("click", () => {
+    if (!window.interactiveMessages) return;
 
-      if (messagesOverlay) {
-        messagesOverlay.classList.add("open");
-      }
+    const profileNameEl = document.querySelector(".profile-main-info h1");
 
-      document.body.classList.add("messages-open");
+    const userName = profileNameEl
+      ? profileNameEl.textContent.trim()
+      : "Profile";
 
-      if (messagesHeaderTitle) {
-        messagesHeaderTitle.textContent = profileUser.name;
-      }
-
-      if (messagesListView) {
-        messagesListView.classList.remove("active");
-      }
-
-      if (messagesChatView) {
-        messagesChatView.classList.add("active");
-      }
-
-      console.log("Open chat for:", profileUser);
-    });
-  }
+    window.interactiveMessages.selectThread(userName);
+  });
+}
 
   if (shareProfileBtn) {
     shareProfileBtn.addEventListener("click", async () => {
