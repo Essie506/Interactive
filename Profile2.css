@@ -247,7 +247,7 @@ body.profile .profile-avatar {
   border-radius: 50%;
   background: var(--profile-avatar-bg);
   color: var(--profile-text);
-  box-shadow: var(--shadow-soft);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   font-size: 2rem;
 }
 
