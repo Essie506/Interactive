@@ -122,6 +122,7 @@ if (messageProfileBtn) {
       : "Profile";
 
     window.interactiveMessages.selectThread(userName);
+    window.interactiveMessages.openedFromProfile = true;
   });
 }
 
