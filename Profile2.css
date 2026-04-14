@@ -654,36 +654,32 @@ body.profile .post-img {
     width: 100%;
   }
 
-  body.profile .profile-info-inner {
-    display: grid;
-    grid-template-columns:
-      auto
-      minmax(0, 1fr)
-      minmax(var(--profile-services-width-min), var(--profile-services-width-max));
-    gap: var(--profile-gap-2xl);
-    align-items: center;
-    width: 100%;
-    max-width: none;
-    margin: 0;
-  }
+body.profile .profile-info-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--profile-gap-2xl);
+  align-items: center;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
 
-  body.profile .profile-avatar-wrap {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    justify-self: start;
-    margin: 0;
-  }
+ body.profile .profile-main-info {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  width: 100%;
+  max-width: none;
+  text-align: left;
+}
 
-
-body.profile .profile-main-info {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: center;
-    width: 100%;
-    max-width: none;
-    text-align: left;
-  }
+body.profile .profile-avatar-wrap {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  justify-self: end;
+  margin: 0;
+}
 
   body.profile .profile-name-row {
     justify-content: flex-start;
@@ -707,14 +703,7 @@ body.profile .profile-main-info {
       display: none;
    }
 
-   
-  body.profile .profile-services-desktop {
-    display: none;
-    text-align: left;
-  }
-
-  body.profile .profile-hero-services,
-  body.profile .profile-services-desktop {
+  body.profile .profile-hero-services {
     grid-column: 3;
     grid-row: 1;
     width: max-content;
@@ -723,8 +712,7 @@ body.profile .profile-main-info {
     align-self: center;
   }
 
-  body.profile .profile-hero-services .profile-service-links,
-  body.profile .profile-services-desktop .profile-service-links {
+  body.profile .profile-hero-services .profile-service-links {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -733,8 +721,7 @@ body.profile .profile-main-info {
     max-width: 100%;
   }
 
-  body.profile .profile-hero-services .service-link,
-  body.profile .profile-services-desktop .service-link {
+  body.profile .profile-hero-services .service-link {
     width: auto;
     justify-content: flex-start;
     text-align: left;
