@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="Menu2.css" />
   <link rel="stylesheet" href="Profile2.css" />
   <link rel="stylesheet" href="Messages2.css" />
-  <link rel="stylesheet" href="block.css" />
+  <link rel="stylesheet" href=".css" />
 
 
   <link
@@ -181,7 +181,7 @@
     </div>
         </div>
     
-    <div class="profile-hero-corner">
+    <div class="profile-hero-corner visitor-only">
   <button type="button" class="chevron-btn" id="profileChevronBtn" aria-label="More options">
     <i class="fa-solid fa-angle-down"></i>
   </button>
@@ -830,44 +830,44 @@
   </div>
 
 
-<div class="block-overlay" id="blockUserModal" hidden>
+<div class="-overlay" id="UserModal" hidden>
   <div
-    class="block-modal"
+    class="-modal"
     role="dialog"
     aria-modal="true"
-    aria-labelledby="blockUserTitle"
-    aria-describedby="blockUserText"
+    aria-labelledby="UserTitle"
+    aria-describedby="UserText"
   >
-    <div class="block-modal-header">
-      <h2 id="blockUserTitle" class="block-modal-title">Block user?</h2>
+    <div class="-modal-header">
+      <h2 id="UserTitle" class="-modal-title"> user?</h2>
 
       <button
         type="button"
-        class="icon-btn block-modal-close"
-        id="blockCloseBtn"
+        class="icon-btn -modal-close"
+        id="CloseBtn"
         aria-label="Close"
       >
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
-    <div class="block-modal-body">
-      <p id="blockUserText" class="block-modal-text">
+    <div class="-modal-body">
+      <p id="UserText" class="-modal-text">
         They won’t be able to message you or interact with your profile in the usual way.
       </p>
 
-      <p class="block-modal-helper">
-        You can manage blocked users later in
-         <a href="settings.html" class="inline-link">Settings</a>.
+      <p class="-modal-helper">
+        You can manage ed users later in
+         <a href="settings.html" class="inline-link">settings</a>.
       </p>
 
-      <div class="block-modal-actions">
-        <button type="button" class="btn-secondary" id="cancelBlockBtn">
+      <div class="-modal-actions">
+        <button type="button" class="btn-secondary" id="cancelBtn">
           Cancel
         </button>
 
-        <button type="button" class="btn-danger" id="confirmBlockBtn">
-          Block user
+        <button type="button" class="btn-danger" id="confirmBtn">
+           user
         </button>
       </div>
     </div>
