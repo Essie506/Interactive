@@ -739,9 +739,7 @@ body.messages-open {
 /* =========================
    CORNER MENU
 ========================= */
-.messages-corner-menu,
-.profile-corner-menu,
-#profileCornerMenu {
+.messages-corner-menu {
   position: absolute;
   top: calc(100% + 0.375rem);
   right: 0;
@@ -776,8 +774,7 @@ body.messages-open {
 }
 
 /* OPEN STATE */
-.messages-corner-menu.open,
-.profile-corner-menu.open {
+.messages-corner-menu.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
