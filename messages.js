@@ -127,6 +127,7 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
     drawerWidth: null,
     popupSize: null,
     popoutSize: null
+    openedFromProfile: false 
   };
 
   /* =========================
@@ -1470,14 +1471,17 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
 
       const isChatView = messagesChatView?.classList.contains("active");
 
-      if (isChatView) {
-        showDrawerList();
-      } else {
-        closeAll();
-      }
-    });
+     if (isChatView) {
+  if (state.openedFromProfile) {
+    state.openedFromProfile = false;
+    closeAll();
+  } else {
+    showDrawerList();
   }
-
+} else {
+  closeAll();
+}
+      
   if (splitToggle) {
     splitToggle.addEventListener("click", (e) => {
       e.stopPropagation();
