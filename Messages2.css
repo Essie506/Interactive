@@ -817,7 +817,7 @@ body.messages-open {
 /* Icons */
 .messages-corner-item i {
   font-size: 0.9rem;
-  color: var(--main-color-dark);
+  color: var(--text-dark);
   opacity: 0.75;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
