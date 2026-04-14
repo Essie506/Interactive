@@ -808,7 +808,7 @@ body.messages-open {
 /* Hover */
 .messages-corner-item:hover {
   background: rgba(242, 236, 255, 0.55);
-  color: #0f8f79;
+  color: var(--text-dark);
   transform: translateX(2px);
 }
 
