@@ -605,8 +605,7 @@ body.messages-open {
 /* =========================
    CHEVRON BUTTONS
 ========================= */
-.chevron-btn,
-.back-chevron-btn {
+.chevron-btn {
   position: absolute;
   padding: 0;
   border: none;
@@ -649,18 +648,9 @@ body.messages-open {
   clip-path: polygon(100% 100%, 0 100%, 100% 0);
 }
 
-/* Top-left chevron */
-.back-chevron-btn {
-  top: 0;
-  left: 0;
-  width: 3.125rem;
-  height: 3.125rem;
-  clip-path: polygon(0 0, 100% 0, 0 100%);
-}
 
 /* Chevron icons */
-.chevron-btn i,
-.back-chevron-btn i {
+.chevron-btn i {
   position: absolute;
   font-size: 0.8125rem;
   line-height: 1;
@@ -676,14 +666,8 @@ body.messages-open {
   bottom: 0.3125rem;
 }
 
-.back-chevron-btn i {
-  top: 0.3125rem;
-  left: 0.3125rem;
-}
-
 /* Hover */
-.chevron-btn:hover,
-.back-chevron-btn:hover {
+.profile-hero-corner .chevron-btn:hover {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.98),
@@ -696,8 +680,7 @@ body.messages-open {
 }
 
 /* Open rotation */
-.chevron-btn.open i,
-.back-chevron-btn.open i {
+.chevron-btn.open i {
   transform: rotate(180deg);
 }
 
