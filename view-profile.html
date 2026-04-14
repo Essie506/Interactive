@@ -127,10 +127,6 @@
     <div class="profile-info-inner">
         <div class="profile-top-right-actions">
           
-<button type="button" class="icon-btn visitor-only" id="messageProfileBtn" aria-label="Message profile">
-  <i class="fa-solid fa-comment"></i>
-</button>
-          
         </div>      
       <div class="profile-avatar-wrap">
         <button type="button" class="icon-btn self-only" id="uploadPhotoBtn" aria-label="Upload profile picture">
@@ -190,11 +186,6 @@
 
   <div class="messages-corner-menu profile-corner-menu" id="profileCornerMenu">
 
-      <button type="button" class="messages-corner-item"  id="shareProfileBtn" aria-label="Share profile">
-        <i class="fa-solid fa-share-nodes"></i>
-        <span>Share profile</span>
-      </button>
-
       <button type="button" class="messages-corner-item" id="profileMessageBtn">
         <i class="fa-solid fa-comment"></i>
         <span>Message</span>
@@ -216,25 +207,26 @@
   <section class="profile-tabs-card">
      <div class="profile-tabs-inner">
     <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
-      <a href="#" class="profile-tab active" data-tab="services">
-        <i class="fa-solid fa-briefcase"></i>
-        Services
-      </a>
 
-        <a href="#" class="profile-tab" data-tab="workouts">
-        <i class="fa-solid fa-dumbbell"></i>
-        Workouts
-      </a>
+<button type="button" class="profile-tab" id="messageProfileBtn" aria-label="Message profile">
+  <i class="fa-solid fa-comment"></i>
+  Message
+</button>
 
-       <a href="#" class="profile-tab" data-tab="posts">
-        <i class="fa-solid fa-pen"></i>
-        Posts
-      </a>
+<a href="vault.html" class="profile-tab">
+  <i class="fa-solid fa-box-archive"></i>
+  Vault
+</a>
 
-       <a href="#" class="profile-tab" data-tab="media">
-        <i class="fa-solid fa-photo-film"></i>
-        Media
-      </a>
+        <a href="calendar.html" class="profile-tab">
+  <i class="fa-regular fa-calendar-days"></i>
+  Calendar
+</a>
+
+ <button type="button" class="messages-corner-item"  id="shareProfileBtn" aria-label="Share profile">
+  <i class="fa-solid fa-share-nodes"></i>
+  Share
+</button>
       
     </nav>
      </div>
