@@ -751,11 +751,11 @@ body.messages-open {
   overflow: hidden;
   border-radius: 0.875rem;
 
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.98),
-    rgba(242, 236, 255, 0.96)
-  );
+ background: linear-gradient(
+  180deg,
+  rgba(255, 255, 255, 0.96),
+  rgba(255, 255, 255, 0.88)
+);
 
   box-shadow:
     0 12px 30px rgba(0, 0, 0, 0.14),
