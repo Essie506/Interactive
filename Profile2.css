@@ -266,6 +266,10 @@ body.profile #uploadPhotoBtn {
   padding: 0;
 }
 
+#followBtn.is-connected i {
+  transform: scale(1.1);
+}
+
 body.profile .profile-top-right-actions {
   position: absolute;
   top: var(--profile-inner-pad);
