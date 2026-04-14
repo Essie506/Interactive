@@ -352,6 +352,43 @@ body.profile .profile-hero-corner .menu-block {
   flex-direction: column;
 }
 
+body.profile .profile-hero-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+body.profile .profile-hero-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image: var(--hero-bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.32;
+}
+
+body.profile .profile-hero-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.72)
+    );
+}
+
+body.profile .profile-info-inner,
+body.profile .profile-hero-corner {
+  position: relative;
+  z-index: 2;
+}
+
 /* =========================
    TABS
 ========================= */
