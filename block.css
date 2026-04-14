@@ -1,3 +1,6 @@
+:root {
+  --modal-header-height: clamp(2.5rem, 5vw, 3.25rem);
+}
 
 .block-overlay {
   position: fixed;
@@ -46,7 +49,7 @@
   grid-template-columns: var(--icon-btn-size) 1fr var(--icon-btn-size);
   align-items: center;
   gap: 0.75rem;
-  height: var(--bar-height);
+  height: var(--modal-header-height);
   padding: 0 1rem;
   background: var(--navbar-bg);
   box-sizing: border-box;
