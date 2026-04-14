@@ -818,7 +818,9 @@ body.messages-open {
   background: rgba(9, 26, 58, 0.06); /* 👈 soft grey */
 
   opacity: 0; /* 👈 THIS FIXES YOUR ISSUE */
-  transition: opacity 0.2s ease;
+  transition:  opacity 0.18s ease,
+    transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: scale(0.96);
 
   z-index: 0;
   pointer-events: none;
@@ -828,6 +830,7 @@ body.messages-open {
 .messages-corner-item:hover::before,
 .messages-corner-item:active::before {
   opacity: 1;
+   transform: scale(1); /* 👈 gently expands in */
 }
 
 
