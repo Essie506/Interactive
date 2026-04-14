@@ -134,6 +134,11 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
      HELPERS
   ========================= */
 
+  function openProfileThread(user) {
+  state.openedFromProfile = true;
+  selectThread(user);
+}
+
   function autoResizeTextarea(textarea, maxHeight = 180) {
     if (!textarea) return;
     textarea.style.height = "auto";
@@ -1966,11 +1971,12 @@ bindToolInsert(popoutLocationBtn, popoutMessagesInput, " 📍");
   updateSendButtonState(popoutMessagesInput, popoutMessagesSend);
 
   window.interactiveMessages = {
-    openDrawer,
-    openPopup,
-    openPopout,
-    openMinimized,
-    closeAll,
-    selectThread
-  };
+  openDrawer,
+  openPopup,
+  openPopout,
+  openMinimized,
+  closeAll,
+  selectThread,
+  openProfileThread
+};
 });
