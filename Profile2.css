@@ -680,6 +680,35 @@ body.profile .post-img {
     margin: 0;
   }
 
+
+body.profile .profile-main-info {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+  }
+
+  body.profile .profile-name-row {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  body.profile .profile-handle,
+  body.profile .profile-role,
+  body.profile .profile-gym,
+  body.profile .profile-bio {
+    text-align: left;
+  }
+
+  body.profile .profile-bio {
+    margin: 0.6rem 0 0;
+    width: 100%;
+    max-width: none;
+  }
+
+   
   body.profile .profile-services-desktop {
     display: block;
     text-align: left;
