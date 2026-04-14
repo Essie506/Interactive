@@ -1458,28 +1458,30 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
     });
   }
 
-  if (messagesBack) {
-    messagesBack.addEventListener("click", (e) => {
-      e.stopPropagation();
+if (messagesBack) {
+  messagesBack.addEventListener("click", (e) => {
+    e.stopPropagation();
 
-      if (state.mode !== "drawer") return;
+    if (state.mode !== "drawer") return;
 
-      if (state.split) {
+    if (state.split) {
+      closeAll();
+      return;
+    }
+
+    const isChatView = messagesChatView?.classList.contains("active");
+
+    if (isChatView) {
+      if (state.openedFromProfile) {
+        state.openedFromProfile = false;
         closeAll();
-        return;
+      } else {
+        showDrawerList();
       }
-
-      const isChatView = messagesChatView?.classList.contains("active");
-
-     if (isChatView) {
-  if (state.openedFromProfile) {
-    state.openedFromProfile = false;
-    closeAll();
-  } else {
-    showDrawerList();
-  }
-} else {
-  closeAll();
+    } else {
+      closeAll();
+    }
+  });
 }
       
   if (splitToggle) {
