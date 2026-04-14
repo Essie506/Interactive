@@ -81,7 +81,7 @@ if (followBtn) {
       setActiveProfileTab("posts");
     } else {
       // 🔁 back to original
-      followBtn.innerHTML = '<i class="fa-solid fa-user-plus"></i> Connect';
+      followBtn.innerHTML = '<i class="fa-solid fa-user-plus"></i>';
       setActiveProfileTab("services");
     }
   });
