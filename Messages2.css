@@ -615,6 +615,11 @@ body.messages-open {
   cursor: pointer;
   z-index: 2;
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
+    transition:
+    background 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .profile-hero-corner .chevron-btn {
@@ -629,12 +634,6 @@ body.messages-open {
   z-index: 5;
 
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
-
-  transition:
-    background 0.22s ease,
-    box-shadow 0.22s ease,
-    transform 0.2s ease,
-    color 0.2s ease;
 }
 
    
