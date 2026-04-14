@@ -30,7 +30,7 @@
   position: relative;
   width: min(28rem, 90vw);
   max-width: 90vw;
-  min-height: clamp(16rem, 40vh, 22rem);
+  min-height: clamp(12rem, 36vh, 18rem);
   max-height: 80vh;
 
   display: flex;
@@ -96,6 +96,7 @@
   font-size: clamp(0.9rem, 1.1vw, 0.98rem);
   line-height: 1.5;
   color: rgba(9, 26, 58, 0.9);
+  text-align: center;
 }
 
 .block-modal-list {
