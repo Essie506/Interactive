@@ -704,6 +704,10 @@ body.profile .profile-main-info {
     max-width: none;
   }
 
+   body.profile .profile-tabs-card {
+      display: none;
+   }
+
    
   body.profile .profile-services-desktop {
     display: none;
