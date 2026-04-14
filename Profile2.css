@@ -381,8 +381,8 @@ body.profile .profile-tab {
   min-width: max-content;
   padding: 0.35rem 0.4rem;
    font-family: inherit;
-  font-size: clamp(0.95rem, 1vw, 1.05rem);
-  font-weight: 500;
+  font-size: clamp(1rem, 1.05vw, 1.1rem);
+  font-weight: 600;
   letter-spacing: 0.3px;
   color: rgba(9, 26, 58, 0.72);
   text-decoration: none;
