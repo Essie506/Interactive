@@ -55,13 +55,13 @@ body.feed .side-card {
      margin-bottom: var(--profile-gap-md);
 }
 
-body.feed .feed-inner {
-  padding: var(--profile-inner-pad);
-}
-
 body.feed .partner-card + .partner-card,
 body.feed .promo-card + .promo-card {
   margin-top: var(--profile-gap-md);
+}
+
+body.feed .post {
+  padding: calc(var(--profile-inner-pad);
 }
 
 
