@@ -72,6 +72,12 @@ body.home .menu-toggle.active span:nth-child(3) {
   display: block;
 }
 
+.menu-item,
+.menu-search,
+.menu-profile-info {
+  overflow: hidden;
+}
+
 .menu.open {
   transform: translateX(0);
 }
