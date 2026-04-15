@@ -40,60 +40,59 @@ body.feed h1 {
 /* =========================
    FEED POST CARDS
 ========================= */
-body.feed .post {
+.post {
+    padding: 1rem;
   background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius);
-  padding: 0.9375rem;
-  margin-bottom: 0.125rem;
+  margin-bottom: var(--profile-gap-md);
 }
 
-body.feed .post-img {
-  display: flex;
-   align-items: center;
-   justify-content: center;
-   height: auto;
-  max-height: min(26.25rem, 70dvh);
-  object-fit: contain;
-  border-radius: 0.625rem;
-  margin-top: 0.625rem;
-}
-
-body.feed .post-header {
+.post-header {
   display: flex;
   align-items: center;
-  gap: 0.625rem;
+  gap: var(--profile-gap-md);
   font-weight: bold;
-  margin-bottom: 0.5rem;
+}
+
+.post-info {
+  display: flex;
+  flex-direction: column;
 }
 
 body.feed .avatar {
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 50%;
-  background: rgba(56, 173, 169, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  background: var(--profile-avatar-bg-strong);
 }
 
-body.feed .post-info {
-  display: flex;
-  flex-direction: column;
-}
-
-body.feed .username {
+.username {
   font-weight: 600;
 }
 
-body.feed .time {
+.time {
   font-size: 0.75rem;
   color: gray;
 }
 
-body.feed .post-text {
+post-text {
   margin: 0.625rem 0;
+}
+
+.post-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(26.25rem, 70dvh);
+  margin-top: 0.6rem;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  object-fit: contain;
 }
 
 /* =========================
