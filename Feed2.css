@@ -60,10 +60,10 @@ body.feed .promo-card + .promo-card {
   margin-top: var(--profile-gap-md);
 }
 
-body.feed .post {
-  padding: var(--profile-inner-pad);
-}
 
+body.feed .post {
+  padding: calc(var(--profile-inner-pad) + 0.25rem);
+}
 
 body.feed .left-col,
 body.feed .right-col {
