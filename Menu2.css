@@ -92,10 +92,9 @@ body.home .menu-toggle.active span:nth-child(3) {
 }
 
 /* =========================
-   MAIN MENU ROWS
+   SHARED MENU ITEMS
 ========================= */
-.menu > ul > li > a,
-.menu-profile-info,
+.menu-item,
 .menu-search {
   position: relative;
   z-index: 1;
@@ -126,12 +125,11 @@ body.home .menu-toggle.active span:nth-child(3) {
   -webkit-tap-highlight-color: transparent;
 
   transition:
-    transform 0.18s ease,
+    transform 0.22s cubic-bezier(.34,1.56,.64,1),
     color 0.2s ease;
 }
 
-.menu > ul > li > a::before,
-.menu-profile-info::before,
+.menu-item::before,
 .menu-search::before {
   content: "";
   position: absolute;
@@ -154,32 +152,26 @@ body.home .menu-toggle.active span:nth-child(3) {
   pointer-events: none;
 }
 
-.menu > ul > li > a:hover::before,
-.menu > ul > li > a:active::before,
-.menu-profile-info:hover::before,
-.menu-profile-info:active::before,
+.menu-item:hover::before,
+.menu-item:active::before,
 .menu-search:hover::before,
 .menu-search:active::before {
   opacity: 1;
   transform: scale(1);
 }
 
-.menu > ul > li > a:hover,
-.menu-profile-info:hover,
+.menu-item:hover,
 .menu-search:hover {
   color: var(--text-dark);
   transform: translateX(2px);
 }
 
-.menu > ul > li > a:active,
-.menu-profile-info:active,
+.menu-item:active,
 .menu-search:active {
   transform: scale(0.995);
 }
 
-/* row separators */
-.menu > ul > li > a::after,
-.menu-profile-info::after,
+.menu-item::after,
 .menu-search::after {
   content: "";
   position: absolute;
@@ -191,9 +183,9 @@ body.home .menu-toggle.active span:nth-child(3) {
 }
 
 /* =========================
-   ICONS
+   ICONS / TEXT
 ========================= */
-.menu > ul > li > a i,
+.menu-item i,
 .menu-search i {
   position: relative;
   z-index: 1;
@@ -206,37 +198,17 @@ body.home .menu-toggle.active span:nth-child(3) {
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.menu > ul > li > a:hover i,
+.menu-item:hover i,
 .menu-search:hover i {
   opacity: 1;
   transform: translateX(1px);
 }
 
-.menu > ul > li > a span,
+.menu-item span,
 .menu-profile-text,
 .menu-search input {
   position: relative;
   z-index: 1;
-}
-
-/* =========================
-   OVERLAY
-========================= */
-.menu-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(9, 26, 58, 0.22);
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease, visibility 0.25s ease;
-  z-index: 2400;
-}
-
-.menu-overlay.open {
-  opacity: 1;
-  visibility: visible;
 }
 
 /* =========================
@@ -257,8 +229,6 @@ body.home .menu-toggle.active span:nth-child(3) {
 }
 
 .menu-profile-info i {
-  position: relative;
-  z-index: 1;
   width: 2rem;
   height: 2rem;
   flex: 0 0 2rem;
@@ -270,13 +240,6 @@ body.home .menu-toggle.active span:nth-child(3) {
   box-shadow: none;
   color: var(--text-dark);
   font-size: 1rem;
-  opacity: 0.82;
-  transition: transform 0.2s ease, opacity 0.2s ease;
-}
-
-.menu-profile-info:hover i {
-  opacity: 1;
-  transform: translateX(1px);
 }
 
 .menu-profile-name {
@@ -291,8 +254,8 @@ body.home .menu-toggle.active span:nth-child(3) {
   margin-top: 0.16rem;
 }
 
-.menu-profile-info > div:last-child,
-.menu-profile-text {
+.menu-profile-text,
+.menu-profile-info > div:last-child {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -300,36 +263,13 @@ body.home .menu-toggle.active span:nth-child(3) {
 }
 
 /* =========================
-   FEED TOGGLE
-========================= */
-body.feed .menu-toggle {
-  padding: 0;
-}
-
-body.feed .menu-toggle span {
-  display: none;
-}
-
-body.feed .menu-toggle::before {
-  inset: -0.25rem;
-  border-radius: 50%;
-}
-
-body.feed .menu-toggle i {
-  font-size: var(--main-font-size);
-  z-index: 2000;
-  color: var(--text-dark);
-}
-
-/* =========================
-   SEARCH ROW
+   SEARCH
 ========================= */
 .menu-search-item {
   position: relative;
 }
 
 .menu-search {
-  gap: 0.625rem;
   min-height: 2.75rem;
   padding-top: 0.72rem;
   padding-bottom: 0.72rem;
@@ -354,6 +294,26 @@ body.feed .menu-toggle i {
 
 .menu-search input::placeholder {
   color: rgba(9, 26, 58, 0.55);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(9, 26, 58, 0.22);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 2400;
+}
+
+.menu-overlay.open {
+  opacity: 1;
+  visibility: visible;
 }
 
 /* =========================
