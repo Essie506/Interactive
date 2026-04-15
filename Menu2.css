@@ -407,8 +407,7 @@ box-sizing: border-box;
 
 @media (min-width: 900px) {
 .menu {
- top: var(--bar-height);
-
+ top: var(--bar-height-large);
 }
 }
 
