@@ -76,3 +76,33 @@ function renderPosts(containerId, postsArray) {
 
   container.innerHTML = postsArray.map(createPostHTML).join("");
 }
+
+function setupPostActions(containerId) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.addEventListener("click", (event) => {
+    const button = event.target.closest(".post-action-btn");
+    if (!button) return;
+
+    const action = button.dataset.action;
+
+    if (action === "like") {
+      button.classList.toggle("is-active");
+
+      const icon = button.querySelector("i");
+      if (icon) {
+        icon.classList.toggle("fa-regular", !button.classList.contains("is-active"));
+        icon.classList.toggle("fa-solid", button.classList.contains("is-active"));
+      }
+    }
+
+    if (action === "comment") {
+      console.log("Comment clicked");
+    }
+
+    if (action === "share") {
+      console.log("Share clicked");
+    }
+  });
+}
