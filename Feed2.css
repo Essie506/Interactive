@@ -173,6 +173,10 @@ body.feed .post-action-btn.is-active {
   color: var(--text-dark);
 }
 
+body.feed .post-action-btn[data-action="like"].is-active i {
+  color: #e0245e;
+}
+
 body.feed .post-action-btn i {
   font-size: 0.95rem;
 }
