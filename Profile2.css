@@ -60,7 +60,6 @@ body.profile .profile-services-card {
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-    margin-top: var(--profile-gap-md);
    
 }
 
