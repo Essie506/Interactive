@@ -40,12 +40,19 @@ body.feed h1 {
 /* =========================
    FEED POST CARDS
 ========================= */
-.post {
-    padding: 1rem;
-  background: rgba(255, 255, 255, 0.6);
+
+body.feed .post,
+body.feed .side-card {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-card-bg);
   backdrop-filter: var(--profile-blur);
+  -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-  margin-bottom: var(--profile-gap-md);
+  padding: var(--profile-inner-pad);
+  overflow: hidden;
+     margin-bottom: var(--profile-gap-md);
 }
 
 .post-header {
@@ -98,17 +105,16 @@ body.feed .avatar {
 /* =========================
    FEED SIDE CARDS
 ========================= */
-body.feed .side-card {
-  background: rgba(255, 255, 255, 0.7);
-  padding: 0.125rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
 
 body.feed .partner-card,
-body.feed .promo-card {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1.25;
-  margin-top: 0.125rem;
+body.feed .promo-card,
+.post-box {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-inner-bg);
+  box-shadow: var(--profile-raised-shadow);
+  padding: var(--profile-inner-pad);
 justify-content: center;
    align-items: center;
 }
@@ -172,11 +178,6 @@ body.feed .partner-promo {
   }
 
   body.feed #feed {
-    width: 100%;
-    min-width: 0;
-  }
-
-  body.feed .post {
     width: 100%;
     min-width: 0;
   }
