@@ -27,8 +27,8 @@
 
 .block-modal {
   position: relative;
-  width: min(28rem, 92vw);
-  max-width: 92vw;
+  width: min(28rem, 100vw);
+  max-width: 100vw;
 
   background: rgba(255, 255, 255, 0.96);
   color: var(--messages-text, #091a3a);
