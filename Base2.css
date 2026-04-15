@@ -66,7 +66,7 @@ body {
 
   --menu-width: clamp(260px, 68vw, 320px);
 --menu-item-height: calc(var(--bar-height) * 0.85);
---menu-icon-size: calc(var(--bar-height) * 0.55);
+--menu-icon-size: clamp(1rem, 2.8vw, 1.25rem);
 --menu-padding-x: calc(var(--bar-height) * 0.24);
 
    --main-font-size: 1.15rem;
