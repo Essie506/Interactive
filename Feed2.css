@@ -280,6 +280,9 @@ body.feed .partner-promo {
 @media (max-width: 900px) {
   body.feed .page-layout {
    padding-top: calc(var(--bar-height) + 0.125rem);
-
   }
+   
+body.feed .side-card {
+   display: none
+   }
 }
