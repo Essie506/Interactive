@@ -362,10 +362,13 @@ body.home .menu-toggle.active span:nth-child(3) {
 
 .submenu li a:hover {
   background: rgba(0, 0, 0, 0.06);
-  color: #03857f;
+  color: var(--text-dark);
   transform: translateX(2px);
 }
 
+.submenu li a:active {
+  color: var(--text-dark);
+}
 .submenu li + li a {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
