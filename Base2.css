@@ -64,10 +64,10 @@ body {
   --content-max: min(1100px, 92vw);
   --card-max: min(900px, 94vw);
 
-  --menu-width: min(380px, 78vw);
-  --menu-item-height: calc(var(--bar-height) * 0.90);
-  --menu-icon-size: calc(var(--bar-height) * 0.60);
-  --menu-padding-x: calc(var(--bar-height) * 0.28);
+  --menu-width: clamp(260px, 68vw, 320px);
+--menu-item-height: calc(var(--bar-height) * 0.85);
+--menu-icon-size: calc(var(--bar-height) * 0.55);
+--menu-padding-x: calc(var(--bar-height) * 0.24);
 
    --main-font-size: 1.15rem;
   --profile-page-max: 62.5rem;
