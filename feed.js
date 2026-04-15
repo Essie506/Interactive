@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const feed = document.getElementById("feed");
-  if (!feed) return;
+  const feedContainer = document.getElementById("feed");
+  if (!feedContainer) return;
+
+  renderPosts("feed", posts);
+  setupPostActions("feed");
+});
 
   const demoPosts = [
     {
