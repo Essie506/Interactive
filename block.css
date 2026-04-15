@@ -30,8 +30,8 @@
   position: relative;
   width: min(28rem, 80vw);
   max-width: 80vw;
-  min-height: clamp(10rem, 28vh, 16rem);
-  max-height: 80vh;
+  min-height: clamp(8rem, 28vh, 16rem);
+  max-height: 70vh;
 
   display: flex;
   flex-direction: column;
@@ -130,10 +130,14 @@
 
 .inline-link {
   color: var(--text-dark);
-  border-bottom: 1px solid rgba(9, 26, 58, 0.3);
+  color: 1px solid rgba(9, 26, 58, 0.5);
   text-decoration: none;
 }
 
 .inline-link:hover {
-  border-bottom-color: var(--main-color);
+  color: var(--main-color);
+}
+
+.inline-link:active {
+  color: var(--main-color-dark);
 }
