@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(0.75rem, 2vw, 1.25rem);
+  padding: clamp(0.5rem, 2vw, 1.25rem)
   background: rgba(9, 26, 58, 0.26);
   backdrop-filter: blur(0.25rem);
   -webkit-backdrop-filter: blur(0.25rem);
@@ -28,9 +28,9 @@
 
 .block-modal {
   position: relative;
-  width: min(28rem, 80vw);
-  max-width: 80vw;
-  min-height: clamp(8rem, 28vh, 16rem);
+  width: min(28rem, 92vw);
+  max-width: 92vw;
+  min-height: clamp(12rem, 34dvh, 18rem);
   max-height: min(80dvh, 40rem);
 
   display: flex;
@@ -45,6 +45,7 @@
   transition: transform 0.22s ease, opacity 0.22s ease;
   opacity: 0;
 }
+
 .block-modal-body {
   flex: 1 1 auto;
   overflow-y: auto;
