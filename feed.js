@@ -1,4 +1,8 @@
- const demoPosts = [
+document.addEventListener("DOMContentLoaded", () => {
+  const feed = document.getElementById("feed");
+  if (!feed) return;
+
+const demoPosts = [
     {
       id: "post_1",
       user: "Esther",
