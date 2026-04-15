@@ -145,21 +145,16 @@ body.feed .partner-promo {
 @media (min-width: 901px) {
   body.feed .page-layout {
     display: grid;
-    grid-template-columns: 11.25rem minmax(0, 1fr) 11.25rem;
+    grid-template-columns: 11.25rem minmax(0, 37.5rem) 11.25rem;
     gap: 1rem;
     align-items: start;
+    justify-content: center;
     max-width: 68.75rem;
     margin: 0 auto;
     padding-top: calc(var(--bar-height) + 0.625rem);
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     box-sizing: border-box;
-  }
-
-   body.feed .feed-page {
-    width: 100%;
-    max-width: none;
-    margin: 0;
   }
 
   body.feed .left-col,
@@ -169,13 +164,20 @@ body.feed .partner-promo {
 
   body.feed .feed-page {
     width: 100%;
-    max-width: 37.5rem;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
+    min-width: 0;
+  }
+
+  body.feed #feed {
+    width: 100%;
+    min-width: 0;
   }
 
   body.feed .post-box,
   body.feed .post {
     width: 100%;
+    min-width: 0;
   }
 
   body.feed .post-box {
