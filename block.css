@@ -47,7 +47,7 @@
 }
 
 .block-modal-body {
-  flex: 1;
+  flex: 0 1 auto;
   overflow-y: auto;
 }
 
@@ -130,7 +130,6 @@
 
 .inline-link {
   color: var(--text-dark);
-  color: 1px solid rgba(9, 26, 58, 0.5);
   text-decoration: none;
 }
 
