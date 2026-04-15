@@ -55,6 +55,11 @@ body.feed .side-card {
      margin-bottom: var(--profile-gap-md);
 }
 
+body.feed .partner-card + .partner-card,
+body.feed .promo-card + .promo-card {
+  margin-top: var(--profile-gap-md);
+}
+
 
 body.feed .left-col,
 body.feed .right-col {
