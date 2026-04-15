@@ -55,6 +55,14 @@ body.feed .side-card {
      margin-bottom: var(--profile-gap-md);
 }
 
+
+body.feed .left-col,
+body.feed .right-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--profile-gap-md);
+}
+
 .post-header {
   display: flex;
   align-items: center;
