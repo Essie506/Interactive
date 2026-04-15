@@ -60,7 +60,7 @@ body.profile .profile-services-card {
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-   
+margin-bottom: var(--profile-gap-md);
 }
 
 body.profile .profile-tabs-card {
