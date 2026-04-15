@@ -236,8 +236,10 @@ body.home .menu-toggle.active span:nth-child(3) {
 }
 
 .menu-profile-info i {
-  width: 2rem;
-  height: 2rem;
+   width: var(--menu-icon-size);
+  height: var(--menu-icon-size);
+  font-size: calc(var(--menu-icon-size) * 0.9);
+  opacity: 0.75;
   flex: 0 0 2rem;
   display: inline-flex;
   align-items: center;
@@ -246,7 +248,6 @@ body.home .menu-toggle.active span:nth-child(3) {
   background: none;
   box-shadow: none;
   color: var(--text-dark);
-  font-size: 1rem;
 }
 
 .menu-profile-name {
