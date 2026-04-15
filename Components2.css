@@ -727,14 +727,6 @@ body.sign-up .input-field {
 /* =========================
    FEED POSTS
 ========================= */
-.post-box,
-.post {
-  width: 100%;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
 
 .post-box {
   margin-top: 0.625rem;
@@ -743,6 +735,11 @@ body.sign-up .input-field {
   padding: 0;
   background: white;
   box-shadow: var(--shadow-soft);
+    width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
 }
 
 .post-box-top {
@@ -810,13 +807,7 @@ body.sign-up .input-field {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.post-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 1.25rem;
-  margin: 1rem 0;
-}
+
 
 .post-tools {
   display: none;
@@ -844,6 +835,160 @@ body.sign-up .input-field {
 #postBox textarea {
   cursor: pointer;
 }
+
+
+.composer-post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1.25rem;
+  margin: 1rem 0;
+}
+
+
+/* =========================
+   SHARED POSTS
+========================= */
+.post {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: var(--profile-blur);
+  -webkit-backdrop-filter: var(--profile-blur);
+  box-shadow: var(--shadow-soft);
+  padding: 1rem;
+  margin-bottom: var(--profile-gap-md);
+  overflow: hidden;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: var(--profile-gap-md);
+  font-weight: 700;
+}
+
+.post-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--profile-avatar-bg-strong);
+}
+
+.username {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.time {
+  font-size: 0.75rem;
+  color: gray;
+}
+
+.post-text {
+  margin: 0.625rem 0;
+  color: var(--text-dark);
+}
+
+.post-media {
+  width: 100%;
+  margin-top: 0.6rem;
+  overflow: hidden;
+}
+
+.post-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(26.25rem, 70dvh);
+  margin-top: 0.6rem;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  object-fit: contain;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--profile-gap-sm);
+  margin-top: var(--profile-gap-md);
+  margin-bottom: 0;
+  flex-wrap: wrap;
+}
+
+.post-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: transparent;
+  border: none;
+  padding: 0.25rem 0.35rem;
+  color: var(--text-dark);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    transform 0.15s ease,
+    color 0.15s ease,
+    opacity 0.15s ease,
+    background 0.15s ease;
+}
+
+.post-action-btn:hover {
+  transform: translateY(-0.0625rem);
+  background: var(--profile-inner-bg);
+}
+
+.post-action-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.post-action-btn:focus-visible {
+  outline: 2px solid var(--main-color);
+  outline-offset: 2px;
+}
+
+.post-action-btn span {
+  line-height: 1;
+}
+
+.post-action-btn.is-active {
+  color: var(--text-dark);
+}
+
+.post-action-btn[data-action="like"].is-active i {
+  color: #e0245e;
+}
+
+.post-action-btn i {
+  font-size: 0.95rem;
+}
+
+
+
+
+
+
 
 @media (min-width: 500px) {
   .composer-bottom-bar {
@@ -873,3 +1018,10 @@ body.sign-up .input-field {
     min-width: 5.625rem;
   }
 }
+
+
+
+
+
+
+
