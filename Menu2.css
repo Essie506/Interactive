@@ -238,9 +238,9 @@ body.home .menu-toggle.active span:nth-child(3) {
 .menu-profile-info i {
    width: var(--menu-icon-size);
   height: var(--menu-icon-size);
-  font-size: calc(var(--menu-icon-size) * 0.9);
+    font-size: var(--menu-icon-size);
   opacity: 0.75;
-  flex: 0 0 2rem;
+   flex: 0 0 var(--menu-icon-size);
   display: inline-flex;
   align-items: center;
   justify-content: center;
