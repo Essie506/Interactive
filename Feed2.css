@@ -145,8 +145,8 @@ body.feed .partner-promo {
 @media (min-width: 901px) {
   body.feed .page-layout {
     display: grid;
-    grid-template-columns: 11.25rem minmax(0, 37.5rem) 11.25rem;
-    gap: 1rem;
+      grid-template-columns: 13rem minmax(0, 42rem) 13rem;
+    gap: 1.25rem;
     align-items: start;
     justify-content: center;
     max-width: 68.75rem;
@@ -187,9 +187,9 @@ body.feed .partner-promo {
 
 @media (min-width: 1100px) {
   body.feed .page-layout {
-    grid-template-columns: 15rem minmax(0, 37.5rem) 15rem;
+    grid-template-columns: 16rem minmax(0, 45rem) 16rem;
     gap: 1.5rem;
-    max-width: 87.5rem;
+    max-width: 90rem;
   }
 }
 
