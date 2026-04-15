@@ -1,12 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const feedContainer = document.getElementById("feed");
-  if (!feedContainer) return;
-
-  renderPosts("feed", posts);
-  setupPostActions("feed");
-});
-
-  const demoPosts = [
+ const demoPosts = [
     {
       id: "post_1",
       user: "Esther",
