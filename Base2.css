@@ -70,6 +70,59 @@ body {
   --menu-padding-x: calc(var(--bar-height) * 0.28);
 
    --main-font-size: 1.15rem;
+  --profile-page-max: 62.5rem;
+
+  --profile-page-pad-x: 0.5rem;
+  --profile-page-pad-x-mobile: 0.125rem;
+  --profile-page-pad-top: calc(var(--bar-height) + 0.625rem);
+  --profile-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
+
+  --profile-card-bg: rgba(255, 255, 255, 0.76);
+  --profile-card-bg-soft: rgba(255, 255, 255, 0.68);
+  --profile-inner-bg: rgba(255, 255, 255, 0.82);
+  --profile-icon-bg: rgba(255, 255, 255, 0.42);
+
+  --profile-border-soft: rgba(9, 26, 58, 0.08);
+  --profile-border-soft-hover: rgba(9, 26, 58, 0.14);
+
+  --profile-text: #0a0a0a;
+  --profile-text-soft: rgba(9, 26, 58, 0.75);
+  --profile-text-muted: rgba(9, 26, 58, 0.6);
+
+  --profile-avatar-bg: rgba(56, 173, 169, 0.16);
+  --profile-avatar-bg-strong: rgba(56, 173, 169, 0.2);
+  --profile-accent-soft: rgba(56, 173, 169, 0.15);
+
+  --profile-card-pad: 0.25rem;
+  --profile-inner-pad: 0.25rem;
+  --profile-hero-pad: 0.25rem;
+
+  --profile-gap-xxs: 0.25rem;
+  --profile-gap-xs: 0.3rem;
+  --profile-gap-sm: 0.5rem;
+  --profile-gap-md: 0.125rem;
+  --profile-gap-lg: 1rem;
+  --profile-gap-xl: 1.25rem;
+  --profile-gap-2xl: 1.5rem;
+
+  --profile-icon-btn-size: 2.75rem;
+  --profile-avatar-size: clamp(5.5rem, 11vw, 6.875rem);
+  --profile-services-width: 11rem;
+  --profile-services-width-min: 10rem;
+  --profile-services-width-max: 13rem;
+
+  --profile-bio-max: 33.75rem;
+  --profile-media-badge-size: 2.375rem;
+
+  --profile-blur: blur(10px);
+  --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 900px) {
+  :root {
+    --profile-page-pad-top: calc(var(--bar-height) + 0.125rem);
+  }
+   
 }
 
 html {
