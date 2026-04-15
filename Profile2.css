@@ -510,60 +510,7 @@ body.profile .media-play-badge {
   box-shadow: var(--shadow-soft);
 }
 
-body.profile .post {
-    padding: 1rem;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: var(--profile-blur);
-  box-shadow: var(--shadow-soft);
-  margin-bottom: var(--profile-gap-md);
-}
 
-body.profile .post-header {
-  display: flex;
-  align-items: center;
-  gap: var(--profile-gap-md);
-  font-weight: bold;
-}
-
-body.profile .post-info {
-  display: flex;
-  flex-direction: column;
-}
-
-body.profile .avatar {
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--profile-avatar-bg-strong);
-}
-
-body.profile .username {
-  font-weight: 600;
-}
-
-body.profile .time {
-  font-size: 0.75rem;
-  color: gray;
-}
-
-body.profile .post-text {
-  margin: 0.625rem 0;
-}
-
-body.profile .post-img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: min(26.25rem, 70dvh);
-  margin-top: 0.6rem;
-  margin-left: 0;
-  margin-right: 0;
-  border-radius: 0;
-  object-fit: contain;
-}
 
 /* =========================
    DESKTOP
