@@ -129,8 +129,6 @@ body.feed .promo-card,
   background: var(--profile-inner-bg);
   box-shadow: var(--profile-raised-shadow);
   padding: var(--profile-inner-pad);
-justify-content: center;
-   align-items: center;
 }
 
 body.feed .partner-card + .partner-card,
@@ -259,11 +257,6 @@ body.feed .partner-promo {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
     box-sizing: border-box;
-  }
-
-  body.feed .left-col,
-  body.feed .right-col {
-    display: block;
   }
 
   body.feed .feed-page {
