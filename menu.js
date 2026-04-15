@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.add("open");
     menuOverlay.classList.add("open");
     menuToggle.classList.add("active");
+    document.body.classList.add("menu-open");
     navbar?.classList.remove("hide-top");
   }
 
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     menu.classList.remove("open");
     menuOverlay.classList.remove("open");
     menuToggle.classList.remove("active");
-
+    document.body.classList.remove("menu-open");
     submenuParents.forEach((item) => {
       item.classList.remove("open");
     });
