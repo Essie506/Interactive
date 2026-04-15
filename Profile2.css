@@ -368,7 +368,7 @@ body.profile .profile-tabs {
 }
 
 body.profile .profile-tabs-inline {
-  margin-top: var(--profile-gap-xxs);
+  margin-top: var(--profile-gap-md);
   padding-top: 0.125rem;
 }
 
