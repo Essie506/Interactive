@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     return `
       <article class="post" data-post-id="${escapeAttribute(post.id)}">
-        <div class="post-box">
+        <div class="post-inner">
           <div class="post-header">
             <div class="avatar" aria-hidden="true">
               <i class="fa-solid fa-user"></i>
