@@ -116,12 +116,11 @@ body.profile .profile-services-card {
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
+    margin-top: var(--profile-gap-md);
+   
 }
 
-body.profile .profile-tabs-card,
-  body.profile .profile-panel-posts,
-  body.profile .profile-panel-workouts,
-  body.profile .profile-panel-media {
+body.profile .profile-tabs-card {
     margin-top: var(--profile-gap-md);
  }
 
