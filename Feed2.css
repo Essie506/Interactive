@@ -131,10 +131,6 @@ body.feed .promo-card,
   padding: var(--profile-inner-pad);
 }
 
-body.feed .partner-card + .partner-card,
-body.feed .promo-card + .promo-card {
-  margin-top: var(--profile-gap-md);
-}
 
 body.feed .post-actions {
   display: flex;
