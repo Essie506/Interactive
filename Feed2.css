@@ -61,7 +61,7 @@ body.feed .promo-card + .promo-card {
 }
 
 body.feed .post {
-  padding: calc(var(--profile-inner-pad);
+  padding: var(--profile-inner-pad);
 }
 
 
