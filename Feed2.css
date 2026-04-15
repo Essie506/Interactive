@@ -136,10 +136,6 @@ body.feed .promo-card + .promo-card {
   margin-top: var(--profile-gap-md);
 }
 
-body.feed .post + .post {
-  margin-top: var(--profile-gap-md);
-}
-
 body.feed .post-actions {
   display: flex;
   align-items: center;
