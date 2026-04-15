@@ -31,7 +31,7 @@
   width: min(28rem, 80vw);
   max-width: 80vw;
   min-height: clamp(8rem, 28vh, 16rem);
-  max-height: 0;
+  max-height: min(80dvh, 40rem);
 
   display: flex;
   flex-direction: column;
@@ -45,10 +45,13 @@
   transition: transform 0.22s ease, opacity 0.22s ease;
   opacity: 0;
 }
-
 .block-modal-body {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 1.5vw, 0.9rem);
+  padding: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 .block-overlay.open .block-modal {
