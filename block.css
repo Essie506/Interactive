@@ -1,5 +1,5 @@
 :root {
-  --modal-header-height: clamp(2.75rem, 5.8vw, 3.5rem);
+  --modal-header-height: clamp(2.8rem, 5.85vw, 3.55rem);
 }
 
 .block-overlay {
