@@ -100,15 +100,17 @@ body.feed .avatar {
 ========================= */
 body.feed .side-card {
   background: rgba(255, 255, 255, 0.7);
-  padding: 1rem;
+  padding: 0.125rem;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 body.feed .partner-card,
 body.feed .promo-card {
   background: rgba(255, 255, 255, 0.9);
-  padding: 1.25
-  margin-top: 0.75rem;
+  padding: 1.25;
+  margin-top: 0.125rem;
+justify-content: center;
+   align-items: center;
 }
 
 body.feed .partner-logo {
