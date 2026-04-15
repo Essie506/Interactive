@@ -199,8 +199,8 @@ body.home .menu-toggle.active span:nth-child(3) {
   text-align: center;
   color: var(--text-dark);
    font-size: var(--menu-icon-size);
-  width: var(--menu-icon-size);
-  flex: 0 0 var(--menu-icon-size);
+    width: 1.2em;
+  flex: 0 0 1.2em;
   opacity: 0.78;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -368,4 +368,11 @@ body.home .menu-toggle.active span:nth-child(3) {
 
 .submenu li + li a {
   border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+@media (max-width: 900px) {
+  .menu-item span,
+  .menu-profile-name {
+    font-weight: 600;
+  }
 }
