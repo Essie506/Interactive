@@ -266,6 +266,13 @@ body.feed .partner-promo {
     width: 100%;
     min-width: 0;
   }
+
+    body.feed .left-col,
+  body.feed .right-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--profile-gap-md);
+  }
 }
 
 @media (min-width: 1100px) {
