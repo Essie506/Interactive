@@ -7,7 +7,6 @@
   inset: 0;
   z-index: 3990;
   display: flex;
-  align-items: center;
   justify-content: center;
   padding: clamp(0.5rem, 2vw, 1.25rem)
   background: rgba(9, 26, 58, 0.26);
