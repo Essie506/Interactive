@@ -956,6 +956,7 @@ body.sign-up .input-field {
 .post-action-btn:hover {
   transform: translateY(-0.0625rem);
   background: var(--profile-inner-bg);
+  border-color: var(--profile-border-soft-hover);
 }
 
 .post-action-btn:focus {
