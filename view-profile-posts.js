@@ -3,4 +3,5 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!profilePostsContainer) return;
 
   renderPosts("profilePosts", posts);
+  setupPostActions("profilePosts");
 });
