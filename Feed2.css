@@ -114,7 +114,7 @@ body.feed .post-media {
 
 body.feed .partner-card,
 body.feed .promo-card,
-.post-box {
+.post-inner {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
