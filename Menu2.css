@@ -88,7 +88,7 @@ body.home .menu-toggle.active span:nth-child(3) {
 }
 
 .menu > ul > li > a,
-.menu-profile-info
+.menu-profile-info,
 .menu-search,
 .submenu li a {
   width: calc(100% + 2rem);
@@ -183,7 +183,6 @@ gap: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(56, 173, 169, 0.15);
   color: var(--text-dark);
   font-size: var(--main-font-size);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
