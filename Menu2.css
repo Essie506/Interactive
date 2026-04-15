@@ -178,10 +178,10 @@ gap: 0.75rem;
 .menu-profile-info i {
   width: 2.375rem;
   height: 2.375rem;
-  border-radius: 50%;
+   border-radius: 0;
   flex: 0 0 2.375rem;
   display: flex;
-    background: transparent;
+    background: none;
   align-items: center;
   justify-content: center;
   color: var(--text-dark);
