@@ -170,7 +170,7 @@ body.feed .post-action-btn:hover {
 }
 
 body.feed .post-action-btn.is-active {
-  color: var(--main-color);
+  color: var(--text-dark);
 }
 
 body.feed .post-action-btn i {
