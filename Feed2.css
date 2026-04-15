@@ -170,8 +170,7 @@ body.feed .post-action-btn:hover {
 }
 
 body.feed .post-action-btn.is-active {
-  background: rgba(56, 173, 169, 0.12);
-  border-color: rgba(56, 173, 169, 0.35);
+  color: var(--main-color);
 }
 
 body.feed .post-action-btn i {
