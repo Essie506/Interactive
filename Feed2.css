@@ -282,7 +282,8 @@ body.feed .partner-promo {
    padding-top: calc(var(--bar-height) + 0.125rem);
   }
    
-body.feed .side-card {
-   display: none
+body.feed .right-col,
+   body.feed .left-col {
+   display: none;
    }
 }
