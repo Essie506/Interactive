@@ -399,4 +399,9 @@ box-sizing: border-box;
   .menu-profile-sub {
     font-size: 0.92rem;
   }
+
+  .submenu li a {
+    font-size: 0.98rem;
+    font-weight: 550;
+  }
 }
