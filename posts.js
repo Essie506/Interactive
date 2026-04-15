@@ -1,75 +1,87 @@
-// =========================
-// MOCK DATA (temporary)
-// =========================
-const posts = [
-  {
-    id: 1,
-    username: "Esther",
-    time: "2h",
-    text: "Strong session this morning.",
-    image: "images/post1.jpg"
-  },
-  {
-    id: 2,
-    username: "Esther",
-    time: "1d",
-    text: "New mobility work added today.",
-    image: ""
-  }
-];
+function escapeHtml(text) {
+  const div = document.createElement("div");
+  div.textContent = text ?? "";
+  return div.innerHTML;
+}
 
-// =========================
-// POST TEMPLATE
-// =========================
+function escapeAttribute(text) {
+  return String(text ?? "").replace(/"/g, "&quot;");
+}
+
+function findPostById(postsArray, postId) {
+  return postsArray.find((post) => post.id === postId) || null;
+}
+
 function createPostHTML(post) {
-  return `
-    <article class="post">
-      <div class="post-header">
-        <div class="avatar">
-          <i class="fa-solid fa-user"></i>
-        </div>
-
-        <div class="post-info">
-          <span class="username">${post.username}</span>
-          <span class="time">${post.time}</span>
-        </div>
+  const postUser = post.user || post.username || "User";
+  const imageMarkup = post.image
+    ? `
+      <div class="post-media">
+        <img
+          class="post-img"
+          src="${escapeAttribute(post.image)}"
+          alt="${escapeAttribute(postUser)} post image"
+        >
       </div>
+    `
+    : "";
 
-      <p class="post-text">${post.text}</p>
+  const likeIconClass = post.liked ? "fa-solid fa-heart" : "fa-regular fa-heart";
+  const saveIconClass = post.saved ? "fa-solid fa-bookmark" : "fa-regular fa-bookmark";
 
-      ${
-        post.image
-          ? `
-        <div class="post-media">
-          <img class="post-img" src="${post.image}" alt="">
+  return `
+    <article class="post" data-post-id="${escapeAttribute(post.id)}">
+      <div class="post-inner">
+        <div class="post-header">
+          <div class="avatar" aria-hidden="true">
+            <i class="fa-solid fa-user"></i>
+          </div>
+
+          <div class="post-info">
+            <span class="username">${escapeHtml(postUser)}</span>
+            <span class="time">${escapeHtml(post.time)}</span>
+          </div>
         </div>
-      `
-          : ""
-      }
 
-      <div class="post-actions">
-        <button type="button" class="post-action-btn" data-action="like">
-          <i class="fa-regular fa-heart"></i>
-          <span>Like</span>
-        </button>
+        <div class="post-text">${escapeHtml(post.text)}</div>
 
-        <button type="button" class="post-action-btn" data-action="comment">
-          <i class="fa-regular fa-comment"></i>
-          <span>Comment</span>
-        </button>
+        ${imageMarkup}
 
-        <button type="button" class="post-action-btn" data-action="share">
-          <i class="fa-solid fa-share-nodes"></i>
-          <span>Share</span>
-        </button>
+        <div class="post-actions">
+          <button
+            type="button"
+            class="post-action-btn ${post.liked ? "is-active" : ""}"
+            data-action="like"
+            aria-label="Like post"
+          >
+            <i class="${likeIconClass}"></i>
+            <span>${post.likes ?? 0}</span>
+          </button>
+
+          <button
+            type="button"
+            class="post-action-btn"
+            data-action="comment"
+            aria-label="View comments"
+          >
+            <i class="fa-solid fa-comment"></i>
+            <span>${post.comments ?? 0}</span>
+          </button>
+
+          <button
+            type="button"
+            class="post-action-btn ${post.saved ? "is-active" : ""}"
+            data-action="save"
+            aria-label="${post.saved ? "Unsave post" : "Save post"}"
+          >
+            <i class="${saveIconClass}"></i>
+          </button>
+        </div>
       </div>
     </article>
   `;
 }
 
-// =========================
-// RENDER FUNCTION
-// =========================
 function renderPosts(containerId, postsArray) {
   const container = document.getElementById(containerId);
   if (!container) return;
@@ -77,32 +89,39 @@ function renderPosts(containerId, postsArray) {
   container.innerHTML = postsArray.map(createPostHTML).join("");
 }
 
-function setupPostActions(containerId) {
+function setupPostActions(containerId, postsArray) {
   const container = document.getElementById(containerId);
   if (!container) return;
 
   container.addEventListener("click", (event) => {
-    const button = event.target.closest(".post-action-btn");
-    if (!button) return;
+    const actionButton = event.target.closest(".post-action-btn");
+    if (!actionButton) return;
 
-    const action = button.dataset.action;
+    const postElement = actionButton.closest(".post");
+    if (!postElement) return;
+
+    const postId = postElement.dataset.postId;
+    const action = actionButton.dataset.action;
+    if (!postId || !action) return;
+
+    const post = findPostById(postsArray, postId);
+    if (!post) return;
 
     if (action === "like") {
-      button.classList.toggle("is-active");
+      post.liked = !post.liked;
+      post.likes = Math.max(0, (post.likes ?? 0) + (post.liked ? 1 : -1));
+      renderPosts(containerId, postsArray);
+      return;
+    }
 
-      const icon = button.querySelector("i");
-      if (icon) {
-        icon.classList.toggle("fa-regular", !button.classList.contains("is-active"));
-        icon.classList.toggle("fa-solid", button.classList.contains("is-active"));
-      }
+    if (action === "save") {
+      post.saved = !post.saved;
+      renderPosts(containerId, postsArray);
+      return;
     }
 
     if (action === "comment") {
-      console.log("Comment clicked");
-    }
-
-    if (action === "share") {
-      console.log("Share clicked");
+      console.log(`Open comments for ${post.id}`);
     }
   });
 }
