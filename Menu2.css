@@ -373,6 +373,11 @@ body.home .menu-toggle.active span:nth-child(3) {
 @media (max-width: 900px) {
   .menu-item span,
   .menu-profile-name {
+      font-size: clamp(1rem, 1.2vw, 1.08rem);
     font-weight: 550;
   }
+
+    .menu-profile-sub {
+    font-size: clamp(0.9rem, 1vw, 0.95rem);
+}
 }
