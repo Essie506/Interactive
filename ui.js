@@ -201,32 +201,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  window.addEventListener("scroll", () => {
-    const currentScrollY = window.scrollY;
-    const composerOpen = composerModal?.classList.contains("open");
-    const drawerOpen = document.getElementById("messagesModal")?.classList.contains("open");
-    const popupOpen = document.getElementById("messagesPopup")?.classList.contains("open");
-    const popoutOpen = document.getElementById("messagesPopout")?.classList.contains("open");
+window.addEventListener("scroll", () => {
+  const currentScrollY = window.scrollY;
 
-    if (composerOpen || drawerOpen || popupOpen || popoutOpen) return;
+  const composerOpen = composerModal?.classList.contains("open");
+  const drawerOpen = document.getElementById("messagesModal")?.classList.contains("open");
+  const popupOpen = document.getElementById("messagesPopup")?.classList.contains("open");
+  const popoutOpen = document.getElementById("messagesPopout")?.classList.contains("open");
 
-    if (currentScrollY <= 10) {
-      navbar?.classList.remove("hide-top");
-      bottomNav?.classList.remove("hide-bottom");
-      lastScrollY = currentScrollY;
-      return;
-    }
+  const menuOpen = document.body.classList.contains("menu-open"); // 👈 ADD THIS
 
-    if (currentScrollY > lastScrollY) {
-      navbar?.classList.add("hide-top");
-      bottomNav?.classList.add("hide-bottom");
-    } else {
-      navbar?.classList.remove("hide-top");
-      bottomNav?.classList.remove("hide-bottom");
-    }
+  if (composerOpen || drawerOpen || popupOpen || popoutOpen || menuOpen) return; // 👈 ADD HERE
 
+  if (currentScrollY <= 10) {
+    navbar?.classList.remove("hide-top");
+    bottomNav?.classList.remove("hide-bottom");
     lastScrollY = currentScrollY;
-  });
+    return;
+  }
+
+  if (currentScrollY > lastScrollY) {
+    navbar?.classList.add("hide-top");
+    bottomNav?.classList.add("hide-bottom");
+  } else {
+    navbar?.classList.remove("hide-top");
+    bottomNav?.classList.remove("hide-bottom");
+  }
+
+  lastScrollY = currentScrollY;
+});
 
   window.interactiveUI = {
     closeComposer,
