@@ -401,7 +401,7 @@ box-sizing: border-box;
   }
 
   .submenu li a {
-    font-size: 0.98rem;
-    font-weight: 550;
+    font-size: 1 rem;
+    font-weight: 400;
   }
 }
