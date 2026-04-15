@@ -145,7 +145,9 @@ body.feed .partner-promo {
 @media (min-width: 901px) {
   body.feed .page-layout {
     display: grid;
-      grid-template-columns: 13rem minmax(0, 42rem) 13rem;
+   grid-template-columns: clamp(12rem, 18vw, 16rem)
+                       minmax(0, clamp(38rem, 45vw, 46rem))
+                       clamp(12rem, 18vw, 16rem);
     gap: 1.25rem;
     align-items: start;
     justify-content: center;
