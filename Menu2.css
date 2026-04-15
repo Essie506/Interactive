@@ -373,6 +373,6 @@ body.home .menu-toggle.active span:nth-child(3) {
 @media (max-width: 900px) {
   .menu-item span,
   .menu-profile-name {
-    font-weight: 600;
+    font-weight: 550;
   }
 }
