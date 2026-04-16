@@ -705,6 +705,17 @@ body.sign-up .input-field {
   flex: 0 0 2.1rem;
 }
 
+.composer-footer .send-btn:hover,
+.composer-footer .send-btn:focus-visible {
+  background: rgba(9, 26, 58, 0.1);
+  box-shadow: none;
+}
+
+.composer-footer .send-btn:active {
+  background: rgba(9, 26, 58, 0.14);
+  transform: scale(0.92);
+}
+
 .composer-bottom-bar {
   margin-top: auto;
   padding: 0.375rem 0.5rem 0;
