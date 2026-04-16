@@ -689,14 +689,7 @@ margin: 5px;
 }
 
 .composer-footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-  background: transparent;
-  flex-shrink: 0;
-  width: 100%;
+  justify-content: flex-end;
 }
 
 .composer-bottom-bar {
