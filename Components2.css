@@ -691,8 +691,8 @@ body.sign-up .input-field {
   justify-content: center;
   color: var(--main-color-dark);
   overflow: visible;
-     width: 2rem;
-  height: 2rem;
+     width: 3rem;
+  height: 3rem;
 }
 
 .composer-footer .send-btn .if-arrow-icon {
