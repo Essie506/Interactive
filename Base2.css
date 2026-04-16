@@ -24,6 +24,7 @@ body {
   --main-color-dark: #047a74;
   --text-dark: #091a3a;
    --main-color-light: #0aa7a0;
+   --main-color-mid: #089f99;
 
   --glass-white: rgba(255, 255, 255, 0.6);
   --glass-white-light: rgba(255, 255, 255, 0.8);
