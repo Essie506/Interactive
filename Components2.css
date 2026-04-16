@@ -682,7 +682,7 @@ body.sign-up .input-field {
 
 .composer-footer .send-btn {
   display: inline-flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   color: var(--main-color-dark);
   overflow: visible;
@@ -804,28 +804,6 @@ body.sign-up .input-field {
   cursor: pointer;
   font-size: 1.1rem;
 }
-composer-footer .send-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--main-color-dark);
-}
-
-.if-arrow-mark {
-  display: inline-flex;
-  width: 1.75rem;
-  height: 0.9rem;
-  line-height: 0;
-}
-
-.if-arrow-mark svg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-
-    
    
 .gif-btn span {
   font-size: 0.6875rem;
