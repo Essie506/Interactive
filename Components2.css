@@ -688,7 +688,7 @@ body.sign-up .input-field {
   right: 0.1rem;
 }
 
-.composer-footer .send-btn {
+.upload-btn.send-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -698,21 +698,21 @@ body.sign-up .input-field {
   height: 3.2rem;
 }
 
-.composer-footer .send-btn .if-arrow-icon {
+.upload-btn.send-btn .if-arrow-icon {
   display: block;
   width: 2.1rem;
   height: 2.1rem;
   flex: 0 0 2.1rem;
 }
 
-.composer-footer .send-btn:hover,
-.composer-footer .send-btn:focus-visible {
+.upload-btn.send-btn:hover,
+.upload-btn.send-btn:focus-visible {
  box-shadow: var(--shadow-strong);
    transform: translateY(0.0625rem);
 }
 
-.composer-footer .send-btn:active {
-box-shadow: var(--shadow-soft);
+.upload-btn.send-btn:active {
+box-shadow: var(--shadow-strong);
   transform: scale(0.92);
 }
 
