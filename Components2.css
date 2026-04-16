@@ -705,7 +705,6 @@ padding: 0 1rem;
   overflow: visible;
      width: 3.4rem;
   height: 3.4rem;
-   background: var(--main-color);
 }
 
 .upload-btn.send-btn .if-arrow-icon {
@@ -713,9 +712,10 @@ padding: 0 1rem;
   width: 2.85rem;
   height: 2.85rem;
   flex: 0 0 2.85rem;
+    background: var(--main-color);
 }
 
-upload-btn.send-btn::after {
+upload-btn.send-btn .if-arrow-icon::after {
   content: "";
   position: absolute;
   inset: 0;
