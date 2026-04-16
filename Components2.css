@@ -714,17 +714,6 @@ padding: 0 1rem;
     background: var(--main-color);
 }
 
-.upload-btn.send-btn .if-arrow-icon::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0.35),
-    rgba(255, 255, 255, 0.08) 40%,
-    transparent 60%
-  );
 
 .upload-btn.send-btn:hover,
 .upload-btn.send-btn:focus-visible {
