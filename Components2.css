@@ -692,7 +692,7 @@ body.sign-up .input-field {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--main-color-dark);
+  color: var(--main-color-mid);
   overflow: visible;
      width: 3.2rem;
   height: 3.2rem;
