@@ -704,7 +704,7 @@ backdrop-filter: blur(10px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--main-color-mid);
+  color: var(--btn-modern-bg);
   overflow: visible;
      width: 3.4rem;
   height: 3.4rem;
