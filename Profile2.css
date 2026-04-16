@@ -606,7 +606,7 @@ body.profile .profile-avatar-wrap {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--profile-gap-xs);
+    gap: var(--profile-gap-sm);
     width: max-content;
     max-width: 100%;
   }
