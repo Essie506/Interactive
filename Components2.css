@@ -825,6 +825,7 @@ body.sign-up .input-field {
  .upload-btn.send-btn {
      font-size: 1.2rem;
     color: var(--main-color);
+      transition: none;
  }
     
    
