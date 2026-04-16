@@ -677,14 +677,13 @@ body.sign-up .input-field {
   padding: 0;
   margin: 0;
     width: auto;
-    flex: 1 1 auto;
+    flex: 0 1 auto;
 }
 
 .composer-footer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 0.5rem;
+  justify-content: flex-start;
   padding: 0;
   background: transparent;
   flex-shrink: 0;
