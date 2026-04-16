@@ -677,14 +677,14 @@ body.sign-up .input-field {
   margin: 0;
     width: auto;
     flex: 0 1 auto;
-   gap: 1rem;
+   gap: 2rem;
 }
 
 .composer-footer {
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  bottom: 0.1rem;
+  bottom: 0;
   right: 0.1rem;
 }
 
@@ -750,7 +750,7 @@ body.sign-up .input-field {
 
 .composer-body .avatar {
   position: absolute;
-  top: 0;
+  top: 0.75rem;
   left: 0;
   border-radius: 50%;
   color: var(--text-dark);
