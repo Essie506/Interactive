@@ -800,7 +800,7 @@ body.sign-up .input-field {
   font-size: 1.1rem;
 }
 
-composer-footer.send-btn {
+composer-footer .send-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
