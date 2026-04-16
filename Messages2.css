@@ -1250,9 +1250,9 @@ body.messages-open {
     gap: 0.375rem;
   }
 
-  .messages-popup-title,
+  .messages-popup-,
   .messages-popout-title {
-    font-size: 0.875rem;
+    font-size: var(--main-font-size);
   }
 
   .messages-send {
