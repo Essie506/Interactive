@@ -701,8 +701,9 @@ body.sign-up .input-field {
   background: #fff;
   position: static;
   z-index: 2;
-  top: 60%;
+  top: 40%;
    transform: translateY(-50%);
+   justify-content: space-between;
 }
 
 /* =========================
