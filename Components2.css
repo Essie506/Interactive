@@ -677,7 +677,7 @@ body.sign-up .input-field {
   margin: 0;
     width: auto;
     flex: 0 1 auto;
-   gap: 2rem;
+   gap: 1.75rem;
 }
 
 .composer-footer {
