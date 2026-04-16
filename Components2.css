@@ -708,7 +708,7 @@ body.sign-up .input-field {
 .upload-btn.send-btn:hover,
 .upload-btn.send-btn:focus-visible {
  box-shadow: var(--shadow-strong);
-   transform: translateY(0.0625rem);
+   transform: translateY(2rem);
 }
 
 .upload-btn.send-btn:active {
