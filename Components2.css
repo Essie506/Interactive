@@ -799,19 +799,27 @@ body.sign-up .input-field {
   font-size: 1.1rem;
 }
 
-composer-footer .send-btn {
-  display: inline-flex;
+composer-footer .send-button {
+  background: #ff7900; /* Lucozade orange - adjust to match your design */
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--main-color-dark);
-   font-size: 2rem;
+  color: white;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+composer-footer .send-button:hover {
+  background: #e86e00;
+  transform: scale(1.05);
+}
+composer-footer .send-button:active {
+  transform: scale(0.95);
 }
 
-.if-arrow-mark {
-  width: 1.8rem;
-  height: 1rem;
-  display: block;
-}
     
    
 .gif-btn span {
