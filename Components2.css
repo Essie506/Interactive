@@ -707,12 +707,11 @@ body.sign-up .input-field {
 
 .composer-footer .send-btn:hover,
 .composer-footer .send-btn:focus-visible {
-  background: rgba(9, 26, 58, 0.1);
-  box-shadow: none;
+ box-shadow: rgba(9, 26, 58, 0.1);
 }
 
 .composer-footer .send-btn:active {
-  background: rgba(9, 26, 58, 0.14);
+box-shadow: rgba(9, 26, 58, 0.1);
   transform: scale(0.92);
 }
 
