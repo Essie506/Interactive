@@ -672,7 +672,7 @@ body.sign-up .input-field {
   display: flex;
   align-items: center;
   gap: 1rem;
-   justify-content: flex-start;
+   justify-content: center;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
