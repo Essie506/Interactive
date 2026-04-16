@@ -751,13 +751,7 @@ body.sign-up .input-field {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
-  width: 2.25rem;
-  height: 2.25rem;
   border-radius: 50%;
-  background: rgba(56, 173, 169, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: var(--text-dark);
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
   z-index: 2;
