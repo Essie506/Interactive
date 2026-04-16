@@ -695,9 +695,6 @@ body.sign-up .input-field {
   justify-content: center;
 padding: 0 1rem;
  pointer-events: none;
-  background: rgba(168, 230, 227, 0.25);
-backdrop-filter: blur(10px);
--webkit-backdrop-filter: blur(10px);
 }
 
 .upload-btn.send-btn {
@@ -708,6 +705,7 @@ backdrop-filter: blur(10px);
   overflow: visible;
      width: 3.4rem;
   height: 3.4rem;
+   background: var(--main-color);
 }
 
 .upload-btn.send-btn .if-arrow-icon {
@@ -716,6 +714,18 @@ backdrop-filter: blur(10px);
   height: 2.85rem;
   flex: 0 0 2.85rem;
 }
+
+upload-btn.send-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.08) 40%,
+    transparent 60%
+  )
 
 .upload-btn.send-btn:hover,
 .upload-btn.send-btn:focus-visible {
