@@ -805,6 +805,7 @@ composer-footer.send-btn {
   align-items: center;
   justify-content: center;
   color: var(--main-color-dark);
+   font-size: 2rem;
 }
 
 .if-arrow-mark {
