@@ -801,9 +801,10 @@ body.sign-up .input-field {
 }
 
  .upload-btn.send-btn {
-     font-size: 1.4rem;
+     font-size: 2rem;
     color: var(--main-color-dark);
       transition: none;
+   babackground: none;
  }
     
    
