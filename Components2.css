@@ -688,7 +688,6 @@ body.sign-up .input-field {
   background: transparent;
   flex-shrink: 0;
    width: auto;
-    flex: 0 0 auto;
 }
 
 .composer-bottom-bar {
