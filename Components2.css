@@ -711,7 +711,7 @@ padding: 0 1rem;
   width: 2.85rem;
   height: 2.85rem;
   flex: 0 0 2.85rem;
-    background: var(--main-color);
+  color: var(--main-color-dark);
 }
 
 
