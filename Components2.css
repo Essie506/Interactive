@@ -724,7 +724,7 @@ upload-btn.send-btn .if-arrow-icon::after {
     120deg,
     rgba(255, 255, 255, 0.35),
     rgba(255, 255, 255, 0.08) 40%,
-    transparent 60%
+    transparent 60%;
   )
 
 .upload-btn.send-btn:hover,
