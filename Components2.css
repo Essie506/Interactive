@@ -694,15 +694,15 @@ body.sign-up .input-field {
   justify-content: center;
   color: var(--main-color-mid);
   overflow: visible;
-     width: 3.2rem;
-  height: 3.2rem;
+     width: 3.4rem;
+  height: 3.4rem;
 }
 
 .upload-btn.send-btn .if-arrow-icon {
   display: block;
-  width: 2.5rem;
-  height: 2.5rem;
-  flex: 0 0 2.5rem;
+  width: 2.85rem;
+  height: 2.85rem;
+  flex: 0 0 2.85rem;
 }
 
 .upload-btn.send-btn:hover,
