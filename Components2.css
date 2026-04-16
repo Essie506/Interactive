@@ -987,45 +987,6 @@ body.sign-up .input-field {
   font-size: 0.95rem;
 }
 
-.send-btn {
-  position: relative;
-  width: 3.25rem;
-  height: 3.25rem;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.9),
-    rgba(240,245,255,0.85)
-  );
-
-  box-shadow:
-    0 10px 25px rgba(0,0,0,0.15),
-    0 0 0 2px rgba(7,153,146,0.15);
-
-  border: none;
-
-  transition: all 0.2s ease;
-}
-
-
-.send-btn:active {
-  transform: scale(0.92);
-}
-
-.send-btn:hover {
-  box-shadow:
-    0 12px 30px rgba(0,0,0,0.18),
-    0 0 0 3px rgba(7,153,146,0.25);
-}
-
-
-
 
 
 
