@@ -688,6 +688,15 @@ body.sign-up .input-field {
   right: 0.1rem;
 }
 
+.messages .upload-btn.send-btn {
+  margin: 0 auto;
+ display: inline-flex;
+ align-items: center;
+  justify-content: center;
+padding: 0 1rem;
+ pointer-events: none;
+}
+
 .upload-btn.send-btn {
   display: inline-flex;
   align-items: center;
