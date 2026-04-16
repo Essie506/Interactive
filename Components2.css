@@ -822,7 +822,7 @@ body.sign-up .input-field {
   font-size: 0.875rem;
 }
 
- .upload-btn send-btn {
+ .upload-btn .send-btn {
    justify-content: flex-end;
      font-size: 1.1rem;
  }
