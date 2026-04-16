@@ -704,28 +704,6 @@ body.sign-up .input-field {
     justify-content: space-between;
 }
 
-.composer-submit {
-  text-decoration: none;
-  opacity: 0.5;
-  pointer-events: none;
-  border: none;
-  width: min(100%, 26.25rem);
-  max-width: none;
-  min-height: 2.25rem;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 1rem;
-  font-size: 0.875rem;
-}
-
-.composer-submit.ready {
-  opacity: 1;
-  pointer-events: auto;
-}
-
 /* =========================
    FEED POSTS
 ========================= */
