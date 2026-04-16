@@ -682,7 +682,7 @@ body.sign-up .input-field {
 .composer-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   margin: 0;
   padding: 0;
   background: transparent;
