@@ -697,9 +697,9 @@ body.sign-up .input-field {
 
 .composer-footer .send-btn .if-arrow-icon {
   display: block;
-  width: 1.4rem;
-  height: 1.4rem;
-  flex: 0 0 1.4rem;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
 }
 
 .composer-bottom-bar {
