@@ -301,7 +301,7 @@ body.profile .profile-tabs {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--profile-gap-xxs);
+  gap: var(--profile-gap-xs);
   padding: 0 0.4rem;
   width: 100%;
   margin: 0;
