@@ -747,7 +747,7 @@ body.sign-up .input-field {
   position: relative;
 }
 
-.post-avatar-inline {
+.composer-body .avatar {
   position: absolute;
   top: 0.75rem;
   left: 0.75rem;
