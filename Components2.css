@@ -715,7 +715,7 @@ body.sign-up .input-field {
   background: #fff;
   position: static;
   z-index: 2;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 /* =========================
