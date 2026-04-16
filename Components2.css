@@ -671,23 +671,24 @@ body.sign-up .input-field {
 .composer-tools {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 0.625rem;
   flex-wrap: wrap;
   padding: 0;
   margin: 0;
-  flex: 0 0 auto;
+    width: auto;
+    flex: 1 1 auto;
 }
 
 .composer-footer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
   background: transparent;
   flex-shrink: 0;
-  width: 100%;
+   width: auto;
+    flex: 0 0 auto;
 }
 
 .composer-bottom-bar {
@@ -1024,36 +1025,6 @@ body.sign-up .input-field {
 }
 
 
-
-
-@media (min-width: 500px) {
-  .composer-bottom-bar {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.875rem;
-  }
-
-  .composer-tools {
-    justify-content: flex-start;
-    align-items: center;
-    width: auto;
-    flex: 1 1 auto;
-  }
-
-  .composer-footer {
-    justify-content: flex-end;
-    width: auto;
-    flex: 0 0 auto;
-  }
-
-  .composer-submit {
-    width: auto;
-    margin: 0;
-    display: inline-flex;
-    min-width: 5.625rem;
-  }
-}
 
 
 
