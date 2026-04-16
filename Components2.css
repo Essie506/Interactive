@@ -700,9 +700,9 @@ body.sign-up .input-field {
 
 .upload-btn.send-btn .if-arrow-icon {
   display: block;
-  width: 2.1rem;
-  height: 2.1rem;
-  flex: 0 0 2.1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
 }
 
 .upload-btn.send-btn:hover,
