@@ -809,8 +809,6 @@ body.sign-up .input-field {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .post-tools {
   display: none;
 }
@@ -824,6 +822,12 @@ body.sign-up .input-field {
   font-size: 0.875rem;
 }
 
+ .upload-btn send-btn {
+   justify-content: flex-end;
+     font-size: 1.1rem;
+ }
+    
+   
 .gif-btn span {
   font-size: 0.6875rem;
   font-weight: 700;
