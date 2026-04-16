@@ -750,7 +750,7 @@ body.sign-up .input-field {
 
 .composer-body .avatar {
   position: absolute;
-  top: 0.75rem;
+  top: 0.65rem;
   left: 0;
   border-radius: 50%;
   color: var(--text-dark);
