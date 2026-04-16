@@ -834,14 +834,9 @@ body.sign-up .input-field {
   letter-spacing: 0.4px;
 }
 
-.calendar-btn i {
-  color: var(--main-color);
-}
-
 #postBox textarea {
   cursor: pointer;
 }
-
 
 .composer-post-actions {
   display: flex;
