@@ -720,7 +720,7 @@ backdrop-filter: blur(10px);
 .upload-btn.send-btn:hover,
 .upload-btn.send-btn:focus-visible {
  box-shadow: var(--shadow-strong);
-   transform: translateY(0.3rem);
+   transform: translateY(0.2rem);
 }
 
 .upload-btn.send-btn:active {
