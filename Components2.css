@@ -705,7 +705,7 @@ padding: 0 1rem;
   overflow: visible;
      width: 3.4rem;
   height: 3.4rem;
-   background: rgba(168, 230, 227, 0.25);
+background: rgba(9, 26, 58, 0.06);
 backdrop-filter: blur(10px);
 -webkit-backdrop-filter: blur(10px);
 }
