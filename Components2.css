@@ -800,12 +800,18 @@ body.sign-up .input-field {
   font-size: 1.1rem;
 }
 
- .upload-btn.send-btn {
-     font-size: 2rem;
-    color: var(--main-color);
-      transition: none;
-   babackground: none;
- }
+composer-footer.send-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--main-color-dark);
+}
+
+.if-arrow-mark {
+  width: 1.8rem;
+  height: 1rem;
+  display: block;
+}
     
    
 .gif-btn span {
