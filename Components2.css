@@ -683,6 +683,9 @@ body.sign-up .input-field {
 .composer-footer {
   display: flex;
   justify-content: flex-end;
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
 }
 
 .composer-footer .send-btn {
@@ -691,15 +694,15 @@ body.sign-up .input-field {
   justify-content: center;
   color: var(--main-color-dark);
   overflow: visible;
-     width: 4rem;
-  height: 4rem;
+     width: 3.5rem;
+  height: 3.5rem;
 }
 
 .composer-footer .send-btn .if-arrow-icon {
   display: block;
-  width: 3rem;
-  height: 3rem;
-  flex: 0 0 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex: 0 0 2.5rem;
 }
 
 .composer-bottom-bar {
