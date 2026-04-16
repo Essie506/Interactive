@@ -707,7 +707,7 @@ body.sign-up .input-field {
 
 .composer-footer .send-btn:hover,
 .composer-footer .send-btn:focus-visible {
- box-shadow: var(--shadow-soft);
+ box-shadow: var(--shadow-strong);
    transform: translateY(0.0625rem);
 }
 
