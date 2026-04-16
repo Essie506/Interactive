@@ -680,20 +680,26 @@ body.sign-up .input-field {
     flex: 0 1 auto;
 }
 
+.composer-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .composer-footer .send-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   color: var(--main-color-dark);
   overflow: visible;
-   font-size: 2rem;
+     width: 2rem;
+  height: 2rem;
 }
 
 .composer-footer .send-btn .if-arrow-icon {
   display: block;
-  width: 1.1rem;
-  height: 1.1rem;
-  flex: 0 0 1rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: 0 0 1.4rem;
 }
 
 .composer-bottom-bar {
