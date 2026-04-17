@@ -128,7 +128,7 @@ body.index-page .index-login-links {
 }
 
 body.index-page .index-login-links a {
-  color: rgba(255, 255, 255, 0.88);
+  color: var(--text-dark);
   text-decoration: none;
   font-size: 0.92rem;
 }
