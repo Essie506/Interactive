@@ -1,11 +1,12 @@
 body.index-page {
-  background: linear-gradient(
-     135deg,
-  #f5f7f8,
-  #e3eaf0,
-  #d6e0e8,
-  #f4f8fb
-);
+    background: linear-gradient(
+    135deg,
+    #eef2f5,
+    #dfe6ec,
+    #cfd8e0,
+    #f6f9fb
+  );
+}
   min-height: 100dvh;
 }
 
@@ -52,7 +53,7 @@ body.index-page .index-hero {
 
 body.index-page .index-login-panel {
   width: min(100%, 28rem);
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-soft);
