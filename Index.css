@@ -13,7 +13,7 @@ body.index-page::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;.index-login-panel {
+  z-index: -2;
   pointer-events: none;
   background: var(--index-bg-before);
   background-size: 220% 220%;
