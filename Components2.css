@@ -319,6 +319,7 @@ body.sign-up .login-box > * {
   width: min(100%, clamp(16rem, 42vw, 30rem));
   margin: 0 auto;
   text-align: center;
+   z-index: 3;
 }
 
 #loginBtn {
