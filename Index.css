@@ -1,13 +1,19 @@
 body.index-page {
   background: var(--index-bg);
   min-height: 100dvh;
+   background: linear-gradient(
+    140deg,
+    #091a3a,
+    #0f2a52,
+    #091a3a
+  );
 }
 
 body.index-page::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -2;
+  z-index: -2;.index-login-panel {
   pointer-events: none;
   background: var(--index-bg-before);
   background-size: 220% 220%;
@@ -28,9 +34,9 @@ body.index-page .index-hero {
 
 body.index-page .index-login-panel {
   width: min(100%, 28rem);
-  background: rgba(9, 26, 58, 0.72);
-  backdrop-filter: blur(1rem);
-  -webkit-backdrop-filter: blur(1rem);
+background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-soft);
 }
 
@@ -93,7 +99,11 @@ body.index-page .index-field input::placeholder {
 body.index-page .index-login-btn {
   min-height: 3rem;
   border: none;
-  background: var(--main-color);
+  background: linear-gradient(
+    135deg,
+    #38ada9,
+    #079992
+  );
   color: #fff;
   font: inherit;
   font-weight: 700;
