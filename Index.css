@@ -74,6 +74,8 @@ body.index-page .index-login-tagline {
   color: var(--text-dark);
   font-size: clamp(0.95rem, 1vw, 1rem);
   line-height: 1.4;
+  font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
 }
 
 body.index-page .index-login-form {
