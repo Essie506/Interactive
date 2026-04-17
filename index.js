@@ -1,34 +1,34 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
   const loginBtn = document.getElementById("loginBtn");
-  const emailInput = document.querySelector('input[type="email"]');
-  const passwordInput = document.querySelector('input[type="password"]');
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
 
-  // Safety check (prevents errors if HTML changes later)
-  if (!loginBtn || !emailInput || !passwordInput) return;
+  if (!loginForm || !loginBtn || !emailInput || !passwordInput) return;
 
   function updateLoginState() {
     const hasEmail = emailInput.value.trim().length > 0;
     const hasPassword = passwordInput.value.trim().length > 0;
+    const isReady = hasEmail && hasPassword;
 
-    if (hasEmail && hasPassword) {
-      loginBtn.classList.add("ready");
-      loginBtn.disabled = false;
-    } else {
-      loginBtn.classList.remove("ready");
-      loginBtn.disabled = true;
-    }
+    loginBtn.disabled = !isReady;
+    loginBtn.classList.toggle("ready", isReady);
   }
 
-  // Input listeners
   emailInput.addEventListener("input", updateLoginState);
   passwordInput.addEventListener("input", updateLoginState);
 
-  // Click handler
-  loginBtn.addEventListener("click", () => {
-    if (loginBtn.disabled) return; // extra safety
-    window.location.href = "feed.html";
+  loginForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const email = emailInput.value.trim();
+    const password = passwordInput.value.trim();
+
+    if (!email || !password) return;
+
+    console.log("Login submitted", { email });
+    // later: connect Firebase / backend auth here
   });
 
-  // Initial state
   updateLoginState();
 });
