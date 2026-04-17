@@ -315,10 +315,16 @@ body.sign-up .login-box > * {
 }
 
 .login-content {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  position: relative;
+  text-align: center; /* keeps tagline centred */
    width: 100%;
+}
+
+#loginBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 
