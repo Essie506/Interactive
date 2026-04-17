@@ -24,9 +24,6 @@ body.index-page::after {
 }
 
 
-
-
-
 body.index-page::before {
   content: "";
   position: fixed;
