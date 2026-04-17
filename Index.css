@@ -57,7 +57,7 @@ body.index-page .index-login-header {
 
 body.index-page .index-login-title {
   margin: 0;
-  color: #fff;
+  color: var(--main-text-dark);
   font-size: clamp(1.4rem, 2vw, 2rem);
   font-weight: 700;
   line-height: 1.1;
@@ -65,7 +65,7 @@ body.index-page .index-login-title {
 
 body.index-page .index-login-tagline {
   margin: 0;
-  color: rgba(255, 255, 255, 0.82);
+  color: var(--main-text-dark);
   font-size: clamp(0.95rem, 1vw, 1rem);
   line-height: 1.4;
 }
