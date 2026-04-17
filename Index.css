@@ -50,6 +50,7 @@ body.index-page .index-login-inner {
    display: flex;
   flex-direction: column;
   justify-content: center;
+   gap: 1.25rem;
 }
 
 body.index-page .index-login-header {
