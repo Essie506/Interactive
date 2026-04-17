@@ -600,11 +600,12 @@ body.sign-up .input-field {
 .composer-header h3 {
   grid-column: 2;
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--main-font-size);
   color: var(--text-dark);
   text-align: center;
   font-weight: 700;
   z-index: 1;
+   justify-self: space-between;
 }
 
 .composer-close {
