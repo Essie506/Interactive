@@ -1,52 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Interactive Fitness</title>
 
- 
-  <link rel="stylesheet" href="Base2.css">
-   <link rel="stylesheet" href="Components2.css">
+  <link rel="stylesheet" href="Base2.css" />
+  <link rel="stylesheet" href="Index.css" />
 </head>
 
-<body class="index">
+<body class="index-page">
 
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="navbar-bg"></div>
-    <div class="nav-title">Interactive Fitness</div>
-  </nav>
+  <main class="index-hero">
+    <section class="index-login-panel">
+      <div class="index-login-inner">
+        <header class="index-login-header">
+          <h1 class="index-login-title">Interactive Fitness</h1>
+          <p class="index-login-tagline">Move. Train. Connect.</p>
+        </header>
 
-  <!-- Main -->
-  <main class="hero">
-  <form class="login-area" id="loginForm">
-    <div class="login-content">
-      <h1 class="tagline">Move. Train. Connect.</h1>
+        <form class="index-login-form" id="loginForm">
+          <div class="index-field">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              class="input-field"
+              autocomplete="email"
+            />
+          </div>
 
-      <button type="submit" class="upload-btn send-btn" id="loginBtn" aria-label="Log in">
-        <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z" />
-        </svg>
-      </button>
-    </div>
+          <div class="index-field">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              class="input-field"
+              autocomplete="current-password"
+            />
+          </div>
 
-    <div class="login-box">
-      <input type="email" id="email" name="email" placeholder="Email" class="input-field" autocomplete="email">
-      <input type="password" id="password" name="password" placeholder="Password" class="input-field" autocomplete="current-password">
-    </div>
+          <button type="submit" class="index-login-btn" id="loginBtn" aria-label="Log in" disabled>
+            Log in
+          </button>
+        </form>
 
-    <div class="links">
-      <a href="sign-up.html">Create Account</a>
-      <a href="#">Forgot Password?</a>
-    </div>
-  </form>
-</main>
+        <div class="index-login-links">
+          <a href="sign-up.html">Create Account</a>
+          <a href="#">Forgot Password?</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     © 2025 Interactive Fitness — All Rights Reserved
   </footer>
-<script src="index.js"></script>
 
+  <script src="index.js"></script>
 </body>
 </html>
