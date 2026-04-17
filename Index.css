@@ -1,12 +1,11 @@
 body.index-page {
-  background: var(--index-bg);
-  min-height: 100dvh;
-   background: linear-gradient(
+  background: linear-gradient(
     140deg,
-    #091a3a,
-    #0f2a52,
-    #091a3a
+    #12264a,
+    #1a3763,
+    #102345
   );
+  min-height: 100dvh;
 }
 
 body.index-page::before {
@@ -34,7 +33,7 @@ body.index-page .index-hero {
 
 body.index-page .index-login-panel {
   width: min(100%, 28rem);
-background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-soft);
@@ -44,7 +43,7 @@ body.index-page .index-login-inner {
   width: 100%;
   box-sizing: border-box;
   padding: clamp(1.25rem, 3vw, 2rem);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.10);
 }
 
 body.index-page .index-login-header {
