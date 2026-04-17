@@ -20,27 +20,28 @@
 
   <!-- Main -->
   <main class="hero">
-      <div class="login-content">
-    <h1 class="tagline">Move. Train. Connect.</h1>
-         <button type="button" class="upload-btn send-btn" id="loginBtn">
-      <svg class="if-arrow-icon" viewBox="0 0 24 24">
-        <path d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z" />
-      </svg>
-    </button>
-  </div>
+  <form class="login-area" id="loginForm">
+    <div class="login-content">
+      <h1 class="tagline">Move. Train. Connect.</h1>
 
-
- <div class="login-box">
-
-      <input type="email" placeholder="Email" class="input-field">
-      <input type="password" placeholder="Password" class="input-field">
+      <button type="submit" class="upload-btn send-btn" id="loginBtn" aria-label="Log in">
+        <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z" />
+        </svg>
+      </button>
     </div>
 
-  <div class="links">
-    <a href="sign-up.html">Create Account</a>
-    <a href="#">Forgot Password?</a>
-  </div>
-  </main>
+    <div class="login-box">
+      <input type="email" id="email" name="email" placeholder="Email" class="input-field" autocomplete="email">
+      <input type="password" id="password" name="password" placeholder="Password" class="input-field" autocomplete="current-password">
+    </div>
+
+    <div class="links">
+      <a href="sign-up.html">Create Account</a>
+      <a href="#">Forgot Password?</a>
+    </div>
+  </form>
+</main>
 
   <footer>
     © 2025 Interactive Fitness — All Rights Reserved
