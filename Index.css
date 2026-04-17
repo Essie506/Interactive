@@ -1,13 +1,32 @@
 body.index-page {
   background: linear-gradient(
-    140deg,
-     140deg,
-     #091a3a,
-    #123a4a,
-    #A8E6CF
-    );
+     135deg,
+  #f5f7f8,
+  #e3eaf0,
+  #d6e0e8,
+  #f4f8fb
+);
   min-height: 100dvh;
 }
+
+
+body.index-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(180, 200, 220, 0.25),
+    transparent 60%
+  );
+}
+
+
+
+
 
 body.index-page::before {
   content: "";
