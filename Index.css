@@ -21,7 +21,7 @@ body.index-page::before {
 }
 
 body.index-page .index-hero {
-  min-height: calc(100dvh - var(--bar-height));
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
