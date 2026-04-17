@@ -242,7 +242,7 @@ footer {
   text-align: center;
   justify-content: center;
   padding: var(--space-md);
-  color: var(--main-color);
+  color: var(--text-dark);
   position: relative;
   z-index: 1;
   flex-shrink: 0;
