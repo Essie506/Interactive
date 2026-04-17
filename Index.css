@@ -141,6 +141,10 @@ body.index-page .index-login-links a {
   color: var(--text-dark);
   text-decoration: none;
   font-size: 0.92rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+    
 }
 
 body.index-page .index-login-links a:hover {
