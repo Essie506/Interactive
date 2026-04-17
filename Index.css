@@ -1,12 +1,10 @@
 body.index-page {
   background: linear-gradient(
-    135deg,
-    #f5f7f8,
-    #e3eaf0,
-    #d6e0e8,
-    #f4f8fb
-  );
-}
+     140deg,
+     #091a3a,
+    #123a4a,
+    #A8E6CF
+    );
   min-height: 100dvh;
 }
 
