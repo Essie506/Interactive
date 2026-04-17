@@ -131,7 +131,7 @@ body.index-page .index-login-btn:active {
 
 body.index-page .index-login-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 0.5rem;
   margin-top: 1rem;
   flex-wrap: wrap;
