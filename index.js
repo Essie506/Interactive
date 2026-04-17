@@ -18,17 +18,19 @@ document.addEventListener("DOMContentLoaded", () => {
   emailInput.addEventListener("input", updateLoginState);
   passwordInput.addEventListener("input", updateLoginState);
 
-  loginForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
-    if (!email || !password) return;
+  if (!email || !password) return;
 
-    console.log("Login submitted", { email });
-    // later: connect Firebase / backend auth here
-  });
+  console.log("Login submitted", { email });
+
+  // 👉 ADD THIS LINE
+  window.location.href = "feed.html";
+});
 
   updateLoginState();
 });
