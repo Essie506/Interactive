@@ -38,12 +38,14 @@ body.index-page .index-login-panel {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-soft);
+   min-height: 26rem;
 }
 
 body.index-page .index-login-inner {
   width: 100%;
   box-sizing: border-box;
-  padding: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(2rem, 4vw, 2.75rem)
+           clamp(1.5rem, 3vw, 2rem);
   background: rgba(255, 255, 255, 0.10);
 }
 
@@ -51,7 +53,7 @@ body.index-page .index-login-header {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
@@ -79,6 +81,7 @@ body.index-page .index-login-form {
 
 body.index-page .index-field {
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 body.index-page .index-field input {
@@ -100,6 +103,7 @@ body.index-page .index-field input::placeholder {
 body.index-page .index-login-btn {
   min-height: 3rem;
   border: none;
+   margin-top: 0.75rem;
   background: linear-gradient(
     135deg,
     #38ada9,
