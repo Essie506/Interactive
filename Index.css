@@ -23,12 +23,11 @@ body.index-page::before {
 body.index-page .index-hero {
   flex: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding:
-    calc(var(--bar-height) + clamp(1rem, 2vw, 1.5rem))
-    clamp(1rem, 3vw, 2rem)
-    clamp(1rem, 2vw, 1.5rem);
+  padding-top: clamp(3rem, 8vh, 5rem);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1.5rem, 3vh, 2rem);
   box-sizing: border-box;
 }
 
