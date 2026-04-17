@@ -47,6 +47,9 @@ body.index-page .index-login-inner {
   padding: clamp(2rem, 4vw, 2.75rem)
            clamp(1.5rem, 3vw, 2rem);
   background: rgba(255, 255, 255, 0.10);
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 body.index-page .index-login-header {
