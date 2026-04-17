@@ -11,72 +11,54 @@
 
 <body class="index-page">
 
+  <main class="index-hero">
+    <section class="index-login-panel">
+      <div class="index-login-inner">
+        <header class="index-login-header">
+          <h1 class="index-login-title">Interactive Fitness</h1>
+          <p class="index-login-tagline">Move. Train. Connect.</p>
+        </header>
 
+        <form class="index-login-form" id="loginForm">
+          <div class="index-field">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              class="input-field"
+              autocomplete="email"
+            />
+          </div>
 
-<main class="index-hero">
+          <div class="index-field">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Password"
+              class="input-field"
+              autocomplete="current-password"
+            />
+          </div>
 
-  
-  <section class="index-login-panel">
-    <div class="index-login-inner">
+          <button type="submit" class="index-login-btn" id="loginBtn" aria-label="Log in" disabled>
+            Log in
+          </button>
+        </form>
 
-      <!-- Title -->
-      <h1 class="index-login-title">Interactive Fitness</h1>
-
-      <!-- Tagline -->
-      <p class="index-login-tagline">Move. Train. Connect.</p>
-
-      <!-- Login box -->
-      <form class="index-login-form" id="loginForm">
-        <div class="index-field">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Email"
-            class="input-field"
-            autocomplete="email"
-          />
+        <div class="index-login-links">
+          <a href="sign-up.html">Create Account</a>
+          <a href="#">Forgot Password?</a>
         </div>
-
-        <div class="index-field">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Password"
-            class="input-field"
-            autocomplete="current-password"
-          />
-        </div>
-
-        <button type="submit" class="index-login-btn" id="loginBtn" disabled>
-          Log in
-        </button>
-      </form>
-
-      <!-- Social (optional) -->
-      <div class="index-social">
-        <div class="index-divider">
-          <span>or</span>
-        </div>
-
-        <button type="button" class="social-btn facebook">
-          <i class="fa-brands fa-facebook-f"></i>
-          Continue with Facebook
-        </button>
-
-        <button type="button" class="social-btn google">
-          <i class="fa-brands fa-google"></i>
-          Continue with Google
-        </button>
       </div>
+    </section>
+  </main>
 
-      <!-- Bottom link -->
-      <div class="index-login-links">
-        <span>Don’t have an account?</span>
-        <a href="sign-up.html">Sign up</a>
-      </div>
+  <footer>
+    © 2025 Interactive Fitness — All Rights Reserved
+  </footer>
 
-    </div>
-  </section>
-</main>
+  <script src="index.js"></script>
+</body>
+</html>
