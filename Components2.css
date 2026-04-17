@@ -314,6 +314,21 @@ body.sign-up .login-box > * {
   z-index: 1;
 }
 
+.login-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.login-row .input-field {
+  flex: 1 1 auto;
+}
+
+#loginBtn {
+  flex: 0 0 auto;
+}
+
+
 .links {
   text-align: center;
   color: var(--main-color);
