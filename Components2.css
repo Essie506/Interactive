@@ -318,15 +318,17 @@ body.sign-up .login-box > * {
   position: relative;
   width: min(100%, clamp(16rem, 42vw, 30rem));
   margin: 0 auto;
+  padding-right: clamp(4rem, 14vw, 5rem);
   text-align: center;
-   z-index: 10;
+  box-sizing: border-box;
 }
 
 #loginBtn {
   position: absolute;
-  right: clamp(0rem, 1vw, 0.5rem);
-  top: 50%;
-  transform: translateY(-50%);
+  right: clamp(0.25rem, 1vw, 0.75rem);
+  top: 0.5rem;
+  transform: none;
+  z-index: 10;
 }
 
 
