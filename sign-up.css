@@ -15,20 +15,19 @@ body.sign-up-page::before {
 }
 
 
-body.index-page .index-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url("logo.png");
-  background-repeat: no-repeat;
-  background-position: left clamp(-65px, -4vw, -24px) center;
-  background-size: min(65vw, 43.75rem);
-  opacity: 0.32;
-  pointer-events: none;
-  z-index: -1;
-  filter: blur(2px) saturate(0.9) brightness(1.05);
-  mix-blend-mode: soft-light;
+body.sign-up-page .index-hero {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(5rem, 11vh, 7rem);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1.5rem, 3vh, 2rem);
+  box-sizing: border-box;
 }
+
+
+
 
 body.sign-up-page .index-login-panel {
   width: min(100%, 32rem);
