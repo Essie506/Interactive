@@ -240,23 +240,6 @@
   align-items: center;
 }
 
-body.index .btn-login,
-body.sign-up .btn-modern {
-  margin-top: 1.5625rem;
-  max-width: 5.625rem;
-  margin-bottom: 4.6875rem;
-}
-
-.btn-modern:visited,
-.btn-modern:hover,
-.btn-modern:active {
-  text-decoration: none;
-}
-
-.btn-modern:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(7, 153, 146, 0.4);
-}
 
 /* =========================
    MATERIAL STYLE
@@ -296,48 +279,6 @@ body.sign-up .btn-modern {
   background-size: 100% 1px;
 }
 
-body.sign-up .login-box {
-  position: relative;
-  width: min(100%, 22.5rem);
-  padding: 1.375rem 1.125rem 1.125rem;
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-body.sign-up .login-box::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  pointer-events: none;
-}
-
-body.sign-up .login-box > * {
-  position: relative;
-  z-index: 1;
-}
-
-.login-content {
-  position: relative;
-  width: min(100%, clamp(16rem, 42vw, 30rem));
-  margin: 0 auto;
-  padding-right: clamp(4rem, 14vw, 5rem);
-  text-align: center;
-  box-sizing: border-box;
-}
-
-#loginBtn {
-  position: absolute;
-  right: clamp(0.25rem, 1vw, 0.75rem);
-  top: 0.5rem;
-  transform: none;
-  z-index: 10;
-}
-
-
 .links {
   text-align: center;
   color: var(--main-color);
@@ -345,10 +286,6 @@ body.sign-up .login-box > * {
   padding: 0 var(--space-md);
   text-decoration: none;
   margin-top: var(--space-md);
-}
-
-body.sign-up .input-field {
-  margin: 0.875rem auto;
 }
 
 /* =========================
