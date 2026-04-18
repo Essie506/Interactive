@@ -30,23 +30,9 @@ body.index-page .index-hero::before {
   mix-blend-mode: soft-light;
 }
 
-
-
-body.sign-up-page .index-hero {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: clamp(1.5rem, 3vh, 2rem);
-  padding-inline: clamp(1rem, 3vw, 2rem);
-  padding-bottom: clamp(1.5rem, 3vh, 2rem);
-  box-sizing: border-box;
-}
-
-
 body.sign-up-page .index-login-panel {
   width: min(100%, 32rem);
-  min-height: 26rem;
+  min-height: 22rem;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -56,12 +42,12 @@ body.sign-up-page .index-login-panel {
 body.sign-up-page .index-login-inner {
   width: 100%;
   box-sizing: border-box;
-  padding: clamp(2rem, 4vw, 2.75rem) clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(1.6rem, 3vw, 2.2rem) clamp(1.5rem, 3vw, 2rem);
   background: rgba(255, 255, 255, 0.10);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 body.sign-up-page .index-login-header {
