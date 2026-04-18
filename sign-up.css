@@ -92,7 +92,7 @@ body.sign-up-page .brand-badge {
 body.sign-up-page .index-login-tagline {
   margin: 0;
   color: var(--text-dark);
-  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.5rem);
   line-height: 1.4;
   font-family: Orbitron, sans-serif;
   font-weight: 600;
