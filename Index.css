@@ -41,7 +41,8 @@ body.index-page .navbar {
 
 body.index-page .auth-nav-title {
  font-family: Ariel, sans-serif;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: var(--main-font-size);
   }
 
 body.index-page .nav-content {
