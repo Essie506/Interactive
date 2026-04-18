@@ -5,6 +5,13 @@ linear-gradient(135deg, #e1eff9, #d2e3f3, #c3d7ea, #f4f8fc);
 }
 
 
+
+
+
+
+
+
+
 body.index-page::after {
   content: "";
   position: fixed;
@@ -30,6 +37,18 @@ body.index-page::before {
   background-size: 220% 220%;
   animation: satinShimmer 3.2s ease-out forwards;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 body.index-page .index-hero {
   flex: 1;
