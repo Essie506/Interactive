@@ -159,7 +159,7 @@ body.index-page .index-login-links {
 }
 
 body.index-page .index-login-links a {
-  color: #162F4A
+  color: #2A4E6E;
   text-decoration: none;
   font-size: clamp(0.9rem, 1.6vw, 0.98rem);
   font-family: "Outfit", sans-serif;
