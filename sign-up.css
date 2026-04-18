@@ -94,7 +94,7 @@ body.sign-up-page .index-login-tagline {
   color: var(--text-dark);
   font-size: clamp(1.5rem, 2.5vw, 1.5rem);
   line-height: 1.4;
-  font-family: "Orbitron", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 600;
 }
 
