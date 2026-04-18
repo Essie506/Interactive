@@ -39,10 +39,9 @@ body.index-page .navbar {
   justify-content: flex-start;
 }
 
-body.index-page .nav-title {
+body.index-page .auth-nav-title {
  font-family: "Orbitron", sans-serif;
   font-weight: 500;
-  z-index: 2000;
 }
 
 
