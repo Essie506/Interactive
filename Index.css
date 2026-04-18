@@ -26,7 +26,7 @@ body.index-page .index-hero {
 }
 
 body.index-page .index-login-panel {
-  width: min(100%, 28rem);
+  width: min(100%, 20rem);
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -37,13 +37,13 @@ body.index-page .index-login-panel {
 body.index-page .index-login-inner {
   width: 100%;
   box-sizing: border-box;
-  padding: clamp(2rem, 4vw, 2.75rem)
+  padding: clamp(1.5rem, 3vw, 2rem)
            clamp(1.5rem, 3vw, 2rem);
   background: rgba(255, 255, 255, 0.10);
    display: flex;
   flex-direction: column;
   justify-content: center;
-   gap: 1.25rem;
+   gap: 1rem;
 }
 
 body.index-page .index-login-header {
