@@ -187,7 +187,7 @@ body.index-page .index-login-links a:hover {
   body.index-page .index-hero {
      justify-content: flex-start;
     align-items: flex-start;
-    padding-top: calc(var(--bar-height) + 3rem);
+    padding-top: calc(var(--bar-height) + 4rem);
     padding-inline: 1rem;
     padding-bottom: 1rem;
   }
