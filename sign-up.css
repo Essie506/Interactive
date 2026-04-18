@@ -17,11 +17,9 @@ body.sign-up-page::before {
 body.sign-up-page .index-hero {
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: clamp(5rem, 11vh, 7rem);
   padding-inline: clamp(1rem, 3vw, 2rem);
-  padding-bottom: clamp(1.5rem, 3vh, 2rem);
   box-sizing: border-box;
 }
 
