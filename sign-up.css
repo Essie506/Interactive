@@ -1,14 +1,163 @@
+body.sign-up-page {
+  background: var(--index-bg);
+  min-height: 100dvh;
+}
 
-body.sign-up .login-box::before {
+body.sign-up-page::before {
   content: "";
-  position: absolute;
+  position: fixed;
   inset: 0;
-  background:transparent;
+  z-index: -2;
   pointer-events: none;
+  background: var(--index-bg-before);
+  background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
 }
 
-body.sign-up .login-box > * {
-  position: relative;
-  z-index: 1;
+body.sign-up-page .index-hero {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: clamp(5rem, 11vh, 7rem);
+  padding-inline: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1.5rem, 3vh, 2rem);
+  box-sizing: border-box;
 }
 
+body.sign-up-page .index-login-panel {
+  width: min(100%, 28rem);
+  min-height: 26rem;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-soft);
+}
+
+body.sign-up-page .index-login-inner {
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(2rem, 4vw, 2.75rem) clamp(1.5rem, 3vw, 2rem);
+  background: rgba(255, 255, 255, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+body.sign-up-page .index-login-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+body.sign-up-page .index-login-title {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+body.sign-up-page .index-login-tagline {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+  line-height: 1.4;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+}
+
+body.sign-up-page .index-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+body.sign-up-page .index-field {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+body.sign-up-page .index-field input,
+body.sign-up-page .index-field select {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.85rem 1rem;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font: inherit;
+  color: var(--text-dark);
+  background: rgba(255, 255, 255, 0.92);
+  appearance: none;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+body.sign-up-page .index-field input::placeholder {
+  color: rgba(9, 26, 58, 0.58);
+}
+
+body.sign-up-page .sign-up-select {
+  cursor: pointer;
+}
+
+body.sign-up-page .index-login-btn {
+  min-height: 3rem;
+  border: none;
+  margin-top: 0.75rem;
+  background: linear-gradient(
+    135deg,
+    #38ada9,
+    #079992
+  );
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+body.sign-up-page .index-login-btn:hover {
+  transform: translateY(-0.0625rem);
+}
+
+body.sign-up-page .index-login-btn:active {
+  transform: translateY(0);
+}
+
+body.sign-up-page .index-login-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+body.sign-up-page .index-login-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+body.sign-up-page .index-login-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  body.sign-up-page .index-login-panel {
+    width: 100%;
+  }
+
+  body.sign-up-page .index-login-links {
+    justify-content: center;
+  }
+}
