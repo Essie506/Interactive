@@ -75,7 +75,7 @@ body.index-page .index-login-title {
   color: var(--text-dark);
   font-size: clamp(1.8rem, 4vw, 2.4rem);
   font-family: "Rajdhani", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
