@@ -27,7 +27,7 @@ body.index-page .index-hero {
   box-sizing: border-box;
 }
 
-.nav-content {
+body.index-page .nav-content {
   position: relative;
   z-index: 1;
   display: flex;
