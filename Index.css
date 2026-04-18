@@ -1,6 +1,8 @@
 body.index-page {
   background: var(--index-bg);
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 body.index-page::before {
@@ -17,9 +19,9 @@ body.index-page::before {
 body.index-page .index-hero {
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;      /* THIS is the key change */
   justify-content: center;
- padding-top: calc(var(--bar-height) + 2rem);
+  padding-top: calc(var(--bar-height) + 1rem);
   padding-inline: clamp(1rem, 3vw, 2rem);
   padding-bottom: clamp(1.5rem, 3vh, 2rem);
   box-sizing: border-box;
