@@ -36,7 +36,7 @@ body.index-page .index-hero {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: clamp(4rem, 10vh, 6.5rem);
+  padding-top: clamp(5rem, 11vh, 7rem);
   padding-inline: clamp(1rem, 3vw, 2rem);
   padding-bottom: clamp(1.5rem, 3vh, 2rem);
   box-sizing: border-box;
