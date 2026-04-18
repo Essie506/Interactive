@@ -42,6 +42,7 @@ body.index-page .navbar {
 body.index-page .nav-title {
  font-family: "Orbitron", sans-serif;
   font-weight: 500;
+  z-index: 2000;
 }
 
 
