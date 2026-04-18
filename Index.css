@@ -191,8 +191,21 @@ body.index-page .index-login-links a:hover {
   body.index-page .index-login-panel {
     width: 100%;
   }
-
   body.index-page .index-login-links {
     justify-content: center;
   }
 }
+
+@media (max-width: 900px) {
+
+  body.index-page .auth-nav-title {
+    display: none;
+  }
+}
+  
+
+
+
+  
+
+ 
