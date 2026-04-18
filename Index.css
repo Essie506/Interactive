@@ -19,11 +19,28 @@ body.index-page .index-hero {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: clamp(5rem, 11vh, 7rem);
+ padding-top: calc(var(--bar-height) + 2rem);
   padding-inline: clamp(1rem, 3vw, 2rem);
   padding-bottom: clamp(1.5rem, 3vh, 2rem);
   box-sizing: border-box;
 }
+
+.nav-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+body.index-page .navbar {
+  justify-content: flex-start;
+}
+
+
+
+
+
 
 body.index-page .index-login-panel {
   width: min(100%, 24rem);
@@ -66,6 +83,8 @@ body.index-page .index-login-header {
   font-weight: 700;
   letter-spacing: -0.03em;
   box-shadow: var(--shadow-soft);
+  position: relative;
+  z-index: 1;
 }
 
 
