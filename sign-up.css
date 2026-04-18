@@ -26,7 +26,7 @@ body.sign-up-page .index-hero {
 }
 
 body.sign-up-page .index-login-panel {
-  width: min(100%, 28rem);
+  width: min(100%, 32rem);
   min-height: 26rem;
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
