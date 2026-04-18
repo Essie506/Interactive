@@ -203,6 +203,7 @@ body.index-page .index-login-links a:hover {
     min-height: auto;         /* just fit content */
     align-items: flex-start;  /* no vertical centering */
     padding-top: calc(var(--bar-height) + 0.5rem);
+      padding-bottom: 1rem;
   }
 }
   
