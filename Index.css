@@ -42,10 +42,11 @@ body.index-page .navbar {
 body.index-page .auth-nav-title {
  font-family: "Sora", sans-serif;
   font-weight: 500;
+  }
+
+body.index-page .nav-content {
+  gap: 1rem;
 }
-
-
-
 
 body.index-page .index-login-panel {
   width: min(100%, 26rem);
