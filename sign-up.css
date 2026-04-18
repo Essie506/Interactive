@@ -81,7 +81,7 @@ body.sign-up-page .brand-badge {
   border-radius: 999px;
   background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.35));
   color: var(--text-dark);
-  font-family: "Orbitron", sans-serif;
+  font-family: "Sora", sans-serif;
   font-weight: 700;
   letter-spacing: -0.03em;
   box-shadow: var(--shadow-soft);
@@ -92,9 +92,9 @@ body.sign-up-page .brand-badge {
 body.sign-up-page .index-login-tagline {
   margin: 0;
   color: var(--text-dark);
-  font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
   line-height: 1.4;
-  font-family: Ariel, sans-serif;
+  font-family: Orbitron, sans-serif;
   font-weight: 600;
 }
 
