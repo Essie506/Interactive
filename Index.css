@@ -212,7 +212,7 @@ body.index-page .auth-nav-title {
  font-family: Ariel, sans-serif;
   font-weight: 600;
   font-size: var(--main-font-size);
-  justify-self: center;
+  justify-content: center;
   }
 }
 
