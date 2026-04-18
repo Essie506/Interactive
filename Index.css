@@ -203,10 +203,6 @@ body.index-page .index-login-links a:hover {
   body.index-page .index-login-links {
     justify-content: center;
   }
-
-  body.index-page .auth-nav-title {
-    display: none;
-  }
 }
   
 
