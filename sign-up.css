@@ -1,6 +1,8 @@
 body.sign-up-page {
   background: var(--index-bg);
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
 }
 
 body.sign-up-page::before {
@@ -14,39 +16,53 @@ body.sign-up-page::before {
   animation: satinShimmer 3.2s ease-out forwards;
 }
 
-
 body.sign-up-page .index-hero {
   flex: 1;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: clamp(5rem, 11vh, 7rem);
+  padding-top: calc(var(--bar-height) + clamp(0.5rem, 2vh, 1.5rem));
   padding-inline: clamp(1rem, 3vw, 2rem);
-  padding-bottom: clamp(1.5rem, 3vh, 2rem);
+  padding-bottom: clamp(0.5rem, 2vh, 1.5rem);
   box-sizing: border-box;
 }
 
+body.sign-up-page .nav-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
 
+body.sign-up-page .navbar {
+  justify-content: flex-start;
+}
 
+body.sign-up-page .auth-nav-title {
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  font-size: var(--main-font-size);
+}
 
 body.sign-up-page .index-login-panel {
-  width: min(100%, 32rem);
-  min-height: 22rem;
+  width: min(100%, 26rem);
   background: rgba(255, 255, 255, 0.5);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-soft);
+  min-height: 26rem;
 }
 
 body.sign-up-page .index-login-inner {
   width: 100%;
   box-sizing: border-box;
-  padding: clamp(1.6rem, 3vw, 2.2rem) clamp(1.5rem, 3vw, 2rem);
+  padding: clamp(2rem, 4vw, 3rem) clamp(2rem, 3vw, 4rem);
   background: rgba(255, 255, 255, 0.10);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
 body.sign-up-page .index-login-header {
@@ -57,13 +73,29 @@ body.sign-up-page .index-login-header {
   text-align: center;
 }
 
+body.sign-up-page .brand-badge {
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(255,255,255,0.35));
+  color: var(--text-dark);
+  font-family: "Sora", sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  box-shadow: var(--shadow-soft);
+  position: relative;
+  z-index: 1;
+}
+
 body.sign-up-page .index-login-tagline {
   margin: 0;
   color: var(--text-dark);
-   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  font-size: clamp(1.5rem, 2.5vw, 1.5rem);
   line-height: 1.4;
   font-family: "Orbitron", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 body.sign-up-page .index-login-form {
@@ -153,5 +185,22 @@ body.sign-up-page .index-login-links a:hover {
 
   body.sign-up-page .index-login-links {
     justify-content: center;
+  }
+}
+
+@media (max-width: 900px) {
+  body.sign-up-page .auth-nav-title {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: var(--main-font-size);
+  }
+
+  body.sign-up-page .nav-content {
+    gap: 1rem;
+  }
+
+  body.sign-up-page .index-login-links {
+    justify-content: center;
+    gap: 3rem;
   }
 }
