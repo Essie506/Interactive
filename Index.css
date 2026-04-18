@@ -40,7 +40,7 @@ body.index-page .navbar {
 }
 
 body.index-page .auth-nav-title {
- font-family: "Sora", sans-serif;
+ font-family: inherit;
   font-weight: 500;
   }
 
