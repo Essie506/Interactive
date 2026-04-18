@@ -1,31 +1,7 @@
 body.index-page {
-  background:
-linear-gradient(135deg, #e1eff9, #d2e3f3, #c3d7ea, #f4f8fc);
+  background: var(--index-bg);
   min-height: 100dvh;
 }
-
-
-
-
-
-
-
-
-
-body.index-page::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-
-  background: radial-gradient(
-    circle at 30% 20%,
-    rgba(180, 200, 220, 0.25),
-    transparent 60%
-  );
-}
-
 
 body.index-page::before {
   content: "";
@@ -37,18 +13,6 @@ body.index-page::before {
   background-size: 220% 220%;
   animation: satinShimmer 3.2s ease-out forwards;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 body.index-page .index-hero {
   flex: 1;
