@@ -159,7 +159,7 @@ body.index-page .index-login-links {
 }
 
 body.index-page .index-login-links a {
-  color: var(--text-dark);
+  color: #1F3A5F
   text-decoration: none;
   font-size: clamp(0.9rem, 1.6vw, 0.98rem);
   font-family: "Outfit", sans-serif;
@@ -198,7 +198,6 @@ body.index-page .auth-nav-title {
   font-weight: 600;
   font-size: var(--main-font-size);
   justify-content: center;
-  display: none;
   }
 }
 
