@@ -174,7 +174,7 @@ body.index-page .index-login-links {
 body.index-page .index-login-links a {
   color: var(--text-dark);
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: clamp(0.9rem, 1.6vw, 0.98rem);
   font-family: "Outfit", sans-serif;
   font-weight: 500;
   letter-spacing: -0.02em;
