@@ -206,6 +206,7 @@ body.index-page .index-login-links a:hover {
 
 @media (max-width: 900px) {
 body.index-page .auth-nav-title {
+  display: none;
  font-family: Ariel, sans-serif;
   font-weight: 600;
   font-size: var(--main-font-size);
