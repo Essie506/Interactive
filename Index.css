@@ -25,6 +25,20 @@ body.index-page .index-hero {
   padding-inline: clamp(1rem, 3vw, 2rem);
   padding-bottom: clamp(0.5rem, 2vh, 1.5rem);
   box-sizing: border-box;
+  position: relative;
+}
+
+.index-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("images/logo-icon.png") no-repeat center;
+  background-size: 50%;
+
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
 }
 
 
@@ -57,6 +71,7 @@ body.index-page .index-login-panel {
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-soft);
    min-height: 26rem;
+  z-index: 1;
 }
 
 body.index-page .index-login-inner {
