@@ -130,7 +130,7 @@ body.index-page .brand-badge {
   flex: 0 0 auto;
 }
 
-body.sign-up-page .brand-badge-logo
+body.sign-up-page .brand-badge-logo,
 body.index-page .brand-badge-logo {
   display: block;
   width: 140%;
