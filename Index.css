@@ -89,7 +89,7 @@ body.index-page .index-login-header {
 body.index-page .index-login-tagline {
   margin: 0;
    color: var(--text-dark);
-  font-size: clamp(2rem, 2vw, 2rem);
+  font-size: clamp(1.6rem, 2vw, 2rem);
   line-height: 1.4;
   font-family: Ariel, sans-serif;
     font-weight: 600;
@@ -138,10 +138,10 @@ body.index-page .brand-badge {
 body.sign-up-page .brand-badge-logo,
 body.index-page .brand-badge-logo {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 120%;
+  height: 120%;
   object-fit: contain;
-transform: translateX(-2%) translateY(-12%);
+transform: translateX(-2%) translateY(-10%);
 }
 
 .auth-nav-title {
