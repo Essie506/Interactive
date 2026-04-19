@@ -116,7 +116,7 @@ body.index .nav-content {
 
 body.sign-up-page .brand-badge,
 body.index-page .brand-badge {
-  width: 7rem;
+  width: 5.75rem;
   height: 4.5rem;
   display: grid;
   place-items: center;
