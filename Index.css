@@ -233,9 +233,6 @@ body.index-page .auth-nav-title {
   justify-content: center;
   }
 
-  body.index-page .nav-content {
-  gap: 1rem;
-}
 
   body.index-page .index-login-links {
   justify-content: center;
