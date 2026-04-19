@@ -23,7 +23,6 @@ body.index-page .index-hero {
   align-items: center;      /* THIS is the key change */
   justify-content: center;
   padding-top: calc(var(--bar-height) + clamp(0.5rem, 2vh, 1.5rem));
-  padding-inline: clamp(1rem, 3vw, 2rem);
   padding-bottom: clamp(0.5rem, 2vh, 1.5rem);
   box-sizing: border-box;
   position: relative;
