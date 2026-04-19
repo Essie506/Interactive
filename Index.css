@@ -29,6 +29,7 @@ body.index-page .index-hero {
 
 body.index-page .nav-content {
   position: relative;
+  diplay: flex;
   z-index: 1;
   display: flex;
   align-items: center;
