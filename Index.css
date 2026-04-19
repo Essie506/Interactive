@@ -80,7 +80,7 @@ body.index-page .index-login-header {
   text-align: center;
 }
 
-.nav-logo {
+body.index .nav-logo {
   height: 32px; /* tweak: 28–36px */
   width: auto;
   object-fit: contain;
@@ -107,10 +107,10 @@ body.index-page .index-field {
   margin-bottom: 1rem;
 }
 
-.nav-content {
+body.index .nav-content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.75rem;
 }
 
@@ -120,7 +120,7 @@ body.index-page .brand-badge {
   height: 5rem;
   display: grid;
   place-items: center;
-  border-radius: 50%;
+  border-radius: 0.5rem;
   padding: 0;
   background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.34));
   backdrop-filter: blur(12px);
@@ -142,6 +142,7 @@ body.index-page .brand-badge-logo {
   height: 125%;
   object-fit: contain;
 transform: translateX(-2%) translateY(-10%);
+
 }
 
 .auth-nav-title {
