@@ -116,8 +116,8 @@ body.index .nav-content {
 
 body.sign-up-page .brand-badge,
 body.index-page .brand-badge {
-  width: 8rem;
-  height: 5rem;
+  width: 7.5rem;
+  height: 4rem;
   display: grid;
   place-items: center;
   border-radius: 50%rem;
@@ -135,7 +135,7 @@ body.index-page .brand-badge-logo {
   width: 125%;
   height: 125%;
   object-fit: contain;
-transform: translateX(-2%) translateY(-18%);
+transform: translateX(-2%) translateY(-20%);
 
 }
 
