@@ -111,7 +111,7 @@ body.index-page .index-field {
 
 body.sign-up-page .brand-badge,
 body.index-page .brand-badge {
-  width: 5rem;
+  width: 6rem;
   height: 4.5rem;
   display: grid;
   place-items: center;
@@ -217,13 +217,7 @@ body.index-page .index-login-links a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-  body.index-page .index-hero {
-     justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: calc(var(--bar-height) + 4rem);
-  }
-}
+
 
 @media (max-width: 900px) {
 body.index-page .auth-nav-title {
