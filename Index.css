@@ -73,11 +73,11 @@ body.index-page .index-login-panel {
   box-shadow: var(--shadow-soft);
    min-height: 26rem;
   z-index: 1;
+   background: url("logo-icon.png") no-repeat center;
 }
 
 
-body.index-page .index-login-panel::after {
- background: url("logo-icon.png") no-repeat center;
+body.index-page .logo-icon.png {
   opacity: 0.5;
   height: auto;
   width: auto;
