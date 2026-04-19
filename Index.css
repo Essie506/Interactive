@@ -136,8 +136,7 @@ body.index-page .brand-badge-logo {
   width: 140%;
   height: 140%;
   object-fit: contain;
-   transform: translateY(-9%); 
-   transform: translateX(-2%); 
+transform: translateX(-2%) translateY(-12%);
 }
 
 .auth-nav-title {
