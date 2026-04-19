@@ -121,7 +121,7 @@ body.index-page .brand-badge {
   display: grid;
   place-items: center;
   border-radius: 0.5rem;
-  padding: 0;
+  padding: 0.1rem;
   background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.34));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
