@@ -111,8 +111,8 @@ body.index-page .index-field {
 
 body.sign-up-page .brand-badge,
 body.index-page .brand-badge {
-  width: 5.75rem;
-  height: 4.5rem;
+  width: 5rem;
+  height: 5rem;
   display: grid;
   place-items: center;
   border-radius: 50%;
