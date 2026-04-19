@@ -137,6 +137,7 @@ body.index-page .brand-badge-logo {
   width: 130%;
   height: 130%;
   object-fit: contain;
+  opacity: 0.75;
 transform: translateX(-2%) translateY(-19%);
 
 }
