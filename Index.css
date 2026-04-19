@@ -133,9 +133,10 @@ body.index-page .brand-badge {
 body.sign-up-page .brand-badge-logo,
 body.index-page .brand-badge-logo {
   display: block;
-  width: 115%;
-  height: 115%;
+  width: 125%;
+  height: 125%;
   object-fit: contain;
+  
 }
 
 .auth-nav-title {
