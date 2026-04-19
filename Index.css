@@ -138,8 +138,8 @@ body.index-page .brand-badge {
 body.sign-up-page .brand-badge-logo,
 body.index-page .brand-badge-logo {
   display: block;
-  width: auto;
-  height: auto;
+  width: 125%;
+  height: 125%;
   object-fit: contain;
 transform: translateX(-2%) translateY(-18%);
 
