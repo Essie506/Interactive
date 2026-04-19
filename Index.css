@@ -14,7 +14,6 @@ body.index-page::before {
   background: var(--index-bg-before);
   background-size: 220% 220%;
   animation: satinShimmer 3.2s ease-out forwards;
-  justify-content: flex-start;
   
 }
 
@@ -34,10 +33,9 @@ body.index-page .index-hero {
   content: "";
   position: absolute;
   inset: 0;
-
+  justify-content: flex-start;
   background: url("logo-icon.png") no-repeat center;
   background-size: 50%;
-
   opacity: 0.06;
   pointer-events: none;
   z-index: 0;
