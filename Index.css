@@ -178,15 +178,6 @@ body.index-page .index-login-links a:hover {
     align-items: flex-start;
     padding-top: calc(var(--bar-height) + 4rem);
   }
-
-  body.index-page .index-login-panel {
-    width: 100%;
-    min-height: auto;
-  }
-  body.index-page .index-login-inner {
-    padding: 1.4rem 1.25rem;
-    gap: 0.9rem;
-  }
 }
 
 @media (max-width: 900px) {
@@ -205,6 +196,14 @@ body.index-page .auth-nav-title {
   justify-content: center;
   gap: 3rem;
 }
+    body.index-page .index-login-panel {
+    width: 100%;
+    min-height: auto;
+  }
+  body.index-page .index-login-inner {
+    padding: 1.4rem 1.25rem;
+    gap: 0.9rem;
+  }
 }
 
 
