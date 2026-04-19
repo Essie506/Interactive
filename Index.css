@@ -27,6 +27,11 @@ body.index-page .index-hero {
   box-sizing: border-box;
 }
 
+
+body.index .navbar {
+  padding: 0;
+}
+
 body.index-page .nav-content {
   position: relative;
   display: flex;
