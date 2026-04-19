@@ -84,7 +84,7 @@ body.index-page .index-login-header {
 body.index-page .index-login-tagline {
   margin: 0;
    color: var(--text-dark);
-  font-size: clamp(1.5rem, 2.5vw, 1.5rem);
+  font-size: clamp(2rem, 2.5vw, 2rem);
   line-height: 1.4;
   font-family: Ariel, sans-serif;
     font-weight: 600;
@@ -116,7 +116,7 @@ body.index-page .brand-badge {
   display: grid;
   place-items: center;
   border-radius: 1rem;
-  padding: 0.15rem;
+  padding: 0;
   background: linear-gradient(135deg, rgba(255,255,255,0.72), rgba(255,255,255,0.34));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
