@@ -179,15 +179,6 @@ body.sign-up-page .index-login-links a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-  body.sign-up-page .index-login-panel {
-    width: 100%;
-  }
-
-  body.sign-up-page .index-login-links {
-    justify-content: center;
-  }
-}
 
 @media (max-width: 900px) {
   body.sign-up-page .auth-nav-title {
@@ -196,12 +187,13 @@ body.sign-up-page .index-login-links a:hover {
     font-size: var(--main-font-size);
   }
 
+  body.sign-up-page .index-login-panel {
+    width: 100%;
+    margin: auto; 
+  }
+
   body.sign-up-page .nav-content {
     gap: 1rem;
   }
-
-  body.sign-up-page .index-login-links {
-    justify-content: center;
-    gap: 3rem;
-  }
+ 
 }
