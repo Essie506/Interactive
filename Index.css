@@ -117,7 +117,7 @@ body.sign-up-page .brand-badge {
     inset 0 0.0625rem 0 rgba(255,255,255,0.42);
   border: 1px solid rgba(255,255,255,0.28);
   position: relative;
-  z-index: 1;
+  z-index: 2;
   overflow: hidden;
   flex: 0 0 auto;
 }
