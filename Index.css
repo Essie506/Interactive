@@ -34,7 +34,7 @@ body.index-page .index-hero {
   inset: 0;
   display: flex;
   background: url("logo-icon2.png") no-repeat left center;
-  background-size: 100%;
+  background-size: 50%;
   opacity: 0.5;
   pointer-events: none;
   z-index: 0;
@@ -43,6 +43,7 @@ body.index-page .index-hero {
 
 body.index-page .navbar {
   padding: 0.1rem;
+  display: none;
 }
 
 body.index-page .nav-content {
