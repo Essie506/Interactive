@@ -33,9 +33,10 @@ body.index-page .index-hero {
   position: absolute;
   inset: 0;
   display: flex;
-  background: url("logo-icon2.png") no-repeat center;
-  background-size: 80%;
-  opacity: 0.5;
+  background-repeat: no-repeat;
+  background: url("logo-icon2.png") center center;
+  background-size: cover;
+  opacity: 0.6;
   pointer-events: none;
   z-index: 0;
 }
