@@ -57,7 +57,7 @@ body.index-page .index-hero::after {
   background-image: url("logo-icon5.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: contain;
+  background-size: 112% auto;
   opacity: 0.28;
   filter: blur(3px);
   transform: scale(1.08);
