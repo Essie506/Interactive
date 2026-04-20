@@ -184,7 +184,7 @@ body.index-page .index-login-links {
 }
 
 body.index-page .icon-btn.eye-btn {
-  font-size: clamp(0.987rem, 1.2vw, 1.1rem);
+  font-size: clamp(0.8rem, 1vw, 1.1rem);
   position: absolute;
   right: 0.75rem;   /* distance from right edge */
   top: 50%;
