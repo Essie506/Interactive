@@ -57,10 +57,10 @@ body.index-page .index-hero::after {
   background-image: url("logo-icon2.png");
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 112% auto;
-  opacity: 0.16;
-  filter: blur(7px);
-  transform: scale(1.02);
+  background-size: contain;
+  opacity: 0.28;
+  filter: blur(3px);
+  transform: scale(1.08);
 }
 
 body.index-page .navbar {
