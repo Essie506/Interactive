@@ -182,7 +182,8 @@ body.index-page .index-login-links .link-btn {
   letter-spacing: -0.02em;
 }
 
-body.index-page .index-login-links a:hover {
+body.index-page .index-login-links a:hover,
+body.index-page .index-login-links .link-btn:hover {
   text-decoration: underline;
 }
 
