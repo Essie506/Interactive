@@ -303,7 +303,7 @@ body.index .nav-logo {
     background-size: 140% auto;
     background-position: center center;
     opacity: 1;
-    filter: blur(3px);
+    filter: blur(0.1px);
   }
 
   body.index-page .index-login-panel {
