@@ -1,4 +1,4 @@
-import { auth, sendPasswordResetEmail } from "./firebase.js";
+import { auth, sendPasswordResetEmail } from "./firebase-config.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
