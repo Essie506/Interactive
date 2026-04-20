@@ -28,21 +28,6 @@ body.index-page .index-hero {
   position: relative;
 }
 
-.index-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: url("logo-icon2.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% auto;
-
-  opacity: 1;
-  pointer-events: none;
-  z-index: 0;
-}
-
 
 body.index-page .navbar {
   padding: 0.1rem;
