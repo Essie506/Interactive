@@ -77,8 +77,8 @@ body.index-page .index-login-panel {
 
 body.index-page .logo-icon.png {
   opacity: 0.5;
-  height: auto;
-  width: auto;
+  min-height: 100%;
+  min-width: 100%;
 }
 
 body.index-page .index-login-inner {
