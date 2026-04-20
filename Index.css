@@ -32,10 +32,12 @@ body.index-page .index-hero {
   content: "";
   position: absolute;
   inset: 0;
-  display: flex;
+
+  background-image: url("logo-icon2.png");
   background-repeat: no-repeat;
-  background: url("logo-icon2.png") center center;
+  background-position: center center;
   background-size: contain;
+
   opacity: 1;
   pointer-events: none;
   z-index: 0;
