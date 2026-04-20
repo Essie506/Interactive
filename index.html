@@ -36,16 +36,19 @@
             />
           </div>
 
-          <div class="index-field">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Password"
-              class="input-field"
-              autocomplete="current-password"
-            />
-          </div>
+ <div class="index-field password-field">
+  <input
+    type="password"
+    id="password"
+    name="password"
+    placeholder="Password"
+    class="input-field"
+    autocomplete="current-password"
+  />
+  <button type="button" id="togglePassword" class="toggle-password" aria-label="Show password">
+    <i class="fa-solid fa-eye"></i>
+  </button>
+</div>
 
           <button type="submit" class="index-login-btn" id="loginBtn" aria-label="Log in" disabled>
             Log in
