@@ -1,3 +1,5 @@
+import { auth, sendPasswordResetEmail } from "./firebase.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const loginForm = document.getElementById("loginForm");
   const loginBtn = document.getElementById("loginBtn");
@@ -21,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   emailInput.addEventListener("input", updateLoginState);
   passwordInput.addEventListener("input", updateLoginState);
 
-  // 🔐 LOGIN SUBMIT
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -31,12 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!email || !password) return;
 
     console.log("Login submitted", { email });
-
-    // 👉 TEMP redirect (replace with Firebase later)
     window.location.href = "feed.html";
   });
 
-  // 👁️ SHOW / HIDE PASSWORD
   if (togglePassword && passwordInput) {
     togglePassword.addEventListener("click", () => {
       const isHidden = passwordInput.type === "password";
@@ -49,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 📩 FORGOT PASSWORD (Firebase)
   if (forgotBtn && emailInput) {
     forgotBtn.addEventListener("click", async () => {
       const email = emailInput.value.trim();
@@ -60,18 +57,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const { getAuth, sendPasswordResetEmail } = await import(
-          "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js"
-        );
-
-        const auth = getAuth();
-
         await sendPasswordResetEmail(auth, email);
-
         alert("If an account exists, a reset link has been sent.");
       } catch (error) {
-        console.error(error);
-        alert("Something went wrong. Try again.");
+        console.error("Password reset error:", error);
+        alert(error.message);
       }
     });
   }
