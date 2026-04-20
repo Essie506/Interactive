@@ -175,7 +175,8 @@ body.index-page .index-login-links {
   text-decoration: underline;
 }
 
-body.index-page .index-login-links a {
+body.index-page .index-login-links a, 
+body.index-page .index-login-links .linkbtn {
   color: #162F4A;
   text-decoration: none;
   font-size: clamp(1.1rem, 1.6vw, 0.98rem);
