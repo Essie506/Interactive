@@ -112,12 +112,19 @@ body.index-page .index-login-form {
 }
 
 body.index-page .index-field {
-  width: 100%;
+  width: 100%;F
   margin-bottom: 1rem;
 }
 
 .password-field .input-field {
   padding-right: 3rem;
+  width: 100%;
+box-sizing: border-box;
+}
+
+.password-field {
+  position: relative;
+  width: 100%;
 }
 
 
