@@ -172,6 +172,10 @@ body.index-page .index-login-links {
   cursor: pointer;
 }
 
+body.index-page .icon-btn.eye-btn {
+  font-size: clamp(0.987rem, 1.2vw, 1.1rem)
+}
+
 body.index-page .index-login-links a, 
 body.index-page .index-login-links .link-btn {
   color: #162F4A;
