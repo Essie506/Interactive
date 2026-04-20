@@ -189,6 +189,7 @@ body.index-page .icon-btn.eye-btn {
   right: 0.75rem;   /* distance from right edge */
   top: 50%;
   transform: translateY(-50%);
+  left: auto;
 }
 
 body.index-page .index-login-links a, 
