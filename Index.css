@@ -169,14 +169,11 @@ body.index-page .index-login-links {
   background: none;
   border: none;
   padding: 0;
-  font: inherit;
-  color: inherit;
   cursor: pointer;
-  text-decoration: underline;
 }
 
 body.index-page .index-login-links a, 
-body.index-page .index-login-links .linkbtn {
+body.index-page .index-login-links .link-btn {
   color: #162F4A;
   text-decoration: none;
   font-size: clamp(1.1rem, 1.6vw, 0.98rem);
