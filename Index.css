@@ -116,6 +116,10 @@ body.index-page .index-field {
   margin-bottom: 1rem;
 }
 
+.password-field .input-field {
+  padding-right: 3rem;
+}
+
 
 body.index-page .index-field input {
   width: 100%;
@@ -174,6 +178,10 @@ body.index-page .index-login-links {
 
 body.index-page .icon-btn.eye-btn {
   font-size: clamp(0.987rem, 1.2vw, 1.1rem) 
+  position: absolute;
+  right: 0.75rem;   /* distance from right edge */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 body.index-page .index-login-links a, 
