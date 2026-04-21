@@ -358,7 +358,7 @@ service-links,
 /* =========================
    LARGE SCREEN NAV
 ========================= */
-@media (min-width: 901px) {
+ (min-width: 901px) {
   .bottom-nav {
     display: none;
   }
@@ -493,10 +493,12 @@ service-links,
   justify-content: flex-end;
 }
    
-
   .navbar {
     display: flex;
     justify-content: space-between;
+  }
+  .navbar-right .desktop-icon-link {
+    display: none;
   }
 }
 
