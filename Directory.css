@@ -1,0 +1,232 @@
+.directory-page {
+  width: min(1200px, 100%);
+  margin: 0 auto;
+  padding:
+    calc(var(--bar-height) + clamp(1rem, 2vw, 1.5rem))
+    clamp(1rem, 3vw, 2rem)
+    calc(clamp(1.5rem, 3vw, 2.5rem) + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+}
+
+.directory-header {
+  text-align: center;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+.directory-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.directory-subtitle {
+  margin: 0.5rem 0 0;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: rgba(9, 26, 58, 0.7);
+}
+
+.directory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: stretch;
+}
+
+.directory-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 100%;
+  padding: 1.1rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.52);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.directory-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.18),
+      rgba(255, 255, 255, 0.03) 48%,
+      transparent 70%
+    );
+  pointer-events: none;
+}
+
+.directory-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 36px rgba(9, 26, 58, 0.14);
+  border-color: rgba(7, 153, 146, 0.22);
+}
+
+.directory-card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  position: relative;
+  z-index: 1;
+}
+
+.directory-avatar-wrap {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.directory-avatar {
+  width: clamp(4.25rem, 10vw, 5.2rem);
+  height: clamp(4.25rem, 10vw, 5.2rem);
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 18px rgba(9, 26, 58, 0.14);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.directory-verified {
+  position: absolute;
+  right: -0.1rem;
+  bottom: -0.1rem;
+  width: 1.45rem;
+  height: 1.45rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--main-color);
+  box-shadow: 0 4px 10px rgba(9, 26, 58, 0.14);
+  font-size: 0.95rem;
+}
+
+.directory-main {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+}
+
+.directory-name {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.directory-role,
+.directory-gym {
+  margin: 0;
+  font-size: 0.92rem;
+  color: rgba(9, 26, 58, 0.74);
+  line-height: 1.35;
+}
+
+.directory-bio {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: rgba(9, 26, 58, 0.82);
+  position: relative;
+  z-index: 1;
+}
+
+.directory-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.directory-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(7, 153, 146, 0.1);
+  color: var(--main-color-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  border: 1px solid rgba(7, 153, 146, 0.14);
+}
+
+.directory-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.btn-modern,
+.btn-ghost {
+  min-height: 2.65rem;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.btn-modern {
+  background: var(--btn-modern-bg, linear-gradient(135deg, #079992, #047a74));
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(7, 153, 146, 0.24);
+}
+
+.btn-modern:hover {
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.45);
+  color: var(--text-dark);
+  border: 1px solid rgba(9, 26, 58, 0.08);
+}
+
+.btn-ghost:hover {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.62);
+}
+
+@media (max-width: 700px) {
+  .directory-card {
+    padding: 1rem;
+    border-radius: 1.2rem;
+  }
+
+  .directory-card-top {
+    align-items: flex-start;
+  }
+
+  .directory-card-actions {
+    flex-direction: column;
+  }
+
+  .btn-modern,
+  .btn-ghost {
+    width: 100%;
+  }
+}
