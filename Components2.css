@@ -127,7 +127,7 @@
   text-decoration: none;
 }
 
-service-links,
+.service-links,
 .profile-service-links,
 .directory-tag {
   display: flex;
@@ -358,7 +358,8 @@ service-links,
 /* =========================
    LARGE SCREEN NAV
 ========================= */
- (min-width: 901px) {
+@media (min-width: 901px) {
+    
   .bottom-nav {
     display: none;
   }
@@ -464,7 +465,7 @@ service-links,
 
      body.directory .top-search-btn {
     display: inline-flex;
-        {
+     }
 
   .composer-modal,
   .messages-modal {
