@@ -389,6 +389,7 @@ service-links,
   }
 
   body.feed .nav-title,
+    body.directory .nav-title,
   body.profile .nav-title {
     position: static;
     left: auto;
