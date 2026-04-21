@@ -54,7 +54,7 @@
   position: relative;
   z-index: 2;
 }
-F
+
 .nav-left {
   display: flex;
   align-items: center;
@@ -87,8 +87,7 @@ F
    font-size: var(--main-font-size);
 }
 
-.desktop-icon-link, 
-.desktop-icon-link a {
+.desktop-icon-link {
   display: none;
 }
 
@@ -461,6 +460,10 @@ service-links,
    body.profile .top-search-btn {
     display: none;
   }
+
+     body.directory .top-search-btn {
+    display: inline-flex;
+        {
 
   .composer-modal,
   .messages-modal {
