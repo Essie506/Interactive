@@ -456,7 +456,8 @@ service-links,
     display: flex;
   }
 
-  .top-search-btn {
+  body.feed .top-search-btn,
+   body.view-profile .top-search-btn {
     display: none;
   }
 
