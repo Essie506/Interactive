@@ -139,6 +139,8 @@
   letter-spacing: -0.02em;
 }
 
+
+.index-login-links,
 .index-login-links a:hover,
 .index-login-links .link-btn:hover {
   text-decoration: underline;
