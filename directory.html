@@ -1,3 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feed - Interactive Fitness</title>
+
+  <link rel="stylesheet" href="Base2.css" />
+  <link rel="stylesheet" href="Components2.css" />
+  <link rel="stylesheet" href="Menu2.css" />
+  <link rel="stylesheet" href="Directory.css" />
+  <link rel="stylesheet" href="Messages2.css" />
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body class="feed">
+
+  <nav class="navbar">
+    <div class="navbar-bg"></div>
+
+    <div class="nav-left">
+      <button class="menu-toggle icon-btn" id="menuToggle" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-user"></i>
+      </button>
+
+      <button class="icon-btn desktop-icon-link messages-toggle" type="button" aria-label="Messages">
+        <i class="fa-solid fa-comments"></i>
+        <span class="messages-dot"></span>
+      </button>
+    </div>
+
+    <div class="nav-title">Interactive</div>
+
+    <div class="nav-center desktop-nav-links">
+      <a href="feed.html" aria-label="Home">
+        <i class="fa-solid fa-house"></i>
+      </a>
+
+      <a href="calendar.html" aria-label="Calendar">
+        <i class="fa-regular fa-calendar-days"></i>
+      </a>
+
+      <a href="studios.html" aria-label="Gyms">
+        <i class="fa-solid fa-fire"></i>
+      </a>
+
+      <a href="browse-workouts.html" aria-label="Browse workouts">
+        <i class="fa-solid fa-dumbbell"></i>
+      </a>
+    </div>
+
+    <div class="navbar-right">
+      <button class="icon-btn desktop-icon-link top-search-btn" id="searchToggle" type="button" aria-label="Search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+
+      <button class="icon-btn composer-toggle" id="composerToggle" type="button" aria-label="Create post">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+<nav class="menu" aria-label="Main menu">
+  <ul>
+    <li class="menu-profile">
+      <a href="view-profile.html" class="menu-item menu-profile-info">
+        <i class="fa-solid fa-user"></i>
+        <div class="menu-profile-text">
+          <div class="menu-profile-name">Esther</div>
+          <div class="menu-profile-sub">Your profile</div>
+        </div>
+      </a>
+    </li>
+
+    <li>
+      <a href="gyms.html" class="menu-item">
+        <i class="fa-solid fa-fire"></i>
+        <span>Gyms and Studios</span>
+      </a>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#" class="menu-item" aria-expanded="false">
+        <i class="fa-solid fa-dumbbell"></i>
+        <span>Workouts</span>
+      </a>
+      <ul class="submenu">
+        <li><a href="home.html">Browse Workouts</a></li>
+        <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
+        <li><a href="trending.html">Trending</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="settings.html" class="menu-item">
+        <i class="fa-solid fa-cog"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="index.html" class="menu-item">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+      </a>
+    </li>
+
+    <li class="menu-search-item">
+      <div class="menu-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="menuSearchInput" placeholder="Search..." />
+      </div>
+    </li>
+  </ul>
+</nav>
+
 <section class="directory-page">
   <header class="directory-header">
     <h1 class="directory-title">Directory</h1>
