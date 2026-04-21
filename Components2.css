@@ -54,7 +54,7 @@
   position: relative;
   z-index: 2;
 }
-
+F
 .nav-left {
   display: flex;
   align-items: center;
@@ -127,11 +127,49 @@
   text-decoration: none;
 }
 
-.directory-tags {
-   gap: 1rem;
+service-links,
+.directory-tag {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--profile-gap-xs);
 }
 
-.directory-tag,
+.service-link,
+.directory-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--profile-gap-xs);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: transparent;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 700;
+  line-height: 1;
+  font-size: clamp(0.9rem, 0.95vw, 1rem);
+}
+
+.service-link::before,
+.directory-tag::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.75rem;
+    color: #0a0a0a;
+}
+
+
+
+
+
+
+
+
+
+
 .index-login-links a, 
 .index-login-links .link-btn {
   color: #162F4A;
