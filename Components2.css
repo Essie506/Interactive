@@ -87,7 +87,8 @@ F
    font-size: var(--main-font-size);
 }
 
-.desktop-icon-link {
+.desktop-icon-link, 
+.desktop-icon-link a {
   display: none;
 }
 
