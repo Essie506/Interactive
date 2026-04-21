@@ -140,7 +140,7 @@
 }
 
 
-.index-login-links,
+.index-login-links:hover,
 .index-login-links a:hover,
 .index-login-links .link-btn:hover {
   text-decoration: underline;
