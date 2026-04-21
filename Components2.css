@@ -127,6 +127,9 @@
   text-decoration: none;
 }
 
+.directory-tag {
+   gap: 1rem;
+}
 
 .directory-tag,
 .index-login-links a, 
