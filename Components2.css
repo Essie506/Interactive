@@ -128,7 +128,7 @@ F
 }
 
 service-links,
-profile-service-links,
+.profile-service-links,
 .directory-tag {
   display: flex;
   flex-wrap: wrap;
