@@ -128,7 +128,7 @@
 }
 
 
-.index-login-links,
+.directory-tag,
 .index-login-links a, 
 .index-login-links .link-btn {
   color: #162F4A;
@@ -140,7 +140,7 @@
 }
 
 
-.index-login-links:hover,
+.directory-tag:hover,
 .index-login-links a:hover,
 .index-login-links .link-btn:hover {
   text-decoration: underline;
