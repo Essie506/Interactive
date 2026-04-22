@@ -118,6 +118,31 @@ body {
 
   --profile-blur: blur(10px);
   --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
+  --directory-page-max: 1200px;
+
+  --directory-gap: clamp(0.5rem, 1.2vw, 0.9rem);
+  --directory-card-pad-outer: 0.125rem;
+  --directory-card-pad-inner: clamp(0.65rem, 1.2vw, 1rem);
+
+  --directory-grid-gap: clamp(0.65rem, 1.4vw, 1rem);
+  --directory-info-gap: clamp(0.45rem, 1vw, 0.75rem);
+  --directory-top-gap: clamp(0.65rem, 1.2vw, 0.9rem);
+
+  --directory-avatar-size: clamp(3.15rem, 8vw, 4.35rem);
+  --directory-verified-size: clamp(1rem, 2.6vw, 1.25rem);
+
+  --directory-name-size: clamp(0.98rem, 1.8vw, 1.1rem);
+  --directory-meta-size: clamp(0.78rem, 1.4vw, 0.9rem);
+  --directory-bio-size: clamp(0.78rem, 1.4vw, 0.9rem);
+
+  --directory-thumb-width: clamp(3.8rem, 10vw, 4.8rem);
+  --directory-thumb-height: clamp(3rem, 8vw, 3.9rem);
+
+  --directory-hero-ratio: 16 / 9;
+  --directory-media-min: clamp(10.5rem, 28vw, 15rem);
+
+  --directory-tag-gap: clamp(0.35rem, 0.8vw, 0.55rem);
 }
 
 @media (max-width: 900px) {
