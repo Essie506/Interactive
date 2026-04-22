@@ -129,7 +129,7 @@
 
 .service-links,
 .profile-service-links,
-.directory-tags {
+.directory-tabs {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -137,7 +137,7 @@
 }
 
 .service-link,
-.directory-tag {
+.directory-tab {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -154,20 +154,13 @@
 }
 
 .service-link::before,
-.directory-tag::before {
+.directory-tab::before {
   content: "\f00c";
   font-family: "Font Awesome 6 Free";
   font-weight: 900;
   font-size: 0.75rem;
     color: #0a0a0a;
 }
-
-
-
-
-
-
-
 
 
 
