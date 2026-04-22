@@ -105,7 +105,7 @@ body.directory {
   -webkit-backdrop-filter: var(--directory-blur);
   box-shadow: var(--shadow-soft);
   padding: var(--directory-card-shell-pad);
-  overflow: clip;
+  overflow: visible;
   margin-bottom: var(--directory-gap-md);
 }
 
