@@ -50,7 +50,7 @@ body.directory::before {
   box-shadow: var(--shadow-soft);
   padding: 0.125rem;
   overflow: clip;
-   margin-bottom: var(--profile-gap-small);
+   margin-bottom: var(--profile-gap-md);
 }
 
 .directory-listing-inner {
