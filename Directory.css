@@ -266,6 +266,20 @@ body.directory .nav-center.verified {
     --directory-scale: 0.84;
   }
 
+  .directory-page {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .directory-listings,
+  .directory-listing,
+  .directory-listing-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .directory-listing-grid {
     grid-template-columns: minmax(0, 1fr) minmax(calc(8.5rem * var(--directory-scale)), 38%);
     gap: calc(0.75rem * var(--directory-scale));
@@ -296,10 +310,6 @@ body.directory .nav-center.verified {
     flex-direction: column;
   }
 
-  .btn-modern,
-  .btn-ghost {
-    width: 100%;
-  }
 
   .directory-listing-grid {
     grid-template-columns: minmax(0, 1fr) minmax(calc(7.25rem * var(--directory-scale)), 34%);
