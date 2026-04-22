@@ -22,9 +22,9 @@ body.directory::before {
   width: min(1200px, 100%);
   margin: 0 auto;
   padding:
-    calc(var(--bar-height) + clamp(1rem, 2vw, 1.5rem))
+ var(--profile-page-pad-top)
     0
-    calc(clamp(1.5rem, 3vw, 2.5rem) + env(safe-area-inset-bottom, 0px));
+    var(--profile-page-pad-bottom);
   box-sizing: border-box;
 }
 
