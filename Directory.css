@@ -1,7 +1,50 @@
 /* =========================
-   PAGE SHELL
+   DIRECTORY SCALE TOKENS
+   Change --directory-card-scale to grow/shrink
+   the contents inside each card together
 ========================= */
 body.directory {
+  --directory-card-scale: 1;
+
+  /* page shell */
+  --directory-page-width: min(1200px, 100%);
+  --directory-list-gap: var(--profile-gap-md, 1rem);
+
+  /* card shell */
+  --directory-card-shell-pad: calc(0.125rem * var(--directory-card-scale));
+  --directory-card-inner-pad: calc(clamp(0.9rem, 1.6vw, 1.25rem) * var(--directory-card-scale));
+  --directory-card-inner-gap: calc(0.85rem * var(--directory-card-scale));
+
+  /* grid / layout */
+  --directory-grid-gap: calc(clamp(1rem, 2vw, 1.5rem) * var(--directory-card-scale));
+  --directory-info-gap: calc(0.9rem * var(--directory-card-scale));
+  --directory-topbar-gap: calc(1rem * var(--directory-card-scale));
+  --directory-top-gap: calc(0.95rem * var(--directory-card-scale));
+  --directory-main-gap: calc(0.28rem * var(--directory-card-scale));
+
+  /* avatar */
+  --directory-avatar-size: calc(clamp(4.5rem, 9vw, 5.4rem) * var(--directory-card-scale));
+  --directory-avatar-shadow: 0 8px 18px rgba(9, 26, 58, 0.14);
+
+  /* verified badge */
+  --directory-verified-size: calc(1.45rem * var(--directory-card-scale));
+  --directory-verified-icon-size: calc(0.95rem * var(--directory-card-scale));
+  --directory-verified-offset: calc(-0.1rem * var(--directory-card-scale));
+
+  /* text */
+  --directory-name-size: calc(clamp(1.08rem, 1.3vw, 1.2rem) * var(--directory-card-scale));
+  --directory-meta-size: calc(clamp(0.85rem, 1.6vw, 0.96rem) * var(--directory-card-scale));
+  --directory-bio-size: calc(clamp(0.85rem, 1.6vw, 0.96rem) * var(--directory-card-scale));
+
+  /* actions */
+  --directory-actions-gap: calc(0.7rem * var(--directory-card-scale));
+
+  /* media */
+  --directory-media-gap: calc(0.65rem * var(--directory-card-scale));
+  --directory-thumb-row-gap: calc(0.55rem * var(--directory-card-scale));
+  --directory-thumb-width: calc(5.25rem * var(--directory-card-scale));
+  --directory-thumb-height: calc(4.25rem * var(--directory-card-scale));
+
   margin: 0;
   background: var(--index-bg);
   min-height: 100dvh;
@@ -18,11 +61,14 @@ body.directory::before {
   animation: satinShimmer 3.2s ease-out forwards;
 }
 
+/* =========================
+   PAGE SHELL
+========================= */
 .directory-page {
-  width: min(1200px, 100%);
+  width: var(--directory-page-width);
   margin: 0 auto;
   padding:
- var(--profile-page-pad-top)
+    var(--profile-page-pad-top)
     0
     var(--profile-page-pad-bottom);
   box-sizing: border-box;
@@ -34,7 +80,7 @@ body.directory::before {
 .directory-listings {
   display: flex;
   flex-direction: column;
-  gap: var(--profile-gap-md, 1rem);
+  gap: var(--directory-list-gap);
 }
 
 /* =========================
@@ -48,9 +94,9 @@ body.directory::before {
   backdrop-filter: var(--profile-blur, blur(14px));
   -webkit-backdrop-filter: var(--profile-blur, blur(14px));
   box-shadow: var(--shadow-soft);
-  padding: 0.125rem;
+  padding: var(--directory-card-shell-pad);
   overflow: clip;
-   margin-bottom: var(--profile-gap-md);
+  margin-bottom: var(--profile-gap-md);
 }
 
 .directory-listing-inner {
@@ -59,10 +105,10 @@ body.directory::before {
   border-radius: 0;
   background: var(--profile-inner-bg, rgba(255, 255, 255, 0.8));
   box-shadow: var(--profile-raised-shadow, 0 10px 22px rgba(9, 26, 58, 0.08));
-  padding: clamp(0.9rem, 1.6vw, 1.25rem);
-     display: flex;
+  padding: var(--directory-card-inner-pad);
+  display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: var(--directory-card-inner-gap);
 }
 
 /* =========================
@@ -71,7 +117,7 @@ body.directory::before {
 .directory-listing-grid {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
-  gap: clamp(1rem, 2vw, 1.5rem);
+  gap: var(--directory-grid-gap);
   align-items: start;
 }
 
@@ -79,22 +125,22 @@ body.directory::before {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.9rem;
+  gap: var(--directory-info-gap);
 }
 
 .directory-info-topbar {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--directory-topbar-gap);
 }
 
 .directory-listing-top {
   display: flex;
   align-items: center;
-  gap: 0.95rem;
+  gap: var(--directory-top-gap);
   min-width: 0;
-   flex: 1 1 auto;
+  flex: 1 1 auto;
 }
 
 .directory-share-btn {
@@ -103,9 +149,8 @@ body.directory::before {
 }
 
 body.directory .directory-tabs {
-   justify-content: flex-start;
+  justify-content: flex-start;
 }
-
 
 /* =========================
    AVATAR / TEXT
@@ -116,21 +161,21 @@ body.directory .directory-tabs {
 }
 
 .directory-avatar {
-  width: clamp(4.5rem, 9vw, 5.4rem);
-  height: clamp(4.5rem, 9vw, 5.4rem);
+  width: var(--directory-avatar-size);
+  height: var(--directory-avatar-size);
   border-radius: 50%;
   object-fit: cover;
   display: block;
   background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 18px rgba(9, 26, 58, 0.14);
+  box-shadow: var(--directory-avatar-shadow);
 }
 
 .directory-verified {
   position: absolute;
-  right: -0.1rem;
-  bottom: -0.1rem;
-  width: 1.45rem;
-  height: 1.45rem;
+  right: var(--directory-verified-offset);
+  bottom: var(--directory-verified-offset);
+  width: var(--directory-verified-size);
+  height: var(--directory-verified-size);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -138,19 +183,19 @@ body.directory .directory-tabs {
   background: #fff;
   color: var(--main-color);
   box-shadow: 0 4px 10px rgba(9, 26, 58, 0.14);
-  font-size: 0.95rem;
+  font-size: var(--directory-verified-icon-size);
 }
 
 .directory-main {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.28rem;
+  gap: var(--directory-main-gap);
 }
 
 .directory-name {
   margin: 0;
-  font-size: clamp(1.08rem, 1.3vw, 1.2rem);
+  font-size: var(--directory-name-size);
   font-weight: 700;
   line-height: 1.2;
   color: var(--profile-text, var(--text-dark));
@@ -159,14 +204,14 @@ body.directory .directory-tabs {
 .directory-role,
 .directory-gym {
   margin: 0;
-   font-size: clamp(0.85rem, 1.6vw, 0.96rem);
+  font-size: var(--directory-meta-size);
   line-height: 1.35;
   color: rgba(9, 26, 58, 0.74);
 }
 
 .directory-bio {
   margin: 0;
-   font-size: clamp(0.85rem, 1.6vw, 0.96rem);
+  font-size: var(--directory-bio-size);
   line-height: 1.55;
   color: rgba(9, 26, 58, 0.82);
   max-width: 40rem;
@@ -178,7 +223,7 @@ body.directory .directory-tabs {
 .directory-card-actions {
   margin-top: auto;
   display: flex;
-  gap: 0.7rem;
+  gap: var(--directory-actions-gap);
   flex-wrap: wrap;
 }
 
@@ -189,7 +234,7 @@ body.directory .directory-tabs {
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: var(--directory-media-gap);
 }
 
 .directory-hero-media {
@@ -210,7 +255,7 @@ body.directory .directory-tabs {
 
 .directory-thumb-row {
   display: flex;
-  gap: 0.55rem;
+  gap: var(--directory-thumb-row-gap);
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -222,9 +267,9 @@ body.directory .directory-tabs {
 }
 
 .directory-thumb {
-  flex: 0 0 5.25rem;
-  width: 5.25rem;
-  height: 4.25rem;
+  flex: 0 0 var(--directory-thumb-width);
+  width: var(--directory-thumb-width);
+  height: var(--directory-thumb-height);
   padding: 0;
   border: none;
   background: transparent;
@@ -263,7 +308,6 @@ body.directory .nav-center.verified {
    TABLET / MOBILE
 ========================= */
 @media (max-width: 900px) {
-
   .directory-listing-grid {
     grid-template-columns: 1fr;
   }
@@ -285,8 +329,10 @@ body.directory .nav-center.verified {
    SMALL MOBILE
 ========================= */
 @media (max-width: 700px) {
-  .directory-listing-inner {
-    padding: 0.85rem;
+  body.directory {
+    --directory-card-inner-pad: calc(0.85rem * var(--directory-card-scale));
+    --directory-thumb-width: calc(4.6rem * var(--directory-card-scale));
+    --directory-thumb-height: calc(3.85rem * var(--directory-card-scale));
   }
 
   .directory-listing-top {
@@ -300,11 +346,5 @@ body.directory .nav-center.verified {
   .btn-modern,
   .btn-ghost {
     width: 100%;
-  }
-
-  .directory-thumb {
-    flex: 0 0 4.6rem;
-    width: 4.6rem;
-    height: 3.85rem;
   }
 }
