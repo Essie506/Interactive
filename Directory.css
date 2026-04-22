@@ -172,14 +172,14 @@ body.directory::before {
 .directory-role,
 .directory-gym {
   margin: 0;
-  font-size: 0.95rem;
+   font-size: clamp(0.85rem, 1.6vw, 0.96rem);
   line-height: 1.35;
   color: rgba(9, 26, 58, 0.74);
 }
 
 .directory-bio {
   margin: 0;
-  font-size: 0.96rem;
+   font-size: clamp(0.85rem, 1.6vw, 0.96rem);
   line-height: 1.55;
   color: rgba(9, 26, 58, 0.82);
   max-width: 40rem;
@@ -193,45 +193,6 @@ body.directory::before {
   display: flex;
   gap: 0.7rem;
   flex-wrap: wrap;
-}
-
-.btn-modern,
-.btn-ghost {
-  min-height: 2.65rem;
-  padding: 0.7rem 1rem;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  font: inherit;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease;
-}
-
-.btn-modern {
-  background: var(--btn-modern-bg, linear-gradient(135deg, #079992, #047a74));
-  color: #fff;
-  box-shadow: 0 10px 20px rgba(7, 153, 146, 0.24);
-}
-
-.btn-modern:hover,
-.btn-ghost:hover {
-  transform: translateY(-1px);
-}
-
-.btn-ghost {
-  background: rgba(255, 255, 255, 0.45);
-  color: var(--text-dark);
-  border: 1px solid rgba(9, 26, 58, 0.08);
-}
-
-.btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.62);
 }
 
 /* =========================
