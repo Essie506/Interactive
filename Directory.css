@@ -170,6 +170,7 @@ body.directory .directory-tabs {
   height: var(--directory-avatar-size);
   min-width: var(--directory-avatar-size);
   overflow: visible;
+   z-index: 3;
 }
 
 .directory-avatar {
