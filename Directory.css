@@ -108,6 +108,7 @@ body.directory {
   padding: var(--directory-card-shell-pad);
   overflow: visible;
   margin-bottom: var(--directory-gap-md);
+   border: none;
 }
 
 .directory-listing-inner {
