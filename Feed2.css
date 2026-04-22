@@ -1,7 +1,43 @@
 /* =========================
-   FEED PAGE
+   FEED TOKENS
 ========================= */
 body.feed {
+  --feed-card-scale: 1;
+
+  /* page */
+  --feed-main-max: 56.25rem;
+  --feed-layout-max: 68.75rem;
+  --feed-layout-max-wide: 90rem;
+
+  --feed-side-col: clamp(12rem, 18vw, 16rem);
+  --feed-center-col: minmax(0, clamp(38rem, 45vw, 46rem));
+  --feed-layout-gap: 1.25rem;
+  --feed-layout-gap-wide: 1.5rem;
+  --feed-layout-pad-x: 0.25rem;
+  --feed-layout-pad-top-desktop: calc(var(--bar-height) + 0.625rem);
+  --feed-layout-pad-top-mobile: calc(var(--bar-height) + 0.125rem);
+
+  /* card shell */
+  --feed-card-pad: calc(var(--profile-inner-pad) * var(--feed-card-scale));
+  --feed-post-pad: calc((var(--profile-inner-pad) + 0.25rem) * var(--feed-card-scale));
+  --feed-card-gap: calc(var(--profile-gap-md) * var(--feed-card-scale));
+
+  /* post internals */
+  --feed-post-header-gap: calc(var(--profile-gap-md) * var(--feed-card-scale));
+  --feed-avatar-size: calc(2.5rem * var(--feed-card-scale));
+  --feed-post-text-margin-y: calc(0.625rem * var(--feed-card-scale));
+  --feed-post-media-gap: calc(0.6rem * var(--feed-card-scale));
+  --feed-time-size: calc(0.75rem * var(--feed-card-scale));
+
+  /* side cards */
+  --feed-side-logo-size: calc(3rem * var(--feed-card-scale));
+  --feed-side-logo-radius: calc(0.625rem * var(--feed-card-scale));
+  --feed-side-logo-margin: calc(0.5rem * var(--feed-card-scale));
+  --feed-side-title-margin: calc(0.375rem * var(--feed-card-scale));
+  --feed-side-text-size: calc(0.875rem * var(--feed-card-scale));
+  --feed-side-promo-size: calc(0.75rem * var(--feed-card-scale));
+  --feed-side-promo-margin: calc(0.375rem * var(--feed-card-scale));
+
   background: var(--index-bg);
 }
 
@@ -16,13 +52,16 @@ body.feed::before {
   animation: satinShimmer 3.2s ease-out forwards;
 }
 
+/* =========================
+   BASE LAYOUT
+========================= */
 body.feed .left-col,
 body.feed .right-col {
   display: none;
 }
 
 body.feed .feed-page {
-  max-width: 56.25rem;
+  max-width: var(--feed-main-max);
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -38,9 +77,8 @@ body.feed h1 {
 }
 
 /* =========================
-   FEED POST CARDS
+   OUTER FEED CARDS
 ========================= */
-
 body.feed .post,
 body.feed .side-card {
   width: 100%;
@@ -50,48 +88,63 @@ body.feed .side-card {
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-  padding: var(--profile-inner-pad);
+  padding: var(--feed-card-pad);
   overflow: hidden;
-     margin-bottom: var(--profile-gap-md);
+  margin-bottom: var(--feed-card-gap);
+}
+
+body.feed .post {
+  padding: var(--feed-post-pad);
 }
 
 body.feed .partner-card + .partner-card,
 body.feed .promo-card + .promo-card {
-  margin-top: var(--profile-gap-md);
-}
-
-
-body.feed .post {
-  padding: calc(var(--profile-inner-pad) + 0.25rem);
+  margin-top: var(--feed-card-gap);
 }
 
 body.feed .left-col,
 body.feed .right-col {
   display: flex;
   flex-direction: column;
-  gap: var(--profile-gap-md);
+  gap: var(--feed-card-gap);
+}
+
+/* =========================
+   POST CONTENT
+========================= */
+.post-inner,
+body.feed .partner-card,
+body.feed .promo-card {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-inner-bg);
+  box-shadow: var(--profile-raised-shadow);
+  padding: var(--feed-card-pad);
 }
 
 .post-header {
   display: flex;
   align-items: center;
-  gap: var(--profile-gap-md);
+  gap: var(--feed-post-header-gap);
   font-weight: bold;
 }
 
 .post-info {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 body.feed .avatar {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--feed-avatar-size);
+  height: var(--feed-avatar-size);
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: var(--profile-avatar-bg-strong);
+  flex: 0 0 auto;
 }
 
 .username {
@@ -99,12 +152,18 @@ body.feed .avatar {
 }
 
 .time {
-  font-size: 0.75rem;
+  font-size: var(--feed-time-size);
   color: gray;
 }
 
 .post-text {
-  margin: 0.625rem 0;
+  margin: var(--feed-post-text-margin-y) 0;
+}
+
+body.feed .post-media {
+  width: 100%;
+  margin-top: var(--feed-post-media-gap);
+  overflow: hidden;
 }
 
 .post-img {
@@ -112,49 +171,31 @@ body.feed .avatar {
   width: 100%;
   height: auto;
   max-height: min(26.25rem, 70dvh);
-  margin-top: 0.6rem;
+  margin-top: 0;
   margin-left: 0;
   margin-right: 0;
   border-radius: 0;
   object-fit: contain;
 }
 
-body.feed .post-media {
-  width: 100%;
-  margin-top: 0.6rem;
-  overflow: hidden;
-}
-
 /* =========================
-   FEED SIDE CARDS
+   SIDE CARDS
 ========================= */
-
-body.feed .partner-card,
-body.feed .promo-card,
-.post-inner {
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 0;
-  background: var(--profile-inner-bg);
-  box-shadow: var(--profile-raised-shadow);
-  padding: var(--profile-inner-pad);
-}
-
 body.feed .partner-logo {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 0.625rem;
+  width: var(--feed-side-logo-size);
+  height: var(--feed-side-logo-size);
+  border-radius: var(--feed-side-logo-radius);
   background: var(--glass-teal);
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  margin-bottom: 0.5rem;
+  margin-bottom: var(--feed-side-logo-margin);
 }
 
 body.feed .partner-name,
 body.feed .promo-title {
-  margin: 0 0 0.375rem;
+  margin: 0 0 var(--feed-side-title-margin);
   font-weight: 600;
   color: var(--text-dark);
 }
@@ -162,32 +203,33 @@ body.feed .promo-title {
 body.feed .partner-text,
 body.feed .promo-card span {
   display: block;
-  font-size: 0.875rem;
+  font-size: var(--feed-side-text-size);
   color: rgba(9, 26, 58, 0.8);
 }
 
 body.feed .partner-promo {
-  font-size: 0.75rem;
-  margin-top: 0.375rem;
+  font-size: var(--feed-side-promo-size);
+  margin-top: var(--feed-side-promo-margin);
 }
 
 /* =========================
-   FEED RESPONSIVE (LAYOUT)
+   DESKTOP LAYOUT
 ========================= */
 @media (min-width: 901px) {
   body.feed .page-layout {
     display: grid;
-   grid-template-columns: clamp(12rem, 18vw, 16rem)
-                       minmax(0, clamp(38rem, 45vw, 46rem))
-                       clamp(12rem, 18vw, 16rem);
-    gap: 1.25rem;
+    grid-template-columns:
+      var(--feed-side-col)
+      var(--feed-center-col)
+      var(--feed-side-col);
+    gap: var(--feed-layout-gap);
     align-items: start;
     justify-content: center;
-    max-width: 68.75rem;
+    max-width: var(--feed-layout-max);
     margin: 0 auto;
-    padding-top: calc(var(--bar-height) + 0.625rem);
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
+    padding-top: var(--feed-layout-pad-top-desktop);
+    padding-left: var(--feed-layout-pad-x);
+    padding-right: var(--feed-layout-pad-x);
     box-sizing: border-box;
   }
 
@@ -205,20 +247,24 @@ body.feed .partner-promo {
 }
 
 @media (min-width: 1100px) {
-  body.feed .page-layout {
-    grid-template-columns: 16rem minmax(0, 45rem) 16rem;
-    gap: 1.5rem;
-    max-width: 90rem;
+  body.feed {
+    --feed-side-col: 16rem;
+    --feed-center-col: minmax(0, 45rem);
+    --feed-layout-gap: var(--feed-layout-gap-wide);
+    --feed-layout-max: var(--feed-layout-max-wide);
   }
 }
 
+/* =========================
+   MOBILE
+========================= */
 @media (max-width: 900px) {
   body.feed .page-layout {
-   padding-top: calc(var(--bar-height) + 0.125rem);
+    padding-top: var(--feed-layout-pad-top-mobile);
   }
-   
-body.feed .right-col,
-   body.feed .left-col {
-   display: none;
-   }
+
+  body.feed .right-col,
+  body.feed .left-col {
+    display: none;
+  }
 }
