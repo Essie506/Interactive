@@ -1,9 +1,29 @@
+/* =========================
+   PAGE SHELL
+========================= */
+body.directory {
+  margin: 0;
+  background: var(--index-bg);
+  min-height: 100dvh;
+}
+
+body.directory::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--index-bg-before);
+  background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
+}
+
 .directory-page {
   width: min(1200px, 100%);
   margin: 0 auto;
   padding:
     calc(var(--bar-height) + clamp(1rem, 2vw, 1.5rem))
-    clamp(1rem, 3vw, 2rem)
+    0
     calc(clamp(1.5rem, 3vw, 2.5rem) + env(safe-area-inset-bottom, 0px));
   box-sizing: border-box;
 }
@@ -11,6 +31,7 @@
 .directory-header {
   text-align: center;
   margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  padding-inline: clamp(1rem, 3vw, 2rem);
 }
 
 .directory-title {
@@ -23,78 +44,82 @@
 .directory-subtitle {
   margin: 0.5rem 0 0;
   font-size: clamp(0.95rem, 2vw, 1.05rem);
-  color: rgba(9, 26, 58, 0.7);
+  color: rgba(9, 26, 58, 0.72);
 }
 
-.directory-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: clamp(1rem, 2vw, 1.5rem);
-  align-items: stretch;
-}
-
-.directory-card {
-  position: relative;
+/* =========================
+   LISTINGS WRAP
+========================= */
+.directory-listings {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  min-height: 100%;
-  padding: 1.1rem;
-  border-radius: 1.5rem;
-  background: rgba(255, 255, 255, 0.52);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.35);
+  gap: var(--profile-gap-md, 1rem);
+}
+
+/* =========================
+   OUTER / INNER CARD
+========================= */
+.directory-listing-card {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-card-bg, rgba(255, 255, 255, 0.48));
+  backdrop-filter: var(--profile-blur, blur(14px));
+  -webkit-backdrop-filter: var(--profile-blur, blur(14px));
   box-shadow: var(--shadow-soft);
-  overflow: hidden;
-  transition:
-    transform 0.22s ease,
-    box-shadow 0.22s ease,
-    border-color 0.22s ease;
+  padding: 0.125rem;
+  overflow: clip;
 }
 
-.directory-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.18),
-      rgba(255, 255, 255, 0.03) 48%,
-      transparent 70%
-    );
-  pointer-events: none;
+.directory-listing-inner {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-inner-bg, rgba(255, 255, 255, 0.8));
+  box-shadow: var(--profile-raised-shadow, 0 10px 22px rgba(9, 26, 58, 0.08));
+  padding: clamp(0.9rem, 1.6vw, 1.25rem);
 }
 
-.directory-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 36px rgba(9, 26, 58, 0.14);
-  border-color: rgba(7, 153, 146, 0.22);
+/* =========================
+   CARD LAYOUT
+========================= */
+.directory-listing-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: start;
 }
 
-.directory-card-top {
+.directory-listing-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.directory-listing-top {
   display: flex;
   align-items: center;
   gap: 0.95rem;
-  position: relative;
-  z-index: 1;
+  min-width: 0;
 }
 
+/* =========================
+   AVATAR / TEXT
+========================= */
 .directory-avatar-wrap {
   position: relative;
   flex: 0 0 auto;
 }
 
 .directory-avatar {
-  width: clamp(4.25rem, 10vw, 5.2rem);
-  height: clamp(4.25rem, 10vw, 5.2rem);
+  width: clamp(4.5rem, 9vw, 5.4rem);
+  height: clamp(4.5rem, 9vw, 5.4rem);
   border-radius: 50%;
   object-fit: cover;
   display: block;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 8px 18px rgba(9, 26, 58, 0.14);
   background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 18px rgba(9, 26, 58, 0.14);
 }
 
 .directory-verified {
@@ -107,7 +132,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: #ffffff;
+  background: #fff;
   color: var(--main-color);
   box-shadow: 0 4px 10px rgba(9, 26, 58, 0.14);
   font-size: 0.95rem;
@@ -122,45 +147,60 @@
 
 .directory-name {
   margin: 0;
-  font-size: 1.08rem;
+  font-size: clamp(1.08rem, 1.3vw, 1.2rem);
   font-weight: 700;
-  color: var(--text-dark);
   line-height: 1.2;
+  color: var(--profile-text, var(--text-dark));
 }
 
 .directory-role,
 .directory-gym {
   margin: 0;
-  font-size: 0.92rem;
-  color: rgba(9, 26, 58, 0.74);
+  font-size: 0.95rem;
   line-height: 1.35;
+  color: rgba(9, 26, 58, 0.74);
 }
 
 .directory-bio {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.96rem;
+  line-height: 1.55;
   color: rgba(9, 26, 58, 0.82);
-  position: relative;
-  z-index: 1;
+  max-width: 40rem;
 }
 
+/* =========================
+   TAGS
+========================= */
+.directory-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
 
+.directory-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(9, 26, 58, 0.08);
+  background: rgba(255, 255, 255, 0.52);
+  color: var(--text-dark);
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================
+   ACTIONS
+========================= */
 .directory-card-actions {
   margin-top: auto;
   display: flex;
   gap: 0.7rem;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
-}
-
-body.directory .nav-center.verified {
-  display: inline-flex;
-  justify-content: center;
-  color: var(--main-color);
-  font-size: 18px;
-  line-height: 1;
 }
 
 .btn-modern,
@@ -171,6 +211,10 @@ body.directory .nav-center.verified {
   border: none;
   cursor: pointer;
   font: inherit;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
@@ -183,7 +227,8 @@ body.directory .nav-center.verified {
   box-shadow: 0 10px 20px rgba(7, 153, 146, 0.24);
 }
 
-.btn-modern:hover {
+.btn-modern:hover,
+.btn-ghost:hover {
   transform: translateY(-1px);
 }
 
@@ -194,17 +239,121 @@ body.directory .nav-center.verified {
 }
 
 .btn-ghost:hover {
-  transform: translateY(-1px);
   background: rgba(255, 255, 255, 0.62);
 }
 
-@media (max-width: 700px) {
-  .directory-card {
-    padding: 1rem;
-    border-radius: 1.2rem;
+/* =========================
+   MEDIA COLUMN
+========================= */
+.directory-listing-media {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.directory-hero-media {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-soft);
+}
+
+.directory-hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.directory-thumb-row {
+  display: flex;
+  gap: 0.55rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.directory-thumb-row::-webkit-scrollbar {
+  display: none;
+}
+
+.directory-thumb {
+  flex: 0 0 5.25rem;
+  width: 5.25rem;
+  height: 4.25rem;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  opacity: 0.9;
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.directory-thumb.is-active,
+.directory-thumb:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.directory-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   NAV ICON TWEAK
+========================= */
+body.directory .nav-center.verified {
+  display: inline-flex;
+  justify-content: center;
+  color: var(--main-color);
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* =========================
+   TABLET / MOBILE
+========================= */
+@media (max-width: 900px) {
+  .directory-page {
+    padding-left: clamp(0.8rem, 3vw, 1rem);
+    padding-right: clamp(0.8rem, 3vw, 1rem);
   }
 
-  .directory-card-top {
+  .directory-listing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .directory-listing-media {
+    order: 2;
+  }
+
+  .directory-listing-info {
+    order: 1;
+  }
+
+  .directory-hero-media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 700px) {
+  .directory-listing-inner {
+    padding: 0.85rem;
+  }
+
+  .directory-listing-top {
     align-items: flex-start;
   }
 
@@ -215,5 +364,11 @@ body.directory .nav-center.verified {
   .btn-modern,
   .btn-ghost {
     width: 100%;
+  }
+
+  .directory-thumb {
+    flex: 0 0 4.6rem;
+    width: 4.6rem;
+    height: 3.85rem;
   }
 }
