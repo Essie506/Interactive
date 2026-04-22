@@ -186,29 +186,6 @@ body.directory::before {
 }
 
 /* =========================
-   TAGS
-========================= */
-.directory-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.55rem;
-}
-
-.directory-tag {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 2rem;
-  padding: 0.45rem 0.8rem;
-  border: 1px solid rgba(9, 26, 58, 0.08);
-  background: rgba(255, 255, 255, 0.52);
-  color: var(--text-dark);
-  font-size: 0.88rem;
-  font-weight: 600;
-  line-height: 1;
-}
-
-/* =========================
    ACTIONS
 ========================= */
 .directory-card-actions {
