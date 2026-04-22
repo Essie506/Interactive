@@ -1,45 +1,68 @@
 /* =========================
-   DIRECTORY SCALE TOKENS
-   Change --directory-card-scale to grow/shrink
-   the contents inside each card together
+   DIRECTORY TOKENS
 ========================= */
 body.directory {
   --directory-card-scale: 1;
 
-  /* page shell */
-  --directory-page-width: min(1200px, 100%);
-  --directory-list-gap: var(--profile-gap-md, 1rem);
+  /* real values moved local */
+  --directory-page-pad-top: calc(var(--bar-height) + 0.625rem);
+  --directory-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
 
-  /* card shell */
-  --directory-card-shell-pad: calc(0.125rem * var(--directory-card-scale));
-  --directory-card-inner-pad: calc(clamp(0.9rem, 1.6vw, 1.25rem) * var(--directory-card-scale));
+  --directory-card-bg: rgba(255, 255, 255, 0.76);
+  --directory-card-bg-soft: rgba(255, 255, 255, 0.68);
+  --directory-inner-bg: rgba(255, 255, 255, 0.82);
+  --directory-icon-bg: rgba(255, 255, 255, 0.42);
+
+  --directory-border-soft: rgba(9, 26, 58, 0.08);
+  --directory-border-soft-hover: rgba(9, 26, 58, 0.14);
+
+  --directory-text: #0a0a0a;
+  --directory-text-soft: rgba(9, 26, 58, 0.75);
+  --directory-text-muted: rgba(9, 26, 58, 0.6);
+
+  --directory-avatar-bg: rgba(56, 173, 169, 0.16);
+  --directory-avatar-bg-strong: rgba(56, 173, 169, 0.2);
+  --directory-accent-soft: rgba(56, 173, 169, 0.15);
+
+  --directory-shell-pad-base: 0.125rem;
+  --directory-inner-pad-base: clamp(0.9rem, 1.6vw, 1.25rem);
+
+  --directory-gap-xxs: 0.25rem;
+  --directory-gap-xs: 0.3rem;
+  --directory-gap-sm: 0.5rem;
+  --directory-gap-md: 0.125rem;
+  --directory-gap-lg: 1rem;
+  --directory-gap-xl: 1.25rem;
+  --directory-gap-2xl: 1.5rem;
+
+  --directory-blur: blur(10px);
+  --directory-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
+  /* organised local layer */
+  --directory-page-width: min(1200px, 100%);
+  --directory-list-gap: var(--directory-gap-md);
+
+  --directory-card-shell-pad: calc(var(--directory-shell-pad-base) * var(--directory-card-scale));
+  --directory-card-inner-pad: calc(var(--directory-inner-pad-base) * var(--directory-card-scale));
   --directory-card-inner-gap: calc(0.85rem * var(--directory-card-scale));
 
-  /* grid / layout */
   --directory-grid-gap: calc(clamp(1rem, 2vw, 1.5rem) * var(--directory-card-scale));
   --directory-info-gap: calc(0.9rem * var(--directory-card-scale));
   --directory-topbar-gap: calc(1rem * var(--directory-card-scale));
   --directory-top-gap: calc(0.95rem * var(--directory-card-scale));
   --directory-main-gap: calc(0.28rem * var(--directory-card-scale));
 
-  /* avatar */
   --directory-avatar-size: calc(clamp(4.5rem, 9vw, 5.4rem) * var(--directory-card-scale));
-  --directory-avatar-shadow: 0 8px 18px rgba(9, 26, 58, 0.14);
-
-  /* verified badge */
   --directory-verified-size: calc(1.45rem * var(--directory-card-scale));
   --directory-verified-icon-size: calc(0.95rem * var(--directory-card-scale));
   --directory-verified-offset: calc(-0.1rem * var(--directory-card-scale));
 
-  /* text */
   --directory-name-size: calc(clamp(1.08rem, 1.3vw, 1.2rem) * var(--directory-card-scale));
   --directory-meta-size: calc(clamp(0.85rem, 1.6vw, 0.96rem) * var(--directory-card-scale));
   --directory-bio-size: calc(clamp(0.85rem, 1.6vw, 0.96rem) * var(--directory-card-scale));
 
-  /* actions */
   --directory-actions-gap: calc(0.7rem * var(--directory-card-scale));
 
-  /* media */
   --directory-media-gap: calc(0.65rem * var(--directory-card-scale));
   --directory-thumb-row-gap: calc(0.55rem * var(--directory-card-scale));
   --directory-thumb-width: calc(5.25rem * var(--directory-card-scale));
@@ -48,29 +71,16 @@ body.directory {
   margin: 0;
   background: var(--index-bg);
   min-height: 100dvh;
-}
-
-body.directory::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  pointer-events: none;
-  background: var(--index-bg-before);
-  background-size: 220% 220%;
-  animation: satinShimmer 3.2s ease-out forwards;
-}
-
-/* =========================
+}/* =========================
    PAGE SHELL
 ========================= */
 .directory-page {
   width: var(--directory-page-width);
   margin: 0 auto;
   padding:
-    var(--profile-page-pad-top)
+    var(--directory-page-pad-top)
     0
-    var(--profile-page-pad-bottom);
+    var(--directory-page-pad-bottom);
   box-sizing: border-box;
 }
 
@@ -90,21 +100,21 @@ body.directory::before {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
-  background: var(--profile-card-bg, rgba(255, 255, 255, 0.48));
-  backdrop-filter: var(--profile-blur, blur(14px));
-  -webkit-backdrop-filter: var(--profile-blur, blur(14px));
+  background: var(--directory-card-bg);
+  backdrop-filter: var(--directory-blur);
+  -webkit-backdrop-filter: var(--directory-blur);
   box-shadow: var(--shadow-soft);
   padding: var(--directory-card-shell-pad);
   overflow: clip;
-  margin-bottom: var(--profile-gap-md);
+  margin-bottom: var(--directory-gap-md);
 }
 
 .directory-listing-inner {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
-  background: var(--profile-inner-bg, rgba(255, 255, 255, 0.8));
-  box-shadow: var(--profile-raised-shadow, 0 10px 22px rgba(9, 26, 58, 0.08));
+  background: var(--directory-inner-bg);
+  box-shadow: var(--directory-raised-shadow);
   padding: var(--directory-card-inner-pad);
   display: flex;
   flex-direction: column;
@@ -198,7 +208,7 @@ body.directory .directory-tabs {
   font-size: var(--directory-name-size);
   font-weight: 700;
   line-height: 1.2;
-  color: var(--profile-text, var(--text-dark));
+  color: var(--directory-text);
 }
 
 .directory-role,
@@ -308,6 +318,10 @@ body.directory .nav-center.verified {
    TABLET / MOBILE
 ========================= */
 @media (max-width: 900px) {
+  body.directory {
+    --directory-page-pad-top: calc(var(--bar-height) + 0.125rem);
+  }
+
   .directory-listing-grid {
     grid-template-columns: 1fr;
   }
@@ -342,9 +356,16 @@ body.directory .nav-center.verified {
   .directory-card-actions {
     flex-direction: column;
   }
-
-  .btn-modern,
-  .btn-ghost {
-    width: 100%;
-  }
 }
+
+body.directory::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--index-bg-before);
+  background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
+}
+
