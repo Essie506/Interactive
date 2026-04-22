@@ -101,7 +101,7 @@ body.directory::before {
   align-self: flex-start;
 }
 
-body.directory .profile-tabs {
+body.directory .directory-tabs {
    justify-content: flex-start;
 }
 
