@@ -119,24 +119,6 @@ body {
   --profile-blur: blur(10px);
   --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 
-:root {
-  --directory-scale: 1;
-
-  --directory-gap: calc(clamp(0.7rem, 1.2vw, 1rem) * var(--directory-scale));
-  --directory-inner-pad: calc(clamp(0.85rem, 1.4vw, 1.2rem) * var(--directory-scale));
-  --directory-grid-gap: calc(clamp(0.9rem, 1.6vw, 1.25rem) * var(--directory-scale));
-
-  --directory-avatar-size: calc(clamp(4rem, 8.5vw, 5rem) * var(--directory-scale));
-  --directory-verified-size: calc(clamp(1.1rem, 2.6vw, 1.35rem) * var(--directory-scale));
-
-  --directory-name-size: calc(clamp(1.05rem, 1.9vw, 1.18rem) * var(--directory-scale));
-  --directory-meta-size: calc(clamp(0.86rem, 1.45vw, 0.98rem) * var(--directory-scale));
-  --directory-bio-size: calc(clamp(0.86rem, 1.45vw, 0.98rem) * var(--directory-scale));
-
-  --directory-thumb-width: calc(clamp(4.25rem, 10vw, 5.2rem) * var(--directory-scale));
-  --directory-thumb-height: calc(clamp(3.35rem, 8vw, 4.15rem) * var(--directory-scale));
-}
-
 @media (max-width: 900px) {
   :root {
     --profile-page-pad-top: calc(var(--bar-height) + 0.125rem);
