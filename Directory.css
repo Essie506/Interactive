@@ -101,6 +101,11 @@ body.directory::before {
   align-self: flex-start;
 }
 
+body.directory .profile-tabs {
+   justify-content: flex-start;
+}
+
+
 /* =========================
    AVATAR / TEXT
 ========================= */
