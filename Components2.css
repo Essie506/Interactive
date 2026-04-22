@@ -129,7 +129,7 @@
 
 .service-links,
 .profile-service-links,
-.directory-tag {
+.directory-tags {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
