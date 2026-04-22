@@ -126,7 +126,7 @@ body.directory {
 ========================= */
 .directory-listing-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.95fr);
+  grid-template-columns: minmax(22rem, 1.05fr) minmax(18rem, 0.95fr);
   gap: var(--directory-grid-gap);
   align-items: start;
 }
