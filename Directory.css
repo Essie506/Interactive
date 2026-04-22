@@ -96,7 +96,7 @@ body.directory::before {
    flex: 1 1 auto;
 }
 
-.directory-message-btn {
+.directory-share-btn {
   flex: 0 0 auto;
   align-self: flex-start;
 }
