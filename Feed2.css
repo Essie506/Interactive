@@ -4,6 +4,38 @@
 body.feed {
   --feed-card-scale: 1;
 
+  /* real feed values */
+  --feed-card-bg: rgba(255, 255, 255, 0.76);
+  --feed-card-bg-soft: rgba(255, 255, 255, 0.68);
+  --feed-inner-bg: rgba(255, 255, 255, 0.82);
+  --feed-icon-bg: rgba(255, 255, 255, 0.42);
+
+  --feed-border-soft: rgba(9, 26, 58, 0.08);
+  --feed-border-soft-hover: rgba(9, 26, 58, 0.14);
+
+  --feed-text: #0a0a0a;
+  --feed-text-soft: rgba(9, 26, 58, 0.75);
+  --feed-text-muted: rgba(9, 26, 58, 0.6);
+
+  --feed-avatar-bg: rgba(56, 173, 169, 0.16);
+  --feed-avatar-bg-strong: rgba(56, 173, 169, 0.2);
+  --feed-accent-soft: rgba(56, 173, 169, 0.15);
+
+  --feed-shell-pad-base: 0.25rem;
+  --feed-inner-pad-base: 0.25rem;
+  --feed-post-extra-pad: 0.25rem;
+
+  --feed-gap-xxs: 0.25rem;
+  --feed-gap-xs: 0.3rem;
+  --feed-gap-sm: 0.5rem;
+  --feed-gap-md: 0.125rem;
+  --feed-gap-lg: 1rem;
+  --feed-gap-xl: 1.25rem;
+  --feed-gap-2xl: 1.5rem;
+
+  --feed-blur: blur(10px);
+  --feed-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
   /* page */
   --feed-main-max: 56.25rem;
   --feed-layout-max: 68.75rem;
@@ -17,16 +49,18 @@ body.feed {
   --feed-layout-pad-top-desktop: calc(var(--bar-height) + 0.625rem);
   --feed-layout-pad-top-mobile: calc(var(--bar-height) + 0.125rem);
 
-  /* card shell */
-  --feed-card-pad: calc(var(--profile-inner-pad) * var(--feed-card-scale));
-  --feed-post-pad: calc((var(--profile-inner-pad) + 0.25rem) * var(--feed-card-scale));
-  --feed-card-gap: calc(var(--profile-gap-md) * var(--feed-card-scale));
+  /* card shell / inner */
+  --feed-card-pad: calc(var(--feed-shell-pad-base) * var(--feed-card-scale));
+  --feed-inner-pad: calc(var(--feed-inner-pad-base) * var(--feed-card-scale));
+  --feed-post-pad: calc((var(--feed-inner-pad-base) + var(--feed-post-extra-pad)) * var(--feed-card-scale));
+  --feed-card-gap: calc(var(--feed-gap-md) * var(--feed-card-scale));
 
   /* post internals */
-  --feed-post-header-gap: calc(var(--profile-gap-md) * var(--feed-card-scale));
+  --feed-post-header-gap: calc(var(--feed-gap-md) * var(--feed-card-scale));
   --feed-avatar-size: calc(2.5rem * var(--feed-card-scale));
   --feed-post-text-margin-y: calc(0.625rem * var(--feed-card-scale));
   --feed-post-media-gap: calc(0.6rem * var(--feed-card-scale));
+  --feed-post-media-max-height: min(26.25rem, 70dvh);
   --feed-time-size: calc(0.75rem * var(--feed-card-scale));
 
   /* side cards */
@@ -84,9 +118,9 @@ body.feed .side-card {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
-  background: var(--profile-card-bg);
-  backdrop-filter: var(--profile-blur);
-  -webkit-backdrop-filter: var(--profile-blur);
+  background: var(--feed-card-bg);
+  backdrop-filter: var(--feed-blur);
+  -webkit-backdrop-filter: var(--feed-blur);
   box-shadow: var(--shadow-soft);
   padding: var(--feed-card-pad);
   overflow: hidden;
@@ -118,9 +152,9 @@ body.feed .promo-card {
   width: 100%;
   box-sizing: border-box;
   border-radius: 0;
-  background: var(--profile-inner-bg);
-  box-shadow: var(--profile-raised-shadow);
-  padding: var(--feed-card-pad);
+  background: var(--feed-inner-bg);
+  box-shadow: var(--feed-raised-shadow);
+  padding: var(--feed-inner-pad);
 }
 
 .post-header {
@@ -128,6 +162,7 @@ body.feed .promo-card {
   align-items: center;
   gap: var(--feed-post-header-gap);
   font-weight: bold;
+  min-width: 0;
 }
 
 .post-info {
@@ -143,7 +178,7 @@ body.feed .avatar {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: var(--profile-avatar-bg-strong);
+  background: var(--feed-avatar-bg-strong);
   flex: 0 0 auto;
 }
 
@@ -170,7 +205,7 @@ body.feed .post-media {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(26.25rem, 70dvh);
+  max-height: var(--feed-post-media-max-height);
   margin-top: 0;
   margin-left: 0;
   margin-right: 0;
