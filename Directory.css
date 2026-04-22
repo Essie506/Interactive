@@ -262,10 +262,6 @@ body.directory .nav-center.verified {
    TABLET / MOBILE
 ========================= */
 @media (max-width: 900px) {
-  .directory-page {
-    padding-left: clamp(0.8rem, 3vw, 1rem);
-    padding-right: clamp(0.8rem, 3vw, 1rem);
-  }
 
   .directory-listing-grid {
     grid-template-columns: 1fr;
