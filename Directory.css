@@ -78,6 +78,9 @@ body.directory::before {
   background: var(--profile-inner-bg, rgba(255, 255, 255, 0.8));
   box-shadow: var(--profile-raised-shadow, 0 10px 22px rgba(9, 26, 58, 0.08));
   padding: clamp(0.9rem, 1.6vw, 1.25rem);
+     display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
 /* =========================
@@ -97,11 +100,24 @@ body.directory::before {
   gap: 0.9rem;
 }
 
+.directory-info-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .directory-listing-top {
   display: flex;
   align-items: center;
   gap: 0.95rem;
   min-width: 0;
+   flex: 1 1 auto;
+}
+
+.directory-message-btn {
+  flex: 0 0 auto;
+  align-self: flex-start;
 }
 
 /* =========================
