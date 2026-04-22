@@ -118,6 +118,7 @@ body {
 
   --profile-blur: blur(10px);
   --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
 
 @media (max-width: 900px) {
   :root {
