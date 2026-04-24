@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Feed - Interactive Fitness</title>
+  <title>Directory - Interactive Fitness</title>
 
   <link rel="stylesheet" href="Base2.css" />
   <link rel="stylesheet" href="Components2.css" />
@@ -16,6 +16,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   />
 </head>
+
 <body class="directory">
 
   <nav class="navbar">
@@ -34,7 +35,7 @@
 
     <div class="nav-title">Interactive</div>
 
-   <div class="nav-center desktop-nav-links">
+    <div class="nav-center desktop-nav-links">
       <a href="feed.html" aria-label="Home">
         <i class="fa-solid fa-house"></i>
       </a>
@@ -43,253 +44,356 @@
         <i class="fa-regular fa-calendar-days"></i>
       </a>
 
-     <a href="browse-workouts.html" aria-label="Browse workouts">
+      <a href="browse-workouts.html" aria-label="Browse workouts">
         <i class="fa-solid fa-dumbbell"></i>
       </a>
 
-       <button class="icon-btn top-search-btn" id="searchToggle" type="button" aria-label="Search">
+      <button class="icon-btn top-search-btn" id="searchToggle" type="button" aria-label="Search">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
-
     </div>
 
     <div class="navbar-right">
-    <button class="icon-btn filter-toggle" id="filterBtn" type="button">
- <i class="fa-solid fa-sliders"></i>
-</button>
-       <a href="notifications.html" class="icon-btn desktop-icon-link" aria-label="desktopNotifications">
-      <i class="fa-solid fa-bell"></i>
-    </a>
+      <button class="icon-btn filter-toggle" id="filterBtn" type="button" aria-label="Open filters">
+        <i class="fa-solid fa-sliders"></i>
+      </button>
+
+      <a href="notifications.html" class="icon-btn desktop-icon-link" aria-label="Notifications">
+        <i class="fa-solid fa-bell"></i>
+      </a>
     </div>
   </nav>
 
   <div class="menu-overlay" id="menuOverlay"></div>
 
-<nav class="menu" aria-label="Main menu">
-  <ul>
-    <li class="menu-profile">
-      <a href="view-profile.html" class="menu-item menu-profile-info">
-        <i class="fa-solid fa-user"></i>
-        <div class="menu-profile-text">
-          <div class="menu-profile-name">Esther</div>
-          <div class="menu-profile-sub">Your profile</div>
+  <nav class="menu" aria-label="Main menu">
+    <ul>
+      <li class="menu-profile">
+        <a href="view-profile.html" class="menu-item menu-profile-info">
+          <i class="fa-solid fa-user"></i>
+          <div class="menu-profile-text">
+            <div class="menu-profile-name">Esther</div>
+            <div class="menu-profile-sub">Your profile</div>
+          </div>
+        </a>
+      </li>
+
+      <li>
+        <a href="directory.html" class="menu-item">
+          <i class="fa-solid fa-fire"></i>
+          <span>Gyms and Studios</span>
+        </a>
+      </li>
+
+      <li class="has-submenu">
+        <a href="#" class="menu-item" aria-expanded="false">
+          <i class="fa-solid fa-dumbbell"></i>
+          <span>Workouts</span>
+        </a>
+
+        <ul class="submenu">
+          <li><a href="home.html">Browse Workouts</a></li>
+          <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
+          <li><a href="trending.html">Trending</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <a href="settings.html" class="menu-item">
+          <i class="fa-solid fa-cog"></i>
+          <span>Settings</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="index.html" class="menu-item">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+
+      <li class="menu-search-item">
+        <div class="menu-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="menuSearchInput" placeholder="Search..." />
         </div>
-      </a>
-    </li>
+      </li>
+    </ul>
+  </nav>
 
-    <li>
-      <a href="directory.html" class="menu-item">
-        <i class="fa-solid fa-fire"></i>
-        <span>Gyms and Studios</span>
-      </a>
-    </li>
+  <section class="directory-page">
+    <div class="directory-listings" id="directoryGrid">
 
-    <li class="has-submenu">
-      <a href="#" class="menu-item" aria-expanded="false">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span>Workouts</span>
-      </a>
-      <ul class="submenu">
-        <li><a href="home.html">Browse Workouts</a></li>
-        <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
-        <li><a href="trending.html">Trending</a></li>
-      </ul>
-    </li>
+      <article class="directory-listing">
+        <div class="directory-listing-card">
+          <div class="directory-listing-inner">
 
-    <li>
-      <a href="settings.html" class="menu-item">
-        <i class="fa-solid fa-cog"></i>
-        <span>Settings</span>
-      </a>
-    </li>
+            <div class="directory-listing-grid">
+              <div class="directory-listing-info">
+                <div class="directory-info-topbar">
+                  <div class="directory-listing-top">
+                    <div class="directory-avatar-wrap">
+                      <img src="https://via.placeholder.com/120" class="directory-avatar" alt="Esther Clarke" />
+                      <span class="directory-verified" aria-label="Verified professional">
+                        <i class="fa-solid fa-circle-check"></i>
+                      </span>
+                    </div>
 
-    <li>
-      <a href="index.html" class="menu-item">
-        <i class="fa-solid fa-right-from-bracket"></i>
-        <span>Logout</span>
-      </a>
-    </li>
+                    <div class="directory-main">
+                      <h2 class="directory-name">Esther Clarke</h2>
+                      <p class="directory-role">Trainer • Strength &amp; Conditioning</p>
+                      <p class="directory-gym">TrainWell Gym • London</p>
+                    </div>
+                  </div>
 
-    <li class="menu-search-item">
-      <div class="menu-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="menuSearchInput" placeholder="Search..." />
-      </div>
-    </li>
-  </ul>
-</nav>
-
-<section class="directory-page">
-
-  <div class="directory-listings" id="directoryGrid">
-  <article class="directory-listing">
-    <div class="directory-listing-card">
-      <div class="directory-listing-inner">
-
-        <div class="directory-listing-grid">
-
-          <div class="directory-listing-info">
-            <div class="directory-info-topbar">
-              <div class="directory-listing-top">
-                <div class="directory-avatar-wrap">
-                  <img
-                    src="https://via.placeholder.com/120"
-                    class="directory-avatar"
-                  />
-                  <span class="directory-verified" aria-label="Verified professional">
-                    <i class="fa-solid fa-circle-check"></i>
-                  </span>
+                  <button
+                    type="button"
+                    class="icon-btn directory-share-btn"
+                    data-share-btn
+                    data-user-id="user_123"
+                    data-user-name="Esther Clarke"
+                    aria-label="Share Esther Clarke profile"
+                  >
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
                 </div>
 
-                <div class="directory-main">
-                  <h2 class="directory-name">Esther Clarke</h2>
-                  <p class="directory-role">Trainer • Strength &amp; Conditioning</p>
-                  <p class="directory-gym">TrainWell Gym • London</p>
+                <p class="directory-bio">
+                  Helping people build strength, confidence, and consistency through smart,
+                  approachable coaching.
+                </p>
+
+                <div class="directory-tabs">
+                  <span class="directory-tab">Strength</span>
+                  <span class="directory-tab">Conditioning</span>
+                  <span class="directory-tab">Mobility</span>
                 </div>
               </div>
 
-<button
-  type="button"
-  class="icon-btn directory-share-btn"
-  data-share-btn
-  data-user-id="user_123"
-  data-user-name="Esther Clarke"
-  aria-label="Share Esther Clarke profile"
->
-  <i class="fa-solid fa-share-nodes"></i>
-</button>
-            </div>
-
-            <p class="directory-bio">
-              Helping people build strength, confidence, and consistency through smart,
-              approachable coaching.
-            </p>
-
-            <div class="directory-tabs">
-              <span class="directory-tab">Strength</span>
-              <span class="directory-tab">Conditioning</span>
-              <span class="directory-tab">Mobility</span>
-            </div>
-          </div>
-
-          <div class="directory-listing-media">
-            <a href="view-profile.html" class="directory-hero-media">
-              <img
-                src="https://via.placeholder.com/900x600"
-              />
-            </a>
-          </div>
-
-        </div>
-
-        <div class="directory-thumb-row" aria-label="More listing photos">
-          <button type="button" class="directory-thumb is-active">
-            <img src="https://via.placeholder.com/220" alt="Training floor" />
-          </button>
-
-          <button type="button" class="directory-thumb">
-            <img src="https://via.placeholder.com/220" alt="Weights area" />
-          </button>
-
-          <button type="button" class="directory-thumb">
-            <img src="https://via.placeholder.com/220" alt="Stretch space" />
-          </button>
-
-          <button type="button" class="directory-thumb">
-            <img src="https://via.placeholder.com/220" alt="Coaching session" />
-          </button>
-        </div>
-
-      </div>
-    </div>
-  </article>
-
-<article class="directory-listing">
-  <div class="directory-listing-card">
-    <div class="directory-listing-inner">
-      <div class="directory-listing-grid">
-
-        <div class="directory-listing-info">
-          <div class="directory-info-topbar">
-            <div class="directory-listing-top">
-              <div class="directory-avatar-wrap">
-                <img
-                  src="https://via.placeholder.com/120"
-                  class="directory-avatar"
-                />
-                <span class="directory-verified" aria-label="Verified professional">
-                  <i class="fa-solid fa-circle-check"></i>
-                </span>
-              </div>
-
-              <div class="directory-main">
-                <h2 class="directory-name">Jason Reed</h2>
-                <p class="directory-role">Coach • Functional Fitness</p>
-                <p class="directory-gym">Urban Core • Manchester</p>
+              <div class="directory-listing-media">
+                <a href="view-profile.html" class="directory-hero-media">
+                  <img src="https://via.placeholder.com/900x600" alt="Training space" />
+                </a>
               </div>
             </div>
 
-            <button
-              type="button"
-              class="icon-btn directory-share-btn"
-              data-message-btn
-              data-user-id="user_456"
-              data-user-name="Jason Reed"
-              aria-label="Message Jason Reed"
-            >
-             <i class="fa-solid fa-share-nodes"></i>
-            </button>
-          </div>
+            <div class="directory-thumb-row" aria-label="More listing photos">
+              <button type="button" class="directory-thumb is-active">
+                <img src="https://via.placeholder.com/220" alt="Training floor" />
+              </button>
 
-          <p class="directory-bio">
-            Functional training plans for busy people who want strong results
-            without overcomplicating things.
-          </p>
+              <button type="button" class="directory-thumb">
+                <img src="https://via.placeholder.com/220" alt="Weights area" />
+              </button>
 
-          <div class="directory-tabs">
-            <span class="directory-tab">Functional</span>
-            <span class="directory-tab">HIIT</span>
-            <span class="directory-tab">Coaching</span>
+              <button type="button" class="directory-thumb">
+                <img src="https://via.placeholder.com/220" alt="Stretch space" />
+              </button>
+
+              <button type="button" class="directory-thumb">
+                <img src="https://via.placeholder.com/220" alt="Coaching session" />
+              </button>
+            </div>
+
           </div>
         </div>
+      </article>
 
-        <div class="directory-listing-media">
-          <a href="view-profile.html" class="directory-hero-media">
-            <img
-              src="https://via.placeholder.com/900x600"
-            />
-          </a>
+      <article class="directory-listing">
+        <div class="directory-listing-card">
+          <div class="directory-listing-inner">
+
+            <div class="directory-listing-grid">
+              <div class="directory-listing-info">
+                <div class="directory-info-topbar">
+                  <div class="directory-listing-top">
+                    <div class="directory-avatar-wrap">
+                      <img src="https://via.placeholder.com/120" class="directory-avatar" alt="Jason Reed" />
+                      <span class="directory-verified" aria-label="Verified professional">
+                        <i class="fa-solid fa-circle-check"></i>
+                      </span>
+                    </div>
+
+                    <div class="directory-main">
+                      <h2 class="directory-name">Jason Reed</h2>
+                      <p class="directory-role">Coach • Functional Fitness</p>
+                      <p class="directory-gym">Urban Core • Manchester</p>
+                    </div>
+                  </div>
+
+                  <button
+                    type="button"
+                    class="icon-btn directory-share-btn"
+                    data-share-btn
+                    data-user-id="user_456"
+                    data-user-name="Jason Reed"
+                    aria-label="Share Jason Reed profile"
+                  >
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                </div>
+
+                <p class="directory-bio">
+                  Functional training plans for busy people who want strong results
+                  without overcomplicating things.
+                </p>
+
+                <div class="directory-tabs">
+                  <span class="directory-tab">Functional</span>
+                  <span class="directory-tab">HIIT</span>
+                  <span class="directory-tab">Coaching</span>
+                </div>
+              </div>
+
+              <div class="directory-listing-media">
+                <a href="view-profile.html" class="directory-hero-media">
+                  <img src="https://via.placeholder.com/900x600" alt="Functional fitness gym" />
+                </a>
+              </div>
+            </div>
+
+            <div class="directory-thumb-row" aria-label="More listing photos">
+              <button type="button" class="directory-thumb is-active">
+                <img src="https://via.placeholder.com/220" alt="Functional rig" />
+              </button>
+
+              <button type="button" class="directory-thumb">
+                <img src="https://via.placeholder.com/220" alt="Gym space" />
+              </button>
+
+              <button type="button" class="directory-thumb">
+                <img src="https://via.placeholder.com/220" alt="Training setup" />
+              </button>
+
+              <button type="button" class="directory-thumb">
+                <img src="https://via.placeholder.com/220" alt="Coaching floor" />
+              </button>
+            </div>
+
+          </div>
         </div>
-
-      </div>
-
-      <div class="directory-thumb-row" aria-label="More listing photos">
-        <button type="button" class="directory-thumb is-active">
-          <img src="https://via.placeholder.com/220" alt="Functional rig" />
-        </button>
-
-        <button type="button" class="directory-thumb">
-          <img src="https://via.placeholder.com/220" alt="Gym space" />
-        </button>
-
-        <button type="button" class="directory-thumb">
-          <img src="https://via.placeholder.com/220" alt="Training setup" />
-        </button>
-
-        <button type="button" class="directory-thumb">
-          <img src="https://via.placeholder.com/220" alt="Coaching floor" />
-        </button>
-      </div>
+      </article>
 
     </div>
-  </div>
-</article>
+  </section>
 
-  </div>
-</section>
+  <!-- FILTER DRAWER -->
+  <aside class="directory-filter-menu" id="directoryFilterMenu" aria-hidden="true">
+    <header class="directory-filter-header">
+      <div>
+        <p class="directory-filter-kicker">Directory</p>
+        <h2>Filters</h2>
+      </div>
 
+      <button class="directory-filter-close" id="directoryFilterClose" type="button" aria-label="Close filters">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </header>
 
-    <nav class="bottom-nav" aria-label="Mobile navigation">
+    <div class="directory-filter-body">
+
+      <section class="directory-filter-section">
+        <h3>Location</h3>
+
+        <label class="directory-location-search">
+          <i class="fa-solid fa-location-dot"></i>
+          <input type="text" id="directoryLocationInput" placeholder="Search town, city or postcode" />
+        </label>
+
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill active" type="button" data-filter-group="location-type" data-filter-value="near-me">Near me</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="location-type" data-filter-value="online">Online</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="location-type" data-filter-value="local-area">Local area</button>
+        </div>
+      </section>
+
+      <section class="directory-filter-section">
+        <h3>Show me</h3>
+
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill active" type="button" data-filter-group="type" data-filter-value="gyms">Gyms</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="type" data-filter-value="outdoor-fitness">Outdoor Fitness</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="type" data-filter-value="studios">Studios</button>
+        </div>
+      </section>
+
+      <section class="directory-filter-section">
+        <h3>Most used</h3>
+
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="popular" data-filter-value="creche">Creche</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="popular" data-filter-value="ladies-only-area">Ladies only area</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="popular" data-filter-value="parking">Parking</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="popular" data-filter-value="sauna">Sauna</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="popular" data-filter-value="swimming-pool">Swimming pool</button>
+        </div>
+      </section>
+
+      <section class="directory-filter-section">
+        <h3>Amenities</h3>
+
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="amenities" data-filter-value="air-conditioning">Air Conditioning</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="amenities" data-filter-value="cable-tv">Cable TV</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="amenities" data-filter-value="cafe">Café</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="amenities" data-filter-value="disabled-access">Disabled Access</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="amenities" data-filter-value="spa-facilities">Spa facilities</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="amenities" data-filter-value="towels">Towels</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="amenities" data-filter-value="wifi">Wi-Fi</button>
+        </div>
+      </section>
+
+      <section class="directory-filter-section">
+        <h3>Equipment and Machines</h3>
+
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="boxing-ring">Boxing ring</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="cardio-machines">Cardio machines</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="free-weights">Free weights</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="mat-area">Mat area</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="olympic-weights">Olympic weights</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="powerplate">Powerplate</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="punch-bags">Punch bags</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="resistance-machines">Resistance machines</button>
+        </div>
+      </section>
+
+      <section class="directory-filter-section">
+        <h3>Facilities</h3>
+
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="changing-rooms">Changing Rooms</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="creche">Creche</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="fitness-studio">Fitness studio</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="jacuzzi">Jacuzzi</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="ladies-only-area">Ladies only area</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="lane-swimming">Lane swimming</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="mat-area">Mat area</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="parking">Parking</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="sauna">Sauna</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="spa-facilities">Spa facilities</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="steam-room">Steam room</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="sun-beds">Sun beds</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="facilities" data-filter-value="swimming-pool">Swimming pool</button>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="directory-filter-footer">
+      <button class="directory-filter-reset" id="directoryFilterReset" type="button">
+        Reset Filters
+      </button>
+
+      <button class="directory-filter-apply" id="directoryFilterApply" type="button">
+        Close &amp; Apply filters
+      </button>
+    </footer>
+  </aside>
+
+  <div class="directory-filter-overlay" id="directoryFilterOverlay"></div>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
     <button class="icon-btn messages-toggle" type="button" aria-label="Messages">
       <i class="fa-solid fa-comments"></i>
       <span class="messages-dot"></span>
@@ -299,423 +403,18 @@
       <i class="fa-solid fa-magnifying-glass"></i>
     </button>
 
-   <a href="calendar.html" class="icon-btn" aria-label="Calendar">
-  <i class="fa-regular fa-calendar-days"></i>
-</a>
+    <a href="calendar.html" class="icon-btn" aria-label="Calendar">
+      <i class="fa-regular fa-calendar-days"></i>
+    </a>
 
     <a href="notifications.html" class="icon-btn" aria-label="Notifications">
       <i class="fa-solid fa-bell"></i>
     </a>
   </nav>
 
-   <div class="messages-overlay" id="messagesOverlay"></div>
+  <!-- keep your full messages HTML exactly as it was here -->
 
-  <div class="messages-modal" id="messagesModal" aria-hidden="true">
-    <button type="button" class="messages-resize-handle messages-resize-drawer" id="drawerResizeHandle" aria-label="Resize drawer"></button>
-
-    <div class="messages-card">
-      <div class="messages-header">
-        <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
-          <i class="fa-solid fa-arrow-left"></i>
-        </button>
-
-        <h3 id="messagesHeaderTitle">Messages</h3>
-
-        <div class="messages-header-actions">
-
-          <button type="button" class="messages-open-popup" id="drawerMediumBtn" aria-label="Open medium window">
-            <i class="fa-regular fa-window-restore"></i>
-          </button>
-
-          <button type="button" class="messages-minimize-btn" id="drawerMinimizeBtn" aria-label="Minimize chat">
-            <i class="fa-solid fa-minus"></i>
-          </button>
-        </div>
-
-        <button type="button" class="chevron-btn" id="drawerChevronBtn" aria-label="More options">
-          <i class="fa-solid fa-angle-down"></i>
-        </button>
-
-        <div class="messages-corner-menu" id="drawerCornerMenu">
-
-          <button type="button" class="messages-corner-item" id="splitToggle" aria-label="Split view">
-            <i class="fa-solid fa-table-columns"></i>
-            <span>Split view</span>
-            </button>
-          
-          <button type="button" class="messages-corner-item" id="drawerVideoChatBtn">
-            <i class="fa-solid fa-video"></i>
-            <span>Video chat</span>
-          </button>
-
-          <button type="button" class="messages-corner-item" id="drawerAddPeopleBtn">
-            <i class="fa-solid fa-user-plus"></i>
-            <span>Add people</span>
-          </button>
-
-          <button type="button" class="messages-corner-item" id="drawerPopoutBtn">
-            <i class="fa-solid fa-up-right-from-square"></i>
-            <span>Popout</span>
-          </button>
-
-          <button type="button" class="messages-corner-item" id="drawerDownloadVideoBtn">
-            <i class="fa-solid fa-download"></i>
-            <span>Download saved video</span>
-          </button>
-
-          <button type="button" class="messages-corner-item" id="drawerMsnModeBtn">
-            <i class="fa-regular fa-message"></i>
-            <span>Classic mode</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="messages-body" id="messagesBody">
-        <div class="messages-view messages-list-view active" id="messagesListView">
-          <div class="messages-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="messagesSearchInput" placeholder="Search messages..." />
-          </div>
-
-          <div class="messages-list" id="messagesList">
-            <button type="button" class="message-thread active" data-user="Jason">
-              <div class="message-thread-avatar">
-                <i class="fa-solid fa-user"></i>
-              </div>
-              <div class="message-thread-content">
-                <div class="message-thread-top">
-                  <div class="message-thread-name-row">
-                    <span class="message-thread-name">Jason</span>
-                    <span class="thread-unread-dot"></span>
-                  </div>
-                  <span class="message-thread-time">2m</span>
-                </div>
-                <div class="message-thread-preview">Hey, are you around later?</div>
-              </div>
-            </button>
-
-            <button type="button" class="message-thread" data-user="Alex">
-              <div class="message-thread-avatar">
-                <i class="fa-solid fa-user"></i>
-              </div>
-              <div class="message-thread-content">
-                <div class="message-thread-top">
-                  <div class="message-thread-name-row">
-                    <span class="message-thread-name">Alex</span>
-                    <span class="thread-unread-dot"></span>
-                  </div>
-                  <span class="message-thread-time">1h</span>
-                </div>
-                <div class="message-thread-preview">Nice work on your run 🔥</div>
-              </div>
-            </button>
-          </div>
-        </div>
-
-        <div class="messages-view messages-chat-view" id="messagesChatView">
-          <div class="message-chat" id="messageChat"></div>
-
-          <div class="typing-indicator" id="typingIndicator">
-            <span></span><span></span><span></span>
-          </div>
-
-          <div class="messages-footer">
-            <div class="messages-input-wrap">
-              <div class="message-avatar-inline">
-                <i class="fa-solid fa-user"></i>
-              </div>
-
-              <textarea
-                class="messages-input"
-                id="messagesInput"
-                placeholder="Write a message..."
-              ></textarea>
-            </div>
-
-            <div class="messages-preview" id="messagesPreview"></div>
-
-            <input
-              type="file"
-              id="messagesMediaUpload"
-              accept="image/*,video/*"
-              multiple
-              hidden
-            />
-
-            <div class="messages-bottom-bar">
-              <div class="messages-tools">
-                <label for="messagesMediaUpload" class="upload-btn" title="Add image or video">
-                  <i class="fa-solid fa-image"></i>
-                </label>
-
-                <button type="button" class="upload-btn messages-gif-btn" title="Add GIF">
-                  <span>GIF</span>
-                </button>
-
-                <button type="button" class="upload-btn messages-emoji-btn" title="Add emoji">
-                  <i class="fa-regular fa-face-smile"></i>
-                </button>
-
-                <button type="button" class="upload-btn messages-location-btn" title="Add location">
-                  <i class="fa-solid fa-location-dot"></i>
-                </button>
-              </div>
-
-              <button type="button" class="upload-btn send-btn" id="messagesSend">
-                  <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z"
-        fill="currentColor"
-      />
-    </svg>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="messages-popup" id="messagesPopup" aria-hidden="true">
-    <button type="button" class="messages-resize-handle messages-resize-corner" id="popupResizeHandle" aria-label="Resize popup"></button>
-
-    <div class="messages-popup-header">
-      <button type="button" class="messages-back" id="popupBack" aria-label="Back to drawer">
-        <i class="fa-solid fa-arrow-left"></i>
-      </button>
-
-      <div class="messages-popup-title" id="popupHeaderTitle">Messages</div>
-
-      <div class="messages-popup-actions">
-
-        <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
-          <i class="fa-solid fa-minus"></i>
-        </button>
-
-        <button type="button" class="icon-btn" id="popupCloseBtn" aria-label="Close chat">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-
-      <button type="button" class="chevron-btn" id="popupChevronBtn" aria-label="More options">
-        <i class="fa-solid fa-angle-down"></i>
-      </button>
-
-      <div class="messages-corner-menu" id="popupCornerMenu">
-
-           <button type="button" class="messages-corner-item" id="popupSplitBtn" aria-label="Split view">
-              <i class="fa-solid fa-table-columns"></i>
-             <span>Split view</span>
-          </button>
-        
-        <button type="button" class="messages-corner-item" id="popupVideoChatBtn">
-          <i class="fa-solid fa-video"></i>
-          <span>Video chat</span>
-        </button>
-
-        <button type="button" class="messages-corner-item" id="popupAddPeopleBtn">
-          <i class="fa-solid fa-user-plus"></i>
-          <span>Add people</span>
-        </button>
-
-        <button type="button" class="messages-corner-item" id="popupPopoutBtn">
-          <i class="fa-solid fa-up-right-from-square"></i>
-          <span>Popout</span>
-        </button>
-
-        <button type="button" class="messages-corner-item" id="popupDownloadVideoBtn">
-          <i class="fa-solid fa-download"></i>
-          <span>Download saved video</span>
-        </button>
-
-        <button type="button" class="messages-corner-item" id="popupMsnModeBtn">
-          <i class="fa-regular fa-message"></i>
-          <span>Classic mode</span>
-        </button>
-      </div>
-    </div>
-
-    <div class="messages-popup-main" id="messagesPopupMain">
-      <div class="messages-popup-list-view" id="popupListView">
-        <div class="messages-search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="popupMessagesSearchInput" placeholder="Search messages..." />
-        </div>
-
-        <div class="messages-list" id="popupMessagesList"></div>
-      </div>
-
-      <div class="messages-popup-chat-view" id="popupChatView">
-        <div class="messages-popup-body" id="popupMessageChat"></div>
-
-        <div class="messages-popup-footer">
-          <textarea
-            id="popupMessagesInput"
-            class="messages-input"
-            placeholder="Write a message..."
-          ></textarea>
-
-          <div class="messages-bottom-bar">
-            <div class="messages-tools">
-              <button type="button" class="upload-btn popup-gif-btn" title="Add GIF">
-                <span>GIF</span>
-              </button>
-
-              <button type="button" class="upload-btn popup-emoji-btn" title="Add emoji">
-                <i class="fa-regular fa-face-smile"></i>
-              </button>
-
-              <button type="button" class="upload-btn popup-location-btn" title="Add location">
-                <i class="fa-solid fa-location-dot"></i>
-              </button>
-            </div>
-
-            <button type="button" class="upload-btn send-btn" id="popupMessagesSend">
-                <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z"
-        fill="currentColor"
-      />
-    </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <button
-    type="button"
-    class="messages-minimized"
-    id="messagesMinimized"
-    aria-hidden="true"
-    aria-label="Reopen chat"
-  >
-    <span id="minimizedLabel">Jason</span>
-    <span class="messages-minimized-dot"></span>
-  </button>
-
-   <div class="messages-popout" id="messagesPopout" aria-hidden="true">
-  <button
-    type="button"
-    class="messages-resize-handle messages-resize-corner"
-    id="popoutResizeHandle"
-    aria-label="Resize popout"
-  ></button>
-
-  <div class="messages-popout-header">
-    <button type="button" class="messages-back" id="popoutBack" aria-label="Back to conversations">
-      <i class="fa-solid fa-arrow-left"></i>
-    </button>
-
-    <div class="messages-popout-title" id="popoutHeaderTitle">Jason</div>
-
-    <div class="messages-popout-actions">
-
-      <button type="button" class="icon-btn" id="popoutFullscreenBtn" aria-label="Fullscreen chat">
-        <i class="fa-solid fa-expand"></i>
-      </button>
-
-      <button type="button" class="icon-btn" id="popoutMinimizeBtn" aria-label="Minimize chat">
-        <i class="fa-solid fa-minus"></i>
-      </button>
-
-      <button type="button" class="icon-btn" id="popoutCloseBtn" aria-label="Close chat">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-    </div>
-
-    <button type="button" class="chevron-btn" id="popoutChevronBtn" aria-label="More options">
-      <i class="fa-solid fa-angle-down"></i>
-    </button>
-    
-
-    <div class="messages-corner-menu" id="popoutCornerMenu">
-
-       <button type="button" class="messages-corner-item" id="popoutSplitBtn" aria-label="Split view">
-        <i class="fa-solid fa-table-columns"></i>
-        <span>Split View</span>
-      </button>
-      
-      <button type="button" class="messages-corner-item" id="popoutVideoChatBtn">
-        <i class="fa-solid fa-video"></i>
-        <span>Video chat</span>
-      </button>
-
-      <button type="button" class="messages-corner-item" id="popoutAddPeopleBtn">
-        <i class="fa-solid fa-user-plus"></i>
-        <span>Add people</span>
-      </button>
-
-      <button type="button" class="messages-corner-item" id="popoutMediumMenuBtn">
-        <i class="fa-regular fa-window-restore"></i>
-        <span>Medium window</span>
-      </button>
-
-      <button type="button" class="messages-corner-item" id="popoutDownloadVideoBtn">
-        <i class="fa-solid fa-download"></i>
-        <span>Download saved video</span>
-      </button>
-
-      <button type="button" class="messages-corner-item" id="popoutMsnModeBtn">
-        <i class="fa-regular fa-message"></i>
-        <span>Classic mode</span>
-      </button>
-    </div>
-  </div>
-
-  <div class="messages-popout-main" id="messagesPopoutMain">
-    <div class="messages-popout-list-view" id="popoutListView">
-      <div class="messages-search">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="popoutMessagesSearchInput" placeholder="Search messages..." />
-      </div>
-
-      <div class="messages-list" id="popoutMessagesList"></div>
-    </div>
-
-    <div class="messages-popout-chat-view" id="popoutChatView">
-      <div class="messages-popout-body" id="popoutMessageChat"></div>
-
-      <div class="messages-popout-footer">
-        <textarea
-          id="popoutMessagesInput"
-          class="messages-input"
-          placeholder="Write a message..."
-        ></textarea>
-
-        <div class="messages-bottom-bar">
-          <div class="messages-tools">
-            <button type="button" class="upload-btn popout-gif-btn" title="Add GIF">
-              <span>GIF</span>
-            </button>
-
-            <button type="button" class="upload-btn popout-emoji-btn" title="Add emoji">
-              <i class="fa-regular fa-face-smile"></i>
-            </button>
-
-            <button type="button" class="upload-btn popout-location-btn" title="Add location">
-              <i class="fa-solid fa-location-dot"></i>
-            </button>
-          </div>
-
-          <button type="button" class="upload-btn send-btn" id="popoutMessagesSend">
-              <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
-      <path
-        d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z"
-        fill="currentColor"
-      />
-    </svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
- <script src="menu.js"></script>
+  <script src="menu.js"></script>
   <script src="messages.js"></script>
-
 </body>
-</html> 
+</html>
