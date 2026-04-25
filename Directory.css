@@ -587,6 +587,7 @@ body.directory::before {
   padding: calc(0.875rem + env(safe-area-inset-bottom));
   background: transparent;
   box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.06);
+   align-items: center;
 }
 
 .directory-filter-reset,
