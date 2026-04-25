@@ -595,20 +595,15 @@ body.directory::before {
 
 }
 
-.directory-filter-reset,
-.directory-filter-apply {
-  flex: 1;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
+.directory-filter-reset, .directory-filter-apply {
+   flex: 1;
+   align-items: center;
+   line-height: 1.1;
+   text-align: center;
+   padding: 0.6rem;
    border-radius: 0.6rem;
    border: none;
-   cursor:pointer;
-  text-align: center;
-
+   cursor: pointer;
   transform: translateY(1px);
 }
 
