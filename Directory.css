@@ -492,7 +492,7 @@ body.directory::before {
 
 .directory-filter-header h2 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: var(--main-font-size);
   color: var(--text-dark);
 }
 
