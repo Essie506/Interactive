@@ -585,7 +585,7 @@ body.directory::before {
   display: flex;
   gap: 0.5rem;
   padding: calc(0.875rem + env(safe-area-inset-bottom));
-  background: #ffffff;
+  background: transparent;
   box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.06);
 }
 
