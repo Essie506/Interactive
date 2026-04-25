@@ -466,6 +466,7 @@ body.directory::before {
   background: var(--navbar-bg);
   overflow: hidden;
   min-height: var(--bar-height);
+   z-index: 0;
 }
 
 .directory-filter-header::after {
@@ -474,6 +475,7 @@ body.directory::before {
   inset: 0;
   background: var(--navbar-bg-after);
   pointer-events: none;
+   z-index: 0;
 }
 
 .directory-filter-header > div {
