@@ -486,12 +486,6 @@ body.directory::before {
   text-align: center;
 }
 
-.directory-filter-kicker {
-  margin: 0;
-  font-size: 0.75rem;
-  opacity: 0.65;
-}
-
 .directory-filter-header h2 {
   margin: 0;
   font-size: var(--main-font-size);
