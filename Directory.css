@@ -618,35 +618,3 @@ body.directory::before {
     min-height: var(--bar-height);
   }
 }
-
-
-
-/* =========================
-   FOOTER
-========================= */
-
-.directory-filter-footer {
-  position: sticky;
-  bottom: 0;
-
-  display: flex;
-  gap: 0.6rem;
-
-  padding: 0.75rem;
-  background: rgba(255,255,255,0.95);
-}
-
-.directory-filter-reset,
-.directory-filter-apply {
-  flex: 1;
-  padding: 0.6rem;
-  border-radius: 0.6rem;
-  border: none;
-  cursor: pointer;
-}
-
-.directory-filter-apply {
-  background: var(--main-color);
-  color: white;
-}
-
