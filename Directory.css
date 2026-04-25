@@ -597,7 +597,7 @@ body.directory::before {
     align-items: center;
   justify-content: center;
     min-height: 2.8rem;
-   line-height: 1.1rem;
+   line-height: 1.1;
   text-align: center;
   padding: 0.6rem;
   border-radius: 0.6rem;
