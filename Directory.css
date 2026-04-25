@@ -462,7 +462,8 @@ body.directory::before {
   display: grid;
   grid-template-columns: var(--icon-btn-size) 1fr var(--icon-btn-size);
   align-items: center;
-   padding: 0.75rem 0.75rem 0.5rem;
+   margin: -1.125rem -1.125rem 0.875rem;
+  padding: 0.875rem 1.125rem;
   background: var(--navbar-bg);
   overflow: hidden;
   min-height: var(--bar-height);
@@ -488,7 +489,6 @@ body.directory::before {
 .directory-filter-kicker {
   margin: 0;
   font-size: 0.75rem;
-  font-weight: 700;
   opacity: 0.65;
 }
 
