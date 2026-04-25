@@ -589,7 +589,6 @@ body.directory::before {
   background: #ffffff;
   box-shadow: 0 -6px 18px rgba(0, 0, 0, 0.06);
    align-items: center;
-   justify-content: center;
 }
 
 .directory-filter-reset,
@@ -597,6 +596,8 @@ body.directory::before {
   flex: 1;
     align-items: center;
   justify-content: center;
+    min-height: 2.8rem;
+   line-height: 1.1rem;
   text-align: center;
   padding: 0.6rem;
   border-radius: 0.6rem;
