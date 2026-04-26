@@ -597,7 +597,10 @@
 
 .composer-header h3, 
 .directory-filter-header h2,
-.directory-filter-header > div {
+.directory-filter-header > div,
+.messages-header h3,
+.messages-popup-title,
+.messages-popout-title {
   grid-column: 2;
   margin: 0;
   font-size: var(--directory-font-size);
