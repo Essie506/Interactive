@@ -75,6 +75,7 @@ body {
   --menu-padding-x: calc(var(--bar-height) * 0.24);
 
  --main-font-size: clamp(1rem, 1.2vw, 1.15rem);
+   --directory-font-size: clamp(0.9rem, 1.1vw, 1.05rem);
 }
 
 html {
