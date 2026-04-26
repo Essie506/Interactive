@@ -429,19 +429,6 @@ body.messages-open {
   margin-right: 0.5rem;
 }
 
-.messages-header h3,
-.messages-popup-title,
-.messages-popout-title {
-  grid-column: 2;
-  justify-self: center;
-  position: relative;
-  z-index: 3;
-  color: var(--messages-text);
-  text-align: center;
-  font-weight: 700;
-  pointer-events: none;
-}
-
 .messages-header .icon-btn,
 .messages-popup-header .icon-btn,
 .messages-popout-header .icon-btn {
