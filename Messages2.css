@@ -424,7 +424,6 @@ body.messages-open {
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 1.125rem 1.125rem calc(1.125rem + env(safe-area-inset-bottom));
   overflow: hidden;
 }
 
@@ -438,6 +437,7 @@ body.messages-open {
   padding-bottom: 0.75rem;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+    padding: 1.125rem 1.125rem calc(1.125rem + env(safe-area-inset-bottom));
 }
 
 .messages-view {
