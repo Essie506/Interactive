@@ -498,7 +498,7 @@ body.directory::before {
 }
 
 .directory-filter-panel.open .directory-filter-section-toggle i,
-.directory-filter-group-toggle i {
+.directory-filter-panel.open .directory-filter-group-toggle i {
   transform: rotate(180deg);
 }
 
