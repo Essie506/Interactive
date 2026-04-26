@@ -300,13 +300,23 @@
           <input type="text" id="directoryLocationInput" placeholder="Search town, city or postcode" />
         </label>
 
-        <div class="directory-pill-row">
-          <button class="directory-filter-pill active" type="button" data-filter-group="location-type" data-filter-value="near-me">Near me</button>
-          <button class="directory-filter-pill" type="button" data-filter-group="location-type" data-filter-value="online">Online</button>
-  <button class="directory-filter-pill" data-distance="1">1 mi</button>
-  <button class="directory-filter-pill active" data-distance="5">5 mi</button>
-  <button class="directory-filter-pill" data-distance="10">10 mi</button>
-  <button class="directory-filter-pill" data-distance="25">25 mi</button>
+<div class="directory-filter-section">
+  <h3>Distance</h3>
+
+  <div class="distance-control">
+    <input
+      type="range"
+      id="distanceRange"
+      min="1"
+      max="50"
+      value="10"
+      step="1"
+    />
+
+    <div class="distance-value">
+      <span id="distanceValue">10 miles</span>
+    </div>
+  </div>
 </div>
       </section>
 
