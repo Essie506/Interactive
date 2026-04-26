@@ -510,7 +510,7 @@
 }
 
 /* =========================
-   COMPOSER (SHARED)
+   MODALS / DRAWERS SHARED
 ========================= */
 .composer-overlay,
 .messages-overlay,
@@ -528,17 +528,17 @@
 
 .composer-overlay.open,
 .messages-overlay.open,
-.directory-filter-overlay.open{
+.directory-filter-overlay.open {
   opacity: 1;
   visibility: visible;
 }
 
+/* shared drawer shell */
 .composer-modal,
 .messages-modal,
 .directory-filter-menu {
   position: fixed;
   top: 0;
-  left: 0;
   z-index: 4000;
   display: flex;
   flex-direction: column;
@@ -548,29 +548,33 @@
   box-sizing: border-box;
   overflow: hidden;
   background: #fff;
-  box-shadow: -12px 0 30px rgba(0, 0, 0, 0.14);
   transition: transform 0.32s ease;
 }
 
-.composer-modal {
-  right: 0;
-  left: auto;
-  transform: translateX(100%);
-}
-
+/* left drawer */
 .messages-modal {
   left: 0;
   right: auto;
+  box-shadow: -12px 0 30px rgba(0, 0, 0, 0.14);
   transform: translateX(-100%);
 }
 
+/* right drawers */
+.composer-modal,
+.directory-filter-menu {
+  right: 0;
+  left: auto;
+  box-shadow: 12px 0 30px rgba(0, 0, 0, 0.14);
+  transform: translateX(100%);
+}
 
 .composer-modal.open,
-.directory-filter-menu.open,
-.messages-modal.open {
+.messages-modal.open,
+.directory-filter-menu.open {
   transform: translateX(0);
 }
 
+/* inner card wrapper */
 .composer-card,
 .messages-card {
   display: flex;
@@ -579,7 +583,8 @@
   overflow: hidden;
 }
 
-.composer-header, 
+/* shared modal headers */
+.composer-header,
 .directory-filter-header,
 .messages-header,
 .messages-popup-header,
@@ -588,12 +593,11 @@
   display: grid;
   grid-template-columns: var(--icon-btn-size) 1fr auto;
   align-items: center;
+  height: var(--bar-height-large);
   margin: 0;
-   padding: 0 1.125rem;
+  padding: 0 1.125rem;
   background: var(--navbar-bg);
   overflow: hidden;
-  height: var(--bar-height-large);
-    z-index: 0;
   font-size: var(--main-font-size);
 }
 
@@ -607,7 +611,16 @@
   inset: 0;
   background: var(--navbar-bg-after);
   pointer-events: none;
-   z-index: 1;
+  z-index: 1;
+}
+
+.composer-header > *,
+.directory-filter-header > *,
+.messages-header > *,
+.messages-popup-header > *,
+.messages-popout-header > * {
+  position: relative;
+  z-index: 2;
 }
 
 .composer-header-spacer {
@@ -615,9 +628,8 @@
   height: var(--icon-btn-size);
 }
 
-.composer-header h3, 
+.composer-header h3,
 .directory-filter-header h2,
-.directory-filter-header > div,
 .messages-header h3,
 .messages-popup-title,
 .messages-popout-title {
@@ -626,7 +638,6 @@
   font-size: var(--directory-font-size);
   color: var(--text-dark);
   text-align: center;
-  z-index: 2;
   justify-self: center;
 }
 
@@ -634,12 +645,11 @@
 .directory-filter-close {
   grid-column: 3;
   justify-self: end;
-  position: static;
   cursor: pointer;
-  z-index: 1;
 }
 
-.composer-body, 
+/* shared scroll bodies */
+.composer-body,
 .directory-filter-body,
 .messages-body {
   display: flex;
