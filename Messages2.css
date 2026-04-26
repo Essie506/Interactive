@@ -468,7 +468,7 @@ body.messages-open {
 .messages-header {
   min-height: var(--bar-height);
   margin: -1.125rem -1.125rem 0.875rem;
-  padding: 0.875rem 1.125rem;
+  padding: 0.75rem 0.5rem;
 }
 
 .messages-popup-header,
