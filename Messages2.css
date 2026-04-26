@@ -446,7 +446,7 @@ body.messages-open {
 .messages-header .icon-btn i,
 .messages-popup-header .icon-btn i,
 .messages-popout-header .icon-btn i {
-   font-size: var(--messages-icon-size);
+   font-size: var(--icon-size);
 }
 
 /* =========================
@@ -520,7 +520,6 @@ body.messages-open {
     background: var(--glass-white);
   backdrop-filter: blur(4px);
   cursor: pointer;
-  z-index: 2;
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
     transition:
     background 0.22s ease,
