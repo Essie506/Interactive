@@ -1055,10 +1055,6 @@ body.messages-open {
    RESPONSIVE
 ========================= */
 @media (max-width: 900px) {
-  .messages-modal {
-    width: 100vw;
-    max-width: 100vw;
-  }
 
 
   .messages-popup {
