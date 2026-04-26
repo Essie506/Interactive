@@ -597,7 +597,7 @@ body.directory::before {
   align-items: center;
   gap: 0.625rem;
   min-height: 2.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.9rem;
   padding: 0 0.875rem;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.72);
