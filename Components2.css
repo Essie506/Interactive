@@ -597,9 +597,20 @@
   margin: 0;
   padding: 0 1.125rem;
   background: var(--navbar-bg);
-  overflow: hidden;
   font-size: var(--main-font-size);
 }
+
+.composer-header,
+.directory-filter-header {
+     overflow: hidden;
+}
+
+.messages-header,
+.messages-popup-header,
+.messages-popout-header {
+  overflow: visible;
+}
+
 
 .composer-header::after,
 .directory-filter-header::after,
