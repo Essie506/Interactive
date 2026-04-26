@@ -580,7 +580,10 @@
 }
 
 .composer-header, 
-.directory-filter-header {
+.directory-filter-header,
+.messages-header,
+.messages-popup-header,
+.messages-popout-header {
   position: relative;
   display: grid;
   grid-template-columns: var(--icon-btn-size) 1fr auto;
