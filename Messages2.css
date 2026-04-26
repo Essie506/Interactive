@@ -464,8 +464,8 @@ body.messages-open {
   overflow: visible;
   background: var(--navbar-bg);
  height: var(--bar-height-large);
-  padding: 0 0.75rem; /* no vertical padding *
-   z-index: 2;
+ padding: 0 0.75rem; /* no vertical padding */
+z-index: 2;
 }
 
 .messages-header::after,
