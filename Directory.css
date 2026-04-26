@@ -490,6 +490,10 @@ body.directory::before {
   text-align: left;
 }
 
+.directory-filter-section-toggle {
+margin-left: 1rem;
+}
+
 .directory-filter-section-toggle i,
 .directory-filter-group-toggle i {
   font-size: 0.8rem;
