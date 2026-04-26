@@ -474,7 +474,7 @@ body.directory::before {
 }
 
 .directory-filter-section-toggle, 
-directory-filter-group-toggle {
+.directory-filter-group-toggle {
    all: unset;
   width: 100%;
   display: flex;
