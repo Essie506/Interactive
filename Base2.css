@@ -43,6 +43,9 @@ body {
     radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.5), transparent 60%),
     radial-gradient(circle at 70% 40%, rgba(255, 255, 255, 0.3), transparent 60%);
 
+  --panel-padding: clamp(0.875rem, 2vw, 1.25rem);
+  --panel-padding-fixed: 1.125rem;
+
   --radius: clamp(10px, 1vw, 12px);
   --radius-round: 999px;
 
