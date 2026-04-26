@@ -1149,6 +1149,7 @@ body.messages-open {
   .messages-popup-title,
   .messages-popout-title {
     font-size: var(--main-font-size);
+       font-weight: 700;
   }
 
   .messages-send {
