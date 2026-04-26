@@ -647,7 +647,24 @@ body.directory::before {
   box-shadow: 0 8px 18px rgba(7, 153, 146, 0.22);
 }
 
+.directory-filter-group-content {
+  display: none;
+  margin-top: 0.5rem;
+}
 
+.directory-filter-group.open .directory-filter-group-content {
+  display: block;
+}
+
+.directory-filter-group-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 
 
