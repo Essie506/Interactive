@@ -803,7 +803,7 @@ body.profile .media-play-badge {
   }
 
   body.profile .profile-tabs-inline {
-    justify-content: center;
+    justify-content: space-between;
   }
 
   body.profile .profile-tabs {
