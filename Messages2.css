@@ -1088,9 +1088,6 @@ body.messages-open {
     max-width: calc(100vw - 0.625rem);
   }
 
-  .nav-left .messages-toggle {
-    display: none;
-  }
 }
 
 @media (min-width: 700px) and (max-width: 900px) and (orientation: portrait) {
