@@ -455,10 +455,6 @@
     display: inline-flex;
   }
 
-  .composer-modal,
-  .messages-modal {
-    min-width: 100%;
-  }
 
   .nav-left .messages-toggle {
     display: none;
@@ -486,6 +482,22 @@
 
   .navbar-right .desktop-icon-link {
     display: none;
+  }
+
+   .composer-header,
+.directory-filter-header,
+.messages-header,
+.messages-popup-header,
+.messages-popout-header {
+   height: var(--bar-height);
+}
+   
+    .composer-modal,
+  .messages-modal,
+  .directory-filter-menu {
+    width: 100vw;
+    max-width: 100vw;
+    min-width: 0;
   }
 }
 
