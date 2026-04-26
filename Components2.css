@@ -633,7 +633,8 @@
   padding: var(--panel-padding);
 }
 
-.composer-body {
+.composer-body,
+.messages-body {
   padding:
     var(--panel-padding-fixed)
     var(--panel-padding-fixed)
