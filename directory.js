@@ -10,6 +10,10 @@ const filterClose = document.getElementById('directoryFilterClose');
 const resetBtn = document.getElementById('directoryFilterReset');
 const applyBtn = document.getElementById('directoryFilterApply');
 
+const distanceRange = document.getElementById("distanceRange");
+const distanceValue = document.getElementById("distanceValue");
+
+
 // =========================
 // OPEN / CLOSE
 // =========================
@@ -82,8 +86,21 @@ if (resetBtn) {
 }
 
 // =========================
+// DISTANCE SLIDER
+// =========================
+
+
+if (distanceRange && distanceValue) {
+  distanceRange.addEventListener("input", () => {
+    distanceValue.textContent = `${distanceRange.value} miles`;
+  });
+}
+
+
+// =========================
 // APPLY
 // =========================
+
 
 if (applyBtn) {
   applyBtn.addEventListener('click', () => {
