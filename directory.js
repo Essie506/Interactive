@@ -13,7 +13,6 @@ const applyBtn = document.getElementById('directoryFilterApply');
 const distanceRange = document.getElementById("distanceRange");
 const distanceValue = document.getElementById("distanceValue");
 
-
 // =========================
 // OPEN / CLOSE
 // =========================
@@ -32,7 +31,6 @@ function closeFilter() {
   filterOverlay.classList.remove('open');
 }
 
-// bind safely (won’t crash if missing)
 if (filterBtn) filterBtn.addEventListener('click', openFilter);
 if (filterClose) filterClose.addEventListener('click', closeFilter);
 if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
@@ -42,7 +40,6 @@ if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
 // =========================
 
 const selectedFilters = new Set();
-
 
 // =========================
 // PILL TOGGLES
@@ -67,8 +64,45 @@ filterPills.forEach(btn => {
       btn.classList.add('active');
     }
 
-    // debug (you can remove later)
     console.log('Selected filters:', [...selectedFilters]);
+  });
+});
+
+// =========================
+// FILTER SECTION TOGGLES
+// =========================
+
+const filterPanels = document.querySelectorAll('.directory-filter-panel');
+
+filterPanels.forEach(panel => {
+  const toggle = panel.querySelector('.directory-filter-section-toggle');
+
+  if (!toggle) return;
+
+  toggle.addEventListener('click', () => {
+    panel.classList.toggle('open');
+  });
+});
+
+// =========================
+// INNER FILTER GROUP TOGGLES
+// =========================
+
+const filterGroups = document.querySelectorAll('.directory-filter-group');
+
+filterGroups.forEach(group => {
+  const toggle = group.querySelector('.directory-filter-group-toggle');
+
+  if (!toggle) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = group.classList.contains('open');
+
+    filterGroups.forEach(g => g.classList.remove('open'));
+
+    if (!isOpen) {
+      group.classList.add('open');
+    }
   });
 });
 
@@ -83,13 +117,17 @@ if (resetBtn) {
     filterPills.forEach(btn => {
       btn.classList.remove('active');
     });
+
+    if (distanceRange && distanceValue) {
+      distanceRange.value = 10;
+      distanceValue.textContent = "10 miles";
+    }
   });
 }
 
 // =========================
 // DISTANCE SLIDER
 // =========================
-
 
 if (distanceRange && distanceValue) {
   distanceRange.addEventListener("input", () => {
@@ -98,35 +136,8 @@ if (distanceRange && distanceValue) {
 }
 
 // =========================
-// FILTER GROUP TOGGLES
-// =========================
-
-const filterGroups = document.querySelectorAll('.directory-filter-group');
-
-filterGroups.forEach(group => {
-  const toggle = group.querySelector('.directory-filter-group-toggle');
-
-  if (!toggle) return;
-
-  toggle.addEventListener('click', () => {
-    const isOpen = group.classList.contains('open');
-
-    // close all
-    filterGroups.forEach(g => g.classList.remove('open'));
-
-    // reopen this one if it wasn't open
-    if (!isOpen) {
-      group.classList.add('open');
-    }
-  });
-});
-
-
-
-// =========================
 // APPLY
 // =========================
-
 
 if (applyBtn) {
   applyBtn.addEventListener('click', () => {
