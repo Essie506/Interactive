@@ -664,8 +664,6 @@ body.directory::before {
   border: none;
   cursor: pointer;
   color: var(--text-dark);
-  font-family: "Outfit", sans-serif;
-  font-weight: 500;
   letter-spacing: -0.02em;
 
   font-size: clamp(0.98rem, 1.4vw, 1.05rem);
