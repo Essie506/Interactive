@@ -482,7 +482,9 @@ body.messages-open {
 .messages-back {
   justify-self: start;
   display: inline-flex;
-  z-index: 1;
+     align-items: center;
+  justify-content: center;
+  z-index: 3;
 }
 
 .messages-split {
