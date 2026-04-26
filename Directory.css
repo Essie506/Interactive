@@ -471,8 +471,43 @@ body.directory::before {
   margin-bottom: clamp(1rem, 2.4vw, 1.5rem);
 }
 
+.directory-filter-section-toggle {
+   all: unset;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  background: transparent;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  color: var(--text-dark);
+  font: inherit;
+  font-weight: 800;
+  text-align: left;
+}
+
+.directory-filter-section-toggle i {
+  font-size: 0.8rem;
+  opacity: 0.65;
+  transition: transform 0.25s ease;
+}
+
+.directory-filter-panel.open .directory-filter-section-toggle i {
+  transform: rotate(180deg);
+}
+
+.directory-filter-section-content {
+  display: none;
+  padding-top: 0.35rem;
+}
+
+.directory-filter-panel.open .directory-filter-section-content {
+  display: block;
+}
+
 .directory-filter-section h3 {
-  margin: 0 0 0.625rem;
+  margin: 0;
   font-size: clamp(0.9rem, 1vw, 1rem);
   color: var(--text-dark);
   opacity: 0.7;
