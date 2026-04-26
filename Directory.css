@@ -491,14 +491,9 @@ body.directory::before {
 }
 
 
-.directory-filter-subgroup {
-  margin-inline: 0;
+.directory-filter-group-toggle .directory-subtitle {
+  padding-left: 1rem;
 }
-
-.directory-filter-group-toggle {
-  padding: 0.6rem 1rem;
-}
-
 
 
 .directory-filter-section-toggle i,
