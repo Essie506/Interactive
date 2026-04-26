@@ -489,9 +489,8 @@ body.directory::before {
   font-weight: 800;
   text-align: left;
 }
-
-.directory-filter-group-toggle {
-  margin: 0 1rem;
+.directory-filter-subgroup {
+  margin-inline: 1rem;
 }
 
 .directory-filter-section-toggle i,
