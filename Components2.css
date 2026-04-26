@@ -512,7 +512,8 @@
 /* =========================
    COMPOSER (SHARED)
 ========================= */
-.composer-overlay {
+.composer-overlay,
+.messages-overlay {
   position: fixed;
   inset: 0;
   background: rgba(9, 26, 58, 0.26);
@@ -524,33 +525,38 @@
   z-index: 3990;
 }
 
-.composer-overlay.open {
+.composer-overlay.open,
+.messages-overlay.open {
   opacity: 1;
   visibility: visible;
 }
 
-.composer-modal {
+.composer-modal,
+.messages-modal {
   position: fixed;
   top: 0;
-  right: 0;
-  width: min(32.5rem, 96vw);
-  height: 100dvh;
+  left: 0;
   z-index: 4000;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
-  transform: translateX(100%);
-  transition: transform 0.32s ease;
-  overflow: hidden;
+  width: min(32.5rem, 96vw);
+  max-width: 96vw;
+  height: 100dvh;
   box-sizing: border-box;
-  box-shadow: 12px 0 30px rgba(0, 0, 0, 0.14);
+  overflow: hidden;
+  background: #fff;
+  box-shadow: -12px 0 30px rgba(0, 0, 0, 0.14);
+  transform: translateX(-100%);
+  transition: transform 0.32s ease;
 }
+
 
 .composer-modal.open {
   transform: translateX(0);
 }
 
-.composer-card {
+.composer-card,
+.messages-card {
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -573,7 +579,10 @@
 }
 
 .composer-header::after,
-.directory-filter-header::after {
+.directory-filter-header::after,
+.messages-header::after,
+.messages-popup-header::after,
+.messages-popout-header::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -608,7 +617,8 @@
 }
 
 .composer-body, 
-.directory-filter-body {
+.directory-filter-body,
+.messages-body {
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
