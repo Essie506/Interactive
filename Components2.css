@@ -586,10 +586,11 @@
   height: var(--icon-btn-size);
 }
 
-.composer-header h3 {
+.composer-header h3, 
+.directory-filter-header h2 {
   grid-column: 2;
   margin: 0;
-  font-size: var(--main-font-size);
+  font-size: var(--directory-font-size);
   color: var(--text-dark);
   text-align: center;
   z-index: 1;
