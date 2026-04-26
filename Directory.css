@@ -698,6 +698,14 @@ body.directory::before {
   opacity: 1;
 }
 
+.directory-filter-subgroup.open .directory-filter-group-content {
+  display: block;
+}
+
+.directory-filter-subgroup.open .directory-filter-group-toggle i {
+  transform: rotate(180deg);
+}
+
 @media (max-width: 900px) {
   .directory-filter-menu {
     width: 100%;
