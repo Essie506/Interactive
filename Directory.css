@@ -418,13 +418,6 @@ body.directory::before {
 }
 
 
-.directory-filter-close {
-  grid-column: 3;
-  justify-self: end;
-  z-index: 1;
-}
-
-
 .directory-filter-section {
   margin-bottom: clamp(1rem, 2.4vw, 1.5rem);
 }
