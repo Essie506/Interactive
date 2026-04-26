@@ -417,27 +417,6 @@ body.directory::before {
   transform: translateX(0);
 }
 
-.directory-filter-header {
-  position: relative;
-  display: grid;
-  grid-template-columns: var(--icon-btn-size) 1fr var(--icon-btn-size);
-  align-items: center;
-    margin: 0 0 0.875rem;
-  padding: 0.875rem 1.125rem;
-  background: var(--navbar-bg);
-  overflow: hidden;
-  min-height: var(--bar-height);
-   z-index: 0;
-}
-
-.directory-filter-header::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--navbar-bg-after);
-  pointer-events: none;
-   z-index: 0;
-}
 
 .directory-filter-header > div {
   grid-column: 2;
@@ -446,26 +425,12 @@ body.directory::before {
   text-align: center;
 }
 
-.directory-filter-header h2 {
-  margin: 0;
-  font-size: var(--directory-font-size);
-  color: var(--text-dark);
-}
-
 .directory-filter-close {
   grid-column: 3;
   justify-self: end;
   z-index: 1;
 }
 
-.directory-filter-body {
-  flex: 1 1 auto;
-  min-height: 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-  padding: clamp(0.875rem, 2vw, 1.25rem);
-}
 
 .directory-filter-section {
   margin-bottom: clamp(1rem, 2.4vw, 1.5rem);
