@@ -641,6 +641,7 @@
 
 .composer-header h3,
 .directory-filter-header h2,
+.directory-filter-header > div,
 .messages-header h3,
 .messages-popup-title,
 .messages-popout-title {
