@@ -491,7 +491,7 @@ body.directory::before {
 }
 
 .directory-filter-group-toggle {
-margin-left: 1rem;
+  margin: 0 1rem;
 }
 
 .directory-filter-section-toggle i,
