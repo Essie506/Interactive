@@ -650,6 +650,7 @@ body.directory::before {
    border: none;
    cursor: pointer;
   transform: translateY(1px);
+   gap: 1rem;
 }
 
 .directory-filter-reset {
