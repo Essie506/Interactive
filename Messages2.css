@@ -463,13 +463,9 @@ body.messages-open {
   align-items: center;
   overflow: visible;
   background: var(--navbar-bg);
-}
-
-.messages-header,
-.messages-popup-header,
-.messages-popout-header {
  height: var(--bar-height-large);
   padding: 0.75rem 0.5rem;
+   z-index: 2;
 }
 
 .messages-header::after,
@@ -480,6 +476,7 @@ body.messages-open {
   inset: 0;
   background: var(--navbar-bg-after);
   pointer-events: none;
+   z-index: 1;
 }
 
 .messages-back {
@@ -626,6 +623,7 @@ body.messages-open {
  width: var(--chevron-size);
   height: var(--chevron-size);
   clip-path: polygon(100% 100%, 0 100%, 100% 0);
+   z-index: 20;
 }
 
 .profile-hero-corner .chevron-btn {
