@@ -88,7 +88,7 @@ filterPanels.forEach(panel => {
 // INNER FILTER GROUP TOGGLES
 // =========================
 
-const filterGroups = document.querySelectorAll('.directory-filter-group');
+const filterGroups = document.querySelectorAll('.directory-filter-subgroup');
 
 filterGroups.forEach(group => {
   const toggle = group.querySelector('.directory-filter-group-toggle');
