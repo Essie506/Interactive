@@ -571,7 +571,7 @@
   padding: 0.875rem 1.125rem;
   background: var(--navbar-bg);
   overflow: hidden;
-  min-height: var(--bar-height);
+  min-height: var(--bar-height-large);
     z-index: 0;
   font-size: var(--main-font-size);
 }
