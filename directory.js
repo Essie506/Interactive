@@ -43,6 +43,7 @@ if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
 
 const selectedFilters = new Set();
 
+
 // =========================
 // PILL TOGGLES
 // =========================
@@ -95,6 +96,31 @@ if (distanceRange && distanceValue) {
     distanceValue.textContent = `${distanceRange.value} miles`;
   });
 }
+
+// =========================
+// FILTER GROUP TOGGLES
+// =========================
+
+const filterGroups = document.querySelectorAll('.directory-filter-group');
+
+filterGroups.forEach(group => {
+  const toggle = group.querySelector('.directory-filter-group-toggle');
+
+  if (!toggle) return;
+
+  toggle.addEventListener('click', () => {
+    const isOpen = group.classList.contains('open');
+
+    // close all
+    filterGroups.forEach(g => g.classList.remove('open'));
+
+    // reopen this one if it wasn't open
+    if (!isOpen) {
+      group.classList.add('open');
+    }
+  });
+});
+
 
 
 // =========================
