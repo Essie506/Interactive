@@ -557,7 +557,8 @@
   overflow: hidden;
 }
 
-.composer-header {
+.composer-header, 
+.directory-filter-header {
   position: relative;
   display: grid;
   grid-template-columns: var(--icon-btn-size) 1fr auto;
@@ -571,7 +572,8 @@
   font-size: var(--main-font-size);
 }
 
-.composer-header::after {
+.composer-header::after,
+.directory-filter-header::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -594,7 +596,8 @@
   justify-self: center;
 }
 
-.composer-close {
+.composer-close,
+.directory-filter-close {
   grid-column: 3;
   justify-self: end;
   position: static;
@@ -602,7 +605,8 @@
   z-index: 1;
 }
 
-.composer-body {
+.composer-body, 
+.directory-filter-body {
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
@@ -611,7 +615,17 @@
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  padding: 1.125rem 1.125rem calc(1.125rem + env(safe-area-inset-bottom));
+}
+
+.directory-filter-body {
+  padding: var(--panel-padding);
+}
+
+.composer-body {
+  padding:
+    var(--panel-padding-fixed)
+    var(--panel-padding-fixed)
+    calc(var(--panel-padding-fixed) + env(safe-area-inset-bottom));
 }
 
 .composer-input-wrap {
