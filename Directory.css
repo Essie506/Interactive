@@ -69,6 +69,8 @@ body.directory {
   --directory-thumb-width: calc(5.25rem * var(--directory-card-scale));
   --directory-thumb-height: calc(4.25rem * var(--directory-card-scale));
 
+--directory-font-size: clamp(1rem, 1.2vw, 1.15rem);
+
   margin: 0;
   background: var(--index-bg);
   min-height: 100dvh;
