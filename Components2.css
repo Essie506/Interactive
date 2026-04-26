@@ -566,7 +566,8 @@
 
 
 .composer-modal.open,
-.directory-filter-menu.open {
+.directory-filter-menu.open,
+.messages-modal.open {
   transform: translateX(0);
 }
 
