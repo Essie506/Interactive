@@ -473,7 +473,8 @@ body.directory::before {
   margin-bottom: clamp(1rem, 2.4vw, 1.5rem);
 }
 
-.directory-filter-section-toggle {
+.directory-filter-section-toggle, 
+directory-filter-group-toggle {
    all: unset;
   width: 100%;
   display: flex;
@@ -489,13 +490,15 @@ body.directory::before {
   text-align: left;
 }
 
-.directory-filter-section-toggle i {
+.directory-filter-section-toggle i,
+.directory-filter-group-toggle i {
   font-size: 0.8rem;
   opacity: 0.65;
   transition: transform 0.25s ease;
 }
 
-.directory-filter-panel.open .directory-filter-section-toggle i {
+.directory-filter-panel.open .directory-filter-section-toggle i,
+.directory-filter-group-toggle i {
   transform: rotate(180deg);
 }
 
@@ -673,38 +676,11 @@ body.directory::before {
   display: block;
 }
 
-.directory-filter-group-toggle {
-  width: 100%;
-  text-align: left;
-  padding: 0.5rem 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--text-dark);
-  letter-spacing: -0.02em;
-
-  font-size:  var(--directory-font-size);
-}
-
-.directory-filter-group-toggle i {
-  font-size:  var(--directory-font-size);
-  opacity: 0.6;
-  transition: transform 0.25s ease, opacity 0.2s ease;
-}
-
-/* rotate when open */
-.directory-filter-group.open .directory-filter-group-toggle i {
-  transform: rotate(180deg);
-  opacity: 1;
-}
 
 .directory-filter-subgroup.open .directory-filter-group-content {
   display: block;
 }
 
-.directory-filter-subgroup.open .directory-filter-group-toggle i {
-  transform: rotate(180deg);
-}
 
 @media (max-width: 900px) {
   .directory-filter-menu {
