@@ -567,11 +567,12 @@
   display: grid;
   grid-template-columns: var(--icon-btn-size) 1fr auto;
   align-items: center;
-  margin: -1.125rem -1.125rem 0.875rem;
+  margin: 0 0 0.875rem;
   padding: 0.875rem 1.125rem;
   background: var(--navbar-bg);
   overflow: hidden;
   min-height: var(--bar-height);
+    z-index: 0;
   font-size: var(--main-font-size);
 }
 
@@ -594,7 +595,6 @@
   font-size: var(--main-font-size);
   color: var(--text-dark);
   text-align: center;
-  font-weight: 700;
   z-index: 1;
   justify-self: center;
 }
@@ -611,12 +611,12 @@
   display: flex;
   flex-direction: column;
   gap: 0.875rem;
-  flex: 1;
+  flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
-  padding-bottom: 0.75rem;
+  padding: 1.125rem 1.125rem calc(1.125rem + env(safe-area-inset-bottom));
 }
 
 .composer-input-wrap {
