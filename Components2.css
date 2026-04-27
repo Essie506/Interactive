@@ -681,10 +681,7 @@ textarea.post-input.composer-input {
 .composer-footer {
     flex: 1 1 auto;
   display: flex;
-  justify-content: flex-end;
   position: absolute;
-  bottom: 0;
-  right: 0.1rem;
 }
 
 
