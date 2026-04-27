@@ -513,6 +513,8 @@
   left: auto;
   box-shadow: 12px 0 30px rgba(0, 0, 0, 0.14);
   transform: translateX(100%);
+  bottom: 0;
+  max-height: 100dvh;
 }
 
 .composer-modal.open,
@@ -541,6 +543,7 @@
   grid-template-columns: var(--icon-btn-size) 1fr auto;
   align-items: center;
   height: var(--bar-height-large);
+   flex: 0 0 var(--bar-height-large);
   margin: 0;
   padding: 0 1.125rem;
   background: var(--navbar-bg);
@@ -622,6 +625,9 @@
 
 .directory-filter-body {
   padding: var(--panel-padding);
+     flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
 }
 
 /* ✅ COMPOSER FIX START */
