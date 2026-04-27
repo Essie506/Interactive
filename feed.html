@@ -599,63 +599,70 @@
       </button>
     </div>
 
-    <div class="composer-body">
-      <div class="composer-input-wrap">
-        <div class="avatar">
-          <i class="fa-solid fa-user"></i>
-        </div>
+ <div class="composer-body">
 
-        <textarea
-          class="post-input composer-input"
-          id="composerInput"
-          placeholder="What’s on your mind?"
-        ></textarea>
-
-        <div class="composer-footer">
-          <button class="upload-btn send-btn" aria-label="Send post">
-            <span class="send-text">Post</span>
-          </button>
-        </div>
-      </div>
-
-      <div class="post-preview composer-preview" id="composerPreview"></div>
-
-      <input
-        type="file"
-        id="composerMediaUpload"
-        accept="image/*,video/*"
-        multiple
-        hidden
-      />
-
-      <div class="composer-bottom-bar">
-        <div class="composer-tools">
-          <label for="composerMediaUpload" class="upload-btn" title="Add image or video">
-            <i class="fa-solid fa-image"></i>
-          </label>
-
-          <button type="button" class="upload-btn tag-btn" title="Tag people">
-            <i class="fa-solid fa-user-plus"></i>
-          </button>
-
-          <button type="button" class="upload-btn calendar-btn" title="Add to calendar">
-            <i class="fa-regular fa-calendar-days"></i>
-          </button>
-
-          <button type="button" class="upload-btn gif-btn" title="Add GIF">
-            <span>GIF</span>
-          </button>
-
-          <button type="button" class="upload-btn emoji-btn" title="Add emoji">
-            <i class="fa-regular fa-face-smile"></i>
-          </button>
-
-          <button type="button" class="upload-btn location-btn" title="Add location">
-            <i class="fa-solid fa-location-dot"></i>
-          </button>
-        </div>
-      </div>
+  <div class="composer-input-wrap">
+    <div class="avatar">
+      <i class="fa-solid fa-user"></i>
     </div>
+
+    <!-- NEW WRAPPER -->
+    <div class="composer-main">
+
+      <textarea
+        class="post-input composer-input"
+        id="composerInput"
+        placeholder="What’s on your mind?"
+      ></textarea>
+
+      <div class="composer-footer">
+        <button class="upload-btn send-btn" aria-label="Send post">
+          <span class="send-text">Post</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="post-preview composer-preview" id="composerPreview"></div>
+
+  <input
+    type="file"
+    id="composerMediaUpload"
+    accept="image/*,video/*"
+    multiple
+    hidden
+  />
+
+  <div class="composer-bottom-bar">
+    <div class="composer-tools">
+      <label for="composerMediaUpload" class="upload-btn" title="Add image or video">
+        <i class="fa-solid fa-image"></i>
+      </label>
+
+      <button type="button" class="upload-btn tag-btn" title="Tag people">
+        <i class="fa-solid fa-user-plus"></i>
+      </button>
+
+      <button type="button" class="upload-btn calendar-btn" title="Add to calendar">
+        <i class="fa-regular fa-calendar-days"></i>
+      </button>
+
+      <button type="button" class="upload-btn gif-btn" title="Add GIF">
+        <span>GIF</span>
+      </button>
+
+      <button type="button" class="upload-btn emoji-btn" title="Add emoji">
+        <i class="fa-regular fa-face-smile"></i>
+      </button>
+
+      <button type="button" class="upload-btn location-btn" title="Add location">
+        <i class="fa-solid fa-location-dot"></i>
+      </button>
+    </div>
+  </div>
+
+</div>
 
   </div>
 </div>
