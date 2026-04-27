@@ -651,35 +651,46 @@
     calc(var(--panel-padding-fixed) + env(safe-area-inset-bottom));
 }
 
+
 .composer-input-wrap {
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
   display: grid;
-    grid-template-columns: auto 1fr;
-  align-items: start;
+  grid-template-columns: auto 1fr;
+  align-items: stretch;
   gap: 0.75rem;
+}
+
+.composer-main {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .composer-input {
   width: 100%;
-  height: 100%;
-  min-height: 100%;
+  flex: 1 1 auto;
+  min-height: 10rem;
+  height: auto;
   max-height: none;
   resize: none;
-  overflow-y: visible;
-
-  /* 👇 creates space so text doesn’t go under button */
- padding: 1.125rem 1.125rem 4.25rem 1.125rem;
-   bos-size: border-box;
+  overflow: hidden;
+  padding: 1.125rem;
+  box-sizing: border-box;
 }
 
 .composer-footer {
-  position: sticky;
-  right: 1.25rem;
-  bottom: 1.25rem;
+  position: static;
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-end;
   z-index: 5;
 }
+
+
+
 
 .composer-footer .send-btn {
   pointer-events: auto;
