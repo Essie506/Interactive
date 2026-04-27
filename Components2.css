@@ -532,6 +532,10 @@
   overflow: hidden;
 }
 
+.composer-card {
+  position: relative;
+}
+
 /* shared modal headers */
 .composer-header,
 .directory-filter-header,
@@ -633,6 +637,7 @@
 /* ✅ COMPOSER FIX START */
 .composer-body {
   overflow: hidden;
+   min-height: 0;
   padding:
     var(--panel-padding-fixed)
     var(--panel-padding-fixed)
@@ -650,23 +655,27 @@
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
-  display: flex;
+  display: grid;
+    grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 0.75rem;
 }
 
 .composer-input {
   width: 100%;
   height: 100%;
-  min-height: 0;
+  min-height: 100%;
   max-height: none;
   resize: none;
   overflow-y: auto;
 
   /* 👇 creates space so text doesn’t go under button */
-  padding: 1.125rem 1.125rem 4.25rem 3.625rem;
+ padding: 1.125rem 1.125rem 4.25rem 1.125rem;
+   bos-size: border-box;
 }
 
 .composer-footer {
-  position: absolute;
+  position: sticky;
   right: 1.25rem;
   bottom: 1.25rem;
   z-index: 5;
