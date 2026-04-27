@@ -693,29 +693,31 @@
    margin-top: auto;
 }
 
-.messages .upload-btn.send-btn {
-  margin: 0 auto;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 1rem;
-}
 
+.directory-filter-reset, .directory-filter-apply,
 .upload-btn.send-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  overflow: visible;
-  width: 3.4rem;
-  height: 3.4rem;
+   flex: 1;
+   align-items: center;
+   line-height: 1.1;
+   text-align: center;
+   padding: 0.6rem;
+   border-radius: 0.6rem;
+   border: none;
+   cursor: pointer;
+  transform: translateY(1px);
+   gap: 1.75rem;
 }
 
-.upload-btn.send-btn .if-arrow-icon {
-  display: block;
-  width: 2.85rem;
-  height: 2.85rem;
-  flex: 0 0 2.85rem;
-  color: var(--text-dark);
+.directory-filter-reset {
+  background: rgba(9, 26, 58, 0.08);
+  color: var(--main-color);
+}
+
+.directory-filter-apply, 
+.upload-btn.send-btn {
+  background: var(--main-color);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(7, 153, 146, 0.22);
 }
 
 .upload-btn.send-btn:hover,
