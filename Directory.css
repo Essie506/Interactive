@@ -319,50 +319,6 @@ body.directory .nav-center.verified {
   line-height: 1;
 }
 
-/* =========================
-   TABLET / MOBILE
-========================= */
-@media (max-width: 900px) {
-  body.directory {
-    --directory-page-pad-top: calc(var(--bar-height) + 0.125rem);
-  }
-
-  .directory-listing-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .directory-listing-media {
-    order: 2;
-  }
-
-  .directory-listing-info {
-    order: 1;
-  }
-
-  .directory-hero-media {
-    aspect-ratio: 16 / 9;
-  }
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-@media (max-width: 700px) {
-  body.directory {
-    --directory-card-inner-pad: calc(0.85rem * var(--directory-card-scale));
-    --directory-thumb-width: calc(4.6rem * var(--directory-card-scale));
-    --directory-thumb-height: calc(3.85rem * var(--directory-card-scale));
-  }
-
-  .directory-listing-top {
-    align-items: flex-start;
-  }
-
-  .directory-card-actions {
-    flex-direction: column;
-  }
-}
-
 body.directory::before {
   content: "";
   position: fixed;
@@ -598,12 +554,46 @@ body.directory::before {
 }
 
 
+/* =========================
+   TABLET / MOBILE
+========================= */
 @media (max-width: 900px) {
-  .directory-filter-menu {
-    width: 100%;
+  body.directory {
+    --directory-page-pad-top: calc(var(--bar-height) + 0.125rem);
   }
 
-  .directory-filter-header {
-    min-height: var(--bar-height);
+  .directory-listing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .directory-listing-media {
+    order: 2;
+  }
+
+  .directory-listing-info {
+    order: 1;
+  }
+
+  .directory-hero-media {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 700px) {
+  body.directory {
+    --directory-card-inner-pad: calc(0.85rem * var(--directory-card-scale));
+    --directory-thumb-width: calc(4.6rem * var(--directory-card-scale));
+    --directory-thumb-height: calc(3.85rem * var(--directory-card-scale));
+  }
+
+  .directory-listing-top {
+    align-items: flex-start;
+  }
+
+  .directory-card-actions {
+    flex-direction: column;
   }
 }
