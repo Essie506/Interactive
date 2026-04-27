@@ -640,7 +640,7 @@
 .composer-input {
   width: 100%;
   min-height: 6.875rem;
-  max-height: 40dvh;
+  max-height: 90dvh;
   resize: none;
   overflow-y: auto;
   border-radius: 1.375rem;
