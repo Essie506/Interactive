@@ -645,6 +645,9 @@
 
 .composer-input-wrap {
   position: relative;
+    width: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .composer-input {
@@ -665,11 +668,10 @@
 }
 
 .composer-footer {
-  display: flex;
-  justify-content: flex-end;
   position: absolute;
-  bottom: 0;
-  right: 0.1rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 5;
 }
 
 .composer-footer .send-btn {
@@ -769,7 +771,6 @@
 
 .composer-bottom-bar {
      flex: 0 0 auto;
-   position: sticky;
   margin-top: 0;
    bottom: 0;
   padding: 0.375rem 0.5rem 0;
