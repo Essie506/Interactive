@@ -765,9 +765,18 @@ textarea.post-input.composer-input {
   transform: translateY(0.2rem);
 }
 
+.upload-btn.send-btn {
+  opacity: 0.4;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+
 .upload-btn.send-btn:active {
   box-shadow: var(--shadow-strong);
   transform: scale(0.92);
+    opacity: 1;
+  pointer-events: auto;
 }
 
 .upload-btn.send-btn .if-arrow-icon {
