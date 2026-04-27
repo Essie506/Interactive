@@ -1,3 +1,27 @@
+const input = document.getElementById("composerInput");
+const postBtn = document.querySelector(".composer-footer .send-btn");
+const preview = document.getElementById("composerPreview");
+
+function updatePostButtonState() {
+  const hasText = input.value.trim().length > 0;
+  const hasMedia = preview.children.length > 0;
+
+  if (hasText || hasMedia) {
+    postBtn.classList.add("active");
+  } else {
+    postBtn.classList.remove("active");
+  }
+}
+
+input.addEventListener("input", () => {
+  // auto-grow
+  input.style.height = "auto";
+  input.style.height = input.scrollHeight + "px";
+
+  // update button state
+  updatePostButtonState();
+});
+
 function escapeHtml(text) {
   const div = document.createElement("div");
   div.textContent = text ?? "";
