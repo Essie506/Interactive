@@ -637,6 +637,7 @@
   position: relative;
     flex: 1 1 auto;
    display: flex;
+   width: 100%;
 }
 
 .composer-input {
@@ -694,8 +695,7 @@
   display: flex;
   justify-content: flex-end;
   position: static;
-   margin-top: auto;
-    flex: 0 0 auto;
+   margin-top: 0;
 }
 
 
@@ -768,7 +768,6 @@
   position: static;
   z-index: 2;
   justify-content: center;
-    flex: 0 0 auto;
 }
 
 /* =========================
