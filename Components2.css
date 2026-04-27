@@ -647,7 +647,6 @@
 .composer-input-wrap {
   position: relative;
    min-height: 0;
-   max-height: none;
   height: 100%;
   width: 100%;
   display: flex;
@@ -682,15 +681,16 @@ textarea.post-input.composer-input {
     flex: 1 1 auto;
   display: flex;
   position: absolute;
+   width: 100%;
 }
-
-
-
 
 .composer-footer .send-btn {
   pointer-events: auto;
+    position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  z-index: 5;
 }
-/* ✅ COMPOSER FIX END */
 
 .composer-preview {
   display: none;
