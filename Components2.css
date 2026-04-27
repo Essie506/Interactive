@@ -644,22 +644,24 @@
 }
 
 .composer-input-wrap {
-  position: relative;
-    width: 100%;
   flex: 1 1 auto;
   min-height: 0;
+  position: relative; /* 🔑 anchors button */
+  display: flex;
+  flex-direction: column;
 }
 
 .composer-input {
+   flex: 1 1 auto;
   width: 100%;
   min-height: 6.875rem;
-  max-height: 16.25rem;
+   height: 100%;
   resize: none;
-  overflow-y: hidden;
-  border-radius: 1.375rem;
+  overflow-y: auto;
+
   border: none;
   outline: none;
-  padding: 1.125rem 1.125rem 1.125rem 3.625rem;
+  padding-bottom: 4rem;
   font-size: 1rem;
   line-height: 1.45;
   background: #ffffff;
