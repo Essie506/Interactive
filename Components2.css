@@ -635,13 +635,17 @@
 
 .composer-input-wrap {
   position: relative;
+    flex: 1 1 auto;
+   display: flex;
 }
 
 .composer-input {
+    flex: 1 1 auto;
   width: 100%;
   min-height: 6.875rem;
-  max-height: 90dvh;
+  max-height: none;
   resize: none;
+   height: 100%;
   overflow-y: auto;
   border-radius: 1.375rem;
   border: none;
@@ -682,7 +686,7 @@
   padding: 0;
   margin: 0;
   width: auto;
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   gap: 1.5rem;
 }
 
@@ -691,6 +695,7 @@
   justify-content: flex-end;
   position: static;
    margin-top: auto;
+    flex: 0 0 auto;
 }
 
 
@@ -763,6 +768,7 @@
   position: static;
   z-index: 2;
   justify-content: center;
+    flex: 0 0 auto;
 }
 
 /* =========================
