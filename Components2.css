@@ -640,40 +640,31 @@
     calc(var(--panel-padding-fixed) + env(safe-area-inset-bottom));
 }
 
-.composer-input-wrap,
-.composer-input {
-  position: relative;
+.composer-input-wrap {
   flex: 1 1 auto;
   min-height: 0;
-  display: block;
   width: 100%;
-    height: 100%;
+  display: flex;
+}
+
+.composer-input {
+  width: 100%;
+  height: 100%;
   min-height: 0;
   max-height: none;
   resize: none;
   overflow-y: auto;
 
-  border-radius: 1.375rem;
-  border: none;
-  outline: none;
-
+  /* 👇 creates space so text doesn’t go under button */
   padding: 1.125rem 1.125rem 4.25rem 3.625rem;
 }
 
-
 .composer-footer {
-    flex: 0 0 auto;
-  margin-top: auto;
   position: absolute;
-  right: 0.875rem;
-  bottom: 0.875rem;
-  z-index: 3;
-  margin: 0;
-  display: flex;
-  justify-content: flex-end;
-  pointer-events: none;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  z-index: 5;
 }
-
 
 .composer-footer .send-btn {
   pointer-events: auto;
