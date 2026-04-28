@@ -575,43 +575,50 @@
 
   
 
-<div class="composer-overlay" id="composerOverlay"></div>
+ <div class="composer-overlay" id="composerOverlay"></div>
 
-<div class="composer-modal" id="composerModal" aria-hidden="true">
-  <div class="composer-card">
-    <div class="composer-header">
-      <div class="composer-header-spacer" aria-hidden="true"></div>
-      <h3>Create post</h3>
+  <div class="composer-modal" id="composerModal" aria-hidden="true">
+    <div class="composer-card">
+      <div class="composer-header">
+        <div class="composer-header-spacer" aria-hidden="true"></div>
+        <h3>Create post</h3>
+        <button type="button" class="messages-back" id="composerClose" aria-label="Close">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
 
-      <button type="button" class="messages-back" id="composerClose" aria-label="Close">
-        <i class="fa-solid fa-arrow-right"></i>
-      </button>
-    </div>
-
-    <div class="composer-body">
-      <div class="composer-foot">
+      <div class="composer-body">
         <div class="composer-input-wrap">
           <div class="avatar">
             <i class="fa-solid fa-user"></i>
           </div>
 
-          <textarea
-            class="post-input composer-input"
+          <textarea class="post-input composer-input"
             id="composerInput"
             placeholder="What’s on your mind?"
           ></textarea>
 
-          <button class="upload-btn send-btn" aria-label="Send post">
-            <span class="send-text">Post</span>
-          </button>
+        <div class="composer-footer">
+  <button class="upload-btn send-btn" aria-label="Send post">
+    <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>  
         </div>
-      </div>
 
-      <div class="composer-preview" id="composerPreview"></div>
+        <div class="post-preview composer-preview" id="composerPreview"></div>
 
-    
-
-
+        <input
+          type="file"
+          id="composerMediaUpload"
+          accept="image/*,video/*"
+          multiple
+          hidden
+        />
 
         <div class="composer-bottom-bar">
           <div class="composer-tools">
@@ -643,6 +650,8 @@
       </div>
     </div>
   </div>
+
+
 
   <script src="menu.js"></script>
   <script src="messages.js"></script>
