@@ -4,7 +4,7 @@
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;f
+  left: 0;
   right: 0;
   width: 100%;
   height: var(--bar-height);
@@ -633,7 +633,7 @@
       overflow-y: auto;
 }
 
-composer-body {
+.composer-body {
    overflow: hidden;
    height: 100%;
 }
@@ -820,12 +820,9 @@ textarea {
   pointer-events: auto;
 }
 
-.upload-btn.send-btn .if-arrow-icon {
-  display: block;
-  width: 2.85rem;
-  height: 2.85rem;
-  flex: 0 0 2.85rem;
-  color: var(--text-dark);
+.upload-btn.send-btn.active {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .composer-bottom-bar {
