@@ -643,7 +643,6 @@
 
 .directory-filter-body {
   padding: var(--panel-padding);
-     flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
 }
@@ -668,7 +667,6 @@
 }
 
 textarea.post-input.composer-input {
-  flex: 1 1 auto;
   display: block;
   width: 100%;
    min-height: 3rem;
@@ -692,8 +690,7 @@ textarea.post-input.composer-input {
 }
 
 .composer-footer {
-    flex: 1 1 auto;
-  display: flex;
+  display: block;
   position: relative;
    width: 100%;
   min-height: 0;
