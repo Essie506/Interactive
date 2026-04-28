@@ -26,11 +26,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastScrollY = window.scrollY;
 
-  function autoResizeTextarea(textarea, maxHeight = 260) {
+  function resetTextareaLayout(textarea) {
     if (!textarea) return;
-    textarea.style.height = "auto";
-    textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
-    textarea.style.overflowY = textarea.scrollHeight > maxHeight ? "auto" : "hidden";
+    textarea.style.removeProperty("height");
+    textarea.style.overflowY = "auto";
   }
 
   function updateComposerState() {
@@ -40,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const hasMedia = composerPreview && composerPreview.children.length > 0;
 
     composerSubmit.classList.toggle("ready", hasText || hasMedia);
+    composerSubmit.classList.toggle("active", hasText || hasMedia);
   }
 
   function unlockBodyScroll() {
@@ -60,11 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     composerModal.classList.remove("open");
     composerModal.setAttribute("aria-hidden", "true");
 
-    if (composerInput) {
-      composerInput.style.height = "";
-      composerInput.style.overflowY = "hidden";
-    }
-
+    resetTextareaLayout(composerInput);
     unlockBodyScroll();
   }
 
@@ -72,14 +68,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!composerOverlay || !composerModal) return;
 
     window.interactiveMessages?.closeAll?.();
+
     composerOverlay.classList.add("open");
     composerModal.classList.add("open");
     composerModal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
-    if (composerInput) {
-      autoResizeTextarea(composerInput, 260);
-    }
+    resetTextareaLayout(composerInput);
+    updateComposerState();
   }
 
   function openMenuSearch() {
@@ -97,103 +93,83 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (composerToggle) {
-    composerToggle.addEventListener("click", openComposer);
-  }
+  composerToggle?.addEventListener("click", openComposer);
+  composerClose?.addEventListener("click", closeComposer);
 
-  if (composerClose) {
-    composerClose.addEventListener("click", closeComposer);
-  }
+  composerOverlay?.addEventListener("click", closeComposer);
 
-  if (composerOverlay) {
-    composerOverlay.addEventListener("click", closeComposer);
-  }
+  composerInput?.addEventListener("input", () => {
+    resetTextareaLayout(composerInput);
+    updateComposerState();
+  });
 
-  if (composerInput) {
-    composerInput.addEventListener("input", () => {
-      autoResizeTextarea(composerInput, 260);
-      updateComposerState();
-    });
-  }
+  composerMediaUpload?.addEventListener("change", function () {
+    if (!composerPreview) return;
 
-  if (composerMediaUpload && composerPreview) {
-    composerMediaUpload.addEventListener("change", function () {
-      composerPreview.innerHTML = "";
+    composerPreview.innerHTML = "";
 
-      Array.from(this.files).forEach((file) => {
-        const fileURL = URL.createObjectURL(file);
+    Array.from(this.files).forEach((file) => {
+      const fileURL = URL.createObjectURL(file);
 
-        if (file.type.startsWith("image/")) {
-          const img = document.createElement("img");
-          img.src = fileURL;
-          img.alt = file.name;
-          composerPreview.appendChild(img);
-        } else if (file.type.startsWith("video/")) {
-          const video = document.createElement("video");
-          video.src = fileURL;
-          video.controls = true;
-          composerPreview.appendChild(video);
-        }
-      });
-
-      composerPreview.classList.toggle("has-media", composerPreview.children.length > 0);
-      updateComposerState();
-    });
-  }
-
-  if (emojiBtn && composerInput) {
-    emojiBtn.addEventListener("click", () => {
-      composerInput.value += " 😊";
-      composerInput.focus();
-      autoResizeTextarea(composerInput, 260);
-      updateComposerState();
-    });
-  }
-
-  if (tagBtn && composerInput) {
-    tagBtn.addEventListener("click", () => {
-      composerInput.value += " @";
-      composerInput.focus();
-      autoResizeTextarea(composerInput, 260);
-      updateComposerState();
-    });
-  }
-
-  if (gifBtn && composerInput) {
-    gifBtn.addEventListener("click", () => {
-      composerInput.value += " [GIF] ";
-      composerInput.focus();
-      autoResizeTextarea(composerInput, 260);
-      updateComposerState();
-    });
-  }
-
-  if (locationBtn && composerInput) {
-    locationBtn.addEventListener("click", () => {
-      composerInput.value += " 📍";
-      composerInput.focus();
-      autoResizeTextarea(composerInput, 260);
-      updateComposerState();
-    });
-  }
-
-  if (topSearchToggle) {
-    topSearchToggle.addEventListener("click", openMenuSearch);
-  }
-
-  if (bottomSearchToggle) {
-    bottomSearchToggle.addEventListener("click", openMenuSearch);
-  }
-
-  if (menuSearchInput) {
-    menuSearchInput.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        const query = menuSearchInput.value.trim();
-        if (!query) return;
-        alert(`Search for: ${query}`);
+      if (file.type.startsWith("image/")) {
+        const img = document.createElement("img");
+        img.src = fileURL;
+        img.alt = file.name;
+        composerPreview.appendChild(img);
+      } else if (file.type.startsWith("video/")) {
+        const video = document.createElement("video");
+        video.src = fileURL;
+        video.controls = true;
+        composerPreview.appendChild(video);
       }
     });
-  }
+
+    composerPreview.classList.toggle("has-media", composerPreview.children.length > 0);
+    updateComposerState();
+  });
+
+  emojiBtn?.addEventListener("click", () => {
+    if (!composerInput) return;
+    composerInput.value += " 😊";
+    composerInput.focus();
+    resetTextareaLayout(composerInput);
+    updateComposerState();
+  });
+
+  tagBtn?.addEventListener("click", () => {
+    if (!composerInput) return;
+    composerInput.value += " @";
+    composerInput.focus();
+    resetTextareaLayout(composerInput);
+    updateComposerState();
+  });
+
+  gifBtn?.addEventListener("click", () => {
+    if (!composerInput) return;
+    composerInput.value += " [GIF] ";
+    composerInput.focus();
+    resetTextareaLayout(composerInput);
+    updateComposerState();
+  });
+
+  locationBtn?.addEventListener("click", () => {
+    if (!composerInput) return;
+    composerInput.value += " 📍";
+    composerInput.focus();
+    resetTextareaLayout(composerInput);
+    updateComposerState();
+  });
+
+  topSearchToggle?.addEventListener("click", openMenuSearch);
+  bottomSearchToggle?.addEventListener("click", openMenuSearch);
+
+  menuSearchInput?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      const query = menuSearchInput.value.trim();
+      if (!query) return;
+      alert(`Search for: ${query}`);
+    }
+  });
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
@@ -201,35 +177,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-window.addEventListener("scroll", () => {
-  const currentScrollY = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentScrollY = window.scrollY;
 
-  const composerOpen = composerModal?.classList.contains("open");
-  const drawerOpen = document.getElementById("messagesModal")?.classList.contains("open");
-  const popupOpen = document.getElementById("messagesPopup")?.classList.contains("open");
-  const popoutOpen = document.getElementById("messagesPopout")?.classList.contains("open");
+    const composerOpen = composerModal?.classList.contains("open");
+    const drawerOpen = document.getElementById("messagesModal")?.classList.contains("open");
+    const popupOpen = document.getElementById("messagesPopup")?.classList.contains("open");
+    const popoutOpen = document.getElementById("messagesPopout")?.classList.contains("open");
+    const menuOpen = document.body.classList.contains("menu-open");
 
-  const menuOpen = document.body.classList.contains("menu-open"); // 👈 ADD THIS
+    if (composerOpen || drawerOpen || popupOpen || popoutOpen || menuOpen) return;
 
-  if (composerOpen || drawerOpen || popupOpen || popoutOpen || menuOpen) return; // 👈 ADD HERE
+    if (currentScrollY <= 10) {
+      navbar?.classList.remove("hide-top");
+      bottomNav?.classList.remove("hide-bottom");
+      lastScrollY = currentScrollY;
+      return;
+    }
 
-  if (currentScrollY <= 10) {
-    navbar?.classList.remove("hide-top");
-    bottomNav?.classList.remove("hide-bottom");
+    if (currentScrollY > lastScrollY) {
+      navbar?.classList.add("hide-top");
+      bottomNav?.classList.add("hide-bottom");
+    } else {
+      navbar?.classList.remove("hide-top");
+      bottomNav?.classList.remove("hide-bottom");
+    }
+
     lastScrollY = currentScrollY;
-    return;
-  }
-
-  if (currentScrollY > lastScrollY) {
-    navbar?.classList.add("hide-top");
-    bottomNav?.classList.add("hide-bottom");
-  } else {
-    navbar?.classList.remove("hide-top");
-    bottomNav?.classList.remove("hide-bottom");
-  }
-
-  lastScrollY = currentScrollY;
-});
+  });
 
   window.interactiveUI = {
     closeComposer,
@@ -237,5 +212,6 @@ window.addEventListener("scroll", () => {
     openMenuSearch
   };
 
+  resetTextareaLayout(composerInput);
   updateComposerState();
 });
