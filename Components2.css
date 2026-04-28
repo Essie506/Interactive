@@ -528,7 +528,7 @@
 .messages-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -627,6 +627,7 @@
   gap: 0.875rem;
   flex: 1 1 auto;
   min-height: 0;
+   height: 100%;
   -webkit-overflow-scrolling: touch;
    overscroll-behavior: contain;
 }
@@ -662,6 +663,7 @@
    flex: 0 0 auto;
   position: relative;
    min-height: 0;
+   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
