@@ -534,6 +534,7 @@
 
 .composer-card {
   position: relative;
+    outline: 2px solid red;
 }
 
 /* shared modal headers */
