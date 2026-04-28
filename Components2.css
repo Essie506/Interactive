@@ -514,7 +514,7 @@
   box-shadow: 12px 0 30px rgba(0, 0, 0, 0.14);
   transform: translateX(100%);
   bottom: 0;
-  max-height: 100dvh;
+  max-height: 100%;
 }
 
 .composer-modal.open,
