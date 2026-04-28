@@ -627,7 +627,6 @@
   gap: 0.875rem;
   flex: 1 1 auto;
   min-height: 0;
-  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
    overscroll-behavior: contain;
 }
@@ -695,12 +694,9 @@ textarea.post-input.composer-input {
 .composer-footer {
     flex: 1 1 auto;
   display: flex;
-  position: absolute;
+  position: relative;
    width: 100%;
   min-height: 0;
-  resize: none;
-  overflow-y: auto;
-  margin-top: 0;
 }
 
 .composer-footer .send-btn {
