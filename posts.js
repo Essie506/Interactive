@@ -1,26 +1,32 @@
 const input = document.getElementById("composerInput");
 const postBtn = document.querySelector(".composer-footer .send-btn");
 const preview = document.getElementById("composerPreview");
+const footer = document.querySelector(".composer-bottom-bar");
+
+function resizeComposer() {
+  if (!input) return;
+
+  input.style.height = "auto";
+
+  const footerHeight = footer?.offsetHeight || 0;
+  const availableHeight = window.innerHeight - footerHeight - 120;
+
+  input.style.height = `${Math.min(input.scrollHeight, availableHeight)}px`;
+}
 
 function updatePostButtonState() {
   const hasText = input.value.trim().length > 0;
-  const hasMedia = preview.children.length > 0;
+  const hasMedia = preview && preview.children.length > 0;
 
-  if (hasText || hasMedia) {
-    postBtn.classList.add("active");
-  } else {
-    postBtn.classList.remove("active");
-  }
+  postBtn?.classList.toggle("active", hasText || hasMedia);
 }
 
-input.addEventListener("input", () => {
-  // auto-grow
-  input.style.height = "auto";
-  input.style.height = input.scrollHeight + "px";
-
-  // update button state
+input?.addEventListener("input", () => {
+  resizeComposer();
   updatePostButtonState();
 });
+
+window.addEventListener("resize", resizeComposer);
 
 function escapeHtml(text) {
   const div = document.createElement("div");
