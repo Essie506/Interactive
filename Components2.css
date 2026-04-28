@@ -656,7 +656,7 @@
 }
 
 
-.composer-foot {
+.composer-footer {
   display: flex;
   justify-content: flex-end;
   position: absolute;
