@@ -1,5 +1,5 @@
 const input = document.getElementById("composerInput");
-const postBtn = document.querySelector(".composer-footer .send-btn");
+const postBtn = document.querySelector(".composer-foot .send-btn");
 const preview = document.getElementById("composerPreview");
 
 function resetComposerHeight() {
