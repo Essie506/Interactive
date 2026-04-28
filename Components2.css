@@ -687,6 +687,7 @@ textarea.post-input.composer-input {
   resize: none;
   overflow-y: auto;
   margin-top: 0;
+ outline: 2px dashed red;
 }
 
 .composer-footer .send-btn {
