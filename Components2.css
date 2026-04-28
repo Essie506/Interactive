@@ -853,24 +853,6 @@ textarea.post-input.composer-input {
   z-index: 2;
 }
 
-.post-input {
-  width: 100%;
-  min-height: 3.625rem;
-  height: 3.625rem;
-  resize: none;
-  border-radius: 1.125rem;
-  border: none;
-  outline: none;
-  padding: 0.875rem 1rem 0.875rem 3.625rem;
-  font-size: 0.9375rem;
-  line-height: 1.4;
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--text-dark);
-  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
-  transition: height 0.25s ease, min-height 0.25s ease;
-  margin-top: 0.1875rem;
-}
-
 .post-input::placeholder {
   color: rgba(9, 26, 58, 0.6);
 }
