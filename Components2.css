@@ -690,6 +690,7 @@ textarea.post-input.composer-input {
 }
 
 .composer-foot {
+     flex: 1 1 auto;
   display: flex;
   position: relative;
    width: 100%;
