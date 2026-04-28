@@ -660,7 +660,7 @@
 .composer-input-wrap {
    margin-top: 0;
   flex: 1 1 auto; 
-  position: relative;
+  position: absolute;
    min-height: 0;
   width: 100%;
   display: flex;
@@ -691,7 +691,6 @@ textarea.post-input.composer-input {
 }
 
 .composer-foot {
-     flex: 1 1 0;
    margin-top: 0;
   display: flex;
   position: relative;
