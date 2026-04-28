@@ -671,7 +671,7 @@ textarea.post-input.composer-input {
   flex: 1 1 auto;
   display: block;
   width: 100%;
-   min-height: 12rem;
+   min-height: 3rem;
   height: auto;
   max-height: 90dvh;
   resize: none;
