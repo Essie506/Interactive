@@ -23,6 +23,7 @@ function autoGrowComposerInput() {
 
   if (wrap) {
     wrap.style.height = `${nextHeight}px`;
+    wrap.style.minHeight = `${minHeight}px`;
   }
 }
 
