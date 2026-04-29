@@ -215,8 +215,6 @@
 .search-toggle:focus-visible,
 .icon-btn:hover,
 .icon-btn:focus-visible,
-.upload-btn:hover,
-.upload-btn:focus-visible,
 .composer-close:hover,
 .composer-close:focus-visible,
 .messages-close:hover,
@@ -248,7 +246,6 @@
 /* ACTIVE */
 .search-toggle:active,
 .icon-btn:active,
-.upload-btn:active,
 .composer-close:active,
 .menu-toggle:active,
 .messages-back:active,
@@ -756,6 +753,7 @@ textarea.post-input.composer-input {
   cursor: pointer;
   transform: translateY(1px);
   gap: 1.75rem;
+   justify-content: center;
 }
 
 .directory-filter-reset, .directory-filter-apply {
