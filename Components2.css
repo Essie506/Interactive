@@ -637,7 +637,7 @@
 }
 
 .composer-body {
-   overflow: hidden;
+   overflow: visible;
 }
 
 .directory-filter-body {
