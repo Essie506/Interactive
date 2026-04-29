@@ -2,10 +2,17 @@ const input = document.getElementById("composerInput");
 const postBtn = document.querySelector(".composer-foot .send-btn");
 const preview = document.getElementById("composerPreview");
 
-function resetComposerHeight() {
+function autoGrowComposerInput() {
   if (!input) return;
 
-  input.style.height = "";
+  const maxHeight = 288; // 18rem
+
+  input.style.height = "auto";
+
+  const newHeight = Math.min(input.scrollHeight, maxHeight);
+  input.style.height = `${newHeight}px`;
+
+  input.style.overflowY = input.scrollHeight > maxHeight ? "auto" : "hidden";
 }
 
 function updatePostButtonState() {
@@ -18,13 +25,13 @@ function updatePostButtonState() {
 }
 
 input?.addEventListener("input", () => {
-  resetComposerHeight();
+  autoGrowComposerInput();
   updatePostButtonState();
 });
 
-window.addEventListener("resize", resetComposerHeight);
+window.addEventListener("resize", autoGrowComposerInput);
 
-resetComposerHeight();
+autoGrowComposerInput();
 updatePostButtonState();
 
 function escapeHtml(text) {
