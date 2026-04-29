@@ -661,7 +661,6 @@
    margin-top: 0;
   position: relative;
   height: auto;
-  min-height: 6rem;
   width: 100%;
   display: flex;
   flex-direction: column;
