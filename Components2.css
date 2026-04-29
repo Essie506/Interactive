@@ -742,8 +742,7 @@ textarea.post-input.composer-input {
   gap: 1rem;
 }
 
-.directory-filter-reset, .directory-filter-apply,
-.upload-btn.send-btn {
+.directory-filter-reset, .directory-filter-apply {
   align-items: center;
   line-height: 1.1;
   text-align: center;
@@ -763,6 +762,12 @@ textarea.post-input.composer-input {
   display: flex;
   align-items: center;
   justify-content: center;
+     align-items: center;
+  line-height: 1.1;
+  text-align: center;
+     border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
 
   height: 2.1rem;
   padding: 0 0.6rem;
@@ -774,8 +779,7 @@ textarea.post-input.composer-input {
   max-width: 6rem;
 }
 
-.directory-filter-reset,
-.messages .upload-btn.send-btn {
+.directory-filter-reset {
   background: rgba(9, 26, 58, 0.08);
   color: var(--main-color);
 }
