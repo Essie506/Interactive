@@ -694,7 +694,7 @@ textarea.post-input.composer-input {
   display: flex;
   justify-content: flex-end;
   position: absolute;
-  bottom: 0;
+  top: 3.5rem;
   right: 0.1rem;
 }
 
