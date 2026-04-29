@@ -139,12 +139,20 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
   selectThread(user);
 }
 
-  function autoResizeTextarea(textarea, maxHeight = 180) {
-    if (!textarea) return;
-    textarea.style.height = "auto";
-    textarea.style.height = `${Math.min(textarea.scrollHeight, maxHeight)}px`;
-    textarea.style.overflowY = textarea.scrollHeight > maxHeight ? "auto" : "hidden";
-  }
+function autoResizeTextarea(textarea, maxHeight = 180) {
+  if (!textarea) return;
+
+  const minHeight = textarea.dataset.minHeight || textarea.offsetHeight;
+
+  textarea.dataset.minHeight = minHeight;
+
+  textarea.style.height = `${minHeight}px`;
+
+  const nextHeight = Math.min(textarea.scrollHeight, maxHeight);
+
+  textarea.style.height = `${nextHeight}px`;
+  textarea.style.overflowY = textarea.scrollHeight > maxHeight ? "auto" : "hidden";
+}
 
   function updateThreadDots() {
     refreshThreadButtons();
@@ -950,7 +958,7 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
   function clearDrawerInput() {
     if (messagesInput) {
       messagesInput.value = "";
-      messagesInput.style.height = "";
+      messagesInput.style.height = `${messagesInput.dataset.minHeight || messagesInput.offsetHeight}px`;
       messagesInput.style.overflowY = "hidden";
     }
 
@@ -964,21 +972,25 @@ const popoutLocationBtn = document.querySelector(".popout-location-btn");
     }
   }
 
-  function clearPopupInput() {
-    if (popupMessagesInput) {
-      popupMessagesInput.value = "";
-      popupMessagesInput.style.height = "";
-      popupMessagesInput.style.overflowY = "hidden";
-    }
+function clearPopupInput() {
+  if (popupMessagesInput) {
+    popupMessagesInput.value = "";
+    popupMessagesInput.style.height = `${
+      popupMessagesInput.dataset.minHeight || popupMessagesInput.offsetHeight
+    }px`;
+    popupMessagesInput.style.overflowY = "hidden";
   }
+}
 
-  function clearPopoutInput() {
-    if (popoutMessagesInput) {
-      popoutMessagesInput.value = "";
-      popoutMessagesInput.style.height = "";
-      popoutMessagesInput.style.overflowY = "hidden";
-    }
+function clearPopoutInput() {
+  if (popoutMessagesInput) {
+    popoutMessagesInput.value = "";
+    popoutMessagesInput.style.height = `${
+      popoutMessagesInput.dataset.minHeight || popoutMessagesInput.offsetHeight
+    }px`;
+    popoutMessagesInput.style.overflowY = "hidden";
   }
+}
 
  function bindToolInsert(button, targetInput, textToInsert) {
   if (!button || !targetInput) return;
