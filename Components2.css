@@ -658,13 +658,13 @@
 
 
 .composer-input-wrap {
-   flex: 1 1 auto;
    margin-top: 0;
   position: relative;
   height: auto;
   width: 100%;
   display: flex;
   flex-direction: column;
+   overflow: visible;
 }
 
 textarea.post-input.composer-input {
