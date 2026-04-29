@@ -672,7 +672,6 @@ textarea.post-input.composer-input {
   display: block;
   width: 100%;
    min-height: 3rem;
-   height: 100%;
   resize: none;
   overflow-y: auto;
   margin-top: 0;
