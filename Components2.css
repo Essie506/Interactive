@@ -661,7 +661,6 @@
    margin-top: 0;
   flex: 1; 
   position: relative;
-    min-height: 5.5rem;
   max-height: 18rem;
   width: 100%;
   display: flex;
