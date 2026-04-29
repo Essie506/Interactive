@@ -65,9 +65,10 @@ body.messages-open {
 
 .messages-input {
   width: 100%;
-  min-height: 3.625rem;
-  max-height: 11.25rem;
+  min-height: 6rem;
+  max-height: 6rem;
   padding: 0.875rem 1rem 0.875rem 3.625rem;
+   overflow-anchor: none;
   border: none;
   outline: none;
   resize: none;
