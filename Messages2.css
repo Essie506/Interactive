@@ -66,17 +66,21 @@ body.messages-open {
 
 .messages-input-wrap {
   position: relative;
+      padding: 0.4rem 0.6rem;
+  display: flex;
+  align-items: flex-end; /* keeps input anchored nicely */
 }
 
 .messages-input {
   width: 100%;
   min-height: 6rem;
   max-height: 6rem;
-  padding: 0.875rem 1rem 0.875rem 3.625rem;
+padding: 0;
    overflow-anchor: none;
   border: none;
   outline: none;
   resize: none;
+   overflow-y: auto;
   border-radius: var(--messages-radius);
   background: var(--messages-surface);
   color: var(--messages-text);
