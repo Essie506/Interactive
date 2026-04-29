@@ -689,14 +689,15 @@ textarea.post-input.composer-input {
   box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.7);
 }
 
+
 .composer-foot {
   display: flex;
+  justify-content: flex-end;
   position: absolute;
-   width: 100%;
-  min-height: 0;
-   max-height: 100%;
-   margin-top: 0;
+  bottom: 0;
+  right: 0.1rem;
 }
+
 
 .composer-foot .send-btn {
   pointer-events: auto;
