@@ -209,6 +209,8 @@
 }
 
 /* HOVER / FOCUS */
+.media-btn a:hover,
+.media-btn a:focus-visible,
 .desktop-nav-links a:hover,
 .desktop-nav-links a:focus-visible,
 .search-toggle:hover,
@@ -244,6 +246,7 @@
 }
 
 /* ACTIVE */
+.media-btn:active,
 .search-toggle:active,
 .icon-btn:active,
 .composer-close:active,
@@ -261,29 +264,7 @@
   transform: scale(0.94);
 }
 
-/* =========================
-   BUTTONS / INPUTS
-========================= */
-.btn-modern {
-  width: 100%;
-  max-width: 5.625rem;
-  min-height: var(--btn-height);
-  padding: 0.875rem 1.625rem;
-  margin: 1.25rem auto 0;
-  background: var(--btn-modern-bg);
-  color: white;
-  border-radius: var(--radius-round);
-  border: none;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: 0.25s ease;
-  box-shadow: 0 8px 20px rgba(7, 153, 146, 0.3);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 /* =========================
    BOTTOM NAV
