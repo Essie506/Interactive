@@ -5,14 +5,24 @@ const preview = document.getElementById("composerPreview");
 function autoGrowComposerInput() {
   if (!input) return;
 
-  const maxHeight = 288; // 18rem
+  const wrap = input.closest(".composer-input-wrap");
+
+  const minHeight = 88.5;
+  const maxHeight = 320;
 
   input.style.height = "auto";
 
-  const newHeight = Math.min(input.scrollHeight, maxHeight);
-  input.style.height = `${newHeight}px`;
+  const nextHeight = Math.max(
+    minHeight,
+    Math.min(input.scrollHeight, maxHeight)
+  );
 
+  input.style.height = `${nextHeight}px`;
   input.style.overflowY = input.scrollHeight > maxHeight ? "auto" : "hidden";
+
+  if (wrap) {
+    wrap.style.height = `${nextHeight}px`;
+  }
 }
 
 function updatePostButtonState() {
