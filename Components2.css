@@ -845,11 +845,6 @@ textarea.post-input.composer-input {
   gap: 0.625rem;
 }
 
-.post-input-wrap {
-  flex: 1;
-  display: flex;
-  position: relative;
-}
 
 .composer-body .avatar {
   position: absolute;
