@@ -10,8 +10,12 @@ function autoGrowComposerInput() {
   const minHeight = 88.5;
   const maxHeight = 550;
 
-    // reset first so shrink can happen
-  input.style.height = `${minHeight}px`;
+  // Reset BOTH first so shrinking can happen
+  input.style.height = "0px";
+
+  if (wrap) {
+    wrap.style.height = "auto";
+  }
 
   const nextHeight = Math.max(
     minHeight,
