@@ -691,7 +691,7 @@ textarea.post-input.composer-input {
 
 .composer-foot {
   display: flex;
-  position: relative;
+  position: absolute;
    width: 100%;
   min-height: 0;
    max-height: 100%;
