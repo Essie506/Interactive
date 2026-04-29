@@ -659,9 +659,9 @@
 
 .composer-input-wrap {
    margin-top: 0;
-  flex: 1 1 auto; 
   position: relative;
   height: auto;
+  min-height: 6rem;
   width: 100%;
   display: flex;
   flex-direction: column;
