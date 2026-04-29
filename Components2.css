@@ -805,6 +805,7 @@ textarea.post-input.composer-input {
   pointer-events: auto;
 }
 
+.upload-btn.send-btn.ready,
 .upload-btn.send-btn.active {
   opacity: 1;
   pointer-events: auto;
