@@ -357,12 +357,6 @@ body.directory::before {
   text-align: left;
 }
 
-.directory-filter-sort-by {
- display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .sort-controls {
   display: flex;
   align-items: center;
