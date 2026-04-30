@@ -554,7 +554,7 @@ body.directory::before {
   align-items: center;
   justify-content: space-between;
 
-  padding: 0.875rem 1.125rem calc(0.875rem + env(safe-area-inset-bottom));
+  padding: 0.875rem 0 calc(0.875rem + env(safe-area-inset-bottom));
 
   background: linear-gradient(
     to top,
