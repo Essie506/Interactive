@@ -481,6 +481,7 @@ body.directory::before {
   font-size:  var(--directory-font-size);
   font-weight: 600;
   color: var(--text-dark);
+   opacity: 0.7;
 }
 
 .directory-filter-pill {
