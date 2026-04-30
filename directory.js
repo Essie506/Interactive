@@ -107,22 +107,17 @@ filterGroups.forEach(group => {
 });
 
 // =========================
-// PILL TOGGLES
+// SORT BY SWITCH TOGGLES
 // =========================
 
-document.querySelectorAll(".directory-filter-section-toggle").forEach((toggle) => {
-toggle.addEventListener('click', () => {
-  const icon = toggle.querySelector('i');
-   if (!icon) return;
+document.querySelectorAll(".directory-filter-sort-by").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const icon = toggle.querySelector("i");
+    if (!icon) return;
 
-  if (icon.classList.contains('fa-toggle-off')) {
-    icon.classList.remove('fa-toggle-off');
-    icon.classList.add('fa-toggle-on');
-  } else {
-    icon.classList.remove('fa-toggle-on');
-    icon.classList.add('fa-toggle-off');
-  }
-});
+    icon.classList.toggle("fa-toggle-on");
+    icon.classList.toggle("fa-toggle-off");
+  });
 });
 
 // =========================
