@@ -336,7 +336,7 @@ body.directory::before {
 ========================= */
 
 .directory-filter-section {
-  margin-bottom: clamp(1rem, 2.4vw, 1.5rem);
+  margin-bottom: clamp(0.9rem, 2vw, 1.1rem);
 }
 
 .directory-filter-section-toggle, 
