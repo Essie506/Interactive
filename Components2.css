@@ -752,7 +752,7 @@ textarea.post-input.composer-input {
 
 .directory-filter-reset, 
 .directory-filter-apply {
-  flex: 0;
+  flex: 1;
 }
 
 .upload-btn.send-btn {
