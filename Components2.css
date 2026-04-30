@@ -737,7 +737,8 @@ textarea.post-input.composer-input {
   gap: 1rem;
 }
 
-.directory-filter-reset, .directory-filter-apply {
+.directory-filter-reset, 
+.directory-filter-apply {
   align-items: center;
   line-height: 1.1;
   text-align: center;
@@ -749,7 +750,8 @@ textarea.post-input.composer-input {
   gap: 1.75rem;
 }
 
-.directory-filter-reset, .directory-filter-apply {
+.directory-filter-reset, 
+.directory-filter-apply {
   flex: 1;
 }
 
@@ -786,6 +788,10 @@ textarea.post-input.composer-input {
   box-shadow: 0 8px 18px rgba(7, 153, 146, 0.22);
 }
 
+.directory-filter-reset:hover, 
+.directory-filter-apply:hover,
+.directory-filter-reset:focus-visible,
+.directory-filter-apply:focus-visible,
 .upload-btn.send-btn:hover,
 .upload-btn.send-btn:focus-visible {
   box-shadow: var(--shadow-strong);
@@ -799,15 +805,16 @@ textarea.post-input.composer-input {
 }
 
 
-.upload-btn.send-btn:active {
+.upload-btn.send-btn:active,
+.directory-filter-reset:active, 
+.directory-filter-apply:active {
   box-shadow: var(--shadow-strong);
   transform: scale(0.92);
     opacity: 1;
   pointer-events: auto;
 }
 
-.upload-btn.send-btn.ready,
-.upload-btn.send-btn.active {
+.upload-btn.send-btn.ready {
   opacity: 1;
   pointer-events: auto;
 }
