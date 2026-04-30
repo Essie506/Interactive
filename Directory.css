@@ -412,7 +412,7 @@ body.directory::before {
 }
 
 .sort-controls i {
-  font-size: 1rem;
+  font-size: var(--menu-icon-size);
 }
 
 .sort-priority.active {
