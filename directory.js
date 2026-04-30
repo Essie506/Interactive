@@ -111,10 +111,18 @@ filterGroups.forEach(group => {
 // =========================
 
 document.querySelectorAll(".directory-filter-section-toggle").forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const section = toggle.closest(".directory-filter-section");
-    section.classList.toggle("open");
-  });
+toggle.addEventListener('click', () => {
+  const icon = toggle.querySelector('i');
+   if (!icon) return;
+
+  if (icon.classList.contains('fa-toggle-off')) {
+    icon.classList.remove('fa-toggle-off');
+    icon.classList.add('fa-toggle-on');
+  } else {
+    icon.classList.remove('fa-toggle-on');
+    icon.classList.add('fa-toggle-off');
+  }
+});
 });
 
 // =========================
