@@ -199,17 +199,18 @@ applyDefaultSortUI();
 // =========================
 
 if (distanceRange && distanceValue) {
-  const updateDistanceUI = () => {
-    const value = Number(distanceRange.value);
+const updateDistanceUI = () => {
+  const value = Number(distanceRange.value);
+  const max = Number(distanceRange.max);
 
-    if (value === 0) {
-      distanceValue.textContent = "Any distance";
-    } else if (value === 1) {
-      distanceValue.textContent = "1 mile";
-    } else {
-      distanceValue.textContent = `${value} miles`;
-    }
-  };
+  if (value === max) {
+    distanceValue.textContent = "Any distance";
+  } else if (value === 1) {
+    distanceValue.textContent = "1 mile";
+  } else {
+    distanceValue.textContent = `${value} miles`;
+  }
+};
 
   distanceRange.addEventListener("input", updateDistanceUI);
 
@@ -224,16 +225,21 @@ if (distanceRange && distanceValue) {
 if (applyBtn) {
   applyBtn.addEventListener('click', () => {
     const useLocation = sortPriority.includes("location");
-    const distance = distanceRange ? Number(distanceRange.value) : 0;
+    const distance = Number(distanceRange.value);
+    const max = Number(distanceRange.max);
 
-    console.log('Applying filters:', [...selectedFilters]);
-    console.log('Sort priority:', sortPriority);
-    console.log('Use location:', useLocation);
-    console.log('Distance:', distance);
+    console.log("Use location:", useLocation);
+    console.log("Distance:", distance);
+
+    // TEMP TEST LOGIC
+    if (!useLocation) {
+      console.log("Ignoring distance completely");
+    } else if (distance === max) {
+      console.log("Any distance (no limit)");
+    } else {
+      console.log(`Filtering within ${distance} miles`);
+    }
 
     closeFilter();
-
-    // future hook:
-    // filterDirectory([...selectedFilters], sortPriority, distance);
   });
 }
