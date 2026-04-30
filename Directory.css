@@ -355,7 +355,11 @@ body.directory::before {
   font: inherit;
   font-weight: 800;
   text-align: left;
-     opacity: 0.7;
+}
+
+.directory-filter-group-toggle,
+.directory-filter-sort-by {
+   opacity: 0.7;
 }
 
 .sort-controls {
