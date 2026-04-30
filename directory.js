@@ -107,6 +107,17 @@ filterGroups.forEach(group => {
 });
 
 // =========================
+// PILL TOGGLES
+// =========================
+
+document.querySelectorAll(".directory-filter-section-toggle").forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const section = toggle.closest(".directory-filter-section");
+    section.classList.toggle("open");
+  });
+});
+
+// =========================
 // RESET
 // =========================
 
