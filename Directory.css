@@ -401,12 +401,11 @@ body.directory::before {
   justify-content: center;
    margin-right: 0.1rem;
 
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-size: var(--directory-font-size);
+  font-weight: 500;
   line-height: 1;
 
   color: var(--text-dark);
-  opacity: 0;
   transform: translateY(0.02rem);
   transition: opacity 0.2s ease;
 }
