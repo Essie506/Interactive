@@ -376,13 +376,13 @@ body.directory::before {
 }
 
 .directory-filter-sort-by i {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   opacity: 0.65;
   transition: transform 0.25s ease;
 }
 
 .fa-toggle-on {
-  color: var(--main-color);
+  color: var(--text-dark);
 }
 
 .fa-toggle-off {
@@ -395,8 +395,9 @@ body.directory::before {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+   margin-right: 0.1rem;
 
-  font-size: 0.72rem;
+  font-size: 1.1rem;
   font-weight: 800;
   line-height: 1;
 
@@ -404,6 +405,10 @@ body.directory::before {
   opacity: 0;
   transform: translateY(0.02rem);
   transition: opacity 0.2s ease;
+}
+
+.sort-controls i {
+  font-size: 1rem;
 }
 
 .sort-priority.active {
