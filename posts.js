@@ -7,7 +7,7 @@ function autoGrowComposerInput() {
 
   const wrap = input.closest(".composer-input-wrap");
 
-  const minHeight = 88.5;
+  const minHeight = 105.5;
   const maxHeight = 550;
 
   // Reset BOTH first so shrinking can happen
