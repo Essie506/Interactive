@@ -380,7 +380,6 @@ body.directory::before {
 }
 
 .directory-filter-sort-by i {
-    font-size: 1.5rem;
   opacity: 0.65;
   transition: transform 0.25s ease;
 }
