@@ -747,12 +747,13 @@ textarea.post-input.composer-input {
   border: none;
   cursor: pointer;
   transform: translateY(1px);
-  gap: 1.75rem;
 }
 
 .directory-filter-reset, 
 .directory-filter-apply {
-  flex: 1;
+ flex: 1 1 0;
+  width: auto;
+  min-width: 0;
 }
 
 .upload-btn.send-btn {
