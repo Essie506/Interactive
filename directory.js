@@ -170,11 +170,61 @@ if (resetBtn) {
     });
 
     if (distanceRange && distanceValue) {
-      distanceRange.value = 10;
-      distanceValue.textContent = "10 miles";
+      distanceRange.value = 0;
+      distanceValue.textContent = "0 miles";
+    }
+
+sortPriority = ["location", "verification"];
+applyDefaultSortUI();
+    
+  });
+}
+
+// =========================
+// RESET SORT PRIORITY
+// =========================
+
+
+let sortPriority = ["location", "verification"];
+
+const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
+
+function applyDefaultSortUI() {
+  sortButtons.forEach(btn => {
+    const value = btn.dataset.sort;
+    const badge = btn.querySelector(".sort-priority");
+    const icon = btn.querySelector("i");
+
+    const index = sortPriority.indexOf(value);
+
+    if (index !== -1) {
+      // active
+      if (badge) {
+        badge.textContent = index + 1;
+        badge.classList.add("active");
+      }
+
+      if (icon) {
+        icon.classList.remove("fa-toggle-off");
+        icon.classList.add("fa-toggle-on");
+      }
+    } else {
+      // inactive
+      if (badge) {
+        badge.textContent = "";
+        badge.classList.remove("active");
+      }
+
+      if (icon) {
+        icon.classList.remove("fa-toggle-on");
+        icon.classList.add("fa-toggle-off");
+      }
     }
   });
 }
+
+// run on load
+applyDefaultSortUI();
 
 // =========================
 // DISTANCE SLIDER
