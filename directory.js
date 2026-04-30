@@ -157,10 +157,10 @@ if (resetBtn) {
       btn.classList.remove('active');
     });
 
-    if (distanceRange && distanceValue) {
-      distanceRange.value = 0;
-      distanceValue.textContent = "0 miles";
-    }
+if (distanceRange && distanceValue) {
+  distanceRange.value = 1;
+  distanceRange.dispatchEvent(new Event("input"));
+}
 
 sortPriority = [];
 applyDefaultSortUI();
@@ -199,9 +199,22 @@ applyDefaultSortUI();
 // =========================
 
 if (distanceRange && distanceValue) {
-  distanceRange.addEventListener("input", () => {
-    distanceValue.textContent = `${distanceRange.value} miles`;
-  });
+  const updateDistanceUI = () => {
+    const value = Number(distanceRange.value);
+
+    if (value === 0) {
+      distanceValue.textContent = "Any distance";
+    } else if (value === 1) {
+      distanceValue.textContent = "1 mile";
+    } else {
+      distanceValue.textContent = `${value} miles`;
+    }
+  };
+
+  distanceRange.addEventListener("input", updateDistanceUI);
+
+  // run once on load so it matches default value
+  updateDistanceUI();
 }
 
 // =========================
