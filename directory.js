@@ -107,56 +107,44 @@ filterGroups.forEach(group => {
 });
 
 // =========================
-// SORT BY SWITCH TOGGLES
+// SORT BY STATE
 // =========================
-let sortPriority = [];
-document.querySelectorAll(".directory-filter-sort-by").forEach((toggle) => {
-  toggle.addEventListener("click", () => {
-    const value = toggle.dataset.sort;
-    const badge = toggle.querySelector(".sort-priority");
-    const icon = toggle.querySelector("i");
 
-    if (!value || !badge || !icon) return;
+let sortPriority = ["location", "verification"];
+
+const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
+
+function applyDefaultSortUI() {
+  sortButtons.forEach(btn => {
+    const value = btn.dataset.sort;
+    const badge = btn.querySelector(".sort-priority");
+    const icon = btn.querySelector("i");
 
     const index = sortPriority.indexOf(value);
 
-    if (index === -1) {
-      // ADD to priority
-      sortPriority.push(value);
+    if (index !== -1) {
+      if (badge) {
+        badge.textContent = index + 1;
+        badge.classList.add("active");
+      }
 
-      badge.textContent = sortPriority.length;
-      badge.classList.add("active");
-
-      icon.classList.remove("fa-toggle-off");
-      icon.classList.add("fa-toggle-on");
-
+      if (icon) {
+        icon.classList.remove("fa-toggle-off");
+        icon.classList.add("fa-toggle-on");
+      }
     } else {
-      // REMOVE from priority
-      sortPriority.splice(index, 1);
+      if (badge) {
+        badge.textContent = "";
+        badge.classList.remove("active");
+      }
 
-      // re-number everything
-      document.querySelectorAll(".directory-filter-sort-by").forEach(btn => {
-        const val = btn.dataset.sort;
-        const b = btn.querySelector(".sort-priority");
-
-        const i = sortPriority.indexOf(val);
-        if (i !== -1) {
-          b.textContent = i + 1;
-          b.classList.add("active");
-        } else {
-          b.textContent = "";
-          b.classList.remove("active");
-        }
-      });
-
-      icon.classList.remove("fa-toggle-on");
-      icon.classList.add("fa-toggle-off");
+      if (icon) {
+        icon.classList.remove("fa-toggle-on");
+        icon.classList.add("fa-toggle-off");
+      }
     }
-
-    console.log("Sort priority:", sortPriority);
   });
-});
-
+}
 // =========================
 // RESET
 // =========================
@@ -181,49 +169,29 @@ applyDefaultSortUI();
 }
 
 // =========================
-// RESET SORT PRIORITY
+// SORT BY SWITCH TOGGLES
 // =========================
 
-
-let sortPriority = ["location", "verification"];
-
-const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
-
-function applyDefaultSortUI() {
-  sortButtons.forEach(btn => {
-    const value = btn.dataset.sort;
-    const badge = btn.querySelector(".sort-priority");
-    const icon = btn.querySelector("i");
+sortButtons.forEach((toggle) => {
+  toggle.addEventListener("click", () => {
+    const value = toggle.dataset.sort;
+    if (!value) return;
 
     const index = sortPriority.indexOf(value);
 
-    if (index !== -1) {
-      // active
-      if (badge) {
-        badge.textContent = index + 1;
-        badge.classList.add("active");
-      }
-
-      if (icon) {
-        icon.classList.remove("fa-toggle-off");
-        icon.classList.add("fa-toggle-on");
-      }
+    if (index === -1) {
+      sortPriority.push(value);
     } else {
-      // inactive
-      if (badge) {
-        badge.textContent = "";
-        badge.classList.remove("active");
-      }
-
-      if (icon) {
-        icon.classList.remove("fa-toggle-on");
-        icon.classList.add("fa-toggle-off");
-      }
+      sortPriority.splice(index, 1);
     }
-  });
-}
 
-// run on load
+    applyDefaultSortUI();
+
+    console.log("Sort priority:", sortPriority);
+  });
+});
+
+// run defaults on load
 applyDefaultSortUI();
 
 // =========================
