@@ -358,7 +358,15 @@ body.directory::before {
 }
 
 .directory-filter-sort-by {
-  gap: 0.5rem;
+ display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .directory-filter-group-toggle .directory-subtitle {
