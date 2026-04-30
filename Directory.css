@@ -392,7 +392,9 @@ body.directory::before {
 }
 
 .directory-subtitle {
-  font-weight: 500;
+  font-size:  var(--directory-font-size);
+  font-weight: 600;
+  color: var(--text-dark);
 }
 
 .directory-pill-row {
