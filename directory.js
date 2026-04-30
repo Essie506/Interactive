@@ -162,7 +162,7 @@ if (resetBtn) {
       distanceValue.textContent = "0 miles";
     }
 
-sortPriority = ["location", "verification"];
+sortPriority = [];
 applyDefaultSortUI();
     
   });
