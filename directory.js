@@ -109,14 +109,51 @@ filterGroups.forEach(group => {
 // =========================
 // SORT BY SWITCH TOGGLES
 // =========================
-
+let sortPriority = [];
 document.querySelectorAll(".directory-filter-sort-by").forEach((toggle) => {
   toggle.addEventListener("click", () => {
+    const value = toggle.dataset.sort;
+    const badge = toggle.querySelector(".sort-priority");
     const icon = toggle.querySelector("i");
-    if (!icon) return;
 
-    icon.classList.toggle("fa-toggle-on");
-    icon.classList.toggle("fa-toggle-off");
+    if (!value || !badge || !icon) return;
+
+    const index = sortPriority.indexOf(value);
+
+    if (index === -1) {
+      // ADD to priority
+      sortPriority.push(value);
+
+      badge.textContent = sortPriority.length;
+      badge.classList.add("active");
+
+      icon.classList.remove("fa-toggle-off");
+      icon.classList.add("fa-toggle-on");
+
+    } else {
+      // REMOVE from priority
+      sortPriority.splice(index, 1);
+
+      // re-number everything
+      document.querySelectorAll(".directory-filter-sort-by").forEach(btn => {
+        const val = btn.dataset.sort;
+        const b = btn.querySelector(".sort-priority");
+
+        const i = sortPriority.indexOf(val);
+        if (i !== -1) {
+          b.textContent = i + 1;
+          b.classList.add("active");
+        } else {
+          b.textContent = "";
+          b.classList.remove("active");
+        }
+      });
+
+      icon.classList.remove("fa-toggle-on");
+      icon.classList.add("fa-toggle-off");
+    }
+
+    console.log("Sort priority:", sortPriority);
   });
 });
 
