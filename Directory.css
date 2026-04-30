@@ -341,7 +341,8 @@ body.directory::before {
 }
 
 .directory-filter-section-toggle, 
-.directory-filter-group-toggle {
+.directory-filter-group-toggle,
+.directory-filter-sort-by {
    all: unset;
   width: 100%;
   display: flex;
@@ -362,13 +363,27 @@ body.directory::before {
   padding-left: 1rem;
 }
 
-
 .directory-filter-section-toggle i,
 .directory-filter-group-toggle i {
   font-size: 0.8rem;
   opacity: 0.65;
   transition: transform 0.25s ease;
 }
+
+.directory-filter-sort-by i {
+    font-size: 1.1rem;
+  opacity: 0.65;
+  transition: transform 0.25s ease;
+}
+
+.fa-toggle-on {
+  color: var(--main-color);
+}
+
+.fa-toggle-off {
+  color: rgba(9, 26, 58, 0.3);
+}
+
 
 .directory-filter-panel.open .directory-filter-section-toggle i,
 .directory-filter-subgroup.open .directory-filter-group-toggle i {
