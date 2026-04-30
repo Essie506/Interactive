@@ -223,11 +223,17 @@ if (distanceRange && distanceValue) {
 
 if (applyBtn) {
   applyBtn.addEventListener('click', () => {
+    const useLocation = sortPriority.includes("location");
+    const distance = distanceRange ? Number(distanceRange.value) : 0;
+
     console.log('Applying filters:', [...selectedFilters]);
+    console.log('Sort priority:', sortPriority);
+    console.log('Use location:', useLocation);
+    console.log('Distance:', distance);
 
     closeFilter();
 
     // future hook:
-    // filterDirectory([...selectedFilters]);
+    // filterDirectory([...selectedFilters], sortPriority, distance);
   });
 }
