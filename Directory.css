@@ -353,7 +353,7 @@ body.directory::before {
   cursor: pointer;
   color: var(--text-dark);
   font: inherit;
-  font-weight: 500;
+  font-weight: 700;
   text-align: left;
 }
 
