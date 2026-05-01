@@ -402,7 +402,7 @@ body.directory::before {
 
 .fa-toggle-off {
   color: var(--text-dark);
-   opacity: 0.9;
+   opacity: 0.8;
 }
 
 .sort-priority {
