@@ -791,8 +791,6 @@ textarea.post-input.composer-input {
   box-shadow: 0 8px 18px rgba(7, 153, 146, 0.22);
 }
 
-.directory-filter-reset:hover, 
-.directory-filter-apply:hover,
 .upload-btn.send-btn:hover,
 .upload-btn.send-btn:focus-visible {
   box-shadow: var(--shadow-strong);
