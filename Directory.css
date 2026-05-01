@@ -606,14 +606,14 @@ body.directory::before {
   }
 
    .directory-filter-section-toggle, 
-      .directory-filter-section,
-.directory-filter-group-toggle .directory-subtitle {
+      .directory-filter-section {
     font-size: 1.1rem;
     font-weight: 550;
   }
 
-.directory-filter-sort-by .directory-subtitle {
-    font-size: 0.98rem;
+.directory-filter-sort-by .directory-subtitle,
+   .directory-filter-group-toggle .directory-subtitle  {
+    font-size: 1.1rem;
   }
 }
 
