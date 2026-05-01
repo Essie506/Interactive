@@ -361,6 +361,7 @@ body.directory::before {
   margin: 0;
   font-size: var(--directory-font-size);
   color: var(--text-dark);
+   font-weight: 700;
 }
 
 .directory-filter-group-toggle,
