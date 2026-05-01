@@ -171,7 +171,7 @@ if (resetBtn) {
       if (document.activeElement) {
         document.activeElement.blur();
       }
-    }, 50);
+    }, 120);
 
   });
 }
