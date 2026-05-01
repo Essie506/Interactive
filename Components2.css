@@ -1130,3 +1130,11 @@ textarea.post-input.composer-input {
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .directory-filter-reset:hover, 
+  .directory-filter-apply:hover {
+    box-shadow: var(--shadow-strong);
+    transform: translateY(0.2rem);
+  }
+}
+
