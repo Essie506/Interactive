@@ -620,10 +620,13 @@ body.directory::before {
 
 
 .directory-filter-sort-by .directory-subtitle,
-   .directory-filter-group-toggle .directory-subtitle,
-   .directory-pill-row {
+   .directory-filter-group-toggle .directory-subtitle {
     font-size: 1.1rem;
   }
+
+      .directory-pill-row {
+         font-size: 1rem;
+      }
    
 }
 
