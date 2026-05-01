@@ -151,8 +151,6 @@ function applyDefaultSortUI() {
 
 if (resetBtn) {
   resetBtn.addEventListener('click', () => {
-
-    // 🔥 BLUR FIRST
     resetBtn.blur();
 
     selectedFilters.clear();
@@ -168,7 +166,12 @@ if (resetBtn) {
 
     sortPriority = [];
     applyDefaultSortUI();
-    
+
+    requestAnimationFrame(() => {
+      if (document.activeElement) {
+        document.activeElement.blur();
+      }
+    });
   });
 }
 
