@@ -425,10 +425,6 @@ body.directory::before {
   font-size: 1.2rem;
 }
 
-.sort-priority.active {
-  opacity: 0.45;
-}
-
 
 .directory-filter-panel.open .directory-filter-section-toggle i,
 .directory-filter-subgroup.open .directory-filter-group-toggle i {
