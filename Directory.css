@@ -502,7 +502,7 @@ body.directory::before {
   color: var(--text-dark);
   font: inherit;
    font-weight: 500;
-  font-size: clamp(0.82rem, 0.95vw, 0.92rem);
+  font-size: var(--directory-font-size);
   cursor: pointer;
   box-shadow: var(--shadow-soft);
   transition:
