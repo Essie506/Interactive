@@ -151,22 +151,23 @@ function applyDefaultSortUI() {
 
 if (resetBtn) {
   resetBtn.addEventListener('click', () => {
+
+    // 🔥 BLUR FIRST
+    resetBtn.blur();
+
     selectedFilters.clear();
 
     filterPills.forEach(btn => {
       btn.classList.remove('active');
     });
 
-if (distanceRange && distanceValue) {
-  distanceRange.value = 1;
-  distanceRange.dispatchEvent(new Event("input"));
-}
+    if (distanceRange && distanceValue) {
+      distanceRange.value = 1;
+      distanceRange.dispatchEvent(new Event("input"));
+    }
 
-sortPriority = [];
-applyDefaultSortUI();
-
-      // removes mobile pressed/focus state
-    resetBtn.blur();
+    sortPriority = [];
+    applyDefaultSortUI();
     
   });
 }
