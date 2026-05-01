@@ -604,6 +604,17 @@ body.directory::before {
   .directory-hero-media {
     aspect-ratio: 16 / 9;
   }
+
+   .directory-filter-section-toggle, 
+      .directory-filter-section,
+.directory-filter-group-toggle .directory-subtitle {
+    font-size: 1.1rem;
+    font-weight: 550;
+  }
+
+.directory-filter-sort-by .directory-subtitle {
+    font-size: 0.98rem;
+  }
 }
 
 /* =========================
