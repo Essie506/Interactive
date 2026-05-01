@@ -304,6 +304,7 @@
     </header>
 
     <div class="directory-filter-body">
+      
 <section class="directory-filter-section directory-filter-panel">
 
   <button class="directory-filter-section-toggle" type="button">
@@ -313,17 +314,20 @@
 
   <div class="directory-filter-section-content">
 
-   <div class="directory-filter-subgroup">
+   <ul class="directory-filter-subgroup">
+     
   <button class="directory-filter-sort-by" type="button" data-sort="location">
+
+    
     <span class="directory-subtitle">Distance</span>
     <span class="sort-controls">
     <span class="sort-priority"></span>
     <i class="fa-solid fa-toggle-off"></i>
     </span>
   </button>
-</div>
+</ul>
 
-<div class="directory-filter-subgroup">
+<ul class="directory-filter-subgroup">
   <button class="directory-filter-sort-by" type="button" data-sort="equipment">
     <span class="directory-subtitle">Equipment</span>
     <span class="sort-controls">
@@ -331,9 +335,9 @@
     <i class="fa-solid fa-toggle-off"></i>
     </span>
   </button>
-</div>
+</ul>
 
-<div class="directory-filter-subgroup">
+<ul class="directory-filter-subgroup">
   <button class="directory-filter-sort-by" type="button" data-sort="facilities">
     <span class="directory-subtitle">Facilities</span>
     <span class="sort-controls">
@@ -341,9 +345,9 @@
     <i class="fa-solid fa-toggle-off"></i>
     </span>
   </button>
-</div>
+</ul>
 
-<div class="directory-filter-subgroup">
+<ul class="directory-filter-subgroup">
   <button class="directory-filter-sort-by" type="button" data-sort="services">
     <span class="directory-subtitle">Services</span>
     <span class="sort-controls">
@@ -351,9 +355,9 @@
     <i class="fa-solid fa-toggle-off"></i>
     </span>
   </button>
-</div>
+</ul>
 
-<div class="directory-filter-subgroup">
+<ul class="directory-filter-subgroup">
   <button class="directory-filter-sort-by" type="button" data-sort="verification">
     <span class="directory-subtitle">Verification</span>
     <span class="sort-controls">
@@ -361,9 +365,9 @@
     <i class="fa-solid fa-toggle-off"></i>
     </span>
   </button>
-</div>
+</ul>
 
-<div class="directory-filter-subgroup">
+<ul class="directory-filter-subgroup">
   <button class="directory-filter-sort-by" type="button" data-sort="general">
     <span class="directory-subtitle">General</span>
     <span class="sort-controls">
@@ -371,7 +375,7 @@
     <i class="fa-solid fa-toggle-off"></i>
     </span>
   </button>
-</div>
+</ul>
 </section>
 
       
@@ -385,7 +389,6 @@
         </section>
       
       <section>
-
 <div class="directory-filter-section">
   <span>Distance</span>
 
@@ -443,147 +446,125 @@
   </div>
       </section>
 
+
 <section class="directory-filter-section directory-filter-panel">
 
   <button class="directory-filter-section-toggle" type="button">
     <span>Equipment</span>
     <i class="fa-solid fa-chevron-down"></i>
   </button>
+
   <div class="directory-filter-section-content">
-  <!-- CATEGORY -->
 
-
-<div class="directory-filter-subgroup">
-  <button class="directory-filter-group-toggle" type="button">
-    <span class="directory-subtitle">Strength</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </button>
-
-  <div class="directory-filter-group-content">
-
-  <div class="directory-pill-row">
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="squat-rack">Squat rack</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="bench-press">Bench press</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="cable-machine">Cable machine</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="smith-machine">Smith machine</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="plate-loaded">Plate-loaded machines</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="leg-press">Leg press</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="hack-squat">Hack squat</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="lifting-platform">Lifting platform</button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="belt-squat">Belt squat
-    </button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="reverse-hyper">
-      Reverse hyperextension
-    </button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="glute-ham-raise">
-      Glute-ham raise
-    </button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="hack-squat">
-      Hack squat
-    </button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="powerlifting-platform">
-      Powerlifting platform
-    </button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="olympic-lifting-platform">
-      Olympic lifting platform
-    </button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="hammer-strength">
-      Hammer Strength
-    </button>
-    <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="lifting-platform">
-      Lifting platform
-    </button>
-  </div>
-</div>
-  </div>
-
+    <!-- STRENGTH -->
     <div class="directory-filter-subgroup">
-  <button class="directory-filter-group-toggle" type="button">
-    <span class="directory-subtitle">Functional</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </button>
+      <button class="directory-filter-group-toggle" type="button">
+        <span class="directory-subtitle">Strength</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
 
-  <div class="directory-filter-group-content">
-    <div class="directory-pill-row">
-        <button class="directory-filter-pill" data-filter-group="equipment" data-filter-value="sled">Sled push/pull</button>
-        <button class="directory-filter-pill" data-filter-group="equipment" data-filter-value="ski-erg">SkiErg</button>
-        <button class="directory-filter-pill" data-filter-group="equipment" data-filter-value="rower">Rower</button>
-        <button class="directory-filter-pill" data-filter-group="equipment" data-filter-value="air-bike">Air bike</button>
-        <button class="directory-filter-pill" data-filter-group="equipment" data-filter-value="sandbags">Sandbags</button>
-        <button class="directory-filter-pill" data-filter-group="equipment" data-filter-value="battle-ropes">Battle ropes</button>
-      <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="functional-rig">
-  Functional rig
-</button>
-<button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="trx-stations">
-  TRX stations
-</button>
-<button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="resistance-bands-stations">
-  Resistance bands
-</button>
-<button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="sled-track">
-  Sled track
-</button>
-<button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="prowler-sled">
-  Prowler sled
-</button>
+      <div class="directory-filter-group-content">
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="squat-rack">Squat rack</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="bench-press">Bench press</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="cable-machine">Cable machine</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="smith-machine">Smith machine</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="plate-loaded">Plate-loaded machines</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="leg-press">Leg press</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="hack-squat">Hack squat</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="lifting-platform">Lifting platform</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="belt-squat">Belt squat</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="reverse-hyper">Reverse hyperextension</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="glute-ham-raise">Glute-ham raise</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="powerlifting-platform">Powerlifting platform</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="olympic-lifting-platform">Olympic lifting platform</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="strength" data-filter-value="hammer-strength">Hammer Strength</button>
+        </div>
       </div>
-  </div>
-      </div>
-
-  <!-- CARDIO -->
- <div class="directory-filter-subgroup">
-  <button class="directory-filter-group-toggle" type="button">
-    <span class="directory-subtitle">Cardio</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </button>
-
-  <div class="directory-filter-group-content">
-      <div class="directory-pill-row">
-      <button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="treadmill">Treadmill</button>
-
-<button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="bike">Bike</button>
-<button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="cross-trainer">Cross trainer</button>
-<button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="stair-climber">Stair climber</button>
-<button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="running-track">Running track</button>
-      </div>
-  </div>
-   </div>
-
- <!-- COMBAT -->
-  <div class="directory-filter-subgroup">
-  <button class="directory-filter-group-toggle" type="button">
-    <span class="directory-subtitle">Combat</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </button>
-
-  <div class="directory-filter-group-content">
-    <div class="directory-pill-row">
-     <button class="directory-filter-pill" type="button" data-filter-group="combat" data-filter-value="boxing-ring">Boxing ring</button>
-
-<button class="directory-filter-pill" type="button" data-filter-group="combat" data-filter-value="punch-bags">Punch bags</button>
-<button class="directory-filter-pill" type="button" data-filter-group="combat" data-filter-value="mma-area">MMA area</button>
-    </div>
-  </div>
     </div>
 
-  <!-- RECOVERY -->
- <div class="directory-filter-subgroup">
-  <button class="directory-filter-group-toggle" type="button">
-    <span class="directory-subtitle">Recovery</span>
-    <i class="fa-solid fa-chevron-down"></i>
-  </button>
+    <!-- FUNCTIONAL -->
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-group-toggle" type="button">
+        <span class="directory-subtitle">Functional</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
 
-  <div class="directory-filter-group-content">
-    <div class="directory-pill-row">
-   <button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="mat-area">Mat area</button>
-<button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="stretch-zone">Stretch zone</button>
-<button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="foam-roller">Foam rollers</button>
-<button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="massage-tool">Massage tools</button>
+      <div class="directory-filter-group-content">
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="sled">Sled push/pull</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="ski-erg">SkiErg</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="rower">Rower</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="air-bike">Air bike</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="sandbags">Sandbags</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="battle-ropes">Battle ropes</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="functional-rig">Functional rig</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="trx-stations">TRX stations</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="resistance-bands-stations">Resistance bands</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="sled-track">Sled track</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="equipment" data-filter-value="prowler-sled">Prowler sled</button>
+        </div>
+      </div>
     </div>
-  </div>
+
+    <!-- CARDIO -->
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-group-toggle" type="button">
+        <span class="directory-subtitle">Cardio</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+
+      <div class="directory-filter-group-content">
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="treadmill">Treadmill</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="bike">Bike</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="cross-trainer">Cross trainer</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="stair-climber">Stair climber</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="cardio" data-filter-value="running-track">Running track</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMBAT -->
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-group-toggle" type="button">
+        <span class="directory-subtitle">Combat</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+
+      <div class="directory-filter-group-content">
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="combat" data-filter-value="boxing-ring">Boxing ring</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="combat" data-filter-value="punch-bags">Punch bags</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="combat" data-filter-value="mma-area">MMA area</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RECOVERY -->
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-group-toggle" type="button">
+        <span class="directory-subtitle">Recovery</span>
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+
+      <div class="directory-filter-group-content">
+        <div class="directory-pill-row">
+          <button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="mat-area">Mat area</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="stretch-zone">Stretch zone</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="foam-roller">Foam rollers</button>
+          <button class="directory-filter-pill" type="button" data-filter-group="recovery" data-filter-value="massage-tool">Massage tools</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
+
+
+
+      
 <section class="directory-filter-section directory-filter-panel">
 
   <button class="directory-filter-section-toggle" type="button">
