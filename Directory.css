@@ -613,11 +613,14 @@ body.directory::before {
   }
 
    .directory-filter-section-toggle b1, 
-      .directory-filter-section b1,
-   .directory-filter-section-toggle i {
-    font-size: 2rem;
+      .directory-filter-section b1 {
+    font-size: 1.1rem;
     font-weight: 550;
   }
+
+    .directory-filter-section-toggle i {
+       font-size: 2rem
+    }
 
 .directory-filter-sort-by .directory-subtitle,
    .directory-filter-group-toggle .directory-subtitle  {
