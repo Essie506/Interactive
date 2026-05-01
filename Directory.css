@@ -497,6 +497,7 @@ body.directory::before {
   background: rgba(255, 255, 255, 0.72);
   color: var(--text-dark);
   font: inherit;
+   font-weight: 500;
   font-size: clamp(0.82rem, 0.95vw, 0.92rem);
   cursor: pointer;
   box-shadow: var(--shadow-soft);
