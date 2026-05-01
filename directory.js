@@ -229,6 +229,9 @@ const updateDistanceUI = () => {
 
 if (applyBtn) {
   applyBtn.addEventListener('click', () => {
+
+    applyBtn.classList.add("is-pressing");
+
     const useLocation = sortPriority.includes("location");
     const distance = Number(distanceRange.value);
     const max = Number(distanceRange.max);
@@ -236,7 +239,6 @@ if (applyBtn) {
     console.log("Use location:", useLocation);
     console.log("Distance:", distance);
 
-    // TEMP TEST LOGIC
     if (!useLocation) {
       console.log("Ignoring distance completely");
     } else if (distance === max) {
@@ -245,6 +247,7 @@ if (applyBtn) {
       console.log(`Filtering within ${distance} miles`);
     }
 
-    closeFilter();
+    pressFeedback(applyBtn, closeFilter);
+
   });
 }
