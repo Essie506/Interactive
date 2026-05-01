@@ -547,9 +547,9 @@ body.directory::before {
   background: transparent;
   font: inherit;
   color: var(--text-dark);
+   font-size: (directory-font-size);
+   font-weight: 500;
 }
-
-
 
 .directory-filter-feet {
   flex: 0 0 auto;
