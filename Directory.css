@@ -357,6 +357,12 @@ body.directory::before {
   text-align: left;
 }
 
+.directory-filter-section {
+  margin: 0;
+  font-size: var(--directory-font-size);
+  color: var(--text-dark);
+}
+
 .directory-filter-group-toggle,
 .directory-filter-sort-by {
    opacity: 0.9;
@@ -430,12 +436,6 @@ body.directory::before {
 
 .directory-filter-panel.open .directory-filter-section-content {
   display: block;
-}
-
-.directory-filter-section {
-  margin: 0;
-  font-size: var(--directory-font-size);
-  color: var(--text-dark);
 }
 
 .directory-subtitle {
