@@ -432,7 +432,7 @@ body.directory::before {
   display: block;
 }
 
-.directory-filter-section h3 {
+.directory-filter-section {
   margin: 0;
   font-size: var(--directory-font-size);
   color: var(--text-dark);
