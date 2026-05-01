@@ -747,11 +747,7 @@ textarea.post-input.composer-input {
      font-size: 1rem;
   border: none;
   cursor: pointer;
-  transform: none;
-}
-
-.directory-filter-reset, 
-.directory-filter-apply {
+  transform: translateY(1px);
  flex: 1 1 0;
   width: auto;
   min-width: 0;
