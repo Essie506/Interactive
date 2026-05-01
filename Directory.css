@@ -423,7 +423,7 @@ body.directory::before {
 }
 
 .sort-controls i {
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .sort-priority.active {
