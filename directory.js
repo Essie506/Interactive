@@ -151,6 +151,7 @@ function applyDefaultSortUI() {
 
 if (resetBtn) {
   resetBtn.addEventListener('click', () => {
+    resetBtn.classList.add("is-pressing");
 
     selectedFilters.clear();
 
@@ -166,16 +167,12 @@ if (resetBtn) {
     sortPriority = [];
     applyDefaultSortUI();
 
-    // 🔥 mobile-safe blur fix
     setTimeout(() => {
-      if (document.activeElement) {
-        document.activeElement.blur();
-      }
-    }, 120);
-
+      resetBtn.classList.remove("is-pressing");
+      resetBtn.blur();
+    }, 160);
   });
 }
-
 // =========================
 // SORT BY SWITCH TOGGLES
 // =========================
