@@ -337,6 +337,10 @@ body.directory::before {
 
 .directory-filter-section {
   margin-bottom: clamp(0.85rem, 1.75vw, 1rem);
+    margin: 0;
+  font-size: var(--directory-font-size);
+  color: var(--text-dark);
+   font-weight: 700;
 }
 
 .directory-filter-section-toggle, 
@@ -357,12 +361,6 @@ body.directory::before {
   text-align: left;
 }
 
-.directory-filter-section {
-  margin: 0;
-  font-size: var(--directory-font-size);
-  color: var(--text-dark);
-   font-weight: 700;
-}
 
 .directory-filter-group-toggle,
 .directory-filter-sort-by {
