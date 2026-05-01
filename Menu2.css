@@ -342,7 +342,7 @@ box-sizing: border-box;
   transform: none;
   min-width: 100%;
   margin-top: 0.2rem;
-  padding: 0.2rem 1.5rem;
+  padding: 0.2rem 0 0.35rem;
   border: none;
   box-shadow: none;
   opacity: 1;
@@ -350,7 +350,6 @@ box-sizing: border-box;
   pointer-events: auto;
   display: none;
   background: rgba(255, 255, 255, 0.16);
-  font-size: clamp(0.95rem, 1vw, 1.1rem);
 }
 
 .has-submenu.open .submenu {
