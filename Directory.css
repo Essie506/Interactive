@@ -547,7 +547,7 @@ body.directory::before {
   background: transparent;
   font: inherit;
   color: var(--text-dark);
-   font-size: (directory-font-size);
+   font-size: var(--directory-font-size);
    font-weight: 500;
 }
 
