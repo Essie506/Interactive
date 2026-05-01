@@ -800,6 +800,14 @@ textarea.post-input.composer-input {
   transform: translateY(0.2rem);
 }
 
+.directory-filter-reset:focus:not(:focus-visible),
+.directory-filter-apply:focus:not(:focus-visible) {
+  box-shadow: none;
+  transform: translateY(1px);
+}
+
+
+
 .upload-btn.send-btn {
   opacity: 0.4;
   pointer-events: none;
@@ -812,8 +820,6 @@ textarea.post-input.composer-input {
 .directory-filter-apply:active {
   box-shadow: var(--shadow-strong);
   transform: scale(0.92);
-    opacity: 1;
-  pointer-events: auto;
 }
 
 .upload-btn.send-btn.ready {
