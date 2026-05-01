@@ -42,6 +42,20 @@ if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
 const selectedFilters = new Set();
 
 // =========================
+// HELPERS
+// =========================
+
+function pressFeedback(btn, callback) {
+  btn.classList.add("is-pressing");
+
+  setTimeout(() => {
+    btn.classList.remove("is-pressing");
+    btn.blur();
+    if (callback) callback();
+  }, 120);
+}
+
+// =========================
 // PILL TOGGLES
 // =========================
 
@@ -151,7 +165,7 @@ function applyDefaultSortUI() {
 
 if (resetBtn) {
   resetBtn.addEventListener('click', () => {
-    resetBtn.classList.add("is-pressing");
+    pressFeedback(resetBtn);
 
     selectedFilters.clear();
 
@@ -166,13 +180,9 @@ if (resetBtn) {
 
     sortPriority = [];
     applyDefaultSortUI();
-
-    setTimeout(() => {
-      resetBtn.classList.remove("is-pressing");
-      resetBtn.blur();
-    }, 160);
   });
 }
+
 // =========================
 // SORT BY SWITCH TOGGLES
 // =========================
@@ -229,9 +239,6 @@ const updateDistanceUI = () => {
 
 if (applyBtn) {
   applyBtn.addEventListener('click', () => {
-
-    applyBtn.classList.add("is-pressing");
-
     const useLocation = sortPriority.includes("location");
     const distance = Number(distanceRange.value);
     const max = Number(distanceRange.max);
@@ -248,6 +255,5 @@ if (applyBtn) {
     }
 
     pressFeedback(applyBtn, closeFilter);
-
   });
 }
