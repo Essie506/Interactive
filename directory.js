@@ -151,7 +151,6 @@ function applyDefaultSortUI() {
 
 if (resetBtn) {
   resetBtn.addEventListener('click', () => {
-    resetBtn.blur();
 
     selectedFilters.clear();
 
@@ -167,11 +166,13 @@ if (resetBtn) {
     sortPriority = [];
     applyDefaultSortUI();
 
-    requestAnimationFrame(() => {
+    // 🔥 mobile-safe blur fix
+    setTimeout(() => {
       if (document.activeElement) {
         document.activeElement.blur();
       }
-    });
+    }, 50);
+
   });
 }
 
