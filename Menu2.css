@@ -396,7 +396,7 @@ box-sizing: border-box;
     font-weight: 550;
   }
 
-  .menu-profile-sub {
+.submenu li a {
     font-size: 1.1rem;
   }
 }
