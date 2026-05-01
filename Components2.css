@@ -781,6 +781,7 @@ textarea.post-input.composer-input {
 .directory-filter-reset {
   background: rgba(9, 26, 58, 0.08);
   color: var(--main-color);
+    box-shadow: 0 8px 18px rgba(7, 153, 146, 0.22);
 }
 
 .directory-filter-apply, 
@@ -799,14 +800,6 @@ textarea.post-input.composer-input {
   box-shadow: var(--shadow-strong);
   transform: translateY(0.2rem);
 }
-
-.directory-filter-reset:focus:not(:focus-visible),
-.directory-filter-apply:focus:not(:focus-visible) {
-  box-shadow: none;
-  transform: translateY(1px);
-}
-
-
 
 .upload-btn.send-btn {
   opacity: 0.4;
