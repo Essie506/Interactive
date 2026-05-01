@@ -388,7 +388,6 @@ body.directory::before {
 
 .directory-filter-section-toggle i,
 .directory-filter-group-toggle i {
-  opacity: 0.65;
   transition: transform 0.25s ease;
 }
 
