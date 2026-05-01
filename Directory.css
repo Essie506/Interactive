@@ -397,10 +397,12 @@ body.directory::before {
 
 .fa-toggle-on {
   color: var(--text-dark);
+   opacity: 1;
 }
 
 .fa-toggle-off {
-  color: rgba(9, 26, 58, 0.3);
+  color: var(--text-dark);
+   opacity: 0.9;
 }
 
 .sort-priority {
