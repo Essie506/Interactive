@@ -806,10 +806,14 @@ textarea.post-input.composer-input {
 }
 
 .upload-btn.send-btn:active,
-.directory-filter-reset:active, 
 .directory-filter-apply:active {
   box-shadow: var(--shadow-strong);
   transform: scale(0.92);
+}
+
+.directory-filter-reset.is-pressing {
+  transform: scale(0.94);
+  box-shadow: var(--shadow-strong);
 }
 
 .upload-btn.send-btn.ready {
