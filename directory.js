@@ -164,6 +164,9 @@ if (distanceRange && distanceValue) {
 
 sortPriority = [];
 applyDefaultSortUI();
+
+      // removes mobile pressed/focus state
+    resetBtn.blur();
     
   });
 }
