@@ -377,6 +377,10 @@ body.directory::before {
      margin-right: auto;
 }
 
+.directory-filter-sort-by .directory-subtitle {
+   font-size: inherit;
+}
+
 .directory-filter-section-toggle i,
 .directory-filter-group-toggle i {
   font-size: 0.8rem;
