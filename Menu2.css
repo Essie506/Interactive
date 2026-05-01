@@ -350,6 +350,7 @@ box-sizing: border-box;
   pointer-events: auto;
   display: none;
   background: rgba(255, 255, 255, 0.16);
+  font-size: clamp(0.95rem, 1vw, 1.02rem);
 }
 
 .has-submenu.open .submenu {
@@ -364,7 +365,7 @@ box-sizing: border-box;
   box-sizing: border-box;
   color: var(--text-dark);
   text-decoration: none;
-  padding: 0.625rem 1rem 0.625rem 1.75rem;
+  padding: 0.625rem 0;
   font-weight: 500;
   line-height: 1.35;
   transition: background 0.22s ease, transform 0.22s ease;
@@ -397,10 +398,6 @@ box-sizing: border-box;
   }
 
   .menu-profile-sub {
-    font-size: 0.98rem;
-  }
-
-  .submenu li a {
     font-size: 1.1rem;
   }
 }
