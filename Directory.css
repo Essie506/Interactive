@@ -446,7 +446,6 @@ body.directory::before {
 }
 
 .directory-subtitle {
-  font-size:  var(--directory-font-size);
   font-weight: 500;
   color: var(--text-dark);
 }
