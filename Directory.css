@@ -643,4 +643,19 @@ body.directory::before {
   .directory-card-actions {
     flex-direction: column;
   }
+
+
+   @media (hover: none) and (pointer: coarse) {
+  .directory-filter-reset:hover,
+  .directory-filter-apply:hover {
+    box-shadow: none;
+    transform: translateY(1px);
+  }
+
+  .directory-filter-reset:active,
+  .directory-filter-apply:active {
+    box-shadow: var(--shadow-strong);
+    transform: scale(0.96);
+  }
+}
 }
