@@ -805,6 +805,11 @@ textarea.post-input.composer-input {
   transition: opacity 0.2s ease;
 }
 
+.directory-filter-reset:focus:not(:focus-visible),
+.directory-filter-apply:focus:not(:focus-visible) {
+  box-shadow: none;
+  transform: translateY(1px);
+}
 
 .upload-btn.send-btn:active,
 .directory-filter-reset:active, 
