@@ -747,7 +747,7 @@ textarea.post-input.composer-input {
      font-size: 1rem;
   border: none;
   cursor: pointer;
-  transform: translateY(1px);
+  transform: none;
 }
 
 .directory-filter-reset, 
