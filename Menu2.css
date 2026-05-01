@@ -350,7 +350,7 @@ box-sizing: border-box;
   pointer-events: auto;
   display: none;
   background: rgba(255, 255, 255, 0.16);
-  font-size: clamp(0.95rem, 1vw, 1.02rem);
+  font-size: clamp(0.95rem, 1vw, 1.1rem);
 }
 
 .has-submenu.open .submenu {
