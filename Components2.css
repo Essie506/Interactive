@@ -805,13 +805,13 @@ textarea.post-input.composer-input {
   transform: translateY(1px);
 }
 
-.upload-btn.send-btn:active,
-.directory-filter-apply:active {
+.upload-btn.send-btn:active {
   box-shadow: var(--shadow-strong);
   transform: scale(0.92);
 }
 
-.directory-filter-reset.is-pressing {
+.directory-filter-reset.is-pressing,
+.directory-filter-apply.is-pressing {
   transform: scale(0.94);
   box-shadow: var(--shadow-strong);
 }
