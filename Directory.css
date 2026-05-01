@@ -615,7 +615,7 @@ body.directory::before {
 
     .directory-filter-section-toggle b1, 
       .directory-filter-section b1 {
-    font-size: clamp(0.95rem, 1vw, 1.02rem);
+    font-size: clamp(1.1rem, 1.2vw, 1.02rem);
     font-weight: 550;
   }
 
@@ -623,7 +623,7 @@ body.directory::before {
 .directory-filter-sort-by .directory-subtitle,
    .directory-filter-group-toggle .directory-subtitle,
       .directory-pill-row {
-    font-size: clamp(0.95rem, 1vw, 1.02rem);
+    font-size: clamp(1.1rem, 1.2vw, 1.02rem);
   }
 }
 
