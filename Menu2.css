@@ -199,6 +199,7 @@ box-sizing: border-box;
 .menu-search:active::before {
   opacity: 1;
   transform: scale(1);
+   z-index: 1;
 }
 
 .menu-item:hover,
