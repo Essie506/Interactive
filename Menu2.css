@@ -140,7 +140,7 @@ box-sizing: border-box;
 
 .menu-item::before,
 .menu-search::before,
-.directory-filter-section.directory-filter-panel::before {
+.directory-filter-section-toggle::before {
   content: "";
   position: absolute;
  top: -0.15rem;
@@ -161,13 +161,15 @@ box-sizing: border-box;
   pointer-events: none;
 }
 
-.directory-filter-section.directory-filter-panel {
+.directory-filter-section-toggle {
   position: relative;
 }
 
 
-.directory-filter-section.directory-filter-panel:hover::before,
-.directory-filter-section.directory-filter-panel.open::before,
+
+
+.directory-filter-section-toggle:hover::before,
+.directory-filter-panel.open .directory-filter-section-toggle::before,
 .menu-item:hover::before,
 .menu-item:active::before,
 .menu-search:hover::before,
