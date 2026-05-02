@@ -21,6 +21,15 @@ const distanceValue = document.getElementById("distanceValue");
 function setDirectoryType(type) {
   document.body.dataset.directoryType = type;
   resetFilterUI();
+
+  directorySwitchBtns.forEach(btn => {
+    btn.classList.toggle(
+      'active',
+      btn.dataset.directorySwitch === type
+    );
+  });
+
+  localStorage.setItem('directoryType', type);
 }
 
 const directorySwitchBtns = document.querySelectorAll('[data-directory-switch]');
@@ -37,6 +46,19 @@ function resetFilterUI() {
 
   document.querySelectorAll('.directory-filter-subgroup')
     .forEach(group => group.classList.remove('open'));
+}
+
+
+// =========================
+// LOAD SAVED DIRECTORY TYPE
+// =========================
+
+const savedType = localStorage.getItem('directoryType');
+
+if (savedType) {
+  setDirectoryType(savedType);
+} else {
+  setDirectoryType('gyms');
 }
 
 // =========================
