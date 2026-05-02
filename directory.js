@@ -13,6 +13,32 @@ const applyBtn = document.getElementById('directoryFilterApply');
 const distanceRange = document.getElementById("distanceRange");
 const distanceValue = document.getElementById("distanceValue");
 
+
+// =========================
+// DIRECTORY TYPE
+// =========================
+
+function setDirectoryType(type) {
+  document.body.dataset.directoryType = type;
+  resetFilterUI();
+}
+
+const directorySwitchBtns = document.querySelectorAll('[data-directory-switch]');
+
+directorySwitchBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    setDirectoryType(btn.dataset.directorySwitch);
+  });
+});
+
+function resetFilterUI() {
+  document.querySelectorAll('.directory-filter-panel')
+    .forEach(panel => panel.classList.remove('open'));
+
+  document.querySelectorAll('.directory-filter-subgroup')
+    .forEach(group => group.classList.remove('open'));
+}
+
 // =========================
 // OPEN / CLOSE
 // =========================
