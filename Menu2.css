@@ -141,7 +141,6 @@ box-sizing: border-box;
 
 .toggle-inner {
   position: relative;
-  padding: 0.65rem 0.5rem;
   border-radius: var(--radius);
 }
 
