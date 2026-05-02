@@ -7,6 +7,7 @@ body.directory {
   /* real values moved local */
   --directory-page-pad-top: calc(var(--bar-height) + 0.625rem);
   --directory-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
+   --directory-side-pad: var(--directory-gap-sm);
 
   --directory-card-bg: rgba(255, 255, 255, 0.76);
   --directory-card-bg-soft: rgba(255, 255, 255, 0.68);
