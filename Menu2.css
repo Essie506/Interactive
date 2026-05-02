@@ -162,23 +162,31 @@ box-sizing: border-box;
 .menu-search::before,
 .toggle-inner::before {
   content: "";
-  top: -0.15rem;
-  bottom: -0.125rem;
-  left: -0.375rem;
-  right: -0.375rem;
      position: absolute;
-
+   inset: 0;
   background: rgba(9, 26, 58, 0.06);
-
   opacity: 0;
   transform: scale(0.985);
-
   transition:
     opacity 0.18s ease,
     transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
-
   z-index: 0;
   pointer-events: none;
+}
+
+
+.menu-item::before,
+.menu-search::before {
+     top: -0.15rem;
+  bottom: -0.125rem;
+  left: -0.375rem;
+  right: -0.375rem;
+}
+
+.toggle-inner::before {
+  inset: 0;
+  margin-left: calc(var(--directory-side-pad) * -1);
+  margin-right: calc(var(--directory-side-pad) * -1);
 }
 
 .directory-filter-section-toggle,
@@ -186,10 +194,7 @@ box-sizing: border-box;
   width: 100%;
 }
 
-
-
-
-    .directory-filter-section-toggle:hover .toggle-inner::before,
+.directory-filter-section-toggle:hover .toggle-inner::before,
 .directory-filter-group-toggle:hover .toggle-inner::before,
 .directory-filter-sort-by:hover .toggle-inner::before,
 .directory-filter-panel.open > .directory-filter-section-toggle .toggle-inner::before,
