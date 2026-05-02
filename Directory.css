@@ -584,7 +584,7 @@ body.directory::before {
 }
 
 
-.directory-filter-subgroup.open .directory-filter-group-content {
+.directory-filter-subgroup.open > .directory-filter-group-content {
   display: block;
 }
 
