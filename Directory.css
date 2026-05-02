@@ -382,7 +382,8 @@ body.directory::before {
      margin-right: auto;
 }
 
-.directory-filter-sort-by .directory-subtitle {
+.directory-filter-sort-by .directory-subtitle,
+.directory-filter-subgroup .directory-subtitle {
    font-size: var(--directory-font-size);
 }
 
