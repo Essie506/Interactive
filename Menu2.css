@@ -161,6 +161,13 @@ box-sizing: border-box;
   pointer-events: none;
 }
 
+.directory-filter-section.directory-filter-panel {
+  position: relative;
+}
+
+
+.directory-filter-section.directory-filter-panel:hover::before,
+.directory-filter-section.directory-filter-panel.open::before,
 .menu-item:hover::before,
 .menu-item:active::before,
 .menu-search:hover::before,
