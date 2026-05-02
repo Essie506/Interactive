@@ -600,6 +600,11 @@ body.directory::before {
   display: block;
 }
 
+.directory-switch-btn.active {
+  background: var(--main-color);
+  color: white;
+}
+
 
 /* =========================
    TABLET / MOBILE
