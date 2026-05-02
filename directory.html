@@ -311,7 +311,7 @@
     <div class="directory-filter-body">      
 
 
-<section class="directory-filter-section directory-filter-panel">
+<section class="directory-filter-section directory-filter-panel" data-filter-type="gyms">
 
   <button class="directory-filter-section-toggle" type="button">
     <span class="b1">Sort by</span>
@@ -412,6 +412,102 @@
   </div>
 </div>
       </section>
+
+
+
+<section class="directory-filter-section directory-filter-panel" data-filter-type="professionals">
+
+  <button class="directory-filter-section-toggle" type="button">
+    <span class="b1">Sort by</span>
+    <i class="fa-solid fa-chevron-down"></i>
+  </button>
+
+  <div class="directory-filter-section-content">
+
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-sort-by" type="button" data-sort="location">
+        <span class="directory-subtitle">Distance</span>
+        <span class="sort-controls">
+          <span class="sort-priority"></span>
+          <i class="fa-solid fa-toggle-off"></i>
+        </span>
+      </button>
+    </div>
+
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-sort-by" type="button" data-sort="profession">
+        <span class="directory-subtitle">Profession Type</span>
+        <span class="sort-controls">
+          <span class="sort-priority"></span>
+          <i class="fa-solid fa-toggle-off"></i>
+        </span>
+      </button>
+    </div>
+
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-sort-by" type="button" data-sort="specialism">
+        <span class="directory-subtitle">Specialism</span>
+        <span class="sort-controls">
+          <span class="sort-priority"></span>
+          <i class="fa-solid fa-toggle-off"></i>
+        </span>
+      </button>
+    </div>
+
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-sort-by" type="button" data-sort="session">
+        <span class="directory-subtitle">Session type</span>
+        <span class="sort-controls">
+          <span class="sort-priority"></span>
+          <i class="fa-solid fa-toggle-off"></i>
+        </span>
+      </button>
+    </div>
+
+    <div class="directory-filter-subgroup">
+      <button class="directory-filter-sort-by" type="button" data-sort="verification">
+        <span class="directory-subtitle">Verification</span>
+        <span class="sort-controls">
+          <span class="sort-priority"></span>
+          <i class="fa-solid fa-toggle-off"></i>
+        </span>
+      </button>
+    </div>
+
+  </div>
+</section>
+      
+      <section class="directory-filter-section">
+              <span class ="b1">Location</span>
+
+        <label class="directory-location-search">
+          <i class="fa-solid fa-location-dot"></i>
+          <input type="text" id="directoryLocationInput" placeholder="Search town, city or postcode" />
+        </label>
+        </section>
+      
+      <section>
+<div class="directory-filter-section">
+     <span class ="b1">Distance</span>
+
+  <div class="distance-control">
+    <input
+      type="range"
+      id="distanceRange"
+      min="0"
+      max="50"
+      value="1"
+      step="1"
+    />
+
+    <div class="distance-value">
+      <span id="distanceValue">1 mile</span>
+    </div>
+  </div>
+</div>
+      </section>
+
+  
 
    <!-- GYMS / STUDIOS -->
 <section class="directory-filter-section directory-filter-panel" data-filter-type="gyms">
