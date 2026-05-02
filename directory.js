@@ -27,6 +27,9 @@ function openFilter() {
 function closeFilter() {
   if (!filterMenu || !filterOverlay) return;
 
+    resetFilterUI();
+
+
   filterMenu.classList.remove('open');
   filterOverlay.classList.remove('open');
 }
@@ -34,6 +37,17 @@ function closeFilter() {
 if (filterBtn) filterBtn.addEventListener('click', openFilter);
 if (filterClose) filterClose.addEventListener('click', closeFilter);
 if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
+
+
+function resetFilterUI() {
+  // Close all main sections
+  document.querySelectorAll('.directory-filter-panel')
+    .forEach(panel => panel.classList.remove('open'));
+
+  // Close all subgroups
+  document.querySelectorAll('.directory-filter-subgroup')
+    .forEach(group => group.classList.remove('open'));
+}
 
 // =========================
 // FILTER STATE
