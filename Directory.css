@@ -358,8 +358,8 @@ body.directory::before {
   text-align: left;
 }
 
-.directory-filter-section-toggle b1,
-.directory-filter-section b1, 
+.directory-filter-section-toggle .b1,
+.directory-filter-section .b1, 
 .directory-filter-section-toggle i {
    font-size: var(--directory-font-size);
    font-weight: 700;
