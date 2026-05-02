@@ -141,30 +141,16 @@ box-sizing: border-box;
 
 .toggle-inner {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
   padding: 0.65rem 0.5rem;
   border-radius: var(--radius);
 }
 
-.directory-filter-sort-by .toggle-inner {
-  width: 100%;
+.directory-filter-section-toggle > .toggle-inner,
+.directory-filter-sort-by > .toggle-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.directory-filter-section-toggle {
   width: 100%;
-}
-
-.directory-filter-section-toggle > .toggle-inner {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .menu-item::before,
@@ -189,6 +175,14 @@ box-sizing: border-box;
   z-index: 0;
   pointer-events: none;
 }
+
+.directory-filter-section-toggle,
+.directory-filter-sort-by {
+  width: 100%;
+}
+
+
+
 
 .directory-filter-section-toggle:hover .toggle-inner::before,
 .directory-filter-panel.open > .directory-filter-section-toggle .toggle-inner::before,
