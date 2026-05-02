@@ -140,7 +140,7 @@ box-sizing: border-box;
 
 .menu-item::before,
 .menu-search::before,
-.directory-filter-section .directory-filter-panel::before {
+.directory-filter-section.directory-filter-panel::before {
   content: "";
   position: absolute;
  top: -0.15rem;
