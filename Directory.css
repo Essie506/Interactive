@@ -383,7 +383,7 @@ body.directory::before {
 }
 
 .directory-filter-sort-by .directory-subtitle {
-   font-size: inherit;
+   font-size: var(--directory-font-size);
 }
 
 .directory-filter-section-toggle i,
@@ -612,7 +612,7 @@ body.directory::before {
   .directory-hero-media {
     aspect-ratio: 16 / 9;
   }
-
+     
 }
 
 /* =========================
