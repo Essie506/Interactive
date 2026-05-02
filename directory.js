@@ -2,16 +2,59 @@
 // ELEMENTS
 // =========================
 
-const filterBtn = document.getElementById('filterBtn');
-const filterMenu = document.getElementById('directoryFilterMenu');
-const filterOverlay = document.getElementById('directoryFilterOverlay');
-const filterClose = document.getElementById('directoryFilterClose');
+const filterBtn = document.getElementById("filterBtn");
+const filterMenu = document.getElementById("directoryFilterMenu");
+const filterOverlay = document.getElementById("directoryFilterOverlay");
+const filterClose = document.getElementById("directoryFilterClose");
 
-const resetBtn = document.getElementById('directoryFilterReset');
-const applyBtn = document.getElementById('directoryFilterApply');
+const resetBtn = document.getElementById("directoryFilterReset");
+const applyBtn = document.getElementById("directoryFilterApply");
 
-const distanceRange = document.getElementById("distanceRange");
-const distanceValue = document.getElementById("distanceValue");
+const directorySwitchBtns = document.querySelectorAll("[data-directory-switch]");
+const distanceRanges = document.querySelectorAll(".distance-range");
+const filterPills = document.querySelectorAll(".directory-filter-pill");
+const filterPanels = document.querySelectorAll(".directory-filter-panel");
+const filterGroups = document.querySelectorAll(".directory-filter-subgroup");
+const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
+
+
+// =========================
+// FILTER STATE
+// =========================
+
+const selectedFilters = new Set();
+let sortPriority = ["location", "verification"];
+
+
+// =========================
+// HELPERS
+// =========================
+
+function resetFilterUI() {
+  document.querySelectorAll(".directory-filter-panel")
+    .forEach(panel => panel.classList.remove("open"));
+
+  document.querySelectorAll(".directory-filter-subgroup")
+    .forEach(group => group.classList.remove("open"));
+}
+
+function pressFeedback(btn, callback) {
+  btn.classList.add("is-pressing");
+
+  setTimeout(() => {
+    btn.classList.remove("is-pressing");
+    btn.blur();
+    if (callback) callback();
+  }, 120);
+}
+
+function getActiveDistanceRange() {
+  const type = document.body.dataset.directoryType;
+
+  return document.querySelector(
+    `.directory-filter-section[data-filter-type="${type}"] .distance-range`
+  );
+}
 
 
 // =========================
@@ -24,42 +67,33 @@ function setDirectoryType(type) {
 
   directorySwitchBtns.forEach(btn => {
     btn.classList.toggle(
-      'active',
+      "active",
       btn.dataset.directorySwitch === type
     );
   });
 
-  localStorage.setItem('directoryType', type);
+  localStorage.setItem("directoryType", type);
 }
 
-const directorySwitchBtns = document.querySelectorAll('[data-directory-switch]');
-
 directorySwitchBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener("click", () => {
     setDirectoryType(btn.dataset.directorySwitch);
   });
 });
-
-function resetFilterUI() {
-  document.querySelectorAll('.directory-filter-panel')
-    .forEach(panel => panel.classList.remove('open'));
-
-  document.querySelectorAll('.directory-filter-subgroup')
-    .forEach(group => group.classList.remove('open'));
-}
 
 
 // =========================
 // LOAD SAVED DIRECTORY TYPE
 // =========================
 
-const savedType = localStorage.getItem('directoryType');
+const savedType = localStorage.getItem("directoryType");
 
 if (savedType) {
   setDirectoryType(savedType);
 } else {
-  setDirectoryType('gyms');
+  setDirectoryType("gyms");
 }
+
 
 // =========================
 // OPEN / CLOSE
@@ -68,63 +102,57 @@ if (savedType) {
 function openFilter() {
   if (!filterMenu || !filterOverlay) return;
 
-  filterMenu.classList.add('open');
-  filterOverlay.classList.add('open');
+  filterMenu.classList.add("open");
+  filterOverlay.classList.add("open");
 }
 
 function closeFilter() {
   if (!filterMenu || !filterOverlay) return;
 
-    resetFilterUI();
+  resetFilterUI();
 
-
-  filterMenu.classList.remove('open');
-  filterOverlay.classList.remove('open');
+  filterMenu.classList.remove("open");
+  filterOverlay.classList.remove("open");
 }
 
-if (filterBtn) filterBtn.addEventListener('click', openFilter);
-if (filterClose) filterClose.addEventListener('click', closeFilter);
-if (filterOverlay) filterOverlay.addEventListener('click', closeFilter);
+if (filterBtn) filterBtn.addEventListener("click", openFilter);
+if (filterClose) filterClose.addEventListener("click", closeFilter);
+if (filterOverlay) filterOverlay.addEventListener("click", closeFilter);
 
-
-function resetFilterUI() {
-  // Close all main sections
-  document.querySelectorAll('.directory-filter-panel')
-    .forEach(panel => panel.classList.remove('open'));
-
-  // Close all subgroups
-  document.querySelectorAll('.directory-filter-subgroup')
-    .forEach(group => group.classList.remove('open'));
-}
 
 // =========================
-// FILTER STATE
+// DISTANCE RANGES
 // =========================
 
-const selectedFilters = new Set();
+distanceRanges.forEach(range => {
+  const valueText = range
+    .closest(".directory-filter-section")
+    .querySelector(".distance-value-text");
 
-// =========================
-// HELPERS
-// =========================
+  function updateDistanceValue() {
+    const value = Number(range.value);
+    const max = Number(range.max);
 
-function pressFeedback(btn, callback) {
-  btn.classList.add("is-pressing");
+    if (value === max) {
+      valueText.textContent = "Any distance";
+    } else if (value === 1) {
+      valueText.textContent = "1 mile";
+    } else {
+      valueText.textContent = `${value} miles`;
+    }
+  }
 
-  setTimeout(() => {
-    btn.classList.remove("is-pressing");
-    btn.blur();
-    if (callback) callback();
-  }, 120);
-}
+  range.addEventListener("input", updateDistanceValue);
+  updateDistanceValue();
+});
+
 
 // =========================
 // PILL TOGGLES
 // =========================
 
-const filterPills = document.querySelectorAll('.directory-filter-pill');
-
 filterPills.forEach(btn => {
-  btn.addEventListener('click', () => {
+  btn.addEventListener("click", () => {
     const group = btn.dataset.filterGroup;
     const value = btn.dataset.filterValue;
 
@@ -134,61 +162,56 @@ filterPills.forEach(btn => {
 
     if (selectedFilters.has(key)) {
       selectedFilters.delete(key);
-      btn.classList.remove('active');
+      btn.classList.remove("active");
     } else {
       selectedFilters.add(key);
-      btn.classList.add('active');
+      btn.classList.add("active");
     }
 
-    console.log('Selected filters:', [...selectedFilters]);
+    console.log("Selected filters:", [...selectedFilters]);
   });
 });
+
 
 // =========================
 // FILTER SECTION TOGGLES
 // =========================
 
-const filterPanels = document.querySelectorAll('.directory-filter-panel');
-
 filterPanels.forEach(panel => {
-  const toggle = panel.querySelector('.directory-filter-section-toggle');
+  const toggle = panel.querySelector(".directory-filter-section-toggle");
 
   if (!toggle) return;
 
-  toggle.addEventListener('click', () => {
-    panel.classList.toggle('open');
+  toggle.addEventListener("click", () => {
+    panel.classList.toggle("open");
   });
 });
+
 
 // =========================
 // INNER FILTER GROUP TOGGLES
 // =========================
 
-const filterGroups = document.querySelectorAll('.directory-filter-subgroup');
-
 filterGroups.forEach(group => {
-  const toggle = group.querySelector('.directory-filter-group-toggle');
+  const toggle = group.querySelector(".directory-filter-group-toggle");
 
   if (!toggle) return;
 
-  toggle.addEventListener('click', () => {
-    const isOpen = group.classList.contains('open');
+  toggle.addEventListener("click", () => {
+    const isOpen = group.classList.contains("open");
 
-    filterGroups.forEach(g => g.classList.remove('open'));
+    filterGroups.forEach(g => g.classList.remove("open"));
 
     if (!isOpen) {
-      group.classList.add('open');
+      group.classList.add("open");
     }
   });
 });
 
+
 // =========================
 // SORT BY STATE
 // =========================
-
-let sortPriority = ["location", "verification"];
-
-const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
 
 function applyDefaultSortUI() {
   sortButtons.forEach(btn => {
@@ -221,35 +244,8 @@ function applyDefaultSortUI() {
     }
   });
 }
-// =========================
-// RESET
-// =========================
 
-if (resetBtn) {
-  resetBtn.addEventListener('click', () => {
-    pressFeedback(resetBtn);
-
-    selectedFilters.clear();
-
-    filterPills.forEach(btn => {
-      btn.classList.remove('active');
-    });
-
-    if (distanceRange && distanceValue) {
-      distanceRange.value = 1;
-      distanceRange.dispatchEvent(new Event("input"));
-    }
-
-    sortPriority = [];
-    applyDefaultSortUI();
-  });
-}
-
-// =========================
-// SORT BY SWITCH TOGGLES
-// =========================
-
-sortButtons.forEach((toggle) => {
+sortButtons.forEach(toggle => {
   toggle.addEventListener("click", () => {
     const value = toggle.dataset.sort;
     if (!value) return;
@@ -268,43 +264,48 @@ sortButtons.forEach((toggle) => {
   });
 });
 
-// run defaults on load
 applyDefaultSortUI();
 
+
 // =========================
-// DISTANCE SLIDER
+// RESET
 // =========================
 
-if (distanceRange && distanceValue) {
-const updateDistanceUI = () => {
-  const value = Number(distanceRange.value);
-  const max = Number(distanceRange.max);
+if (resetBtn) {
+  resetBtn.addEventListener("click", () => {
+    pressFeedback(resetBtn);
 
-  if (value === max) {
-    distanceValue.textContent = "Any distance";
-  } else if (value === 1) {
-    distanceValue.textContent = "1 mile";
-  } else {
-    distanceValue.textContent = `${value} miles`;
-  }
-};
+    selectedFilters.clear();
 
-  distanceRange.addEventListener("input", updateDistanceUI);
+    filterPills.forEach(btn => {
+      btn.classList.remove("active");
+    });
 
-  // run once on load so it matches default value
-  updateDistanceUI();
+    distanceRanges.forEach(range => {
+      range.value = 1;
+      range.dispatchEvent(new Event("input"));
+    });
+
+    sortPriority = [];
+    applyDefaultSortUI();
+    resetFilterUI();
+  });
 }
+
 
 // =========================
 // APPLY
 // =========================
 
 if (applyBtn) {
-  applyBtn.addEventListener('click', () => {
-    const useLocation = sortPriority.includes("location");
-    const distance = Number(distanceRange.value);
-    const max = Number(distanceRange.max);
+  applyBtn.addEventListener("click", () => {
+    const activeDistanceRange = getActiveDistanceRange();
 
+    const useLocation = sortPriority.includes("location");
+    const distance = activeDistanceRange ? Number(activeDistanceRange.value) : 1;
+    const max = activeDistanceRange ? Number(activeDistanceRange.max) : 50;
+
+    console.log("Directory type:", document.body.dataset.directoryType);
     console.log("Use location:", useLocation);
     console.log("Distance:", distance);
 
