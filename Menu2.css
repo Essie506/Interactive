@@ -146,10 +146,18 @@ box-sizing: border-box;
 }
 
 .menu-item::before,
+.menu-search::before {
+   position: absolute;
+}
+
+.directory-filter-section-toggle::before {
+   position: relative;
+}
+
+.menu-item::before,
 .menu-search::before,
 .directory-filter-section-toggle::before {
   content: "";
-  position: absolute;
   top: -0.15rem;
   bottom: -0.125rem;
   left: -0.375rem;
