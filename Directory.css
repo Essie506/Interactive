@@ -397,10 +397,6 @@ body.directory::before {
      margin-right: auto;
 }
 
-.directory-filter-sort-by .directory-subtitle,
-.directory-filter-subgroup .directory-subtitle {
-   font-size: var(--directory-font-size);
-}
 
 .directory-filter-section-toggle i,
 .directory-filter-group-toggle i {
@@ -628,6 +624,11 @@ body.directory::before {
   .directory-hero-media {
     aspect-ratio: 16 / 9;
   }
+
+   .directory-filter-sort-by .directory-subtitle,
+.directory-filter-subgroup .directory-subtitle {
+   font-size: var(--directory-font-size);
+}
      
 }
 
