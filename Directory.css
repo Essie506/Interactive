@@ -613,18 +613,6 @@ body.directory::before {
     aspect-ratio: 16 / 9;
   }
 
-    .directory-filter-section-toggle b1, 
-      .directory-filter-section b1 {
-    font-size: clamp(1.1rem, 1.2vw, 1.02rem);
-    font-weight: 550;
-  }
-
-
-.directory-filter-sort-by .directory-subtitle,
-   .directory-filter-group-toggle .directory-subtitle,
-      .directory-pill-row {
-    font-size: clamp(1.1rem, 1.2vw, 1.02rem);
-  }
 }
 
 /* =========================
