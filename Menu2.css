@@ -19,7 +19,8 @@ body.home .menu-toggle span {
   transition: all 0.3s ease;
 }
 
-body.home .menu-toggle::before {
+body.home .menu-toggle::before,
+.directory-filter-section .directory-filter-panel::before {
   content: "";
   position: absolute;
   inset: -0.5rem;
