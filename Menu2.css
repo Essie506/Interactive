@@ -144,6 +144,12 @@ box-sizing: border-box;
   border-radius: var(--radius);
 }
 
+.toggle-inner > * {
+  position: relative;
+  z-index: 1;
+}
+
+
 .directory-filter-section-toggle > .toggle-inner,
 .directory-filter-sort-by > .toggle-inner {
   display: flex;
@@ -183,7 +189,9 @@ box-sizing: border-box;
 
 
 
-.directory-filter-section-toggle:hover .toggle-inner::before,
+    .directory-filter-section-toggle:hover .toggle-inner::before,
+.directory-filter-group-toggle:hover .toggle-inner::before,
+.directory-filter-sort-by:hover .toggle-inner::before,
 .directory-filter-panel.open > .directory-filter-section-toggle .toggle-inner::before,
 .menu-item:hover::before,
 .menu-item:active::before,
