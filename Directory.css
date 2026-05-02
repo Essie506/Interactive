@@ -72,7 +72,22 @@ body.directory {
   margin: 0;
   background: var(--index-bg);
   min-height: 100dvh;
-}/* =========================
+}
+
+/* =========================
+   VISIBILITY MODES
+========================= */
+body[data-directory-type="gyms"] [data-filter-type="professionals"] {
+  display: none;
+}
+
+body[data-directory-type="professionals"] [data-filter-type="gyms"] {
+  display: none;
+}
+
+
+
+/* =========================
    PAGE SHELL
 ========================= */
 .directory-page {
