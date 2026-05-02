@@ -139,16 +139,21 @@ box-sizing: border-box;
 }
 
 
-.directory-filter-section-toggle {
+.toggle-inner {
   position: relative;
-  z-index: 1;
-  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius);
 }
+
 
 
 .menu-item::before,
 .menu-search::before,
-.directory-filter-section-toggle::before {
+.toggle-inner::before {
   content: "";
   top: -0.15rem;
   bottom: -0.125rem;
@@ -169,8 +174,8 @@ box-sizing: border-box;
   pointer-events: none;
 }
 
-.directory-filter-section-toggle:hover::before,
-.directory-filter-panel.open > .directory-filter-section-toggle::before,
+.directory-filter-section-toggle:hover .toggle-inner::before,
+.directory-filter-panel.open > .directory-filter-section-toggle .toggle-inner::before,
 .menu-item:hover::before,
 .menu-item:active::before,
 .menu-search:hover::before,
