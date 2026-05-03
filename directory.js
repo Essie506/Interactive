@@ -208,9 +208,10 @@ filterPanels.forEach(panel => {
 
   if (!toggle) return;
 
-  toggle.addEventListener("click", () => {
-    panel.classList.toggle("open");
-  });
+toggle.addEventListener("click", () => {
+  pressFeedback(toggle);
+  panel.classList.toggle("open");
+});
 });
 
 
@@ -248,6 +249,8 @@ function applyDefaultSortUI() {
 
     const index = sortPriority.indexOf(value);
 
+    btn.classList.toggle("is-selected", index !== -1);
+
     if (index !== -1) {
       if (badge) {
         badge.textContent = index + 1;
@@ -272,9 +275,15 @@ function applyDefaultSortUI() {
   });
 }
 
-sortButtons.forEach(toggle => {
-  toggle.addEventListener("click", () => {
-    const value = toggle.dataset.sort;
+// =========================
+// SORT BUTTONS
+// =========================
+
+sortButtons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    pressFeedback(btn);
+
+    const value = btn.dataset.sort;
     if (!value) return;
 
     const index = sortPriority.indexOf(value);
@@ -292,6 +301,7 @@ sortButtons.forEach(toggle => {
 });
 
 applyDefaultSortUI();
+
 
 // =========================
 // RESET
