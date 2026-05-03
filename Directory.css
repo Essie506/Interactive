@@ -565,6 +565,7 @@ right: calc(var(--panel-padding-fixed) * -1);
   display: flex;
   align-items: center; /* if you want vertical too */
    width: 100%;
+     min-height: var(--filter-sub-height); /* match your system */
 }
 
 .directory-filter-panel.open .directory-filter-section-content {
@@ -702,9 +703,8 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-group-content {
   display: none;
-  margin-top: 0.5rem;
-   min-height: var(--filter-sub-height);
-   
+  margin-top: 0.5rem; 
+     min-height: var(--filter-sub-height); /* match your system */
 }
 
 .directory-filter-group.open .directory-filter-group-content {
