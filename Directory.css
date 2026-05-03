@@ -566,8 +566,8 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 .directory-filter-panel.open > .directory-filter-section-toggle::before,
-  .directory-filter-group-toggle-panel.open::before,
-  .directory-filter-sort-by-panel.open::before{
+  .directory-filter-group-toggle.open::before,
+  .directory-filter-sort-by.open::before{
   opacity: 1;
   transform: scale(1);
 }
