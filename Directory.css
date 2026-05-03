@@ -376,6 +376,9 @@ body.directory::before {
    position: relative;
 }
 
+.directory-filter-section-toggle {
+      min-height: var(--menu-item-height);
+}
 
 .toggle-inner::before {
   inset: 0;
