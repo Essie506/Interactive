@@ -6,7 +6,7 @@ body.directory {
 
   /* real values moved local */
   --directory-page-pad-top: calc(var(--bar-height) + 0.625rem);
-  --directory-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
+  --directory-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));section
    --directory-side-pad: var(--directory-gap-sm);
 
   --directory-card-bg: rgba(255, 255, 255, 0.76);
@@ -565,7 +565,9 @@ right: calc(var(--panel-padding-fixed) * -1);
   display: block;
 }
 
-.directory-filter-panel.open > .directory-filter-section-toggle::before {
+.directory-filter-panel.open > .directory-filter-section-toggle::before,
+  .directory-filter-group-toggle::before,
+  .directory-filter-sort-by::before{
   opacity: 1;
   transform: scale(1);
 }
