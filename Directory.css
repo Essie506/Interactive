@@ -720,6 +720,8 @@ right: calc(var(--panel-padding-fixed) * -1);
   width: 100%;
   min-height: var(--filter-sub-height); /* match your system */
   box-sizing: border-box;
+   margin-top: 0.5rem;
+   margin-bottom: 0.5rem;
 }
 
 .directory-filter-group.open .directory-filter-group-content {
