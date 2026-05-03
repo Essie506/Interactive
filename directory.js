@@ -191,15 +191,25 @@ distanceRanges.forEach(range => {
 });
 
 distanceRanges.forEach(range => {
+  const section = range.closest(".directory-filter-section");
+  if (!section) return;
+
   range.addEventListener("pointerdown", () => {
-    range.closest(".directory-filter-section")?.classList.add("is-interacting");
+    section.classList.add("is-interacting");
   });
 
   range.addEventListener("pointerup", () => {
-    range.closest(".directory-filter-section")?.classList.remove("is-interacting");
+    section.classList.remove("is-interacting");
+  });
+
+  range.addEventListener("pointercancel", () => {
+    section.classList.remove("is-interacting");
+  });
+
+  range.addEventListener("blur", () => {
+    section.classList.remove("is-interacting");
   });
 });
-
 
 // =========================
 // PILL TOGGLES
