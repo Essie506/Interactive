@@ -20,6 +20,10 @@ body {
   --bar-height: clamp(64px, 7vh, 70px);
   --bar-height-large: clamp(70px, 7.5vh, 76px);
 
+
+  --filter-section-height: 3.75rem;   /* ~60px */
+  --filter-sub-height: 2.5rem;        /* ~40px */
+
   --main-color: #079992;
   --main-color-dark: #047a74;
   --main-color-light: #0aa7a0;
