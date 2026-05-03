@@ -194,24 +194,20 @@ distanceRanges.forEach(range => {
   const section = range.closest(".directory-filter-section");
   if (!section) return;
 
-  const startInteraction = () => {
+  let timer;
+
+  range.addEventListener("input", () => {
     section.classList.add("is-interacting");
-  };
 
-  const stopInteraction = () => {
-    setTimeout(() => {
+    clearTimeout(timer);
+
+    timer = setTimeout(() => {
       section.classList.remove("is-interacting");
-    }, 120);
-  };
-
-  range.addEventListener("pointerdown", startInteraction);
-  range.addEventListener("input", startInteraction);
-
-  range.addEventListener("pointerup", stopInteraction);
-  range.addEventListener("pointercancel", stopInteraction);
-  range.addEventListener("change", stopInteraction);
-  range.addEventListener("blur", stopInteraction);
+    }, 180); // tweak this (150–250 feels good)
+  });
 });
+
+
 // =========================
 // PILL TOGGLES
 // =========================
