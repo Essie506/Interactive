@@ -362,6 +362,7 @@ body.directory::before {
 .directory-filter-group-toggle,
 .directory-filter-sort-by {
    all: unset;
+    box-sizing: border-box;
   width: 100%;
   display: flex;
   align-items: center;
