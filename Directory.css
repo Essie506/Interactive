@@ -567,6 +567,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-static-content {
   display: flex;
+   flex: 1 1 auto;
   align-items: center; /* if you want vertical too */
    width: 100%;
      min-height: var(--filter-sub-height); /* match your system */
@@ -597,6 +598,8 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .distance-control {
   display: flex;
+   flex: 1 1 auto;
+   width: 100%;
   flex-direction: column;
   gap: 0.5rem;
 }
