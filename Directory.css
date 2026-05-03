@@ -556,6 +556,11 @@ right: calc(var(--panel-padding-fixed) * -1);
   transform: rotate(180deg);
 }
 
+.directory-filter-panel.open > .directory-filter-section-toggle .b1,
+.directory-filter-subgroup.open > .directory-filter-group-toggle .directory-subtitle {
+  font-weight: 650;
+}
+
 .directory-filter-section-content {
   display: none;
   padding-top: 0.75rem;
