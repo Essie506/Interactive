@@ -172,6 +172,16 @@ distanceRanges.forEach(range => {
   updateStaticFilterState(range);
 });
 
+distanceRanges.forEach(range => {
+  range.addEventListener("pointerdown", () => {
+    range.closest(".directory-filter-section")?.classList.add("is-interacting");
+  });
+
+  range.addEventListener("pointerup", () => {
+    range.closest(".directory-filter-section")?.classList.remove("is-interacting");
+  });
+});
+
 
 // =========================
 // PILL TOGGLES
