@@ -356,7 +356,6 @@ body.directory::before {
     margin: 0;
   color: var(--text-dark);
    font-weight: 700;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .directory-filter-section-toggle, 
@@ -538,7 +537,11 @@ right: calc(var(--panel-padding-fixed) * -1);
 .sort-priority:active {
    opacity: 1;
 }
-   
+
+
+.directory-filter-panel {
+     border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
 
 .directory-filter-panel.open .directory-filter-section-toggle i,
 .directory-filter-subgroup.open .directory-filter-group-toggle i {
