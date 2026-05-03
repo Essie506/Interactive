@@ -164,17 +164,6 @@ box-sizing: border-box;
   right: -0.375rem;
 }
 
-.toggle-inner::before {
-  inset: 0;
-  margin-left: calc(var(--directory-side-pad) * -1);
-  margin-right: calc(var(--directory-side-pad) * -1);
-}
-
-.directory-filter-section-toggle,
-directory-filter-sort-by {
-  width: 100%;
-}
-
 .menu-item:hover::before,
 .menu-item:active::before,
 .menu-search:hover::before,
