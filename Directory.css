@@ -368,7 +368,7 @@ body.directory::before {
   justify-content: space-between;
   border: none;
   background: transparent;
-  padding: 0.5rem 0;
+ 
   cursor: pointer;
   color: var(--text-dark);
   text-align: left;
