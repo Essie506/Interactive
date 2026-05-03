@@ -562,8 +562,10 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 .directory-filter-static-content {
-   justify-content: center;
-   align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* if you want vertical too */
+   width: 100%;
 }
 
 .directory-filter-panel.open .directory-filter-section-content {
