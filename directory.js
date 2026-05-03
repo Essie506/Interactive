@@ -292,15 +292,19 @@ sortButtons.forEach(toggle => {
 
 applyDefaultSortUI();
 
+// =========================
+// RESET
+// =========================
+
 
 if (resetBtn) {
   resetBtn.addEventListener("click", () => {
     pressFeedback(resetBtn);
 
-    if (locationInput) {
-      locationInput.value = "";
-      updateStaticFilterState(locationInput);
-    }
+    locationInputs.forEach(input => {
+      input.value = "";
+      input.dispatchEvent(new Event("input"));
+    });
 
     selectedFilters.clear();
 
@@ -318,7 +322,6 @@ if (resetBtn) {
     resetFilterUI();
   });
 }
-
 
 // =========================
 // APPLY
