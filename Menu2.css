@@ -140,19 +140,8 @@ box-sizing: border-box;
 }
 
 
-.directory-filter-section-toggle > .toggle-inner {
-  justify-content: space-between;
-  width: 100%;
- position: relative;
-  z-index: 1;
-    height: var(--filter-section-height);
-   display: flex;
-    flex: 1 1 auto;
-}
-
 .menu-item::before,
-.menu-search::before,
-.toggle-inner::before {
+.menu-search::before {
   content: "";
      position: absolute;
    inset: 0;
@@ -186,10 +175,6 @@ directory-filter-sort-by {
   width: 100%;
 }
 
-.directory-filter-section-toggle:hover .toggle-inner::before,
-.directory-filter-group-toggle:hover .toggle-inner::before,
-.directory-filter-sort-by:hover .toggle-inner::before,
-.directory-filter-panel.open > .directory-filter-section-toggle .toggle-inner::before,
 .menu-item:hover::before,
 .menu-item:active::before,
 .menu-search:hover::before,
