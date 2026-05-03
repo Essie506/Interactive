@@ -384,7 +384,7 @@ body.directory::before {
      border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.directory-filter-section-toggle:last-child {
+.directory-filter-section:last-child .directory-filter-section-toggle {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
