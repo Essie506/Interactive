@@ -633,7 +633,7 @@
 
 .directory-filter-body {
   padding:
-    var(--panel-padding-fixed)
+    0
     var(--panel-padding-fixed)
     calc(var(--panel-padding-fixed) + env(safe-area-inset-bottom));
 
