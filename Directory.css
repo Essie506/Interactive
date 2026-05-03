@@ -368,7 +368,6 @@ body.directory::before {
   justify-content: space-between;
   border: none;
   background: transparent;
-     min-height: var(--menu-item-height);
     padding: 0.72rem 0;
   cursor: pointer;
   color: var(--text-dark);
