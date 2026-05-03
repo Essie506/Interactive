@@ -401,9 +401,8 @@ directory-filter-sort-by {
 
   top: -0.15rem;
   bottom: -0.125rem;
-  left: calc(var(--directory-side-pad) * -1);
-  right: calc(var(--directory-side-pad) * -1);
-
+  left: calc(var(--panel-padding-fixed) * -1);
+right: calc(var(--panel-padding-fixed) * -1);
   background: rgba(9, 26, 58, 0.06);
   opacity: 0;
   transform: scale(0.985);
