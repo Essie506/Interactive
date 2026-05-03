@@ -656,6 +656,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-location-search {
    margin-top: 0.125;
+   width: 100%;
   display: flex;
   align-items: center;
   gap: 0.625rem;
@@ -702,6 +703,8 @@ right: calc(var(--panel-padding-fixed) * -1);
 .directory-filter-group-content {
   display: none;
   margin-top: 0.5rem;
+   min-height: var(--filter-sub-height);
+   
 }
 
 .directory-filter-group.open .directory-filter-group-content {
