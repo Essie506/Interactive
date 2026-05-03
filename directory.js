@@ -17,6 +17,9 @@ const filterPanels = document.querySelectorAll(".directory-filter-panel");
 const filterGroups = document.querySelectorAll(".directory-filter-subgroup");
 const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
 
+const locationInputs = document.querySelectorAll(".directory-location-input");
+
+
 
 // =========================
 // FILTER STATE
@@ -144,6 +147,29 @@ distanceRanges.forEach(range => {
 
   range.addEventListener("input", updateDistanceValue);
   updateDistanceValue();
+});
+
+
+function updateStaticFilterState(input) {
+  const section = input.closest(".directory-filter-section");
+  if (!section) return;
+
+  const hasValue =
+    input.type === "range"
+      ? input.value !== input.defaultValue
+      : input.value.trim().length > 0;
+
+  section.classList.toggle("has-value", hasValue);
+}
+
+locationInputs.forEach(input => {
+  input.addEventListener("input", () => updateStaticFilterState(input));
+  updateStaticFilterState(input);
+});
+
+distanceRanges.forEach(range => {
+  range.addEventListener("input", () => updateStaticFilterState(range));
+  updateStaticFilterState(range);
 });
 
 
