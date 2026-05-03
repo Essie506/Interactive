@@ -104,7 +104,8 @@ box-sizing: border-box;
    SHARED MENU ITEMS
 ========================= */
 .menu-item,
-.menu-search {
+.menu-search,
+.toggle-inner {
   position: relative;
   z-index: 1;
 
@@ -140,11 +141,6 @@ box-sizing: border-box;
 }
 
 
-.toggle-inner {
-  position: relative;
-  border-radius: var(--radius);
-}
-
 .toggle-inner > * {
   position: relative;
   z-index: 1;
@@ -153,8 +149,6 @@ box-sizing: border-box;
 
 .directory-filter-section-toggle > .toggle-inner,
 .directory-filter-sort-by > .toggle-inner {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
   width: 100%;
 }
