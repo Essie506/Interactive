@@ -655,7 +655,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 .directory-location-search {
-   margin-top: 0.125
+   margin-top: 0.125;
   display: flex;
   align-items: center;
   gap: 0.625rem;
