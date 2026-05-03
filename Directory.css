@@ -375,6 +375,7 @@ body.directory::before {
   text-align: left;
    position: relative;
     -webkit-tap-highlight-color: transparent;
+     opacity: 0.75;
 }
 
 .directory-filter-section-toggle {
@@ -558,7 +559,12 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-panel.open > .directory-filter-section-toggle .b1,
 .directory-filter-subgroup.open > .directory-filter-group-toggle .directory-subtitle {
-  font-weight: 650;
+  font-weight: 600;
+}
+
+.directory-filter-sort-by.is-selected .directory-subtitle {
+  font-weight: 600;
+     opacity: 1;
 }
 
 .directory-filter-section-content {
