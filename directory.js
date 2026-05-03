@@ -224,6 +224,8 @@ filterGroups.forEach(group => {
   if (!toggle) return;
 
   toggle.addEventListener("click", () => {
+    pressFeedback(toggle); // 👈 adds tap highlight
+
     const isOpen = group.classList.contains("open");
 
     filterGroups.forEach(g => g.classList.remove("open"));
@@ -233,7 +235,6 @@ filterGroups.forEach(group => {
     }
   });
 });
-
 
 // =========================
 // SORT BY STATE
