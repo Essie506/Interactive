@@ -377,6 +377,19 @@ body.directory::before {
 }
 
 
+.toggle-inner::before {
+  inset: 0;
+  margin-left: calc(var(--directory-side-pad) * -1);
+  margin-right: calc(var(--directory-side-pad) * -1);
+}
+
+.directory-filter-section-toggle,
+directory-filter-sort-by {
+  width: 100%;
+}
+
+
+
 .directory-filter-section-toggle::before,
 .directory-filter-group-toggle::before,
 .directory-filter-sort-by::before {
