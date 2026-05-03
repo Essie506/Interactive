@@ -563,7 +563,6 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-static-content {
   display: flex;
-  justify-content: center;
   align-items: center; /* if you want vertical too */
    width: 100%;
 }
