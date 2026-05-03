@@ -816,6 +816,8 @@ textarea.post-input.composer-input {
 .upload-btn.send-btn:active {
   box-shadow: var(--shadow-strong);
   transform: scale(0.92);
+   opacity: 1;
+     pointer-events: auto;
 }
 
 .directory-filter-reset.is-pressing,
