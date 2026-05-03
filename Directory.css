@@ -374,6 +374,7 @@ body.directory::before {
   color: var(--text-dark);
   text-align: left;
    position: relative;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .directory-filter-section-toggle {
@@ -414,6 +415,13 @@ right: calc(var(--panel-padding-fixed) * -1);
 .directory-filter-section-toggle:active::before,
 .directory-filter-group-toggle:active::before,
 .directory-filter-sort-by:active::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.directory-filter-section-toggle.is-pressing::before,
+.directory-filter-group-toggle.is-pressing::before,
+.directory-filter-sort-by.is-pressing::before {
   opacity: 1;
   transform: scale(1);
 }
