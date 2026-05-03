@@ -572,6 +572,10 @@ right: calc(var(--panel-padding-fixed) * -1);
   padding-top: 0.75rem;
 }
 
+.directory-filter-sort-by.is-selected .sort-priority {
+  font-weight: 600;
+}
+
 .directory-filter-static-content {
   display: flex;
   align-items: center; /* if you want vertical too */
