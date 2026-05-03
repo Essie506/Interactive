@@ -380,14 +380,10 @@ body.directory::before {
     min-height: var(--menu-item-height);
 }
 
-.toggle-inner::before {
-  inset: 0;
-  margin-left: calc(var(--directory-side-pad) * -1);
-  margin-right: calc(var(--directory-side-pad) * -1);
-}
+
 
 .directory-filter-section-toggle,
-directory-filter-sort-by {
+.directory-filter-sort-by {
   width: 100%;
 }
 
