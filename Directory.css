@@ -413,19 +413,6 @@ right: calc(var(--panel-padding-fixed) * -1);
   pointer-events: none;
 }
 
-.directory-filter-section-toggle:active::before,
-.directory-filter-group-toggle:active::before,
-.directory-filter-sort-by:active::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
-.directory-filter-section-toggle.is-pressing::before,
-.directory-filter-group-toggle.is-pressing::before,
-.directory-filter-sort-by.is-pressing::before {
-  opacity: 1;
-  transform: scale(1);
-}
 
 .directory-filter-section-toggle > .toggle-inner {
   justify-content: space-between;
