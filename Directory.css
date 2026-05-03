@@ -565,6 +565,11 @@ right: calc(var(--panel-padding-fixed) * -1);
   display: block;
 }
 
+.directory-filter-panel.open > .directory-filter-section-toggle::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
 .directory-subtitle {
   font-weight: 500;
   color: var(--text-dark);
