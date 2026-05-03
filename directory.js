@@ -293,13 +293,14 @@ sortButtons.forEach(toggle => {
 applyDefaultSortUI();
 
 
-// =========================
-// RESET
-// =========================
-
 if (resetBtn) {
   resetBtn.addEventListener("click", () => {
     pressFeedback(resetBtn);
+
+    if (locationInput) {
+      locationInput.value = "";
+      updateStaticFilterState(locationInput);
+    }
 
     selectedFilters.clear();
 
@@ -308,7 +309,7 @@ if (resetBtn) {
     });
 
     distanceRanges.forEach(range => {
-      range.value = 1;
+      range.value = range.defaultValue;
       range.dispatchEvent(new Event("input"));
     });
 
