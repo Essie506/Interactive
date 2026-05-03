@@ -468,13 +468,15 @@ right: calc(var(--panel-padding-fixed) * -1);
   z-index: 1;
 }
 
-.directory-filter-section:focus-within .directory-filter-static-heading::before,
 .directory-filter-section.has-value .directory-filter-static-heading::before {
   opacity: 1;
   transform: scale(1);
 }
 
-
+.directory-filter-section.is-interacting .directory-filter-static-heading::before {
+  opacity: 1;
+  transform: scale(1);
+}
 
 .directory-filter-group-toggle,
 .directory-filter-sort-by {
