@@ -754,7 +754,7 @@ right: calc(var(--panel-padding-fixed) * -1);
   }
 }
 
-@media (min-width: 900px) (hover: hover) {
+@media (min-width: 900px) {
   .directory-filter-section-toggle:hover::before,
   .directory-filter-group-toggle:hover::before,
   .directory-filter-sort-by:hover::before {
