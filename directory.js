@@ -194,23 +194,24 @@ distanceRanges.forEach(range => {
   const section = range.closest(".directory-filter-section");
   if (!section) return;
 
-  range.addEventListener("pointerdown", () => {
+  const startInteraction = () => {
     section.classList.add("is-interacting");
-  });
+  };
 
-  range.addEventListener("pointerup", () => {
-    section.classList.remove("is-interacting");
-  });
+  const stopInteraction = () => {
+    setTimeout(() => {
+      section.classList.remove("is-interacting");
+    }, 120);
+  };
 
-  range.addEventListener("pointercancel", () => {
-    section.classList.remove("is-interacting");
-  });
+  range.addEventListener("pointerdown", startInteraction);
+  range.addEventListener("input", startInteraction);
 
-  range.addEventListener("blur", () => {
-    section.classList.remove("is-interacting");
-  });
+  range.addEventListener("pointerup", stopInteraction);
+  range.addEventListener("pointercancel", stopInteraction);
+  range.addEventListener("change", stopInteraction);
+  range.addEventListener("blur", stopInteraction);
 });
-
 // =========================
 // PILL TOGGLES
 // =========================
