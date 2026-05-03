@@ -26,6 +26,7 @@ body.home .menu-toggle::before {
   background: rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+   height: var(--filter-section-height);
   border-radius: 0.875rem;
   border: 1px solid rgba(255, 255, 255, 0.35);
   box-shadow: var(--shadow-strong);
