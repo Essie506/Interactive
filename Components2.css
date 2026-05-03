@@ -615,11 +615,15 @@
 .messages-body {
   display: flex;
   flex-direction: column;
-  gap: 0.875rem;
   flex: 1 1 auto;
   min-height: 0;
   -webkit-overflow-scrolling: touch;
    overscroll-behavior: contain;
+}
+
+.composer-body,
+.messages-body {
+    gap: 0.875rem;
 }
 
 .directory-filter-body,
