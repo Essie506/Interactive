@@ -400,6 +400,16 @@ body.directory::before {
   pointer-events: none;
 }
 
+.directory-filter-section-toggle > .toggle-inner {
+  justify-content: space-between;
+  width: 100%;
+ position: relative;
+  z-index: 1;
+    height: var(--filter-section-height);
+   display: flex;
+    flex: 1 1 auto;
+}
+
 
 .directory-filter-section-toggle:hover::before,
 .directory-filter-group-toggle:hover::before,
