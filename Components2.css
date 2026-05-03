@@ -632,7 +632,10 @@
 }
 
 .directory-filter-body {
-  padding: var(--panel-padding);
+  padding bottom: var(--panel-padding);
+ padding left: var(--panel-padding);
+   padding right: var(--panel-padding);
+   
   min-height: 0;
   overflow-y: auto;
 }
