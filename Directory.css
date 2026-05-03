@@ -703,8 +703,10 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-group-content {
   display: none;
-  margin-top: 0.5rem; 
-     min-height: var(--filter-sub-height); /* match your system */
+  align-items: center;   /* ← centres everything vertically */
+  width: 100%;
+  min-height: var(--filter-sub-height); /* match your system */
+  box-sizing: border-box;
 }
 
 .directory-filter-group.open .directory-filter-group-content {
