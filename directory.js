@@ -154,6 +154,11 @@ function updateStaticFilterState(input) {
   const section = input.closest(".directory-filter-section");
   if (!section) return;
 
+  if (input.classList.contains("directory-location-input")) {
+    section.classList.remove("has-value");
+    return;
+  }
+
   const hasValue =
     input.type === "range"
       ? input.value !== input.defaultValue
@@ -165,6 +170,19 @@ function updateStaticFilterState(input) {
 locationInputs.forEach(input => {
   input.addEventListener("input", () => updateStaticFilterState(input));
   updateStaticFilterState(input);
+});
+
+locationInputs.forEach(input => {
+  const section = input.closest(".directory-filter-section");
+  if (!section) return;
+
+  input.addEventListener("focus", () => {
+    section.classList.add("is-interacting");
+  });
+
+  input.addEventListener("blur", () => {
+    section.classList.remove("is-interacting");
+  });
 });
 
 distanceRanges.forEach(range => {
