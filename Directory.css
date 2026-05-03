@@ -524,7 +524,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-section-content {
   display: none;
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
 }
 
 .directory-filter-panel.open .directory-filter-section-content {
