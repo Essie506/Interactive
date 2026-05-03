@@ -356,6 +356,8 @@ body.directory::before {
     margin: 0;
   color: var(--text-dark);
    font-weight: 700;
+   border-top: 1px solid rgba(0, 0, 0, 0.05);
+   
 }
 
 .directory-filter-section-toggle, 
@@ -595,6 +597,7 @@ right: calc(var(--panel-padding-fixed) * -1);
   flex-direction: column;
   gap: 0.5rem;
    margin-top: 0.5rem;
+   margin-bottom: 0.5rem;
 }
 
 .distance-control input[type="range"] {
