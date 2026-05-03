@@ -356,6 +356,7 @@ body.directory::before {
     margin: 0;
   color: var(--text-dark);
    font-weight: 700;
+    min-height: var(--menu-item-height);
 }
 
 .directory-filter-section-toggle, 
@@ -377,7 +378,7 @@ body.directory::before {
 }
 
 .directory-filter-section-toggle {
-      min-height: var(--menu-item-height);
+    min-height: var(--menu-item-height);
 }
 
 .toggle-inner::before {
