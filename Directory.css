@@ -561,6 +561,11 @@ right: calc(var(--panel-padding-fixed) * -1);
   padding-top: 0.75rem;
 }
 
+.directory-filter-static-content {
+   justify-content: center;
+   align-items: center;
+}
+
 .directory-filter-panel.open .directory-filter-section-content {
   display: block;
 }
@@ -649,6 +654,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 .directory-location-search {
+   margin-top: 0.125
   display: flex;
   align-items: center;
   gap: 0.625rem;
