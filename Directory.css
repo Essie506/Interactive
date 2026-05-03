@@ -356,7 +356,7 @@ body.directory::before {
     margin: 0;
   color: var(--text-dark);
    font-weight: 700;
-   border-top: 1px solid rgba(0, 0, 0, 0.05);
+   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
    
 }
 
@@ -381,12 +381,9 @@ body.directory::before {
 
 .directory-filter-section-toggle {
     min-height: var(--menu-item-height);
-     border-top: 1px solid rgba(0, 0, 0, 0.05);
+     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.directory-filter-section:last-child .directory-filter-section-toggle {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-}
 
 .directory-filter-section-toggle,
 .directory-filter-sort-by {
