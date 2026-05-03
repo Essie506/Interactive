@@ -146,6 +146,8 @@ box-sizing: border-box;
  position: relative;
   z-index: 1;
     height: var(--filter-section-height);
+   display: flex;
+    flex: 1 1 auto;
 }
 
 .menu-item::before,
