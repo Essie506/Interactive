@@ -599,8 +599,6 @@ right: calc(var(--panel-padding-fixed) * -1);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-   margin-top: 0.5rem;
-   margin-bottom: 0.5rem;
 }
 
 .distance-control input[type="range"] {
