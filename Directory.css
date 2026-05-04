@@ -469,12 +469,12 @@ body.directory::before {
   background: transparent;
 
   color: var(--text-dark);
-  text-align: left;
 
   font-family: inherit;
   font-size: clamp(0.95rem, 1vw, 1.05rem);
   font-weight: 500;
   letter-spacing: 0.3px;
+   justify-content: center;
 
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
