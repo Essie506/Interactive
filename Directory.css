@@ -389,6 +389,10 @@ body.directory::before {
   transition: transform 0.2s ease;
 }
 
+.directory-filter-title-switch.is-open i {
+  transform: rotate(180deg);
+}
+
 
 .directory-filter-header {
   position: relative;
