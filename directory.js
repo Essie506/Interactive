@@ -19,15 +19,13 @@ const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
 
 const locationInputs = document.querySelectorAll(".directory-location-input");
 
-const defaultSortPriority = ["location", "verification"];
-let sortPriority = [...defaultSortPriority];
-
 
 
 // =========================
 // FILTER STATE
 // =========================
 
+const defaultSortPriority = ["location", "verification"];
 const selectedFilters = new Set();
 let sortPriority = [...defaultSortPriority];
 
