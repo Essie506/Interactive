@@ -122,6 +122,21 @@ directorySwitchBtns.forEach(btn => {
   });
 });
 
+document.addEventListener("click", (e) => {
+  if (!dropdown || !titleSwitch) return;
+
+  const isClickInside =
+    dropdown.contains(e.target) || titleSwitch.contains(e.target);
+
+  if (!isClickInside) {
+    dropdown.classList.remove("open");
+  }
+});
+
+dropdown.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+
 // =========================
 // LOAD SAVED DIRECTORY TYPE
 // =========================
