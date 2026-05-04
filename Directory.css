@@ -398,8 +398,6 @@ body.directory::before {
 
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(10px);
-
-  border-radius: 0.75rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 
   overflow: hidden;
@@ -415,6 +413,7 @@ body.directory::before {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+    z-index: 10;
 }
 
 .filter-type-dropdown button {
