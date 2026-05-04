@@ -31,21 +31,22 @@ function autoGrowComposerInput() {
   }
 }
 
-function updatePostButtonState() {
-  if (!input) return;
-
-  const hasText = input.value.trim().length > 0;
-  const hasMedia = preview && preview.children.length > 0;
-
-  postBtn?.classList.toggle("active", hasText || hasMedia);
-}
-
-input?.addEventListener("input", () => {
+function updateComposerState() {
   autoGrowComposerInput();
   updatePostButtonState();
-});
+}
+
+input?.addEventListener("input", updateComposerState);
 
 window.addEventListener("resize", autoGrowComposerInput);
+
+const composerModal = document.getElementById("composerModal");
+
+composerModal?.addEventListener("input", updateComposerState);
+composerModal?.addEventListener("change", updateComposerState);
+composerModal?.addEventListener("click", () => {
+  setTimeout(updateComposerState, 0);
+});
 
 autoGrowComposerInput();
 updatePostButtonState();
