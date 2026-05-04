@@ -386,8 +386,15 @@ body.directory::before {
 }
 
 
+.directory-filter-header {
+  position: relative;
+  z-index: 10;
+  overflow: visible;
+}
+
 .filter-type-wrapper {
   position: relative;
+     z-index: 20;
 }
 
 .filter-type-dropdown {
@@ -408,7 +415,7 @@ body.directory::before {
   visibility: hidden;
   transform: translateY(-6px);
   transition: 0.2s ease;
-  z-index: 10;
+  z-index: 2000;
 }
 
 .filter-type-dropdown.open {
