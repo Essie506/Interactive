@@ -385,6 +385,10 @@ body.directory::before {
   font-weight: 750;
 }
 
+.directory-filter-title-switch i {
+  transition: transform 0.2s ease;
+}
+
 
 .directory-filter-header {
   position: relative;
