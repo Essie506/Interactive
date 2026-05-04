@@ -74,12 +74,14 @@ function setDirectoryType(type) {
   document.body.dataset.directoryType = type;
   resetFilterUI();
 
-  directorySwitchBtns.forEach(btn => {
-    btn.classList.toggle(
-      "active",
-      btn.dataset.directorySwitch === type
-    );
-  });
+ directorySwitchBtns.forEach(btn => {
+  const isActive = btn.dataset.directorySwitch === type;
+
+  btn.classList.toggle("is-active", isActive);
+
+  // 👇 hide current option
+  btn.style.display = isActive ? "none" : "flex";
+});
 
   const filterTitle = document.getElementById("filterTitle");
 
