@@ -109,8 +109,11 @@ function setDirectoryType(type) {
 // =========================
 
 if (titleSwitch && dropdown) {
-  titleSwitch.addEventListener("click", () => {
-    dropdown.classList.toggle("open");
+  titleSwitch.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    const isOpen = dropdown.classList.toggle("open");
+    titleSwitch.classList.toggle("is-open", isOpen);
   });
 }
 
@@ -118,9 +121,8 @@ directorySwitchBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     setDirectoryType(btn.dataset.directorySwitch);
 
-    if (dropdown) {
-      dropdown.classList.remove("open");
-    }
+    if (dropdown) dropdown.classList.remove("open");
+    if (titleSwitch) titleSwitch.classList.remove("is-open");
   });
 });
 
@@ -132,13 +134,15 @@ document.addEventListener("click", (e) => {
 
   if (!isClickInside) {
     dropdown.classList.remove("open");
+    titleSwitch.classList.remove("is-open");
   }
 });
 
-dropdown.addEventListener("click", (e) => {
-  e.stopPropagation();
-});
-
+if (dropdown) {
+  dropdown.addEventListener("click", (e) => {
+    e.stopPropagation();
+  });
+}
 // =========================
 // LOAD SAVED DIRECTORY TYPE
 // =========================
