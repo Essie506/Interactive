@@ -518,7 +518,7 @@
 }
 
 .directory-filter-menu {
-  overflow: visible;
+  overflow: hidden;
 }
 
 .composer-modal.open,
