@@ -400,7 +400,8 @@ body.directory::before {
 .filter-type-dropdown {
   position: absolute;
   top: calc(100% + 0.4rem);
-  left: 0;
+  left: auto;
+   right: 0;
   overflow: hidden;
 
    
