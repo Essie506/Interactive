@@ -87,8 +87,8 @@ function setDirectoryType(type) {
 
   if (filterTitle) {
     const titles = {
-      gyms: "Search Gyms and Studios",
-      professionals: "Search Professionals"
+      gyms: "Search - Gyms and Studios",
+      professionals: "Search - Professionals"
     };
 
     // ✨ fade effect
