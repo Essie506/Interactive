@@ -515,6 +515,13 @@ body.directory::before {
   transform: translateX(1px);
 }
 
+.filter-type-dropdown button i {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  opacity: 0.75;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
 
 
 .directory-filter-section-toggle, 
