@@ -20,6 +20,11 @@ const sortButtons = document.querySelectorAll(".directory-filter-sort-by");
 const locationInputs = document.querySelectorAll(".directory-location-input");
 
 
+const titleSwitch = document.querySelector(".directory-filter-title-switch");
+const dropdown = document.getElementById("filterTypeDropdown");
+
+
+
 
 // =========================
 // FILTER STATE
@@ -96,9 +101,24 @@ function setDirectoryType(type) {
   localStorage.setItem("directoryType", type);
 }
 
+
+// =========================
+// DIRECTORY SWITCH
+// =========================
+
+if (titleSwitch && dropdown) {
+  titleSwitch.addEventListener("click", () => {
+    dropdown.classList.toggle("open");
+  });
+}
+
 directorySwitchBtns.forEach(btn => {
   btn.addEventListener("click", () => {
     setDirectoryType(btn.dataset.directorySwitch);
+
+    if (dropdown) {
+      dropdown.classList.remove("open");
+    }
   });
 });
 
