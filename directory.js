@@ -76,6 +76,23 @@ function setDirectoryType(type) {
     );
   });
 
+  const filterTitle = document.getElementById("filterTitle");
+
+  if (filterTitle) {
+    const titles = {
+      gyms: "Gym Filters",
+      professionals: "Professional Filters"
+    };
+
+    // ✨ fade effect
+    filterTitle.style.opacity = 0;
+
+    setTimeout(() => {
+      filterTitle.textContent = titles[type] || "Filters";
+      filterTitle.style.opacity = 1;
+    }, 120);
+  }
+
   localStorage.setItem("directoryType", type);
 }
 
@@ -84,7 +101,6 @@ directorySwitchBtns.forEach(btn => {
     setDirectoryType(btn.dataset.directorySwitch);
   });
 });
-
 
 // =========================
 // LOAD SAVED DIRECTORY TYPE
