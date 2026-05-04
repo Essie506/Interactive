@@ -322,7 +322,6 @@
 .bottom-nav-desktop i,
 .icon-btn i {
   font-size: var(--icon-size);
-  line-height: 1;
   pointer-events: none;
 }
 
