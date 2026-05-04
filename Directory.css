@@ -367,7 +367,7 @@ body.directory::before {
   bottom: 0;
 
   height: 1px;
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.04);
 }
 
 
