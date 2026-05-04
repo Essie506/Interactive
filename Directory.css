@@ -431,7 +431,7 @@ body.directory::before {
   padding: 0.6rem 0.9rem;
   cursor: pointer;
   font-size: 0.95rem;
-     z-index: 2000;
+     z-index: 5000;
 }
 
 .filter-type-dropdown button:hover {
