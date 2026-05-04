@@ -360,6 +360,18 @@ body.directory::before {
    
 }
 
+.directory-filter-section-toggle::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--panel-padding-fixed) * -1);
+  right: calc(var(--panel-padding-fixed) * -1);
+  bottom: 0;
+
+  height: 1px;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+
 .directory-filter-title-switch {
   all: unset;
   display: flex;
