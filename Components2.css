@@ -556,6 +556,7 @@
   padding: 0 1.125rem;
   background: var(--navbar-bg);
   font-size: var(--main-font-size);
+   line-height: 1;
 }
 
 .composer-header {
