@@ -550,12 +550,13 @@
   font-size: var(--main-font-size);
 }
 
-.composer-header,
-.directory-filter-header {
+.composer-header {
   overflow: hidden;
 }
 
+
 .messages-header,
+.directory-filter-header,
 .messages-popup-header,
 .messages-popout-header {
   overflow: visible;
@@ -640,9 +641,8 @@
     0
     var(--panel-padding-fixed)
     calc(var(--panel-padding-fixed) + env(safe-area-inset-bottom));
-
   min-height: 0;
-  overflow-y: auto;
+
 }
 
 
