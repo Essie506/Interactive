@@ -1,16 +1,15 @@
 const input = document.getElementById("composerInput");
 const postBtn = document.querySelector(".composer-foot .send-btn");
 const preview = document.getElementById("composerPreview");
+const composerModal = document.getElementById("composerModal");
 
 function autoGrowComposerInput() {
   if (!input) return;
 
   const wrap = input.closest(".composer-input-wrap");
-
   const minHeight = 105.5;
   const maxHeight = 550;
 
-  // Reset BOTH first so shrinking can happen
   input.style.height = "0px";
 
   if (wrap) {
@@ -31,22 +30,60 @@ function autoGrowComposerInput() {
   }
 }
 
+function updatePostButtonState() {
+  const hasText = input && input.value.trim().length > 0;
+  const hasMedia = preview && preview.children.length > 0;
+
+  postBtn?.classList.toggle("active", hasText || hasMedia);
+}
+
 function updateComposerState() {
   autoGrowComposerInput();
   updatePostButtonState();
 }
 
+/* Use this whenever JS inserts emoji/text */
+function insertIntoComposer(text) {
+  if (!input) return;
+
+  const start = input.selectionStart ?? input.value.length;
+  const end = input.selectionEnd ?? input.value.length;
+
+  input.value =
+    input.value.slice(0, start) +
+    text +
+    input.value.slice(end);
+
+  const cursor = start + text.length;
+  input.setSelectionRange(cursor, cursor);
+  input.focus();
+
+  updateComposerState();
+}
+
 input?.addEventListener("input", updateComposerState);
-
-window.addEventListener("resize", autoGrowComposerInput);
-
-const composerModal = document.getElementById("composerModal");
+input?.addEventListener("keyup", updateComposerState);
+input?.addEventListener("paste", () => {
+  setTimeout(updateComposerState, 0);
+});
+input?.addEventListener("compositionend", updateComposerState);
 
 composerModal?.addEventListener("input", updateComposerState);
 composerModal?.addEventListener("change", updateComposerState);
 composerModal?.addEventListener("click", () => {
   setTimeout(updateComposerState, 0);
 });
+
+if (preview) {
+  const previewObserver = new MutationObserver(updateComposerState);
+
+  previewObserver.observe(preview, {
+    childList: true,
+    subtree: true
+  });
+}
+
+window.addEventListener("resize", autoGrowComposerInput);
 
 autoGrowComposerInput();
 updatePostButtonState();
