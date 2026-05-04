@@ -360,6 +360,33 @@ body.directory::before {
    
 }
 
+.directory-filter-title-switch {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.directory-filter-title-switch span {
+  display: flex;
+  flex-direction: column;
+}
+
+.directory-filter-title-switch small {
+  font-size: 0.72rem;
+  opacity: 0.58;
+  font-weight: 600;
+}
+
+.directory-filter-title-switch strong {
+  font-size: 1.05rem;
+  font-weight: 750;
+}
+
+
+
 .directory-filter-section-toggle, 
 .directory-filter-group-toggle,
 .directory-filter-sort-by {
