@@ -415,6 +415,7 @@ body.directory::before {
   visibility: hidden;
   transform: translateY(-6px);
   transition: 0.2s ease;
+   z-index: 5000;
 }
 
 .filter-type-dropdown.open {
