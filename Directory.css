@@ -386,6 +386,51 @@ body.directory::before {
 }
 
 
+.filter-type-wrapper {
+  position: relative;
+}
+
+.filter-type-dropdown {
+  position: absolute;
+  top: calc(100% + 0.4rem);
+  left: 0;
+  min-width: 180px;
+
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(10px);
+
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: 0.2s ease;
+  z-index: 10;
+}
+
+.filter-type-dropdown.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.filter-type-dropdown button {
+  all: unset;
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.filter-type-dropdown button:hover {
+  background: rgba(9, 26, 58, 0.06);
+}
+
+
 
 .directory-filter-section-toggle, 
 .directory-filter-group-toggle,
