@@ -728,6 +728,10 @@ right: calc(var(--panel-padding-fixed) * -1);
   display: block;
 }
 
+    #filterTitle {
+  transition: opacity 0.2s ease;
+}
+
 /* =========================
    TABLET / MOBILE
 ========================= */
