@@ -560,7 +560,9 @@
   padding: 0 1.125rem;
   background: var(--navbar-bg);
   font-size: var(--main-font-size);
+   justify-content: center;
 }
+
 
 
 .composer-header {
