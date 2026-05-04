@@ -415,6 +415,7 @@ body.directory::before {
    
   min-width: 11.25rem;
   padding: 0.125rem 0.375rem 0.125rem;
+   border-radius: 0.75rem;
 
 
  background: linear-gradient(
