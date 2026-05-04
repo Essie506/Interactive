@@ -488,9 +488,14 @@
   max-width: 96vw;
   height: 100dvh;
   box-sizing: border-box;
-  overflow: hidden;
   background: #fff;
   transition: transform 0.32s ease;
+}
+
+
+.composer-modal,
+.messages-modal {
+     overflow: hidden;
 }
 
 /* left drawer */
@@ -510,6 +515,10 @@
   transform: translateX(100%);
   bottom: 0;
   max-height: 100%;
+}
+
+.directory-filter-menu {
+  overflow: visible;
 }
 
 .composer-modal.open,
