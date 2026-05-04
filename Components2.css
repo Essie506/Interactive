@@ -560,7 +560,13 @@
   padding: 0 1.125rem;
   background: var(--navbar-bg);
   font-size: var(--main-font-size);
-   line-height: 1;
+}
+
+.composer-header .icon-btn i,
+.directory-filter-header .icon-btn i,
+.messages-header .icon-btn i {
+  line-height: 1;
+  display: block;
 }
 
 .composer-header {
