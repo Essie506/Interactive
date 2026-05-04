@@ -300,21 +300,34 @@
   <aside class="directory-filter-menu" id="directoryFilterMenu" aria-hidden="true">
 
 
-    <header class="directory-filter-header">
+ <header class="directory-filter-header">
 
-  <button class="directory-filter-title-switch" type="button">
-    <div class="directory-filter-title">
-      <h2 id="filterTitle">Filters</h2>
+  <div class="filter-type-wrapper">
+
+    <button class="directory-filter-title-switch" type="button">
+      <div class="directory-filter-title">
+        <h2 id="filterTitle">Filters</h2>
+      </div>
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <!-- 👇 small menu -->
+    <div class="filter-type-dropdown" id="filterTypeDropdown">
+      <button type="button" data-directory-switch="gyms">
+        Gyms & Studios
+      </button>
+      <button type="button" data-directory-switch="professionals">
+        Professionals
+      </button>
     </div>
-    <i class="fa-solid fa-chevron-down"></i>
-  </button>
 
-  <!-- ✅ separate element -->
-  <div class="filter-type-dropdown" id="filterTypeDropdown">
-    <button type="button" data-directory-switch="gyms">Gyms & Studios</button>
-    <button type="button" data-directory-switch="professionals">Professionals</button>
   </div>
 
+  <button class="icon-btn directory-filter-close" id="directoryFilterClose" type="button">
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
+</header>
   <button class="icon-btn directory-filter-close" id="directoryFilterClose" type="button">
     <i class="fa-solid fa-arrow-right"></i>
   </button>
