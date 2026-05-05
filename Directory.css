@@ -584,25 +584,49 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 
 
-/* ALL highlight states */
-.directory-filter-section:is(:hover, .is-interacting),
+
+
+/* ACTIVE / HIGHLIGHTED SECTION */
+.directory-filter-section:hover,
+.directory-filter-section.is-interacting,
 .directory-filter-panel.open {
   border-bottom-color: transparent;
   box-shadow: none;
 }
 
-/* remove previous seam */
-.directory-filter-section:has(+ .directory-filter-section:is(:hover, .is-interacting)),
-.directory-filter-section:has(+ .directory-filter-panel.open) {
+/* ACTIVE / HIGHLIGHTED TOGGLE INSIDE SECTION */
+.directory-filter-section:hover .directory-filter-section-toggle,
+.directory-filter-panel.open .directory-filter-section-toggle {
   border-bottom-color: transparent;
+  box-shadow: none;
 }
 
-/* remove previous toggle seam */
-.directory-filter-section:has(+ .directory-filter-section:is(:hover, .is-interacting)) .directory-filter-section-toggle,
+/* REMOVE THE LINE ABOVE WHEN THE NEXT SECTION IS HOVERED / INTERACTING / OPEN */
+.directory-filter-section:has(+ .directory-filter-section:hover),
+.directory-filter-section:has(+ .directory-filter-section.is-interacting),
+.directory-filter-section:has(+ .directory-filter-panel.open) {
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+
+/* REMOVE THE PREVIOUS TOGGLE'S LINE TOO */
+.directory-filter-section:has(+ .directory-filter-section:hover) .directory-filter-section-toggle,
+.directory-filter-section:has(+ .directory-filter-section.is-interacting) .directory-filter-section-toggle,
 .directory-filter-section:has(+ .directory-filter-panel.open) .directory-filter-section-toggle {
   border-bottom-color: transparent;
   box-shadow: none;
 }
+
+.directory-filter-panel.open,
+.directory-filter-panel.open .directory-filter-section-toggle {
+  border-bottom: none;
+}
+
+
+
+
+
+
 
 
 .directory-filter-section-toggle > .toggle-inner {
