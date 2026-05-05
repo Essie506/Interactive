@@ -346,6 +346,20 @@ filterGroups.forEach(group => {
     if (!isOpen) {
       group.classList.add("open");
     }
+    
+ setTimeout(() => {
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+
+      if (filterMenu) {
+        filterMenu.style.transform = "translateZ(0)";
+
+        requestAnimationFrame(() => {
+          filterMenu.style.transform = "";
+        });
+      }
+    }, 50);
   });
 });
 
