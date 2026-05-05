@@ -559,6 +559,13 @@ body.directory::before {
 }
 
 
+.directory-filter-section-toggle:hover,
+.directory-filter-section-toggle:active,
+.directory-filter-panel.open > .directory-filter-section-toggle {
+  border-bottom-color: transparent;
+}
+
+
 .directory-filter-section-toggle,
 .directory-filter-sort-by {
   width: 100%;
