@@ -553,7 +553,7 @@ transform: translateX(-50%) translateY(-0.25rem) scale(0.98);
 
 .directory-filter-section-toggle {
     min-height: var(--menu-item-height);
-     border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .directory-filter-section-toggle,
