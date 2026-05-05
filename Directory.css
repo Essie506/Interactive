@@ -554,7 +554,7 @@ body.directory::before {
 
 .directory-filter-section-toggle {
     min-height: var(--menu-item-height);
-     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+     border-bottom: 1px solid rgba(255, 0, 0, 0.2);
 }
 
 .directory-filter-section-toggle,
