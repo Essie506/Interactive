@@ -165,7 +165,6 @@ body.profile .profile-page {
 /* =========================
    SHARED CARDS / SURFACES
 ========================= */
-body.profile .profile-hero-card,
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
@@ -182,6 +181,26 @@ body.profile .profile-services-card {
   padding: var(--profile-local-shell-pad);
   overflow-x: clip;
 }
+
+
+body.profile .profile-hero-card {
+  position: relative;
+  z-index: 2;
+  margin: 1rem;
+     margin-bottom: var(--profile-local-surface-gap);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-strong);
+  color: var(--text-dark);
+     overflow-x: clip;
+     transform: translateY(35%);
+}
+
+
+
+
+
 
 body.profile .profile-tabs-card {
   margin-top: var(--profile-local-surface-gap);
