@@ -119,8 +119,6 @@ if (titleSwitch && dropdown) {
 
 directorySwitchBtns.forEach(btn => {
   btn.addEventListener("click", () => {
-    console.log("clicked switch:", btn.dataset.directorySwitch);
-
     setDirectoryType(btn.dataset.directorySwitch);
 
     if (dropdown) dropdown.classList.remove("open");
