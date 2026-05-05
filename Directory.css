@@ -979,7 +979,12 @@ right: calc(var(--panel-padding-fixed) * -1);
 .directory-filter-subgroup .directory-subtitle {
    font-size: var(--directory-font-size);
 }
-     
+
+ .directory-filter-section:hover,
+  .directory-filter-section:hover .directory-filter-section-toggle {
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
 }
 
 /* =========================
