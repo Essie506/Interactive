@@ -220,7 +220,7 @@ body.profile .profile-tabs-inner {
   display: flex;
   align-items: flex-end;
   padding: clamp(1rem, 3vw, 2rem);
-  overflow: hidden;
+  overflow: visible;
   background: rgba(255,255,255,0.35);
 }
 
