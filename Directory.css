@@ -431,6 +431,7 @@ body.directory::before {
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-0.25rem) scale(0.98);
+   overflow: visible;
 
   transition:
     opacity 0.18s ease,
