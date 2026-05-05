@@ -186,7 +186,6 @@ body.profile .profile-services-card {
 body.profile .profile-hero-card {
   position: relative;
   z-index: 2;
-  margin: 1rem;
      margin-bottom: var(--profile-local-surface-gap);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(16px);
