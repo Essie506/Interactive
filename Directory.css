@@ -407,8 +407,8 @@ body.directory::before {
 .filter-type-dropdown {
   position: absolute;
   top: calc(100% + 0.4rem);
-  left: auto;
-   right: 0;
+  left: 50%;
+transform: translateX(-50%) translateY(-0.25rem) scale(0.98);
   overflow: hidden;
 
    
@@ -442,8 +442,8 @@ body.directory::before {
 .filter-type-dropdown.open {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
-     pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+  pointer-events: auto;
 }
 
 .filter-type-dropdown:active {
