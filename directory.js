@@ -301,13 +301,32 @@ filterPanels.forEach(panel => {
 
   if (!toggle) return;
 
-toggle.addEventListener("click", () => {
-  pressFeedback(toggle);
-  panel.classList.toggle("open");
-});
-});
+  toggle.addEventListener("click", () => {
+    pressFeedback(toggle);
 
+    panel.classList.toggle("open");
 
+    setTimeout(() => {
+      document.querySelectorAll(".directory-filter-section").forEach(section => {
+        section.classList.remove("is-interacting");
+      });
+
+      // 👇 safer blur (some browsers are picky)
+      if (document.activeElement instanceof HTMLElement) {
+        document.activeElement.blur();
+      }
+
+      // 👇 force repaint (mobile fix)
+      if (filterMenu) {
+        filterMenu.style.transform = "translateZ(0)";
+
+        requestAnimationFrame(() => {
+          filterMenu.style.transform = "";
+        });
+      }
+    }, 160);
+  });
+});
 // =========================
 // INNER FILTER GROUP TOGGLES
 // =========================
