@@ -300,23 +300,19 @@ filterPanels.forEach(panel => {
   const toggle = panel.querySelector(".directory-filter-section-toggle");
 
   if (!toggle) return;
+toggle.addEventListener("click", () => {
+  pressFeedback(toggle);
 
-  toggle.addEventListener("click", () => {
-    pressFeedback(toggle);
+  const isOpen = panel.classList.contains("open");
 
-    panel.classList.toggle("open");
+  panel.classList.toggle("open");
 
+  if (isOpen) {
     setTimeout(() => {
-      document.querySelectorAll(".directory-filter-section").forEach(section => {
-        section.classList.remove("is-interacting");
-      });
-
-      // 👇 safer blur (some browsers are picky)
       if (document.activeElement instanceof HTMLElement) {
         document.activeElement.blur();
       }
 
-      // 👇 force repaint (mobile fix)
       if (filterMenu) {
         filterMenu.style.transform = "translateZ(0)";
 
@@ -324,8 +320,8 @@ filterPanels.forEach(panel => {
           filterMenu.style.transform = "";
         });
       }
-    }, 50);
-  });
+    }, 160);
+  }
 });
 // =========================
 // INNER FILTER GROUP TOGGLES
