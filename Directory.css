@@ -431,7 +431,7 @@ body.directory::before {
   visibility: hidden;
   pointer-events: none;
   transform: translateY(-0.25rem) scale(0.98);
-   overflow: visible;
+   overflow: hidden;
 
   transition:
     opacity 0.18s ease,
@@ -1006,4 +1006,14 @@ right: calc(var(--panel-padding-fixed) * -1);
   box-shadow: none;
 }
 
+  
+.filter-type-dropdown button {
+  width: 100%;
+}
+ 
+
+.filter-type-dropdown button::before {
+  left: 0;
+  right: 0;
+}
 }
