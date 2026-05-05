@@ -590,7 +590,6 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 
 /* ACTIVE / HIGHLIGHTED SECTION */
-.directory-filter-section:hover,
 .directory-filter-section.is-interacting,
 .directory-filter-panel.open {
   border-bottom-color: transparent;
@@ -598,14 +597,12 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 /* ACTIVE / HIGHLIGHTED TOGGLE INSIDE SECTION */
-.directory-filter-section:hover .directory-filter-section-toggle,
 .directory-filter-panel.open .directory-filter-section-toggle {
   border-bottom-color: transparent;
   box-shadow: none;
 }
 
 /* REMOVE THE LINE ABOVE WHEN THE NEXT SECTION IS HOVERED / INTERACTING / OPEN */
-.directory-filter-section:has(+ .directory-filter-section:hover),
 .directory-filter-section:has(+ .directory-filter-section.is-interacting),
 .directory-filter-section:has(+ .directory-filter-panel.open) {
   border-bottom-color: transparent;
@@ -613,7 +610,6 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 /* REMOVE THE PREVIOUS TOGGLE'S LINE TOO */
-.directory-filter-section:has(+ .directory-filter-section:hover) .directory-filter-section-toggle,
 .directory-filter-section:has(+ .directory-filter-section.is-interacting) .directory-filter-section-toggle,
 .directory-filter-section:has(+ .directory-filter-panel.open) .directory-filter-section-toggle {
   border-bottom-color: transparent;
@@ -627,8 +623,9 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 
 
-
-
+.directory-filter-section:hover,
+.directory-filter-section:hover .directory-filter-section-toggle
+.directory-filter-section:has(+ .directory-filter-section:hover) .directory-filter-section-toggle,
 
 
 
