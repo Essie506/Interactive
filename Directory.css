@@ -359,6 +359,12 @@ body.directory::before {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
+.directory-filter-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between icon + text */
+}
+
 .directory-filter-title-switch {
   all: unset;
   display: flex;
@@ -388,8 +394,14 @@ body.directory::before {
   transition: transform 0.2s ease;
 }
 
-.directory-filter-title-switch.is-open i {
+.directory-filter-title-switch.is-open .fa-chevron-down {
   transform: rotate(180deg);
+}
+
+#filterIcon {
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 
