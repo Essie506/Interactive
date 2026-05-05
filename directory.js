@@ -83,13 +83,23 @@ function setDirectoryType(type) {
   btn.style.display = isActive ? "none" : "flex";
 });
 
-  const filterTitle = document.getElementById("filterTitle");
+ const filterTitle = document.getElementById("filterTitle");
+const filterIcon = document.getElementById("filterIcon");
 
-  if (filterTitle) {
-    const titles = {
-      gyms: "Gyms & Studios",
-      professionals: "Professionals"
-    };
+if (filterTitle && filterIcon) {
+  const titles = {
+    gyms: "Gyms & Studios",
+    professionals: "Professionals"
+  };
+
+  const icons = {
+    gyms: "fa-fire",
+    professionals: "fa-user"
+  };
+
+  filterTitle.textContent = titles[type];
+  filterIcon.className = `fa-solid ${icons[type]}`;
+}
 
     // ✨ fade effect
     filterTitle.style.opacity = 0;
