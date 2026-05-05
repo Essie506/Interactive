@@ -969,12 +969,6 @@ right: calc(var(--panel-padding-fixed) * -1);
 .directory-filter-subgroup .directory-subtitle {
    font-size: var(--directory-font-size);
 }
-
- .directory-filter-section:hover,
-  .directory-filter-section:hover .directory-filter-section-toggle {
-    border-bottom-color: transparent;
-    box-shadow: none;
-  }
 }
 
 /* =========================
@@ -1003,7 +997,7 @@ right: calc(var(--panel-padding-fixed) * -1);
     opacity: 1;
     transform: scale(1);
   }
-   
+
 .directory-filter-section:hover,
 .directory-filter-section:hover .directory-filter-section-toggle,
 .directory-filter-section:has(+ .directory-filter-section:hover) .directory-filter-section-toggle,
