@@ -167,7 +167,8 @@ body.profile .profile-page {
 ========================= */
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
-body.profile .profile-services-card {
+body.profile .profile-services-card,
+body.profile .profile-hero-card {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -183,16 +184,9 @@ body.profile .profile-services-card {
 }
 
 
-body.profile .profile-hero-card {
+ body.profile .profile-hero-card {
   position: relative;
   z-index: 2;
-     margin-bottom: var(--profile-local-surface-gap);
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-strong);
-  color: var(--text-dark);
-     overflow-x: clip;
      transform: translateY(35%);
 }
 
