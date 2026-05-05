@@ -323,6 +323,9 @@ toggle.addEventListener("click", () => {
     }, 160);
   }
 });
+  }); 
+
+  
 // =========================
 // INNER FILTER GROUP TOGGLES
 // =========================
