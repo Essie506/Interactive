@@ -449,9 +449,12 @@ body.directory::before {
   transform: translateX(calc(-50% - 0.7rem)) translateY(0) scale(1);
 }
 
-.filter-type-dropdown:active {
-  transform: scale(0.995);
+
+
+.filter-type-dropdown button:active {
+  transform: scale(0.985);
 }
+
 
 .filter-type-dropdown button {
   position: relative;
@@ -1017,11 +1020,5 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-title-switch * {
   pointer-events: none;
-}
-   .filter-type-dropdown button:active {
-  transform: scale(0.985);
-}
-   .filter-type-dropdown:active {
-  transform: none;
 }
 }
