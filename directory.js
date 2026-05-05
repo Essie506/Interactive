@@ -87,7 +87,7 @@ function setDirectoryType(type) {
 
   if (filterTitle) {
     const titles = {
-      gyms: "Gyms and Studios",
+      gyms: "<i class=fa-solid fa-fire></i> Gyms & Studios",
       professionals: "Professionals"
     };
 
