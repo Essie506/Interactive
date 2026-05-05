@@ -1010,11 +1010,6 @@ right: calc(var(--panel-padding-fixed) * -1);
   transform: translateX(1px);
 }
 
-.filter-type-dropdown {
-  z-index: 9999;
-  isolation: isolate;
-}
-
 .filter-type-dropdown button,
 .filter-type-dropdown button * {
   pointer-events: auto;
@@ -1022,5 +1017,11 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-title-switch * {
   pointer-events: none;
+}
+   .filter-type-dropdown button:active {
+  transform: scale(0.985);
+}
+   .filter-type-dropdown:active {
+  transform: none;
 }
 }
