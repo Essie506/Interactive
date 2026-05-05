@@ -583,28 +583,26 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 
-/* remove bottom border of the active section */
-.directory-filter-section:hover,
-.directory-filter-section.is-interacting,
-.directory-filter-section-toggle:hover,
-.directory-filter-section-toggle.is-interacting,
+
+/* ALL highlight states */
+.directory-filter-section:is(:hover, .is-interacting),
 .directory-filter-panel.open {
   border-bottom-color: transparent;
   box-shadow: none;
 }
 
-/* 🔥 remove the border ABOVE (previous section’s bottom) */
-.directory-filter-section:has(+ .directory-filter-section:hover),
-.directory-filter-section:has(+ .directory-filter-panel.open),
-
-.directory-filter-section:has(+ .directory-filter-section-toggle:hover),
-.directory-filter-section:has(+ .directory-filter-panel.open) .directory-filter-section-toggle,
-
-.directory-filter-section-toggle:has(+ .directory-filter-panel.open) .directory-filter-section,
-.directory-filter-section-toggle:has(+ .directory-filter-section:hover) {
+/* remove previous seam */
+.directory-filter-section:has(+ .directory-filter-section:is(:hover, .is-interacting)),
+.directory-filter-section:has(+ .directory-filter-panel.open) {
   border-bottom-color: transparent;
 }
 
+/* remove previous toggle seam */
+.directory-filter-section:has(+ .directory-filter-section:is(:hover, .is-interacting)) .directory-filter-section-toggle,
+.directory-filter-section:has(+ .directory-filter-panel.open) .directory-filter-section-toggle {
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
 
 
 .directory-filter-section-toggle > .toggle-inner {
