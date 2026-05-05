@@ -6,7 +6,7 @@ body.directory {
 
   /* real values moved local */
   --directory-page-pad-top: calc(var(--bar-height) + 0.625rem);
-  --directory-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));section
+  --directory-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
    --directory-side-pad: var(--directory-gap-sm);
 
   --directory-card-bg: rgba(255, 255, 255, 0.76);
@@ -602,7 +602,8 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-section-toggle:has(+ .directory-filter-panel.open) .directory-filter-section,
 .directory-filter-section-toggle:has(+ .directory-filter-section:hover) {
-  border-bottom-color: transparent
+  border-bottom-color: transparent;
+}
 
 
 
