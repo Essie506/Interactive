@@ -74,19 +74,16 @@ function setDirectoryType(type) {
   document.body.dataset.directoryType = type;
   resetFilterUI();
 
- directorySwitchBtns.forEach(btn => {
-  const isActive = btn.dataset.directorySwitch === type;
+  directorySwitchBtns.forEach(btn => {
+    const isActive = btn.dataset.directorySwitch === type;
 
-  btn.classList.toggle("is-active", isActive);
+    btn.classList.toggle("is-active", isActive);
+    btn.style.display = isActive ? "none" : "flex";
+  });
 
-  // 👇 hide current option
-  btn.style.display = isActive ? "none" : "flex";
-});
+  const filterTitle = document.getElementById("filterTitle");
+  const filterIcon = document.getElementById("filterIcon");
 
- const filterTitle = document.getElementById("filterTitle");
-const filterIcon = document.getElementById("filterIcon");
-
-if (filterTitle && filterIcon) {
   const titles = {
     gyms: "Gyms & Studios",
     professionals: "Professionals"
@@ -97,11 +94,7 @@ if (filterTitle && filterIcon) {
     professionals: "fa-user"
   };
 
-  filterTitle.textContent = titles[type];
-  filterIcon.className = `fa-solid ${icons[type]}`;
-}
-
-    // ✨ fade effect
+  if (filterTitle) {
     filterTitle.style.opacity = 0;
 
     setTimeout(() => {
@@ -110,9 +103,12 @@ if (filterTitle && filterIcon) {
     }, 120);
   }
 
+  if (filterIcon) {
+    filterIcon.className = `fa-solid ${icons[type] || "fa-filter"}`;
+  }
+
   localStorage.setItem("directoryType", type);
 }
-
 
 // =========================
 // DIRECTORY SWITCH
