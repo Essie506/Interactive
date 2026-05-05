@@ -324,7 +324,7 @@ filterPanels.forEach(panel => {
           filterMenu.style.transform = "";
         });
       }
-    }, 160);
+    }, 50);
   });
 });
 // =========================
