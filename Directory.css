@@ -582,16 +582,21 @@ right: calc(var(--panel-padding-fixed) * -1);
   pointer-events: none;
 }
 
-.directory-filter-section:hover,
-.directory-filter-section.is-interacting,
-.directory-filter-panel.open {
-  border-bottom-color: transparent;
+
+.directory-filter-section.open,
+.directory-filter-section-toggle.open,
+.directory-filter-panel.open,
+.directory-filter-panel.open .directory-filter-section-toggle {
+ border-bottom: none;
 }
 
-
-.directory-filter-section:hover + .directory-filter-section,
-.directory-filter-panel.open + .directory-filter-section {
-  border-top: 1px solid transparent;
+.directory-filter-section:hover,
+.directory-filter-section.is-interacting,
+.directory-filter-panel.open,
+.directory-filter-section:hover .directory-filter-section-toggle,
+.directory-filter-panel.open .directory-filter-section-toggle {
+  border-bottom-color: transparent;
+  box-shadow: none;
 }
 
 
