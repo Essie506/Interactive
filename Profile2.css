@@ -206,6 +206,61 @@ body.profile .profile-tabs-inner {
 /* =========================
    HERO
 ========================= */
+
+.profile-hero--personal {
+  position: relative;
+  min-height: clamp(22rem, 42vw, 34rem);
+  display: flex;
+  align-items: flex-end;
+  padding: clamp(1rem, 3vw, 2rem);
+  overflow: hidden;
+  background: rgba(255,255,255,0.35);
+}
+
+.profile-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.profile-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-hero--personal::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to top,
+      rgba(9, 26, 58, 0.58),
+      rgba(9, 26, 58, 0.18),
+      rgba(255,255,255,0.08)
+    );
+}
+
+.profile-hero-card {
+  position: relative;
+  z-index: 2;
+  width: min(46rem, 100%);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: rgba(255,255,255,0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow-strong);
+}
+
+
+
+
+
+
+
+
 body.profile .profile-hero-card {
   display: flex;
   flex-direction: column;
@@ -592,7 +647,32 @@ body.profile .media-play-badge {
 /* =========================
    DESKTOP
 ========================= */
+
 @media (min-width: 901px) {
+
+   
+  .profile-hero--personal {
+    min-height: 34rem;
+    padding: 2rem;
+  }
+
+  .profile-hero-card {
+    max-width: 48rem;
+  }
+
+  .profile-hero-card h1,
+  .profile-name {
+    font-size: clamp(2.2rem, 4vw, 4rem);
+    line-height: 1;
+  }
+
+
+
+
+
+
+
+   
   body.profile .profile-info-grid {
     display: flex;
     flex-direction: column;
