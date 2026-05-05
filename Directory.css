@@ -596,16 +596,14 @@ right: calc(var(--panel-padding-fixed) * -1);
 /* 🔥 remove the border ABOVE (previous section’s bottom) */
 .directory-filter-section:has(+ .directory-filter-section:hover),
 .directory-filter-section:has(+ .directory-filter-panel.open),
-.directory-filter-section:has(+ .directory-filter-panel.open)
-  .directory-filter-section-toggle,
-.directory-filter-section:has(+ .directory-filter-section:hover)
-  .directory-filter-section-toggle,
-.directory-filter-section:has(+ .directory-filter-panel.open)
-  .directory-filter-section-toggle,
-.directory-filter-section:has(+ .directory-filter-section:hover)
-  .directory-filter-section-toggle {
+
+.directory-filter-section:has(+ .directory-filter-section-toggle:hover),
+.directory-filter-section:has(+ .directory-filter-panel.open) .directory-filter-section-toggle,
+
+.directory-filter-section-toggle:has(+ .directory-filter-panel.open) .directory-filter-section,
+.directory-filter-section-toggle:has(+ .directory-filter-section:hover) {
   border-bottom-color: transparent
-}
+
 
 
 .directory-filter-section-toggle > .toggle-inner {
