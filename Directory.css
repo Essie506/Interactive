@@ -618,7 +618,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-panel.open,
 .directory-filter-panel.open .directory-filter-section-toggle {
-  border-bottom: none;
+  border-bottom: transparent;
 }
 
 
