@@ -219,7 +219,6 @@ body.profile .profile-tabs-inner {
   min-height: clamp(22rem, 42vw, 34rem);
   display: flex;
   align-items: flex-end;
-  padding: clamp(1rem, 3vw, 2rem);
   overflow: visible;
   background: rgba(255,255,255,0.35);
 }
