@@ -91,6 +91,7 @@ body {
   --profile-tab-pad-x: calc(0.4rem * var(--profile-scale));
   --profile-tab-font-size: calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
   --profile-tab-letter-spacing: 0.3px;
+   --profile-corner-menu-offset: calc(0.45rem * var(--profile-scale));
 
 
 }
