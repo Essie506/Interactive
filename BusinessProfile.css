@@ -87,7 +87,7 @@ body.business-profile {
   z-index: 2;
   width: min(42rem, calc(100% - 2rem));
   margin: 1rem;
-  padding: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(0.025rem, 2vw, 0.5rem);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
