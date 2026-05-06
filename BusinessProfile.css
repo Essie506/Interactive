@@ -93,12 +93,13 @@ body.business-profile {
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-strong);
   color: var(--text-dark);
+   align-items: flex-start;
 }
 
 .business-status-row,
 .business-section-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   gap: 1rem;
    flex-wrap: nowrap;
