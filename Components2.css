@@ -1098,7 +1098,8 @@ textarea.post-input.composer-input {
 
   body.feed .nav-title,
   body.directory .nav-title,
-  body.profile .nav-title {
+  body.profile .nav-title,
+   body.business-profile .nav-title {
     position: static;
     left: auto;
     transform: translateX(30%);
