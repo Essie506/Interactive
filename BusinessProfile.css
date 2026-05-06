@@ -107,7 +107,7 @@ body.business-profile {
 .share-it {
    display: flex;
    align-items: center;
-   margin-left: auto;
+   margin-right: auto;
 }
 
 .business-verified {
