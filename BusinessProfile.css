@@ -1,3 +1,39 @@
+/* =========================
+   VISIBILITY MODES
+========================= */
+
+/* hide by default */
+body.business-profile .self-only,
+body.business-profile .visitor-only,
+body.business-profile .professional-only,
+body.business-profile .business-only,
+body.business-profile .personal-only {
+  display: none;
+}
+
+/* viewer visibility */
+body.business-profile[data-viewer="self"] .self-only {
+  display: inline-flex;
+}
+
+body.business-profile[data-viewer="visitor"] .visitor-only {
+  display: inline-flex;
+}
+
+/* profile type visibility */
+body.business-profile[data-profile-type="professional"] .professional-only {
+  display: inline-flex;
+}
+
+body.business-profile[data-profile-type="business"] .business-only {
+  display: inline-flex;
+}
+
+body.business-profile[data-profile-type="personal"] .personal-only {
+  display: inline-flex;
+}
+
+
 body.business-profile {
   background: var(--index-bg);
   min-height: 100dvh;
