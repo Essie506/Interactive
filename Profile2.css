@@ -638,13 +638,7 @@ body.profile .media-play-badge {
 ========================= */
 
 @media (min-width: 901px) {
-
    
-  .profile-hero--personal {
-    min-height: 34rem;
-  }
-
-
  body.profile .profile-hero-card {
   transform:
     translateX(2%)
