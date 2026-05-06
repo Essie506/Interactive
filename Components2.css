@@ -393,6 +393,28 @@
   transform: translateY(0) scale(0.98);
 }
 
+
+body.business-profile .profile-hero-corner {
+  position: absolute;
+  right: var(--profile-local-inner-pad);
+  bottom: var(--profile-local-inner-pad);
+  z-index: 4;
+}
+
+body.business-profile .profile-hero-corner .messages-corner-menu {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--profile-corner-menu-offset));
+  top: auto;
+  left: auto;
+  min-width: 12rem;
+}
+
+body.business-profile .profile-hero-corner .menu-block {
+  display: flex;
+  flex-direction: column;
+}
+
 .messages-corner-item-danger {
   color: #7a1020;
 }
