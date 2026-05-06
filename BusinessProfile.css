@@ -99,9 +99,15 @@ body.business-profile {
 .business-section-header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
-     flex-wrap: nowrap;
+   flex-wrap: nowrap;
+}
+
+.share-it {
+   display: flex;
+   align-items: center;
+   margin-left: auto;
 }
 
 .business-verified {
