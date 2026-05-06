@@ -92,6 +92,11 @@ body {
   --profile-tab-font-size: calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
   --profile-tab-letter-spacing: 0.3px;
    --profile-corner-menu-offset: calc(0.45rem * var(--profile-scale));
+   --profile-local-icon-btn-size: calc(var(--profile-icon-btn-size) * var(--profile-scale));
+  --profile-local-avatar-size: calc(var(--profile-avatar-size) * var(--profile-scale));
+  --profile-local-avatar-font-size: calc(2rem * var(--profile-scale));
+  --profile-upload-btn-size: calc(2rem * var(--profile-scale));
+  --profile-upload-btn-offset: calc(0.2rem * var(--profile-scale));
 
 
 }
