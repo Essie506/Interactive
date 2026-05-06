@@ -360,7 +360,7 @@
 }
 
 .profile-tabs-inline {
-  margin-top: var(--profile-tabs-inline-margin-top);
+  margin-top: var(--profile-tabs-inline-pad-top);
   padding-top: var(--profile-tabs-inline-pad-top);
 }
 
@@ -386,6 +386,7 @@
 
 .profile-tab i {
   transition: transform 0.22s cubic-bezier(.34,1.56,.64,1);
+   gap: var( --space-xs);
 }
 
 
