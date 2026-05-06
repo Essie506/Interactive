@@ -190,7 +190,7 @@ body.profile .profile-services-card {
    padding: var(--profile-local-shell-pad);
   overflow-x: clip;
    box-sizing: border-box;
-   width: 100%
+   width: 100%;
     margin-top: clamp(3rem, 8vw, 5rem);
     position: relative;
     z-index: 2;
