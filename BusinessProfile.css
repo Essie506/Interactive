@@ -98,7 +98,7 @@ body.business-profile {
 .business-status-row,
 .business-section-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
    flex-wrap: nowrap;
