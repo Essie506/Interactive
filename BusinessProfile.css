@@ -107,8 +107,6 @@ body.business-profile {
 .share-it {
    display: flex;
    align-items: center;
-   margin-right: 0;
-   margin-left: auto;
    justify-content: flex-end;
 }
 
