@@ -188,6 +188,7 @@ body.profile .profile-hero-card {
   position: relative;
   z-index: 2;
      transform: translateY(8%);
+    transform: translateX(10%);
 }
 
 body.profile .profile-tabs-card {
@@ -651,9 +652,10 @@ body.profile .media-play-badge {
 
 
   .profile-hero-card {
-    max-width: 48rem;
-      transform: translateY(12%);
-  }
+  transform:
+    translateX(10%)
+    translateY(8%);
+}
 
   .profile-hero-card h1,
   .profile-name {
