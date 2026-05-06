@@ -29,7 +29,7 @@ body.profile {
   --profile-accent-soft: rgba(56, 173, 169, 0.15);
 
   --profile-card-pad: 0.25rem;
-  --profile-inner-pad: 0.3rem;
+  --profile-inner-pad: 0.25rem;
   --profile-hero-pad: 0.25rem;
 
   --profile-gap-xxs: 0.25rem;
@@ -191,7 +191,7 @@ body.profile .profile-services-card {
   overflow-x: clip;
    box-sizing: border-box;
    width: 100%;
-    margin-top: clamp(3rem, 8vw, 5rem);
+    margin-top: clamp(6rem, 8vw, 10rem);
     position: relative;
     z-index: 2;
      background: rgba(255, 255, 255, 0.72);
