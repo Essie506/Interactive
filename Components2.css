@@ -1185,6 +1185,28 @@ textarea.post-input.composer-input {
 .profile-tab:hover i {
   transform: scale(1.08);
 }
+
+body.business-profile .chevron-btn {
+  position: absolute;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+    background: var(--glass-white);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
+    transition:
+    background 0.22s ease,
+    box-shadow 0.22s ease,
+    transform 0.2s ease,
+    color 0.2s ease;
+  right: 0;
+  bottom: 0;
+ width: var(--chevron-size);
+  height: var(--chevron-size);
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+   z-index: 20;
+}
 }
 
 /* =========================
