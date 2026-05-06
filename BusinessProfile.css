@@ -150,7 +150,7 @@ body.business-profile {
 
 .business-location,
 .business-intro {
-  margin: 0;
+  margin-bottom: 0.5rem;
   line-height: 1.5;
 }
 
