@@ -394,14 +394,14 @@
 }
 
 
-body.business-profile .profile-hero-corner {
+body.business-profile .messages-corner-menu profile-corner-menu {
   position: absolute;
   right: var(--profile-local-inner-pad);
   bottom: var(--profile-local-inner-pad);
   z-index: 4;
 }
 
-body.business-profile .profile-hero-corner .messages-corner-menu {
+body.business-profile .messages-corner-menu profile-corner-menu {
   position: absolute;
   right: 0;
   bottom: calc(100% + var(--profile-corner-menu-offset));
@@ -410,7 +410,7 @@ body.business-profile .profile-hero-corner .messages-corner-menu {
   min-width: 12rem;
 }
 
-body.business-profile .profile-hero-corner .menu-block {
+body.business-profile .messages-corner-menu profile-corner-menu {
   display: flex;
   flex-direction: column;
 }
