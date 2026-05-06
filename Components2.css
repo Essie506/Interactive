@@ -1211,7 +1211,7 @@ body.business-profile .chevron-btn {
 body.business-profile .profile-hero-corner {
   position: absolute;
  top: 1rem;
-    right: 1rem;
+    left: 1rem;
     bottom: auto;
   z-index: 4;
 }
