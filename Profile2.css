@@ -187,7 +187,7 @@ body.profile .profile-hero-card {
  body.profile .profile-hero-card {
   position: relative;
   z-index: 2;
-     transform: translateY(35%);
+     transform: translateY(20%);
 }
 
 body.profile .profile-tabs-card {
