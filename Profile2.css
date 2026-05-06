@@ -190,8 +190,8 @@ body.profile .profile-services-card {
    padding: var(--profile-local-shell-pad);
   overflow-x: clip;
    box-sizing: border-box;
-   width: calc(100% - 1rem);
-    margin: -3.5rem auto 0;
+   width: 100%
+    margin: -6rem auto 0;
     position: relative;
     z-index: 2;
      background: rgba(255, 255, 255, 0.72);
@@ -226,7 +226,7 @@ body.profile .profile-tabs-inner {
 
 .profile-hero--personal {
   position: relative;
-  min-height: clamp(24rem, 55dvh, 34rem);
+  min-height: clamp(12rem, 25dvh, 17rem);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
