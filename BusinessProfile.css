@@ -142,7 +142,6 @@ body.business-profile {
 }
 
 .business-hero-card h1 {
-  margin: 0.8rem 0 0.35rem;
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
