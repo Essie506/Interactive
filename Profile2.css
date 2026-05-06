@@ -28,9 +28,9 @@ body.profile {
   --profile-avatar-bg-strong: rgba(56, 173, 169, 0.2);
   --profile-accent-soft: rgba(56, 173, 169, 0.15);
 
-  --profile-card-pad: 0.25rem;
-  --profile-inner-pad: 0.25rem;
-  --profile-hero-pad: 0.25rem;
+  --profile-card-pad: 0.3rem;
+  --profile-inner-pad: 0.3rem;
+  --profile-hero-pad: 0.3rem;
 
   --profile-gap-xxs: 0.25rem;
   --profile-gap-xs: 0.3rem;
