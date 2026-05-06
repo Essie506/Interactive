@@ -1187,7 +1187,7 @@ textarea.post-input.composer-input {
 }
 
 body.business-profile .chevron-btn {
-  position: absolute;
+  position: relative;
   padding: 0;
   border: none;
   border-radius: 0;
@@ -1210,12 +1210,11 @@ body.business-profile .chevron-btn {
 
 body.business-profile .profile-hero-corner {
   position: absolute;
-  right: var(--profile-local-inner-pad);
-  bottom: var(--profile-local-inner-pad);
+ top: 1rem;
+    right: 1rem;
+    bottom: auto;
   z-index: 4;
 }
-
-   
 }
 
 /* =========================
