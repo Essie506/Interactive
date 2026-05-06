@@ -638,6 +638,14 @@ body.profile .media-play-badge {
 ========================= */
 
 @media (min-width: 901px) {
+
+   .profile-hero--personal {
+  min-height: clamp(24rem, 55dvh, 34rem);
+   display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: rgba(255,255,255,0.35);
+}
    
  body.profile .profile-hero-card {
   transform:
@@ -646,6 +654,7 @@ body.profile .media-play-badge {
    width: min(42rem, calc(100% - 2rem));
        display: block;
 }
+
 
   .profile-hero-card h1,
   .profile-name {
