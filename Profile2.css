@@ -167,8 +167,7 @@ body.profile .profile-page {
 ========================= */
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
-body.profile .profile-services-card,
-body.profile .profile-hero-card {
+body.profile .profile-services-card {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -183,12 +182,18 @@ body.profile .profile-hero-card {
   overflow-x: clip;
 }
 
-
  body.profile .profile-hero-card {
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
+   padding: var(--profile-local-shell-pad);
+  overflow-x: clip;
+   box-sizing: border-box;
+   width: calc(100% - 1rem);
+    margin: -3.5rem auto 0;
+    position: relative;
+    z-index: 2;
 }
 
 body.profile .profile-tabs-card {
@@ -646,8 +651,25 @@ body.profile .media-play-badge {
   overflow: hidden;
   background: rgba(255,255,255,0.35);
 }
-   
+
+
  body.profile .profile-hero-card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-card-bg);
+  backdrop-filter: var(--profile-blur);
+  -webkit-backdrop-filter: var(--profile-blur);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--profile-local-surface-gap);
+  padding: var(--profile-local-shell-pad);
+  overflow-x: clip;
   transform:
     translateX(2%)
     translateY(-5%);
