@@ -342,97 +342,71 @@
   display: inline-flex;
 }
 
+
 /* =========================
-   LARGE SCREEN NAV
+   PROFILE TABS SHARED
 ========================= */
-@media (min-width: 901px) {
-  .bottom-nav {
-    display: none;
-  }
 
-  .navbar {
-    height: var(--bar-height-large);
-    padding: 0 1.375rem;
-    display: grid;
-    grid-template-columns: auto auto 1fr auto;
-    align-items: center;
-    column-gap: 1.625rem;
-    overflow: visible;
-  }
-
-  .nav-left,
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
-  .nav-left {
-    justify-self: start;
-  }
-
-  .navbar-right {
-    justify-self: end;
-  }
-
-  body.feed .nav-title,
-  body.directory .nav-title,
-  body.profile .nav-title {
-    position: static;
-    left: auto;
-    transform: translateX(30%);
-    justify-self: start;
-    font-size: 1.05rem;
-    max-width: none;
-    overflow: visible;
-    text-overflow: unset;
-  }
-
-  .nav-center {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    transform: translateX(-55px);
-  }
-
-  .desktop-nav-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: min(37.5rem, 100%);
-    margin: 0 auto;
-  }
-
-  .desktop-icon-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  #searchInput.open {
-    display: block;
-  }
-
-  .desktop-nav-links a.active,
-  .desktop-nav-links a.active i {
-    color: var(--main-color);
-  }
-
-  .nav-left .desktop-icon-link,
-  .navbar-right .icon-btn,
-  .navbar-right .composer-toggle,
-  .menu-toggle {
-    width: var(--icon-btn-size);
-    height: var(--icon-btn-size);
-    flex-shrink: 0;
-  }
-
-  .nav-left .desktop-icon-link,
-  .navbar-right .icon-btn i,
-  .navbar-right .composer-toggle i {
-    font-size: var(--icon-size);
-  }
+.profile-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--profile-tabs-gap);
+  padding: 0 var(--profile-tabs-pad-x);
+  width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
+
+.profile-tabs-inline {
+  margin-top: var(--profile-tabs-inline-margin-top);
+  padding-top: var(--profile-tabs-inline-pad-top);
+}
+
+.profile-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--profile-tab-gap);
+  flex: 0 0 auto;
+  min-width: max-content;
+  padding: var(--profile-tab-pad-y) var(--profile-tab-pad-x);
+  font-family: inherit;
+  font-size: var(--profile-tab-font-size);
+  font-weight: 600;
+  letter-spacing: var(--profile-tab-letter-spacing);
+  color: var(--text-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  transition: color 0.18s ease, transform 0.22s cubic-bezier(.34,1.56,.64,1);
+}
+
+.profile-tab i {
+  transition: transform 0.22s cubic-bezier(.34,1.56,.64,1);
+}
+
+
+.profile-tab:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.messages-corner-item-danger {
+  color: #7a1020;
+}
+
+.messages-corner-item-danger i {
+  color: inherit;
+}
+
+.messages-corner-item-danger:hover,
+.messages-corner-item-danger:focus-visible {
+  background: rgba(122, 16, 32, 0.08);
+}
+
+
 
 /* =========================
    TABS
@@ -1088,6 +1062,111 @@ textarea.post-input.composer-input {
   }
 }
 
+
+/* =========================
+   LARGE SCREEN NAV
+========================= */
+@media (min-width: 901px) {
+  .bottom-nav {
+    display: none;
+  }
+
+  .navbar {
+    height: var(--bar-height-large);
+    padding: 0 1.375rem;
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    align-items: center;
+    column-gap: 1.625rem;
+    overflow: visible;
+  }
+
+  .nav-left,
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-left {
+    justify-self: start;
+  }
+
+  .navbar-right {
+    justify-self: end;
+  }
+
+  body.feed .nav-title,
+  body.directory .nav-title,
+  body.profile .nav-title {
+    position: static;
+    left: auto;
+    transform: translateX(30%);
+    justify-self: start;
+    font-size: 1.05rem;
+    max-width: none;
+    overflow: visible;
+    text-overflow: unset;
+  }
+
+  .nav-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transform: translateX(-55px);
+  }
+
+  .desktop-nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: min(37.5rem, 100%);
+    margin: 0 auto;
+  }
+
+  .desktop-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #searchInput.open {
+    display: block;
+  }
+
+  .desktop-nav-links a.active,
+  .desktop-nav-links a.active i {
+    color: var(--main-color);
+  }
+
+  .nav-left .desktop-icon-link,
+  .navbar-right .icon-btn,
+  .navbar-right .composer-toggle,
+  .menu-toggle {
+    width: var(--icon-btn-size);
+    height: var(--icon-btn-size);
+    flex-shrink: 0;
+  }
+
+  .nav-left .desktop-icon-link,
+  .navbar-right .icon-btn i,
+  .navbar-right .composer-toggle i {
+    font-size: var(--icon-size);
+  }
+
+   .profile-tab:hover {
+  color: rgba(9, 26, 58, 0.88);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.profile-tab:hover i {
+  transform: scale(1.08);
+}
+}
+
+/* =========================
+   SMALL SCREEN NAV
+========================= */
 
 @media (max-width: 900px) {
   .nav-center,
