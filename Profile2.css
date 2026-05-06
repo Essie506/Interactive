@@ -655,6 +655,8 @@ body.profile .media-play-badge {
   transform:
     translateX(1%)
     translateY(8%);
+   width: min(42rem, calc(100% - 2rem));
+       display: block;
 }
 
   .profile-hero-card h1,
@@ -677,18 +679,11 @@ body.profile .media-play-badge {
 
   body.profile #profile-panel-posts,
   body.profile #profile-panel-workouts,
-  body.profile #profile-panel-media {
+  body.profile #profile-panel-media,
+   .profile-services-mobile {
     display: block;
   }
 
-  .profile-services-mobile {
-    display: block;
-  }
-
-  body.profile .profile-hero-card {
-    display: block;
-    width: 100%;
-  }
 
   body.profile .profile-info-inner {
     display: grid;
