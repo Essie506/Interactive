@@ -146,7 +146,7 @@ body.business-profile {
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
-   margin: 0 0 auto;
+   margin-left: 0.025rem;
 }
 
 .business-location,
