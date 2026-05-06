@@ -187,7 +187,7 @@ body.profile .profile-hero-card {
  body.profile .profile-hero-card {
   position: relative;
   z-index: 2;
-     transform: translateY(12%);
+     transform: translateY(8%);
 }
 
 body.profile .profile-tabs-card {
@@ -219,7 +219,7 @@ body.profile .profile-tabs-inner {
   min-height: clamp(22rem, 42vw, 34rem);
   display: flex;
   align-items: flex-end;
-  overflow: visible;
+  overflow: hidden;
   background: rgba(255,255,255,0.35);
 }
 
@@ -647,11 +647,12 @@ body.profile .media-play-badge {
    
   .profile-hero--personal {
     min-height: 34rem;
-    padding: 2rem;
   }
+
 
   .profile-hero-card {
     max-width: 48rem;
+      transform: translateY(12%);
   }
 
   .profile-hero-card h1,
@@ -659,14 +660,6 @@ body.profile .media-play-badge {
     font-size: clamp(2.2rem, 4vw, 4rem);
     line-height: 1;
   }
-
-
-
-
-
-
-
-   
   body.profile .profile-info-grid {
     display: flex;
     flex-direction: column;
