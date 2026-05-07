@@ -360,6 +360,8 @@
 }
 
 .profile-tabs-inline {
+   display: flex;
+   position: absolute;
   margin: calc(var(--profile-tabs-inline-margin-top) + 0.6rem)
         var(--profile-tabs-inline-margin-top)
         0
