@@ -86,8 +86,9 @@ body.business-profile {
   position: relative;
   z-index: 2;
   width: min(42rem, calc(100% - 2rem));
-  margin: 0.5rem;
-  padding: clamp(0.025rem, 2vw, 0.25rem);
+   padding:
+    var(--profile-hero-inner-pad-y)
+    var(--profile-hero-inner-pad-x);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -101,7 +102,7 @@ body.business-profile {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 1rem;
+  gap: var(--profile-name-row-gap);
    flex-wrap: nowrap;
 }
 
@@ -115,10 +116,9 @@ body.business-profile {
 .business-verified {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
   color: var(--main-color);
-  font-weight: 800;
-  font-size: 0.9rem;
+    font-size: var(--profile-verified-size);
+     line-height: 1;
 }
 
 .business-edit-btn,
@@ -146,25 +146,30 @@ body.business-profile {
   font-size: clamp(2rem, 5vw, 4rem);
   line-height: 0.95;
   letter-spacing: -0.05em;
-   margin-left: 0.025rem;
+     margin: 0;
+  min-width: 0;
+  white-space: nowrap;
+    font-weight: 700;
 }
 
 .business-location,
-.business-intro {
-  line-height: 1.5;
+.business-intro,
+business-handle {
+  line-height: var(--profile-bio-line-height);
 }
 
 .business-location {
   display: flex;
   align-items: center;
+   margin: var(--profile-role-margin-top) 0;
   gap: 0.4rem;
   font-weight: 700;
   color: rgba(9, 26, 58, 0.75);
 }
 
-.business-intro {
-  max-width: 36rem;
-  margin-top: 0.85rem;
+body.business-profile .business-intro {
+  width: min(100%, var(--profile-bio-max));
+  margin: var(--profile-bio-margin-top) auto;
   color: rgba(9, 26, 58, 0.82);
 }
 
