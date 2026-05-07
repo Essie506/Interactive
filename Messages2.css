@@ -566,40 +566,6 @@ body.messages-open {
   transform: translateY(-1px) scale(1.06);
 }
 
-/* =========================
-   PROFILE CHEVRON GLOW
-========================= */
-.profile-hero-corner .profile-chevron-btn {
-  overflow: visible;
-  position: relative;
-  z-index: 6;
-  color: #091a3a;
-}
-
-.profile-hero-corner profile.chevron-btn:hover,
-.profile-hero-corner .chevron-btn.open {
-  color: #0f8f79;
-}
-
-.profile-hero-corner profile.chevron-btn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  clip-path: inherit;
-  z-index: -1;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-
-  filter:
-    drop-shadow(0 0 6px rgba(7, 153, 146, 0.16))
-    drop-shadow(0 0 12px rgba(7, 153, 146, 0.1));
-}
-
-.profile-hero-corner profile.chevron-btn:hover::after,
-.profile-hero-corner profile.chevron-btn.open::after {
-  opacity: 1;
-}
 
 /* =========================
    CORNER MENU
