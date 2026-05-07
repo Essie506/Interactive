@@ -184,6 +184,7 @@ body.profile .profile-services-card {
 
  body.profile .profile-hero-card {
   position: relative;
+    justify-content: center;
   z-index: 2;
   display: flex;
   flex-direction: column;
