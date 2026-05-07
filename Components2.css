@@ -367,7 +367,7 @@
 }
 
 .profile-no-tabs {
-   background: rgba(255, 255, 255, 0.72);
+   background: transparent;
    width: 99%;
    z-index:2;
 }
