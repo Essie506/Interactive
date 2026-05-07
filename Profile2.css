@@ -195,7 +195,7 @@ body.profile .profile-services-card {
    box-sizing: border-box;
    width: 100%;
     position: relative;
-    z-index: 2;
+    z-index: 3;
       background: var(--profile-card-bg);
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
