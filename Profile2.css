@@ -193,10 +193,9 @@ body.profile .profile-services-card {
     justifty-self: flex-end;
   overflow-x: clip;
    box-sizing: border-box;
-   width: 100%;
-    position: relative;
+    width: min(42rem, calc(100% - 2rem));
     z-index: 3;
-      background: rgba(255, 0, 0, 0.2);
+   background: var(--profile-card-bg);
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
@@ -802,22 +801,9 @@ body.profile .media-play-badge {
 }
 
  body.profile .profile-hero-card {
-  position: absolute;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
  left:  var(--profile-local-surface-gap);
   bottom:  var(--profile-local-surface-gap);
-  box-sizing: border-box;
-  border-radius: 0;
-  background: var(--profile-card-bg);
-  backdrop-filter: var(--profile-blur);
-  -webkit-backdrop-filter: var(--profile-blur);
-  box-shadow: var(--shadow-soft);
-  padding: var(--profile-local-shell-pad);
-  overflow-x: clip;
-   width: min(42rem, calc(100% - 2rem));
-       display: block;
+  display: block;
 }
 
   .profile-hero-card h1,
