@@ -202,61 +202,6 @@ body.business-profile .business-intro {
   color: #fff;
 }
 
-.business-section-tabs {
-  position: sticky;
-  top: var(--bar-height-large);
-  z-index: 50;
-  display: flex;
-  gap: 0.5rem;
-  overflow-x: auto;
-  scrollbar-width: none;
-  margin: 0.8rem 0;
-  padding: 0.65rem;
-  background: rgba(255, 255, 255, 0.64);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: var(--shadow-soft);
-}
-
-.business-section-tabs::-webkit-scrollbar {
-  display: none;
-}
-
-.business-section-tabs a {
-  flex: 0 0 auto;
-  text-decoration: none;
-  color: var(--text-dark);
-  font-weight: 800;
-  padding: 0.55rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.62);
-}
-
-.business-section {
-  scroll-margin-top: calc(var(--bar-height-large) + 5rem);
-  margin-bottom: 0.8rem;
-  padding: clamp(1rem, 2vw, 1.4rem);
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-soft);
-}
-
-.business-section-header {
-  margin-bottom: 0.9rem;
-}
-
-.business-section h2,
-.business-professional-card h3 {
-  margin: 0;
-  color: var(--text-dark);
-}
-
-.business-section p {
-  margin: 0;
-  color: rgba(9, 26, 58, 0.78);
-  line-height: 1.6;
-}
 
 .business-chip-row {
   display: flex;
