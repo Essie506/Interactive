@@ -324,7 +324,7 @@ body.profile .profile-avatar-wrap {
   grid-row: 1;
   align-self: start;
   justify-self: end;
-  transform: translate(-0.4rem, -0.2rem);
+  transform: translate(-0.6rem, -0.35rem);
   position: relative;
   display: inline-flex;
   justify-content: center;
