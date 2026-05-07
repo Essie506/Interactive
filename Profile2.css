@@ -68,7 +68,7 @@ body.profile {
   --profile-topbar-gap: calc(var(--profile-gap-md) * var(--profile-scale));
   --profile-top-actions-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
   --profile-name-row-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
-  --profile-corner-menu-offset: calc(0.45rem * var(--profile-scale));
+ --profile-corner-menu-offset: calc(0.75rem * var(--profile-scale));
 
   --profile-local-icon-btn-size: calc(var(--profile-icon-btn-size) * var(--profile-scale));
   --profile-local-avatar-size: calc(var(--profile-avatar-size) * var(--profile-scale));
@@ -484,6 +484,7 @@ body.profile .profile-hero-corner .profile-corner-menu {
     box-shadow 0.2s ease;
 }
 
+
 body.profile .profile-hero-corner .menu-block {
   display: flex;
   flex-direction: column;
@@ -590,6 +591,15 @@ body.profile .profile-hero-corner .profile-corner-menu:active {
     transform 0.18s ease,
     color 0.2s ease;
 }
+
+.profile-corner-item:last-child::before {
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.125rem;
+  border-bottom-left-radius: 0.75rem;
+  border-bottom-right-radius: 0.75rem;
+}
+
 
 .profile-corner-item::before {
   content: "";
