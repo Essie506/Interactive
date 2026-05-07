@@ -450,14 +450,6 @@ body.profile .profile-edit-btn {
    PROFILE-HERO-CORNER-MENU
 ========================= */
 
-.profile-corner-item-danger {
-  color: #b91c1c;
-}
-
-.profile-corner-item-danger:hover {
-  color: #8f2d3f;
-}
-
 
 body.profile .profile-hero-corner .profile-corner-menu {
   position: absolute;
@@ -591,6 +583,15 @@ body.profile .profile-hero-corner .menu-block {
   color: var(--text-dark);
   opacity: 0.75;
   transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+
+.profile-corner-item-danger {
+  color: #b91c1c;
+}
+
+.profile-corner-item-danger:hover {
+  color: #8f2d3f;
 }
 
 
