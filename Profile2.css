@@ -453,7 +453,7 @@ body.profile .profile-edit-btn {
 
 body.profile .profile-hero-corner .profile-corner-menu {
   position: absolute;
-  right: 0.5rem;
+  right: 0.65rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
   top: auto;
   left: auto;
