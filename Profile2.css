@@ -194,10 +194,10 @@ body.profile .profile-services-card {
    width: 100%;
     position: relative;
     z-index: 2;
-     background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-strong);
+      background: var(--profile-card-bg);
+  backdrop-filter: var(--profile-blur);
+  -webkit-backdrop-filter: var(--profile-blur);
+  box-shadow: var(--shadow-soft);
 }
 
 body.profile .profile-tabs-card {
