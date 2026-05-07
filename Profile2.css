@@ -635,10 +635,6 @@ body.profile .profile-hero-corner .profile-corner-menu:active {
   color: #b91c1c;
 }
 
-.profile-corner-item-danger:hover {
-  color: #8f2d3f;
-}
-
 
 /* =========================
    POSTS / WORKOUTS / MEDIA
@@ -760,12 +756,12 @@ body.profile .media-play-badge {
 @media (min-width: 901px) {
 
 
-   .profile-corner-item:hover i {
+.profile-corner-item:hover i {
   opacity: 1;
   transform: translateX(1px);
 }
 
-   .profile-corner-item:hover {
+.profile-corner-item:hover {
   color: var(--text-dark);
   transform: translateX(2px);
 }
@@ -949,6 +945,10 @@ column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
   box-shadow:
     0 16px 36px rgba(0, 0, 0, 0.18),
     inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+   .profile-corner-item-danger:hover {
+  color: #8f2d3f;
 }
 
 }
