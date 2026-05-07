@@ -489,14 +489,14 @@ body.profile .profile-hero-corner .menu-block {
   flex-direction: column;
 }
 
-.profile-corner-menu.open {
+body.profile .profile-hero-corner .profile-corner-menu.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0) scale(1);
 }
 
-.profile-corner-menu:active {
+body.profile .profile-hero-corner .profile-corner-menu:active {
   transform: scale(0.995);
 }
 
