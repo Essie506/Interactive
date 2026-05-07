@@ -450,16 +450,6 @@ body.profile .profile-edit-btn {
    PROFILE-HERO-CORNER-MENU
 ========================= */
 
-.profile-corner-menu.open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
-
-.profile-corner-menu:active {
-  transform: scale(0.995);
-}
 
 body.profile .profile-hero-corner .profile-corner-menu {
   position: absolute;
@@ -497,6 +487,17 @@ body.profile .profile-hero-corner .profile-corner-menu {
 body.profile .profile-hero-corner .menu-block {
   display: flex;
   flex-direction: column;
+}
+
+.profile-corner-menu.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.profile-corner-menu:active {
+  transform: scale(0.995);
 }
 
 
