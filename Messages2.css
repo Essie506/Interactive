@@ -537,19 +537,6 @@ body.messages-open {
    z-index: 20;
 }
 
-.profile-hero-corner .chevron-btn {
-     background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.96),
-    rgba(242, 236, 255, 0.9)
-  );
-
-  backdrop-filter: blur(4px);
-  cursor: pointer;
-  z-index: 5;
-
-  box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
-}
 
 
 /* Chevron icons */
@@ -582,19 +569,19 @@ body.messages-open {
 /* =========================
    PROFILE CHEVRON GLOW
 ========================= */
-.profile-hero-corner .chevron-btn {
+.profile-hero-corner .profile-chevron-btn {
   overflow: visible;
   position: relative;
   z-index: 6;
   color: #091a3a;
 }
 
-.profile-hero-corner .chevron-btn:hover,
+.profile-hero-corner profile.chevron-btn:hover,
 .profile-hero-corner .chevron-btn.open {
   color: #0f8f79;
 }
 
-.profile-hero-corner .chevron-btn::after {
+.profile-hero-corner profile.chevron-btn::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -609,8 +596,8 @@ body.messages-open {
     drop-shadow(0 0 12px rgba(7, 153, 146, 0.1));
 }
 
-.profile-hero-corner .chevron-btn:hover::after,
-.profile-hero-corner .chevron-btn.open::after {
+.profile-hero-corner profile.chevron-btn:hover::after,
+.profile-hero-corner profile.chevron-btn.open::after {
   opacity: 1;
 }
 
