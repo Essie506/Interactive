@@ -363,6 +363,7 @@
   margin-top: var(--profile-tabs-inline-margin-top);
   padding: var(--profile-tabs-inline-pad-top) 0;
    align-self: center;
+   background: transparent;
 }
 
 .profile-no-tabs {
