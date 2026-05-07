@@ -92,7 +92,7 @@ body.profile {
   --profile-tab-font-size: calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
   --profile-tab-letter-spacing: 0.3px;
 
-  --profile-saved-card-width: calc(clamp(9rem, 22vw, 12rem) * var(--profile-scale));
+  --profile-saved--width: calc(clamp(9rem, 22vw, 12rem) * var(--profile-scale));
   --profile-saved-card-pad: calc(var(--profile-card-pad) * var(--profile-scale));
   --profile-saved-title-margin-bottom: calc(0.25rem * var(--profile-scale));
   --profile-saved-title-margin-bottom-alt: calc(0.375rem * var(--profile-scale));
@@ -196,7 +196,7 @@ body.profile .profile-services-card {
    width: 100%;
     position: relative;
     z-index: 3;
-      background: var(--profile-card-bg);
+      background: solid rgba(255, 0, 0, 0.2);
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
