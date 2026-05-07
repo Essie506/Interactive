@@ -510,6 +510,26 @@ body.profile .profile-hero-corner .menu-block {
   box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.08);
 }
 
+
+
+/* Chevron icons */
+.profile-chevron-btn i {
+  position: absolute;
+  line-height: 1;
+  color: var(--text-dark);
+  pointer-events: none;
+  z-index: 2;
+  transition: transform 0.2s ease, color 0.2s ease;
+   font-size: var(--chevron-icon-size);
+   right: var(--chevron-icon-offset);
+  bottom: var(--chevron-icon-offset);
+}
+
+/* Open rotation */
+.profile-chevron-btn.open i {
+  transform: rotate(180deg);
+}
+
 .profile-corner-item {
   position: relative;
   z-index: 1;
@@ -868,6 +888,15 @@ column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
     right: 0;
     bottom: auto;
   z-index: 4;
+}
+
+   .profile-chevron-btn:hover {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.16),
+    0 6px 18px rgba(0, 0, 0, 0.14),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px) scale(1.06);
 }
 }
 
