@@ -269,7 +269,7 @@ body.profile .profile-hero-card {
   bottom: var(--profile-local-surface-gap);
   z-index: 3;
 
-  width: min(42rem, calc(100% - 2rem));
+  width: min(38rem, calc(100% - 2rem));
   box-sizing: border-box;
 
   padding: var(--profile-local-shell-pad);
@@ -324,7 +324,7 @@ body.profile .profile-avatar-wrap {
   grid-row: 1;
   align-self: start;
   justify-self: end;
-  transform: translate(-3rem, -0.5rem);
+  transform: translate(-2.5rem, -0.5rem);
   position: relative;
   display: inline-flex;
   justify-content: center;
