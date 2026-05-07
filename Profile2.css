@@ -592,6 +592,8 @@ body.profile .profile-hero-corner .profile-corner-menu:active {
     color 0.2s ease;
 }
 
+
+
 .profile-corner-item:last-child::before {
   left: -0.5rem;
   right: -0.5rem;
@@ -621,6 +623,11 @@ body.profile .profile-hero-corner .profile-corner-menu:active {
 
   z-index: 0;
   pointer-events: none;
+}
+
+.profile-corner-item:hover::before {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .profile-corner-item i {
