@@ -131,7 +131,7 @@
 .profile-service-links,
 .directory-tabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: center;
   gap: var(--space-xs);
 }
