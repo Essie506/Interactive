@@ -68,7 +68,7 @@ body.profile {
   --profile-topbar-gap: calc(var(--profile-gap-md) * var(--profile-scale));
   --profile-top-actions-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
   --profile-name-row-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
- --profile-corner-menu-offset: calc(1.15rem * var(--profile-scale));
+ --profile-corner-menu-offset: calc(1.5rem * var(--profile-scale));
 
   --profile-local-icon-btn-size: calc(var(--profile-icon-btn-size) * var(--profile-scale));
   --profile-local-avatar-size: calc(var(--profile-avatar-size) * var(--profile-scale));
