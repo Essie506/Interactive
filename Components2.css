@@ -433,6 +433,21 @@ body.business-profile .messages-corner-menu profile-corner-menu {
 }
 
 
+.profile-service-links {
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: var(--profile-top-actions-gap);
+    width: max-content;
+    max-width: 100%;
+  }
+
+.service-link {
+    width: auto;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
 
 /* =========================
    TABS
