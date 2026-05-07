@@ -360,7 +360,10 @@
 }
 
 .profile-tabs-inline {
-  margin: var(--profile-tabs-inline-margin-top) 0;
+  margin: calc(var(--profile-tabs-inline-margin-top) + 0.6rem)
+        var(--profile-tabs-inline-margin-top)
+        0
+        0;
   padding: var(--profile-tabs-inline-pad-top) 0;
 }
 
