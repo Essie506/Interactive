@@ -963,47 +963,12 @@ column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
     display: block;
   }
 
-  body.profile .profile-info-inner {
-    justify-content: flex-start;
-  }
-
-  body.profile .profile-services-desktop {
-    display: none;
-  }
-
-  body.profile .profile-services-mobile {
-    display: block;
-  }
-
-
-  body.profile .profile-main-info {
-    text-align: center;
-  }
-
-  body.profile .profile-name-row {
-    justify-content: center;
-  }
-
-  body.profile .profile-handle,
-  body.profile .profile-role,
-  body.profile .profile-gym,
-  body.profile .profile-bio {
-    text-align: center;
-  }
-
-  body.profile .profile-bio {
-    margin: var(--profile-bio-margin-top) auto 0;
-    width: min(100%, var(--profile-bio-max));
-    max-width: var(--profile-bio-max);
-  }
-
       body.profile .profile-hero-corner {
   position: absolute;
   right: var(--profile-local-inner-pad);
   bottom: var(--profile-local-inner-pad);
   z-index: 4;
-}
-   
+}   
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
@@ -1022,41 +987,6 @@ column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
     padding-right: var(--profile-local-page-pad-x-mobile);
   }
 
-  body.profile .profile-hero-card,
-  body.profile .profile-section-card {
-    margin-left: auto;
-    margin-right: auto;
-    box-sizing: border-box;
-  }
-
-  body.profile .profile-bio {
-    margin: var(--profile-bio-margin-top-small) auto 0;
-  }
-
-  body.profile .profile-actions {
-    margin-top: calc(0.25rem * var(--profile-scale));
-  }
-
-  body.profile .profile-tabs-inline {
-    justify-content: space-between;
-  }
-
-  body.profile .profile-tabs {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: var(--profile-small-tabs-gap-row) var(--profile-small-tabs-gap-col);
-    width: 100%;
-    margin: 0 auto;
-    padding-top: var(--profile-small-tabs-pad-top);
-  }
-
-  body.profile .profile-tab {
-    flex: 0 0 auto;
-    min-width: 0;
-    padding: var(--profile-small-tab-pad-y) 0;
-    justify-content: center;
-  }
 
   body.profile .profile-service-links {
     display: grid;
