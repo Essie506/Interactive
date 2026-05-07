@@ -68,7 +68,7 @@ body.profile {
   --profile-topbar-gap: calc(var(--profile-gap-md) * var(--profile-scale));
   --profile-top-actions-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
   --profile-name-row-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
- --profile-corner-menu-offset: calc(1.5rem * var(--profile-scale));
+ --profile-corner-menu-offset: calc(2rem * var(--profile-scale));
 
   --profile-local-icon-btn-size: calc(var(--profile-icon-btn-size) * var(--profile-scale));
   --profile-local-avatar-size: calc(var(--profile-avatar-size) * var(--profile-scale));
@@ -453,7 +453,7 @@ body.profile .profile-edit-btn {
 
 body.profile .profile-hero-corner .profile-corner-menu {
   position: absolute;
-  right: 0;
+  right: 0.35rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
   top: auto;
   left: auto;
@@ -461,6 +461,7 @@ body.profile .profile-hero-corner .profile-corner-menu {
      z-index: 4000;
     padding: 0.125rem 0.375rem 0.125rem;
   overflow: hidden;
+   border-radius: 0.75rem;
 
   background: linear-gradient(
     180deg,
