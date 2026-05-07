@@ -82,13 +82,13 @@ body.business-profile {
   z-index: 1;
 }
 
-.business-hero-card {
+body.business-profile .business-hero-card {
   position: relative;
   z-index: 2;
   width: 100%;
    padding:
-    var(--profile-hero-inner-pad-y)
-    var(--profile-hero-inner-pad-x);
+   var(--profile-hero-inner-pad-y)
+   var(--profile-hero-inner-pad-x);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -180,7 +180,7 @@ business-handle {
 
 body.business-profile .business-intro {
   width: min(100%, var(--profile-bio-max));
-  margin: var(--profile-bio-margin-top) auto;
+  margin: var(--profile-bio-margin-top) 0;
   color: rgba(9, 26, 58, 0.82);
 }
 
