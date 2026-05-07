@@ -367,6 +367,7 @@
 }
 
 .profile-no-tabs {
+   position: relative;
    background: transparent;
    width: 99%;
    z-index:2;
