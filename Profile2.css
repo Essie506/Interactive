@@ -97,7 +97,7 @@ body.profile {
   --profile-saved-title-margin-bottom: calc(0.25rem * var(--profile-scale));
   --profile-saved-title-margin-bottom-alt: calc(0.375rem * var(--profile-scale));
   --profile-media-badge-local-size: calc(var(--profile-media-badge-size) * var(--profile-scale));
-  --profile-media-badge-offset: calc(0.625rem * var(--profile-scale));
+  --profile-media-badge-offset: calc(0.75rem * var(--profile-scale));
   --profile-media-grid-gap: calc(var(--profile-gap-md) * var(--profile-scale));
 
   --profile-small-tabs-gap-row: calc(0.75rem * var(--profile-scale));
@@ -453,7 +453,7 @@ body.profile .profile-edit-btn {
 
 body.profile .profile-hero-corner .profile-corner-menu {
   position: absolute;
-  right: 0.65rem;
+  right: 0.75rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
   top: auto;
   left: auto;
