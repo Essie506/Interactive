@@ -28,7 +28,7 @@ body.profile {
   --profile-avatar-bg-strong: rgba(56, 173, 169, 0.2);
   --profile-accent-soft: rgba(56, 173, 169, 0.15);
 
-  --profile-card-pad: 0.25rem;
+  --profile--pad: 0.25rem;
   --profile-inner-pad: 0.25rem;
   --profile-hero-pad: 0.25rem;
 
@@ -92,8 +92,8 @@ body.profile {
   --profile-tab-font-size: calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
   --profile-tab-letter-spacing: 0.3px;
 
- --profile-saved-card-width: calc(clamp(9rem, 22vw, 12rem) * var(--profile-scale));
-  --profile-saved-card-pad: calc(var(--profile-card-pad) * var(--profile-scale));
+ --profile-saved--width: calc(clamp(9rem, 22vw, 12rem) * var(--profile-scale));
+  --profile-saved--pad: calc(var(--profile--pad) * var(--profile-scale));
   --profile-saved-title-margin-bottom: calc(0.25rem * var(--profile-scale));
   --profile-saved-title-margin-bottom-alt: calc(0.375rem * var(--profile-scale));
   --profile-media-badge-local-size: calc(var(--profile-media-badge-size) * var(--profile-scale));
@@ -324,7 +324,7 @@ body.profile .profile-avatar-wrap {
   grid-row: 1;
   align-self: start;
   justify-self: end;
-  transform: translate(-0.6rem, -0.35rem);
+  transform: translate(-0.8rem, -0.5rem);
   position: relative;
   display: inline-flex;
   justify-content: center;
