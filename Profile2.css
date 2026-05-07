@@ -284,7 +284,8 @@ body.profile .profile-gym {
 body.profile .profile-info-inner {
   display: flex;
   flex-direction: column;
-  gap: var(--profile-hero-inner-gap);
+  row-gap: 0;
+column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
   width: 100%;
   min-width: 0;
   padding:
@@ -650,7 +651,8 @@ body.profile .media-play-badge {
   body.profile .profile-info-inner {
     display: grid;
     grid-template-columns: minmax(0, 32rem) auto;
-    gap: calc(var(--profile-gap-2xl) * var(--profile-scale));
+     row-gap: 0;
+column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
     align-items: center;
     width: 100%;
     max-width: none;
