@@ -80,8 +80,13 @@ body {
 
  --main-font-size: clamp(1rem, 1.2vw, 1.15rem);
    --directory-font-size: clamp(0.95rem, 1vw, 1.02rem);
-   
-   
+
+
+   /* =========================
+   PROFILE TOKENS
+========================= */
+  --profile-scale: 1;
+
    --profile-page-max: 62.5rem;
 
   --profile-page-pad-x: 0.5rem;
