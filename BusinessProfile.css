@@ -97,6 +97,17 @@ body.business-profile {
    align-items: flex-start;
 }
 
+
+  body.business-profile .business-main-info {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+  }
+
+
 .business-status-row,
 .business-section-header {
   display: flex;
