@@ -369,6 +369,7 @@
 .profile-no-tabs {
    background: rgba(255, 255, 255, 0.72);
    width: 99%;
+   z-index:2;
 }
 
 .profile-tab {
