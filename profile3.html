@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="Base2.css" />
   <link rel="stylesheet" href="Components2.css" />
   <link rel="stylesheet" href="Menu2.css" />
-  <link rel="stylesheet" href="profile3.css" />
+  <link rel="stylesheet" href="profile4.css" />
   <link rel="stylesheet" href="Messages2.css" />
   <link rel="stylesheet" href="block.css" />
 
@@ -34,20 +34,22 @@
       </button>
     </div>
 
-    <div class="nav-title">InterActive</div>
+    <div class="nav-title">Interactive</div>
 
    <div class="nav-center desktop-nav-links">
   <a href="feed.html" class="icon-btn" aria-label="Home">
     <i class="fa-solid fa-house"></i>
   </a>
 
-  <a href="vault.html" class="icon-btn" aria-label="Vault">
-    <i class="fa-solid fa-box-archive"></i>
-  </a>
 
   <a href="calendar.html" class="icon-btn" aria-label="Calendar">
     <i class="fa-regular fa-calendar-days"></i>
   </a>
+
+       <a href="vault.html" class="icon-btn" aria-label="Vault">
+    <i class="fa-solid fa-box-archive"></i>
+  </a>
+
 
   <button type="button" class="icon-btn" id="shareProfile" aria-label="Share">
     <i class="fa-solid fa-share-nodes"></i>
@@ -55,10 +57,7 @@
 </div>
 
    <div class="navbar-right">
-  <button class="icon-btn desktop-icon-link top-search-btn" id="searchToggle" type="button" aria-label="Search">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-
+     
   <button type="button" class="icon-btn desktop-icon-link self-only" id="editProfileBtn" aria-label="Edit profile">
     <i class="fa-solid fa-pen"></i>
   </button>
@@ -66,6 +65,9 @@
   <button type="button" class="icon-btn desktop-icon-link visitor-only" id="followBtn" aria-label="Follow Esther">
     <i class="fa-solid fa-user-plus"></i>
   </button>
+       <a href="notifications.html" class="icon-btn desktop-icon-link" aria-label="desktopNotifications">
+      <i class="fa-solid fa-bell"></i>
+    </a>
 </div>
   </nav>
 
@@ -81,8 +83,8 @@
       </a>
     </li>
 
-    <li>
-      <a href="gyms.html" class="menu-item">
+     <li>
+      <a href="directory.html" class="menu-item">
         <i class="fa-solid fa-fire"></i>
         <span>Gyms and Studios</span>
       </a>
@@ -96,8 +98,8 @@
 
       <ul class="submenu">
         <li><a href="home.html">Browse Workouts</a></li>
-        <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
-        <li><a href="BusinessProfile.html">Trending</a></li>
+        <li><a href="profile3.html">My Saved Workouts</a></li>
+        <li><a href="businessProfile.html">Trending</a></li>
       </ul>
     </li>
 
@@ -132,10 +134,13 @@
       <img src="profile-cover.jpg" alt="Profile cover image" />
     </div>
 
- <section class="profile-hero-card">
+ <div class="profile-hero-card">
+   <div class="profile-no-tabs">
     <div class="profile-info-inner">
         <div class="profile-top-right-actions">
-          
+            <button type="button" class="icon-btn" id="profileShare" aria-label="Share">
+    <i class="fa-solid fa-share-nodes"></i>
+  </button>
         </div>      
       <div class="profile-avatar-wrap">
         <button type="button" class="icon-btn self-only" id="uploadPhotoBtn" aria-label="Upload profile picture">
@@ -170,8 +175,33 @@
         <p class="profile-gym">
           <i class="fa-solid fa-location-dot"></i> TrainWell Gym • London
         </p>
-      </div>
-        </div>
+            </div>
+    </div>
+
+ <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
+
+      <button type="button" class="profile-tab visitor-only" id="messageProfileBtn" aria-label="Message profile">
+        <i class="fa-solid fa-comment"></i>
+        <span>Message</span>
+      </button>
+      
+    <a href="vault.html" class="profile-tab" aria-label="View vault">
+  <i class="fa-solid fa-box-archive"></i>
+  Vault
+</a>
+
+<a href="calendar.html" class="profile-tab active" aria-label="View calendar">
+  <i class="fa-regular fa-calendar-days"></i>
+  Calendar
+</a>
+           <a href="enquiries.html" class="profile-tab active gyms" aria-label="Enquiries">
+<i class="fa-regular fa-envelope"></i>
+  Enquiries
+</a>    
+    </nav> 
+  </div>  
+</div>
+
     
     <div class="profile-hero-corner visitor-only">
   <button type="button" class="chevron-btn" id="profileChevronBtn" aria-label="More options">
