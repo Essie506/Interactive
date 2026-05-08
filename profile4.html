@@ -1,0 +1,719 @@
+/* =========================
+   PROFILE TOKENS
+========================= */
+body.profile {
+  --profile-scale: 1;
+
+  --profile-page-max: 62.5rem;
+  --profile-page-pad-x: 0.5rem;
+  --profile-page-pad-x-mobile: 0.125rem;
+  --profile-page-pad-top: calc(var(--bar-height) + 0.625rem);
+  --profile-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
+
+  --profile-card-bg: rgba(255, 255, 255, 0.76);
+  --profile-card-bg-soft: rgba(255, 255, 255, 0.68);
+  --profile-inner-bg: rgba(255, 255, 255, 0.82);
+  --profile-icon-bg: rgba(255, 255, 255, 0.42);
+
+  --profile-border-soft: rgba(9, 26, 58, 0.08);
+  --profile-border-soft-hover: rgba(9, 26, 58, 0.14);
+
+  --profile-text: #0a0a0a;
+  --profile-text-soft: rgba(9, 26, 58, 0.75);
+  --profile-text-muted: rgba(9, 26, 58, 0.6);
+
+  --profile-avatar-bg: rgba(56, 173, 169, 0.16);
+  --profile-avatar-bg-strong: rgba(56, 173, 169, 0.2);
+  --profile-accent-soft: rgba(56, 173, 169, 0.15);
+
+  --profile-inner-pad: 0.25rem;
+  --profile-card-pad: 0.25rem;
+
+  --profile-gap-xxs: 0.25rem;
+  --profile-gap-xs: 0.3rem;
+  --profile-gap-sm: 0.5rem;
+  --profile-gap-md: 0.125rem;
+  --profile-gap-lg: 1rem;
+  --profile-gap-xl: 1.25rem;
+  --profile-gap-2xl: 1.5rem;
+
+  --profile-icon-btn-size: 2.75rem;
+  --profile-avatar-size: clamp(5.5rem, 11vw, 6.875rem);
+  --profile-bio-max: 33.75rem;
+  --profile-media-badge-size: 2.375rem;
+
+  --profile-blur: blur(10px);
+  --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+
+  /* local calculated values */
+  --profile-local-page-max: min(var(--profile-page-max), 100%);
+  --profile-local-surface-gap: calc(var(--profile-gap-md) * var(--profile-scale));
+  --profile-local-shell-pad: calc(var(--profile-inner-pad) * var(--profile-scale));
+  --profile-local-inner-pad: calc(var(--profile-inner-pad) * var(--profile-scale));
+
+  --profile-hero-inner-pad-y: calc(clamp(0.75rem, 1.6vw, 1.4rem) * var(--profile-scale));
+  --profile-hero-inner-pad-x: calc(clamp(1rem, 2vw, 1.75rem) * var(--profile-scale));
+  --profile-top-actions-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
+  --profile-name-row-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
+
+  --profile-local-icon-btn-size: calc(var(--profile-icon-btn-size) * var(--profile-scale));
+  --profile-local-avatar-size: calc(var(--profile-avatar-size) * var(--profile-scale));
+  --profile-local-avatar-font-size: calc(2rem * var(--profile-scale));
+  --profile-upload-btn-size: calc(2rem * var(--profile-scale));
+  --profile-upload-btn-offset: calc(0.2rem * var(--profile-scale));
+
+  --profile-role-margin-top: calc(0.5rem * var(--profile-scale));
+  --profile-bio-margin-top: calc(0.6rem * var(--profile-scale));
+  --profile-bio-line-height: 1.55;
+  --profile-verified-size: calc(1.125rem * var(--profile-scale));
+
+  --profile-tabs-gap: calc(var(--profile-gap-xs) * var(--profile-scale));
+  --profile-tabs-pad-x: calc(0.4rem * var(--profile-scale));
+  --profile-tabs-inline-pad-top: calc(0.125rem * var(--profile-scale));
+  --profile-tab-font-size: calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
+
+  margin: 0;
+  background: var(--index-bg);
+  min-height: 100dvh;
+}
+
+@media (max-width: 900px) {
+  body.profile {
+    --profile-page-pad-top: calc(var(--bar-height) + 0.125rem);
+  }
+}
+
+/* =========================
+   VISIBILITY MODES
+========================= */
+body.profile .self-only,
+body.profile .visitor-only {
+  display: none;
+}
+
+body.profile[data-viewer="self"] .self-only {
+  display: inline-flex;
+}
+
+body.profile[data-viewer="visitor"] .visitor-only {
+  display: inline-flex;
+}
+
+/* =========================
+   PAGE BACKGROUND
+========================= */
+body.profile::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background: var(--index-bg-before);
+  background-size: 220% 220%;
+  animation: satinShimmer 3.2s ease-out forwards;
+}
+
+/* =========================
+   PAGE SHELL
+========================= */
+body.profile .profile-page {
+  max-width: var(--profile-local-page-max);
+  margin: 0 auto;
+  padding:
+    var(--profile-page-pad-top)
+    var(--profile-page-pad-x)
+    var(--profile-page-pad-bottom);
+}
+
+/* =========================
+   SHARED CARDS / SURFACES
+========================= */
+body.profile .profile-hero-card,
+body.profile .profile-section-card,
+body.profile .profile-tabs-card,
+body.profile .profile-services-card {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-card-bg);
+  backdrop-filter: var(--profile-blur);
+  -webkit-backdrop-filter: var(--profile-blur);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--profile-local-surface-gap);
+  padding: var(--profile-local-shell-pad);
+  overflow-x: clip;
+}
+
+body.profile .profile-tabs-card {
+  margin-top: var(--profile-local-surface-gap);
+}
+
+body.profile .profile-tabs-card,
+body.profile .profile-services-card {
+  background: var(--profile-card-bg-soft);
+}
+
+body.profile .profile-section-inner,
+body.profile .profile-info-inner,
+body.profile .profile-tabs-inner {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: var(--profile-inner-bg);
+  box-shadow: var(--profile-raised-shadow);
+  padding: var(--profile-local-inner-pad);
+}
+
+/* =========================
+   HERO BASE
+========================= */
+body.profile .profile-hero-card {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+body.profile .profile-info-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--profile-gap-lg);
+  min-width: 0;
+  padding:
+    var(--profile-hero-inner-pad-y)
+    var(--profile-hero-inner-pad-x);
+}
+
+body.profile .profile-main-info {
+  line-height: 1.25;
+  text-align: center;
+}
+
+body.profile .profile-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--profile-name-row-gap);
+  flex-wrap: nowrap;
+}
+
+body.profile .profile-name-row h1 {
+  margin: 0;
+  min-width: 0;
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--profile-text);
+}
+
+body.profile .profile-handle {
+  line-height: 1.2;
+}
+
+body.profile .profile-role,
+body.profile .profile-gym {
+  line-height: 1.3;
+}
+
+body.profile .profile-role,
+body.profile .profile-gym,
+body.profile .profile-handle {
+  margin: var(--profile-role-margin-top) 0 0;
+  font-weight: 600;
+  color: var(--profile-text-soft);
+}
+
+body.profile .profile-bio {
+  margin: var(--profile-bio-margin-top) auto 0;
+  width: min(100%, var(--profile-bio-max));
+  color: var(--profile-text);
+  line-height: var(--profile-bio-line-height);
+}
+
+body.profile .profile-avatar-wrap {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+body.profile .profile-avatar {
+  width: var(--profile-local-avatar-size);
+  height: var(--profile-local-avatar-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--profile-avatar-bg);
+  color: var(--profile-text);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  font-size: var(--profile-local-avatar-font-size);
+}
+
+body.profile #uploadPhotoBtn {
+  position: absolute;
+  right: var(--profile-upload-btn-offset);
+  bottom: var(--profile-upload-btn-offset);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--profile-upload-btn-size);
+  height: var(--profile-upload-btn-size);
+  min-width: var(--profile-upload-btn-size);
+  min-height: var(--profile-upload-btn-size);
+  padding: 0;
+}
+
+body.profile .profile-top-right-actions {
+  position: absolute;
+  top: var(--profile-local-inner-pad);
+  right: var(--profile-local-inner-pad);
+  display: flex;
+  align-items: center;
+  gap: var(--profile-top-actions-gap);
+}
+
+body.profile .profile-verified {
+  display: inline-flex;
+  justify-content: center;
+  color: var(--main-color);
+  font-size: var(--profile-verified-size);
+  line-height: 1;
+}
+
+/* =========================
+   TABS
+========================= */
+body.profile .profile-tabs-inline {
+  width: 100%;
+  margin: 0;
+  padding: var(--profile-tabs-inline-pad-top) 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.profile .profile-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--profile-tabs-gap);
+  padding: 0 var(--profile-tabs-pad-x);
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+body.profile .profile-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+body.profile .profile-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  flex: 0 0 auto;
+  min-width: max-content;
+  padding: 0.35rem 0.4rem;
+  font-family: inherit;
+  font-size: var(--profile-tab-font-size);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--text-dark);
+  text-decoration: none;
+  white-space: nowrap;
+  background: transparent;
+  border: none;
+  transition:
+    color 0.18s ease,
+    transform 0.22s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+body.profile .profile-tab i {
+  transition: transform 0.22s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+body.profile .profile-tab:hover {
+  color: rgba(9, 26, 58, 0.88);
+  transform: translateY(-2px) scale(1.04);
+}
+
+body.profile .profile-tab:hover i {
+  transform: scale(1.08);
+}
+
+body.profile .profile-tab:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* =========================
+   SERVICES
+========================= */
+body.profile .service-link::before {
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: #0a0a0a;
+}
+
+/* =========================
+   POSTS / WORKOUTS / MEDIA
+========================= */
+body.profile .profile-posts {
+  display: flex;
+  flex-direction: column;
+}
+
+body.profile .media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--profile-gap-md);
+}
+
+body.profile .media-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow-soft);
+  margin-bottom: var(--profile-gap-md);
+}
+
+body.profile .media-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+body.profile .saved-workouts-grid {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: var(--profile-gap-md);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+body.profile .saved-workouts-grid::-webkit-scrollbar {
+  display: none;
+}
+
+body.profile .saved-workout-card {
+  flex: 0 0 clamp(9rem, 22vw, 12rem);
+  width: clamp(9rem, 22vw, 12rem);
+  aspect-ratio: 1 / 1;
+  scroll-snap-align: start;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: var(--shadow-soft);
+  margin: 0;
+  padding: var(--profile-card-pad);
+}
+
+body.profile .saved-workout-card h3 {
+  margin: 0 0 0.25rem;
+  color: #091a3a;
+  font-size: 1rem;
+}
+
+body.profile .saved-workout-card p {
+  margin: 0;
+  color: rgba(9, 26, 58, 0.72);
+}
+
+body.profile .media-play-badge {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  width: var(--profile-media-badge-size);
+  height: var(--profile-media-badge-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  background: var(--profile-inner-bg);
+  color: var(--profile-text);
+  box-shadow: var(--shadow-soft);
+}
+
+/* =========================
+   DESKTOP / LAPTOP
+   Clean version: no cover/banner takeover.
+========================= */
+@media (min-width: 901px) {
+  body.profile .profile-info-grid,
+  body.profile .profile-content-grid,
+  body.profile .profile-lower-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.profile #profile-panel-posts,
+  body.profile #profile-panel-workouts,
+  body.profile #profile-panel-media {
+    display: block;
+  }
+
+  body.profile .profile-services-mobile {
+    display: block;
+  }
+
+  body.profile .profile-tabs-card {
+    display: none;
+  }
+
+  body.profile .profile-hero-card {
+    display: block;
+    width: 100%;
+  }
+
+  body.profile .profile-info-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 32rem) auto;
+    gap: var(--profile-gap-2xl);
+    align-items: center;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+  }
+
+  body.profile .profile-main-info {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+  }
+
+  body.profile .profile-avatar-wrap {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    justify-self: end;
+    margin: 0;
+  }
+
+  body.profile .profile-name-row {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  body.profile .profile-handle,
+  body.profile .profile-role,
+  body.profile .profile-gym,
+  body.profile .profile-bio {
+    text-align: left;
+  }
+
+  body.profile .profile-bio {
+    margin: 0.6rem 0 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  body.profile .saved-workout-card-content {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 0.75rem;
+    background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.92),
+      rgba(255, 255, 255, 0.72),
+      transparent
+    );
+  }
+
+  body.profile #profile-panel-media .media-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================
+   TABLET / MOBILE
+   Banner hero version from the second file, cleaned.
+========================= */
+@media (max-width: 900px) {
+  body.profile .profile-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.profile .profile-content-grid,
+  body.profile .profile-lower-grid {
+    display: block;
+  }
+
+  body.profile .profile-services-desktop {
+    display: none;
+  }
+
+  body.profile .profile-services-mobile {
+    display: block;
+  }
+
+  body.profile .profile-hero--personal {
+    position: relative;
+    min-height: clamp(24rem, 55dvh, 34rem);
+    display: flex;
+    align-items: flex-end;
+    overflow: visible;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  body.profile .profile-hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
+  body.profile .profile-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transform: scale(1.02);
+  }
+
+  body.profile .profile-hero--personal::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        to top,
+        rgba(9, 26, 58, 0.58),
+        rgba(9, 26, 58, 0.18),
+        rgba(255, 255, 255, 0.08)
+      );
+  }
+
+  body.profile .profile-hero-card {
+    position: absolute;
+    left: var(--profile-local-surface-gap);
+    bottom: var(--profile-local-surface-gap);
+    z-index: 3;
+    width: min(38rem, calc(100% - 2rem));
+    margin-bottom: 0;
+  }
+
+  body.profile .profile-no-tabs {
+    position: relative;
+    width: 100%;
+    z-index: 2;
+    background: var(--profile-inner-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--profile-raised-shadow);
+  }
+
+  body.profile .profile-info-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--profile-gap-lg);
+    width: 100%;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  body.profile .profile-main-info {
+    text-align: center;
+  }
+
+  body.profile .profile-name-row {
+    justify-content: center;
+  }
+
+  body.profile .profile-name-row h1 {
+    font-size: clamp(2rem, 9vw, 3.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+  }
+
+  body.profile .profile-avatar-wrap {
+    margin: 0 auto;
+  }
+
+  body.profile .profile-handle,
+  body.profile .profile-role,
+  body.profile .profile-gym,
+  body.profile .profile-bio {
+    text-align: center;
+  }
+
+  body.profile .profile-bio {
+    margin: 0.6rem auto 0;
+    width: min(100%, var(--profile-bio-max));
+    max-width: var(--profile-bio-max);
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  body.profile .saved-workout-card {
+    flex: 0 0 10rem;
+    width: 10rem;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media (max-width: 475px) {
+  body.profile .profile-page {
+    padding-left: var(--profile-page-pad-x-mobile);
+    padding-right: var(--profile-page-pad-x-mobile);
+  }
+
+  body.profile .profile-hero-card,
+  body.profile .profile-section-card {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+
+  body.profile .profile-bio {
+    margin: 0.75rem auto 0;
+  }
+
+  body.profile .profile-actions {
+    margin-top: 0.25rem;
+  }
+
+  body.profile .profile-tabs-inline {
+    justify-content: center;
+  }
+
+  body.profile .profile-tabs {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.25rem;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 0.25rem;
+  }
+
+  body.profile .profile-tab {
+    flex: 0 0 auto;
+    min-width: 0;
+    padding: 0.2rem 0;
+    justify-content: center;
+  }
+}
