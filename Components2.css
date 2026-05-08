@@ -459,16 +459,21 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   text-align: left;
 }
 
-.business-section-tabs {
+..business-section-tabs {
   position: sticky;
   top: var(--bar-height-large);
   z-index: 50;
+
   display: flex;
   gap: 0.5rem;
   overflow-x: auto;
   scrollbar-width: none;
+
   margin: 0.8rem 0;
-  padding: 0.65rem;
+  padding: 0.65rem 0.9rem;
+
+  scroll-padding-inline: 0.9rem;
+
   background: rgba(255, 255, 255, 0.64);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
