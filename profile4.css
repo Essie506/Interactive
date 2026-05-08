@@ -541,12 +541,13 @@ body.profile .profile-tabs-inner {
 ========================= */
 
 .profile-hero--personal {
-  position: relative;
-  min-height: clamp(12rem, 25dvh, 17rem);
+ position: relative;
+  min-height: clamp(24rem, 55dvh, 34rem);
   display: flex;
   align-items: flex-end;
-  overflow: visible;
-  background: rgba(255,255,255,0.35);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: var(--shadow-soft);
 }
 
 .profile-hero-media {
@@ -603,7 +604,7 @@ body.profile .profile-info-inner {
   row-gap: 0;
 column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
   width: 100%;
-  min-width: 0;
+ width: min(42rem, calc(100% - 2rem));
   padding:
     var(--profile-hero-inner-pad-y)
     var(--profile-hero-inner-pad-x);
