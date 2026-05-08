@@ -955,19 +955,4 @@ body.profile .media-play-badge {
     padding-left: var(--profile-local-page-pad-x-mobile);
     padding-right: var(--profile-local-page-pad-x-mobile);
   }
-
-
-  body.profile .profile-service-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--profile-services-grid-gap-y) var(--profile-services-grid-gap-x);
-    width: 100%;
-  }
-
-  body.profile .service-link {
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    font-size: var(--profile-service-font-size);
-  }
 }
