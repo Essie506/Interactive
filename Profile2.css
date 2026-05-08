@@ -284,6 +284,8 @@ body.profile .profile-no-tabs {
   position: relative;
   width: 100%;
   background: var(--profile-inner-bg);
+     backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--profile-raised-shadow);
   z-index: 2;
 }
