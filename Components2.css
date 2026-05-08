@@ -447,8 +447,8 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   overflow-x: auto;
   scrollbar-width: none;
 
-  padding: 0.25rem 0.9rem;
-  scroll-padding-inline: 0.9rem;
+  padding: 0.25rem 0.6rem;
+  scroll-padding-inline: 0.6rem;
 }
 
 .profile-service-links::after {
