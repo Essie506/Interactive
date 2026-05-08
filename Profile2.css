@@ -875,21 +875,6 @@ body.profile .media-play-badge {
     align-self: center;
   }
 
-  body.profile .profile-hero-services .profile-service-links {
-    display: flex;
-    flex-direction: row;
-    align-items: space-between;
-    gap: var(--profile-top-actions-gap);
-    width: max-content;
-    max-width: 100%;
-  }
-
-  body.profile .profile-hero-services .service-link {
-    width: auto;
-    justify-content: flex-start;
-    text-align: left;
-  }
-
   body.profile .saved-workout-card {
     overflow: hidden;
   }
