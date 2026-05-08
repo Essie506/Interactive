@@ -1,0 +1,781 @@
+view-profile.html
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Profile - Interactive Fitness</title>
+
+  <link rel="stylesheet" href="Base2.css" />
+  <link rel="stylesheet" href="Components2.css" />
+  <link rel="stylesheet" href="Menu2.css" />
+  <link rel="stylesheet" href="Profile2.css" />
+  <link rel="stylesheet" href="Messages2.css" />
+  <link rel="stylesheet" href="block.css" />
+
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+</head>
+<body class="profile" data-viewer="visitor" data-user-id="user_123">
+
+  <nav class="navbar">
+    <div class="navbar-bg"></div>
+
+    <div class="nav-left">
+      <button class="menu-toggle icon-btn" id="menuToggle" type="button" aria-label="Open menu">
+        <i class="fa-solid fa-user"></i>
+      </button>
+
+      <button class="icon-btn desktop-icon-link messages-toggle" type="button" aria-label="Messages">
+        <i class="fa-solid fa-comments"></i>
+        <span class="messages-dot"></span>
+      </button>
+    </div>
+
+    <div class="nav-title">InterActive</div>
+
+   <div class="nav-center desktop-nav-links">
+  <a href="feed.html" class="icon-btn" aria-label="Home">
+    <i class="fa-solid fa-house"></i>
+  </a>
+
+  <a href="vault.html" class="icon-btn" aria-label="Vault">
+    <i class="fa-solid fa-box-archive"></i>
+  </a>
+
+  <a href="calendar.html" class="icon-btn" aria-label="Calendar">
+    <i class="fa-regular fa-calendar-days"></i>
+  </a>
+
+  <button type="button" class="icon-btn" id="shareProfile" aria-label="Share">
+    <i class="fa-solid fa-share-nodes"></i>
+  </button>
+</div>
+
+   <div class="navbar-right">
+  <button class="icon-btn desktop-icon-link top-search-btn" id="searchToggle" type="button" aria-label="Search">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+
+  <button type="button" class="icon-btn desktop-icon-link self-only" id="editProfileBtn" aria-label="Edit profile">
+    <i class="fa-solid fa-pen"></i>
+  </button>
+
+  <button type="button" class="icon-btn desktop-icon-link visitor-only" id="followBtn" aria-label="Follow Esther">
+    <i class="fa-solid fa-user-plus"></i>
+  </button>
+</div>
+  </nav>
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
+<nav class="menu" aria-label="Main menu">
+  <ul>
+
+    <li>
+      <a href="feed.html" class="menu-item">
+        <i class="fa-solid fa-house"></i>
+        <span>Home</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="gyms.html" class="menu-item">
+        <i class="fa-solid fa-fire"></i>
+        <span>Gyms and Studios</span>
+      </a>
+    </li>
+
+    <li class="has-submenu">
+      <a href="#" class="menu-item" aria-expanded="false">
+        <i class="fa-solid fa-dumbbell"></i>
+        <span>Workouts</span>
+      </a>
+
+      <ul class="submenu">
+        <li><a href="home.html">Browse Workouts</a></li>
+        <li><a href="my-saved-workouts.html">My Saved Workouts</a></li>
+        <li><a href="trending.html">Trending</a></li>
+      </ul>
+    </li>
+
+    <li>
+      <a href="settings.html" class="menu-item">
+        <i class="fa-solid fa-cog"></i>
+        <span>Settings</span>
+      </a>
+    </li>
+
+    <li>
+      <a href="index.html" class="menu-item">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+      </a>
+    </li>
+
+    <li class="menu-search-item">
+      <div class="menu-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="menuSearchInput" placeholder="Search..." />
+      </div>
+    </li>
+
+  </ul>
+</nav>
+
+<main class="profile-page">
+ <section class="profile-hero-card">
+    <div class="profile-info-inner">
+        <div class="profile-top-right-actions">
+          
+        </div>      
+      <div class="profile-avatar-wrap">
+        <button type="button" class="icon-btn self-only" id="uploadPhotoBtn" aria-label="Upload profile picture">
+  <i class="fa-solid fa-camera"></i>
+</button>
+        <div class="profile-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+      
+      <input
+  type="file"
+  id="profilePhotoInput"
+  accept="image/*"
+  hidden
+>
+
+      <div class="profile-main-info">
+        <div class="profile-name-row">
+          <h1>Esther Clarke</h1>
+          <span class="profile-verified" aria-label="Verified professional" title="Verified professional">
+            <i class="fa-solid fa-circle-check"></i>
+          </span>
+        </div>
+
+        <p class="profile-handle">@estherfitness</p>
+
+        <p class="profile-role">
+          <i class="fa-solid fa-dumbbell"></i> Trainer • Strength &amp; Conditioning
+        </p>
+
+        <p class="profile-gym">
+          <i class="fa-solid fa-location-dot"></i> TrainWell Gym • London
+        </p>
+
+        <p class="profile-bio">
+          Helping you build strength, confidence and consistency. PT sessions, custom plans and home workouts available.
+        </p>
+      </div>
+        </div>
+    
+    <div class="profile-hero-corner visitor-only">
+  <button type="button" class="chevron-btn" id="profileChevronBtn" aria-label="More options">
+    <i class="fa-solid fa-angle-down"></i>
+  </button>
+
+  <div class="messages-corner-menu profile-corner-menu" id="profileCornerMenu">
+
+      <button type="button" class="messages-corner-item" id="profileReportBtn">
+        <i class="fa-solid fa-flag"></i>
+        <span>Report</span>
+      </button>
+
+     <button type="button" class="messages-corner-item messages-corner-item-danger" id="profileBlockMenuBtn">
+  <i class="fa-solid fa-ban"></i>
+  <span>Block user</span>
+</button>
+    </div>
+</div>
+  </section>
+
+  <section class="profile-tabs-card">
+     <div class="profile-tabs-inner">
+    <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
+
+      <button type="button" class="profile-tab visitor-only" id="messageProfileBtn" aria-label="Message profile">
+        <i class="fa-solid fa-comment"></i>
+        <span>Message</span>
+      </button>
+      
+    <a href="vault.html" class="profile-tab" aria-label="View vault">
+  <i class="fa-solid fa-box-archive"></i>
+  Vault
+</a>
+
+<a href="calendar.html" class="profile-tab active" aria-label="View calendar">
+  <i class="fa-regular fa-calendar-days"></i>
+  Calendar
+</a>
+
+        <button type="button" class="profile-tab"  id="shareProfileBtn" aria-label="Share profile">
+        <i class="fa-solid fa-share-nodes"></i>
+        <span>Share</span>
+      </button>
+      
+    </nav>
+     </div>
+  </section>
+
+  <div class="profile-lower-grid">
+    <section class="profile-panel active profile-services-mobile" id="profile-panel-services">
+      <div class="profile-section-card profile-services-card">
+        <div class="profile-section-inner">
+          <div class="profile-service-links">
+            <a href="#" class="service-link">Workouts</a>
+            <a href="#" class="service-link">Nutrition Advice</a>
+            <a href="#" class="service-link">Coaching Plans</a>
+            <a href="#" class="service-link">Online Coaching</a>
+            <a href="#" class="service-link">1:1 PT Sessions</a>
+            <a href="#" class="service-link">Custom Plans</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <section class="profile-panel" id="profile-panel-workouts">
+          <div class="profile-section-card">
+    
+            <div class="saved-workouts-grid">
+             <a href="browse-workouts.html" class="saved-workout-card">
+                <div class="saved-workout-icon"><i class="fa-solid fa-dumbbell"></i></div>
+                <h3>Glutes Builder</h3>
+                <p>Strength • 35 mins</p>
+             </a>
+
+              <a href="browse-workouts.html" class="saved-workout-card">
+                <div class="saved-workout-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                <h3>HIIT Burn</h3>
+                <p>Cardio • 20 mins</p>
+              </a>
+                <a href="browse-workouts.html" class="saved-workout-card">
+                <div class="saved-workout-icon"><i class="fa-solid fa-person-running"></i></div>
+                <h3>5K Prep</h3>
+                <p>Running • 30 mins</p>
+                </a>
+            </div>
+          </div>
+        </section>
+    </div>
+    
+    <div class="profile-content-grid">
+        <section class="profile-panel" id="profile-panel-posts">
+          <div class="profile-section-card">
+
+           <section class="profile-section-card">
+  <div class="profile-section-inner">
+    <div id="profilePosts" class="profile-posts"></div>
+  </div>
+</section>
+
+    <section class="profile-panel" id="profile-panel-media">
+      <div class="profile-section-card">
+
+        <div class="media-grid">
+          <article class="media-card">
+            <img src="logo2.png" alt="Uploaded media">
+          </article>
+
+          <article class="media-card media-card-video">
+            <img src="logo2.png" alt="Video thumbnail">
+            <span class="media-play-badge">
+              <i class="fa-solid fa-play"></i>
+            </span>
+          </article>
+
+          <article class="media-card">
+            <img src="logo2.png" alt="Uploaded media">
+          </article>
+
+          <article class="media-card media-card-video">
+            <img src="logo2.png" alt="Video thumbnail">
+            <span class="media-play-badge">
+              <i class="fa-solid fa-play"></i>
+            </span>
+          </article>
+        </div>
+      </div>
+    </section>
+      </div>
+</main>
+
+  <nav class="bottom-nav" aria-label="Mobile navigation">
+    <button class="icon-btn messages-toggle" type="button" aria-label="Messages">
+      <i class="fa-solid fa-comments"></i>
+      <span class="messages-dot"></span>
+    </button>
+
+    <button class="icon-btn bottom-search-btn" id="bottomSearchToggle" type="button" aria-label="Search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+
+    <a href="calendar.html" class="icon-btn" aria-label="Calendar">
+      <i class="fa-regular fa-calendar-days"></i>
+    </a>
+
+    <a href="notifications.html" class="icon-btn" aria-label="Notifications">
+      <i class="fa-solid fa-bell"></i>
+    </a>
+  </nav>
+
+      <div class="messages-overlay" id="messagesOverlay"></div>
+
+  <div class="messages-modal" id="messagesModal" aria-hidden="true">
+    <button type="button" class="messages-resize-handle messages-resize-drawer" id="drawerResizeHandle" aria-label="Resize drawer"></button>
+
+    <div class="messages-card">
+      <div class="messages-header">
+        <button type="button" class="messages-back" id="messagesBack" aria-label="Back to conversations">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
+        <h3 id="messagesHeaderTitle">Messages</h3>
+
+        <div class="messages-header-actions">
+
+          <button type="button" class="messages-open-popup" id="drawerMediumBtn" aria-label="Open medium window">
+            <i class="fa-regular fa-window-restore"></i>
+          </button>
+
+          <button type="button" class="messages-minimize-btn" id="drawerMinimizeBtn" aria-label="Minimize chat">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+        </div>
+
+        <button type="button" class="chevron-btn" id="drawerChevronBtn" aria-label="More options">
+          <i class="fa-solid fa-angle-down"></i>
+        </button>
+
+        <div class="messages-corner-menu" id="drawerCornerMenu">
+
+          <button type="button" class="messages-corner-item" id="splitToggle" aria-label="Split view">
+            <i class="fa-solid fa-table-columns"></i>
+            <span>Split view</span>
+            </button>
+          
+          <button type="button" class="messages-corner-item" id="drawerVideoChatBtn">
+            <i class="fa-solid fa-video"></i>
+            <span>Video chat</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerAddPeopleBtn">
+            <i class="fa-solid fa-user-plus"></i>
+            <span>Add people</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerPopoutBtn">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            <span>Popout</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerDownloadVideoBtn">
+            <i class="fa-solid fa-download"></i>
+            <span>Download saved video</span>
+          </button>
+
+          <button type="button" class="messages-corner-item" id="drawerMsnModeBtn">
+            <i class="fa-regular fa-message"></i>
+            <span>Classic mode</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="messages-body" id="messagesBody">
+        <div class="messages-view messages-list-view active" id="messagesListView">
+          <div class="messages-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="messagesSearchInput" placeholder="Search messages..." />
+          </div>
+
+          <div class="messages-list" id="messagesList">
+            <button type="button" class="message-thread active" data-user="Jason">
+              <div class="message-thread-avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="message-thread-content">
+                <div class="message-thread-top">
+                  <div class="message-thread-name-row">
+                    <span class="message-thread-name">Jason</span>
+                    <span class="thread-unread-dot"></span>
+                  </div>
+                  <span class="message-thread-time">2m</span>
+                </div>
+                <div class="message-thread-preview">Hey, are you around later?</div>
+              </div>
+            </button>
+
+            <button type="button" class="message-thread" data-user="Alex">
+              <div class="message-thread-avatar">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <div class="message-thread-content">
+                <div class="message-thread-top">
+                  <div class="message-thread-name-row">
+                    <span class="message-thread-name">Alex</span>
+                    <span class="thread-unread-dot"></span>
+                  </div>
+                  <span class="message-thread-time">1h</span>
+                </div>
+                <div class="message-thread-preview">Nice work on your run 🔥</div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div class="messages-view messages-chat-view" id="messagesChatView">
+          <div class="message-chat" id="messageChat"></div>
+
+          <div class="typing-indicator" id="typingIndicator">
+            <span></span><span></span><span></span>
+          </div>
+
+          <div class="messages-footer">
+            <div class="messages-input-wrap">
+              <div class="message-avatar-inline">
+                <i class="fa-solid fa-user"></i>
+              </div>
+
+              <textarea
+                class="messages-input"
+                id="messagesInput"
+                placeholder="Write a message..."
+              ></textarea>
+            </div>
+
+            <div class="messages-preview" id="messagesPreview"></div>
+
+            <input
+              type="file"
+              id="messagesMediaUpload"
+              accept="image/*,video/*"
+              multiple
+              hidden
+            />
+
+            <div class="messages-bottom-bar">
+              <div class="messages-tools">
+                <label for="messagesMediaUpload" class="upload-btn" title="Add image or video">
+                  <i class="fa-solid fa-image"></i>
+                </label>
+
+                <button type="button" class="upload-btn messages-gif-btn" title="Add GIF">
+                  <span>GIF</span>
+                </button>
+
+                <button type="button" class="upload-btn messages-emoji-btn" title="Add emoji">
+                  <i class="fa-regular fa-face-smile"></i>
+                </button>
+
+                <button type="button" class="upload-btn messages-location-btn" title="Add location">
+                  <i class="fa-solid fa-location-dot"></i>
+                </button>
+              </div>
+
+              <button type="button" class="upload-btn send-btn" id="messagesSend">
+                  <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z"
+        fill="currentColor"
+      />
+    </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="messages-popup" id="messagesPopup" aria-hidden="true">
+    <button type="button" class="messages-resize-handle messages-resize-corner" id="popupResizeHandle" aria-label="Resize popup"></button>
+
+    <div class="messages-popup-header">
+      <button type="button" class="messages-back" id="popupBack" aria-label="Back to drawer">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+
+      <div class="messages-popup-title" id="popupHeaderTitle">Messages</div>
+
+      <div class="messages-popup-actions">
+
+        <button type="button" class="icon-btn" id="popupMinimizeBtn" aria-label="Minimize chat">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+
+        <button type="button" class="icon-btn" id="popupCloseBtn" aria-label="Close chat">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <button type="button" class="chevron-btn" id="popupChevronBtn" aria-label="More options">
+        <i class="fa-solid fa-angle-down"></i>
+      </button>
+
+      <div class="messages-corner-menu" id="popupCornerMenu">
+
+           <button type="button" class="messages-corner-item" id="popupSplitBtn" aria-label="Split view">
+              <i class="fa-solid fa-table-columns"></i>
+             <span>Split view</span>
+          </button>
+        
+        <button type="button" class="messages-corner-item" id="popupVideoChatBtn">
+          <i class="fa-solid fa-video"></i>
+          <span>Video chat</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupAddPeopleBtn">
+          <i class="fa-solid fa-user-plus"></i>
+          <span>Add people</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupPopoutBtn">
+          <i class="fa-solid fa-up-right-from-square"></i>
+          <span>Popout</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupDownloadVideoBtn">
+          <i class="fa-solid fa-download"></i>
+          <span>Download saved video</span>
+        </button>
+
+        <button type="button" class="messages-corner-item" id="popupMsnModeBtn">
+          <i class="fa-regular fa-message"></i>
+          <span>Classic mode</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="messages-popup-main" id="messagesPopupMain">
+      <div class="messages-popup-list-view" id="popupListView">
+        <div class="messages-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="popupMessagesSearchInput" placeholder="Search messages..." />
+        </div>
+
+        <div class="messages-list" id="popupMessagesList"></div>
+      </div>
+
+      <div class="messages-popup-chat-view" id="popupChatView">
+        <div class="messages-popup-body" id="popupMessageChat"></div>
+
+        <div class="messages-popup-footer">
+          <textarea
+            id="popupMessagesInput"
+            class="messages-input"
+            placeholder="Write a message..."
+          ></textarea>
+
+          <div class="messages-bottom-bar">
+            <div class="messages-tools">
+              <button type="button" class="upload-btn popup-gif-btn" title="Add GIF">
+                <span>GIF</span>
+              </button>
+
+              <button type="button" class="upload-btn popup-emoji-btn" title="Add emoji">
+                <i class="fa-regular fa-face-smile"></i>
+              </button>
+
+              <button type="button" class="upload-btn popup-location-btn" title="Add location">
+                <i class="fa-solid fa-location-dot"></i>
+              </button>
+            </div>
+
+            <button type="button" class="upload-btn send-btn" id="popupMessagesSend">
+                <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z"
+        fill="currentColor"
+      />
+    </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="button"
+    class="messages-minimized"
+    id="messagesMinimized"
+    aria-hidden="true"
+    aria-label="Reopen chat"
+  >
+    <span id="minimizedLabel">Jason</span>
+    <span class="messages-minimized-dot"></span>
+  </button>
+
+   <div class="messages-popout" id="messagesPopout" aria-hidden="true">
+  <button
+    type="button"
+    class="messages-resize-handle messages-resize-corner"
+    id="popoutResizeHandle"
+    aria-label="Resize popout"
+  ></button>
+
+  <div class="messages-popout-header">
+    <button type="button" class="messages-back" id="popoutBack" aria-label="Back to conversations">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+
+    <div class="messages-popout-title" id="popoutHeaderTitle">Jason</div>
+
+    <div class="messages-popout-actions">
+
+      <button type="button" class="icon-btn" id="popoutFullscreenBtn" aria-label="Fullscreen chat">
+        <i class="fa-solid fa-expand"></i>
+      </button>
+
+      <button type="button" class="icon-btn" id="popoutMinimizeBtn" aria-label="Minimize chat">
+        <i class="fa-solid fa-minus"></i>
+      </button>
+
+      <button type="button" class="icon-btn" id="popoutCloseBtn" aria-label="Close chat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <button type="button" class="chevron-btn" id="popoutChevronBtn" aria-label="More options">
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
+    
+
+    <div class="messages-corner-menu" id="popoutCornerMenu">
+
+       <button type="button" class="messages-corner-item" id="popoutSplitBtn" aria-label="Split view">
+        <i class="fa-solid fa-table-columns"></i>
+        <span>Split View</span>
+      </button>
+      
+      <button type="button" class="messages-corner-item" id="popoutVideoChatBtn">
+        <i class="fa-solid fa-video"></i>
+        <span>Video chat</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutAddPeopleBtn">
+        <i class="fa-solid fa-user-plus"></i>
+        <span>Add people</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutMediumMenuBtn">
+        <i class="fa-regular fa-window-restore"></i>
+        <span>Medium window</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutDownloadVideoBtn">
+        <i class="fa-solid fa-download"></i>
+        <span>Download saved video</span>
+      </button>
+
+      <button type="button" class="messages-corner-item" id="popoutMsnModeBtn">
+        <i class="fa-regular fa-message"></i>
+        <span>Classic mode</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="messages-popout-main" id="messagesPopoutMain">
+    <div class="messages-popout-list-view" id="popoutListView">
+      <div class="messages-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="popoutMessagesSearchInput" placeholder="Search messages..." />
+      </div>
+
+      <div class="messages-list" id="popoutMessagesList"></div>
+    </div>
+
+    <div class="messages-popout-chat-view" id="popoutChatView">
+      <div class="messages-popout-body" id="popoutMessageChat"></div>
+
+      <div class="messages-popout-footer">
+        <textarea
+          id="popoutMessagesInput"
+          class="messages-input"
+          placeholder="Write a message..."
+        ></textarea>
+
+        <div class="messages-bottom-bar">
+          <div class="messages-tools">
+            <button type="button" class="upload-btn popout-gif-btn" title="Add GIF">
+              <span>GIF</span>
+            </button>
+
+            <button type="button" class="upload-btn popout-emoji-btn" title="Add emoji">
+              <i class="fa-regular fa-face-smile"></i>
+            </button>
+
+            <button type="button" class="upload-btn popout-location-btn" title="Add location">
+              <i class="fa-solid fa-location-dot"></i>
+            </button>
+          </div>
+
+          <button type="button" class="upload-btn send-btn" id="popoutMessagesSend">
+              <svg class="if-arrow-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M4 12.5L18 6L13 18L11.2 13.8L4 12.5Z"
+        fill="currentColor"
+      />
+    </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="block-overlay" id="blockUserModal" hidden>
+  <div class="block-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="blockUserTitle"
+    aria-describedby="blockUserText"
+  >
+    <div class="block-modal-header">
+      <h2 id="blockUserTitle" class="block-modal-title">Block user?</h2>
+
+      <button
+        type="button"
+        class="icon-btn block-modal-close"
+        id="blockCloseBtn"
+        aria-label="Close"
+      >
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <div class="block-modal-body">
+      <p id="blockUserText" class="block-modal-text">
+        They won’t be able to message you or interact with your profile in the usual way.
+      </p>
+
+      <p class="block-modal-helper">
+        You can manage blocked users later in
+        <a href="settings.html" class="inline-link">settings</a>.
+      </p>
+
+      <div class="block-modal-actions">
+        <button type="button" class="btn-secondary" id="cancelBlockBtn">
+          Cancel
+        </button>
+
+        <button type="button" class="btn-danger" id="confirmBlockBtn">
+          Block user
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="menu.js"></script>
+<script src="messages.js"></script>
+<script src="posts.js"></script>
+<script src="view-profile-posts.js"></script>
+<script src="ui.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>
