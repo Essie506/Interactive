@@ -877,7 +877,7 @@ body.profile .media-play-badge {
 
   body.profile .profile-hero-services .profile-service-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: space-between;
     gap: var(--profile-top-actions-gap);
     width: max-content;
