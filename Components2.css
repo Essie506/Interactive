@@ -461,8 +461,7 @@ body.business-profile .messages-corner-menu profile-corner-menu {
 }
 
 
-
-..business-section-tabs {
+.business-section-tabs {
   position: sticky;
   top: var(--bar-height-large);
   z-index: 50;
