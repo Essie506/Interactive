@@ -437,6 +437,8 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   display: flex;
   flex-direction: row;
   align-items: center;
+     overflow-x: auto;
+     scrollbar-width: none;
   gap: var(--profile-top-actions-gap);
 
   width: 100%;
@@ -445,8 +447,13 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   overflow-x: auto;
   scrollbar-width: none;
 
-  padding: 0.25rem 0.5rem;
-  scroll-padding-inline: 0.5rem;
+  padding: 0.25rem 0.9rem;
+  scroll-padding-inline: 0.9rem;
+}
+
+.profile-service-links::after {
+  content: "";
+  flex: 0 0 0.9rem;
 }
 
 .profile-service-links::-webkit-scrollbar {
@@ -469,7 +476,7 @@ body.business-profile .messages-corner-menu profile-corner-menu {
 
   display: flex;
   gap: 0.5rem;
-  overflow-x: auto;
+  overflow: visible;
   scrollbar-width: none;
 
   margin: 0.8rem 0;
