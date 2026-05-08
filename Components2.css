@@ -433,22 +433,33 @@ body.business-profile .messages-corner-menu profile-corner-menu {
 }
 
 
-
-
 .profile-service-links {
-    display: flex;
-    flex-direction: row;
-    align-items: space-between;
-    gap: var(--profile-top-actions-gap);
-    width: max-content;
-    max-width: 100%;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--profile-top-actions-gap);
+
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  padding: 0.25rem 0.5rem;
+  scroll-padding-inline: 0.5rem;
+}
+
+.profile-service-links::-webkit-scrollbar {
+  display: none;
+}
 
 .service-link {
-    width: auto;
-    justify-content: flex-start;
-    text-align: left;
-  }
+  flex: 0 0 auto;
+  width: auto;
+  justify-content: flex-start;
+  text-align: left;
+}
+
 
 
 ..business-section-tabs {
