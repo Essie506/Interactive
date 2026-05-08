@@ -465,6 +465,7 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   position: sticky;
   top: var(--bar-height-large);
   z-index: 50;
+  flex-direction: column;
 
   display: flex;
   gap: 0.5rem;
