@@ -187,8 +187,8 @@ body.profile .profile-tabs-inner {
 
 
 body.profile .profile-section-inner {
-padding: var(--profile-shell-pad);
-   border-radius: 0.75rem;
+padding: 1rem;
+   border-radius: 0.25rem;
 }
 
 /* =========================
