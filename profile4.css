@@ -182,7 +182,7 @@ body.profile .profile-tabs-inner {
 
 body.profile .profile-info-inner,
 body.profile .profile-tabs-inner {
-    padding: var(--profile-local-inner-pad);
+    padding: var(--profile-local-inner-pad) + 1rem;
 }
 
 
