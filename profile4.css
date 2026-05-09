@@ -140,6 +140,7 @@ body.profile .profile-services-card {
   box-shadow: var(--shadow-soft);
   padding: var(--profile-local-shell-pad);
   overflow-x: clip;
+   margin-bottom: var(--profile-local-surface-gap);
 }
 
 body.profile .profile-tabs-card {
