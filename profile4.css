@@ -132,7 +132,7 @@ body.profile .profile-hero-card,
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
-  width: 100%;
+  width: 99%;
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
@@ -753,12 +753,6 @@ body.profile .profile-edit-btn {
   position: absolute;
   z-index: 3;
 }
-
-
-
-
-
-
 
 
   .profile-hero-card h1,
