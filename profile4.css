@@ -1,3 +1,4 @@
+```css
 /* =========================
    PROFILE TOKENS
 ========================= */
@@ -45,7 +46,6 @@ body.profile {
   --profile-blur: blur(10px);
   --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
 
-  /* local calculated values */
   --profile-local-page-max: min(var(--profile-page-max), 100%);
   --profile-local-surface-gap: calc(var(--profile-gap-md) * var(--profile-scale));
   --profile-local-shell-pad: calc(var(--profile-inner-pad) * var(--profile-scale));
@@ -53,24 +53,29 @@ body.profile {
 
   --profile-hero-inner-pad-y: calc(clamp(0.75rem, 1.6vw, 1.4rem) * var(--profile-scale));
   --profile-hero-inner-pad-x: calc(clamp(1rem, 2vw, 1.75rem) * var(--profile-scale));
+
   --profile-top-actions-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
   --profile-name-row-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
 
   --profile-local-icon-btn-size: calc(var(--profile-icon-btn-size) * var(--profile-scale));
   --profile-local-avatar-size: calc(var(--profile-avatar-size) * var(--profile-scale));
   --profile-local-avatar-font-size: calc(2rem * var(--profile-scale));
+
   --profile-upload-btn-size: calc(2rem * var(--profile-scale));
   --profile-upload-btn-offset: calc(0.2rem * var(--profile-scale));
 
   --profile-role-margin-top: calc(0.5rem * var(--profile-scale));
   --profile-bio-margin-top: calc(0.6rem * var(--profile-scale));
   --profile-bio-line-height: 1.55;
+
   --profile-verified-size: calc(1.125rem * var(--profile-scale));
 
   --profile-tabs-gap: calc(var(--profile-gap-xs) * var(--profile-scale));
   --profile-tabs-pad-x: calc(0.4rem * var(--profile-scale));
   --profile-tabs-inline-pad-top: calc(0.125rem * var(--profile-scale));
---profile-tab-font-size: calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
+
+  --profile-tab-font-size:
+    calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
 
   margin: 0;
   background: var(--index-bg);
@@ -84,23 +89,20 @@ body.profile {
 }
 
 /* =========================
-   VISIBILITY MODES
+   VISIBILITY
 ========================= */
 body.profile .self-only,
 body.profile .visitor-only {
   display: none;
 }
 
-body.profile[data-viewer="self"] .self-only {
-  display: inline-flex;
-}
-
+body.profile[data-viewer="self"] .self-only,
 body.profile[data-viewer="visitor"] .visitor-only {
   display: inline-flex;
 }
 
 /* =========================
-   PAGE BACKGROUND
+   PAGE BG
 ========================= */
 body.profile::before {
   content: "";
@@ -126,7 +128,7 @@ body.profile .profile-page {
 }
 
 /* =========================
-   SHARED CARDS / SURFACES
+   SHARED SURFACES
 ========================= */
 body.profile .profile-hero-card,
 body.profile .profile-section-card,
@@ -134,40 +136,36 @@ body.profile .profile-tabs-card,
 body.profile .profile-services-card {
   box-sizing: border-box;
   border-radius: 0;
-  background: var(--profile-card-bg);
+  overflow-x: clip;
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-  overflow-x: clip;
 }
 
 body.profile .profile-hero-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
-   margin-bottom: var(--profile-local-surface-gap);
+  padding: var(--profile-local-shell-pad);
+  margin-bottom: var(--profile-local-surface-gap);
 }
-
-body.profile .profile-section-card {
-   margin-bottom: 0.8rem;
-    padding: clamp(1rem, 2vw, 1.4rem);
-}
-
 
 body.profile .profile-hero-card,
-body.profile .profile-services-card,
-body.profile .profile-tabs-card {
-     padding: var(--profile-local-shell-pad);
-}
-
-
-
-body.profile .profile-tabs-card {
-  margin-top: var(--profile-local-surface-gap);
+body.profile .profile-section-card {
+  background: var(--profile-card-bg);
 }
 
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
   background: var(--profile-card-bg-soft);
+}
+
+body.profile .profile-tabs-card {
+  margin-top: var(--profile-local-surface-gap);
+}
+
+body.profile .profile-section-card {
+  margin-bottom: 0.8rem;
+  padding: clamp(1rem, 2vw, 1.4rem);
 }
 
 body.profile .profile-section-inner,
@@ -182,13 +180,12 @@ body.profile .profile-tabs-inner {
 
 body.profile .profile-info-inner,
 body.profile .profile-tabs-inner {
-    padding: calc(var(--profile-local-inner-pad) + 1rem);
+  padding: calc(var(--profile-local-inner-pad) + 1rem);
 }
 
-
 body.profile .profile-section-inner {
-padding: 1rem;
-   border-radius: 0.25rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
 }
 
 /* =========================
@@ -201,19 +198,10 @@ body.profile .profile-hero-card {
   flex-direction: column;
 }
 
-  body.profile #profile-panel-posts,
-  body.profile #profile-panel-workouts,
-  body.profile #profile-panel-media {
-    display: block;
-     left: 0;
-  }
-
-
 body.profile .profile-info-inner {
-  gap: var(--profile-gap-lg);
   min-width: 0;
-  padding: 0.5rem
-    var(--profile-hero-inner-pad-x);
+  gap: var(--profile-gap-lg);
+  padding: 0.5rem var(--profile-hero-inner-pad-x);
 }
 
 body.profile .profile-main-info {
@@ -224,7 +212,6 @@ body.profile .profile-main-info {
 body.profile .profile-name-row {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--profile-name-row-gap);
   flex-wrap: nowrap;
 }
@@ -237,19 +224,11 @@ body.profile .profile-name-row h1 {
   color: var(--profile-text);
 }
 
-body.profile .profile-handle {
-  line-height: 1.2;
-}
-
-body.profile .profile-role,
-body.profile .profile-gym {
-  line-height: 1.3;
-}
-
 body.profile .profile-role,
 body.profile .profile-gym,
 body.profile .profile-handle {
   margin: var(--profile-role-margin-top) 0 0;
+  line-height: 1.3;
   font-weight: 600;
   color: var(--profile-text-soft);
 }
@@ -257,17 +236,16 @@ body.profile .profile-handle {
 body.profile .profile-bio {
   margin: var(--profile-bio-margin-top) auto 0;
   width: min(100%, var(--profile-bio-max));
-  color: var(--profile-text);
   line-height: var(--profile-bio-line-height);
+  color: var(--profile-text);
 }
 
 body.profile .profile-avatar-wrap {
   position: relative;
   display: inline-flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: fit-content;
-  margin: 0 auto;
 }
 
 body.profile .profile-avatar {
@@ -279,8 +257,8 @@ body.profile .profile-avatar {
   border-radius: 50%;
   background: var(--profile-avatar-bg);
   color: var(--profile-text);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
   font-size: var(--profile-local-avatar-font-size);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
 body.profile #uploadPhotoBtn {
@@ -288,13 +266,16 @@ body.profile #uploadPhotoBtn {
   right: var(--profile-upload-btn-offset);
   bottom: var(--profile-upload-btn-offset);
   z-index: 2;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   width: var(--profile-upload-btn-size);
   height: var(--profile-upload-btn-size);
   min-width: var(--profile-upload-btn-size);
   min-height: var(--profile-upload-btn-size);
+
   padding: 0;
 }
 
@@ -302,6 +283,7 @@ body.profile .profile-top-right-actions {
   position: absolute;
   top: var(--profile-local-inner-pad);
   right: var(--profile-local-inner-pad);
+
   display: flex;
   align-items: center;
   gap: var(--profile-top-actions-gap);
@@ -314,6 +296,8 @@ body.profile .profile-verified {
   font-size: var(--profile-verified-size);
   line-height: 1;
 }
+```
+
 
 /* =========================
    TABS
@@ -735,13 +719,6 @@ body.profile .profile-name-row h1 {
   color: var(--profile-text);
 }
 
-body.profile .profile-verified {
-  display: inline-flex;
-  justify-content: center;
-  color: var(--main-color);
-  font-size: var(--profile-verified-size);
-  line-height: 1;
-}
 
 body.profile .profile-role,
 body.profile .profile-gym,
@@ -915,7 +892,6 @@ body.profile .profile-edit-btn {
   }
 
   body.profile .profile-hero-card {
-    position: relative;
     z-index: 3;
     width: 99%;
     margin: 0 0.25rem;
