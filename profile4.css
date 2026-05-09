@@ -457,6 +457,8 @@ body.profile .media-play-badge {
   body.profile #profile-panel-workouts,
   body.profile #profile-panel-media {
     display: block;
+     width: 99%;
+     margin: 0 0.25rem;
   }
 
   body.profile .profile-services-mobile {
