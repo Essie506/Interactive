@@ -132,8 +132,8 @@ body.profile .profile-hero-card,
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
-  width: 99%;
-  margin: var(--profile-local-surface-gap) 0.125rem;
+  width: 100%;
+  margin: var(--profile-local-surface-gap);
   box-sizing: border-box;
   border-radius: 0;
   background: var(--profile-card-bg);
