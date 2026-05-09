@@ -77,6 +77,10 @@ body.profile {
   --profile-tab-font-size:
     calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
 
+   --link-blue: #2563eb;
+   --link-blue-two: #1d7ed8;
+--link-blue-soft: rgba(29, 126, 216, 0.14);
+
   margin: 0;
   background: var(--index-bg);
   min-height: 100dvh;
@@ -332,7 +336,7 @@ body.profile .profile-tab {
 font-size: var(--profile-tab-font-size);
   font-weight: 600;
   letter-spacing: 0.3px;
-  color: var(--text-dark);
+  color: var(--link-blue);
   text-decoration: none;
   white-space: nowrap;
   background: transparent;
