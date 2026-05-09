@@ -139,7 +139,6 @@ body.profile .profile-services-card {
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
   overflow-x: clip;
-   margin-bottom: var(--profile-local-surface-gap);
 }
 
 body.profile .profile-hero-card,
@@ -150,6 +149,7 @@ body.profile .profile-services-card {
 
 body.profile .profile-section-card {
    margin-bottom: 0.8rem;
+    padding: clamp(1rem, 2vw, 1.4rem);
 }
 
 
@@ -159,9 +159,6 @@ body.profile .profile-tabs-card {
      padding: var(--profile-local-shell-pad);
 }
 
-body.profile .profile-section-card {
-  padding: clamp(1rem, 2vw, 1.4rem);
-}
 
 
 body.profile .profile-tabs-card {
@@ -509,15 +506,6 @@ body.profile .profile-services-card {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  box-sizing: border-box;
-  border-radius: 0;
-  background: var(--profile-card-bg);
-  backdrop-filter: var(--profile-blur);
-  -webkit-backdrop-filter: var(--profile-blur);
-  box-shadow: var(--shadow-soft);
-  margin-bottom: var(--profile-local-surface-gap);
-  padding: clamp(1rem, 2vw, 1.4rem);
-  overflow-x: clip;
 }
 
  body.profile .profile-hero-card {
