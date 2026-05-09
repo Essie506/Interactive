@@ -294,15 +294,9 @@ body.profile .profile-tabs-inline {
   padding: var(--profile-local-shell-pad);
   background: transparent;
   box-shadow: none;
-}
-
-body.profile .profile-tabs {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: var(--profile-tabs-gap);
-  padding: 0 var(--profile-tabs-pad-x);
-  width: 100%;
   overflow-x: auto;
   scrollbar-width: none;
 }
