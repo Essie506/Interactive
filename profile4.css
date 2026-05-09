@@ -553,7 +553,7 @@ body.profile .profile-tabs-inner {
 
 .profile-hero-media {
   overflow: hidden;
-  position: relative;
+  position: absolute;
   inset: 0;
   z-index: 0;
 }
