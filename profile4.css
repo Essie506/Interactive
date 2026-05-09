@@ -70,7 +70,7 @@ body.profile {
   --profile-tabs-gap: calc(var(--profile-gap-xs) * var(--profile-scale));
   --profile-tabs-pad-x: calc(0.4rem * var(--profile-scale));
   --profile-tabs-inline-pad-top: calc(0.125rem * var(--profile-scale));
-  --profile-tab-font-size: calc(clamp(1rem, 1.05vw, 1.1rem) * var(--profile-scale));
+--profile-tab-font-size: calc(clamp(1.2rem, 1.4vw, 1.8rem) * var(--profile-scale));
 
   margin: 0;
   background: var(--index-bg);
@@ -320,7 +320,7 @@ body.profile .profile-tab {
   min-width: max-content;
   padding: 0.35rem 0.4rem;
   font-family: inherit;
-  font-size: var(--profile-tab-font-size);
+  font-size: var(---size);
   font-weight: 600;
   letter-spacing: 0.3px;
   color: var(--text-dark);
