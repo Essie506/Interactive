@@ -535,17 +535,6 @@ body.profile .profile-services-card {
   background: var(--profile-card-bg-soft);
 }
 
-body.profile .profile-section-inner,
-body.profile .profile-info-inner,
-body.profile .profile-tabs-inner {
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 0;
-  background: var(--profile-inner-bg);
-  box-shadow: var(--profile-raised-shadow);
-  padding: 0 var(--profile-local-inner-pad);
-}
-
 /* =========================
    HERO
 ========================= */
