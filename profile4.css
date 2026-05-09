@@ -930,6 +930,7 @@ body.profile .profile-edit-btn {
   }
 
   body.profile .profile-info-inner {
+     position: relative;
     display: flex;
     flex-direction: column;
     gap: var(--profile-gap-lg);
