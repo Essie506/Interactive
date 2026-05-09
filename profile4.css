@@ -881,7 +881,7 @@ body.profile .profile-edit-btn {
   }
 
   body.profile .profile-hero-media {
-    position: relative;
+    position: absolute;
     inset: 0;
     z-index: 0;
     overflow: hidden;
