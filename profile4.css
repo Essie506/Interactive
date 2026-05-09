@@ -138,10 +138,20 @@ body.profile .profile-services-card {
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-  padding: var(--profile-local-shell-pad);
   overflow-x: clip;
    margin-bottom: var(--profile-local-surface-gap);
 }
+
+body.profile .profile-hero-card,
+body.profile .profile-services-card,
+body.profile .profile-tabs-card {
+     padding: var(--profile-local-shell-pad);
+}
+
+body.profile .profile-section-card {
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
 
 body.profile .profile-tabs-card {
   margin-top: var(--profile-local-surface-gap);
