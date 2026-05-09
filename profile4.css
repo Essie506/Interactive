@@ -873,7 +873,7 @@ body.profile .profile-edit-btn {
 
   body.profile .profile-hero--personal {
     position: relative;
-    min-height: clamp(24rem, 55dvh, 34rem);
+      min-height: clamp(30rem, 72dvh, 42rem);
     display: flex;
     align-items: flex-end;
     overflow: visible;
@@ -891,7 +891,7 @@ body.profile .profile-edit-btn {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 35%;
+    object-position: center 20%;
     transform: scale(1.02);
   }
 
@@ -916,6 +916,7 @@ body.profile .profile-edit-btn {
     width: 99%;
     margin: 0 0.25rem;
      min-height: auto;
+     margin-top: auto;
   }
 
   body.profile .profile-no-tabs {
