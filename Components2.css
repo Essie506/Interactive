@@ -479,7 +479,7 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   overflow: visible;
   scrollbar-width: none;
 
-  margin: 0 0.8rem 0;
+  margin: 0 0 0.8rem 0;
   padding: 0.65rem 0.9rem;
 
   scroll-padding-inline: 0.9rem;
@@ -1390,7 +1390,7 @@ body.business-profile .profile-hero-corner {
 .business-section {
    left: 0;
      width: 99%;
-     margin: 0 0.8rem 0.25rem;
+     margin: 0 0.25rem 0.8rem 0.25rem;
   }
 
 }
