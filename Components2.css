@@ -479,7 +479,7 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   overflow: visible;
   scrollbar-width: none;
 
-  margin: 0.8rem 0.25rem;
+  margin: 0.8rem 0;
   padding: 0.65rem 0.9rem;
 
   scroll-padding-inline: 0.9rem;
@@ -506,7 +506,7 @@ body.business-profile .messages-corner-menu profile-corner-menu {
 
 .business-section {
   scroll-margin-top: calc(var(--bar-height-large) + 5rem);
-  margin: 0.8rem 0.25rem;
+  margin: 0.8rem 0;
   padding: clamp(1rem, 2vw, 1.4rem);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
