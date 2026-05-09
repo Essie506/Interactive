@@ -1385,6 +1385,14 @@ body.business-profile .profile-hero-corner {
     max-width: 100vw;
     min-width: 0;
   }
+
+   .business-section-tabs,
+.buisiness-section {
+   left: 0;
+     width: 99%
+     margin: 0 0.25rem;
+  }
+
 }
 
 @media (hover: hover) and (pointer: fine) {
