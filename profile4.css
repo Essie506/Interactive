@@ -495,7 +495,7 @@ body.profile .profile-services-card {
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
   margin-bottom: var(--profile-local-surface-gap);
-  padding: var(--profile-local-shell-pad);
+  padding: clamp(1rem, 2vw, 1.4rem);
   overflow-x: clip;
 }
 
