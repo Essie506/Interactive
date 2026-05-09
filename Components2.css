@@ -1386,12 +1386,17 @@ body.business-profile .profile-hero-corner {
     min-width: 0;
   }
 
-   .business-section-tabs,
-.business-section {
+   .business-section-tabs {
    left: 0;
      width: 99%;
      margin: 0 0 0.8rem 0;
   }
+
+   .business-section {
+        left: 0;
+     width: 99%;
+       margin: 0.8rem 0 0.8rem 0;
+   }
 
 }
 
