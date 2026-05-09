@@ -171,6 +171,7 @@ body.profile .profile-hero-card {
   z-index: 2;
   display: flex;
   flex-direction: column;
+   min-height: clamp(18rem, 42dvh, 24rem);
 }
 
   body.profile #profile-panel-posts,
