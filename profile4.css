@@ -712,7 +712,6 @@ body.profile .profile-top-right-actions {
 body.profile .profile-name-row {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: var(--profile-name-row-gap);
   flex-wrap: nowrap;
 }
@@ -918,7 +917,7 @@ body.profile .profile-edit-btn {
     left: var(--profile-local-surface-gap);
     bottom: var(--profile-local-surface-gap);
     z-index: 3;
-    width: 100%
+    width: 100%;
     margin-bottom: 0;
   }
 
