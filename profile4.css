@@ -501,7 +501,7 @@ body.profile .profile-services-card {
     justifty-self: flex-end;
   overflow-x: clip;
    box-sizing: border-box;
-    width: min(42rem, calc(100% - 2rem));
+    width: min(31rem, calc(100% - 2rem));
     z-index: 3;
    background: var(--profile-card-bg);
   backdrop-filter: var(--profile-blur);
