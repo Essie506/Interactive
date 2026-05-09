@@ -660,12 +660,14 @@ body.profile .profile-top-icon-btn i {
 }
 
 body.profile .profile-avatar-wrap {
-  position: relative;
+  position: absolute;
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: fit-content;
-  margin: 0 auto;
+  margin: 0;
+right: 3.5rem;
+   
 }
 
 body.profile .profile-avatar {
