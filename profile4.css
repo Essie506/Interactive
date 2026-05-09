@@ -905,11 +905,10 @@ body.profile .profile-edit-btn {
 
   body.profile .profile-hero-card {
     position: absolute;
-    left: var(--profile-local-surface-gap);
     bottom: var(--profile-local-surface-gap);
     z-index: 3;
-    width: 100%;
-    margin-bottom: 0;
+    width: 99%;
+    margin: 0 0.25rem;
   }
 
   body.profile .profile-no-tabs {
