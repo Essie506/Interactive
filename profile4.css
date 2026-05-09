@@ -291,7 +291,7 @@ body.profile .profile-verified {
 body.profile .profile-tabs-inline {
   width: 100%;
   margin: 0;
-  padding: var(--profile-tabs-inline-pad-top) 0;
+  padding: var(--profile-local-shell-pad);
   background: transparent;
   box-shadow: none;
 }
