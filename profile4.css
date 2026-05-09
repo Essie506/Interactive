@@ -478,7 +478,7 @@ body.profile .profile-hero-card {
    left: var(--profile-local-surface-gap: calc(var(--profile-gap-md) * var(--profile-scale));
 }
 
-* =========================
+/* =========================
    SHARED CARDS / SURFACES
 ========================= */
    
