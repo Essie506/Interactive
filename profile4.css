@@ -474,7 +474,9 @@ body.profile .media-play-badge {
     display: none;
   }
 
-
+body.profile .profile-hero-card {
+   left: 0.25rem;
+}
 
 * =========================
    SHARED CARDS / SURFACES
