@@ -476,7 +476,6 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   flex-direction: column;
 
   display: flex;
-  gap: 0.5rem;
   overflow: visible;
   scrollbar-width: none;
 
