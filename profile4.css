@@ -712,6 +712,7 @@ body.profile .profile-top-right-actions {
 body.profile .profile-name-row {
   display: flex;
   align-items: center;
+   justify-content: flex-start;
   gap: var(--profile-name-row-gap);
   flex-wrap: nowrap;
 }
