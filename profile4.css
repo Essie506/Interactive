@@ -181,8 +181,7 @@ body.profile .profile-info-inner {
   flex-direction: column;
   gap: var(--profile-gap-lg);
   min-width: 0;
-  padding:
-    var(--profile-hero-inner-pad-y)
+  padding: 0.5rem;
     var(--profile-hero-inner-pad-x);
 }
 
@@ -527,7 +526,7 @@ body.profile .profile-tabs-inner {
   border-radius: 0;
   background: var(--profile-inner-bg);
   box-shadow: var(--profile-raised-shadow);
-  padding: var(--profile-local-inner-pad);
+  padding: 0 var(--profile-local-inner-pad);
 }
 
 /* =========================
