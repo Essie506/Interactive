@@ -911,7 +911,7 @@ body.profile .profile-edit-btn {
   }
 
   body.profile .profile-hero-card {
-    position: absolute;
+    position: relative;
     bottom: var(--profile-local-surface-gap);
     z-index: 3;
     width: 99%;
