@@ -132,7 +132,6 @@
 .directory-tabs {
   display: flex;
   flex-wrap: no-wrap;
-  justify-content: center;
   gap: var(--space-xs);
 }
 
