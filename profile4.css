@@ -143,6 +143,17 @@ body.profile .profile-services-card {
 }
 
 body.profile .profile-hero-card,
+body.profile .profile-tabs-card,
+body.profile .profile-services-card {
+   margin-bottom: var(--profile-local-surface-gap);
+}
+
+body.profile .profile-section-card {
+   margin-bottom: 0.8rem;
+}
+
+
+body.profile .profile-hero-card,
 body.profile .profile-services-card,
 body.profile .profile-tabs-card {
      padding: var(--profile-local-shell-pad);
