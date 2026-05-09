@@ -475,7 +475,7 @@ body.profile .media-play-badge {
   }
 
 body.profile .profile-hero-card {
-   left: 0.25rem;
+   left: var(--profile-local-surface-gap: calc(var(--profile-gap-md) * var(--profile-scale));
 }
 
 * =========================
