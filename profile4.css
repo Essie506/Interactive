@@ -586,7 +586,7 @@ body.profile .profile-tabs-inner {
 
 body.profile .profile-main-info {
   line-height: 1.25;
-  text-align: center;
+  text-align: left;
 }
 
 body.profile .profile-handle {
