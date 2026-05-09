@@ -603,7 +603,7 @@ body.profile .profile-info-inner {
   flex-direction: column;
   row-gap: 0;
 column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
-     width: min(42rem, calc(100% - 2rem));
+     width: 100%;
   padding:
     var(--profile-hero-inner-pad-y)
     var(--profile-hero-inner-pad-x);
