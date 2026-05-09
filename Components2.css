@@ -7,7 +7,7 @@
   left: 0;
   right: 0;
   width: 100%;
-  height: var(--bar-height);@
+  height: var(--bar-height);
   padding: 0 var(--space-sm);
   display: flex;
   align-items: center;
