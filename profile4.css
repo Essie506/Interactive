@@ -133,15 +133,13 @@ body.profile .profile-section-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
   width: 99%;
-  margin-left: 0;
-  margin-right: 0;
+  margin: var(--profile-local-surface-gap) 0.125rem;
   box-sizing: border-box;
   border-radius: 0;
   background: var(--profile-card-bg);
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var(--shadow-soft);
-  margin-bottom: var(--profile-local-surface-gap);
   padding: var(--profile-local-shell-pad);
   overflow-x: clip;
 }
