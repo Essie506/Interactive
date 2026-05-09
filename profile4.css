@@ -298,6 +298,7 @@ body.profile .profile-tabs-inline {
   gap: var(--profile-tabs-gap);
   overflow-x: auto;
   scrollbar-width: none;
+   justify-content: space-between;
 }
 
 body.profile .profile-tabs::-webkit-scrollbar {
