@@ -70,7 +70,7 @@ body.profile {
   --profile-tabs-gap: calc(var(--profile-gap-xs) * var(--profile-scale));
   --profile-tabs-pad-x: calc(0.4rem * var(--profile-scale));
   --profile-tabs-inline-pad-top: calc(0.125rem * var(--profile-scale));
---profile-tab-font-size: calc(clamp(1.2rem, 1.4vw, 1.8rem) * var(--profile-scale));
+--profile-tab-font-size: calc(clamp(1.35rem, 1.8vw, 2rem) * var(--profile-scale));
 
   margin: 0;
   background: var(--index-bg);
