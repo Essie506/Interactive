@@ -231,7 +231,6 @@ li:active > .menu-item::after,
 
 /* hide previous li divider when next li is hovered/open */
 li:has(+ li:hover) > .menu-item::after,
-li:has(+ .has-submenu.open) > .menu-item::after,
 li:has(+ .menu-search-item:hover) > .menu-item::after {
   opacity: 0;
 }
