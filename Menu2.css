@@ -201,12 +201,6 @@ box-sizing: border-box;
   transition: opacity 0.18s ease;
 }
 
-/* KEEP HIGHLIGHT ON OPEN SUBMENU PARENT */
-.has-submenu.open > .menu-item::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
 
 .has-submenu.open > .menu-item::after,
 .menu li:has(+ .has-submenu.open) > .menu-item::after,
