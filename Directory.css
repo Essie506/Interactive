@@ -588,7 +588,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 .directory-filter-section-toggle::before {
-     background: aliceblue;
+     background: lavender;
 }
 
    .directory-filter-group-toggle::before,
@@ -867,7 +867,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-pill:hover {
   transform: translateY(-1px);
-    background: lavender;
+    background: aliceblue;
 }
 
 .directory-filter-pill:active {
