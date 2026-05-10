@@ -510,7 +510,7 @@ body.directory::before {
   left: -0.5rem;
   right: -0.5rem;
 
-  background: lavender;
+  background: rgba(9, 26, 58, 0.06);
   border-radius: 0.5rem;
 
   opacity: 0;
