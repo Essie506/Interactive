@@ -403,7 +403,7 @@
 }
 
 
-body.profile .profile-hero-corner {
+.profile-hero-corner {
   position: absolute;
   top: 0.35rem;
   right: -11.5rem;
