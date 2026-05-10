@@ -842,6 +842,13 @@ body.profile .profile-edit-btn {
     padding-left: 0;
     padding-right: 0;
   }
+  
+      body.profile .profile-hero--personal {
+    align-items: flex-end;
+    overflow: visible;
+    background: rgba(255, 255, 255, 0.35);
+  }
+    
 
   body.profile .profile-content-grid,
   body.profile .profile-lower-grid {
