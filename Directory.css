@@ -578,10 +578,9 @@ body.directory::before {
   inset: 0;
   left: calc(var(--panel-padding-fixed) * -1);
 right: calc(var(--panel-padding-fixed) * -1);
-  background: rgba(9, 26, 58, 0.06);
   opacity: 0;
   transform: scale(0.985);
-
+background: aliceblue;
   transition:
     opacity 0.18s ease,
     transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
@@ -590,8 +589,10 @@ right: calc(var(--panel-padding-fixed) * -1);
   pointer-events: none;
 }
 
-
-
+.directory-filter-section-toggle::before {
+     background: rgba(9, 26, 58, 0.06);
+}
+   
 
 
 /* ACTIVE / HIGHLIGHTED SECTION */
@@ -864,6 +865,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-pill:hover {
   transform: translateY(-1px);
+    background: aliceblue;
 }
 
 .directory-filter-pill:active {
