@@ -320,7 +320,7 @@ body.profile .profile-hero-corner .profile-corner-menu {
   position: absolute;
   right: 0.75rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
-  top: -12rem;
+  top: 12rem;
   left: auto;
   min-width: 12rem;
      z-index: 4000;
