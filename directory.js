@@ -23,7 +23,25 @@ const locationInputs = document.querySelectorAll(".directory-location-input");
 const titleSwitch = document.querySelector(".directory-filter-title-switch");
 const dropdown = document.getElementById("filterTypeDropdown");
 
+const params = new URLSearchParams(window.location.search);
+const directoryType = params.get("type");
 
+
+// =========================
+// MENU SWITCH
+// =========================
+
+
+
+if (directoryType === "gyms") {
+  document.body.dataset.directoryType = "gyms";
+  localStorage.setItem("directoryType", "gyms");
+}
+
+if (directoryType === "professionals") {
+  document.body.dataset.directoryType = "professionals";
+  localStorage.setItem("directoryType", "professionals");
+}
 
 
 // =========================
