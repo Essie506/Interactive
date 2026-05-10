@@ -178,7 +178,7 @@ body.profile .profile-info-inner,
 body.profile .profile-tabs-inner {
   width: 100%;
   box-sizing: border-box;
-  border-radius: 0;
+  border-radius: 0.75rem;
   background: var(--profile-inner-bg);
   box-shadow: var(--profile-raised-shadow);
 }
