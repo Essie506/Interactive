@@ -39,6 +39,7 @@ body.directory {
 
   --directory-blur: blur(10px);
   --directory-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+   --directory-grey-highlight: rgba(9, 26, 58, 0.06);
 
   /* organised local layer */
   --directory-page-width: min(1200px, 100%);
@@ -593,7 +594,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
    .directory-filter-group-toggle::before,
 .directory-filter-sort-by::before {
-    background: lavender;
+    background: var(directory-grey-highlight);
 }
    
 
@@ -867,7 +868,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-pill:hover {
   transform: translateY(-1px);
-    background: lavender;
+    background: var(directory-grey-highlight);
 }
 
 .directory-filter-pill:active {
