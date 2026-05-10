@@ -514,7 +514,7 @@ body.profile .profile-services-card {
    padding: var(--profile-local-shell-pad);
   overflow-x: clip;
    box-sizing: border-box;
-    width: min(38rem, calc(100% - 2rem));
+    width: min(42rem, calc(100% - 2rem));
     z-index: 3;
    background: var(--profile-card-bg);
   backdrop-filter: var(--profile-blur);
