@@ -499,8 +499,8 @@ body.business-profile .messages-corner-menu profile-corner-menu {
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 800;
-  padding: 0.8rem;
-  border-radius: 999px;
+  padding: 1rem;
+  border-radius: 25rem;
   background: rgba(255,255,255,0.62);
 }
 
