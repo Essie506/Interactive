@@ -302,7 +302,14 @@ body.profile .profile-verified {
   line-height: 1;
 }
 ```
-
+body.profile .profile-hero-corner {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  left: auto;
+  bottom: auto;
+  z-index: 5;
+}
 
 /* =========================
    TABS
@@ -802,15 +809,6 @@ body.profile .profile-edit-btn {
   body.profile #profile-panel-media .media-grid {
     grid-template-columns: repeat(4, 1fr);
   }
-
-body.profile .profile-hero-corner {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  left: auto;
-  bottom: auto;
-  z-index: 5;
-}
 
    .profile-chevron-btn:hover {
   background: rgba(255, 255, 255, 0.82);
