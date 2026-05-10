@@ -224,8 +224,6 @@ box-sizing: border-box;
 /* hide own divider */
 li:hover > .menu-item::after,
 li:active > .menu-item::after,
-li.open > .menu-item::after,
-.has-submenu.open > .menu-item::after,
 .menu-search:hover::after,
 .menu-search:active::after {
   opacity: 0;
@@ -233,7 +231,6 @@ li.open > .menu-item::after,
 
 /* hide previous li divider when next li is hovered/open */
 li:has(+ li:hover) > .menu-item::after,
-li:has(+ li.open) > .menu-item::after,
 li:has(+ .has-submenu.open) > .menu-item::after,
 li:has(+ .menu-search-item:hover) > .menu-item::after {
   opacity: 0;
