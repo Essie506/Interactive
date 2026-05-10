@@ -418,7 +418,7 @@ body.profile .profile-hero-corner {
 ========================= */
 
 
-body.profile .profile-hero-corner .profile-corner-menu {
+.profile-hero-corner .profile-corner-menu {
   position: relative;
   right: 15rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
@@ -452,19 +452,20 @@ body.profile .profile-hero-corner .profile-corner-menu {
 }
 
 
-body.profile .profile-hero-corner .menu-block {
+ .profile-hero-corner .menu-block {
   display: flex;
   flex-direction: column;
 }
 
-body.profile .profile-hero-corner .profile-corner-menu.open {
+.profile-hero-corner .profile-corner-menu.open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateY(0) scale(1);
 }
 
-body.profile .profile-hero-corner .profile-corner-menu:active {
+
+.profile-hero-corner .profile-corner-menu:active {
   transform: scale(0.995);
 }
 
