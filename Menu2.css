@@ -185,22 +185,15 @@ box-sizing: border-box;
   right: -0.375rem;
 }
 
-.menu-item:hover::before,
+
 .menu-item:active::before,
-.menu-search:hover::before,
 .menu-search:active::before,
-.menu-profile-info:hover::before,
 .menu-profile-info:active::before{
   opacity: 1;
   transform: scale(1);
    z-index: 1;
 }
 
-.menu-item:hover,
-.menu-search:hover {
-  color: var(--text-dark);
-  transform: translateX(2px);
-}
 
 .menu-item:active,
 .menu-search:active {
@@ -222,11 +215,12 @@ box-sizing: border-box;
 }
 
 
+
 .has-submenu.open > .menu-item::after,
-.menu li:has(+ .has-submenu.open) > .menu-item::after,
-.menu li:has(+ li:hover) > .menu-item::after {
-  opacity: 0;
-}
+.menu li:has(+ .has-submenu.open) > .menu-item::after {
+   opacity: 0; }
+   
+
 
 /* keep every open submenu parent highlighted */
 .has-submenu.open > .menu-item::before {
@@ -268,19 +262,7 @@ box-sizing: border-box;
   z-index: 1;
 }
 
-/* hide own divider */
-li:hover > .menu-item::after,
-li:active > .menu-item::after,
-.menu-search:hover::after,
-.menu-search:active::after {
-  opacity: 0;
-}
 
-/* hide previous li divider when next li is hovered/open */
-li:has(+ li:hover) > .menu-item::after,
-li:has(+ .menu-search-item:hover) > .menu-item::after {
-  opacity: 0;
-}
 
 /* =========================
    PROFILE ROW
@@ -451,12 +433,6 @@ li:has(+ .menu-search-item:hover) > .menu-item::after {
   transition: opacity 0.18s ease;
 }
 
-.submenu li a:hover::before,
-.submenu li a:active::before,
-.submenu li:has(+ li a:hover) > a::before,
-.submenu li:has(+ li a:active) > a::before {
-  opacity: 0;
-}
 
 .submenu,
 .submenu li,
@@ -464,11 +440,6 @@ li:has(+ .menu-search-item:hover) > .menu-item::after {
   overflow: visible;
 }
 
-.submenu li a:hover {
- background: var(--menu-submenu-highlight);
-  color: var(--text-dark);
-  transform: translateX(2px);
-}
 
 .submenu li a:active {
   color: var(--text-dark);
@@ -490,6 +461,51 @@ li:has(+ .menu-search-item:hover) > .menu-item::after {
 @media (min-width: 900px) {
 .menu {
  top: var(--bar-height-large);
+}
+
+   .submenu li a:hover::before,
+.submenu li a:active::before,
+.submenu li:has(+ li a:hover) > a::before,
+.submenu li:has(+ li a:active) > a::before {
+  opacity: 0;
+}
+
+.menu-item:hover::before,
+.menu-search:hover::before,
+.menu-profile-info:hover::before{
+  opacity: 1;
+  transform: scale(1);
+   z-index: 1;
+}
+
+.menu-item:hover,
+.menu-search:hover {
+  color: var(--text-dark);
+  transform: translateX(2px);
+}
+
+/* hide own divider */
+li:hover > .menu-item::after,
+li:active > .menu-item::after,
+.menu-search:hover::after,
+.menu-search:active::after {
+  opacity: 0;
+}
+
+/* hide previous li divider when next li is hovered/open */
+li:has(+ li:hover) > .menu-item::after,
+li:has(+ .menu-search-item:hover) > .menu-item::after {
+  opacity: 0;
+}
+
+.menu li:has(+ li:hover) > .menu-item::after {
+  opacity: 0;
+}
+
+.submenu li a:hover {
+ background: var(--menu-submenu-highlight);
+  color: var(--text-dark);
+  transform: translateX(2px);
 }
    
    .menu-item:hover i,
