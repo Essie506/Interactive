@@ -206,9 +206,10 @@ box-sizing: border-box;
   opacity: 1;
   transform: scale(1);
 }
-has-submenu.open > .menu-item::after,
+
+
+.has-submenu.open > .menu-item::after,
 .menu li:has(+ .has-submenu.open) > .menu-item::after,
-.menu li:has(+ .has-submenu.open) > .menu-item::before,
 .menu li:has(+ li:hover) > .menu-item::after {
   opacity: 0;
 }
