@@ -319,9 +319,9 @@ body.profile .profile-hero-corner {
 
 body.profile .profile-hero-corner .profile-corner-menu {
   position: relative;
-  right: 0.75rem;
+  right: 15rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
-  top: 10rem;
+  top: 1rem;
   left: auto;
   min-width: 12rem;
      z-index: 4000;
