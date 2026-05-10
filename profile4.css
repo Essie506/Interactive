@@ -301,7 +301,7 @@ body.profile .profile-verified {
   font-size: var(--profile-verified-size);
   line-height: 1;
 }
-```
+
 body.profile .profile-hero-corner {
   position: absolute;
   top: 0.75rem;
