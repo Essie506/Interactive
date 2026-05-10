@@ -1521,13 +1521,13 @@ body.business-profile .profile-hero-corner {
    .business-section-tabs {
    left: 0;
      width: 99%;
-     margin: 0 0.25rem 0.8rem 0.25rem;
+     margin: 0 0.125rem 0.8rem 0.125rem;
   }
 
    .business-section {
         left: 0;
      width: 99%;
-       margin: 0.8rem 0.25rem 0.8rem 0.25rem;
+       margin: 0.8rem 0.125rem 0.8rem 0.125rem;
    }
 
 }
