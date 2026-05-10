@@ -6,7 +6,7 @@
   --menu-bg: rgba(255, 255, 255, 0.985);
   --menu-bg-soft: rgba(255, 255, 255, 0.955);
 
-  --menu-highlight: rgba(9, 26, 58, 0.06);
+  --menu-highlight: #ded7ffb5;
   --menu-highlight-strong: rgba(9, 26, 58, 0.09);
 
   --menu-submenu-bg: rgba(9, 26, 58, 0.035);
