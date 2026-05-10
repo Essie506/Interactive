@@ -209,6 +209,22 @@ has-submenu.open > .menu-item::after,
   opacity: 0;
 }
 
+/* keep every open submenu parent highlighted */
+.has-submenu.open > .menu-item::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* remove the divider on every open submenu parent */
+.has-submenu.open > .menu-item::after {
+  opacity: 0;
+}
+
+/* remove the divider from the item before an open submenu */
+.menu li:has(+ .has-submenu.open) > .menu-item::after {
+  opacity: 0;
+}
+
 /* =========================
    ICONS / TEXT
 ========================= */
