@@ -45,7 +45,7 @@ body.profile {
   --profile-media-badge-size: 2.375rem;
 
   --profile-blur: blur(10px);
-  --profile-raised-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  --profile-raised-shadow: rgba(0, 0, 0, 0.12) 0px 4px 10px 0px;
 
   --profile-local-page-max: min(var(--profile-page-max), 100%);
   --profile-local-surface-gap: calc(var(--profile-gap-md) * var(--profile-scale));
@@ -144,7 +144,7 @@ body.profile .profile-services-card {
   overflow-x: clip;
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var( --profile-raised-shadow);
 }
 
 body.profile .profile-hero-card,
@@ -180,7 +180,7 @@ body.profile .profile-tabs-inner {
   box-sizing: border-box;
   border-radius: 0.75rem;
   background: var(--profile-inner-bg);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--profile-raised-shadow);
 }
 
 body.profile .profile-info-inner,
