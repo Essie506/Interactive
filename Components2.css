@@ -149,7 +149,6 @@
   text-decoration: none;
   font-weight: 700;
   line-height: 1;
-  font-size: clamp(0.9rem, 0.95vw, 1rem);
 }
 
 .service-link::before,
@@ -628,7 +627,7 @@ body.profile .profile-hero-corner .profile-corner-menu:active {
   flex: 0 0 auto;
   text-decoration: none;
   color: var(--text-dark);
-  font-weight: 800;
+  font-weight: 700;
   padding: 1rem;
   border-radius: 25rem;
   background: rgba(255,255,255,0.62);
