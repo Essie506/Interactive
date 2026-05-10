@@ -304,9 +304,7 @@ body.profile .profile-verified {
 
 body.profile .profile-hero-corner {
   position: absolute;
-  top: 100%
-  right: 0;
-  transform: translateY(0.45rem);
+  transform: translate(-0.25rem, 0.25rem);
   z-index: 5;
 }
 
