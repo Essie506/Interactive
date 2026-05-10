@@ -304,7 +304,7 @@ body.profile .profile-verified {
 
 body.profile .profile-hero-corner {
   position: absolute;
-  top: 0.75rem;
+  top: 0.25rem;
   right: 0.75rem;
   left: auto;
   bottom: auto;
@@ -317,10 +317,10 @@ body.profile .profile-hero-corner {
 
 
 body.profile .profile-hero-corner .profile-corner-menu {
-  position: absolute;
+  position: relative;
   right: 0.75rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
-  top: 12rem;
+  top: 10rem;
   left: auto;
   min-width: 12rem;
      z-index: 4000;
