@@ -10,6 +10,7 @@ body.profile {
   --profile-page-pad-x-mobile: 0.125rem;
   --profile-page-pad-top: calc(var(--bar-height) + 0.625rem);
   --profile-page-pad-bottom: calc(var(--bar-height) + 1.25rem + env(safe-area-inset-bottom));
+   --profile-topbar-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
 
   --profile-card-bg: rgba(255, 255, 255, 0.76);
   --profile-card-bg-soft: rgba(255, 255, 255, 0.68);
@@ -320,10 +321,6 @@ body.profile .profile-tabs-inline {
    justify-content: space-between;
 }
 
-body.profile .profile-tabs::-webkit-scrollbar {
-  display: none;
-}
-
 body.profile .profile-tab {
   display: inline-flex;
   align-items: center;
@@ -462,6 +459,16 @@ body.profile .media-play-badge {
   box-shadow: var(--shadow-soft);
 }
 
+.profile-hero--personal {
+ position: relative;
+  min-height: clamp(24rem, 55dvh, 34rem);
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: var(--shadow-soft);
+}
+
 /* =========================
    DESKTOP / LAPTOP
    Clean version: no cover/banner takeover.
@@ -535,15 +542,6 @@ body.profile .profile-services-card {
    HERO
 ========================= */
 
-.profile-hero--personal {
- position: relative;
-  min-height: clamp(24rem, 55dvh, 34rem);
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.56);
-  box-shadow: var(--shadow-soft);
-}
 
 .profile-hero-media {
   overflow: hidden;
