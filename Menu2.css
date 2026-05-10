@@ -204,6 +204,7 @@ box-sizing: border-box;
 }
 has-submenu.open > .menu-item::after,
 .menu li:has(+ .has-submenu.open) > .menu-item::after,
+.menu li:has(+ .has-submenu.open) > .menu-item::before,
 .menu li:has(+ li:hover) > .menu-item::after {
   opacity: 0;
 }
