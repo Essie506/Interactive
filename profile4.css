@@ -180,7 +180,7 @@ body.profile .profile-tabs-inner {
   box-sizing: border-box;
   border-radius: 0.75rem;
   background: var(--profile-inner-bg);
-  box-shadow: var(--profile-raised-shadow);
+  box-shadow: var(--shadow-soft);
 }
 
 body.profile .profile-info-inner,
@@ -900,7 +900,7 @@ body.profile .profile-edit-btn {
     background: var(--profile-inner-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: var(--profile-raised-shadow);
+    box-shadow: var(--shadow-soft);
   }
 
   body.profile .profile-info-inner {
