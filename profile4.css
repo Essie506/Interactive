@@ -856,14 +856,7 @@ body.profile .profile-edit-btn {
     display: block;
   }
 
-  body.profile .profile-hero--personal {
-    position: relative;
-      min-height: clamp(30rem, 72dvh, 42rem);
-    display: flex;
-    align-items: flex-end;
-    overflow: visible;
-    background: rgba(255, 255, 255, 0.35);
-  }
+
 
   body.profile .profile-hero-media {
     position: absolute;
