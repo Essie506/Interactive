@@ -193,6 +193,8 @@ box-sizing: border-box;
   bottom: 0;
   height: 1px;
   background: rgba(0, 0, 0, 0.07);
+  opacity: 1;
+  transition: opacity 0.18s ease;
 }
 
 /* =========================
@@ -211,11 +213,6 @@ box-sizing: border-box;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.menu-item:hover i,
-.menu-search:hover i {
-  opacity: 1;
-  transform: translateX(1px);
-}
 
 .menu-item span,
 .menu-profile-text,
@@ -223,6 +220,35 @@ box-sizing: border-box;
   position: relative;
   z-index: 1;
 }
+
+/* ACTIVE / HIGHLIGHTED MENU ITEM */
+.menu-item.active::after,
+.menu-item.open::after,
+.menu-item:hover::after,
+.menu-item:active::after,
+.menu-search.active::after,
+.menu-search.open::after,
+.menu-search:hover::after,
+.menu-search:active::after {
+  opacity: 0;
+}
+
+/* REMOVE THE PREVIOUS LINE WHEN THE NEXT ITEM IS ACTIVE / OPEN / HOVERED */
+.menu-item:has(+ .menu-item.active)::after,
+.menu-item:has(+ .menu-item.open)::after,
+.menu-item:has(+ .menu-item:hover)::after,
+.menu-item:has(+ .menu-item:active)::after,
+.menu-item:has(+ .menu-search.active)::after,
+.menu-item:has(+ .menu-search.open)::after,
+.menu-item:has(+ .menu-search:hover)::after,
+.menu-item:has(+ .menu-search:active)::after,
+.menu-search:has(+ .menu-item.active)::after,
+.menu-search:has(+ .menu-item.open)::after,
+.menu-search:has(+ .menu-item:hover)::after,
+.menu-search:has(+ .menu-item:active)::after {
+  opacity: 0;
+}
+
 
 /* =========================
    PROFILE ROW
@@ -335,6 +361,7 @@ box-sizing: border-box;
   visibility: visible;
 }
 
+
 /* =========================
    SUBMENU
 ========================= */
@@ -409,6 +436,12 @@ box-sizing: border-box;
 @media (min-width: 900px) {
 .menu {
  top: var(--bar-height-large);
+}
+   
+   .menu-item:hover i,
+.menu-search:hover i {
+  opacity: 1;
+  transform: translateX(1px);
 }
 }
 
