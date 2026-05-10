@@ -805,8 +805,8 @@ body.profile .profile-edit-btn {
 
 .profile-hero-corner {
   position: absolute;
-    right: 0;
-    bottom: auto;
+  top: 0.75rem;
+  right: 0.75rem;
   z-index: 4;
 }
 
