@@ -588,7 +588,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 }
 
 .directory-filter-section-toggle::before {
-     background: #ded7ffb5;
+     background: #ded7ff70;
 }
 
    .directory-filter-group-toggle::before,
@@ -671,7 +671,7 @@ right: calc(var(--panel-padding-fixed) * -1);
   inset: 0;
   left: calc(var(--panel-padding-fixed) * -1);
   right: calc(var(--panel-padding-fixed) * -1);
-  background: #ded7ffb5;
+  background: #ded7ff70;
   opacity: 0;
   transform: scale(0.985);
   transition:
