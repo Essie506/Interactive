@@ -867,7 +867,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-pill:hover {
   transform: translateY(-1px);
-    background: aliceblue;
+    background: lavender;
 }
 
 .directory-filter-pill:active {
