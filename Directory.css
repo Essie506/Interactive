@@ -594,7 +594,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
    .directory-filter-group-toggle::before,
 .directory-filter-sort-by::before {
-    background: var(directory-grey-highlight);
+    background: var(--directory-grey-highlight);
 }
    
 
@@ -868,7 +868,7 @@ right: calc(var(--panel-padding-fixed) * -1);
 
 .directory-filter-pill:hover {
   transform: translateY(-1px);
-    background: var(directory-grey-highlight);
+    background: var(--directory-grey-highlight);
 }
 
 .directory-filter-pill:active {
