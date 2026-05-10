@@ -429,7 +429,7 @@ li:has(+ .menu-search-item:hover) > .menu-item::after {
 }
 
 .submenu li a:hover {
-  background: rgba(9, 26, 58, 0.06);
+  background: aliceblue;
   color: var(--text-dark);
   transform: translateX(2px);
 }
