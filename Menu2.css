@@ -221,34 +221,24 @@ box-sizing: border-box;
   z-index: 1;
 }
 
-/* ACTIVE / HIGHLIGHTED MENU ITEM */
-.menu-item.active::after,
-.menu-item.open::after,
+/* HIDE OWN DIVIDER */
 .menu-item:hover::after,
 .menu-item:active::after,
-.menu-search.active::after,
-.menu-search.open::after,
-.menu-search:hover::after,
-.menu-search:active::after {
+.menu-item.active::after,
+.menu-item.open::after,
+.has-submenu.open > .menu-item::after {
   opacity: 0;
 }
 
-/* REMOVE THE PREVIOUS LINE WHEN THE NEXT ITEM IS ACTIVE / OPEN / HOVERED */
-.menu-item:has(+ .menu-item.active)::after,
-.menu-item:has(+ .menu-item.open)::after,
+/* HIDE PREVIOUS DIVIDER WHEN NEXT ITEM / SUBMENU IS ACTIVE */
 .menu-item:has(+ .menu-item:hover)::after,
 .menu-item:has(+ .menu-item:active)::after,
-.menu-item:has(+ .menu-search.active)::after,
-.menu-item:has(+ .menu-search.open)::after,
-.menu-item:has(+ .menu-search:hover)::after,
-.menu-item:has(+ .menu-search:active)::after,
-.menu-search:has(+ .menu-item.active)::after,
-.menu-search:has(+ .menu-item.open)::after,
-.menu-search:has(+ .menu-item:hover)::after,
-.menu-search:has(+ .menu-item:active)::after {
+.menu-item:has(+ .menu-item.active)::after,
+.menu-item:has(+ .menu-item.open)::after,
+.menu-item:has(+ .has-submenu.open)::after,
+.menu-item:has(+ .has-submenu:hover)::after {
   opacity: 0;
 }
-
 
 /* =========================
    PROFILE ROW
@@ -400,6 +390,28 @@ box-sizing: border-box;
   font-weight: 500;
   line-height: 1.35;
   transition: background 0.22s ease, transform 0.22s ease;
+     position: relative;
+  border-top: none;
+}
+
+.submenu li + li a::before {
+  content: "";
+  position: absolute;
+  left: 1.5rem;
+  right: 1rem;
+  top: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.05);
+  transition: opacity 0.18s ease;
+}
+
+.submenu li a:hover::before,
+.submenu li a:active::before,
+.submenu li:has(+ li a:hover) > a::before,
+.submenu li:has(+ li a:active) > a::before {
+  opacity: 0;
+}
+
 }
 
 .submenu,
