@@ -141,7 +141,8 @@ box-sizing: border-box;
 
 
 .menu-item::before,
-.menu-search::before {
+.menu-search::before,
+.menu-profile-info::before {
   content: "";
      position: absolute;
    inset: 0;
@@ -167,7 +168,9 @@ box-sizing: border-box;
 .menu-item:hover::before,
 .menu-item:active::before,
 .menu-search:hover::before,
-.menu-search:active::before {
+.menu-search:active::before,
+.menu-profile-info:hover::before,
+.menu-profile-info:active::before{
   opacity: 1;
   transform: scale(1);
    z-index: 1;
@@ -185,7 +188,8 @@ box-sizing: border-box;
 }
 
 .menu-item::after,
-.menu-search::after {
+.menu-search::after,
+.menu-profile-info::after {
   content: "";
   position: absolute;
   left: 0.65rem;
