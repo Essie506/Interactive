@@ -803,11 +803,13 @@ body.profile .profile-edit-btn {
     grid-template-columns: repeat(4, 1fr);
   }
 
-.profile-hero-corner {
+body.profile .profile-hero-corner {
   position: absolute;
   top: 0.75rem;
   right: 0.75rem;
-  z-index: 4;
+  left: auto;
+  bottom: auto;
+  z-index: 5;
 }
 
    .profile-chevron-btn:hover {
