@@ -426,9 +426,7 @@ li:has(+ .menu-search-item:hover) > .menu-item::after {
 .submenu li a:active {
   color: var(--text-dark);
 }
-.submenu li + li a {
-  border-top: 1px solid rgba(0, 0, 0, 0.05);
-}
+
 
 @media (max-width: 900px) {
   .menu-item span,
