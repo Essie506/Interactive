@@ -83,7 +83,7 @@ body.business-profile {
   z-index: 1;
 }
 
-body.business-profile .business-hero-card {
+.business-hero-card {
   position: relative;
   z-index: 2;
    padding:
