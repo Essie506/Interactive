@@ -181,6 +181,7 @@ body.profile .profile-tabs-inner {
   border-radius: 0.75rem;
   background: var(--profile-inner-bg);
   box-shadow: var(--profile-raised-shadow);
+   margin-bottom: 0.8rem;
 }
 
 body.profile .profile-info-inner,
