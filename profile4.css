@@ -261,6 +261,20 @@ body.profile .profile-avatar-wrap {
   width: fit-content;
 }
 
+.profile-avatar-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -0.6rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(125, 255, 240, 0.35),
+      rgba(255,255,255,0)
+    );
+  z-index: -1;
+}
+
 body.profile .profile-avatar {
   width: var(--profile-local-avatar-size);
   height: var(--profile-local-avatar-size);
