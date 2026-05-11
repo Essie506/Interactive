@@ -57,6 +57,7 @@ body.business-profile {
   overflow: hidden;
   background: rgba(255, 255, 255, 0.56);
   box-shadow: var(--shadow-soft);
+   justify-content: center;
 }
 
 .business-hero-media {
