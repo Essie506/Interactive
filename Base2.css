@@ -159,7 +159,7 @@ body {
   --profile-upload-btn-offset: calc(0.2rem * var(--profile-scale));
 
   --profile-role-margin-top: calc(0.5rem * var(--profile-scale));
-  --profile-bio-margin-top: calc(0.6rem * var(--profile-scale));
+  --profile-bio-margin-top: calc(0.9rem * var(--profile-scale));
   --profile-bio-margin-top-small: calc(0.75rem * var(--profile-scale));
   --profile-bio-line-height: 1.55;
   --profile-verified-size: calc(1.125rem * var(--profile-scale));
