@@ -641,7 +641,7 @@
   text-decoration: none;
   color: var(--text-dark);
   font-weight: 700;
-  padding: 1rem;
+  padding: 0 0.8rem;
   border-radius: 25rem;
   background: rgba(255,255,255,0.62);
 }
