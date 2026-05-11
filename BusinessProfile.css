@@ -85,7 +85,6 @@ body.business-profile {
 body.business-profile .business-hero-card {
   position: relative;
   z-index: 2;
-   width: min(42rem, calc(100% - 2rem));
    padding:
    var(--profile-hero-inner-pad-y)
    var(--profile-hero-inner-pad-x);
