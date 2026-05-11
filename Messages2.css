@@ -109,11 +109,11 @@ body.messages-open {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 0.625rem;
+  gap: 0.9rem;
   flex: 1 1 auto;
   flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding: 1rem 0;
   width: auto;
 }
 
