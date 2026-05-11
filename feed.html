@@ -317,22 +317,33 @@
               multiple
               hidden
             />
-
             <div class="messages-bottom-bar">
+
+                <div class="messages-bottom-bar">
               <div class="messages-tools">
-                <label for="messagesMediaUpload" class="media-btn" title="Add image or video">
+
+                
+                <label for="messagesMediaUpload" class="icon-btn upload-btn" title="Add image or video">
                   <i class="fa-solid fa-image"></i>
                 </label>
 
-                <button type="button" class="media-btn messages-gif-btn" title="Add GIF">
+                <button type="button" class="icon-btn upload-btn messages-gif-btn" title="Add GIF">
                   <span>GIF</span>
                 </button>
 
-                <button type="button" class="media-btn messages-emoji-btn" title="Add emoji">
+                  <button type="button" class="icon-btn media-btn tag-btn" title="Tag people">
+              <i class="fa-solid fa-user-plus"></i>
+            </button>
+
+                 <button type="button" class="media-btn calendar-btn" title="Add to calendar">
+              <i class="fa-regular fa-calendar-days"></i>
+            </button>
+
+                <button type="button" class="icon-btn upload-btn messages-emoji-btn" title="Add emoji">
                   <i class="fa-regular fa-face-smile"></i>
                 </button>
 
-                <button type="button" class="media-btn messages-location-btn" title="Add location">
+                <button type="button" class="icon-btn upload-btn messages-location-btn" title="Add location">
                   <i class="fa-solid fa-location-dot"></i>
                 </button>
               </div>
@@ -346,6 +357,13 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+              
 
   <div class="messages-popup" id="messagesPopup" aria-hidden="true">
     <button type="button" class="messages-resize-handle messages-resize-corner" id="popupResizeHandle" aria-label="Resize popup"></button>
