@@ -589,7 +589,7 @@
   overflow-x: auto;
   scrollbar-width: none;
 
-  padding: 0 0.6rem;
+  padding: 0.5rem 0.6rem;
   scroll-padding-inline: 0.6rem;
 }
 
