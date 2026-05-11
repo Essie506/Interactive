@@ -314,8 +314,9 @@ body.business-profile .business-intro {
   }
 
   .business-hero-card {
-    width: calc(100% - 1rem);
+    width: 99%;
     margin: 0.25rem;
+     min-height: auto;
   }
 
   .business-section-tabs {
