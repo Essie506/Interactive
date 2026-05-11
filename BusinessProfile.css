@@ -94,9 +94,9 @@ body.business-profile .business-hero-card {
   box-shadow: var(--shadow-strong);
   color: var(--text-dark);
    align-items: flex-start;
-   max-height: clamp(290rem, 28vh, 22rem);
+   max-height: clamp(20rem, 28vh, 22rem);
    margin: 0.5rem;
-   width: min(42rem, calc(100% - 2rem);
+   width: min(42rem, calc(100% - 2rem));
 }
 
 
@@ -167,7 +167,7 @@ body.business-profile .business-hero-card {
 
 .business-location,
 .business-intro,
-business-handle {
+.business-handle {
   line-height: var(--profile-bio-line-height);
 }
 
