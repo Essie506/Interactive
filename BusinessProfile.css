@@ -96,6 +96,7 @@ body.business-profile .business-hero-card {
    align-items: flex-start;
    max-height: clamp(290rem, 28vh, 22rem);
    margin: 0.5rem;
+   width: min(42rem, calc(100% - 2rem);
 }
 
 
