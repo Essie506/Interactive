@@ -262,7 +262,7 @@ body.profile .profile-bio {
 
    
 
-body.profile profile-avatar-wrap {
+body.profile .profile-avatar-wrap {
    position: relative;
     display: inline-flex;
     align-items: center;
