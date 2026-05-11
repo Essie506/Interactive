@@ -133,10 +133,21 @@
   display: flex;
   flex-wrap: no-wrap;
   gap: var(--space-xs);
-box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 10px 0px;
 }
 
-.service-link,
+.service-link {
+   box-shadow: rgba(0, 0, 0, 0.12) 0px 4px 10px 0px;
+     display: inline-flex;
+  align-items: center;
+  min-height: 2.35rem;
+  padding: 0 0.8rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.78);
+  color: var(--text-dark);
+  font-weight: 700;
+  box-shadow: var(--shadow-soft)
+}
+
 .directory-tab {
   display: inline-flex;
   align-items: center;
