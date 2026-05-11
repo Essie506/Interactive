@@ -260,31 +260,30 @@ body.profile .profile-bio {
   color: var(--profile-text);
 }
 
-body.profile .profile-avatar-wrap {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
+   
+
+body.profile .avatar-wrap {
+   position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    width: clamp(8rem, 12vw, 9.5rem);
+    height: clamp(8rem, 12vw, 9.5rem);
+    left: 0;
+    top: 0;
 }
 
-.profile-avatar-wrap::before {
-  content: "";
-  position: absolute;
-  inset: -0.6rem;
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle,
-      rgba(125, 255, 240, 0.35),
-      rgba(255,255,255,0)
-    );
-  z-index: -1;
+body.profile .avatar-row {
+    position: absolute;
+    z-index: 3000;
+    top: -5rem;
+    overflow: visible;
 }
 
 body.profile .profile-avatar {
-  width: var(--profile-local-avatar-size);
-  height: var(--profile-local-avatar-size);
+  width: 100%
+  height: 100%
   display: flex;
   align-items: center;
   justify-content: center;
