@@ -141,7 +141,7 @@ body.profile .profile-tabs-card,
 body.profile .profile-services-card {
   box-sizing: border-box;
   border-radius: 0;
-  overflow-x: clip;
+  overflow: visible;
   backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var( --profile-raised-shadow);
