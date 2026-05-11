@@ -142,10 +142,17 @@ body.profile .profile-services-card {
   box-sizing: border-box;
   border-radius: 0;
   overflow: visible;
-  backdrop-filter: var(--profile-blur);
   -webkit-backdrop-filter: var(--profile-blur);
   box-shadow: var( --profile-raised-shadow);
 }
+
+
+body.profile .profile-section-card,
+body.profile .profile-tabs-card,
+body.profile .profile-services-card {
+    backdrop-filter: var(--profile-blur);
+}
+   
 
 body.profile .profile-hero-card,
 body.profile .profile-tabs-card,
