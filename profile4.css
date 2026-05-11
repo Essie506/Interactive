@@ -274,9 +274,11 @@ body.profile .profile-avatar-wrap {
 }
 
 body.profile .avatar-row {
-    position: absolute;
+    position: relative;
     z-index: 3000;
     top: -5rem;
+   left: -0.35rem;
+   height: 0.975rem;
     overflow: visible;
    margin-right: 50rem;
 }
