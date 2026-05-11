@@ -267,9 +267,8 @@ body.profile .avatar-wrap {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: fit-content;
-    width: clamp(8rem, 12vw, 9.5rem);
-    height: clamp(8rem, 12vw, 9.5rem);
+    width: 100%;
+    height: 100%;
     left: 0;
     top: 0;
 }
@@ -283,8 +282,8 @@ body.profile .avatar-row {
 }
 
 body.profile .profile-avatar {
-  width: 100%
-  height: 100%
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
