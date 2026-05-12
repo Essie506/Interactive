@@ -44,6 +44,7 @@ body.business-profile {
 
 
 body.business-profile {
+     margin: 0;
   background: var(--index-bg);
   min-height: 100dvh;
 }
