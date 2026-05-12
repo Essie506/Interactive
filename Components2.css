@@ -1610,6 +1610,27 @@ body.business-profile .chevron-btn {
        margin: 0.8rem 0.125rem 0.8rem 0.125rem;
    }
 
+@media (max-width: 900px) {
+  body.profile .profile-page,
+  body.business-profile .business-profile-page {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.profile .profile-hero-card,
+  body.business-profile .business-hero-card {
+    width: 99%;
+    margin: 0.25rem;
+  }
+
+  body.profile .profile-hero--personal,
+  body.business-profile .business-hero {
+    width: 100%;
+  }
+}
+
+
 }
 
 @media (hover: hover) and (pointer: fine) {
