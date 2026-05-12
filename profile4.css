@@ -591,13 +591,14 @@ body.profile .profile-gym {
 }
 
 body.profile .profile-info-inner {
-  row-gap: 0;
-column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
-     width: 100%;
-   background: transparent;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+    max-width: none;
+    text-align: left;
+     display: grid;
+  }
 
 body.profile .profile-top-bar {
   display: flex;
@@ -699,9 +700,10 @@ body.profile #uploadPhotoBtn {
 body.profile .profile-top-right-actions {
   position: relative;
   display: flex;
+	flex-direction: row;
   gap: var(--profile-top-actions-gap);
    top: auto;
-      justify-content: flex-end;
+     right: -32rem;
 }
 
 body.profile .profile-name-row {
