@@ -382,17 +382,7 @@ body.business-profile .business-hero {
   box-sizing: border-box;
 }
 
-/* =========================
-   SHARED HERO CARD WIDTH
-========================= */
 
-body.profile .profile-hero-card,
-body.business-profile .business-hero-card {
-  width: min(42rem, calc(100% - 1rem));
-  margin: 0.5rem;
-
-  box-sizing: border-box;
-}
 
 /* =========================
    REMOVE ACCIDENTAL CLIPPING
