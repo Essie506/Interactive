@@ -112,7 +112,7 @@ body.business-profile {
 
 
 .profile-hero-info-slot {
-  display: none;
+   min-height: clamp(2rem, 5vh, 4rem);
 }
 
 .profile-hero-info-slot.is-active {
