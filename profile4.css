@@ -157,8 +157,12 @@ body.profile .profile-services-card {
 body.profile .profile-hero-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
-  padding: var(--profile-local-shell-pad);
   margin-bottom: var(--profile-local-surface-gap);
+}
+
+body.profile .profile-tabs-card,
+body.profile .profile-services-card {
+     padding: var(--profile-local-shell-pad);
 }
 
 body.profile .profile-hero-card,
@@ -275,8 +279,7 @@ body.profile .profile-avatar-wrap {
 
 body.profile .avatar-row {
     position: relative;
-    top: -3rem;
-   left: -0.35rem;
+    top: -5.5rem;
    height: 1.1rem;
     overflow: visible;
 }
