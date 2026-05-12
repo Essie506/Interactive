@@ -685,13 +685,10 @@ body.profile .profile-avatar-wrap {
 
 
 body.profile .avatar-row {
-    position: absolute;
+    position: relative;
    display: inline-flex;
-  justify-content: flex-start;
-   height: 0.5rem;
     overflow: visible;
     margin: 0;
-    left: 31.5rem; 
    top: 0;
 }
 
@@ -728,12 +725,10 @@ body.profile #uploadPhotoBtn {
 }
 
 body.profile .profile-top-right-actions {
-  position: absolute;
-  top: var(--profile-local-inner-pad);
-  right: var(--profile-local-inner-pad);
+  position: relative;
   display: flex;
-  align-items: center;
   gap: var(--profile-top-actions-gap);
+   top: auto;
 }
 
 body.profile .profile-name-row {
