@@ -271,8 +271,8 @@ body.profile .profile-avatar-wrap {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-   width: clamp(8rem, 15vw, 30rem);
-    height: clamp(8rem, 15vw, 30rem);
+   width: clamp(7rem, 15vw, 30rem);
+    height: clamp(7rem, 15vw, 30rem);
     left: 0;
     top: 0;
 }
