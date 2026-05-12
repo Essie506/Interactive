@@ -218,6 +218,7 @@ body.profile .profile-hero-card {
   display: flex;
   flex-direction: column;
    max-height: clamp(20rem, 28vh, 22rem);
+   backdrop-filter: blur(16px);
    margin: 0.5rem;
 }
 
