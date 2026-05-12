@@ -1041,7 +1041,7 @@ body.profile .profile-avatar-wrap {
   height: clamp(7rem, 15vw, 30rem);
 
   left: 0;
-  top: 0;
+  top: 1rem;
 }
 
 body.profile .profile-main-info {
