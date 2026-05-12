@@ -353,6 +353,66 @@
 }
 
 
+
+
+/* =========================
+   SHARED PAGE WRAPPER
+========================= */
+
+body.profile .profile-page,
+body.business-profile .business-profile-page {
+  width: min(62.5rem, 100%);
+  margin-inline: auto;
+
+  padding:
+    var(--profile-page-pad-top)
+    0.5rem
+    var(--profile-page-pad-bottom);
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   SHARED HERO WIDTH
+========================= */
+
+body.profile .profile-hero--personal,
+body.business-profile .business-hero {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================
+   SHARED HERO CARD WIDTH
+========================= */
+
+body.profile .profile-hero-card,
+body.business-profile .business-hero-card {
+  width: min(42rem, calc(100% - 1rem));
+  margin: 0.5rem;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   REMOVE ACCIDENTAL CLIPPING
+========================= */
+
+body.profile .profile-hero--personal,
+body.business-profile .business-hero,
+body.profile .profile-hero-card,
+body.business-profile .business-hero-card {
+  overflow: visible;
+}
+
+
+
+
+
+
+
+
+
 /* =========================
    PROFILE TABS SHARED
 ========================= */
