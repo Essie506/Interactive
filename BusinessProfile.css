@@ -34,6 +34,15 @@ body.business-profile[data-profile-type="personal"] .personal-only {
 }
 
 
+
+
+body.business-profile {
+  --profile-scale: 1;
+
+
+
+
+
 body.business-profile {
   background: var(--index-bg);
   min-height: 100dvh;
