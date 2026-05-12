@@ -313,10 +313,9 @@ body.profile #uploadPhotoBtn {
 }
 
 body.profile .profile-top-right-actions {
-  position: absolute;
+  position: relative;
   top: var(--profile-local-inner-pad);
-  right: var(--profile-local-inner-pad);
-
+   justify-content: space-between;
   display: flex;
   align-items: center;
   gap: var(--profile-top-actions-gap);
