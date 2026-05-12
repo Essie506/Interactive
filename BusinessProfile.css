@@ -43,17 +43,6 @@ body.business-profile {
 }
 
 
-
-body.profile .profile-page,
-body.business-profile .business-profile-page {
-  width: min(62.5rem, 100%);
-  margin-inline: auto;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  box-sizing: border-box;
-}
-
-
 .business-hero {
   position: relative;
   min-height: clamp(28rem, 55dvh, 34rem);
