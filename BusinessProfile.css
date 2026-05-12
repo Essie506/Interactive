@@ -106,7 +106,21 @@ body.business-profile {
     width: 100%;
     max-width: none;
     text-align: left;
+     display: grid;
   }
+
+
+
+.profile-hero-info-slot {
+  display: none;
+}
+
+.profile-hero-info-slot.is-active {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: clamp(2rem, 5vh, 4rem);
+}
 
 
 .business-status-row,
