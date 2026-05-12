@@ -40,13 +40,12 @@ body.business-profile {
 }
 
 .business-profile-page {
-  width: min(1120px, 100%);
+ max-width: var(--profile-local-page-max);
   margin: 0 auto;
   padding:
-    calc(var(--bar-height-large) + 1rem)
-    clamp(0.75rem, 2vw, 1.5rem)
-    calc(var(--bar-height) + 2rem);
-  box-sizing: border-box;
+    var(--profile-page-pad-top)
+    var(--profile-page-pad-x)
+    var(--profile-page-pad-bottom);
 }
 
 .business-hero {
