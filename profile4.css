@@ -681,6 +681,10 @@ body.profile .profile-top-icon-btn i {
 body.profile .profile-avatar-wrap {
   position: relative;
   align-items: center;
+   width: auto;
+   height: auto;
+   left: -0.55rem;
+   top: 2.25rem;
 }
 
 
