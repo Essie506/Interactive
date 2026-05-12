@@ -591,14 +591,15 @@ body.profile .profile-gym {
 }
 
 body.profile .profile-info-inner {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    width: 100%;
-    max-width: none;
-    text-align: left;
-     display: grid;
-  }
+  row-gap: 0;
+column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
+     width: 100%;
+   background: transparent;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+
 
 body.profile .profile-top-bar {
   display: flex;
