@@ -549,7 +549,6 @@ body.profile .profile-services-card {
   z-index: 2;
   display: flex;
   flex-direction: column;
-   padding: var(--profile-local-shell-pad);
   overflow-x: clip;
    box-sizing: border-box;
     width: min(42rem, calc(100% - 2rem));
