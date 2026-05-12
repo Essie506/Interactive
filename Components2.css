@@ -425,6 +425,32 @@
   z-index: 5;
 }
 
+body.profile .profile-section-inner,
+body.profile .profile-info-inner,
+body.profile .profile-tabs-inner {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0.75rem;
+  background: var(--profile-inner-bg);
+  box-shadow:b var(--profile-raised-shadow);
+}
+
+body.profile .profile-section-inner,
+body.profile .profile-tabs-inner {
+   margin-bottom: 0.8rem;
+}
+
+body.profile .profile-info-inner,
+body.profile .profile-tabs-inner {
+  padding: calc(var(--profile-local-inner-pad) + 1rem);
+}
+
+body.profile .profile-section-inner {
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
+
+
 /* =========================
    PROFILE-HERO-CORNER-MENU
 ========================= */
