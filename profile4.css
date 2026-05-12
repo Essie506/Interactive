@@ -527,6 +527,7 @@ body.profile .media-play-badge {
     overflow-x: clip;
     box-sizing: border-box;
     width: min(42rem, calc(100% - 2rem));
+	    min-height: clamp(15rem, 28vh, 22rem);
     background: var(--profile-card-bg);
     -webkit-backdrop-filter: var(--profile-blur);
     box-shadow: var(--shadow-soft);
