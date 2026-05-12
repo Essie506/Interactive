@@ -51,7 +51,7 @@ body.business-profile {
 
 .business-hero {
   position: relative;
-  min-height: clamp(24rem, 55dvh, 34rem);
+  min-height: clamp(28rem, 55dvh, 34rem);
   display: flex;
   align-items: flex-end;
   overflow: hidden;
