@@ -1,6 +1,6 @@
 /* =========================
    VISIBILITY MODES
-========================= */
+=======================
 
 /* hide by default */
 body.business-profile .self-only,
@@ -43,14 +43,17 @@ body.business-profile {
 }
 
 
-.business-profile-page {
- max-width: var(--profile-local-page-max);
-     margin: 0 auto;
-  padding:
-    var(--profile-page-pad-top)
-    var(--profile-page-pad-x)
-    var(--profile-page-pad-bottom);
+
+body.profile .profile-page,
+body.business-profile .business-profile-page {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
+
+
 
 .business-hero {
   position: relative;
