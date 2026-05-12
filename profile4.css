@@ -566,7 +566,6 @@ body.profile .media-play-badge {
     align-items: start;
     width: 100%;
     background: transparent;
-    backdrop-filter: blur(16px);
   }
 
   body.profile .profile-main-info {
