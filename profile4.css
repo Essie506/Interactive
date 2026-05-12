@@ -226,6 +226,7 @@ body.profile .profile-info-inner {
   min-width: 0;
   gap: var(--profile-gap-lg);
   padding: 0.5rem var(--profile-hero-inner-pad-x);
+   display: grid;
 }
 
 body.profile .profile-main-info {
