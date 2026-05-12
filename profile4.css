@@ -625,9 +625,6 @@ body.profile .profile-info-inner {
   row-gap: 0;
 column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
      width: 100%;
-  padding:
-    var(--profile-hero-inner-pad-y)
-    var(--profile-hero-inner-pad-x);
    background: transparent;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
