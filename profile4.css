@@ -209,6 +209,7 @@ body.profile .profile-name-row {
   align-items: center;
   gap: var(--profile-name-row-gap);
   flex-wrap: nowrap;
+	justify-content: center;
 }
 
 body.profile .profile-name-row h1 {
