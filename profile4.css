@@ -605,7 +605,7 @@ body.profile .media-play-badge {
     position: relative;
     display: inline-flex;
     overflow: visible;
-    margin: 0;
+    margin: 1rem 0;
     top: 0;
   }
 
