@@ -591,31 +591,15 @@ body.profile .profile-gym {
 }
 
 @media (min-width: 901px) {
-  body.profile .profile-info-inner {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    align-items: start;
-    column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
-  }
-
-  body.profile .profile-main-info {
-    grid-column: 1;
-    grid-row: 1 / span 2;
-    align-self: start;
-  }
-
- 
- body.profile .profile-right-actions {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
-    align-self: start;
-
-    margin: 0;
-    padding: 0;
-  }
+	
+body.profile .profile-info-inner {
+  row-gap: 0;
+column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
+     width: 100%;
+   background: transparent;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
-
 
 
 body.profile .profile-top-bar {
