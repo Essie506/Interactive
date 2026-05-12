@@ -93,7 +93,7 @@ body.business-profile {
   box-shadow: var(--shadow-strong);
   color: var(--text-dark);
    align-items: flex-start;
-   min-height: clamp(20rem, 28vh, 22rem);
+   min-height: clamp(15rem, 28vh, 22rem);
    margin: 0.5rem;
    width: min(42rem, calc(100% - 2rem));
 }
