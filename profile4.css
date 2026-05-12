@@ -281,7 +281,7 @@ body.profile .profile-avatar-wrap {
 
 body.profile .avatar-row {
     position: relative;
-    top: -5.5rem;
+    top: -5rem;
    height: 1.1rem;
     overflow: visible;
 }
