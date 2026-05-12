@@ -926,10 +926,6 @@ body.profile .profile-edit-btn {
   }
 
   body.profile .profile-no-tabs {
-    position: relative;
-    width: 100%;
-    z-index: 2;
-    backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: var(--shadow-soft);
   }
