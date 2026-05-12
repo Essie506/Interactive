@@ -46,13 +46,12 @@ body.business-profile {
 
 body.profile .profile-page,
 body.business-profile .business-profile-page {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding-left: 0;
-  padding-right: 0;
+  width: min(62.5rem, 100%);
+  margin-inline: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  box-sizing: border-box;
 }
-
 
 
 .business-hero {
