@@ -729,6 +729,7 @@ body.profile .profile-top-right-actions {
   display: flex;
   gap: var(--profile-top-actions-gap);
    top: auto;
+      justify-content: flex-end;
 }
 
 body.profile .profile-name-row {
