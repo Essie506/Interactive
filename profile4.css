@@ -692,15 +692,9 @@ body.profile .avatar-row {
    height: 0.5rem;
     overflow: visible;
     margin: 0;
-right: -30.5rem; 
+    right: -30.5rem; 
    top: 1rem;
-
 }
-
-
-
-
-   
 
 body.profile .profile-avatar {
   width: var(--profile-local-avatar-size);
