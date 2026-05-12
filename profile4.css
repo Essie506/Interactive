@@ -692,7 +692,7 @@ body.profile .avatar-row {
    height: 0.5rem;
     overflow: visible;
     margin: 0;
-    right: -30.5rem; 
+    left: 30.5rem; 
    top: 1rem;
 }
 
