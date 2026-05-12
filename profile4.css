@@ -680,15 +680,26 @@ body.profile .profile-top-icon-btn i {
 }
 
 body.profile .profile-avatar-wrap {
-  position: absolute;
-  display: inline-flex;
-  justify-content: flex-start;
+  position: relative;
   align-items: center;
-  width: fit-content;
-  margin: 0;
-right: 3.5rem;
-   
 }
+
+
+body.profile .avatar-row {
+    position: absolute;
+   display: inline-flex;
+  justify-content: flex-start;
+   height: 0.975rem;
+    overflow: visible;
+    margin: 0;
+right: 3.5rem; 
+
+}
+
+
+
+
+   
 
 body.profile .profile-avatar {
   width: var(--profile-local-avatar-size);
