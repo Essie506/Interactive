@@ -370,7 +370,7 @@
 }
 
 .profile-tabs-inline {
-  margin-top: var(--profile-tabs-inline-margin-top);
+  margin-top: auto;
   padding: var(--profile-tabs-inline-pad-top) 0;
    align-self: center;
    background: transparent;
