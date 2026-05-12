@@ -689,10 +689,11 @@ body.profile .avatar-row {
     position: absolute;
    display: inline-flex;
   justify-content: flex-start;
-   height: 0.975rem;
+   height: 0.5rem;
     overflow: visible;
     margin: 0;
-right: 3.5rem; 
+right: -30.5rem; 
+   top: 1rem;
 
 }
 
