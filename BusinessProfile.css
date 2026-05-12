@@ -34,24 +34,18 @@ body.business-profile[data-profile-type="personal"] .personal-only {
 }
 
 
-
-
 body.business-profile {
   --profile-scale: 1;
 
-
-
-
-
-body.business-profile {
-     margin: 0;
+    margin: 0;
   background: var(--index-bg);
   min-height: 100dvh;
 }
 
+
 .business-profile-page {
  max-width: var(--profile-local-page-max);
-  margin: 0 auto;
+     margin: 0 auto;
   padding:
     var(--profile-page-pad-top)
     var(--profile-page-pad-x)
