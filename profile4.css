@@ -275,12 +275,10 @@ body.profile .profile-avatar-wrap {
 
 body.profile .avatar-row {
     position: relative;
-    z-index: 3000;
     top: -4rem;
    left: -0.5rem;
-   height: 0.975rem;
+   height: 0.1rem;
     overflow: visible;
-   margin-right: 50rem;
 }
 
 body.profile .profile-avatar {
