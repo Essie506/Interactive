@@ -704,7 +704,8 @@ body.profile .profile-top-right-actions {
 	flex-direction: row;
   gap: var(--profile-top-actions-gap);
    top: auto;
-     right: -32rem;
+     right: -30rem;
+	justify-content: flex-start;
 }
 
 body.profile .profile-name-row {
