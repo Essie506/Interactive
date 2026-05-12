@@ -567,7 +567,6 @@ body.profile .media-play-badge {
     width: 100%;
     background: transparent;
     backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
   }
 
   body.profile .profile-main-info {
