@@ -199,11 +199,23 @@ body.profile .profile-main-info {
 }
 
 body.profile .profile-name-row {
+  display: grid;
+	grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+ width: 100%
+}
+
+.share-mobile {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.profile-name-group {
+	grid-column: 2;
   display: flex;
   align-items: center;
   gap: var(--profile-name-row-gap);
-  flex-wrap: nowrap;
-	justify-content: center;
+	justify-self: center;
 }
 
 body.profile .profile-name-row h1 {
@@ -651,7 +663,9 @@ body.profile .media-play-badge {
     justify-content: flex-start;
     gap: var(--profile-name-row-gap);
     flex-wrap: nowrap;
+	  justify-content: center;
   }
+	
 
   body.profile .profile-name-row h1,
   body.profile .profile-hero-card h1,
