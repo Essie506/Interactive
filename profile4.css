@@ -402,6 +402,13 @@ body.profile .media-card img {
   object-fit: cover;
 }
 
+.upload-cover-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 5;
+}
+
 body.profile .saved-workouts-grid {
   display: flex;
   flex-wrap: nowrap;
@@ -874,6 +881,8 @@ body.profile .media-play-badge {
     object-position: center 35%;
     transform: scale(1.02);
   }
+
+	
 
   body.profile .profile-hero--personal::after {
     content: "";
