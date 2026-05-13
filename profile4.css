@@ -404,8 +404,7 @@ body.profile .media-card img {
 
 .upload-cover-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
   z-index: 5;
 }
 
