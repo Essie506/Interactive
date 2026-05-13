@@ -231,25 +231,23 @@ body.profile .profile-bio {
   color: var(--profile-text);
 }
 
+
+	body.profile .profile-avatar-wrap-mobile {
+		position: relative
+	}
+
+	body.profile .share-mobile {
+		position: relative;
+	}
+
+
+
+
+
+
    
 
-body.profile .profile-avatar-wrap {
-   position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-   width: clamp(7rem, 15vw, 30rem);
-    height: clamp(7rem, 15vw, 30rem);
-    left: 0;
-    top: 0;
-}
 
-body.profile .avatar-row {
-    position: relative;
-    top: -5rem;
-   height: 1.1rem;
-    overflow: visible;
-}
 
 body.profile .profile-avatar {
   width: 100%;
@@ -283,12 +281,8 @@ body.profile #uploadPhotoBtn {
 }
 
 body.profile .profile-top-right-actions {
-  position: relative;
-  top: var(--profile-local-inner-pad);
-   justify-content: space-between;
-  display: flex;
-  align-items: center;
-  gap: var(--profile-top-actions-gap);
+  position: absolute;
+ display: none;
 }
 
 body.profile .profile-verified {
@@ -578,21 +572,27 @@ body.profile .media-play-badge {
     padding: 0;
   }
 
+
   body.profile .profile-top-right-actions {
+	  display: flex;
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
     align-self: start;
+
     position: static;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: flex-end;
-    gap: var(--profile-top-actions-gap);
+
+    gap: 1rem;
     margin: 0;
     padding: 0;
+    top: var(--profile-local-inner-pad);
   }
 
+	
   body.profile .profile-tabs-inline {
     grid-column: 1 / -1;
     grid-row: 2;
@@ -601,13 +601,6 @@ body.profile .media-play-badge {
   }
 
   /* AVATAR */
-  body.profile .avatar-row {
-    position: relative;
-    display: inline-flex;
-    overflow: visible;
-    margin: 1rem 0;
-    top: 0;
-  }
 
   body.profile .profile-avatar-wrap {
     position: relative;
@@ -616,9 +609,14 @@ body.profile .media-play-badge {
     justify-content: center;
     width: auto;
     height: auto;
+	    width: clamp(7rem, 15vw, 30rem);
+    height: clamp(7rem, 15vw, 30rem);
     left: auto;
     top: auto;
+	    left: 0;
+    top: 0;
   }
+
 
   body.profile .profile-avatar {
     width: var(--profile-local-avatar-size);
@@ -798,59 +796,19 @@ body.profile .media-play-badge {
   body.profile .profile-corner-item-danger:hover {
     color: #8f2d3f;
   }
+
+
+	body.profile .profile-avatar-wrap-mobile {
+		display: none;
+		position: absolute;
+	}
+
+	body.profile .share-mobile {
+		display: none;
+		position: absolute;
+	}
+
 }
-
-
-
-@media (min-width: 901px) {
-  body.profile .profile-info-inner {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-rows: auto auto;
-    column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
-    row-gap: 0.75rem;
-    align-items: start;
-    width: 100%;
-  }
-
-  body.profile .profile-main-info {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: start;
-    text-align: left;
-    margin: 0;
-    padding: 0;
-  }
-
-  body.profile .profile-top-right-actions {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
-    align-self: start;
-
-    position: static;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-  }
-
-  body.profile .profile-tabs-inline {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    width: 100%;
-    margin: 0;
-  }
-
-  body.profile .profile-name-row {
-    justify-content: flex-start;
-  }
-}
-
 
 /* =========================
    TABLET / MOBILE
