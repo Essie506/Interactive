@@ -663,7 +663,6 @@ body.profile .media-play-badge {
     justify-content: flex-start;
     gap: var(--profile-name-row-gap);
     flex-wrap: nowrap;
-	  justify-content: center;
   }
 	
 
