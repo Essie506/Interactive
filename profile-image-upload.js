@@ -27,6 +27,12 @@ uploadButtons.forEach(button => {
   });
 });
 
+coverButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    coverInput.click();
+  });
+});
+
 
 // =========================
 // HANDLE IMAGE SELECTION
@@ -38,19 +44,6 @@ profilePhotoInput.addEventListener("change", event => {
   if (!file) return;
 
 
-
-coverInput.addEventListener("change", event => {
-  const file = event.target.files?.[0];
-
-  if (!file) return;
-
-  const imageURL = URL.createObjectURL(file);
-
-  coverImage.src = imageURL;
-});
-
-
-  
 
   // =========================
   // VALIDATION
@@ -150,4 +143,29 @@ coverInput.addEventListener("change", event => {
   const imageURL = URL.createObjectURL(file);
 
   coverImage.src = imageURL;
+
+  // save cover temporarily
+  const reader = new FileReader();
+
+  reader.onload = () => {
+    localStorage.setItem(
+      "interactiveProfileCover",
+      reader.result
+    );
+  };
+
+  reader.readAsDataURL(file);
+});
+
+// =========================
+// RESTORE SAVED COVER
+// =========================
+
+window.addEventListener("DOMContentLoaded", () => {
+  const savedCover =
+    localStorage.getItem("interactiveProfileCover");
+
+  if (!savedCover) return;
+
+  coverImage.src = savedCover;
 });
