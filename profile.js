@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
   const profilePhotoInput = document.getElementById("profilePhotoInput");
 
-  const shareProfileBtn = document.getElementById("shareProfileBtn");
+  const shareProfileButtons = document.querySelectorAll(".profile-share-btn");
   const messageProfileBtn = document.getElementById("messageProfileBtn");
 
   const profileChevronBtn = document.getElementById("profileChevronBtn");
@@ -116,8 +116,10 @@ if (messageProfileBtn) {
   });
 }
 
-  if (shareProfileBtn) {
-    shareProfileBtn.addEventListener("click", async () => {
+if (shareProfileButtons.length) {
+  shareProfileButtons.forEach(button => {
+    button.addEventListener("click", async () => {
+
       const shareData = {
         title: "Interactive Fitness Profile",
         text: "Check out this profile on Interactive Fitness",
@@ -129,13 +131,15 @@ if (messageProfileBtn) {
           await navigator.share(shareData);
         } else {
           await navigator.clipboard.writeText(window.location.href);
-          alert("Profile link copied");
+          alert("Profile link copied!");
         }
-      } catch (error) {
-        console.log("Share cancelled or failed", error);
+      } catch (err) {
+        console.error("Share failed:", err);
       }
+
     });
-  }
+  });
+}
 
   if (profileChevronBtn && profileCornerMenu) {
     profileChevronBtn.addEventListener("click", (event) => {
