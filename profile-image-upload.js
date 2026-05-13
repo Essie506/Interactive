@@ -8,6 +8,12 @@ const uploadButtons = document.querySelectorAll(".upload-photo-btn");
 
 const avatarTargets = document.querySelectorAll(".profile-avatar");
 
+const coverInput = document.getElementById("profileCoverInput");
+
+const coverButtons = document.querySelectorAll(".upload-cover-btn");
+
+const coverImage = document.querySelector(".profile-hero-media img");
+
 let currentObjectURL = null;
 
 
@@ -30,6 +36,21 @@ profilePhotoInput.addEventListener("change", event => {
   const file = event.target.files?.[0];
 
   if (!file) return;
+
+
+
+coverInput.addEventListener("change", event => {
+  const file = event.target.files?.[0];
+
+  if (!file) return;
+
+  const imageURL = URL.createObjectURL(file);
+
+  coverImage.src = imageURL;
+});
+
+
+  
 
   // =========================
   // VALIDATION
@@ -115,4 +136,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
     avatar.appendChild(img);
   });
+});
+
+// =========================
+// HANDLE COVER SELECTION
+// =========================
+
+coverInput.addEventListener("change", event => {
+  const file = event.target.files?.[0];
+
+  if (!file) return;
+
+  const imageURL = URL.createObjectURL(file);
+
+  coverImage.src = imageURL;
 });
