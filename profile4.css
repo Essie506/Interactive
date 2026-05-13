@@ -578,15 +578,10 @@ body.profile .media-play-badge {
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
-    align-self: start;
-
-    position: static;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-
-    gap: 1rem;
     margin: 0;
     padding: 0;
     top: var(--profile-local-inner-pad);
@@ -609,12 +604,8 @@ body.profile .media-play-badge {
     justify-content: center;
     width: auto;
     height: auto;
-	    width: clamp(7rem, 15vw, 30rem);
-    height: clamp(7rem, 15vw, 30rem);
     left: auto;
     top: auto;
-	    left: 0;
-    top: 0;
   }
 
 
@@ -634,7 +625,7 @@ body.profile .media-play-badge {
   body.profile #uploadPhotoBtn {
     position: absolute;
     right: var(--profile-upload-btn-offset);
-    bottom: var(--profile-upload-btn-offset);
+    bottom: 1rem;
     z-index: 2;
     display: inline-flex;
     align-items: center;
