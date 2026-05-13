@@ -234,8 +234,8 @@ body.profile .profile-bio {
 
 	body.profile .profile-avatar-wrap-mobile {
 		position: absolute;
-		max-width: 8rem;
-		max-height: 8rem;
+		width: 8rem;
+		height: 8rem;
 		align-items: center;
 		display: inline-flex;
 		justify-content: center;
