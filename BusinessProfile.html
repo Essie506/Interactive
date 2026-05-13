@@ -75,33 +75,25 @@
 
 <nav class="menu" aria-label="Main menu">
   <ul>
-
- <li class="menu-profile">
-        <a href="profile3.html" class="menu-item menu-profile-info">
-          <i class="fa-solid fa-user"></i>
-          <div class="menu-profile-text">
-            <div class="menu-profile-name">Esther</div>
-            <div class="menu-profile-sub">Your profile</div>
-          </div>
-        </a>
-      </li>
-
-   <li>
-      <a href="feed.html" class="menu-item">
-        <i class="fa-solid fa-house"></i>
-        <span>Home</span>
+    <li class="menu-profile">
+      <a href="profile3.html" class="menu-item menu-profile-info">
+        <i class="fa-solid fa-user"></i>
+        <div class="menu-profile-text">
+          <div class="menu-profile-name">Esther</div>
+          <div class="menu-profile-sub">Your profile</div>
+        </div>
       </a>
-   </li>
+    </li>
 
-    
     <li class="has-submenu">
       <a href="directory.html" class="menu-item">
         <i class="fa-solid fa-fire"></i>
-        <span>Professional Services</span>
+        <span>Explore</span>
       </a>
      <ul class="submenu">
 <li><a href="directory.html?type=gyms">Gyms, Studios and Clubs</a></li>
-<li><a href="directory.html?type=professionals">Professional Directory</a></li>
+<li><a href="directory.html?type=professionals">Trainers</a></li>
+       <li><a href="directory.html?type=professionals">Nutrition</a></li>
 </ul>
 </li>
 
@@ -118,28 +110,29 @@
       </ul>
     </li>
 
-      <li>
-        <a href="settings.html" class="menu-item">
-          <i class="fa-solid fa-cog"></i>
-          <span>Settings</span>
-        </a>
-      </li>
+    <li>
+      <a href="settings.html" class="menu-item">
+        <i class="fa-solid fa-cog"></i>
+        <span>Settings</span>
+      </a>
+    </li>
 
-      <li>
-        <a href="index.html" class="menu-item">
-          <i class="fa-solid fa-right-from-bracket"></i>
-          <span>Logout</span>
-        </a>
-      </li>
+    <li>
+      <a href="index.html" class="menu-item">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        <span>Logout</span>
+      </a>
+    </li>
 
-      <li class="menu-search-item">
-        <div class="menu-search">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="menuSearchInput" placeholder="Search..." />
-        </div>
-      </li>
-    </ul>
-  </nav>
+    <li class="menu-search-item">
+      <div class="menu-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="menuSearchInput" placeholder="Search..." />
+      </div>
+    </li>
+  </ul>
+</nav>
+
 
 <main class="business-profile-page">
 
@@ -253,7 +246,9 @@
   <section class="business-section" id="equipment">
     <div class="business-section-header">
       <h2>Equipment</h2>
-      <button type="button">Edit</button>
+      <button type="button" class="Edit icon-btn desktop-icon-link self-only" aria-label="Edit profile">
+    <i class="fa-solid fa-pen"></i>
+  </button>
     </div>
 
     <div class="business-chip-row">
@@ -268,7 +263,9 @@
   <section class="business-section" id="facilities">
     <div class="business-section-header">
       <h2>Facilities</h2>
-      <button type="button">Edit</button>
+       <button type="button" class="Edit icon-btn desktop-icon-link self-only" aria-label="Edit profile">
+    <i class="fa-solid fa-pen"></i>
+  </button>
     </div>
 
     <div class="business-info-grid">
@@ -311,7 +308,9 @@
   <section class="business-section" id="media">
     <div class="business-section-header">
       <h2>Media</h2>
-      <button type="button">Edit</button>
+       <button type="button" class="Edit icon-btn desktop-icon-link self-only" aria-label="Edit profile">
+    <i class="fa-solid fa-pen"></i>
+  </button>
     </div>
 
     <div class="business-media-grid">
@@ -324,7 +323,9 @@
   <section class="business-section" id="contact">
     <div class="business-section-header">
       <h2>Contact & Location</h2>
-      <button type="button">Edit</button>
+       <button type="button" class="Edit icon-btn desktop-icon-link self-only" aria-label="Edit profile">
+    <i class="fa-solid fa-pen"></i>
+  </button>
     </div>
 
     <div class="business-contact-card">
