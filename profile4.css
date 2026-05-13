@@ -580,7 +580,7 @@ body.profile .media-play-badge {
     justify-self: end;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     justify-content: flex-end;
     margin: 0;
     padding: 0;
