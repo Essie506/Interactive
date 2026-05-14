@@ -250,9 +250,6 @@ body.profile .profile-bio {
 		top: -3rem;
 	}
 
-body.profile .nav-title {
-	display: flex;
-}
 
 body.profile .nav-title-wrap {
 	z-index: 3000;
@@ -957,6 +954,10 @@ body.profile .media-play-badge {
      width: 99%;
      margin: 0 0.25rem;
   }
+
+	body.profile .nav-title {
+	display: flex;
+}
 	
 }
 
