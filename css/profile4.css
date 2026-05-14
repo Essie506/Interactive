@@ -927,6 +927,7 @@ body.profile .media-play-badge {
 
   body.profile .profile-avatar-wrap {
     margin: 0 auto;
+	  display: none;
   }
 
   body.profile .profile-handle,
