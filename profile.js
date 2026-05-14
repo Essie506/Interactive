@@ -6,15 +6,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const profileNameEl = document.querySelector(".profile-main-info h1");
   const profileHandleEl = document.querySelector(".profile-handle");
     const navTitle = document.getElementById("navTitle");
+  const navVerifiedBadge = document.getElementById("navVerifiedBadge");
 
-  const profileUser = {
-    id: profilePage?.dataset.userId || null,
-    name: profileNameEl ? profileNameEl.textContent.trim() : "Profile",
-    handle: profileHandleEl ? profileHandleEl.textContent.trim() : ""
-  };
+const profileUser = {
+  id: profilePage?.dataset.userId || null,
+  name: profileNameEl ? profileNameEl.textContent.trim() : "Profile",
+  handle: profileHandleEl ? profileHandleEl.textContent.trim() : "",
+  verified: true
+};
 
     if (navTitle && profileUser.name) {
   navTitle.textContent = profileUser.name;
+}
+
+  if (navVerifiedBadge) {
+  navVerifiedBadge.hidden = !profileUser.verified;
 }
 
   document.title = `${profileUser.name} - Interactive Fitness`;
