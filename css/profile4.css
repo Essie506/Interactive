@@ -594,6 +594,13 @@ body.profile .profile-hero-media.repositioning:active {
 }
 
 
+.cover-position-btn {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  z-index: 5;
+}
+
 	
 
   body.profile .profile-hero--personal::after {
