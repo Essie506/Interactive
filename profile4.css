@@ -471,7 +471,6 @@ body.profile .media-play-badge {
   min-height: clamp(28rem, 55dvh, 34rem);
   display: flex;
   align-items: flex-end;
-  overflow: hidden;
   background: rgba(255, 255, 255, 0.56);
   box-shadow: var(--shadow-soft);
 }
@@ -576,6 +575,7 @@ body.profile .media-play-badge {
         rgba(9, 26, 58, 0.18),
         rgba(255, 255, 255, 0.08)
       );
+	  pointer-events: none;
   }
 
   /* HERO INFO GRID */
