@@ -609,7 +609,7 @@ body.profile .media-play-badge {
     box-sizing: border-box;
     width: min(42rem, calc(100% - 2rem));
 	    min-height: clamp(15rem, 28vh, 22rem);
-    background: var(--profile-card-bg);
+    background: rgba(225, 225, 225, 0.6);
     -webkit-backdrop-filter: var(--profile-blur);
     box-shadow: var(--shadow-soft);
   }
