@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const profilePage = document.querySelector(".profile-page");
   const profileNameEl = document.querySelector(".profile-main-info h1");
   const profileHandleEl = document.querySelector(".profile-handle");
+    const navTitle = document.getElementById("navTitle");
 
   const profileUser = {
     id: profilePage?.dataset.userId || null,
@@ -12,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handle: profileHandleEl ? profileHandleEl.textContent.trim() : ""
   };
 
-  if (navTitle && profileUser.name) {
+    if (navTitle && profileUser.name) {
   navTitle.textContent = profileUser.name;
 }
 
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const blockCloseBtn = document.getElementById("blockCloseBtn");
   const cancelBlockBtn = document.getElementById("cancelBlockBtn");
   const confirmBlockBtn = document.getElementById("confirmBlockBtn");
-  const navTitle = document.getElementById("navTitle");
+
 
   function setActiveProfileTab(tabName) {
     tabs.forEach((tab) => {
