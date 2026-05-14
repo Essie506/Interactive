@@ -44,7 +44,7 @@ if (signupForm) {
       });
 
       alert("Account created successfully");
-      window.location.href = "profile.html";
+      window.location.href = "html/profile.html";
     } catch (error) {
       console.error("Signup error:", error);
 
