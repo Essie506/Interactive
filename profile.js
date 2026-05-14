@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
     handle: profileHandleEl ? profileHandleEl.textContent.trim() : ""
   };
 
+  if (navTitle && profileUser.name) {
+  navTitle.textContent = profileUser.name;
+}
+
   document.title = `${profileUser.name} - Interactive Fitness`;
 
   const followBtn = document.getElementById("followBtn");
@@ -27,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const blockCloseBtn = document.getElementById("blockCloseBtn");
   const cancelBlockBtn = document.getElementById("cancelBlockBtn");
   const confirmBlockBtn = document.getElementById("confirmBlockBtn");
+  const navTitle = document.getElementById("navTitle");
 
   function setActiveProfileTab(tabName) {
     tabs.forEach((tab) => {
@@ -186,3 +191,5 @@ if (shareProfileButtons.length) {
     });
   }
 });
+
+
