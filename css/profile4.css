@@ -581,7 +581,17 @@ body.profile .profile-hero-media img {
 }
 
 
+body.profile .profile-hero-media.repositioning {
+  cursor: grab;
+}
 
+body.profile .profile-hero-media.repositioning img {
+  transform: scale(1.05);
+}
+
+body.profile .profile-hero-media.repositioning:active {
+  cursor: grabbing;
+}
 
 
 	
