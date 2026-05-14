@@ -254,6 +254,10 @@ body.profile .nav-title {
 	display: flex;
 }
 
+body.profile .nav-title-wrap {
+	z-index: 3000;
+}
+
 body.profile .profile-avatar {
   width: 100%;
   height: 100%;
