@@ -14,7 +14,15 @@ const coverButtons = document.querySelectorAll(".upload-cover-btn");
 
 const coverImage = document.querySelector(".profile-hero-media img");
 
+const profileHeroMedia = document.getElementById("profileHeroMedia");
+const profileCoverImage = document.getElementById("profileCoverImage");
+const coverPositionBtn = document.getElementById("coverPositionBtn");
+
 let currentObjectURL = null;
+let isRepositioning = false;
+let isDragging = false;
+let startY = 0;
+let currentPosition = 50;
 
 
 // =========================
@@ -34,6 +42,16 @@ coverButtons.forEach(button => {
 });
 
 
+/* =========================
+   APPLY POSITION
+========================= */
+
+function applyCoverPosition(position) {
+  profileCoverImage.style.objectPosition = `center ${position}%`;
+}
+
+
+
 // =========================
 // HANDLE IMAGE SELECTION
 // =========================
@@ -42,6 +60,84 @@ profilePhotoInput.addEventListener("change", event => {
   const file = event.target.files?.[0];
 
   if (!file) return;
+
+
+/* =========================
+   LOAD SAVED POSITION
+========================= */
+
+const savedPosition = localStorage.getItem("profileCoverPosition");
+
+if (savedPosition) {
+  currentPosition = parseFloat(savedPosition);
+  applyCoverPosition(currentPosition);
+}
+
+
+/* =========================
+   TOGGLE REPOSITION MODE
+========================= */
+
+if (coverPositionBtn) {
+  coverPositionBtn.addEventListener("click", () => {
+    isRepositioning = !isRepositioning;
+
+    profileHeroMedia.classList.toggle(
+      "repositioning",
+      isRepositioning
+    );
+  });
+}
+
+
+/* =========================
+   START DRAG
+========================= */
+
+profileHeroMedia.addEventListener("pointerdown", (event) => {
+  if (!isRepositioning) return;
+
+  isDragging = true;
+  startY = event.clientY;
+
+  profileHeroMedia.setPointerCapture(event.pointerId);
+});
+
+
+/* =========================
+   DRAG MOVE
+========================= */
+
+profileHeroMedia.addEventListener("pointermove", (event) => {
+  if (!isDragging || !isRepositioning) return;
+
+  const delta = event.clientY - startY;
+
+  currentPosition += delta * 0.08;
+
+  currentPosition = Math.max(0, Math.min(100, currentPosition));
+
+  applyCoverPosition(currentPosition);
+
+  startY = event.clientY;
+});
+
+
+/* =========================
+   END DRAG
+========================= */
+
+profileHeroMedia.addEventListener("pointerup", () => {
+  if (!isDragging) return;
+
+  isDragging = false;
+
+  localStorage.setItem(
+    "profileCoverPosition",
+    currentPosition
+  );
+});
+
 
 
 
