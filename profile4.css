@@ -406,6 +406,7 @@ body.profile .media-card img {
   position: absolute;
   top: 0.5rem;
   z-index: 5;
+	left: 1rem;
 }
 
 body.profile .saved-workouts-grid {
