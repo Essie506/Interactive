@@ -115,8 +115,37 @@ body.profile::before {
 }
 
 /* =========================
-   PAGE SHELL
+  REPOSITION & ZOOM
 ========================= */
+
+body.profile .profile-hero-media.repositioning::after {
+  content: "Drag to reposition";
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+
+  background: rgba(0,0,0,0.55);
+  color: white;
+
+  font-size: 0.85rem;
+  font-weight: 600;
+
+  z-index: 10;
+  pointer-events: none;
+}
+
+body.profile .profile-hero-media.repositioning img {
+  transform: scale(1.08);
+  transition: transform 0.2s ease;
+}
+
+body.profile .profile-hero-media.repositioning img {
+  filter: brightness(0.92);
+}
 
 
 
