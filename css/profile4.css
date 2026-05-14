@@ -205,11 +205,6 @@ body.profile .profile-name-row {
  width: 100%
 }
 
-.profile-share-mobile {
-  grid-column: 3;
-  justify-self: end;
-}
-
 .profile-name-group {
 	grid-column: 2;
   display: flex;
@@ -254,9 +249,6 @@ body.profile .profile-bio {
 		top: -3rem;
 	}
 
-	body.profile .profile-share-mobile {
-		position: relative;
-	}
 
 
 body.profile .profile-avatar {
@@ -292,7 +284,8 @@ body.profile .upload-photo-btn {
 
 body.profile .profile-top-right-actions {
   position: absolute;
- display: none;
+ right: 1rem;
+	top: 0.5rem;
 }
 
 body.profile .profile-verified {
@@ -823,10 +816,6 @@ body.profile .media-play-badge {
 		position: absolute;
 	}
 
-	body.profile .profile-share-mobile {
-		display: none;
-		position: absolute;
-	}
 
 }
 
@@ -927,6 +916,7 @@ body.profile .media-play-badge {
 
   body.profile .profile-name-row {
     justify-content: center;
+	  display: none;
   }
 
   body.profile .profile-name-row h1 {
