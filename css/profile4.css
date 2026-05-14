@@ -250,7 +250,9 @@ body.profile .profile-bio {
 		top: -3rem;
 	}
 
-
+body.profile .nav-title {
+	display: flex;
+}
 
 body.profile .profile-avatar {
   width: 100%;
