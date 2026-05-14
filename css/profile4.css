@@ -956,8 +956,12 @@ body.profile .media-play-badge {
   }
 
 	body.profile .nav-title {
-	display: flex;
-}
+	    position: static;
+        transform: translateX(30%);
+        max-width: none;
+        overflow: visible;
+        text-overflow: unset;
+    }
 	
 }
 
