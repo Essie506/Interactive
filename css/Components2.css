@@ -84,7 +84,7 @@
   max-width: calc(100% - 13.75rem);
   overflow: hidden;
   text-overflow: ellipsis;
-  font-size: var(--main-font-size);
+  font-size: larger;
 }
 
 .desktop-icon-link {
