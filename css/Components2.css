@@ -1444,10 +1444,9 @@ textarea.post-input.composer-input {
   body.profile .nav-title,
    body.business-profile .nav-title {
     position: static;
-    left: auto;
     transform: translateX(30%);
     justify-self: start;
-    font-size: 1.05rem;
+      font-size: larger;
     max-width: none;
     overflow: visible;
     text-overflow: unset;
