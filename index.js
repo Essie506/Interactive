@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!email || !password) return;
 
     console.log("Login submitted", { email });
-    window.location.href = "feed.html";
+    window.location.href = "html/feed.html";
   });
 
   if (togglePassword && passwordInput) {
