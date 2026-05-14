@@ -182,7 +182,10 @@ body.profile .profile-services-card {
      padding: var(--profile-local-shell-pad);
 }
 
-body.profile .profile-hero-card,
+body.profile .profile-hero-card {
+	background: rgba(225, 225, 225, 0.6);
+}
+
 body.profile .profile-section-card {
   background: var(--profile-card-bg);
 }
