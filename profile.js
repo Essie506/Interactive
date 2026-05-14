@@ -12,9 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
     handle: profileHandleEl ? profileHandleEl.textContent.trim() : ""
   };
 
+  document.title = `${profileUser.name} - Interactive Fitness`;
+
   const followBtn = document.getElementById("followBtn");
-  const uploadPhotoBtn = document.getElementById("uploadPhotoBtn");
-  const profilePhotoInput = document.getElementById("profilePhotoInput");
 
   const shareProfileButtons = document.querySelectorAll(".profile-share-btn");
   const messageProfileBtn = document.getElementById("messageProfileBtn");
@@ -96,18 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (uploadPhotoBtn && profilePhotoInput) {
-    uploadPhotoBtn.addEventListener("click", () => {
-      profilePhotoInput.click();
-    });
-
-    profilePhotoInput.addEventListener("change", (event) => {
-      const file = event.target.files && event.target.files[0];
-      if (!file) return;
-
-      console.log("Selected profile image:", file.name);
-    });
-  }
 
 if (messageProfileBtn) {
   messageProfileBtn.addEventListener("click", () => {
