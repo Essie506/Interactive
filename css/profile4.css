@@ -1002,6 +1002,7 @@ body.profile .media-play-badge {
   body.profile .profile-gym,
   body.profile .profile-bio {
     text-align: center;
+	  font-size: medium;
   }
 
   body.profile .profile-bio {
