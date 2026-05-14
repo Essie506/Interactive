@@ -406,6 +406,46 @@ body.profile .media-card img {
 	left: 1rem;
 }
 
+ 
+
+
+body.profile .profile-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transition:
+    object-position 0.08s linear,
+    transform 0.2s ease;
+
+  user-select: none;
+  -webkit-user-drag: none;
+  touch-action: none;
+}
+
+
+body.profile .profile-hero-media.repositioning {
+  cursor: grab;
+}
+
+body.profile .profile-hero-media.repositioning img {
+  transform: scale(1.05);
+}
+
+body.profile .profile-hero-media.repositioning:active {
+  cursor: grabbing;
+}
+
+
+.cover-position-btn {
+  position: absolute;
+  top: 1rem;
+  right: 4rem;
+  z-index: 5;
+}
+
+	
+
 body.profile .saved-workouts-grid {
   display: flex;
   flex-wrap: nowrap;
@@ -545,63 +585,7 @@ body.profile .media-play-badge {
     box-shadow: var(--shadow-soft);
   }
 
-  body.profile .profile-hero-media {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    overflow: hidden;
-  }
 
-  body.profile .profile-hero-media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 35%;
-    transform: scale(1.02);
-  }
-
-
-
-
-
-	
-
-body.profile .profile-hero-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  transition:
-    object-position 0.08s linear,
-    transform 0.2s ease;
-
-  user-select: none;
-  -webkit-user-drag: none;
-  touch-action: none;
-}
-
-
-body.profile .profile-hero-media.repositioning {
-  cursor: grab;
-}
-
-body.profile .profile-hero-media.repositioning img {
-  transform: scale(1.05);
-}
-
-body.profile .profile-hero-media.repositioning:active {
-  cursor: grabbing;
-}
-
-
-.cover-position-btn {
-  position: absolute;
-  top: 1rem;
-  right: 4rem;
-  z-index: 5;
-}
-
-	
 
   body.profile .profile-hero--personal::after {
     content: "";
@@ -639,6 +623,14 @@ body.profile .profile-hero-media.repositioning:active {
     margin: 0;
     padding: 0;
   }
+
+	 body.profile .profile-hero-media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+  }
+
 
 
   body.profile .profile-top-right-actions {
