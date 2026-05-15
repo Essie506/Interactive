@@ -327,26 +327,21 @@ coverInput.addEventListener(
 
     const reader = new FileReader();
 
+
+
+
+    
+
     reader.addEventListener("load", () => {
 
       const imageData = reader.result;
 
       currentPosition = 50;
 
-     coverImage.removeAttribute("src");
+      coverImage.src = imageData;
 
-     const tempImage = new Image();
-
-tempImage.onload = () => {
-
-  coverImage.src = imageData;
-
-      applyCoverPosition(currentPosition);
-
-};
-
-      tempImage.src = imageData;
-
+applyCoverPosition(currentPosition);
+ 
       localStorage.setItem(
         "interactiveProfileCover",
         imageData
