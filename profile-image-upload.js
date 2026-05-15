@@ -29,8 +29,8 @@ const profileCoverImage =
 const coverPositionBtn =
   document.getElementById("coverPositionBtn");
 
-const coverPositionSaved =
-  document.querySelector(".cover-position-saved");
+const coverPositionDone =
+  document.querySelector(".cover-position-done");
 
 
 // =========================
@@ -222,6 +222,13 @@ profileHeroMedia.addEventListener(
 
     isDragging = false;
 
+  }
+);
+
+coverPositionDone.addEventListener(
+  "click",
+  () => {
+
     localStorage.setItem(
       "profileCoverPosition",
       currentPosition
@@ -233,16 +240,13 @@ profileHeroMedia.addEventListener(
       "repositioning"
     );
 
-    coverPositionSaved.classList.add("show");
-
-    setTimeout(() => {
-
-      coverPositionSaved.classList.remove("show");
-
-    }, 900);
+    coverPositionDone.classList.remove(
+      "show"
+    );
 
   }
 );
+  
 
 // -------------------------
 // PROFILE IMAGE UPLOAD
@@ -358,6 +362,9 @@ tempImage.onload = () => {
       profileHeroMedia.classList.add(
         "repositioning"
       );
+
+          coverPositionDone.classList.add("show");
+
 
     });
 
