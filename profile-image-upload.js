@@ -36,7 +36,7 @@ const coverPositionBtn =
 
 let currentObjectURL = null;
 
-let isRepositioning = true;
+let isRepositioning = false;
 
 let isDragging = false;
 
@@ -301,43 +301,42 @@ coverInput.addEventListener(
 
     if (!file) return;
 
-    const imageURL =
-      URL.createObjectURL(file);
+    const reader = new FileReader();
 
-    coverImage.onload = () => {
+    reader.onload = () => {
+
+      coverImage.onload = () => {
 
         currentPosition = 50;
 
-  applyCoverPosition(currentPosition);
+        applyCoverPosition(currentPosition);
 
-  isRepositioning = true;
+        isRepositioning = true;
 
-  profileHeroMedia.classList.add(
-    "repositioning"
-  );
+        profileHeroMedia.classList.add(
+          "repositioning"
+        );
 
-};
+      };
 
-const reader = new FileReader();
+      coverImage.src = reader.result;
 
-reader.onload = () => {
+      coverImage.style.display = "none";
 
-  coverImage.src = reader.result;
+      requestAnimationFrame(() => {
 
-  coverImage.style.display = "none";
+        coverImage.style.display = "block";
 
-  requestAnimationFrame(() => {
+      });
 
-    coverImage.style.display = "block";
+      localStorage.setItem(
+        "interactiveProfileCover",
+        reader.result
+      );
 
-  });
+    };
 
-  localStorage.setItem(
-    "interactiveProfileCover",
-    reader.result
-  );
+    reader.readAsDataURL(file);
 
-};
-
-reader.readAsDataURL(file);
+  }
 );
