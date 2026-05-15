@@ -182,7 +182,7 @@ profileHeroMedia.addEventListener(
 
     const delta = event.clientY - startY;
 
-    currentPosition += delta * 0.18;
+    currentPosition -= delta * 0.18;
 
     currentPosition = Math.max(
       0,
