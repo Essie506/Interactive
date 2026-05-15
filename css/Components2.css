@@ -1611,7 +1611,18 @@ body.business-profile .chevron-btn {
        margin: 0.8rem 0.125rem 0.8rem 0.125rem;
    }
 
-@media (max-width: 900px) {
+.profile-hero-corner {
+  position: absolute;
+  top: 0.35rem;
+  right: -9rem;
+   flex-direction: column;
+
+  transform: translate(-0.25rem, 0.25rem);
+
+  z-index: 5;
+   gap: 3.5rem;
+}
+
   body.profile .profile-page,
   body.business-profile .business-profile-page {
     width: 100%;
@@ -1631,8 +1642,6 @@ body.business-profile .chevron-btn {
   }
 }
 
-
-}
 
 @media (hover: hover) and (pointer: fine) {
   .directory-filter-reset:hover, 
