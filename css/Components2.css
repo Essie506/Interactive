@@ -468,7 +468,8 @@ body.business-profile .business-hero-card {
 .profile-hero-corner {
   position: absolute;
   top: 0.35rem;
-  right: -11.5rem;
+  right: -9rem;
+   flex-direction: column;
 
   transform: translate(-0.25rem, 0.25rem);
 
