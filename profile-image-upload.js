@@ -306,6 +306,8 @@ coverInput.addEventListener(
 
     coverImage.onload = () => {
 
+        currentPosition = 50;
+
   applyCoverPosition(currentPosition);
 
   isRepositioning = true;
