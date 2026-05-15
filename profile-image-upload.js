@@ -29,6 +29,9 @@ const profileCoverImage =
 const coverPositionBtn =
   document.getElementById("coverPositionBtn");
 
+const coverPositionSaved =
+  document.querySelector(".cover-position-saved");
+
 
 // =========================
 // CURRENT STATE
@@ -224,15 +227,22 @@ profileHeroMedia.addEventListener(
       currentPosition
     );
 
-  isRepositioning = false;
+    isRepositioning = false;
 
     profileHeroMedia.classList.remove(
       "repositioning"
     );
 
+    coverPositionSaved.classList.add("show");
+
+    setTimeout(() => {
+
+      coverPositionSaved.classList.remove("show");
+
+    }, 900);
+
   }
 );
-
 
 // -------------------------
 // PROFILE IMAGE UPLOAD
