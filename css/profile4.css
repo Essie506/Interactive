@@ -144,6 +144,7 @@ body.profile .profile-hero-media::after {
     z-index: 0;
     overflow: hidden;
 	cursor: grab;
+	  isolation: isolate;
   }
 
 	
@@ -491,6 +492,9 @@ body.profile .media-card img {
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
+
+	isolation: isolate;
+  will-change: transform, opacity;
 }
 
 .cover-position-done.show {
