@@ -1055,6 +1055,11 @@ body.profile .profile-hero-media:active {
 	body.profile .profile-hero-media {
   touch-action: none;
 }
+
+	.cover-position-done {
+    position: absolute;
+    right: 1rem;
+    bottom: 12rem;
 	
 }
 
