@@ -502,22 +502,6 @@ body.profile .media-card img {
 }
 
 
-.hero-controls {
-  position: absolute;
-  inset: 0;
-
-  z-index: 50;
-
-  display: flex;
-
-  justify-content: flex-end;
-  align-items: flex-start;
-
-  padding: 1rem;
-
-  pointer-events: none;
-}
-
 .cover-position-done {
   pointer-events: auto;
 }
@@ -1079,11 +1063,6 @@ body.profile .profile-hero-media:active {
   touch-action: none;
 }
 
-	.cover-position-done {
-    position: absolute;
-    right: 1rem;
-    bottom: 12.5rem;
-	
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
