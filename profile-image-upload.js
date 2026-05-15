@@ -306,8 +306,11 @@ coverInput.addEventListener(
 
     coverImage.src = imageURL;
 
+    isRepositioning = true;
 
-    // SAVE
+    profileHeroMedia.classList.add(
+      "repositioning"
+    );
 
     const reader = new FileReader();
 
