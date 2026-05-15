@@ -462,6 +462,49 @@ body.profile .media-card img {
 	left: 1rem;
 }
 
+.cover-position-saved {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  pointer-events: none;
+
+  opacity: 0;
+  transform: scale(0.9);
+
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease;
+}
+
+.cover-position-saved.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cover-position-saved i {
+  width: 4rem;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  color: white;
+
+  font-size: 1.4rem;
+
+  backdrop-filter: blur(8px);
+}
+
 
 body.profile .saved-workouts-grid {
   display: flex;
