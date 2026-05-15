@@ -309,9 +309,19 @@ coverInput.addEventListener(
 
       currentPosition = 50;
 
-      coverImage.src = imageData;
+     coverImage.removeAttribute("src");
+
+     const tempImage = new Image();
+
+tempImage.onload = () => {
+
+  coverImage.src = imageData;
 
       applyCoverPosition(currentPosition);
+
+};
+
+      tempImage.src = imageData;
 
       localStorage.setItem(
         "interactiveProfileCover",
