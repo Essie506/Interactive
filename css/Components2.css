@@ -474,6 +474,7 @@ body.business-profile .business-hero-card {
   transform: translate(-0.25rem, 0.25rem);
 
   z-index: 5;
+   gap: 7.5rem;
 }
 
 .profile-section-inner,
