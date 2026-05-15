@@ -48,7 +48,7 @@ let currentPosition = 50;
 // =========================
 
 function applyCoverPosition(position) {
-  profileCoverImage.style.objectPosition =
+  CoverImage.style.objectPosition =
     `center ${position}%`;
 }
 
