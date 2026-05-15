@@ -36,7 +36,7 @@ const coverPositionBtn =
 
 let currentObjectURL = null;
 
-let isRepositioning = false;
+let isRepositioning = true;
 
 let isDragging = false;
 
