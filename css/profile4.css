@@ -464,9 +464,7 @@ body.profile .media-card img {
 }
 
 .cover-position-done {
-  position: absolute;
-  right: 1rem;
-  bottom: 1rem;
+  position: relative;
   z-index: 50;
 
   width: 3rem;
