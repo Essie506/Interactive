@@ -128,13 +128,6 @@ uploadButtons.forEach(button => {
 });
 
 
-coverButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    coverInput.click();
-  });
-});
-
-
 // -------------------------
 // TOGGLE REPOSITION MODE
 // -------------------------
