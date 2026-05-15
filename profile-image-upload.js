@@ -304,13 +304,17 @@ coverInput.addEventListener(
     const imageURL =
       URL.createObjectURL(file);
 
-    coverImage.src = imageURL;
+    coverImage.onload = () => {
 
-    isRepositioning = true;
+  applyCoverPosition(currentPosition);
 
-    profileHeroMedia.classList.add(
-      "repositioning"
-    );
+  isRepositioning = true;
+
+  profileHeroMedia.classList.add(
+    "repositioning"
+  );
+
+};
 
     const reader = new FileReader();
 
