@@ -1612,15 +1612,7 @@ body.business-profile .chevron-btn {
    }
 
 .profile-hero-corner {
-  position: absolute;
-  top: 0.35rem;
-  right: -9rem;
-   flex-direction: column;
-
-  transform: translate(-0.25rem, 0.25rem);
-
-  z-index: 5;
-   gap: 3.5rem;
+   gap: 1.5rem;
 }
 
   body.profile .profile-page,
