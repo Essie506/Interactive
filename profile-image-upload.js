@@ -321,13 +321,6 @@ coverInput.addEventListener(
 
       coverImage.src = reader.result;
 
-      coverImage.style.display = "none";
-
-      requestAnimationFrame(() => {
-
-        coverImage.style.display = "block";
-
-      });
 
       localStorage.setItem(
         "interactiveProfileCover",
