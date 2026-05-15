@@ -303,31 +303,33 @@ coverInput.addEventListener(
 
     const reader = new FileReader();
 
-    reader.onload = () => {
+    reader.addEventListener("load", () => {
 
-      coverImage.onload = () => {
+      const imageData = reader.result;
 
-        currentPosition = 50;
+      currentPosition = 50;
 
-        applyCoverPosition(currentPosition);
+      coverImage.src = imageData;
 
-        isRepositioning = true;
-
-        profileHeroMedia.classList.add(
-          "repositioning"
-        );
-
-      };
-
-      coverImage.src = reader.result;
-
+      applyCoverPosition(currentPosition);
 
       localStorage.setItem(
         "interactiveProfileCover",
-        reader.result
+        imageData
       );
 
-    };
+      localStorage.setItem(
+        "profileCoverPosition",
+        currentPosition
+      );
+
+      isRepositioning = true;
+
+      profileHeroMedia.classList.add(
+        "repositioning"
+      );
+
+    });
 
     reader.readAsDataURL(file);
 
