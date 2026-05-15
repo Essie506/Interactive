@@ -220,10 +220,6 @@ profileHeroMedia.addEventListener(
       "repositioning"
     );
 
-    coverPositionBtn.classList.remove(
-      "active"
-    );
-
   }
 );
 
