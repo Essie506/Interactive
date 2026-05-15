@@ -43,9 +43,13 @@ let isRepositioning = false;
 
 let isDragging = false;
 
+let startX = 0;
 let startY = 0;
 
-let currentPosition = 50;
+let currentX = 50;
+let currentY = 50;
+
+let currentZoom = 1.05;
 
 let hasPassedDragThreshold = false;
 
@@ -54,9 +58,15 @@ let hasPassedDragThreshold = false;
 // DEFINE HELPERS
 // =========================
 
-function applyCoverPosition(position) {
+
+function applyCoverTransform() {
+
   profileCoverImage.style.objectPosition =
-    `center ${position}%`;
+    `${currentX}% ${currentY}%`;
+
+  profileCoverImage.style.transform =
+    `scale(${currentZoom})`;
+
 }
 
 
@@ -106,9 +116,9 @@ const savedPosition =
   localStorage.getItem("profileCoverPosition");
 
 if (savedPosition) {
-  currentPosition = parseFloat(savedPosition);
+  currentY = parseFloat(savedPosition);
 
-  applyCoverPosition(currentPosition);
+  applyCoverTransform();
 }
 
 
@@ -172,7 +182,8 @@ profileHeroMedia.addEventListener(
 
     hasPassedDragThreshold = false;
 
-    startY = event.clientY;
+    startX = event.clientX;
+startY = event.clientY;
 
     profileHeroMedia.setPointerCapture(
       event.pointerId
@@ -192,25 +203,25 @@ profileHeroMedia.addEventListener(
 
     if (!isDragging || !isRepositioning) return;
 
-    const delta = event.clientY - startY;
+    const deltaX = event.clientX - startX;
+    const deltaY = event.clientY - startY;
 
-    if (!hasPassedDragThreshold) {
+    currentX -= deltaX * 0.08;
+    currentY -= deltaY * 0.18;
 
-      if (Math.abs(delta) < 8) return;
-
-      hasPassedDragThreshold = true;
-
-    }
-
-    currentPosition -= delta * 0.18;
-
-    currentPosition = Math.max(
+    currentX = Math.max(
       0,
-      Math.min(100, currentPosition)
+      Math.min(100, currentX)
     );
 
-    applyCoverPosition(currentPosition);
+    currentY = Math.max(
+      0,
+      Math.min(100, currentY)
+    );
 
+    applyCoverTransform();
+
+    startX = event.clientX;
     startY = event.clientY;
 
   }
@@ -236,7 +247,7 @@ coverPositionDone.addEventListener(
 
     localStorage.setItem(
       "profileCoverPosition",
-      currentPosition
+      currentY
     );
 
     isRepositioning = false;
@@ -341,11 +352,11 @@ coverInput.addEventListener(
 
       const imageData = reader.result;
 
-      currentPosition = 50;
+      currentY = 50;
 
       coverImage.src = imageData;
 
-applyCoverPosition(currentPosition);
+applyCoverTransform();
  
       localStorage.setItem(
         "interactiveProfileCover",
@@ -354,7 +365,7 @@ applyCoverPosition(currentPosition);
 
       localStorage.setItem(
         "profileCoverPosition",
-        currentPosition
+        currentY
       );
 
       isRepositioning = true;
