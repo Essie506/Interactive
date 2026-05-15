@@ -44,6 +44,8 @@ let startY = 0;
 
 let currentPosition = 50;
 
+let hasPassedDragThreshold = false;
+
 
 // =========================
 // DEFINE HELPERS
@@ -160,6 +162,8 @@ profileHeroMedia.addEventListener(
 
     isDragging = true;
 
+    hasPassedDragThreshold = false;
+
     startY = event.clientY;
 
     profileHeroMedia.setPointerCapture(
@@ -182,6 +186,14 @@ profileHeroMedia.addEventListener(
 
     const delta = event.clientY - startY;
 
+    if (!hasPassedDragThreshold) {
+
+      if (Math.abs(delta) < 8) return;
+
+      hasPassedDragThreshold = true;
+
+    }
+
     currentPosition -= delta * 0.18;
 
     currentPosition = Math.max(
@@ -195,8 +207,6 @@ profileHeroMedia.addEventListener(
 
   }
 );
-
-
 // -------------------------
 // DRAG END
 // -------------------------
