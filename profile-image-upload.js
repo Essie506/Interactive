@@ -36,8 +36,6 @@ const coverPositionBtn =
 
 let currentObjectURL = null;
 
-let isRepositioning = false;
-
 let isDragging = false;
 
 let startY = 0;
@@ -155,8 +153,6 @@ if (coverPositionBtn) {
 profileHeroMedia.addEventListener(
   "pointerdown",
   event => {
-
-    if (!isRepositioning) return;
 
     isDragging = true;
 
