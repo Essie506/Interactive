@@ -89,7 +89,7 @@ const savedCover =
   localStorage.getItem("interactiveProfileCover");
 
 if (savedCover) {
-  coverImage.src = savedCover;
+  profilecoverImage.src = savedCover;
 }
 
 
@@ -129,24 +129,6 @@ coverButtons.forEach(button => {
 
 
 // -------------------------
-// TOGGLE REPOSITION MODE
-// -------------------------
-
-if (coverPositionBtn) {
-  coverPositionBtn.addEventListener("click", () => {
-
-    isRepositioning = !isRepositioning;
-
-    profileHeroMedia.classList.toggle(
-      "repositioning",
-      isRepositioning
-    );
-
-  });
-}
-
-
-// -------------------------
 // DRAG START
 // -------------------------
 
@@ -174,7 +156,7 @@ profileHeroMedia.addEventListener(
   "pointermove",
   event => {
 
-    if (!isDragging || !isRepositioning) return;
+      if (!isDragging) return;
 
     const delta = event.clientY - startY;
 
