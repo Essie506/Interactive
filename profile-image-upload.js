@@ -17,9 +17,6 @@ const coverInput =
 const coverButtons =
   document.querySelectorAll(".upload-cover-btn");
 
-const coverImage =
-  document.querySelector(".profile-hero-media img");
-
 const profileHeroMedia =
   document.getElementById("profileHeroMedia");
 
