@@ -20,6 +20,9 @@ const coverButtons =
 const profileHeroMedia =
   document.getElementById("profileHeroMedia");
 
+const coverImage =
+  document.querySelector(".profile-hero-media img");
+
 const profileCoverImage =
   document.getElementById("profileCoverImage");
 
