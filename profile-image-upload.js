@@ -214,6 +214,16 @@ profileHeroMedia.addEventListener(
       currentPosition
     );
 
+  isRepositioning = false;
+
+    profileHeroMedia.classList.remove(
+      "repositioning"
+    );
+
+    coverPositionBtn.classList.remove(
+      "active"
+    );
+
   }
 );
 
