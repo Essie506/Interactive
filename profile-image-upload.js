@@ -116,6 +116,18 @@ if (savedPosition) {
 // EVENT LISTENERS
 // =========================
 
+coverInput.addEventListener(
+  "click",
+  () => {
+
+    isRepositioning = false;
+
+    profileHeroMedia.classList.remove(
+      "repositioning"
+    );
+
+  }
+);
 
 // -------------------------
 // OPEN FILE PICKERS
