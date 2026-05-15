@@ -318,18 +318,26 @@ coverInput.addEventListener(
 
 };
 
-    const reader = new FileReader();
+const reader = new FileReader();
 
-    reader.onload = () => {
+reader.onload = () => {
 
-      localStorage.setItem(
-        "interactiveProfileCover",
-        reader.result
-      );
+  coverImage.src = reader.result;
 
-    };
+  coverImage.style.display = "none";
 
-    reader.readAsDataURL(file);
+  requestAnimationFrame(() => {
 
-  }
+    coverImage.style.display = "block";
+
+  });
+
+  localStorage.setItem(
+    "interactiveProfileCover",
+    reader.result
+  );
+
+};
+
+reader.readAsDataURL(file);
 );
