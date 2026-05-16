@@ -413,11 +413,11 @@ applyCoverTransform();
 
      coverPositionDone.classList.add("show");
 
-       setTimeout(() => {
+   requestAnimationFrame(() => {
 
   coverInput.value = "";
 
-}, 50);
+});
 
 
     });
