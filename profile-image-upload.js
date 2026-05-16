@@ -55,10 +55,6 @@ let currentZoom = 1.05;
 
 let hasPassedDragThreshold = false;
 
-let interactionMode = "idle";
-
-let activePointerId = null;
-
 
 // =========================
 // DEFINE HELPERS
@@ -169,14 +165,6 @@ if (savedPosition) {
 // EVENT LISTENERS
 // =========================
 
-coverInput.addEventListener(
-  "click",
-  () => {
-
-    resetInteractionState();
-
-  }
-);
 
 // -------------------------
 // OPEN FILE PICKERS
@@ -234,7 +222,6 @@ startY = event.clientY;
       event.pointerId
     );
 
-    activePointerId = event.pointerId;
 
     activePointers.set(event.pointerId, {
   x: event.clientX,
@@ -310,21 +297,6 @@ profileHeroMedia.addEventListener(
     if (!isDragging) return;
 
     isDragging = false;
-
-    if (
-      activePointerId !== null &&
-      profileHeroMedia.hasPointerCapture(
-        activePointerId
-      )
-    ) {
-
-      profileHeroMedia.releasePointerCapture(
-        activePointerId
-      );
-
-    }
-
-    activePointerId = null;
 
   }
 );
@@ -423,7 +395,7 @@ coverInput.addEventListener(
     if (!file) return;
 
     resetInteractionState();
-
+    
     const reader = new FileReader();
   
 
