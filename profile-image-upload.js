@@ -253,11 +253,15 @@ profileHeroMedia.addEventListener(
 
 profileHeroMedia.addEventListener(
   "pointerup",
-  () => {
+  event => {
 
     if (!isDragging) return;
 
     isDragging = false;
+
+    profileHeroMedia.releasePointerCapture(
+      event.pointerId
+    );
 
   }
 );
