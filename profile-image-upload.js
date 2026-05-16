@@ -342,11 +342,7 @@ coverInput.addEventListener(
     if (!file) return;
 
     const reader = new FileReader();
-
-
-
-
-    
+  
 
     reader.addEventListener("load", () => {
 
@@ -380,6 +376,36 @@ applyCoverTransform();
     });
 
     reader.readAsDataURL(file);
+  coverInput.value = "";
 
   }
 );
+
+
+// -------------------------
+// ZOOM
+// -------------------------
+
+
+zoomInBtn.addEventListener("click", () => {
+
+  currentZoom += 0.05;
+
+  currentZoom = Math.min(1.4, currentZoom);
+
+  applyCoverTransform();
+
+});
+
+zoomOutBtn.addEventListener("click", () => {
+
+  currentZoom -= 0.05;
+
+  currentZoom = Math.max(1, currentZoom);
+
+  applyCoverTransform();
+
+});
+
+
+
