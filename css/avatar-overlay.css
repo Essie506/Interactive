@@ -159,6 +159,7 @@
     inset 0 0 0 2px rgba(255,255,255,0.42);
 
   touch-action: none;
+   align-self: center;
 }
 
 
