@@ -420,9 +420,16 @@ coverInput.addEventListener(
 
       currentY = 50;
 
-      coverImage.src = imageData;
+coverImage.onload = () => {
 
 applyCoverTransform();
+
+    coverPositionDone.classList.add(
+    "show"
+  );
+
+};
+
  
       localStorage.setItem(
         "interactiveProfileCover",
@@ -444,7 +451,7 @@ applyCoverTransform();
 
 }, 50);
 
-     coverPositionDone.classList.add("show");
+ coverImage.src = imageData;
 
    requestAnimationFrame(() => {
 
@@ -452,10 +459,8 @@ applyCoverTransform();
 
 });
 
-
     });
-
-        reader.readAsDataURL(file);
+      reader.readAsDataURL(file);
 
   }
 );
