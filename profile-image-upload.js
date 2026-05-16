@@ -102,8 +102,6 @@ function resetInteractionState() {
     "repositioning"
   );
 
- requestAnimationFrame(() => {
-
   coverPositionDone.classList.remove(
     "show"
   );
