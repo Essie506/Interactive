@@ -55,6 +55,8 @@ let hasPassedDragThreshold = false;
 
 let interactionMode = "idle";
 
+let activePointerId = null;
+
 
 // =========================
 // DEFINE HELPERS
@@ -104,6 +106,18 @@ function resetInteractionState() {
     "show"
   );
 
+  if (
+  activePointerId !== null &&
+  profileHeroMedia.hasPointerCapture(activePointerId)
+) {
+
+  profileHeroMedia.releasePointerCapture(
+    activePointerId
+  );
+
+}
+
+    activePointerId = null;
 }
 
 
@@ -209,6 +223,8 @@ startY = event.clientY;
     profileHeroMedia.setPointerCapture(
       event.pointerId
     );
+
+    activePointerId = event.pointerId;
 
   }
 );
