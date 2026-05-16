@@ -85,7 +85,7 @@ let lastPinchDistance = 0;
 let avatarX = 0;
 let avatarY = 0;
 
-let avatarZoom = 0.85;
+let avatarZoom = 0.75;
 
 let isAvatarDragging = false;
 
@@ -589,7 +589,7 @@ avatarEditorImage.addEventListener(
     avatarZoom += event.deltaY * -0.001;
 
     avatarZoom = Math.max(
-      0.5,
+      0.25,
       Math.min(3, avatarZoom)
     );
 
