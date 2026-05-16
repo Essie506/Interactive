@@ -595,6 +595,8 @@ body.profile .media-play-badge {
   transform-origin: center;
 
   will-change: transform;
+
+border-radius: inherit;
 }
 
 
