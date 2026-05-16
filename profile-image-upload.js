@@ -106,8 +106,6 @@ function resetInteractionState() {
     "show"
   );
 
-});
-
 }
 
 // =========================
