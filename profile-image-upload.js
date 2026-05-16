@@ -364,11 +364,15 @@ applyCoverTransform();
         currentY
       );
 
-      isRepositioning = true;
+   setTimeout(() => {
 
-      profileHeroMedia.classList.add(
-        "repositioning"
-      );
+  isRepositioning = true;
+
+  profileHeroMedia.classList.add(
+    "repositioning"
+  );
+
+}, 50);
 
      coverPositionDone.classList.add("show");
 
