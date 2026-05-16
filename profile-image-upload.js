@@ -377,6 +377,11 @@ applyCoverTransform();
 
     });
 
+        reader.readAsDataURL(file);
+
+  }
+);
+
 
 // -------------------------
 // ZOOM
