@@ -370,7 +370,9 @@ applyCoverTransform();
         "repositioning"
       );
 
-          coverPositionDone.classList.add("show");
+     coverPositionDone.classList.add("show");
+
+       coverInput.value = "";
 
 
     });
