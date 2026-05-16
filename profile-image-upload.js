@@ -44,7 +44,6 @@ let currentObjectURL = null;
 let isRepositioning = false;
 
 let isDragging = false;
-
 let startX = 0;
 let startY = 0;
 
@@ -54,6 +53,8 @@ let currentY = 50;
 let currentZoom = 1.05;
 
 let hasPassedDragThreshold = false;
+
+let lastPinchDistance = 0;
 
 
 // =========================
@@ -219,22 +220,40 @@ startY = event.clientY;
 // DRAG MOVE
 // -------------------------
 
-profileHeroMedia.addEventListener(
-  "pointermove",
-  event => {
+if (activePointers.size === 2) {
 
-    if (!isRepositioning) return;
+  const pointers =
+    Array.from(activePointers.values());
 
-    activePointers.set(event.pointerId, {
-      x: event.clientX,
-      y: event.clientY
-    });
+  const dx =
+    pointers[1].x - pointers[0].x;
 
-    if (activePointers.size === 2) {
+  const dy =
+    pointers[1].y - pointers[0].y;
 
-      // pinch zoom logic
+  const distance =
+    Math.hypot(dx, dy);
 
-    } else if (isDragging) {
+  if (lastPinchDistance > 0) {
+
+    const delta =
+      distance - lastPinchDistance;
+
+    currentZoom += delta * 0.002;
+
+    currentZoom = Math.max(
+      1,
+      Math.min(1.5, currentZoom)
+    );
+
+    applyCoverTransform();
+
+  }
+
+  lastPinchDistance = distance;
+
+} else if (isDragging) {
+
 
       const deltaX =
         event.clientX - startX;
@@ -275,6 +294,10 @@ profileHeroMedia.addEventListener(
     activePointers.delete(
       event.pointerId
     );
+
+    if (activePointers.size < 2) {
+  lastPinchDistance = 0;
+}
 
     if (!isDragging) return;
 
