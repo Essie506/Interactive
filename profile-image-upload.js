@@ -85,7 +85,7 @@ let lastPinchDistance = 0;
 let avatarX = 0;
 let avatarY = 0;
 
-let avatarZoom = 0.75;
+let avatarZoom = 0.45;
 
 let isAvatarDragging = false;
 
