@@ -32,6 +32,8 @@ const coverPositionBtn =
 const coverPositionDone =
   document.querySelector(".cover-position-done");
 
+const activePointers = new Map();
+
 
 // =========================
 // CURRENT STATE
@@ -97,6 +99,8 @@ function resetInteractionState() {
    isRepositioning = false;
 
   hasPassedDragThreshold = false;
+
+    activePointers.clear();
 
   profileHeroMedia.classList.remove(
     "repositioning"
@@ -228,6 +232,12 @@ startY = event.clientY;
 
     activePointerId = event.pointerId;
 
+    activePointers.set(event.pointerId, {
+  x: event.clientX,
+  y: event.clientY
+      
+});
+
   }
 );
 
@@ -240,28 +250,44 @@ profileHeroMedia.addEventListener(
   "pointermove",
   event => {
 
-    if (!isDragging || !isRepositioning) return;
+    if (!isRepositioning) return;
 
-    const deltaX = event.clientX - startX;
-    const deltaY = event.clientY - startY;
+    activePointers.set(event.pointerId, {
+      x: event.clientX,
+      y: event.clientY
+    });
 
-    currentX -= deltaX * 0.08;
-    currentY -= deltaY * 0.18;
+    if (activePointers.size === 2) {
 
-    currentX = Math.max(
-      0,
-      Math.min(100, currentX)
-    );
+      // pinch zoom logic
 
-    currentY = Math.max(
-      0,
-      Math.min(100, currentY)
-    );
+    } else if (isDragging) {
 
-    applyCoverTransform();
+      const deltaX =
+        event.clientX - startX;
 
-    startX = event.clientX;
-    startY = event.clientY;
+      const deltaY =
+        event.clientY - startY;
+
+      currentX -= deltaX * 0.08;
+      currentY -= deltaY * 0.18;
+
+      currentX = Math.max(
+        0,
+        Math.min(100, currentX)
+      );
+
+      currentY = Math.max(
+        0,
+        Math.min(100, currentY)
+      );
+
+      applyCoverTransform();
+
+      startX = event.clientX;
+      startY = event.clientY;
+
+    }
 
   }
 );
@@ -273,16 +299,32 @@ profileHeroMedia.addEventListener(
   "pointerup",
   event => {
 
+    activePointers.delete(
+      event.pointerId
+    );
+
     if (!isDragging) return;
 
     isDragging = false;
 
-    profileHeroMedia.releasePointerCapture(
-      event.pointerId
-    );
+    if (
+      activePointerId !== null &&
+      profileHeroMedia.hasPointerCapture(
+        activePointerId
+      )
+    ) {
+
+      profileHeroMedia.releasePointerCapture(
+        activePointerId
+      );
+
+    }
+
+    activePointerId = null;
 
   }
 );
+
 
 coverPositionDone.addEventListener(
   "click",
