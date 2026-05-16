@@ -34,12 +34,34 @@ const coverPositionDone =
 
 const activePointers = new Map();
 
+// =========================
+// AVATAR EDITOR
+// =========================
+
+const avatarEditorOverlay =
+  document.querySelector(
+    ".avatar-editor-overlay"
+  );
+
+const avatarEditorImage =
+  document.getElementById(
+    "avatarEditorImage"
+  );
+
+const avatarSaveBtn =
+  document.querySelector(
+    ".avatar-editor-btn-save"
+  );
+
+const avatarCancelBtn =
+  document.querySelector(
+    ".avatar-editor-btn-cancel"
+  );
+
 
 // =========================
 // CURRENT STATE
 // =========================
-
-let currentObjectURL = null;
 
 let isRepositioning = false;
 
@@ -55,6 +77,20 @@ let currentZoom = 1.05;
 let hasPassedDragThreshold = false;
 
 let lastPinchDistance = 0;
+
+// =========================
+// AVATAR EDITOR STATE
+// =========================
+
+let avatarX = 0;
+let avatarY = 0;
+
+let avatarZoom = 1;
+
+let isAvatarDragging = false;
+
+let avatarStartX = 0;
+let avatarStartY = 0;
 
 
 // =========================
@@ -106,6 +142,19 @@ function resetInteractionState() {
   coverPositionDone.classList.remove(
     "show"
   );
+
+}
+
+function applyAvatarTransform() {
+
+  avatarEditorImage.style.transform =
+    `
+    translate(
+      calc(-50% + ${avatarX}px),
+      calc(-50% + ${avatarY}px)
+    )
+    scale(${avatarZoom})
+    `;
 
 }
 
@@ -359,42 +408,32 @@ profilePhotoInput.addEventListener(
       return;
     }
 
-
-    // CLEAN OLD OBJECT URL
-
-    if (currentObjectURL) {
-      URL.revokeObjectURL(currentObjectURL);
-    }
-
-
-    // CREATE TEMP IMAGE URL
-
-    const imageURL =
-      URL.createObjectURL(file);
-
-    currentObjectURL = imageURL;
-
-
-    // UPDATE UI
-
-    updateAvatar(imageURL);
-
-
-    // SAVE
+ // READ IMAGE
 
     const reader = new FileReader();
 
     reader.onload = () => {
-      localStorage.setItem(
-        "interactiveProfileAvatar",
-        reader.result
+
+      avatarEditorImage.src =
+        reader.result;
+
+      avatarX = 0;
+      avatarY = 0;
+      avatarZoom = 1;
+
+      applyAvatarTransform();
+
+      avatarEditorOverlay.classList.add(
+        "open"
       );
+
     };
 
     reader.readAsDataURL(file);
 
   }
 );
+
 
 
 // -------------------------
@@ -491,5 +530,103 @@ profileHeroMedia.addEventListener(
   { passive: false }
 );
 
+avatarEditorImage.addEventListener(
+  "pointerdown",
+  event => {
+
+    isAvatarDragging = true;
+
+    avatarStartX = event.clientX;
+    avatarStartY = event.clientY;
+
+    avatarEditorImage.setPointerCapture(
+      event.pointerId
+    );
+
+  }
+);
 
 
+avatarEditorImage.addEventListener(
+  "pointermove",
+  event => {
+
+    if (!isAvatarDragging) return;
+
+    const deltaX =
+      event.clientX - avatarStartX;
+
+    const deltaY =
+      event.clientY - avatarStartY;
+
+    avatarX += deltaX;
+    avatarY += deltaY;
+
+    applyAvatarTransform();
+
+    avatarStartX = event.clientX;
+    avatarStartY = event.clientY;
+
+  }
+);
+
+
+avatarEditorImage.addEventListener(
+  "pointerup",
+  () => {
+
+    isAvatarDragging = false;
+
+  }
+);
+
+avatarEditorImage.addEventListener(
+  "wheel",
+  event => {
+
+    event.preventDefault();
+
+    avatarZoom += event.deltaY * -0.001;
+
+    avatarZoom = Math.max(
+      1,
+      Math.min(3, avatarZoom)
+    );
+
+    applyAvatarTransform();
+
+  },
+  { passive: false }
+);
+
+avatarSaveBtn.addEventListener(
+  "click",
+  () => {
+
+    updateAvatar(
+      avatarEditorImage.src
+    );
+
+    localStorage.setItem(
+      "interactiveProfileAvatar",
+      avatarEditorImage.src
+    );
+
+    avatarEditorOverlay.classList.remove(
+      "open"
+    );
+
+  }
+);
+
+
+avatarCancelBtn.addEventListener(
+  "click",
+  () => {
+
+    avatarEditorOverlay.classList.remove(
+      "open"
+    );
+
+  }
+);
