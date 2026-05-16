@@ -413,7 +413,11 @@ applyCoverTransform();
 
      coverPositionDone.classList.add("show");
 
-       coverInput.value = "";
+       setTimeout(() => {
+
+  coverInput.value = "";
+
+}, 50);
 
 
     });
