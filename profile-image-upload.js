@@ -92,6 +92,8 @@ function resetInteractionState() {
 
   isDragging = false;
 
+   isRepositioning = false;
+
   hasPassedDragThreshold = false;
 
   profileHeroMedia.classList.remove(
