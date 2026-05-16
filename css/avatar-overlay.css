@@ -279,6 +279,10 @@
     0 10px 22px rgba(7,153,146,0.22);
 }
 
+.avatar-editor-image:active {
+  cursor: grabbing;
+}
+
 
 /* =========================
    MOBILE
