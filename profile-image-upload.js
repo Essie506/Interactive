@@ -53,6 +53,8 @@ let currentZoom = 1.05;
 
 let hasPassedDragThreshold = false;
 
+let interactionMode = "idle";
+
 
 // =========================
 // DEFINE HELPERS
@@ -83,6 +85,19 @@ function updateAvatar(src) {
 
     avatar.appendChild(img);
   });
+}
+
+
+function resetInteractionState() {
+
+  isDragging = false;
+
+  hasPassedDragThreshold = false;
+
+  profileHeroMedia.classList.remove(
+    "repositioning"
+  );
+
 }
 
 
@@ -250,15 +265,7 @@ coverPositionDone.addEventListener(
       currentY
     );
 
-    isRepositioning = false;
-
-    profileHeroMedia.classList.remove(
-      "repositioning"
-    );
-
-    coverPositionDone.classList.remove(
-      "show"
-    );
+  resetInteractionState();
 
   }
 );
@@ -340,6 +347,8 @@ coverInput.addEventListener(
     const file = event.target.files?.[0];
 
     if (!file) return;
+
+    resetInteractionState();
 
     const reader = new FileReader();
   
