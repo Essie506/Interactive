@@ -106,9 +106,13 @@ function resetInteractionState() {
     "repositioning"
   );
 
-    coverPositionDone.classList.remove(
+ requestAnimationFrame(() => {
+
+  coverPositionDone.classList.remove(
     "show"
   );
+
+});
 
   if (
   activePointerId !== null &&
