@@ -220,6 +220,18 @@ startY = event.clientY;
 // DRAG MOVE
 // -------------------------
 
+
+profileHeroMedia.addEventListener(
+  "pointermove",
+  event => {
+
+    if (!isRepositioning) return;
+
+    activePointers.set(event.pointerId, {
+      x: event.clientX,
+      y: event.clientY
+    });
+
 if (activePointers.size === 2) {
 
   const pointers =
