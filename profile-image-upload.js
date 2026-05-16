@@ -211,6 +211,12 @@ profileHeroMedia.addEventListener(
   "pointerdown",
   event => {
 
+     if (
+      event.target.closest(
+        ".hero-controls"
+      )
+    ) return;
+
     if (!isRepositioning) return;
 
     isDragging = true;
