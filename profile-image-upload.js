@@ -110,20 +110,7 @@ function resetInteractionState() {
 
 });
 
-  if (
-  activePointerId !== null &&
-  profileHeroMedia.hasPointerCapture(activePointerId)
-) {
-
-  profileHeroMedia.releasePointerCapture(
-    activePointerId
-  );
-
 }
-
-    activePointerId = null;
-}
-
 
 // =========================
 // RUN ON STARTUP
@@ -222,7 +209,6 @@ startY = event.clientY;
       event.pointerId
     );
 
-
     activePointers.set(event.pointerId, {
   x: event.clientX,
   y: event.clientY
@@ -301,7 +287,6 @@ profileHeroMedia.addEventListener(
   }
 );
 
-
 coverPositionDone.addEventListener(
   "click",
   () => {
@@ -316,7 +301,6 @@ coverPositionDone.addEventListener(
   }
 );
   
-
 // -------------------------
 // PROFILE IMAGE UPLOAD
 // -------------------------
