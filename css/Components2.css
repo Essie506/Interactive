@@ -396,7 +396,12 @@ body.business-profile .business-hero-card {
 }
 
 
-
+.upload-cover-btn {
+  position: absolute;
+  top: 0.5rem;
+  z-index: 5;
+	left: 1rem;
+}
 
 
 
