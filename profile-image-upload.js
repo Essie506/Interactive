@@ -98,6 +98,10 @@ function resetInteractionState() {
     "repositioning"
   );
 
+    coverPositionDone.classList.remove(
+    "show"
+  );
+
 }
 
 
