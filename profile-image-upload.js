@@ -386,26 +386,26 @@ applyCoverTransform();
 // ZOOM
 // -------------------------
 
+profileHeroMedia.addEventListener(
+  "wheel",
+  event => {
 
-zoomInBtn.addEventListener("click", () => {
+    if (!isRepositioning) return;
 
-  currentZoom += 0.05;
+    event.preventDefault();
 
-  currentZoom = Math.min(1.4, currentZoom);
+    currentZoom += event.deltaY * -0.001;
 
-  applyCoverTransform();
+    currentZoom = Math.max(
+      1,
+      Math.min(1.5, currentZoom)
+    );
 
-});
+    applyCoverTransform();
 
-zoomOutBtn.addEventListener("click", () => {
-
-  currentZoom -= 0.05;
-
-  currentZoom = Math.max(1, currentZoom);
-
-  applyCoverTransform();
-
-});
+  },
+  { passive: false }
+);
 
 
 
