@@ -165,11 +165,7 @@ coverInput.addEventListener(
   "click",
   () => {
 
-    isRepositioning = false;
-
-    profileHeroMedia.classList.remove(
-      "repositioning"
-    );
+    resetInteractionState();
 
   }
 );
