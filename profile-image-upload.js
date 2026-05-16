@@ -427,6 +427,8 @@ profilePhotoInput.addEventListener(
         "open"
       );
 
+       profilePhotoInput.value = "";
+
     };
 
     reader.readAsDataURL(file);
