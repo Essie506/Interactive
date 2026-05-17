@@ -35,6 +35,30 @@ const coverPositionDone =
 
 const activePointers = new Map();
 
+// =========================
+// AVATAR EDITOR
+// =========================
+
+const avatarEditorOverlay =
+  document.querySelector(
+    ".avatar-editor-overlay"
+  );
+
+const avatarEditorImage =
+  document.getElementById(
+    "avatarEditorImage"
+  );
+
+const avatarSaveBtn =
+  document.querySelector(
+    ".avatar-editor-btn-save"
+  );
+
+const avatarCancelBtn =
+  document.querySelector(
+    ".avatar-editor-btn-cancel"
+  );
+
 
 // =========================
 // CURRENT STATE
