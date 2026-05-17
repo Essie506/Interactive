@@ -12,6 +12,8 @@
 <link rel="stylesheet" href="../css/Messages2.css" />
 <link rel="stylesheet" href="../css/block.css" />
   <link rel="stylesheet" href="../css/avatar-overlay.css" />
+    <link rel="stylesheet" href="../css/Directory.css" />
+
 
 
   <link
@@ -64,10 +66,11 @@
 </div>
 
    <div class="navbar-right">
-     
-  <button type="button" class="icon-btn desktop-icon-link self-only" id="editProfileBtn" aria-label="Edit profile">
-    <i class="fa-solid fa-pen"></i>
-  </button>
+
+
+       <button class="icon-btn filter-toggle" id="filterBtn" type="button" aria-label="Open filters">
+         <i class="fa-solid fa-pen"></i>
+      </button>
 
   <button type="button" class="icon-btn desktop-icon-link visitor-only" id="followBtn" aria-label="Follow Esther">
     <i class="fa-solid fa-user-plus"></i>
@@ -381,6 +384,307 @@
     </section>
     
 </main>
+
+
+
+
+  <!-- FILTER DRAWER -->
+  <aside class="directory-filter-menu" id="directoryFilterMenu" aria-hidden="true">
+
+
+ <header class="directory-filter-header">
+
+  <div class="filter-type-wrapper">
+
+    <button class="directory-filter-title-switch" type="button">
+      <div class="directory-filter-title">
+        <i id="filterIcon" class="fa-solid fa-fire"></i>
+        <h2 id="filterTitle">Filters</h2>
+      </div>
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <!-- 👇 small menu -->
+    <div class="filter-type-dropdown" id="filterTypeDropdown">
+      <button type="button" data-directory-switch="gyms">
+           <i class="fa-solid fa-fire"></i>
+        Gyms & Studios
+      </button>
+      <button type="button" data-directory-switch="professionals">
+        <i class="fa-solid fa-user"></i>
+        Professionals
+      </button>
+    </div>
+  </div>
+    <button type="button" class="messages-back" id="directoryFilterClose">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+</header>
+
+
+  <div class="directory-filter-body">
+
+
+  <!-- BUSINESS LOCATION -->
+
+  <section
+    class="directory-filter-section"
+  >
+
+    <div
+      class="directory-filter-static-heading"
+    >
+
+      <span class="b1">
+        Business location
+      </span>
+
+    </div>
+
+    <div
+      class="directory-filter-static-content"
+    >
+
+      <label
+        class="directory-location-search"
+      >
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <input
+          type="text"
+          class="directory-location-input"
+          placeholder="Search town, city or postcode"
+        />
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- BUSINESS ADDRESS -->
+
+  <section
+    class="directory-filter-section"
+  >
+
+    <div
+      class="directory-filter-static-heading"
+    >
+
+      <span class="b1">
+        Business address
+      </span>
+
+    </div>
+
+    <div
+      class="directory-filter-static-content"
+    >
+
+      <label
+        class="directory-location-search"
+      >
+
+        <i class="fa-solid fa-building"></i>
+
+        <input
+          type="text"
+          class="directory-location-input"
+          placeholder="Business address"
+        />
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ROLE -->
+
+  <section
+    class="directory-filter-section"
+  >
+
+    <div
+      class="directory-filter-static-heading"
+    >
+
+      <span class="b1">
+        Professional role
+      </span>
+
+    </div>
+
+    <div
+      class="directory-filter-static-content"
+    >
+
+      <label
+        class="directory-location-search"
+      >
+
+        <i class="fa-solid fa-dumbbell"></i>
+
+        <input
+          type="text"
+          class="directory-location-input"
+          placeholder="Trainer • Coach"
+        />
+
+      </label>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- BIO -->
+
+  <section
+    class="directory-filter-section"
+  >
+
+    <div
+      class="directory-filter-static-heading"
+    >
+
+      <span class="b1">
+        Bio
+      </span>
+
+    </div>
+
+    <div
+      class="directory-filter-static-content"
+    >
+
+      <textarea
+        class="profile-editor-bio"
+        placeholder="Tell people about yourself..."
+      ></textarea>
+
+    </div>
+
+  </section>
+
+</div>
+
+
+
+      
+<section class="directory-filter-section directory-filter-panel" data-filter-type="professionals">
+
+  <button class="directory-filter-section-toggle" type="button">
+      <span class="toggle-inner">
+        <span class ="b1">Services</span>
+    <i class="fa-solid fa-chevron-down"></i>
+      </span>
+  </button>
+    <div class="directory-filter-section-content">
+
+        <div class="directory-pill-row">
+        <button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="Classes">Classes</button>
+<button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="Doctor-referrals">Doctor referrals</button>
+<button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="home-workouts">Home workouts</button>
+<button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="Les-Mills">Les-Mills</button>
+<button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="nutrition">Nutrition</button>
+<button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="personal-training">Personal training</button>
+<button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="supplements">Supplements</button>
+<button class="directory-filter-pill" type="button" data-filter-group="services" data-filter-value="tasters">Taster-sessions</button>
+        </div>
+    </div>
+</section>
+  
+
+
+<!-- PROFESSIONAL TYPE -->
+<section class="directory-filter-section directory-filter-panel" data-filter-type="professionals">
+  <button class="directory-filter-section-toggle" type="button">
+      <span class="toggle-inner">
+    <span class="b1">Professional type</span>
+    <i class="fa-solid fa-chevron-down"></i>
+      </span>
+  </button>
+
+  <div class="directory-filter-section-content">
+    <div class="directory-pill-row">
+   <button class="directory-filter-pill" data-filter-group="professional-type" data-filter-value="class-instructor">Class instructor</button>
+<button class="directory-filter-pill" data-filter-group="professional-type" data-filter-value="nutrition-coach">Nutrition coach</button>
+<button class="directory-filter-pill" data-filter-group="professional-type" data-filter-value="personal-trainer">Personal trainer</button>
+<button class="directory-filter-pill" data-filter-group="professional-type" data-filter-value="physiotherapist">Physiotherapist</button>
+<button class="directory-filter-pill" data-filter-group="professional-type" data-filter-value="pilates">Pilates</button>
+<button class="directory-filter-pill" data-filter-group="professional-type" data-filter-value="yoga">Yoga Instructor</button>
+    </div>
+  </div>
+</section>
+
+<!-- SPECIALISMS -->
+<section class="directory-filter-section directory-filter-panel" data-filter-type="professionals">
+  <button class="directory-filter-section-toggle">
+      <span class="toggle-inner">
+    <span class="b1">Specialisms</span>
+    <i class="fa-solid fa-chevron-down"></i>
+      </span>
+  </button>
+
+  <div class="directory-filter-section-content">
+    <div class="directory-pill-row">
+<button class="directory-filter-pill" data-filter-group="specialism" data-filter-value="beginners">Beginners</button>
+<button class="directory-filter-pill" data-filter-group="specialism" data-filter-value="dr-referrals">Doctor referrals</button>
+<button class="directory-filter-pill" data-filter-group="specialism" data-filter-value="fat-loss">Fat loss</button>
+<button class="directory-filter-pill" data-filter-group="specialism" data-filter-value="mobility">Mobility</button>
+<button class="directory-filter-pill" data-filter-group="specialism" data-filter-value="rehab">Rehabilitation</button>
+<button class="directory-filter-pill" data-filter-group="specialism" data-filter-value="strength">Strength</button>
+<button class="directory-filter-pill" data-filter-group="specialism" data-filter-value="youth-nutrition">Youth nutrition (11+)</button>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION TYPE -->
+<section class="directory-filter-section directory-filter-panel" data-filter-type="professionals">
+  <button class="directory-filter-section-toggle">
+      <span class="toggle-inner">
+    <span class="b1">Session type</span>
+    <i class="fa-solid fa-chevron-down"></i>
+      </span>
+  </button>
+
+  <div class="directory-filter-section-content">
+    <div class="directory-pill-row">
+      <button class="directory-filter-pill" data-filter-group="session" data-filter-value="1to1">1-to-1</button>
+      <button class="directory-filter-pill" data-filter-group="session" data-filter-value="group">Group</button>
+      <button class="directory-filter-pill" data-filter-group="session" data-filter-value="online">Online</button>
+      <button class="directory-filter-pill" data-filter-group="session" data-filter-value="outdoor">Outdoor</button>
+    </div>
+  </div>
+</section>
+
+
+    <div class="directory-filter-feet">
+      <button class="directory-filter-reset" id="directoryFilterReset" type="button">
+        Reset Filters
+      </button>
+
+      <button class="directory-filter-apply" id="directoryFilterApply" type="button">
+        Close &amp; Apply filters
+      </button>
+    </div>
+  </div>
+  </aside>
+
+
+
+
+
+
+  
 
   <nav class="bottom-nav" aria-label="Mobile navigation">
     <button class="icon-btn messages-toggle" type="button" aria-label="Messages">
@@ -911,5 +1215,6 @@
 <script src="../ui.js"></script>
 <script src="../profile.js"></script>
 <script src="../profile-image-upload.js"></script>
+  <script src="../directory.js"></script>
 </body>
 </html>
