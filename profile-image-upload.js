@@ -6,6 +6,12 @@ const profilePhotoInput =
   document.getElementById(
     "profilePhotoInput"
   );
+  
+  
+  const coverImage =
+  document.querySelector(
+    ".profile-hero-media img"
+  );
 
 const uploadButtons =
   document.querySelectorAll(
