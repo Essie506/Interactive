@@ -78,6 +78,8 @@ let hasPassedDragThreshold = false;
 
 let lastPinchDistance = 0;
 
+let currentObjectURL = null;
+
 // =========================
 // AVATAR EDITOR STATE
 // =========================
@@ -408,33 +410,46 @@ profilePhotoInput.addEventListener(
       return;
     }
 
- // READ IMAGE
+// CLEAN OLD OBJECT URL
 
-    const reader = new FileReader();
+if (currentObjectURL) {
 
-    reader.onload = () => {
+  URL.revokeObjectURL(
+    currentObjectURL
+  );
 
-      avatarEditorImage.src =
-        reader.result;
+}
 
-      avatarX = 0;
-      avatarY = 0;
-      avatarZoom = 1;
 
-      applyAvatarTransform();
+// CREATE TEMP IMAGE URL
 
-      avatarEditorOverlay.classList.add(
-        "open"
-      );
+const imageURL =
+  URL.createObjectURL(file);
 
-       profilePhotoInput.value = "";
+currentObjectURL = imageURL;
 
-    };
 
-    reader.readAsDataURL(file);
+// OPEN EDITOR
+
+avatarEditorImage.src =
+  imageURL;
+
+avatarX = 0;
+avatarY = 0;
+
+avatarZoom = 0.5;
+
+applyAvatarTransform();
+
+avatarEditorOverlay.classList.add(
+  "open"
+);
+
+
+profilePhotoInput.value = "";
 
   }
-);
+  };
 
 
 
@@ -610,12 +625,7 @@ avatarSaveBtn.addEventListener(
     updateAvatar(
       avatarEditorImage.src
     );
-
-    localStorage.setItem(
-      "interactiveProfileAvatar",
-      avatarEditorImage.src
-    );
-
+    
     avatarEditorOverlay.classList.remove(
       "open"
     );
