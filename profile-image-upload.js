@@ -17,9 +17,6 @@ const coverInput =
 const coverButtons =
   document.querySelectorAll(".upload-cover-btn");
 
-const coverImage =
-  document.querySelector(".profile-hero-media img");
-
 const profileHeroMedia =
   document.getElementById("profileHeroMedia");
 
@@ -169,6 +166,9 @@ function applyAvatarTransform() {
 const savedAvatar =
   localStorage.getItem("interactiveProfileAvatar");
 
+localStorage.getItem("interactiveProfileAvatar");
+
+
 if (savedAvatar) {
   updateAvatar(savedAvatar);
 }
@@ -178,6 +178,9 @@ if (savedAvatar) {
 
 const savedCover =
   localStorage.getItem("interactiveProfileCover");
+
+localStorage.getItem("interactiveProfileCover");
+
 
 if (savedCover) {
   coverImage.src = savedCover;
