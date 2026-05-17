@@ -148,6 +148,19 @@ function resetInteractionState() {
 
 }
 
+function applyAvatarTransform() {
+
+  avatarEditorImage.style.transform =
+    `
+    translate(
+      calc(-50% + ${avatarX}px),
+      calc(-50% + ${avatarY}px)
+    )
+    scale(${avatarZoom})
+    `;
+
+}
+
 // =========================
 // RUN ON STARTUP
 // =========================
