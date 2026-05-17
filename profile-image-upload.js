@@ -383,6 +383,7 @@ coverPositionDone.addEventListener(
   }
 );
   
+  
 // -------------------------
 // PROFILE IMAGE UPLOAD
 // -------------------------
@@ -410,47 +411,42 @@ profilePhotoInput.addEventListener(
       return;
     }
 
-// CLEAN OLD OBJECT URL
 
-if (currentObjectURL) {
+    // CLEAN OLD OBJECT URL
 
-  URL.revokeObjectURL(
-    currentObjectURL
-  );
-
-}
+    if (currentObjectURL) {
+      URL.revokeObjectURL(currentObjectURL);
+    }
 
 
-// CREATE TEMP IMAGE URL
+    // CREATE TEMP IMAGE URL
 
-const imageURL =
-  URL.createObjectURL(file);
+    const imageURL =
+      URL.createObjectURL(file);
 
-currentObjectURL = imageURL;
-
-
-// OPEN EDITOR
-
-avatarEditorImage.src =
-  imageURL;
-
-avatarX = 0;
-avatarY = 0;
-
-avatarZoom = 0.5;
-
-applyAvatarTransform();
-
-avatarEditorOverlay.classList.add(
-  "open"
-);
+    currentObjectURL = imageURL;
 
 
-profilePhotoInput.value = "";
+    // UPDATE UI
+
+    updateAvatar(imageURL);
+
+
+    // SAVE
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      localStorage.setItem(
+        "interactiveProfileAvatar",
+        reader.result
+      );
+    };
+
+    reader.readAsDataURL(file);
 
   }
-  };
-
+);
 
 
 // -------------------------
@@ -562,6 +558,11 @@ avatarEditorImage.addEventListener(
 
   }
 );
+
+
+// -------------------------
+// AVATAR
+// -------------------------
 
 
 avatarEditorImage.addEventListener(
