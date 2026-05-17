@@ -81,6 +81,20 @@ let hasPassedDragThreshold = false;
 
 let lastPinchDistance = 0;
 
+// =========================
+// AVATAR EDITOR STATE
+// =========================
+
+let avatarX = 0;
+let avatarY = 0;
+
+let avatarZoom = 0.25;
+
+let isAvatarDragging = false;
+
+let avatarStartX = 0;
+let avatarStartY = 0;
+
 
 // =========================
 // DEFINE HELPERS
