@@ -403,8 +403,25 @@ body.business-profile .business-hero-card {
 	left: 1rem;
 }
 
+/* =========================
+SECTION EDITS SHARED
+========================= */
 
 
+
+.section-edit {
+  display: none;
+}
+
+body.editing-profile
+.section-view {
+  display: none;
+}
+
+body.editing-profile
+.section-edit {
+  display: block;
+}
 
 
 
