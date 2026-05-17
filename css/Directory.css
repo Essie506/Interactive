@@ -1004,7 +1004,7 @@ f
 ========================= */
 
 body.profile .directory-filter-header {
-   padding: 0;
+   padding: 0 0.125rem 0 0;
 }
 
 
@@ -1055,12 +1055,18 @@ align-self: self-end;
     var(--main-color);
 
   color: white;
+  z-index: 3;
+
+  transform:
+    translateY(2px);
+}
+
+.profile-editor-tab:not(.active) {
+  filter: saturate(0.85);
 }
 
 
-.profile-editor-tab:hover {
-  transform: translateY(-1px);
-}
+
 
 
 
@@ -1118,7 +1124,7 @@ align-self: self-end;
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
   .directory-filter-section-toggle:hover::before,
   .directory-filter-group-toggle:hover::before,
   .directory-filter-sort-by:hover::before {
@@ -1155,5 +1161,9 @@ align-self: self-end;
 
 .directory-filter-title-switch * {
   pointer-events: none;
+}
+
+   .profile-editor-tab:hover {
+  transform: translateY(-1px);
 }
 }
