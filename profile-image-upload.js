@@ -3,33 +3,56 @@
 // =========================
 
 const profilePhotoInput =
-  document.getElementById("profilePhotoInput");
+  document.getElementById(
+    "profilePhotoInput"
+  );
 
 const uploadButtons =
-  document.querySelectorAll(".upload-photo-btn");
+  document.querySelectorAll(
+    ".upload-photo-btn"
+  );
 
 const avatarTargets =
-  document.querySelectorAll(".profile-avatar");
+  document.querySelectorAll(
+    ".profile-avatar"
+  );
 
 const coverInput =
-  document.getElementById("profileCoverInput");
+  document.getElementById(
+    "profileCoverInput"
+  );
 
 const coverButtons =
-  document.querySelectorAll(".upload-cover-btn");
+  document.querySelectorAll(
+    ".upload-cover-btn"
+  );
 
 const profileHeroMedia =
-  document.getElementById("profileHeroMedia");
+  document.getElementById(
+    "profileHeroMedia"
+  );
 
 const profileCoverImage =
-  document.getElementById("profileCoverImage");
+  document.getElementById(
+    "profileCoverImage"
+  );
+
+const coverImage =
+  profileCoverImage;
 
 const coverPositionBtn =
-  document.getElementById("coverPositionBtn");
+  document.getElementById(
+    "coverPositionBtn"
+  );
 
 const coverPositionDone =
-  document.querySelector(".cover-position-done");
+  document.querySelector(
+    ".cover-position-done"
+  );
 
-const activePointers = new Map();
+const activePointers =
+  new Map();
+
 
 // =========================
 // AVATAR EDITOR
@@ -57,12 +80,13 @@ const avatarCancelBtn =
 
 
 // =========================
-// CURRENT STATE
+// COVER STATE
 // =========================
 
 let isRepositioning = false;
 
 let isDragging = false;
+
 let startX = 0;
 let startY = 0;
 
@@ -71,31 +95,29 @@ let currentY = 50;
 
 let currentZoom = 1.05;
 
-let hasPassedDragThreshold = false;
-
 let lastPinchDistance = 0;
 
-let currentObjectURL = null;
 
 // =========================
-// AVATAR EDITOR STATE
+// AVATAR STATE
 // =========================
 
 let avatarX = 0;
 let avatarY = 0;
 
-let avatarZoom = 0.25;
+let avatarZoom = 0.5;
 
 let isAvatarDragging = false;
 
 let avatarStartX = 0;
 let avatarStartY = 0;
 
+let currentObjectURL = null;
+
 
 // =========================
-// DEFINE HELPERS
+// HELPERS
 // =========================
-
 
 function applyCoverTransform() {
 
@@ -107,42 +129,6 @@ function applyCoverTransform() {
 
 }
 
-
-function updateAvatar(src) {
-  avatarTargets.forEach(avatar => {
-    avatar.innerHTML = "";
-
-    const img = document.createElement("img");
-
-    img.src = src;
-    img.alt = "Profile picture";
-
-    img.classList.add("profile-avatar-image");
-
-    avatar.appendChild(img);
-  });
-}
-
-
-function resetInteractionState() {
-
-  isDragging = false;
-
-   isRepositioning = false;
-
-  hasPassedDragThreshold = false;
-
-    activePointers.clear();
-
-  profileHeroMedia.classList.remove(
-    "repositioning"
-  );
-
-  coverPositionDone.classList.remove(
-    "show"
-  );
-
-}
 
 function applyAvatarTransform() {
 
@@ -157,91 +143,366 @@ function applyAvatarTransform() {
 
 }
 
-// =========================
-// RUN ON STARTUP
-// =========================
 
-// Restore avatar
+function updateAvatar(src) {
+
+  avatarTargets.forEach(avatar => {
+
+    avatar.innerHTML = "";
+
+    const img =
+      document.createElement("img");
+
+    img.src = src;
+
+    img.alt =
+      "Profile picture";
+
+    img.classList.add(
+      "profile-avatar-image"
+    );
+
+    avatar.appendChild(img);
+
+  });
+
+}
+
+
+function resetInteractionState() {
+
+  isDragging = false;
+
+  isRepositioning = false;
+
+  activePointers.clear();
+
+  profileHeroMedia.classList.remove(
+    "repositioning"
+  );
+
+  coverPositionDone.classList.remove(
+    "show"
+  );
+
+}
+
+
+// =========================
+// RESTORE SAVED DATA
+// =========================
 
 const savedAvatar =
-  localStorage.getItem("interactiveProfileAvatar");
-
-localStorage.getItem("interactiveProfileAvatar");
-
+  localStorage.getItem(
+    "interactiveProfileAvatar"
+  );
 
 if (savedAvatar) {
+
   updateAvatar(savedAvatar);
+
 }
 
-
-// Restore cover
 
 const savedCover =
-  localStorage.getItem("interactiveProfileCover");
-
-localStorage.getItem("interactiveProfileCover");
-
+  localStorage.getItem(
+    "interactiveProfileCover"
+  );
 
 if (savedCover) {
+
   coverImage.src = savedCover;
+
 }
 
-
-// Restore cover position
 
 const savedPosition =
-  localStorage.getItem("profileCoverPosition");
+  localStorage.getItem(
+    "profileCoverPosition"
+  );
 
 if (savedPosition) {
-  currentY = parseFloat(savedPosition);
+
+  currentY =
+    parseFloat(savedPosition);
 
   applyCoverTransform();
+
 }
 
 
 // =========================
-// EVENT LISTENERS
+// OPEN FILE PICKERS
 // =========================
 
-
-// -------------------------
-// OPEN FILE PICKERS
-// -------------------------
-
 uploadButtons.forEach(button => {
-  button.addEventListener("click", () => {
-    profilePhotoInput.click();
-  });
+
+  button.addEventListener(
+    "click",
+    () => {
+
+      profilePhotoInput.click();
+
+    }
+  );
+
 });
 
 
-// -------------------------
-// TOGGLE REPOSITION MODE
-// -------------------------
+coverButtons.forEach(button => {
 
-if (coverPositionBtn) {
-  coverPositionBtn.addEventListener("click", () => {
+  button.addEventListener(
+    "click",
+    () => {
 
-    isRepositioning = !isRepositioning;
+      coverInput.click();
 
-    profileHeroMedia.classList.toggle(
-      "repositioning",
-      isRepositioning
+    }
+  );
+
+});
+
+
+// =========================
+// PROFILE IMAGE UPLOAD
+// =========================
+
+profilePhotoInput.addEventListener(
+  "change",
+  event => {
+
+    const file =
+      event.target.files?.[0];
+
+    if (!file) return;
+
+
+    // VALIDATION
+
+    if (
+      !file.type.startsWith(
+        "image/"
+      )
+    ) {
+
+      alert(
+        "Please upload an image."
+      );
+
+      return;
+
+    }
+
+    const maxSize =
+      5 * 1024 * 1024;
+
+    if (file.size > maxSize) {
+
+      alert(
+        "Image must be under 5MB."
+      );
+
+      return;
+
+    }
+
+
+    // CLEAN OLD URL
+
+    if (currentObjectURL) {
+
+      URL.revokeObjectURL(
+        currentObjectURL
+      );
+
+    }
+
+
+    // CREATE TEMP URL
+
+    const imageURL =
+      URL.createObjectURL(file);
+
+    currentObjectURL =
+      imageURL;
+
+
+    // OPEN OVERLAY
+
+    avatarEditorImage.src =
+      imageURL;
+
+    avatarX = 0;
+    avatarY = 0;
+
+    avatarZoom = 0.5;
+
+    applyAvatarTransform();
+
+    avatarEditorOverlay.classList.add(
+      "open"
     );
 
-  });
+    profilePhotoInput.value = "";
+
+  }
+);
+
+
+// =========================
+// SAVE AVATAR
+// =========================
+
+if (avatarSaveBtn) {
+
+  avatarSaveBtn.addEventListener(
+    "click",
+    () => {
+
+      updateAvatar(
+        avatarEditorImage.src
+      );
+
+      localStorage.setItem(
+        "interactiveProfileAvatar",
+        avatarEditorImage.src
+      );
+
+      avatarEditorOverlay.classList.remove(
+        "open"
+      );
+
+    }
+  );
+
 }
 
 
-// -------------------------
-// DRAG START
-// -------------------------
+// =========================
+// CANCEL AVATAR
+// =========================
+
+if (avatarCancelBtn) {
+
+  avatarCancelBtn.addEventListener(
+    "click",
+    () => {
+
+      avatarEditorOverlay.classList.remove(
+        "open"
+      );
+
+    }
+  );
+
+}
+
+
+// =========================
+// COVER IMAGE UPLOAD
+// =========================
+
+coverInput.addEventListener(
+  "change",
+  event => {
+
+    const file =
+      event.target.files?.[0];
+
+    if (!file) return;
+
+    resetInteractionState();
+
+    const reader =
+      new FileReader();
+
+    reader.onload = () => {
+
+      const imageData =
+        reader.result;
+
+      currentY = 50;
+
+      coverImage.onload = () => {
+
+        applyCoverTransform();
+
+        coverPositionDone.classList.add(
+          "show"
+        );
+
+      };
+
+      localStorage.setItem(
+        "interactiveProfileCover",
+        imageData
+      );
+
+      localStorage.setItem(
+        "profileCoverPosition",
+        currentY
+      );
+
+      coverImage.src =
+        imageData;
+
+      setTimeout(() => {
+
+        isRepositioning = true;
+
+        profileHeroMedia.classList.add(
+          "repositioning"
+        );
+
+      }, 50);
+
+      requestAnimationFrame(() => {
+
+        coverInput.value = "";
+
+      });
+
+    };
+
+    reader.readAsDataURL(file);
+
+  }
+);
+
+
+// =========================
+// TOGGLE REPOSITION
+// =========================
+
+if (coverPositionBtn) {
+
+  coverPositionBtn.addEventListener(
+    "click",
+    () => {
+
+      isRepositioning =
+        !isRepositioning;
+
+      profileHeroMedia.classList.toggle(
+        "repositioning",
+        isRepositioning
+      );
+
+    }
+  );
+
+}
+
+
+// =========================
+// COVER DRAG START
+// =========================
 
 profileHeroMedia.addEventListener(
   "pointerdown",
   event => {
 
-     if (
+    if (
       event.target.closest(
         ".hero-controls"
       )
@@ -251,29 +512,28 @@ profileHeroMedia.addEventListener(
 
     isDragging = true;
 
-    hasPassedDragThreshold = false;
-
     startX = event.clientX;
-startY = event.clientY;
+    startY = event.clientY;
 
     profileHeroMedia.setPointerCapture(
       event.pointerId
     );
 
-    activePointers.set(event.pointerId, {
-  x: event.clientX,
-  y: event.clientY
-      
-});
+    activePointers.set(
+      event.pointerId,
+      {
+        x: event.clientX,
+        y: event.clientY
+      }
+    );
 
   }
 );
 
 
-// -------------------------
-// DRAG MOVE
-// -------------------------
-
+// =========================
+// COVER DRAG MOVE
+// =========================
 
 profileHeroMedia.addEventListener(
   "pointermove",
@@ -281,45 +541,61 @@ profileHeroMedia.addEventListener(
 
     if (!isRepositioning) return;
 
-    activePointers.set(event.pointerId, {
-      x: event.clientX,
-      y: event.clientY
-    });
-
-if (activePointers.size === 2) {
-
-  const pointers =
-    Array.from(activePointers.values());
-
-  const dx =
-    pointers[1].x - pointers[0].x;
-
-  const dy =
-    pointers[1].y - pointers[0].y;
-
-  const distance =
-    Math.hypot(dx, dy);
-
-  if (lastPinchDistance > 0) {
-
-    const delta =
-      distance - lastPinchDistance;
-
-    currentZoom += delta * 0.002;
-
-    currentZoom = Math.max(
-      1,
-      Math.min(1.5, currentZoom)
+    activePointers.set(
+      event.pointerId,
+      {
+        x: event.clientX,
+        y: event.clientY
+      }
     );
 
-    applyCoverTransform();
+    if (
+      activePointers.size === 2
+    ) {
 
-  }
+      const pointers =
+        Array.from(
+          activePointers.values()
+        );
 
-  lastPinchDistance = distance;
+      const dx =
+        pointers[1].x -
+        pointers[0].x;
 
-} else if (isDragging) {
+      const dy =
+        pointers[1].y -
+        pointers[0].y;
 
+      const distance =
+        Math.hypot(dx, dy);
+
+      if (
+        lastPinchDistance > 0
+      ) {
+
+        const delta =
+          distance -
+          lastPinchDistance;
+
+        currentZoom +=
+          delta * 0.002;
+
+        currentZoom = Math.max(
+          1,
+          Math.min(
+            1.5,
+            currentZoom
+          )
+        );
+
+        applyCoverTransform();
+
+      }
+
+      lastPinchDistance =
+        distance;
+
+    } else if (isDragging) {
 
       const deltaX =
         event.clientX - startX;
@@ -327,8 +603,11 @@ if (activePointers.size === 2) {
       const deltaY =
         event.clientY - startY;
 
-      currentX -= deltaX * 0.08;
-      currentY -= deltaY * 0.18;
+      currentX -=
+        deltaX * 0.08;
+
+      currentY -=
+        deltaY * 0.18;
 
       currentX = Math.max(
         0,
@@ -349,9 +628,11 @@ if (activePointers.size === 2) {
 
   }
 );
-// -------------------------
-// DRAG END
-// -------------------------
+
+
+// =========================
+// COVER DRAG END
+// =========================
 
 profileHeroMedia.addEventListener(
   "pointerup",
@@ -361,16 +642,23 @@ profileHeroMedia.addEventListener(
       event.pointerId
     );
 
-    if (activePointers.size < 2) {
-  lastPinchDistance = 0;
-}
+    if (
+      activePointers.size < 2
+    ) {
 
-    if (!isDragging) return;
+      lastPinchDistance = 0;
+
+    }
 
     isDragging = false;
 
   }
 );
+
+
+// =========================
+// SAVE COVER POSITION
+// =========================
 
 coverPositionDone.addEventListener(
   "click",
@@ -381,159 +669,27 @@ coverPositionDone.addEventListener(
       currentY
     );
 
-  resetInteractionState();
-
-  }
-);
-  
-  
-// -------------------------
-// PROFILE IMAGE UPLOAD
-// -------------------------
-
-profilePhotoInput.addEventListener(
-  "change",
-  event => {
-
-    const file = event.target.files?.[0];
-
-    if (!file) return;
-
-
-    // VALIDATION
-
-    if (!file.type.startsWith("image/")) {
-      alert("Please upload an image file.");
-      return;
-    }
-
-    const maxSize = 5 * 1024 * 1024;
-
-    if (file.size > maxSize) {
-      alert("Image must be under 5MB.");
-      return;
-    }
-
-
-    // CLEAN OLD OBJECT URL
-
-    if (currentObjectURL) {
-      URL.revokeObjectURL(currentObjectURL);
-    }
-
-
-    // CREATE TEMP IMAGE URL
-
-    const imageURL =
-      URL.createObjectURL(file);
-
-    currentObjectURL = imageURL;
-
-
-    // UPDATE UI
-
-    updateAvatar(imageURL);
-
-
-    // SAVE
-
-    const reader = new FileReader();
-
-    reader.onload = () => {
-      localStorage.setItem(
-        "interactiveProfileAvatar",
-        reader.result
-      );
-    };
-
-    reader.readAsDataURL(file);
-
-  }
-);
-
-
-// -------------------------
-// COVER IMAGE UPLOAD
-// -------------------------
-
-coverInput.addEventListener(
-  "change",
-  event => {
-
-    const file = event.target.files?.[0];
-
-    if (!file) return;
-
     resetInteractionState();
-    
-    const reader = new FileReader();
-  
-
-    reader.addEventListener("load", () => {
-
-      const imageData = reader.result;
-
-      currentY = 50;
-
-coverImage.onload = () => {
-
-applyCoverTransform();
-
-    coverPositionDone.classList.add(
-    "show"
-  );
-
-};
-
- 
-      localStorage.setItem(
-        "interactiveProfileCover",
-        imageData
-      );
-
-      localStorage.setItem(
-        "profileCoverPosition",
-        currentY
-      );
-
-   setTimeout(() => {
-
-  isRepositioning = true;
-
-  profileHeroMedia.classList.add(
-    "repositioning"
-  );
-
-}, 50);
-
- coverImage.src = imageData;
-
-   requestAnimationFrame(() => {
-
-  coverInput.value = "";
-
-});
-
-    });
-      reader.readAsDataURL(file);
 
   }
 );
 
 
-// -------------------------
-// ZOOM
-// -------------------------
+// =========================
+// COVER ZOOM
+// =========================
 
 profileHeroMedia.addEventListener(
   "wheel",
   event => {
 
-    if (!isRepositioning) return;
+    if (!isRepositioning)
+      return;
 
     event.preventDefault();
 
-    currentZoom += event.deltaY * -0.001;
+    currentZoom +=
+      event.deltaY * -0.001;
 
     currentZoom = Math.max(
       1,
@@ -546,14 +702,22 @@ profileHeroMedia.addEventListener(
   { passive: false }
 );
 
+
+// =========================
+// AVATAR DRAG
+// =========================
+
 avatarEditorImage.addEventListener(
   "pointerdown",
   event => {
 
     isAvatarDragging = true;
 
-    avatarStartX = event.clientX;
-    avatarStartY = event.clientY;
+    avatarStartX =
+      event.clientX;
+
+    avatarStartY =
+      event.clientY;
 
     avatarEditorImage.setPointerCapture(
       event.pointerId
@@ -563,30 +727,31 @@ avatarEditorImage.addEventListener(
 );
 
 
-// -------------------------
-// AVATAR
-// -------------------------
-
-
 avatarEditorImage.addEventListener(
   "pointermove",
   event => {
 
-    if (!isAvatarDragging) return;
+    if (!isAvatarDragging)
+      return;
 
     const deltaX =
-      event.clientX - avatarStartX;
+      event.clientX -
+      avatarStartX;
 
     const deltaY =
-      event.clientY - avatarStartY;
+      event.clientY -
+      avatarStartY;
 
     avatarX += deltaX;
     avatarY += deltaY;
 
     applyAvatarTransform();
 
-    avatarStartX = event.clientX;
-    avatarStartY = event.clientY;
+    avatarStartX =
+      event.clientX;
+
+    avatarStartY =
+      event.clientY;
 
   }
 );
@@ -601,13 +766,19 @@ avatarEditorImage.addEventListener(
   }
 );
 
+
+// =========================
+// AVATAR ZOOM
+// =========================
+
 avatarEditorImage.addEventListener(
   "wheel",
   event => {
 
     event.preventDefault();
 
-    avatarZoom += event.deltaY * -0.001;
+    avatarZoom +=
+      event.deltaY * -0.001;
 
     avatarZoom = Math.max(
       0.25,
@@ -619,35 +790,3 @@ avatarEditorImage.addEventListener(
   },
   { passive: false }
 );
-
-if (avatarSaveBtn) {
-
-avatarSaveBtn.addEventListener(
-  "click",
-  () => {
-
-    updateAvatar(
-      avatarEditorImage.src
-    );
-    
-    avatarEditorOverlay.classList.remove(
-      "open"
-    );
-
-  }
-);
-}
-
-if (avatarCancelBtn) {
-
-avatarCancelBtn.addEventListener(
-  "click",
-  () => {
-
-    avatarEditorOverlay.classList.remove(
-      "open"
-    );
-
-  }
-);
-}
