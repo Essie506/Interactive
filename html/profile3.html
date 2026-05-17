@@ -393,33 +393,59 @@
   <aside class="directory-filter-menu" id="directoryFilterMenu" aria-hidden="true">
 
 
- <header class="directory-filter-header">
+<header class="directory-filter-header">
 
-  <div class="filter-type-wrapper">
+  <div class="directory-filter-title">
 
- <button class="directory-filter-title-switch" type="button">
-      <div class="directory-filter-title">
-        <i class="fa-solid fa-pen"></i>
-        <h2 id="filterTitle">Edit Profile</h2>
-      </div>
-      <i class="fa-solid fa-chevron-down"></i>
+    <i class="fa-solid fa-pen"></i>
+
+    <h2>Edit Profile</h2>
+
+  </div>
+
+
+  <div class="profile-editor-tabs">
+
+    <button
+      type="button"
+      class="profile-editor-tab active"
+      data-editor-tab="profile"
+    >
+      <i class="fa-solid fa-user"></i>
+      <span>Profile</span>
     </button>
 
-    <!-- 👇 small menu -->
-    <div class="filter-type-dropdown" id="filterTypeDropdown">
-      <button type="button" data-directory-switch=">
-           <i class="fa-solid fa-pen"></i>
-        Edit Profile
-      </button>
-      <button type="button" data-directory-switch=">
-        <i class="fa-solid fa-user"></i>
-        Options
-      </button>
-    </div>
+
+    <button
+      type="button"
+      class="profile-editor-tab"
+      data-editor-tab="services"
+    >
+      <i class="fa-solid fa-dumbbell"></i>
+      <span>Services</span>
+    </button>
+
+
+    <button
+      type="button"
+      class="profile-editor-tab"
+      data-editor-tab="verification"
+    >
+      <i class="fa-solid fa-circle-check"></i>
+      <span>Verification</span>
+    </button>
+
   </div>
-    <button type="button" class="messages-back" id="directoryFilterClose">
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
+
+
+  <button
+    type="button"
+    class="messages-back"
+    id="directoryFilterClose"
+  >
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
+
 </header>
     
     <div class="directory-filter-body">      
