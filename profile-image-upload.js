@@ -384,7 +384,7 @@ coverPositionDone.addEventListener(
   }
 );
   
-// -------------------------
+  // -------------------------
 // PROFILE IMAGE UPLOAD
 // -------------------------
 
@@ -392,30 +392,50 @@ profilePhotoInput.addEventListener(
   "change",
   event => {
 
-    const file = event.target.files?.[0];
+    const file =
+      event.target.files?.[0];
 
     if (!file) return;
 
 
     // VALIDATION
 
-    if (!file.type.startsWith("image/")) {
-      alert("Please upload an image file.");
+    if (
+      !file.type.startsWith(
+        "image/"
+      )
+    ) {
+
+      alert(
+        "Please upload an image file."
+      );
+
       return;
+
     }
 
-    const maxSize = 5 * 1024 * 1024;
+    const maxSize =
+      5 * 1024 * 1024;
 
     if (file.size > maxSize) {
-      alert("Image must be under 5MB.");
+
+      alert(
+        "Image must be under 5MB."
+      );
+
       return;
+
     }
 
 
     // CLEAN OLD OBJECT URL
 
     if (currentObjectURL) {
-      URL.revokeObjectURL(currentObjectURL);
+
+      URL.revokeObjectURL(
+        currentObjectURL
+      );
+
     }
 
 
@@ -424,26 +444,27 @@ profilePhotoInput.addEventListener(
     const imageURL =
       URL.createObjectURL(file);
 
-    currentObjectURL = imageURL;
+    currentObjectURL =
+      imageURL;
 
 
-    // UPDATE UI
+    // OPEN EDITOR
 
-    updateAvatar(imageURL);
+    avatarEditorImage.src =
+      imageURL;
 
+    avatarX = 0;
+    avatarY = 0;
 
-    // SAVE
+    avatarZoom = 0.5;
 
-    const reader = new FileReader();
+    applyAvatarTransform();
 
-    reader.onload = () => {
-      localStorage.setItem(
-        "interactiveProfileAvatar",
-        reader.result
-      );
-    };
+    avatarEditorOverlay.classList.add(
+      "open"
+    );
 
-    reader.readAsDataURL(file);
+    profilePhotoInput.value = "";
 
   }
 );
@@ -457,62 +478,76 @@ coverInput.addEventListener(
   "change",
   event => {
 
-    const file = event.target.files?.[0];
+    const file =
+      event.target.files?.[0];
 
     if (!file) return;
 
     resetInteractionState();
-    
-    const reader = new FileReader();
-  
 
-    reader.addEventListener("load", () => {
+    const reader =
+      new FileReader();
 
-      const imageData = reader.result;
+    reader.addEventListener(
+      "load",
+      () => {
 
-      currentY = 50;
+        const imageData =
+          reader.result;
 
-coverImage.onload = () => {
+        currentY = 50;
 
-applyCoverTransform();
+        coverImage.onload = () => {
 
-    coverPositionDone.classList.add(
-    "show"
-  );
+          applyCoverTransform();
 
-};
+          coverPositionDone.classList.add(
+            "show"
+          );
 
- 
-     // localStorage.setItem(
-//   "interactiveProfileCover",
-//   imageData
-// );
+        };
 
-      localStorage.setItem(
-        "profileCoverPosition",
-        currentY
-      );
 
-   setTimeout(() => {
+        // TEMP ONLY
+        // Firebase later
 
-  isRepositioning = true;
+        // localStorage.setItem(
+        //   "interactiveProfileCover",
+        //   imageData
+        // );
 
-  profileHeroMedia.classList.add(
-    "repositioning"
-  );
 
-}, 50);
+        localStorage.setItem(
+          "profileCoverPosition",
+          currentY
+        );
 
- coverImage.src = imageData;
 
-   requestAnimationFrame(() => {
+        setTimeout(() => {
 
-  coverInput.value = "";
+          isRepositioning = true;
 
-});
+          profileHeroMedia.classList.add(
+            "repositioning"
+          );
 
-    });
-      reader.readAsDataURL(file);
+        }, 50);
+
+
+        coverImage.src =
+          imageData;
+
+
+        requestAnimationFrame(() => {
+
+          coverInput.value = "";
+
+        });
+
+      }
+    );
+
+    reader.readAsDataURL(file);
 
   }
 );
@@ -526,11 +561,13 @@ profileHeroMedia.addEventListener(
   "wheel",
   event => {
 
-    if (!isRepositioning) return;
+    if (!isRepositioning)
+      return;
 
     event.preventDefault();
 
-    currentZoom += event.deltaY * -0.001;
+    currentZoom +=
+      event.deltaY * -0.001;
 
     currentZoom = Math.max(
       1,
@@ -542,3 +579,142 @@ profileHeroMedia.addEventListener(
   },
   { passive: false }
 );
+
+
+// =========================
+// AVATAR DRAG
+// =========================
+
+avatarEditorImage.addEventListener(
+  "pointerdown",
+  event => {
+
+    isAvatarDragging = true;
+
+    avatarStartX =
+      event.clientX;
+
+    avatarStartY =
+      event.clientY;
+
+    avatarEditorImage.setPointerCapture(
+      event.pointerId
+    );
+
+  }
+);
+
+
+avatarEditorImage.addEventListener(
+  "pointermove",
+  event => {
+
+    if (!isAvatarDragging)
+      return;
+
+    const deltaX =
+      event.clientX -
+      avatarStartX;
+
+    const deltaY =
+      event.clientY -
+      avatarStartY;
+
+    avatarX += deltaX;
+    avatarY += deltaY;
+
+    applyAvatarTransform();
+
+    avatarStartX =
+      event.clientX;
+
+    avatarStartY =
+      event.clientY;
+
+  }
+);
+
+
+avatarEditorImage.addEventListener(
+  "pointerup",
+  () => {
+
+    isAvatarDragging = false;
+
+  }
+);
+
+
+// =========================
+// AVATAR ZOOM
+// =========================
+
+avatarEditorImage.addEventListener(
+  "wheel",
+  event => {
+
+    event.preventDefault();
+
+    avatarZoom +=
+      event.deltaY * -0.001;
+
+    avatarZoom = Math.max(
+      0.25,
+      Math.min(3, avatarZoom)
+    );
+
+    applyAvatarTransform();
+
+  },
+  { passive: false }
+);
+
+
+// =========================
+// SAVE AVATAR
+// =========================
+
+if (avatarSaveBtn) {
+
+  avatarSaveBtn.addEventListener(
+    "click",
+    () => {
+
+      updateAvatar(
+        avatarEditorImage.src
+      );
+
+      localStorage.setItem(
+        "interactiveProfileAvatar",
+        avatarEditorImage.src
+      );
+
+      avatarEditorOverlay.classList.remove(
+        "open"
+      );
+
+    }
+  );
+
+}
+
+
+// =========================
+// CANCEL AVATAR
+// =========================
+
+if (avatarCancelBtn) {
+
+  avatarCancelBtn.addEventListener(
+    "click",
+    () => {
+
+      avatarEditorOverlay.classList.remove(
+        "open"
+      );
+
+    }
+  );
+
+}
+  
