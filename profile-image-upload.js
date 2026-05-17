@@ -432,10 +432,10 @@ applyCoverTransform();
 };
 
  
-      localStorage.setItem(
-        "interactiveProfileCover",
-        imageData
-      );
+     // localStorage.setItem(
+//   "interactiveProfileCover",
+//   imageData
+// );
 
       localStorage.setItem(
         "profileCoverPosition",
