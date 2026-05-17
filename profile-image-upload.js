@@ -601,6 +601,8 @@ avatarEditorImage.addEventListener(
   { passive: false }
 );
 
+if (avatarSaveBtn) {
+
 avatarSaveBtn.addEventListener(
   "click",
   () => {
@@ -620,7 +622,9 @@ avatarSaveBtn.addEventListener(
 
   }
 );
+}
 
+if (avatarCancelBtn) {
 
 avatarCancelBtn.addEventListener(
   "click",
@@ -632,3 +636,4 @@ avatarCancelBtn.addEventListener(
 
   }
 );
+}
