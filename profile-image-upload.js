@@ -1,3 +1,4 @@
+
 // =========================
 // DOM ELEMENTS
 // =========================
@@ -34,34 +35,12 @@ const coverPositionDone =
 
 const activePointers = new Map();
 
-// =========================
-// AVATAR EDITOR
-// =========================
-
-const avatarEditorOverlay =
-  document.querySelector(
-    ".avatar-editor-overlay"
-  );
-
-const avatarEditorImage =
-  document.getElementById(
-    "avatarEditorImage"
-  );
-
-const avatarSaveBtn =
-  document.querySelector(
-    ".avatar-editor-btn-save"
-  );
-
-const avatarCancelBtn =
-  document.querySelector(
-    ".avatar-editor-btn-cancel"
-  );
-
 
 // =========================
 // CURRENT STATE
 // =========================
+
+let currentObjectURL = null;
 
 let isRepositioning = false;
 
@@ -77,22 +56,6 @@ let currentZoom = 1.05;
 let hasPassedDragThreshold = false;
 
 let lastPinchDistance = 0;
-
-let currentObjectURL = null;
-
-// =========================
-// AVATAR EDITOR STATE
-// =========================
-
-let avatarX = 0;
-let avatarY = 0;
-
-let avatarZoom = 0.25;
-
-let isAvatarDragging = false;
-
-let avatarStartX = 0;
-let avatarStartY = 0;
 
 
 // =========================
@@ -144,19 +107,6 @@ function resetInteractionState() {
   coverPositionDone.classList.remove(
     "show"
   );
-
-}
-
-function applyAvatarTransform() {
-
-  avatarEditorImage.style.transform =
-    `
-    translate(
-      calc(-50% + ${avatarX}px),
-      calc(-50% + ${avatarY}px)
-    )
-    scale(${avatarZoom})
-    `;
 
 }
 
@@ -410,47 +360,42 @@ profilePhotoInput.addEventListener(
       return;
     }
 
-// CLEAN OLD OBJECT URL
 
-if (currentObjectURL) {
+    // CLEAN OLD OBJECT URL
 
-  URL.revokeObjectURL(
-    currentObjectURL
-  );
-
-}
+    if (currentObjectURL) {
+      URL.revokeObjectURL(currentObjectURL);
+    }
 
 
-// CREATE TEMP IMAGE URL
+    // CREATE TEMP IMAGE URL
 
-const imageURL =
-  URL.createObjectURL(file);
+    const imageURL =
+      URL.createObjectURL(file);
 
-currentObjectURL = imageURL;
-
-
-// OPEN EDITOR
-
-avatarEditorImage.src =
-  imageURL;
-
-avatarX = 0;
-avatarY = 0;
-
-avatarZoom = 0.5;
-
-applyAvatarTransform();
-
-avatarEditorOverlay.classList.add(
-  "open"
-);
+    currentObjectURL = imageURL;
 
 
-profilePhotoInput.value = "";
+    // UPDATE UI
+
+    updateAvatar(imageURL);
+
+
+    // SAVE
+
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      localStorage.setItem(
+        "interactiveProfileAvatar",
+        reader.result
+      );
+    };
+
+    reader.readAsDataURL(file);
 
   }
-  };
-
+);
 
 
 // -------------------------
@@ -546,104 +491,3 @@ profileHeroMedia.addEventListener(
   },
   { passive: false }
 );
-
-avatarEditorImage.addEventListener(
-  "pointerdown",
-  event => {
-
-    isAvatarDragging = true;
-
-    avatarStartX = event.clientX;
-    avatarStartY = event.clientY;
-
-    avatarEditorImage.setPointerCapture(
-      event.pointerId
-    );
-
-  }
-);
-
-
-avatarEditorImage.addEventListener(
-  "pointermove",
-  event => {
-
-    if (!isAvatarDragging) return;
-
-    const deltaX =
-      event.clientX - avatarStartX;
-
-    const deltaY =
-      event.clientY - avatarStartY;
-
-    avatarX += deltaX;
-    avatarY += deltaY;
-
-    applyAvatarTransform();
-
-    avatarStartX = event.clientX;
-    avatarStartY = event.clientY;
-
-  }
-);
-
-
-avatarEditorImage.addEventListener(
-  "pointerup",
-  () => {
-
-    isAvatarDragging = false;
-
-  }
-);
-
-avatarEditorImage.addEventListener(
-  "wheel",
-  event => {
-
-    event.preventDefault();
-
-    avatarZoom += event.deltaY * -0.001;
-
-    avatarZoom = Math.max(
-      0.25,
-      Math.min(3, avatarZoom)
-    );
-
-    applyAvatarTransform();
-
-  },
-  { passive: false }
-);
-
-if (avatarSaveBtn) {
-
-avatarSaveBtn.addEventListener(
-  "click",
-  () => {
-
-    updateAvatar(
-      avatarEditorImage.src
-    );
-    
-    avatarEditorOverlay.classList.remove(
-      "open"
-    );
-
-  }
-);
-}
-
-if (avatarCancelBtn) {
-
-avatarCancelBtn.addEventListener(
-  "click",
-  () => {
-
-    avatarEditorOverlay.classList.remove(
-      "open"
-    );
-
-  }
-);
-}
