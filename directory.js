@@ -245,11 +245,6 @@ if (
         "editing-profile"
       );
 
-      const bioText =
-        document.querySelector(".bio-text");
-
-      const bioInput =
-        document.querySelector(".bio-input");
 
       if (bioText && bioInput) {
 
