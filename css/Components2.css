@@ -343,6 +343,7 @@
 
   color:
     var(--text-dark);
+	display: inline-flex;
 }
 
 
@@ -357,6 +358,7 @@
 
   box-shadow:
     0 10px 22px rgba(7,153,146,0.22);
+	display: inline-flex;
 }
 
 .avatar-editor-image:active {
