@@ -297,6 +297,72 @@
 }
 
 
+/* =========================
+   ACTION BUTTONS
+========================= */
+
+.avatar-editor-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 7rem;
+  min-height: 2.75rem;
+
+  padding:
+    0 1.25rem;
+
+  border: none;
+  border-radius: 999px;
+
+  font: inherit;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+
+
+.avatar-editor-btn:active {
+  transform:
+    scale(0.98);
+}
+
+
+/* Cancel */
+
+.avatar-editor-btn-cancel {
+  background:
+    rgba(9, 26, 58, 0.08);
+
+  color:
+    var(--text-dark);
+}
+
+
+/* Save */
+
+.avatar-editor-btn-save {
+  background:
+    var(--main-color);
+
+  color:
+    #fff;
+
+  box-shadow:
+    0 10px 22px rgba(7,153,146,0.22);
+}
+
+.avatar-editor-image:active {
+  cursor: grabbing;
+}
+
+
 
 /* =========================
    BOTTOM NAV
@@ -1537,6 +1603,12 @@ body.business-profile .chevron-btn {
   height: var(--chevron-size);
   clip-path: polygon(100% 100%, 0 100%, 100% 0);
    z-index: 20;
+}
+
+	.avatar-editor-btn:hover {
+  transform:
+    translateY(-1px)
+    scale(1.02);
 }
 }
 
