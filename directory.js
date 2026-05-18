@@ -26,9 +26,29 @@ const dropdown = document.getElementById("filterTypeDropdown");
 const params = new URLSearchParams(window.location.search);
 const directoryType = params.get("type");
 
-const editProfileBtn =
-  document.getElementById(
+const editProfileBtn = document.getElementById(
     "editProfileBtn"
+  );
+
+const bioText = document.getElementById(
+    "profileBioText"
+  );
+
+
+const profileBioInput =
+  document.getElementById(
+    "profileBioInput"
+  );
+
+const profileBioSave =
+  document.getElementById(
+    "profileBioSave"
+  );
+
+
+const profileBioSave =
+  document.getElementById(
+    "profileBioCancel"
   );
 
 
@@ -188,6 +208,27 @@ if (savedType) {
   setDirectoryType("gyms");
 }
 
+// =========================
+// LOAD SAVED BIO
+// =========================
+
+
+const savedBio =
+  localStorage.getItem(
+    "profileBio"
+  );
+
+if (
+  savedBio &&
+  profileBioText
+) {
+
+  profileBioText.textContent =
+    savedBio;
+
+}
+
+
 
 // =========================
 // EDIT / EVENT LISTENERS
@@ -221,6 +262,7 @@ if (savedType) {
   );
 
 }
+
 
 
 // =========================
@@ -553,3 +595,52 @@ if (applyBtn) {
     pressFeedback(applyBtn, closeFilter);
   });
 }
+
+
+// =========================
+// SAVE / CANCEL
+// =========================
+
+
+if (
+  profileBioSave &&
+  profileBioText &&
+  profileBioInput
+) {
+
+  profileBioSave.addEventListener(
+    "click",
+    () => {
+
+      profileBioText.textContent =
+        profileBioInput.value.trim();
+
+      localStorage.setItem(
+        "profileBio",
+        profileBioInput.value.trim()
+      );
+
+      document.body.classList.remove(
+        "editing-profile"
+      );
+
+    }
+  );
+
+}
+
+if (profileBioCancel) {
+
+  profileBioCancel.addEventListener(
+    "click",
+    () => {
+
+      document.body.classList.remove(
+        "editing-profile"
+      );
+
+    }
+  );
+
+}
+
