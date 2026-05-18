@@ -301,7 +301,8 @@
    ACTION BUTTONS
 ========================= */
 
-.avatar-editor-btn {
+.avatar-editor-btn-save,
+.avatar-editor-btn-cancel {
   display: inline-flex;
   align-items: center;
   justify-content: center;
