@@ -471,6 +471,7 @@ body.business-profile .business-hero-card {
   top: 0.35rem;
   right: -9rem;
    flex-direction: column;
+	display: flex;
 
   transform: translate(-0.25rem, 0.25rem);
 
