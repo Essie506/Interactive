@@ -1071,7 +1071,7 @@ body.profile .profile-tabs-inner {
 }
 
 textarea.post-input.composer-input,
-body.profile .bio-text {
+body.profile .bio-input {
   display: block;
   width: 100%;
    flex: 1 1 auto;
