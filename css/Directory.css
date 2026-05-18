@@ -187,6 +187,33 @@ PROFILE EDITOR INPUTS
 }
 
 /* =========================
+   SECTION EDITS
+========================= */
+
+.section-edit {
+  display: none;
+}
+
+body.editing-profile
+.section-view {
+  display: none;
+}
+
+body.editing-profile
+.section-edit {
+  display: block;
+}
+
+body.editing-profile .editable {
+  outline: 2px dashed var(--main-color);
+}
+
+
+
+
+
+
+/* =========================
    CARD LAYOUT
 ========================= */
 .directory-listing-grid {
