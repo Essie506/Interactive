@@ -301,8 +301,8 @@
    ACTION BUTTONS
 ========================= */
 
-.avatar-editor-btn-save,
-.avatar-editor-btn-cancel {
+.avatar-editor-btn,
+.avatar-editor-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1175,7 +1175,9 @@ textarea.post-input.composer-input {
   min-width: 0;
 }
 
-.upload-btn.send-btn {
+.upload-btn.send-btn,
+.avatar-editor-btn-save,
+.avatar-editor-btn-cancel {
   display: flex;
   align-items: center;
   justify-content: center;
