@@ -1004,8 +1004,7 @@ body.profile .profile-tabs-inner {
    overflow: visible;
 }
 
-textarea.post-input.composer-input,
-body.profile .bio-text {
+textarea.post-input.composer-input {
   display: block;
   width: 100%;
    flex: 1 1 auto;
