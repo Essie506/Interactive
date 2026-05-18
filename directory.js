@@ -46,7 +46,7 @@ const profileBioSave =
   );
 
 
-const profileBioSave =
+const profileBioCancel =
   document.getElementById(
     "profileBioCancel"
   );
