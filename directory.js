@@ -194,9 +194,6 @@ if (savedType) {
 // =========================
 
 
-
-if (editProfileBtn) {
-
  if (editProfileBtn) {
 
   editProfileBtn.addEventListener(
