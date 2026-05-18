@@ -343,7 +343,6 @@
 
   color:
     var(--text-dark);
-	display: inline-flex;
 }
 
 
@@ -358,7 +357,7 @@
 
   box-shadow:
     0 10px 22px rgba(7,153,146,0.22);
-	display: inline-flex;
+
 }
 
 .avatar-editor-image:active {
@@ -1180,7 +1179,6 @@ textarea.post-input.composer-input {
 .upload-btn.send-btn,
 .avatar-editor-btn-save,
 .avatar-editor-btn-cancel {
-  display: flex;
   align-items: center;
   justify-content: center;
      align-items: center;
@@ -1198,6 +1196,17 @@ textarea.post-input.composer-input {
   flex: 0 0 auto;
   min-width: 5rem;
   max-width: 6rem;
+}
+
+
+.upload-btn.send-btn {
+	display: flex;
+}
+
+
+.avatar-editor-btn-save,
+.avatar-editor-btn-cancel {
+	display: inline-flex;
 }
 
 .directory-filter-reset {
