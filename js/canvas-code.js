@@ -3,13 +3,13 @@
 // DOM ELEMENTS
 // =========================
 
-const editorCanvas =
-  document.getElementById(
-    "editorCanvas"
-  );
+// const editorCanvas =
+//   document.getElementById(
+//     "editorCanvas"
+//   );
 
-const ctx =
-  editorCanvas.getContext("2d");
+// const ctx =
+//   editorCanvas.getContext("2d");
 
 const profilePhotoInput =
   document.getElementById("profilePhotoInput");
