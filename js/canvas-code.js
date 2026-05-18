@@ -3,6 +3,14 @@
 // DOM ELEMENTS
 // =========================
 
+const editorCanvas =
+  document.getElementById(
+    "editorCanvas"
+  );
+
+const ctx =
+  editorCanvas.getContext("2d");
+
 const profilePhotoInput =
   document.getElementById("profilePhotoInput");
 
@@ -161,6 +169,47 @@ function applyAvatarTransform() {
 
 }
 
+function renderCanvas() {
+
+  ctx.clearRect(0, 0, editorCanvas.width, editorCanvas.height);
+
+  if (!canvasState.image) return;
+
+  ctx.save();
+
+  ctx.translate(canvasState.x, canvasState.y);
+
+  ctx.scale(
+    canvasState.scale,
+    canvasState.scale
+  );
+
+  ctx.drawImage(
+    canvasState.image,
+    -canvasState.image.width / 2,
+    -canvasState.image.height / 2
+  );
+
+  ctx.restore();
+
+}
+
+function loadCanvasImage(src) {
+
+  const img = new Image();
+
+  img.onload = () => {
+
+    canvasState.image = img;
+
+    renderCanvas();
+
+  };
+
+  img.src = src;
+
+}
+
 // =========================
 // RUN ON STARTUP
 // =========================
@@ -195,6 +244,26 @@ if (savedPosition) {
 
   applyCoverTransform();
 }
+
+// picture start
+
+
+
+const canvasState = {
+
+  image: null,
+
+  x: 0,
+  y: 0,
+
+  scale: 1,
+
+  rotation: 0,
+
+    viewportWidth: 300,
+  viewportHeight: 300
+
+};
 
 
 // =========================
@@ -465,6 +534,8 @@ profilePhotoInput.addEventListener(
     );
 
     profilePhotoInput.value = "";
+
+    loadCanvasImage(imageURL);
 
   }
 );
