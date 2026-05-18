@@ -1207,6 +1207,7 @@ textarea.post-input.composer-input {
 .avatar-editor-btn-save,
 .avatar-editor-btn-cancel {
 	display: inline-flex;
+	font-weight: 500;
 }
 
 .directory-filter-reset {
