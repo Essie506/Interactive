@@ -197,6 +197,8 @@ if (savedType) {
 
 if (editProfileBtn) {
 
+ if (editProfileBtn) {
+
   editProfileBtn.addEventListener(
     "click",
     () => {
@@ -204,6 +206,19 @@ if (editProfileBtn) {
       document.body.classList.toggle(
         "editing-profile"
       );
+
+      const bioText =
+        document.querySelector(".bio-text");
+
+      const bioInput =
+        document.querySelector(".bio-input");
+
+      if (bioText && bioInput) {
+
+        bioInput.value =
+          bioText.textContent.trim();
+
+      }
 
     }
   );
