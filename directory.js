@@ -26,11 +26,20 @@ const dropdown = document.getElementById("filterTypeDropdown");
 const params = new URLSearchParams(window.location.search);
 const directoryType = params.get("type");
 
+const editProfileBtn =
+  document.getElementById(
+    "editProfileBtn"
+  );
+
+
+// =========================
+// HELPERS
+// =========================
+
 
 // =========================
 // MENU SWITCH
 // =========================
-
 
 
 if (directoryType === "gyms") {
@@ -177,6 +186,28 @@ if (savedType) {
   setDirectoryType(savedType);
 } else {
   setDirectoryType("gyms");
+}
+
+
+// =========================
+// EDIT / EVENT LISTENERS
+// =========================
+
+
+
+if (editProfileBtn) {
+
+  editProfileBtn.addEventListener(
+    "click",
+    () => {
+
+      document.body.classList.toggle(
+        "editing-profile"
+      );
+
+    }
+  );
+
 }
 
 
