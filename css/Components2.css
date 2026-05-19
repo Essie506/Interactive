@@ -553,7 +553,7 @@ body.profile .profile-tabs-inner {
   box-sizing: border-box;
   border-radius: 0.75rem;
   background: var(--profile-inner-bg);
-  box-shadow:b var(--profile-raised-shadow);
+  box-shadow: var(--profile-raised-shadow);
 }
 
 .profile-section-inner,
