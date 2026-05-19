@@ -201,7 +201,8 @@
 .messages-back,
 .messages-split,
 .bottom-nav-desktop a,
-.bottom-nav-desktop button {
+.bottom-nav-desktop button,
+.avatar-editor-btn-cancel {
   width: var(--icon-btn-size);
   height: var(--icon-btn-size);
   border-radius: 50%;
@@ -1176,9 +1177,7 @@ textarea.post-input.composer-input {
 }
 
 .upload-btn.send-btn,
-.avatar-editor-btn-save,
-.avatar-editor-btn-saved,
-.avatar-editor-btn-cancel {
+.avatar-editor-btn-saved {
   align-items: center;
   justify-content: center;
      align-items: center;
