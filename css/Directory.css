@@ -190,13 +190,13 @@ PROFILE EDITOR INPUTS
    SECTION EDITS
 ========================= */
 
+body.business-profile .section-edit,
 .section-edit {
   display: none;
 }
 
 body.editing-profile
-.section-view,
-body.business-profile .section-view {
+.section-view {
   display: none;
 }
 
