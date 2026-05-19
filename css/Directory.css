@@ -195,7 +195,8 @@ PROFILE EDITOR INPUTS
 }
 
 body.editing-profile
-.section-view {
+.section-view,
+body.business-profile .section-view {
   display: none;
 }
 
