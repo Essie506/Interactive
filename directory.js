@@ -718,7 +718,12 @@ if (profileBioCancel && profileBioInput) {
 
 profileBioInput?.addEventListener(
   "input",
-  autoGrowProfileBioInput
+  () => {
+
+    autoGrowProfileBioInput();
+    updateBioSaveButtonState();
+
+  }
 );
 
 window.addEventListener(
@@ -727,13 +732,5 @@ window.addEventListener(
 );
 
 autoGrowProfileBioInput();
+updateBioSaveButtonState();
 
-profileBioInput?.addEventListener(
-  "input",
-  () => {
-
-    autoGrowProfileBioInput();
-    updateBioSaveButtonState();
-
-  }
-);
