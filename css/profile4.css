@@ -483,7 +483,7 @@ body.profile .media-card img {
   color: white;
 
   backdrop-filter: blur(8px);
-  pointer-events: none;
+
 
   transform: scale(0.9);
 
@@ -495,18 +495,16 @@ body.profile .media-card img {
   will-change: transform, opacity;
 }
 
+.cover-position-done {
+    opacity: 0;
+	  pointer-events: none;
+}
+
 .cover-position-done.show {
   opacity: 1;
   pointer-events: auto;
   transform: scale(1);
 }
-
-
-.cover-position-done {
-    opacity: 0;
-}
-
-
 
 
 
