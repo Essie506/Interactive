@@ -1258,7 +1258,9 @@ textarea.post-input.composer-input {
   box-shadow: var(--shadow-strong);
 }
 
-.upload-btn.send-btn.ready {
+.upload-btn.send-btn.ready,
+.avatar-editor-btn-save:ready
+.avatar-editor-btn-cancel:ready {
   opacity: 1;
   pointer-events: auto;
 }
