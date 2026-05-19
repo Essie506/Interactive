@@ -464,7 +464,8 @@ body.profile .media-card img {
 	left: 1rem;
 }
 
-.cover-position-done {
+.cover-position-done,
+.avatar-editor-btn-save {
   position: relative;
   z-index: 50;
 
