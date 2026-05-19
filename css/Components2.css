@@ -347,7 +347,8 @@
 
 /* Save */
 
-.avatar-editor-btn-save {
+.avatar-editor-btn-save,
+.avatar-editor-btn-saved {
   background:
     var(--main-color);
 
