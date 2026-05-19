@@ -381,6 +381,30 @@ body.editing-profile .section-edit {
   display: flex;
 }
 
+
+
+.section-edit-actions {
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translateY(0.35rem);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+body.editing-profile .section-edit-actions {
+  opacity: 1;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+
+
+
+
 .bio-input {
   border: none;
   background: transparent;
