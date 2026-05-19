@@ -283,10 +283,10 @@ const savedBio =
 
 if (
   savedBio &&
-  profileBioText
+  profileBioInput
 ) {
 
-  profileBioText.textContent =
+  profileBioInput.value =
     savedBio;
 
 }
