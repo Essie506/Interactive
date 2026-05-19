@@ -97,7 +97,7 @@ body.profile .visitor-only {
 
 body.profile[data-viewer="self"] .self-only,
 body.profile[data-viewer="visitor"] .visitor-only {
-  display: inline-flex;
+  display: flex;
 }
 
 /* =========================
