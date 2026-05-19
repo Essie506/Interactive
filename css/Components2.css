@@ -1177,6 +1177,7 @@ textarea.post-input.composer-input {
 
 .upload-btn.send-btn,
 .avatar-editor-btn-save,
+.avatar-editor-btn-saved,
 .avatar-editor-btn-cancel {
   align-items: center;
   justify-content: center;
@@ -1204,6 +1205,7 @@ textarea.post-input.composer-input {
 
 
 .avatar-editor-btn-save,
+.avatar-editor-btn-saved,
 .avatar-editor-btn-cancel {
 	display: inline-flex;
 	font-weight: 500;
@@ -1239,6 +1241,12 @@ textarea.post-input.composer-input {
   transition: opacity 0.2s ease;
 }
 
+
+.avatar-editor-btn-saved {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
 .directory-filter-reset:focus:not(:focus-visible),
 .directory-filter-apply:focus:not(:focus-visible) {
   box-shadow: none;
@@ -1259,7 +1267,7 @@ textarea.post-input.composer-input {
 }
 
 .upload-btn.send-btn.ready,
-.avatar-editor-btn-save.ready {
+.ready {
   opacity: 1;
   pointer-events: auto;
 }
