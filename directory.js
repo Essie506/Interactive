@@ -52,6 +52,13 @@ const profileBioCancel =
   );
 
 
+
+let originalBio = profileBioInput.value;
+
+
+
+
+
 // =========================
 // HELPERS
 // =========================
@@ -291,7 +298,7 @@ if (
 // =========================
 
 
- if (editProfileBtn) {
+if (editProfileBtn) {
 
   editProfileBtn.addEventListener(
     "click",
@@ -301,12 +308,17 @@ if (
         "editing-profile"
       );
 
+      if (profileBioInput) {
 
-      if (bioText && bioInput) {
+        originalBio =
+          profileBioInput.value;
 
-        bioInput.value =
-          bioText.textContent.trim();
-            autoGrowProfileBioInput();
+        profileBioInput.readOnly =
+          false;
+
+        profileBioInput.focus();
+
+        autoGrowProfileBioInput();
 
       }
 
@@ -314,7 +326,6 @@ if (
   );
 
 }
-
 
 
 // =========================
@@ -653,24 +664,25 @@ if (applyBtn) {
 // SAVE / CANCEL
 // =========================
 
-
-if (
-  profileBioSave &&
-  profileBioText &&
-  profileBioInput
-) {
+if (profileBioSave && profileBioInput) {
 
   profileBioSave.addEventListener(
     "click",
     () => {
 
-      profileBioText.textContent =
+      const newBio =
         profileBioInput.value.trim();
 
       localStorage.setItem(
         "profileBio",
-        profileBioInput.value.trim()
+        newBio
       );
+
+      profileBioInput.value =
+        newBio;
+
+      profileBioInput.readOnly =
+        true;
 
       document.body.classList.remove(
         "editing-profile"
@@ -681,12 +693,20 @@ if (
 
 }
 
-if (profileBioCancel) {
+if (profileBioCancel && profileBioInput) {
 
   profileBioCancel.addEventListener(
     "click",
     () => {
 
+      profileBioInput.value =
+        originalBio;
+
+      profileBioInput.readOnly =
+        true;
+
+      autoGrowProfileBioInput();
+
       document.body.classList.remove(
         "editing-profile"
       );
@@ -695,7 +715,6 @@ if (profileBioCancel) {
   );
 
 }
-
 
 profileBioInput?.addEventListener(
   "input",
