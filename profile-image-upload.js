@@ -50,13 +50,13 @@ const avatarEditorImage =
   );
 
 const avatarSaveBtn =
-  document.querySelector(
-    ".avatar-editor-btn-save"
+  document.getElementById(
+    "avatarEditorSave"
   );
 
 const avatarCancelBtn =
-  document.querySelector(
-    ".avatar-editor-btn-cancel"
+  document.getElementById(
+    "avatarEditorCancel"
   );
 
 
