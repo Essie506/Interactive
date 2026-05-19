@@ -1246,7 +1246,7 @@ textarea.post-input.composer-input {
 }
 
 .upload-btn.send-btn:active,
-.avatar-editor-btn-save:active
+.avatar-editor-btn-save:active,
 .avatar-editor-btn-cancel:active {
   box-shadow: var(--shadow-strong);
   transform: scale(0.92);
@@ -1259,8 +1259,7 @@ textarea.post-input.composer-input {
 }
 
 .upload-btn.send-btn.ready,
-.avatar-editor-btn-save:ready
-.avatar-editor-btn-cancel:ready {
+.avatar-editor-btn-save.ready {
   opacity: 1;
   pointer-events: auto;
 }
