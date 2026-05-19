@@ -100,6 +100,19 @@ function autoGrowProfileBioInput() {
 
 }
 
+function updateBioSaveButtonState() {
+
+  const hasText =
+    profileBioInput &&
+    profileBioInput.value.trim().length > 0;
+
+  profileBioSave?.classList.toggle(
+    "active",
+    hasText
+  );
+
+}
+
 // =========================
 // MENU SWITCH
 // =========================
@@ -696,3 +709,12 @@ window.addEventListener(
 
 autoGrowProfileBioInput();
 
+profileBioInput?.addEventListener(
+  "input",
+  () => {
+
+    autoGrowProfileBioInput();
+    updateBioSaveButtonState();
+
+  }
+);
