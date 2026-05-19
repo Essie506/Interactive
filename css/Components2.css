@@ -365,6 +365,36 @@
   cursor: grabbing;
 }
 
+/* =========================
+   SECTION EDITS
+========================= */
+
+.section-edit {
+  display: none;
+}
+
+body.editing-profile .section-view {
+  display: none;
+}
+
+body.editing-profile .section-edit {
+  display: flex;
+}
+
+.bio-input {
+  border: none;
+  background: transparent;
+  resize: none;
+  overflow: hidden;
+}
+
+body.editing-profile .bio-input {
+  background: var(--glass-white);
+}
+
+.bio-input:read-only {
+  pointer-events: none;
+}
 
 
 /* =========================
