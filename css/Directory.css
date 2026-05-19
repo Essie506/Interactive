@@ -190,28 +190,23 @@ PROFILE EDITOR INPUTS
    SECTION EDITS
 ========================= */
 
-body.business-profile .section-edit,
 .section-edit {
   display: none;
 }
 
-body.editing-profile .section-view,
-body.editing-business-profile .section-view {
+body.editing-profile .section-view {
   display: none;
 }
 
-body.editing-profile .section-edit,
-body.editing-business-profile .section-edit {
+body.editing-profile .section-edit {
   display: flex;
 }
 
-body.editing-profile .editable
-body.editing-business-profile .editable{
+body.editing-profile .editable {
   outline: 2px dashed var(--main-color);
 }
 
-body.editing-profile .section-edit-actions
-body.editing-business-profile .section-edit-actions{
+body.editing-profile .section-edit-actions {
    min-width: fit-content;
    align-self: center;
 }
