@@ -202,13 +202,20 @@ body.editing-profile .section-edit {
   display: flex;
 }
 
-body.editing-profile .editable {
-  outline: 2px dashed var(--main-color);
+.bio-input {
+  border: none;
+  background: transparent;
+  resize: none;
+  overflow: hidden;
 }
 
-body.editing-profile .section-edit-actions {
-   min-width: fit-content;
-   align-self: center;
+body.editing-profile .bio-input {
+  background: var(--glass-white);
+  border: 1px solid var(--main-color);
+}
+
+.bio-input:read-only {
+  pointer-events: none;
 }
 
 
