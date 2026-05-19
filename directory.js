@@ -25,9 +25,18 @@ const profileBioCancel =
   );
 
 
+const editableFields = [
+  profileNameInput,
+  profileHandleInput,
+  profileRoleInput,
+  profileGymInput
+];
+
 
 let originalBio =
   profileBioInput?.value || "";
+
+let originalProfileValues = {};
 
 
 
@@ -220,3 +229,54 @@ if (editProfileBtn) {
   );
 
 }
+
+editableFields.forEach(field => {
+
+  if (!field) return;
+
+  originalProfileValues[field.id] =
+    field.value;
+
+  field.readOnly = false;
+
+});
+
+editableFields.forEach(field => {
+
+  if (!field) return;
+
+  field.readOnly = true;
+
+  localStorage.setItem(
+    field.id,
+    field.value.trim()
+  );
+
+});
+
+editableFields.forEach(field => {
+
+  if (!field) return;
+
+  field.value =
+    originalProfileValues[field.id];
+
+  field.readOnly = true;
+
+});
+
+editableFields.forEach(field => {
+
+  if (!field) return;
+
+  const savedValue =
+    localStorage.getItem(field.id);
+
+  if (savedValue) {
+    field.value = savedValue;
+  }
+
+});
+
+
+
