@@ -3,15 +3,22 @@ document.addEventListener("DOMContentLoaded", () => {
   const panels = document.querySelectorAll(".profile-panel");
 
   const profilePage = document.querySelector(".profile-page");
-  const profileNameEl = document.querySelector(".profile-main-info h1");
-  const profileHandleEl = document.querySelector(".profile-handle");
+const profileNameInput = document.getElementById("profileNameInput");
+  const profileHandleInput = document.getElementById("profileHandleInput");
     const navTitle = document.getElementById("navTitle");
   const navVerifiedBadge = document.getElementById("navVerifiedBadge");
 
 const profileUser = {
   id: profilePage?.dataset.userId || null,
-  name: profileNameEl ? profileNameEl.textContent.trim() : "Profile",
-  handle: profileHandleEl ? profileHandleEl.textContent.trim() : "",
+
+  name: profileNameInput
+    ? profileNameInput.value.trim()
+    : "Profile",
+
+  handle: profileHandleInput
+    ? profileHandleInput.value.trim()
+    : "",
+
   verified: true
 };
 
