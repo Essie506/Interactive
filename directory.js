@@ -56,6 +56,54 @@ const profileBioCancel =
 // HELPERS
 // =========================
 
+function autoGrowProfileBioInput() {
+
+  const input =
+    document.getElementById(
+      "profileBioInput"
+    );
+
+  if (!input) return;
+
+  const wrap =
+    input.closest(".section-edit");
+
+  const minHeight = 105.5;
+  const maxHeight = 550;
+
+  input.style.height = "0px";
+
+  if (wrap) {
+    wrap.style.height = "auto";
+  }
+
+  const nextHeight = Math.max(
+    minHeight,
+    Math.min(
+      input.scrollHeight,
+      maxHeight
+    )
+  );
+
+  input.style.height =
+    `${nextHeight}px`;
+
+  input.style.overflowY =
+    input.scrollHeight > maxHeight
+      ? "auto"
+      : "hidden";
+
+  if (wrap) {
+
+    wrap.style.height =
+      `${nextHeight}px`;
+
+    wrap.style.minHeight =
+      `${minHeight}px`;
+
+  }
+
+}
 
 // =========================
 // MENU SWITCH
@@ -638,4 +686,17 @@ if (profileBioCancel) {
   );
 
 }
+
+
+profileBioInput?.addEventListener(
+  "input",
+  autoGrowProfileBioInput
+);
+
+window.addEventListener(
+  "resize",
+  autoGrowProfileBioInput
+);
+
+autoGrowProfileBioInput();
 
