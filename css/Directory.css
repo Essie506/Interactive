@@ -186,39 +186,6 @@ PROFILE EDITOR INPUTS
     var(--main-color);
 }
 
-/* =========================
-   SECTION EDITS
-========================= */
-
-.section-edit {
-  display: none;
-}
-
-body.editing-profile .section-view {
-  display: none;
-}
-
-body.editing-profile .section-edit {
-  display: flex;
-}
-
-.bio-input {
-  border: none;
-  background: transparent;
-  resize: none;
-  overflow: hidden;
-}
-
-body.editing-profile .bio-input {
-  background: var(--glass-white);
-  border: 1px solid var(--main-color);
-}
-
-.bio-input:read-only {
-  pointer-events: none;
-}
-
-
 
 /* =========================
    CARD LAYOUT
