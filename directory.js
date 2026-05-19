@@ -114,7 +114,7 @@ function updateBioSaveButtonState() {
     profileBioInput.value.trim().length > 0;
 
   profileBioSave?.classList.toggle(
-    "active",
+    "ready",
     hasText
   );
 
