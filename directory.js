@@ -58,11 +58,6 @@ const profileBioCancel =
 
 function autoGrowProfileBioInput() {
 
-  const input =
-    document.getElementById(
-      "profileBioInput"
-    );
-
   if (!input) return;
 
   const wrap =
@@ -298,6 +293,7 @@ if (
 
         bioInput.value =
           bioText.textContent.trim();
+            autoGrowProfileBioInput();
 
       }
 
