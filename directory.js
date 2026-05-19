@@ -42,7 +42,7 @@ function autoGrowProfileBioInput() {
 const wrap =
   profileBioInput.closest(".profile-section-inner");
 
-  const minHeight = 105.5;
+  const minHeight = 55.5;
   const maxHeight = 550;
 
  profileBioInput.style.height = "0px";
