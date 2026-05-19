@@ -483,8 +483,6 @@ body.profile .media-card img {
   color: white;
 
   backdrop-filter: blur(8px);
-
-  opacity: 0;
   pointer-events: none;
 
   transform: scale(0.9);
@@ -505,7 +503,7 @@ body.profile .media-card img {
 
 
 .cover-position-done {
-  pointer-events: auto;
+    opacity: 0;
 }
 
 
