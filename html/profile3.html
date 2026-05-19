@@ -298,46 +298,30 @@
 
   <div class="profile-section-inner">
 
-    <!-- VIEW MODE -->
-    <div class="section-view">
+    <textarea
+      class="bio-input"
+      id="profileBioInput"
+      placeholder="Tell visitors what your space is about..."
+      readonly
+    ></textarea>
 
-      <p
-        class="bio-text"
-        id="profileBioText"
+    <div class="section-edit-actions self-only">
+
+      <button
+        class="avatar-editor-btn-cancel"
+        id="profileBioCancel"
+        type="button"
       >
-        Tell visitors what your space is about...
-      </p>
+        Cancel
+      </button>
 
-    </div>
-
-    <!-- EDIT MODE -->
-    <div class="section-edit self-only">
-
-        <textarea
-          class="bio-input"
-          id="profileBioInput"
-          placeholder="Tell visitors what your space is about..."
-        ></textarea>
-
-        <div class="composer-foot">
-
-          <button
-            class="avatar-editor-btn-cancel"
-            id="profileBioCancel"
-            type="button"
-          >
-            Cancel
-          </button>
-
-          <button
-            class="avatar-editor-btn-save"
-            id="profileBioSave"
-            type="button"
-          >
-            Save
-          </button>
-
-        </div>
+      <button
+        class="avatar-editor-btn-save"
+        id="profileBioSave"
+        type="button"
+      >
+        Save
+      </button>
 
     </div>
 
