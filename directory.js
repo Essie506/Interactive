@@ -65,35 +65,35 @@ let originalBio = profileBioInput.value;
 
 function autoGrowProfileBioInput() {
 
-  if (!input) return;
+ if (!profileBioInput) return;
 
-  const wrap =
-    input.closest(".section-edit");
+const wrap =
+  profileBioInput.closest(".profile-section-inner");
 
   const minHeight = 105.5;
   const maxHeight = 550;
 
-  input.style.height = "0px";
+ profileBioInput.style.height = "0px";
 
   if (wrap) {
     wrap.style.height = "auto";
   }
 
-  const nextHeight = Math.max(
-    minHeight,
-    Math.min(
-      input.scrollHeight,
-      maxHeight
-    )
-  );
+ const nextHeight = Math.max(
+  minHeight,
+  Math.min(
+    profileBioInput.scrollHeight,
+    maxHeight
+  )
+);
 
-  input.style.height =
+  profileBioInput.style.height =
     `${nextHeight}px`;
 
-  input.style.overflowY =
-    input.scrollHeight > maxHeight
-      ? "auto"
-      : "hidden";
+profileBioInput.style.overflowY =
+  profileBioInput.scrollHeight > maxHeight
+    ? "auto"
+    : "hidden";
 
   if (wrap) {
 
