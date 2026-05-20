@@ -57,28 +57,28 @@ if (profileGymInput) {
         selectedPlace
       );
 
-    
-        }
+          console.log(
+        "Selected place:",
+        selectedPlace
       );
 
+      // =========================
+      // FIREBASE SAVE (LATER)
+      // =========================
+
+      /*
+      await setDoc(
+        doc(db, "users", uid),
+        {
+          location: selectedPlace
+        }
+      );
+      */
+
     }
+  );
 
-  }
-);
+}
 
- 
-    // =========================
-    // FIREBASE SAVE (LATER)
-    // =========================
-
-    /*
-    await setDoc(
-      doc(db, "users", uid),
-      {
-        location: selectedPlace
-      }
-    );
-    */
-
-  }
+}
 );
