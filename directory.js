@@ -224,14 +224,6 @@ if (editProfileBtn) {
         "editing-profile"
       );
 
-      // unlock profile fields
-      editableFields.forEach(field => {
-
-        if (!field) return;
-
-        field.readOnly = false;
-
-      });
 
       if (profileBioInput) {
 
