@@ -125,10 +125,22 @@ function autoResizeInput(input) {
 
   if (!input) return;
 
+  const parent =
+    input.parentElement;
+
+  const maxWidth =
+    parent.clientWidth;
+
   input.style.width = "0px";
 
+  const nextWidth =
+    Math.min(
+      input.scrollWidth,
+      maxWidth
+    );
+
   input.style.width =
-    `${input.scrollWidth}px`;
+    `${nextWidth}px`;
 
 }
 
