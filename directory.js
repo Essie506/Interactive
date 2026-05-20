@@ -174,6 +174,65 @@ function autoFitProfileName() {
 
 }
 
+function autoResizeInput(input) {
+
+  if (!input) return;
+
+  const parent =
+    input.parentElement;
+
+  const measurer =
+    document.createElement("span");
+
+  const styles =
+    getComputedStyle(input);
+
+  measurer.style.position =
+    "absolute";
+
+  measurer.style.visibility =
+    "hidden";
+
+  measurer.style.whiteSpace =
+    "nowrap";
+
+  measurer.style.font =
+    styles.font;
+
+  measurer.style.letterSpacing =
+    styles.letterSpacing;
+
+  measurer.textContent =
+    input.value || input.placeholder || "";
+
+  document.body.appendChild(measurer);
+
+  const badge =
+    document.querySelector(
+      ".profile-verified"
+    );
+
+  const badgeWidth =
+    badge
+      ? badge.offsetWidth + 12
+      : 0;
+
+  const maxWidth =
+    parent.clientWidth - badgeWidth;
+
+  const nextWidth =
+    Math.min(
+      measurer.offsetWidth + 2,
+      maxWidth
+    );
+
+  input.style.width =
+    `${nextWidth}px`;
+
+  measurer.remove();
+
+}
+
 // =========================
 // LOAD SAVED BIO
 // =========================
@@ -317,12 +376,15 @@ profileNameInput?.addEventListener(
   "input",
   () => {
 
+    autoResizeInput(profileNameInput);
+
     autoFitProfileName();
 
   }
 );
 
-
+autoResizeInput(profileNameInput);
+autoFitProfileName();
 
 
 
