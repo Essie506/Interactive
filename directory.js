@@ -25,12 +25,25 @@ const profileBioCancel =
   );
 
 
-const editableFields = [
-  profileNameInput,
-  profileHandleInput,
-  profileRoleInput,
-  profileGymInput
-];
+const profileNameInput =
+  document.getElementById(
+    "profileNameInput"
+  );
+
+const profileHandleInput =
+  document.getElementById(
+    "profileHandleInput"
+  );
+
+const profileRoleInput =
+  document.getElementById(
+    "profileRoleInput"
+  );
+
+const profileGymInput =
+  document.getElementById(
+    "profileGymInput"
+  );
 
 
 let originalBio =
