@@ -1,3 +1,8 @@
+window.addEventListener(
+  "load",
+  () => {
+
+
 const profileGymInput =
   document.getElementById(
     "profileGymInput"
