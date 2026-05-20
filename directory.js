@@ -132,20 +132,29 @@ function autoResizeInput(input) {
 
 }
 
+
+
 function autoFitProfileName() {
 
   if (!profileNameInput) return;
 
   const maxWidth = 320;
 
-  let fontSize = 64;
+  profileNameInput.style.fontSize = "";
 
-  profileNameInput.style.fontSize =
-    `${fontSize}px`;
+  const computedSize =
+    parseFloat(
+      getComputedStyle(profileNameInput)
+        .fontSize
+    );
+
+  let fontSize = computedSize;
+
+  const minFontSize = 28;
 
   while (
     profileNameInput.scrollWidth > maxWidth &&
-    fontSize > 20
+    fontSize > minFontSize
   ) {
 
     fontSize -= 1;
