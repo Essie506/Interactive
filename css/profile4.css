@@ -625,13 +625,7 @@ border-radius: inherit;
     flex-direction: column;
   }
 
-	.profile-name-input {
-  grid-column: 1;
-}
 
-.profile-verified {
-  grid-column: 2;
-}
 
 	body.profile .profile-role-input,
 body.profile .profile-gym-input,
@@ -742,7 +736,9 @@ body.profile .profile-handle-input {
     margin: 0;
     padding: 0;
     top: var(--profile-local-inner-pad);
-  }
+	position: relative;
+}
+  
 
 	
   body.profile .profile-tabs-inline {
