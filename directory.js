@@ -121,6 +121,17 @@ function updateBioSaveButtonState() {
 
 }
 
+function autoResizeInput(input) {
+
+  if (!input) return;
+
+  input.style.width = "0px";
+
+  input.style.width =
+    `${input.scrollWidth}px`;
+
+}
+
 
 // =========================
 // LOAD SAVED BIO
@@ -260,7 +271,14 @@ if (editProfileBtn) {
 }
 
 
+profileNameInput?.addEventListener(
+  "input",
+  () => {
+    autoResizeInput(profileNameInput);
+  }
+);
 
+autoResizeInput(profileNameInput);
 
 
 editableFields.forEach(field => {
