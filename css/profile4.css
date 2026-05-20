@@ -826,8 +826,8 @@ body.profile .profile-handle-input {
 }
 
 .profile-name-input {
-  width: auto;
-  min-width: 1ch;
+  flex: 1;
+  min-width: 0;
   max-width: 100%;
 
   border: none;
@@ -841,6 +841,7 @@ body.profile .profile-handle-input {
   white-space: nowrap;
 }
 
+	
 .profile-verified {
   flex: 0 0 auto;
 }
