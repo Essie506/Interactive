@@ -261,6 +261,8 @@ body.profile .profile-main-info {
   align-items: center;
   gap: var(--profile-name-row-gap);
 	justify-self: center;
+	overflow: hidden;
+	 max-width: 100%;
 }
 
 body.profile .profile-name-heading {
@@ -274,7 +276,8 @@ body.profile .profile-name-heading {
   background: transparent;
   border: none;
   outline: none;
-  width: 100%;
+  max-width: 100%;
+	min-width: 0;
   text-align: inherit;
   font-weight: 700;
   color: var(--profile-text);
