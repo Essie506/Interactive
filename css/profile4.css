@@ -979,49 +979,6 @@ body.profile .profile-hero-media:active {
 }	
 
 
-.profile-name-row {
-  width: 100%;
-  overflow: hidden;
-}
-
-.profile-name-group {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-
-  width: 100%;
-  min-width: 0;
-}
-
-.profile-name-heading {
-  flex: 1;
-  min-width: 0;
-  margin: 0;
-}
-
-.profile-name-input {
-  width: 100%;
-  min-width: 0;
-
-  border: none;
-  background: transparent;
-  outline: none;
-
-  font: inherit;
-  font-weight: 700;
-  line-height: 1;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-}
-
-.profile-verified {
-  flex-shrink: 0;
-}
-
 
 
 
