@@ -57,6 +57,15 @@ if (profileGymInput) {
         selectedPlace
       );
 
+    
+        }
+      );
+
+    }
+
+  }
+);
+
  
     // =========================
     // FIREBASE SAVE (LATER)
