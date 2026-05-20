@@ -121,6 +121,43 @@ function updateBioSaveButtonState() {
 
 }
 
+function autoResizeInput(input) {
+
+  if (!input) return;
+
+  const measurer =
+    document.createElement("span");
+
+  const styles =
+    getComputedStyle(input);
+
+  measurer.style.position =
+    "absolute";
+
+  measurer.style.visibility =
+    "hidden";
+
+  measurer.style.whiteSpace =
+    "nowrap";
+
+  measurer.style.font =
+    styles.font;
+
+  measurer.style.letterSpacing =
+    styles.letterSpacing;
+
+  measurer.textContent =
+    input.value || input.placeholder || "";
+
+  document.body.appendChild(measurer);
+
+  input.style.width =
+    `${measurer.offsetWidth + 4}px`;
+
+  measurer.remove();
+
+}
+
 
 function autoFitProfileName() {
 
@@ -328,7 +365,22 @@ profileNameInput?.addEventListener(
 autoFitProfileName();
 
 
+[
+  profileHandleInput,
+  profileRoleInput,
+  profileGymInput
+].forEach(input => {
 
+  if (!input) return;
+
+  autoResizeInput(input);
+
+  input.addEventListener(
+    "input",
+    () => autoResizeInput(input)
+  );
+
+});
 
 
 
