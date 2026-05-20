@@ -797,7 +797,7 @@ border-radius: inherit;
   }
 	
 
-  body.profile .profile-name-row h1,
+  body.profile .profile-name-heading,
   body.profile .profile-hero-card h1,
   body.profile .profile-name {
     font-size: clamp(2.2rem, 4vw, 4rem);
