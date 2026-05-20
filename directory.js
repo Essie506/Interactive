@@ -121,46 +121,24 @@ function updateBioSaveButtonState() {
 
 }
 
-function autoResizeInput(input) {
-
-  if (!input) return;
-
-  const parent =
-    input.parentElement;
-
-  const maxWidth =
-    parent.clientWidth;
-
-  input.style.width = "0px";
-
-  const nextWidth =
-    Math.min(
-      input.scrollWidth,
-      maxWidth
-    );
-
-  input.style.width =
-    `${nextWidth}px`;
-
-}
-
-
 
 function autoFitProfileName() {
 
   if (!profileNameInput) return;
 
-  const maxWidth = 320;
+  const parent =
+    profileNameInput.parentElement;
+
+  const maxWidth =
+    parent.clientWidth;
 
   profileNameInput.style.fontSize = "";
 
-  const computedSize =
+  let fontSize =
     parseFloat(
       getComputedStyle(profileNameInput)
         .fontSize
     );
-
-  let fontSize = computedSize;
 
   const minFontSize = 28;
 
@@ -317,20 +295,19 @@ if (editProfileBtn) {
 }
 
 
+
 profileNameInput?.addEventListener(
   "input",
   () => {
-
-    autoResizeInput(profileNameInput);
 
     autoFitProfileName();
 
   }
 );
 
-autoResizeInput(profileNameInput);
 
-autoFitProfileName();
+
+
 
 
 
