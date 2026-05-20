@@ -132,30 +132,47 @@ function autoFitProfileName() {
   const maxWidth =
     parent.clientWidth;
 
-  profileNameInput.style.fontSize = "";
+  let fontSize = 40;
+  const minFontSize = 18;
 
-  let fontSize =
-    parseFloat(
-      getComputedStyle(profileNameInput)
-        .fontSize
-    );
+  // create hidden measurer
+  const measurer =
+    document.createElement("span");
 
-  const minFontSize = 28;
+  measurer.style.position = "absolute";
+  measurer.style.visibility = "hidden";
+  measurer.style.whiteSpace = "nowrap";
 
-  while (
-    profileNameInput.scrollWidth > maxWidth &&
-    fontSize > minFontSize
-  ) {
+  measurer.style.fontFamily =
+    getComputedStyle(profileNameInput).fontFamily;
+
+  measurer.style.fontWeight =
+    getComputedStyle(profileNameInput).fontWeight;
+
+  document.body.appendChild(measurer);
+
+  while (fontSize > minFontSize) {
+
+    measurer.style.fontSize =
+      `${fontSize}px`;
+
+    measurer.textContent =
+      profileNameInput.value || "";
+
+    if (measurer.offsetWidth <= maxWidth) {
+      break;
+    }
 
     fontSize -= 1;
 
-    profileNameInput.style.fontSize =
-      `${fontSize}px`;
-
   }
 
-}
+  profileNameInput.style.fontSize =
+    `${fontSize}px`;
 
+  measurer.remove();
+
+}
 
 // =========================
 // LOAD SAVED BIO
