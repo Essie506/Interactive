@@ -132,6 +132,31 @@ function autoResizeInput(input) {
 
 }
 
+function autoFitProfileName() {
+
+  if (!profileNameInput) return;
+
+  const maxWidth = 320;
+
+  let fontSize = 64;
+
+  profileNameInput.style.fontSize =
+    `${fontSize}px`;
+
+  while (
+    profileNameInput.scrollWidth > maxWidth &&
+    fontSize > 20
+  ) {
+
+    fontSize -= 1;
+
+    profileNameInput.style.fontSize =
+      `${fontSize}px`;
+
+  }
+
+}
+
 
 // =========================
 // LOAD SAVED BIO
@@ -274,11 +299,19 @@ if (editProfileBtn) {
 profileNameInput?.addEventListener(
   "input",
   () => {
+
     autoResizeInput(profileNameInput);
+
+    autoFitProfileName();
+
   }
 );
 
 autoResizeInput(profileNameInput);
+
+autoFitProfileName();
+
+
 
 
 editableFields.forEach(field => {
