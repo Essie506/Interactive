@@ -807,6 +807,11 @@ body.profile .profile-handle-input {
 
 
 
+.profile-name-row {
+  width: 100%;
+  overflow: hidden;
+}
+
 .profile-name-group {
   display: flex;
   align-items: center;
@@ -820,15 +825,11 @@ body.profile .profile-handle-input {
   flex: 1;
   min-width: 0;
   margin: 0;
-
-  display: flex;
-  align-items: center;
 }
 
 .profile-name-input {
-  flex: 1;
+  width: 100%;
   min-width: 0;
-  max-width: 100%;
 
   border: none;
   background: transparent;
@@ -838,12 +839,15 @@ body.profile .profile-handle-input {
   font-weight: 700;
   line-height: 1;
 
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
+
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
 }
 
-	
 .profile-verified {
-  flex: 0 0 auto;
+  flex-shrink: 0;
 }
 
 
