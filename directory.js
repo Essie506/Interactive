@@ -126,8 +126,8 @@ function autoFitProfileName() {
 
   if (!profileNameInput) return;
 
-  const parent =
-    profileNameInput.parentElement;
+ const parent =
+  input.closest(".profile-name-heading");
 
   const maxWidth =
     parent.clientWidth;
@@ -226,8 +226,6 @@ function autoResizeInput(input) {
       maxWidth
     );
 
-  input.style.width =
-    `${nextWidth}px`;
 
   measurer.remove();
 
