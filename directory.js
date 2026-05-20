@@ -152,7 +152,7 @@ function autoResizeInput(input) {
   document.body.appendChild(measurer);
 
   input.style.width =
-    `${measurer.offsetWidth + 4}px`;
+    `${measurer.offsetWidth + 2}px`;
 
   measurer.remove();
 
