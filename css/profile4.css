@@ -274,9 +274,6 @@ body.profile .profile-name-heading {
   margin: 0;
   min-width: 0;
   white-space: nowrap;
-  font-weight: 700;
-  color: var(--profile-text);
-   font-size: clamp(2rem, 5vw, 4rem);
 }
 
 
@@ -284,10 +281,11 @@ body.profile .profile-name-heading {
   background: transparent;
   border: none;
   outline: none;
-  font: inherit;
-  color: inherit;
   width: 100%;
   text-align: inherit;
+  font-weight: 700;
+  color: var(--profile-text);
+   font-size: clamp(2rem, 5vw, 4rem);
 }
 
 
