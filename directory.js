@@ -121,6 +121,29 @@ function updateBioSaveButtonState() {
 
 }
 
+function autoResizeInput(input) {
+
+  if (!input) return;
+
+  const parent =
+    input.parentElement;
+
+  const maxWidth =
+    parent.clientWidth;
+
+  input.style.width = "0px";
+
+  const nextWidth =
+    Math.min(
+      input.scrollWidth,
+      maxWidth
+    );
+
+  input.style.width =
+    `${nextWidth}px`;
+
+}
+
 
 
 function autoFitProfileName() {
@@ -292,6 +315,22 @@ if (editProfileBtn) {
   );
 
 }
+
+
+profileNameInput?.addEventListener(
+  "input",
+  () => {
+
+    autoResizeInput(profileNameInput);
+
+    autoFitProfileName();
+
+  }
+);
+
+autoResizeInput(profileNameInput);
+
+autoFitProfileName();
 
 
 
