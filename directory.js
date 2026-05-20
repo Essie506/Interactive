@@ -45,6 +45,13 @@ const profileGymInput =
     "profileGymInput"
   );
 
+const editableFields = [
+  profileNameInput,
+  profileHandleInput,
+  profileRoleInput,
+  profileGymInput
+];
+
 
 let originalBio =
   profileBioInput?.value || "";
