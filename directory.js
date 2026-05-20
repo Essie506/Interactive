@@ -126,110 +126,37 @@ function autoFitProfileName() {
 
   if (!profileNameInput) return;
 
- const parent =
-  input.closest(".profile-name-heading");
+  const parent =
+    profileNameInput.parentElement;
 
   const maxWidth =
     parent.clientWidth;
 
-  let fontSize = 40;
-  const minFontSize = 18;
+  profileNameInput.style.fontSize = "";
 
-  // create hidden measurer
-  const measurer =
-    document.createElement("span");
+  let fontSize =
+    parseFloat(
+      getComputedStyle(profileNameInput)
+        .fontSize
+    );
 
-  measurer.style.position = "absolute";
-  measurer.style.visibility = "hidden";
-  measurer.style.whiteSpace = "nowrap";
+  const minFontSize = 28;
 
-  measurer.style.fontFamily =
-    getComputedStyle(profileNameInput).fontFamily;
-
-  measurer.style.fontWeight =
-    getComputedStyle(profileNameInput).fontWeight;
-
-  document.body.appendChild(measurer);
-
-  while (fontSize > minFontSize) {
-
-    measurer.style.fontSize =
-      `${fontSize}px`;
-
-    measurer.textContent =
-      profileNameInput.value || "";
-
-    if (measurer.offsetWidth <= maxWidth) {
-      break;
-    }
+  while (
+    profileNameInput.scrollWidth > maxWidth &&
+    fontSize > minFontSize
+  ) {
 
     fontSize -= 1;
 
+    profileNameInput.style.fontSize =
+      `${fontSize}px`;
+
   }
 
-  profileNameInput.style.fontSize =
-    `${fontSize}px`;
-
-  measurer.remove();
-
 }
 
-function autoResizeInput(input) {
 
-  if (!input) return;
-
-  const parent =
-    input.parentElement;
-
-  const measurer =
-    document.createElement("span");
-
-  const styles =
-    getComputedStyle(input);
-
-  measurer.style.position =
-    "absolute";
-
-  measurer.style.visibility =
-    "hidden";
-
-  measurer.style.whiteSpace =
-    "nowrap";
-
-  measurer.style.font =
-    styles.font;
-
-  measurer.style.letterSpacing =
-    styles.letterSpacing;
-
-  measurer.textContent =
-    input.value || input.placeholder || "";
-
-  document.body.appendChild(measurer);
-
-  const badge =
-    document.querySelector(
-      ".profile-verified"
-    );
-
-  const badgeWidth =
-    badge
-      ? badge.offsetWidth + 12
-      : 0;
-
-  const maxWidth =
-    parent.clientWidth - badgeWidth;
-
-  const nextWidth =
-    Math.min(
-      measurer.offsetWidth + 2,
-      maxWidth
-    );
-
-
-  measurer.remove();
-
-}
 
 // =========================
 // LOAD SAVED BIO
@@ -374,14 +301,12 @@ profileNameInput?.addEventListener(
   "input",
   () => {
 
-    autoResizeInput(profileNameInput);
 
     autoFitProfileName();
 
   }
 );
 
-autoResizeInput(profileNameInput);
 autoFitProfileName();
 
 
