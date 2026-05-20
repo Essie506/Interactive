@@ -270,7 +270,7 @@ body.profile .profile-name-row {
 	justify-self: center;
 }
 
-body.profile .profile-name-row h1 {
+body.profile .profile-name-heading {
   margin: 0;
   min-width: 0;
   white-space: nowrap;
