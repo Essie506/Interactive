@@ -279,6 +279,27 @@ body.profile .profile-name-row h1 {
    font-size: clamp(2rem, 5vw, 4rem);
 }
 
+
+.profile-name-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  text-align: inherit;
+}
+
+
+.profile-role-input,
+.profile-handle-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  font: inherit;
+  color: inherit;
+}
+
 body.profile .profile-role-input,
 body.profile .profile-gym-input,
 body.profile .profile-handle-input {
