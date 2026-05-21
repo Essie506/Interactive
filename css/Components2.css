@@ -1167,7 +1167,11 @@ textarea.post-input.composer-input {
 }
 
 body.profile .composer-foot {
-	gap: 0.025rem;
+	gap: 0.5rem;
+	flex-direction: column;
+	justify-content: space-between;
+	top: 0.25rem;
+	min-height: stretch;
 }
 
 .composer-foot .send-btn {
