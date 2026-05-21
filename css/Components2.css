@@ -1135,6 +1135,7 @@ body.profile .bio-input {
   resize: none;
   overflow-y: auto;
   margin-top: 0;
+	padding: 1rem;
 
   border-radius: 1.375rem;
   border: none;
