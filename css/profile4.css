@@ -292,6 +292,7 @@ body.profile .profile-name-heading {
   outline: none;
   font: inherit;
   color: inherit;
+	text-align: center;
 }
 
 body.profile .profile-role-input,
