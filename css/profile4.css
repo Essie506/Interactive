@@ -1112,6 +1112,7 @@ body.profile .profile-hero-media:active {
 
   body.profile .profile-main-info {
     text-align: center;
+	  min-width: 0;
   }
 
   body.profile .profile-name-row {
