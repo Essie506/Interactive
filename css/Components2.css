@@ -338,9 +338,7 @@
 /* Cancel */
 
 .avatar-editor-btn-cancel {
-  background: mediumaquamarine;
-
-  color:
+color:
     var(--text-dark);
 	
 }
