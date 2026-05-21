@@ -1132,7 +1132,9 @@ body.profile .profile-hero-media:active {
   body.profile .profile-gym,
   body.profile .profile-bio {
     text-align: center;
-	  font-size: var(--main-font-size);
+	  font-size: larger;
+	  z-index: 5000;
+	  position: relative;
   }
 
   body.profile .profile-bio {
