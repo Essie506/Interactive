@@ -856,6 +856,7 @@ body.profile .profile-tabs-inner {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: var(--shadow-soft);
+	padding: clamp(0.25rem, 1vw, 1rem);
 }
 
 .business-section-header {
