@@ -627,6 +627,102 @@ border-radius: inherit;
 }
 
 
+
+
+
+
+/* =========================
+   PROFILE DETAIL ROWS
+========================= */
+
+body.profile .profile-detail-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+
+  align-items: start;
+
+  column-gap: 0.55rem;
+
+  width: 100%;
+  min-width: 0;
+
+  margin-top: var(--profile-role-margin-top);
+
+  color: rgba(9, 26, 58, 0.75);
+  font-weight: 700;
+}
+
+body.profile .profile-detail-row i {
+  line-height: 1.3;
+  font-size: 1em;
+
+  opacity: 0.9;
+
+  margin-top: 0.08em;
+
+  flex-shrink: 0;
+}
+
+body.profile .profile-detail-input {
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  outline: none;
+  resize: none;
+
+  background: transparent;
+
+  font: inherit;
+  color: inherit;
+  line-height: 1.3;
+
+  overflow: hidden;
+
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  field-sizing: content;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
    DESKTOP / LAPTOP
 ========================= */
