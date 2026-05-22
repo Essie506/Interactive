@@ -285,6 +285,113 @@ body.profile .profile-name-heading {
 }
 
 
+/* =========================
+   VIEW / EDIT TOGGLE
+========================= */
+
+.profile-handle-edit,
+.profile-role-edit,
+.profile-gym-edit {
+  display: none;
+}
+
+.editing-profile .profile-handle,
+.editing-profile .profile-role,
+.editing-profile .profile-gym {
+  display: none;
+}
+
+.editing-profile .profile-handle-edit,
+.editing-profile .profile-role-edit,
+.editing-profile .profile-gym-edit {
+  display: flex;
+}
+
+
+/* =========================
+   SHARED ROWS
+========================= */
+
+.profile-handle,
+.profile-role,
+.profile-gym,
+.profile-handle-edit,
+.profile-role-edit,
+.profile-gym-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: 100%;
+  min-width: 0;
+
+  text-align: center;
+}
+
+
+/* =========================
+   VIEW TEXT
+========================= */
+
+.profile-handle-text,
+.profile-role-text,
+.profile-gym-text {
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/* =========================
+   EDITABLE INPUTS
+========================= */
+
+.profile-handle-input,
+.profile-role-input,
+.profile-gym-input {
+
+  display: block;
+
+  width: 100%;
+  min-width: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  outline: none;
+  border: none;
+  background: transparent;
+
+  text-align: center;
+
+  font: inherit;
+  color: inherit;
+}
+
+
+/* =========================
+   PLACEHOLDER
+========================= */
+
+.profile-gym-input:empty::before {
+  content: attr(data-placeholder);
+  opacity: 0.55;
+}
+
+
+
+
+
+
+
+
+
 .profile-role-input,
 .profile-handle-input {
   background: transparent;
