@@ -121,46 +121,6 @@ function updateBioSaveButtonState() {
 
 }
 
-function autoResizeInput(input) {
-
-  if (!input) return;
-
-  const measurer =
-    document.createElement("span");
-
-  const styles =
-    getComputedStyle(input);
-
-  measurer.style.position =
-    "absolute";
-
-  measurer.style.visibility =
-    "hidden";
-
-  measurer.style.whiteSpace =
-    "nowrap";
-
-  measurer.style.font =
-    styles.font;
-
-  measurer.style.letterSpacing =
-    styles.letterSpacing;
-
-  measurer.textContent =
-    input.value || input.placeholder || "";
-
-  document.body.appendChild(measurer);
-
-
-
-
-
-    
-
-  measurer.remove();
-
-}
-
 
 function autoFitProfileName() {
 
@@ -219,6 +179,30 @@ function autoFitProfileName() {
 // RUN ON STARTUP
 // =========================
 
+
+
+// =========================
+// LOAD SAVED BIO
+// =========================
+
+
+const savedBio =
+  localStorage.getItem(
+    "profileBio"
+  );
+
+if (
+  savedBio &&
+  profileBioInput
+) {
+
+  profileBioInput.value =
+    savedBio;
+
+}
+
+
+
 editableFields.forEach(field => {
 
   if (!field) return;
@@ -256,32 +240,12 @@ autoFitProfileName();
 
   if (!input) return;
 
-  autoResizeInput(input);
 
 });
 
 
 
 
-// =========================
-// LOAD SAVED BIO
-// =========================
-
-
-const savedBio =
-  localStorage.getItem(
-    "profileBio"
-  );
-
-if (
-  savedBio &&
-  profileBioInput
-) {
-
-  profileBioInput.value =
-    savedBio;
-
-}
 
 
 // =========================
@@ -467,8 +431,6 @@ profileNameInput?.addEventListener(
   input.addEventListener(
     "input",
     () => {
-
-      autoResizeInput(input);
 
     }
   );
