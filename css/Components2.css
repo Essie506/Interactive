@@ -1291,7 +1291,7 @@ body.profile .composer-foot {
 
 .upload-btn.send-btn,
 .avatar-editor-btn-save {
-  opacity: 0.4;
+  display: none;
   pointer-events: none;
   transition: opacity 0.2s ease;
 }
@@ -1325,6 +1325,7 @@ body.profile .composer-foot {
 .ready {
   opacity: 1;
   pointer-events: auto;
+	display: flex;
 }
 
 .composer-bottom-bar {
