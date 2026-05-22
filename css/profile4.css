@@ -357,6 +357,10 @@ body.profile .profile-avatar {
 
 }
 
+body.profile .profile-share-btn {
+z-index: 6000;
+}
+
 body.profile .upload-photo-btn {
   position: absolute;
   right: var(--profile-upload-btn-offset);
