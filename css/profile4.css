@@ -280,8 +280,7 @@ body.profile .profile-name-heading {
 }
 
 .profile-role-content {
-  flex: 1;
-  min-width: 0;
+align-self: center;
 }
 
 .profile-name-input {
