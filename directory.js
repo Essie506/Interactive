@@ -231,23 +231,6 @@ updateBioSaveButtonState();
 autoFitProfileName();
 
 
-// resize smaller inputs
-[
-  profileHandleInput,
-  profileRoleInput,
-  profileGymInput
-].forEach(input => {
-
-  if (!input) return;
-
-
-});
-
-
-
-
-
-
 // =========================
 // EVENT LISTENERS
 // =========================
@@ -330,6 +313,8 @@ if (profileBioSave && profileBioInput) {
 
       profileBioInput.readOnly =
         true;
+
+        profileBioInput.blur();
 
       // save editable fields too
       editableFields.forEach(field => {
@@ -416,27 +401,6 @@ profileNameInput?.addEventListener(
 
 
 
-// -------------------------
-// SMALL INPUT RESIZE
-// -------------------------
-
-[
-  profileHandleInput,
-  profileRoleInput,
-  profileGymInput
-].forEach(input => {
-
-  if (!input) return;
-
-  input.addEventListener(
-    "input",
-    () => {
-
-    }
-  );
-
-});
-
 
 
 // -------------------------
@@ -447,12 +411,15 @@ window.addEventListener(
   "resize",
   () => {
 
-    autoGrowProfileBioInput();
-    autoFitProfileName();
+    requestAnimationFrame(() => {
+
+      autoGrowProfileBioInput();
+      autoFitProfileName();
+
+    });
 
   }
 );
-
 
 
 
