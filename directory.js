@@ -455,7 +455,7 @@ profileNameInput?.addEventListener(
 
   }
 );
-
+});
 
 
 // -------------------------
