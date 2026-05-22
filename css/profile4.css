@@ -271,6 +271,20 @@ body.profile .profile-name-heading {
   white-space: nowrap;
 }
 
+.profile-role,
+.profile-handle,
+.profile-gym {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.profile-role-content,
+.profile-handle-content,
+.profile-gym-content {
+  flex: 1;
+  min-width: 0;
+}
 
 .profile-name-input {
   background: transparent;
