@@ -439,16 +439,22 @@ profileNameInput?.addEventListener(
 
   autoGrowProfileField(field);
 
-  field.addEventListener(
-    "input",
-    () => {
+ field.addEventListener(
+  "input",
+  () => {
 
-      autoGrowProfileField(field);
+    requestAnimationFrame(() => {
 
-    }
-  );
+      requestAnimationFrame(() => {
 
-});
+        autoGrowProfileField(field);
+
+      });
+
+    });
+
+  }
+);
 
 
 
