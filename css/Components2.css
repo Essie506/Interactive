@@ -1733,7 +1733,7 @@ body.business-profile .chevron-btn {
   .navbar-right {
     display: flex;
     align-items: center;
-	  column-gap: 0.75rem;
+	  column-gap: 0.5rem;
   }
 
   .nav-left {
