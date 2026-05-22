@@ -64,6 +64,36 @@ let originalProfileValues = {};
 // HELPERS
 // =========================
 
+
+function autoGrowProfileField(field) {
+
+  if (!field) return;
+
+  const minHeight = 32;
+  const maxHeight = 220;
+
+  field.style.height = "0px";
+
+  const nextHeight = Math.max(
+    minHeight,
+    Math.min(
+      field.scrollHeight,
+      maxHeight
+    )
+  );
+
+  field.style.height =
+    `${nextHeight}px`;
+
+  field.style.overflowY =
+    field.scrollHeight > maxHeight
+      ? "auto"
+      : "hidden";
+
+}
+
+
+
 function autoGrowProfileBioInput() {
 
  if (!profileBioInput) return;
@@ -399,7 +429,26 @@ profileNameInput?.addEventListener(
   }
 );
 
+[
+  profileHandleInput,
+  profileRoleInput,
+  profileGymInput
+].forEach(field => {
 
+  if (!field) return;
+
+  autoGrowProfileField(field);
+
+  field.addEventListener(
+    "input",
+    () => {
+
+      autoGrowProfileField(field);
+
+    }
+  );
+
+});
 
 
 
@@ -415,6 +464,18 @@ window.addEventListener(
 
       autoGrowProfileBioInput();
       autoFitProfileName();
+
+      autoGrowProfileField(
+        profileHandleInput
+      );
+
+      autoGrowProfileField(
+        profileRoleInput
+      );
+
+      autoGrowProfileField(
+        profileGymInput
+      );
 
     });
 
