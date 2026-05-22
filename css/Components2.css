@@ -273,7 +273,7 @@
     0 0 0 3px rgba(7, 153, 146, 0.12),
     0 6px 18px rgba(0, 0, 0, 0.14),
     inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  transform: translateY(-1px) scale(1.06);
+  Y(-1px) scale(1.06);
   background: rgba(255, 255, 255, 0.82);
 }
 
@@ -385,7 +385,7 @@ body.editing-profile .section-edit {
   opacity: 0;
   pointer-events: none;
 
-  transform: translateY(0.35rem);
+  Y(0.35rem);
 
   transition:
     opacity 0.2s ease,
@@ -396,7 +396,7 @@ body.editing-profile .section-edit-actions {
   opacity: 1;
   pointer-events: auto;
 
-  transform: translateY(0);
+  Y(0);
 }
 
 
@@ -442,7 +442,7 @@ body.editing-profile .bio-input {
 }
 
 .bottom-nav.hide-bottom {
-  transform: translateY(100%);
+  Y(100%);
 }
 
 .bottom-nav a,
@@ -1628,7 +1628,6 @@ body.profile .composer-foot {
     display: flex;
     justify-content: center;
     width: 100%;
-    transform: translateX(-55px);
   }
 
   .desktop-nav-links {
