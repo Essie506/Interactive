@@ -1291,10 +1291,19 @@ body.profile .composer-foot {
 
 .upload-btn.send-btn,
 .avatar-editor-btn-save {
-  opacity: 0.01;
   pointer-events: none;
   transition: opacity 0.2s ease;
 }
+
+.upload-btn.send-btn {
+	opacity: 0.4;
+}
+
+.avatar-editor-btn-save {
+	opacity: 0.01;
+}
+
+
 
 
 .avatar-editor-btn-saved {
