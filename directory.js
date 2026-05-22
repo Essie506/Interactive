@@ -137,13 +137,14 @@ profileBioInput.style.overflowY =
 
 function updateBioSaveButtonState() {
 
-  const hasText =
-    profileBioInput &&
-    profileBioInput.value.trim().length > 0;
+  const isEditing =
+    document.body.classList.contains(
+      "editing-profile"
+    );
 
   profileBioSave?.classList.toggle(
     "ready",
-    hasText
+    isEditing
   );
 
 }
@@ -277,6 +278,8 @@ if (editProfileBtn) {
         "editing-profile"
       );
 
+      
+
       editableFields.forEach(field => {
 
         if (!field) return;
@@ -284,6 +287,8 @@ if (editProfileBtn) {
         field.readOnly = false;
 
       });
+
+          updateBioSaveButtonState();
 
       if (profileBioInput) {
 
@@ -363,6 +368,8 @@ if (profileBioSave && profileBioInput) {
       document.body.classList.remove(
         "editing-profile"
       );
+
+        updateBioSaveButtonState();
 
     }
   );
