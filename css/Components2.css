@@ -1284,11 +1284,7 @@ body.profile .composer-foot {
 }
 
 .upload-btn.send-btn:hover,
-.upload-btn.send-btn:focus-visible,
-.avatar-editor-btn-save:hover,
-.avatar-editor-btn-cancel:hover, 
-.avatar-editor-btn-save:focus-visible,
-.avatar-editor-btn-cancel:focus-visible {
+.upload-btn.send-btn:focus-visible {
   box-shadow: var(--shadow-strong);
   transform: translateY(0.2rem);
 }
