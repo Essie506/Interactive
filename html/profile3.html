@@ -264,47 +264,111 @@
 
 
 
-      <div class="profile-handle">
-        
- <i class="fa-solid fa-at"></i>
+<!-- =========================
+     PROFILE HANDLE
+========================= -->
 
-       <input
-  type="text"
-  class="profile-handle-input"
-  id="profileHandleInput"
-  value="estherfitness"
-  readonly
->
+<!-- VIEW MODE -->
+<div class="profile-handle">
 
-      </div>
+  <i class="fa-solid fa-at"></i>
 
-        <div class="profile-role">
-
-  <i class="fa-solid fa-dumbbell"></i>
-
-  <input
-    type="text"
-    class="profile-role-input"
-    id="profileRoleInput"
-    value="Trainer • Strength & Conditioning"
-    readonly
+  <span
+    class="profile-handle-text"
+    id="profileHandleText"
   >
+    estherfitness
+  </span>
 
 </div>
 
- <div class="profile-gym">
-  <i class="fa-solid fa-location-dot"></i> 
-          
-          
-  <input
-    type="text"
-    class="profile-role-input"
-    id="profileGymInput"
-     placeholder="Search location..."
-    readonly
+<!-- EDIT MODE -->
+<div class="profile-handle-edit">
+
+  <i class="fa-solid fa-at"></i>
+
+  <div
+    class="profile-handle-input"
+    id="profileHandleInput"
+    contenteditable="true"
+    spellcheck="false"
   >
-    </div>
-        </div>  
+    estherfitness
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     PROFILE ROLE
+========================= -->
+
+<!-- VIEW MODE -->
+<div class="profile-role">
+
+  <i class="fa-solid fa-dumbbell"></i>
+
+  <span
+    class="profile-role-text"
+    id="profileRoleText"
+  >
+    Trainer • Strength & Conditioning
+  </span>
+
+</div>
+
+<!-- EDIT MODE -->
+<div class="profile-role-edit">
+
+  <i class="fa-solid fa-dumbbell"></i>
+
+  <div
+    class="profile-role-input"
+    id="profileRoleInput"
+    contenteditable="true"
+    spellcheck="false"
+  >
+    Trainer • Strength & Conditioning
+  </div>
+
+</div>
+
+
+
+<!-- =========================
+     PROFILE GYM
+========================= -->
+
+<!-- VIEW MODE -->
+<div class="profile-gym">
+
+  <i class="fa-solid fa-location-dot"></i>
+
+  <span
+    class="profile-gym-text"
+    id="profileGymText"
+  >
+    Add your gym location
+  </span>
+
+</div>
+
+<!-- EDIT MODE -->
+<div class="profile-gym-edit">
+
+  <i class="fa-solid fa-location-dot"></i>
+
+  <div
+    class="profile-gym-input"
+    id="profileGymInput"
+    contenteditable="true"
+    spellcheck="false"
+    data-placeholder="Search location..."
+  >
+  </div>
+
+</div>
   
 
  <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
