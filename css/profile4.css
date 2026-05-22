@@ -279,9 +279,7 @@ body.profile .profile-name-heading {
   gap: 8px;
 }
 
-.profile-role-content,
-.profile-handle-content,
-.profile-gym-content {
+.profile-role-content {
   flex: 1;
   min-width: 0;
 }
