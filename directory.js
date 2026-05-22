@@ -444,6 +444,7 @@ field.addEventListener(
 
   }
 );
+    });
 
 // -------------------------
 // WINDOW RESIZE
