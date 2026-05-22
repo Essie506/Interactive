@@ -151,8 +151,11 @@ function autoResizeInput(input) {
 
   document.body.appendChild(measurer);
 
-  input.style.width =
-    `${measurer.offsetWidth + 2}px`;
+
+
+
+
+    
 
   measurer.remove();
 
@@ -212,6 +215,53 @@ function autoFitProfileName() {
 }
 
 
+// =========================
+// RUN ON STARTUP
+// =========================
+
+editableFields.forEach(field => {
+
+  if (!field) return;
+
+  // restore saved values
+  const savedValue =
+    localStorage.getItem(field.id);
+
+  if (savedValue) {
+    field.value = savedValue;
+  }
+
+  // store originals
+  originalProfileValues[field.id] =
+    field.value;
+
+  // lock fields
+  field.readOnly = true;
+
+});
+
+
+// bio setup
+autoGrowProfileBioInput();
+updateBioSaveButtonState();
+autoFitProfileName();
+
+
+// resize smaller inputs
+[
+  profileHandleInput,
+  profileRoleInput,
+  profileGymInput
+].forEach(input => {
+
+  if (!input) return;
+
+  autoResizeInput(input);
+
+});
+
+
+
 
 // =========================
 // LOAD SAVED BIO
@@ -233,9 +283,69 @@ if (
 
 }
 
+
 // =========================
-// SAVE / CANCEL
+// EVENT LISTENERS
 // =========================
+
+
+// -------------------------
+// EDIT PROFILE
+// -------------------------
+
+if (editProfileBtn) {
+
+  editProfileBtn.addEventListener(
+    "click",
+    () => {
+
+      document.body.classList.add(
+        "editing-profile"
+      );
+
+      editableFields.forEach(field => {
+
+        if (!field) return;
+
+        field.readOnly = false;
+
+      });
+
+      if (profileBioInput) {
+
+        originalBio =
+          profileBioInput.value;
+
+        profileBioInput.readOnly =
+          false;
+
+        autoGrowProfileBioInput();
+
+      }
+
+    }
+  );
+
+}
+
+// -------------------------
+// BIO INPUT
+// -------------------------
+
+profileBioInput?.addEventListener(
+  "input",
+  () => {
+
+    autoGrowProfileBioInput();
+    updateBioSaveButtonState();
+
+  }
+);
+
+
+// -------------------------
+// BIO SAVE
+// -------------------------
 
 if (profileBioSave && profileBioInput) {
 
@@ -257,6 +367,23 @@ if (profileBioSave && profileBioInput) {
       profileBioInput.readOnly =
         true;
 
+      // save editable fields too
+      editableFields.forEach(field => {
+
+        if (!field) return;
+
+        localStorage.setItem(
+          field.id,
+          field.value.trim()
+        );
+
+        originalProfileValues[field.id] =
+          field.value;
+
+        field.readOnly = true;
+
+      });
+
       document.body.classList.remove(
         "editing-profile"
       );
@@ -266,12 +393,19 @@ if (profileBioSave && profileBioInput) {
 
 }
 
+
+
+// -------------------------
+// BIO CANCEL
+// -------------------------
+
 if (profileBioCancel && profileBioInput) {
 
   profileBioCancel.addEventListener(
     "click",
     () => {
 
+      // restore bio
       profileBioInput.value =
         originalBio;
 
@@ -280,6 +414,18 @@ if (profileBioCancel && profileBioInput) {
 
       autoGrowProfileBioInput();
 
+      // restore editable fields
+      editableFields.forEach(field => {
+
+        if (!field) return;
+
+        field.value =
+          originalProfileValues[field.id];
+
+        field.readOnly = true;
+
+      });
+
       document.body.classList.remove(
         "editing-profile"
       );
@@ -289,81 +435,26 @@ if (profileBioCancel && profileBioInput) {
 
 }
 
-profileBioInput?.addEventListener(
-  "input",
-  () => {
-
-    autoGrowProfileBioInput();
-    updateBioSaveButtonState();
-
-  }
-);
-
-window.addEventListener(
-  "resize",
-  autoGrowProfileBioInput
-);
-
-autoGrowProfileBioInput();
-updateBioSaveButtonState();
-
-// =========================
-// EDIT / EVENT LISTENERS
-// =========================
 
 
-if (editProfileBtn) {
-
-  editProfileBtn.addEventListener(
-    "click",
-    () => {
-
-      document.body.classList.toggle(
-        "editing-profile"
-      );
-
-      // unlock profile fields
-      editableFields.forEach(field => {
-
-        if (!field) return;
-
-        field.readOnly = false;
-
-      });
-
-      if (profileBioInput) {
-
-        originalBio =
-          profileBioInput.value;
-
-        profileBioInput.readOnly =
-          false;
-
-        profileBioInput.focus();
-
-        autoGrowProfileBioInput();
-
-      }
-
-    }
-  );
-
-}
-
-
+// -------------------------
+// PROFILE NAME
+// -------------------------
 
 profileNameInput?.addEventListener(
   "input",
   () => {
-
 
     autoFitProfileName();
 
   }
 );
 
-autoFitProfileName();
 
+
+// -------------------------
+// SMALL INPUT RESIZE
+// -------------------------
 
 [
   profileHandleInput,
@@ -373,64 +464,34 @@ autoFitProfileName();
 
   if (!input) return;
 
-  autoResizeInput(input);
-
   input.addEventListener(
     "input",
-    () => autoResizeInput(input)
+    () => {
+
+      autoResizeInput(input);
+
+    }
   );
 
 });
 
 
 
-editableFields.forEach(field => {
+// -------------------------
+// WINDOW RESIZE
+// -------------------------
 
-  if (!field) return;
+window.addEventListener(
+  "resize",
+  () => {
 
-  originalProfileValues[field.id] =
-    field.value;
+    autoGrowProfileBioInput();
+    autoFitProfileName();
 
-  field.readOnly = false;
-
-});
-
-editableFields.forEach(field => {
-
-  if (!field) return;
-
-  field.readOnly = true;
-
-  localStorage.setItem(
-    field.id,
-    field.value.trim()
-  );
-
-});
-
-editableFields.forEach(field => {
-
-  if (!field) return;
-
-  field.value =
-    originalProfileValues[field.id];
-
-  field.readOnly = true;
-
-});
-
-editableFields.forEach(field => {
-
-  if (!field) return;
-
-  const savedValue =
-    localStorage.getItem(field.id);
-
-  if (savedValue) {
-    field.value = savedValue;
   }
+);
 
-});
+
 
 
 
