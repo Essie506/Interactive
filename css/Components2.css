@@ -1628,6 +1628,7 @@ body.profile .composer-foot {
     display: flex;
     justify-content: center;
     width: 100%;
+	    transform: translateX(-1.5rem);
   }
 
   .desktop-nav-links {
