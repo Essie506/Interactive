@@ -19,12 +19,6 @@ const profileBioSave =
   );
 
 
-const profileBioCancel =
-  document.getElementById(
-    "profileBioCancel"
-  );
-
-
 const profileNameInput =
   document.getElementById(
     "profileNameInput"
@@ -375,49 +369,6 @@ if (profileBioSave && profileBioInput) {
   );
 
 }
-
-
-
-// -------------------------
-// BIO CANCEL
-// -------------------------
-
-if (profileBioCancel && profileBioInput) {
-
-  profileBioCancel.addEventListener(
-    "click",
-    () => {
-
-      // restore bio
-      profileBioInput.value =
-        originalBio;
-
-      profileBioInput.readOnly =
-        true;
-
-      autoGrowProfileBioInput();
-
-      // restore editable fields
-      editableFields.forEach(field => {
-
-        if (!field) return;
-
-        field.value =
-          originalProfileValues[field.id];
-
-        field.readOnly = true;
-
-      });
-
-      document.body.classList.remove(
-        "editing-profile"
-      );
-
-    }
-  );
-
-}
-
 
 
 // -------------------------
