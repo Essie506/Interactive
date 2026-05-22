@@ -85,10 +85,7 @@ function autoGrowProfileField(field) {
   field.style.height =
     `${nextHeight}px`;
 
-  field.style.overflowY =
-    field.scrollHeight > maxHeight
-      ? "auto"
-      : "hidden";
+void field.offsetHeight;
 
 }
 
@@ -439,24 +436,14 @@ profileNameInput?.addEventListener(
 
   autoGrowProfileField(field);
 
- field.addEventListener(
+field.addEventListener(
   "input",
   () => {
 
-    requestAnimationFrame(() => {
-
-      requestAnimationFrame(() => {
-
-        autoGrowProfileField(field);
-
-      });
-
-    });
+    autoGrowProfileField(field);
 
   }
 );
-});
-
 
 // -------------------------
 // WINDOW RESIZE
