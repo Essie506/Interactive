@@ -181,8 +181,9 @@ body.profile .profile-services-card {
   box-sizing: border-box;
   border-radius: 0;
   overflow: visible;
-  -webkit-backdrop-filter: var(--profile-blur);
-  box-shadow: var( --profile-raised-shadow);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var( --shadow-strong);
+	 backdrop-filter: blur(16px);
 }
 
 
