@@ -39,6 +39,30 @@ const profileGymInput =
     "profileGymInput"
   );
 
+
+
+
+const servicesEditBtn =
+  document.getElementById("servicesEditBtn");
+
+const servicesModalOverlay =
+  document.getElementById("servicesModalOverlay");
+
+const servicesModalClose =
+  document.getElementById("servicesModalClose");
+
+const servicesCancelBtn =
+  document.getElementById("servicesCancelBtn");
+
+const servicesSaveBtn =
+  document.getElementById("servicesSaveBtn");
+
+const servicePillOptions =
+  document.querySelectorAll(".service-pill-option");
+
+
+
+
 const editableFields = [
   profileNameInput,
   profileHandleInput,
@@ -197,6 +221,15 @@ function autoFitProfileName() {
 }
 
 
+function openServicesModal() {
+  servicesModalOverlay?.classList.add("open");
+}
+
+function closeServicesModal() {
+  servicesModalOverlay?.classList.remove("open");
+}
+
+
 // =========================
 // RUN ON STARTUP
 // =========================
@@ -256,6 +289,12 @@ autoFitProfileName();
 // =========================
 // EVENT LISTENERS
 // =========================
+
+
+
+
+
+
 
 
 // -------------------------
@@ -433,3 +472,28 @@ window.addEventListener(
 
   }
 );
+
+
+servicesEditBtn?.addEventListener("click", openServicesModal);
+servicesModalClose?.addEventListener("click", closeServicesModal);
+servicesCancelBtn?.addEventListener("click", closeServicesModal);
+
+servicePillOptions.forEach(pill => {
+  pill.addEventListener("click", () => {
+    pill.classList.toggle("active");
+  });
+});
+
+servicesSaveBtn?.addEventListener("click", () => {
+  const selectedServices = [...servicePillOptions]
+    .filter(pill => pill.classList.contains("active"))
+    .map(pill => pill.textContent.trim());
+
+  console.log(selectedServices);
+
+  closeServicesModal();
+});
+
+
+
+
