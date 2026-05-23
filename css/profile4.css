@@ -1161,7 +1161,6 @@ body.profile .profile-hero-media:active {
   }
 
   body.profile .profile-no-tabs {
-    -webkit-backdrop-filter: blur(16px);
     box-shadow: var(--shadow-soft);
   }
 
