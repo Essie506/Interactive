@@ -597,7 +597,7 @@ body.business-profile .business-hero-card {
   transform: translate(-0.25rem, 0.25rem);
 
   z-index: 5;
-   gap: 7.5rem;
+   gap: 2rem;
 }
 
 .profile-section-inner,
@@ -632,10 +632,8 @@ body.profile .profile-tabs-inner {
 
 .profile-hero-corner .profile-corner-menu {
   position: relative;
-  right: 15rem;
+  right: 10rem;
   bottom: calc(100% + var(--profile-corner-menu-offset));
-  top: 1rem;
-  left: auto;
   min-width: 12rem;
      z-index: 4000;
     padding: 0.125rem 0.375rem 0.125rem;
