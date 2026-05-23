@@ -1139,12 +1139,8 @@ body.profile .profile-hero-media:active {
     z-index: 1;
     pointer-events: none;
     background:
-      linear-gradient(
-        to top,
-        rgba(9, 26, 58, 0.58),
-        rgba(9, 26, 58, 0.18),
-        rgba(255, 255, 255, 0.08)
-      );
+    linear-gradient(to top, rgba(9, 26, 58, 0.52), transparent 62%),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.55), transparent 35%);
   }
 
   body.profile .profile-hero-card {
