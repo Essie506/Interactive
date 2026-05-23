@@ -127,8 +127,6 @@ body.profile .profile-hero-media::after {
 
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
-
-  background: rgba(0,0,0,0.55);
   color: white;
 
   font-size: 0.85rem;
