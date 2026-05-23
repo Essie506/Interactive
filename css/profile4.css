@@ -357,9 +357,6 @@ body.profile .profile-avatar {
 
 }
 
-body.profile .profile-share-btn {
-z-index: 6000;
-}
 
 body.profile .upload-photo-btn {
   position: absolute;
@@ -383,6 +380,7 @@ body.profile .profile-top-right-actions {
   position: absolute;
  right: 1rem;
 	top: 0.5rem;
+	z-index: 600;
 }
 
 body.profile .profile-verified {
@@ -1249,7 +1247,7 @@ body.profile .profile-hero-media:active {
   body.profile .profile-bio {
     text-align: center;
 	  font-size: larger;
-	  z-index: 5000;
+	  z-index: 4;
 	  position: relative;
   }
 
