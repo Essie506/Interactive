@@ -341,6 +341,7 @@ body.profile .profile-bio {
 
 body.profile .nav-title-wrap {
 	z-index: 3000;
+	transform: translateX(15%);
 }
 
 body.profile .profile-avatar {
