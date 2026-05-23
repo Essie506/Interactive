@@ -498,7 +498,7 @@ body.profile .service-link::before {
 
   box-shadow: 0 -12px 34px rgba(0, 0, 0, 0.18);
 
-  transform: translateY(100%);
+  transform: translateY(-50%);
   transition: transform 0.25s ease;
 }
 
@@ -506,8 +506,7 @@ body.profile .service-link::before {
   transform: translateY(0);
 }
 
-.services-modal-header,
-.services-modal-footer {
+.services-modal-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -566,37 +565,6 @@ body.profile .service-link::before {
 .service-pill-option:active {
   transform: scale(0.96);
 }
-
-.services-modal-footer {
-  border-top: 1px solid rgba(9, 26, 58, 0.08);
-  gap: 0.75rem;
-}
-
-.services-modal-footer button {
-  flex: 1;
-
-  min-height: 2.7rem;
-
-  border: none;
-  border-radius: 0.85rem;
-
-  font: inherit;
-  font-weight: 800;
-
-  cursor: pointer;
-}
-
-#servicesCancelBtn {
-  background: rgba(255, 255, 255, 0.72);
-  color: var(--text-dark);
-}
-
-#servicesSaveBtn {
-  background: var(--main-color);
-  color: #fff;
-}
-
-
 
 
 
