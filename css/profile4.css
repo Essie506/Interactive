@@ -692,38 +692,9 @@ body.profile .profile-detail-input {
   field-sizing: content;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+body.profile .block-btn {
+	opacity: 0.4;
+}
 
 
 /* =========================
@@ -960,11 +931,6 @@ body.profile .profile-handle-input {
 }
 
 
-
-
-
-	
-
   body.profile .profile-name-heading,
   body.profile .profile-hero-card h1,
   body.profile .profile-name {
@@ -1136,15 +1102,6 @@ body.profile .profile-handle-input {
 body.profile .profile-hero-media:active {
   cursor: grabbing;
 }	
-
-
-
-
-
-
-
-
-	
 
 }
 
