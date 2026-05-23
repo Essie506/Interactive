@@ -487,6 +487,7 @@ body.profile .service-link::before {
 .services-modal {
   width: min(100%, 34rem);
   max-height: 82dvh;
+	min-height: 50%;
 
   display: flex;
   flex-direction: column;
