@@ -857,6 +857,8 @@ body.profile .profile-tabs-inner {
 
 .business-section-header {
   margin-bottom: 0.9rem;
+	display: flex;
+	justify-content: space-between;
 }
 
 .business-section-header h2,
