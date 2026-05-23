@@ -457,6 +457,149 @@ body.profile .service-link::before {
   color: #0a0a0a;
 }
 
+
+/* =========================
+   SERVICES EDIT MODAL
+========================= */
+
+.services-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  background: rgba(9, 26, 58, 0.35);
+  backdrop-filter: blur(6px);
+
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 0.2s ease;
+}
+
+.services-modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.services-modal {
+  width: min(100%, 34rem);
+  max-height: 82dvh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 -12px 34px rgba(0, 0, 0, 0.18);
+
+  transform: translateY(100%);
+  transition: transform 0.25s ease;
+}
+
+.services-modal-overlay.open .services-modal {
+  transform: translateY(0);
+}
+
+.services-modal-header,
+.services-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem;
+}
+
+.services-modal-header {
+  border-bottom: 1px solid rgba(9, 26, 58, 0.08);
+}
+
+.services-modal-header h2 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+}
+
+.services-modal-body {
+  padding: 1rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.service-pill-option {
+  border: none;
+  border-radius: 999px;
+
+  min-height: 2.4rem;
+  padding: 0 0.9rem;
+
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text-dark);
+
+  font: inherit;
+  font-weight: 700;
+
+  box-shadow: var(--shadow-soft);
+  cursor: pointer;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.service-pill-option.active {
+  background: var(--main-color);
+  color: #fff;
+}
+
+.service-pill-option:active {
+  transform: scale(0.96);
+}
+
+.services-modal-footer {
+  border-top: 1px solid rgba(9, 26, 58, 0.08);
+  gap: 0.75rem;
+}
+
+.services-modal-footer button {
+  flex: 1;
+
+  min-height: 2.7rem;
+
+  border: none;
+  border-radius: 0.85rem;
+
+  font: inherit;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+#servicesCancelBtn {
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text-dark);
+}
+
+#servicesSaveBtn {
+  background: var(--main-color);
+  color: #fff;
+}
+
+
+
+
+
 /* =========================
    POSTS / WORKOUTS / MEDIA
 ========================= */
@@ -1218,6 +1361,28 @@ body.profile .profile-hero-media:active {
 	body.profile .profile-hero-media {
   touch-action: none;
 }
+
+
+
+@media (min-width: 901px) {
+  .services-modal-overlay {
+    align-items: center;
+  }
+
+  .services-modal {
+    border-radius: 1.25rem;
+    overflow: hidden;
+
+    transform: translateY(1rem) scale(0.96);
+  }
+
+  .services-modal-overlay.open .services-modal {
+    transform: translateY(0) scale(1);
+  }
+}
+
+
+	
 
 }
 
