@@ -236,7 +236,6 @@ body.profile .profile-hero-card {
   display: flex;
   flex-direction: column;
    max-height: clamp(20rem, 28vh, 22rem);
-   backdrop-filter: blur(16px);
    margin: 0.5rem;
 }
 
@@ -750,19 +749,14 @@ body.profile .profile-handle-input {
 
   /* HERO */
   body.profile .profile-hero-card {
-    position: relative;
     left: var(--profile-local-surface-gap);
     z-index: 3;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     overflow-x: clip;
     box-sizing: border-box;
     width: min(42rem, calc(100% - 2rem));
-	    min-height: clamp(15rem, 28vh, 22rem);
-    background: rgba(225, 225, 225, 0.6);
-    -webkit-backdrop-filter: var(--profile-blur);
+   min-height: clamp(15rem, 28vh, 22rem);
     box-shadow: var(--shadow-soft);
   }
 
