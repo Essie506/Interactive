@@ -119,11 +119,10 @@ body.profile::before {
 ========================= */
 
 body.profile .profile-hero-media::after {
-  content: "Drag to reposition";
   position: absolute;
   left: 50%;
   bottom: 1rem;
-  transform: translateX(-50%);
+  transform: translateX(0%);
 
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
@@ -503,7 +502,7 @@ body.profile .service-link::before {
 }
 
 .services-modal-overlay.open .services-modal {
-  transform: translateY(0);
+  transform: translateY(-50%);
 }
 
 .services-modal-header {
