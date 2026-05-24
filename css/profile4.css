@@ -711,7 +711,6 @@ body.profile .media-play-badge {
   min-height: clamp(28rem, 55dvh, 34rem);
   display: flex;
   align-items: flex-end;
-  background: rgba(255, 255, 255, 0.56);
   box-shadow: var(--shadow-soft);
 }
 
