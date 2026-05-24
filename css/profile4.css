@@ -1223,7 +1223,7 @@ body.profile .profile-hero-media:active {
       body.profile .profile-hero--personal {
     align-items: flex-end;
     overflow: visible;
-    background: rgba(255, 255, 255, 0.56);
+  
   }
     
 
