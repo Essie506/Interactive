@@ -272,11 +272,11 @@ body.profile .profile-name-heading {
 }
 
 
-textarea#profileRoleInput,
-textarea#profileRoleInput i,
-textarea#profileGymInput,
-textarea#profileGymInput i {
-	color: rgba(9, 26, 58, 0.75);
+body.profile textarea#profileRoleInput,
+body.profile textarea#profileGymInput,
+body.profile .profile-role i,
+body.profile .profile-gym i {
+  color: rgba(9, 26, 58, 0.75);
 }
 
 .profile-role-content {
