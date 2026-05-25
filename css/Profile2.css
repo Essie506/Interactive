@@ -240,7 +240,7 @@ body.profile .profile-hero--personal {
   display: flex;
   align-items: flex-end;
   overflow: visible;
-  background: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.56);
 }
 
 body.profile .profile-hero-media {
@@ -263,13 +263,9 @@ body.profile .profile-hero--personal::after {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background:
-    linear-gradient(
-      to top,
-      rgba(9, 26, 58, 0.58),
-      rgba(9, 26, 58, 0.18),
-      rgba(255,255,255,0.08)
-    );
+ background:
+    linear-gradient(to top, rgba(9, 26, 58, 0.52), transparent 62%),
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.55), transparent 35%);
 }
 
 
