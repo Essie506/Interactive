@@ -834,6 +834,30 @@ body.profile .block-btn {
 }
 
 
+.profile-affiliation-select {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font: inherit;
+  font-weight: 700;
+  color: rgba(9, 26, 58, 0.75);
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  cursor: pointer;
+}
+
+
+
+
+
+
+
 /* =========================
    DESKTOP / LAPTOP
 ========================= */
