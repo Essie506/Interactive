@@ -173,7 +173,7 @@ body.profile .profile-hero-media::after {
 /* =========================
    SHARED SURFACES
 ========================= */
-body.profile .profile-hero-card,
+
 body.profile .profile-section-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
@@ -192,7 +192,7 @@ body.profile .profile-services-card {
 }
    
 
-body.profile .profile-hero-card,
+body.profile .business-hero-card,
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
   margin-bottom: var(--profile-local-surface-gap);
@@ -203,9 +203,6 @@ body.profile .profile-services-card {
      padding: var(--profile-local-shell-pad);
 }
 
-body.profile .profile-hero-card {
-	background: rgba(225, 225, 225, 0.72);
-}
 
 body.profile .profile-section-card {
   background: var(--profile-card-bg);
@@ -229,7 +226,7 @@ body.profile .profile-section-card {
 /* =========================
    HERO BASE
 ========================= */
-body.profile .profile-hero-card {
+body.profile .business-hero-card {
   position: relative;
   z-index: 2;
   display: flex;
@@ -399,6 +396,7 @@ body.profile .profile-verified {
   box-shadow: var(--shadow-strong);
   color: var(--text-dark);
    align-items: flex-start;
+	overflow: visible;
 }
 
 
@@ -879,7 +877,7 @@ body.profile .profile-handle-input {
   }
 
   /* HERO */
-  body.profile .profile-hero-card {
+  body.profile .business-hero-card {
     left: var(--profile-local-surface-gap);
     z-index: 2;
     justify-content: center;
@@ -1270,7 +1268,7 @@ body.profile .profile-hero-media:active {
     radial-gradient(circle at 20% 20%, rgba(255,255,255,0.55), transparent 35%);
   }
 
-  body.profile .profile-hero-card {
+  body.profile .business-hero-card {
     z-index: 2;
     width: 99%;
     margin: 0.25rem;
@@ -1388,7 +1386,7 @@ body.profile .profile-hero-media:active {
     padding-right: var(--profile-page-pad-x-mobile);
   }
 
-  body.profile .profile-hero-card,
+  body.profile .business-hero-card,
   body.profile .profile-section-card {
     width: 100%;
     margin-left: auto;
