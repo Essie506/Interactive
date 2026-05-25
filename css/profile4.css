@@ -589,6 +589,23 @@ body.profile .service-link::before {
   transform: scale(0.96);
 }
 
+.services-edit-btn {
+  opacity: 0;
+  transform: translateX(1rem);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+body.editing-profile .services-edit-btn {
+  opacity: 1;
+  transform: translateX(0);
+
+  pointer-events: auto;
+}
 
 
 /* =========================
