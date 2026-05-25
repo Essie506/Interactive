@@ -803,7 +803,6 @@ body.profile .profile-detail-input {
   background: transparent;
 
   font: inherit;
-  color: var(--text-dark);
   line-height: 1.3;
 
   overflow: hidden;
@@ -813,6 +812,11 @@ body.profile .profile-detail-input {
   word-break: break-word;
 
   field-sizing: content;
+}
+
+profile-detail-row .profile-role,
+profile-detail-row .profile-gym {
+    color: rgba(9, 26, 58, 0.75);
 }
 
 body.profile .block-btn {
