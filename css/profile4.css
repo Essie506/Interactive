@@ -806,8 +806,6 @@ body.profile .profile-detail-row i {
   font-size: 1em;
 color: var(--text-dark);
 
-  margin-top: 0.08em;
-
   flex-shrink: 0;
 }
 
