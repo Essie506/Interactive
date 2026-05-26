@@ -799,6 +799,7 @@ body.profile .profile-detail-row {
 
   margin-top: var(--profile-role-margin-top);
   font-weight: 700;
+	font-size: var(--main-font-size);
 }
 
 body.profile .profile-detail-row i {
