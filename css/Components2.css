@@ -349,7 +349,7 @@ color:
 .avatar-editor-btn-save,
 .avatar-editor-btn-saved {
   background:
-    var(--main-color);
+    var(--text-dark);
 
   color:
     #fff;
