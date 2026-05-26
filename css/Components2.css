@@ -1787,7 +1787,7 @@ body.business-profile .chevron-btn {
    }
 
 .profile-hero-corner {
-   gap: 1.5rem;
+   gap: 0;
 }
 
   body.profile .profile-page,
