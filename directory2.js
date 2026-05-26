@@ -43,6 +43,11 @@ if (directoryType === "professionals") {
   localStorage.setItem("directoryType", "professionals");
 }
 
+if (directoryType === "events") {
+  document.body.dataset.directoryType = "events";
+  localStorage.setItem("directoryType", "events");
+}
+
 
 // =========================
 // FILTER STATE
@@ -104,12 +109,14 @@ function setDirectoryType(type) {
 
   const titles = {
     gyms: "Gyms & Studios",
-    professionals: "Professionals"
+    professionals: "Professionals",
+    events: "Events"
   };
 
   const icons = {
     gyms: "fa-fire",
-    professionals: "fa-user"
+    professionals: "fa-user",
+    events: "fa-flag-checkered"
   };
 
   if (filterTitle) {
