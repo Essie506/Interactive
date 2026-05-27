@@ -468,6 +468,10 @@ box-sizing: border-box;
    font-size: 1rem;
 }
 
+li.submenu-back-link.menu-item.submenu-li-a {
+   min-width: auto;
+}
+
 
 @media (max-width: 900px) {
   .menu-item span,
