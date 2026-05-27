@@ -20,10 +20,12 @@ document.addEventListener("DOMContentLoaded", () => {
     menuOverlay.classList.remove("open");
     menuToggle.classList.remove("active");
     document.body.classList.remove("menu-open");
-    submenuParents.forEach((item) => {
-      item.classList.remove("open");
-    });
-  }
+   submenuParents.forEach((item) => {
+  item.classList.remove(
+    "open",
+    "suppress-hover"
+  );
+});
 
   function toggleMenu() {
     if (menu.classList.contains("open")) {
@@ -36,15 +38,27 @@ document.addEventListener("DOMContentLoaded", () => {
   menuToggle.addEventListener("click", toggleMenu);
   menuOverlay.addEventListener("click", closeMenu);
 
-  submenuParents.forEach((item) => {
-    const trigger = item.querySelector(":scope > a");
-    if (!trigger) return;
+submenuParents.forEach((item) => {
+  const trigger = item.querySelector(":scope > a");
+  if (!trigger) return;
 
-    trigger.addEventListener("click", (e) => {
-      e.preventDefault();
-      item.classList.toggle("open");
-    });
+  trigger.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const wasOpen = item.classList.contains("open");
+
+    item.classList.toggle("open");
+
+    if (wasOpen && window.innerWidth > 900) {
+      item.classList.add("suppress-hover");
+      trigger.blur();
+    }
   });
+
+  item.addEventListener("mouseleave", () => {
+    item.classList.remove("suppress-hover");
+  });
+});
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
