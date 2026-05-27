@@ -36,7 +36,11 @@ const newPasswordInput =
 const passwordSaveBtn =
   document.getElementById("passwordSaveBtn");
 
+const verificationFormBtn =
+  document.getElementById("verificationFormBtn");
 
+const verificationPanel =
+  document.getElementById("verificationPanel");
 
 
 function openDetailsModal() {
@@ -83,10 +87,34 @@ detailsModalOverlay?.addEventListener(
 changePasswordBtn?.addEventListener(
   "click",
   () => {
+
     passwordChangePanel.hidden =
       !passwordChangePanel.hidden;
+
+    changePasswordBtn.classList.toggle(
+      "open"
+    );
+
   }
 );
+
+
+verificationFormBtn?.addEventListener(
+  "click",
+  () => {
+
+    verificationPanel.hidden =
+      !verificationPanel.hidden;
+
+    verificationFormBtn.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+
 
 passwordSaveBtn?.addEventListener(
   "click",
