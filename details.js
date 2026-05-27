@@ -17,7 +17,13 @@ function closeDetailsModal() {
 
 detailsModalOpen?.addEventListener(
   "click",
-  openDetailsModal
+  (e) => {
+    e.preventDefault();
+
+    detailsModalOverlay.classList.add(
+      "open"
+    );
+  }
 );
 
 detailsSaveBtn?.addEventListener(
