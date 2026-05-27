@@ -469,7 +469,7 @@ box-sizing: border-box;
 }
 
 li.submenu-back-link.menu-item.submenu-li-a {
-   min-width: auto;
+   min-height: auto;
 }
 
 
