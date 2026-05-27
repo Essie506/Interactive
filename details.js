@@ -1,3 +1,11 @@
+import {
+  auth,
+  EmailAuthProvider,
+  reauthenticateWithCredential,
+  updatePassword
+} from "./firebase-config.js";
+
+
 const detailsModalOpen =
   document.getElementById("detailsModalOpen");
 
