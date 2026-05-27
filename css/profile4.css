@@ -610,6 +610,58 @@ body.editing-profile .services-edit-btn {
   transition: transform 0.25s ease;
 }
 
+.verification-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding:
+    1rem
+    0
+    0.25rem;
+}
+
+.verification-panel select,
+.verification-panel input[type="text"],
+.verification-panel input[type="file"] {
+  width: 100%;
+
+  min-height: 48px;
+
+  padding:
+    0.85rem
+    1rem;
+
+  border: 1px solid
+    rgba(255,255,255,0.08);
+
+  border-radius: 18px;
+
+  background:
+    var(--glass-white);
+
+  color: var(--main-text);
+
+  font: inherit;
+}
+
+.verification-panel select:focus,
+.verification-panel input:focus {
+  outline: none;
+
+  border-color:
+    var(--main-color);
+}
+
+.verification-panel input[type="file"] {
+  padding:
+    0.75rem;
+}
+
+.verification-panel .details-action-row {
+  margin-top: 0.5rem;
+}
+
 
 
 /* =========================
