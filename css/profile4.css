@@ -607,6 +607,16 @@ body.editing-profile .services-edit-btn {
 }
 
 
+
+.fa-chevron-down {
+  transition: transform 0.2s ease;
+}
+
+.open .fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+
 /* =========================
    POSTS / WORKOUTS / MEDIA
 ========================= */
