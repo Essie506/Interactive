@@ -114,7 +114,7 @@
     <a
     href="#"
     class="submenu-link"
-    id="detailsModalOpen"
+    id="ModalOpen"
   >
     ~ My Details
   </a>
@@ -609,6 +609,35 @@
         <span>Send verification form</span>
         <i class="fa-solid fa-chevron-right"></i>
       </button>
+
+
+<div class="password-change-panel" id="passwordChangePanel" hidden>
+
+  <label class="details-field">
+    <span>Current password</span>
+    <input type="password" id="currentPasswordInput">
+  </label>
+
+  <label class="details-field">
+    <span>New password</span>
+    <input type="password" id="newPasswordInput">
+  </label>
+
+  <button
+    type="button"
+    class="details-action-row"
+    id="passwordSaveBtn"
+  >
+    <i class="fa-solid fa-check"></i>
+    <span>Save new password</span>
+  </button>
+
+</div>
+
+
+
+
+      
 
     </div>
 
