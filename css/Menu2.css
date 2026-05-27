@@ -495,7 +495,7 @@ li.submenu-back-link.menu-item.submenu-li-a {
    
 }
 
-@media (min-width: 900px) {
+@media (min-width: 901px) {
 .menu {
  top: var(--bar-height-large);
 }
@@ -555,6 +555,16 @@ li:has(+ .menu-search-item:hover) > .menu-item::after {
   opacity: 1;
   transform: translateX(-2px);
 }
+
+  .has-submenu.suppress-hover > .menu-item::before {
+    opacity: 0 !important;
+    transform: scale(0.985);
+  }
+}
+
+
+
+   
 }
 
 
