@@ -634,6 +634,85 @@
 
 </div>
 
+      <div
+  class="verification-panel"
+  id="verificationPanel"
+  hidden
+>
+  Verification content here
+</div>
+
+
+<div
+  class="verification-panel"
+  id="verificationPanel"
+  hidden
+>
+  <label class="details-field">
+    <span>Verification type</span>
+    <select id="verificationTypeInput">
+      <option value="">Select type</option>
+      <option value="identity">Identity</option>
+      <option value="pt">Personal Trainer / Fitness Professional</option>
+      <option value="nutrition">Nutritionist</option>
+      <option value="coach">Coach</option>
+      <option value="business">Business</option>
+    </select>
+  </label>
+
+  <label class="details-field">
+    <span>Register / organisation</span>
+    <input
+      type="text"
+      id="verificationOrganisationInput"
+      placeholder="CIMSPA, AfN, Companies House..."
+    >
+  </label>
+
+  <label class="details-field">
+    <span>Registration / licence number</span>
+    <input
+      type="text"
+      id="verificationNumberInput"
+      placeholder="Enter registration number"
+    >
+  </label>
+
+  <label class="details-field">
+    <span>Legal name</span>
+    <input
+      type="text"
+      id="verificationLegalNameInput"
+      placeholder="Name used on register"
+    >
+  </label>
+
+  <label class="details-field">
+    <span>Upload proof</span>
+    <input
+      type="file"
+      id="verificationProofInput"
+      accept="image/*,.pdf"
+    >
+  </label>
+
+  <button
+    type="button"
+    class="details-action-row"
+    id="verificationSaveBtn"
+  >
+    <i class="fa-solid fa-paper-plane"></i>
+    <span>Submit verification</span>
+  </button>
+</div>
+
+
+
+
+
+      
+
+
     </div>
 
   </div>
