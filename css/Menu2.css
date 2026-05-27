@@ -263,6 +263,24 @@ box-sizing: border-box;
 }
 
 
+.submenu-back-link a {
+  opacity: 0.72;
+
+  font-size: 0.92rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: rgba(9, 26, 58, 0.7);
+}
+
+.submenu-back-link a:hover {
+  opacity: 1;
+  transform: translateX(-2px);
+}
+
 
 /* =========================
    PROFILE ROW
