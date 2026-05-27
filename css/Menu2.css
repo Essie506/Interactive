@@ -469,7 +469,7 @@ box-sizing: border-box;
 }
 
 li.submenu-back-link.menu-item.submenu-li-a {
-   min-height: auto;
+  min-height: calc(var(--menu-item-height) * 0.5);
 }
 
 
