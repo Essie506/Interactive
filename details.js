@@ -4,8 +4,14 @@ const detailsModalOpen =
 const detailsModalOverlay =
   document.getElementById("detailsModalOverlay");
 
+const accountOnlineNameInput =
+  document.getElementById("accountOnlineNameInput");
+
 const detailsSaveBtn =
   document.getElementById("detailsSaveBtn");
+
+
+
 
 function openDetailsModal() {
   detailsModalOverlay?.classList.add("open");
@@ -14,6 +20,8 @@ function openDetailsModal() {
 function closeDetailsModal() {
   detailsModalOverlay?.classList.remove("open");
 }
+
+
 
 detailsModalOpen?.addEventListener(
   "click",
@@ -29,7 +37,13 @@ detailsModalOpen?.addEventListener(
 detailsSaveBtn?.addEventListener(
   "click",
   () => {
-    console.log("Save account details later");
+    const onlineName =
+      accountOnlineNameInput?.value.trim() || "Profile";
+
+    if (navTitle) {
+      navTitle.textContent = onlineName;
+    }
+
     closeDetailsModal();
   }
 );
