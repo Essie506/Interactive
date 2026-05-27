@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "suppress-hover"
   );
 });
+  }
 
   function toggleMenu() {
     if (menu.classList.contains("open")) {
