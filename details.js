@@ -42,6 +42,9 @@ const verificationFormBtn =
 const verificationPanel =
   document.getElementById("verificationPanel");
 
+const verificationSaveBtn =
+  document.getElementById("verificationSaveBtn");
+
 
 function openDetailsModal() {
   detailsModalOverlay?.classList.add("open");
@@ -102,6 +105,7 @@ changePasswordBtn?.addEventListener(
 verificationFormBtn?.addEventListener(
   "click",
   () => {
+    if (!verificationPanel) return;
 
     verificationPanel.hidden =
       !verificationPanel.hidden;
@@ -109,10 +113,23 @@ verificationFormBtn?.addEventListener(
     verificationFormBtn.classList.toggle(
       "open"
     );
-
   }
 );
 
+verificationSaveBtn?.addEventListener(
+  "click",
+  () => {
+    console.log("Submit verification later");
+
+    verificationPanel.hidden = true;
+
+    verificationFormBtn?.classList.remove(
+      "open"
+    );
+
+    alert("Verification submitted for review.");
+  }
+);
 
 
 
