@@ -882,7 +882,7 @@ body.profile .block-btn {
   background: rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -911,6 +911,11 @@ body.profile .block-btn {
   box-shadow: var(--shadow-strong);
 
   overflow: hidden;
+	  max-height: 90dvh;
+	
+  display: flex;
+  flex-direction: column;
+	
 
   transform: translateY(8px) scale(0.98);
 
@@ -922,6 +927,15 @@ body.profile .block-btn {
 .details-modal-overlay.open .details-modal {
   transform: translateY(0) scale(1);
 }
+
+.details-modal-body {
+  overflow-y: auto;
+  flex: 1;
+	-webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+
 
 /* =========================
    HEADER
