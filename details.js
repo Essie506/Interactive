@@ -10,6 +10,21 @@ const accountOnlineNameInput =
 const detailsSaveBtn =
   document.getElementById("detailsSaveBtn");
 
+const changePasswordBtn =
+  document.getElementById("changePasswordBtn");
+
+const passwordChangePanel =
+  document.getElementById("passwordChangePanel");
+
+const currentPasswordInput =
+  document.getElementById("currentPasswordInput");
+
+const newPasswordInput =
+  document.getElementById("newPasswordInput");
+
+const passwordSaveBtn =
+  document.getElementById("passwordSaveBtn");
+
 
 
 
@@ -53,6 +68,65 @@ detailsModalOverlay?.addEventListener(
   (e) => {
     if (e.target === detailsModalOverlay) {
       closeDetailsModal();
+    }
+  }
+);
+
+changePasswordBtn?.addEventListener(
+  "click",
+  () => {
+    passwordChangePanel.hidden =
+      !passwordChangePanel.hidden;
+  }
+);
+
+passwordSaveBtn?.addEventListener(
+  "click",
+  async () => {
+    const user = auth.currentUser;
+
+    const currentPassword =
+      currentPasswordInput?.value.trim();
+
+    const newPassword =
+      newPasswordInput?.value.trim();
+
+    if (!user || !user.email) {
+      alert("Please log in again.");
+      return;
+    }
+
+    if (!currentPassword || !newPassword) {
+      alert("Please complete both password fields.");
+      return;
+    }
+
+    try {
+      const credential =
+        EmailAuthProvider.credential(
+          user.email,
+          currentPassword
+        );
+
+      await reauthenticateWithCredential(
+        user,
+        credential
+      );
+
+      await updatePassword(
+        user,
+        newPassword
+      );
+
+      currentPasswordInput.value = "";
+      newPasswordInput.value = "";
+
+      passwordChangePanel.hidden = true;
+
+      alert("Password updated successfully.");
+    } catch (error) {
+      console.error("Password update error:", error);
+      alert(error.message);
     }
   }
 );
