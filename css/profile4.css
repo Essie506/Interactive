@@ -606,15 +606,10 @@ body.editing-profile .services-edit-btn {
   pointer-events: auto;
 }
 
-
-
-.fa-chevron-down {
-  transition: transform 0.2s ease;
+.details-action-row i:last-child {
+  transition: transform 0.25s ease;
 }
 
-.open .fa-chevron-down {
-  transform: rotate(180deg);
-}
 
 
 /* =========================
