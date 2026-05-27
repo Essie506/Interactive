@@ -931,6 +931,7 @@ body.profile .block-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
+	background: var(--navbar-bg);
 
   padding: 1rem;
 
