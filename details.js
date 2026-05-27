@@ -12,6 +12,9 @@ const detailsModalOpen =
 const detailsModalOverlay =
   document.getElementById("detailsModalOverlay");
 
+const navTitle =
+  document.getElementById("navTitle");
+
 const accountOnlineNameInput =
   document.getElementById("accountOnlineNameInput");
 
@@ -45,15 +48,12 @@ function closeDetailsModal() {
 }
 
 
-
 detailsModalOpen?.addEventListener(
   "click",
   (e) => {
     e.preventDefault();
-
-    detailsModalOverlay.classList.add(
-      "open"
-    );
+    console.log("details clicked");
+    openDetailsModal();
   }
 );
 
