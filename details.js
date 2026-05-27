@@ -3,7 +3,7 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
   updatePassword
-} from "firebase-config.js";
+} from "./firebase-config.js";
 
 
 const detailsModalOpen =
