@@ -276,7 +276,7 @@ body.profile textarea#profileRoleInput,
 body.profile textarea#profileGymInput,
 body.profile .profile-role i,
 body.profile .profile-gym i {
-  color: rgba(9, 26, 58, 0.75);
+  color: var(--text-dark);
 }
 
 .profile-role-content {
@@ -396,7 +396,7 @@ body.profile .profile-verified {
   position: relative;
   z-index: 2;
    var(--profile-hero-inner-pad-y);
-  background: rgba(255, 255, 255, 0.83);
+  background: rgba(255, 255, 255, 0.40);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-strong);
