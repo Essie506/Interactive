@@ -891,7 +891,7 @@ body.profile .profile-detail-row {
   grid-template-columns: auto minmax(0, 1fr);
 
   align-items: start;
-
+margin-top: 0.5rem;
   column-gap: 0.55rem;
 
   width: 100%;
@@ -1730,6 +1730,7 @@ body.profile .profile-hero-media:active {
     width: 100%;
     margin: 0 auto;
     padding-top: 0.25rem;
+	  justify-content: space-between;
   }
 
   body.profile .profile-tab {
