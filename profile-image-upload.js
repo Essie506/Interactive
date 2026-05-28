@@ -59,6 +59,23 @@ const avatarCancelBtn =
     "avatarEditorCancel"
   );
 
+// =========================
+// PRESETS 
+// =========================
+
+
+
+const heroPresetBtn =
+  document.getElementById("heroPresetBtn");
+
+const heroPresetMenu =
+  document.getElementById("heroPresetMenu");
+
+
+const heroPresetOptions =
+  document.querySelectorAll(".hero-preset-option");
+
+
 
 // =========================
 // CURRENT STATE
@@ -717,4 +734,65 @@ if (avatarCancelBtn) {
   );
 
 }
+
+
+// =========================
+// HERO PRESET MENU
+// =========================
+
+heroPresetBtn?.addEventListener(
+  "click",
+  () => {
+
+    heroPresetBtn.classList.toggle(
+      "open"
+    );
+
+    heroPresetMenu?.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+heroPresetOptions.forEach(option => {
+
+  option.addEventListener(
+    "click",
+    () => {
+
+      const coverSrc =
+        option.dataset.cover;
+
+      if (!coverSrc) return;
+
+      profileCoverImage.src =
+        coverSrc;
+
+      localStorage.setItem(
+  "interactiveProfileCover",
+  coverSrc
+);
+
+      currentX = 50;
+      currentY = 50;
+      currentZoom = 1.05;
+
+      applyCoverTransform();
+
+      heroPresetMenu?.classList.remove(
+        "open"
+      );
+
+      heroPresetBtn?.classList.remove(
+  "open"
+);
+
+    }
+  );
+
+});
+
+
   
