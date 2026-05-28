@@ -1082,6 +1082,7 @@ body.profile .block-btn {
   font-weight: 700;
 
   cursor: pointer;
+	margin-top: 0.75rem;
 }
 
 .details-action-row i:last-child {
