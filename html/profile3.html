@@ -184,7 +184,8 @@
 <main class="profile-page">
   
   <section class="profile-hero profile-hero--personal">
-    <div class="profile-hero-corner">
+    <div class="profile-hero-corner visitor-only">
+      
       <button class="block-btn icon-btn"  id="profileChevronBtn" aria-label="More profile options">
   <i class="fa-solid fa-ellipsis-vertical"></i>
 </button>
@@ -210,6 +211,64 @@
   <i class="fa-solid fa-check"></i>
 </button>
 </div>
+
+<div class="profile-hero-corner self-only">
+  <button
+    class="block-btn icon-btn"
+    id="heroPresetBtn"
+    type="button"
+    aria-label="Choose hero image"
+  >
+    <i class="fa-solid fa-image"></i>
+  </button>
+
+  <div class="profile-corner-menu" id="heroPresetMenu">
+
+    <button
+      type="button"
+      class="profile-corner-item hero-preset-option"
+      data-cover="../covers/cover-1.jpg"
+    >
+      <i class="fa-solid fa-mountain-sun"></i>
+      <span>Strength</span>
+    </button>
+
+    <button
+      type="button"
+      class="profile-corner-item hero-preset-option"
+      data-cover="../covers/cover-2.jpg"
+    >
+      <i class="fa-solid fa-person-running"></i>
+      <span>Cardio</span>
+    </button>
+
+    <button
+      type="button"
+      class="profile-corner-item hero-preset-option"
+      data-cover="../covers/cover-3.jpg"
+    >
+      <i class="fa-solid fa-spa"></i>
+      <span>Wellness</span>
+    </button>
+
+    <button
+      type="button"
+      class="profile-corner-item hero-preset-option"
+      data-cover="../covers/cover-4.jpg"
+    >
+      <i class="fa-solid fa-dumbbell"></i>
+      <span>Gym</span>
+    </button>
+
+  </div>
+
+  <button type="button" class="cover-position-done">
+    <i class="fa-solid fa-check"></i>
+  </button>
+</div>
+
+
+    
 
 <div class="profile-hero-media" id="profileHeroMedia">
 
