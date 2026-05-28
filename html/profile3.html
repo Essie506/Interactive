@@ -683,12 +683,22 @@
   </label>
 
   <label class="details-field">
-    <span>Upload proof</span>
-    <input
-      type="file"
-      id="verificationProofInput"
-      accept="image/*,.pdf"
-    >
+
+<label
+  for="verificationProofInput"
+  class="verification-upload-btn"
+>
+  <i class="fa-solid fa-upload"></i>
+  <span>Upload proof</span>
+</label>
+
+<input
+  type="file"
+  id="verificationProofInput"
+  accept="image/*,.pdf"
+  hidden
+/>
+    
   </label>
 
   <button
