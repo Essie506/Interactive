@@ -662,7 +662,9 @@ body.editing-profile .services-edit-btn {
   margin-top: 0.5rem;
 }
 
-
+.details-action-row.open i:last-child {
+  transform: rotate(180deg);
+}
 
 /* =========================
    POSTS / WORKOUTS / MEDIA
