@@ -467,6 +467,51 @@ body.profile .profile-tab:active {
   transform: translateY(0) scale(0.98);
 }
 
+
+
+.verification-upload-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+
+  min-height: 48px;
+
+  padding:
+    0.9rem
+    1rem;
+
+  border-radius: 18px;
+
+  background:
+    var(--glass-white);
+
+  border: 1px solid
+    rgba(255,255,255,0.08);
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.verification-upload-btn:hover {
+  border-color:
+    var(--main-color);
+}
+
+.verification-upload-btn:active {
+  transform: scale(0.98);
+}
+
+
+
+
+
+
+
 /* =========================
    SERVICES
 ========================= */
