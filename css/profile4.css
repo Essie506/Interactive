@@ -1558,7 +1558,7 @@ body.profile .profile-hero-media:active {
   
       body.profile .profile-hero--personal {
     align-items: flex-end;
-    overflow: hidden;
+    overflow: visible;
 	display: flex;
     flex-direction: column;
     min-height: auto;
