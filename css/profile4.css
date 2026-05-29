@@ -1648,6 +1648,7 @@ body.profile .profile-hero-media:active {
 	body.profile .profile-hero-media {
   touch-action: none;
 height: clamp(180px, 32dvh, 280px);
+		overflow: visible;
 }
 
 
