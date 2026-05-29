@@ -1204,6 +1204,7 @@ body.profile .profile-handle-input {
     width: min(42rem, calc(100% - 2rem));
    min-height: clamp(15rem, 28vh, 22rem);
     box-shadow: var(--shadow-soft);
+	  opacity: 0.75;
   }
 
 
