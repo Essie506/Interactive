@@ -12,8 +12,11 @@ const detailsModalOpen =
 const detailsModalOverlay =
   document.getElementById("detailsModalOverlay");
 
-const navTitle =
-  document.getElementById("navTitle");
+const navTitleInput =
+  document.getElementById("navTitleInput");
+
+const profileNameInput =
+  document.getElementById("profileNameInput");
 
 const accountOnlineNameInput =
   document.getElementById("accountOnlineNameInput");
@@ -70,9 +73,23 @@ detailsSaveBtn?.addEventListener(
     const onlineName =
       accountOnlineNameInput?.value.trim() || "Profile";
 
-    if (navTitle) {
-      navTitle.textContent = onlineName;
+    if (navTitleInput) {
+      navTitleInput.value = onlineName;
     }
+
+    if (profileNameInput) {
+      profileNameInput.value = onlineName;
+    }
+
+    localStorage.setItem(
+      "profileNameInput",
+      onlineName
+    );
+
+    localStorage.setItem(
+      "accountOnlineName",
+      onlineName
+    );
 
     closeDetailsModal();
   }
