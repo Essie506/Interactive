@@ -396,7 +396,7 @@ body.profile .profile-verified {
   position: relative;
   z-index: 2;
    var(--profile-hero-inner-pad-y);
-  background: rgba(255, 255, 255, 0.40);
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-strong);
