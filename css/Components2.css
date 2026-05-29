@@ -1614,7 +1614,7 @@ body.profile .composer-foot {
   body.profile .nav-title,
    body.business-profile .nav-title {
     position: static;
-    transform: translateX(30%);
+    transform: translateX(0%);
     justify-self: start;
       font-size: larger;
     max-width: none;
