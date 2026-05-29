@@ -1647,7 +1647,6 @@ body.profile .profile-hero-media:active {
 	body.profile .profile-hero-media {
   touch-action: none;
 height: clamp(180px, 32dvh, 280px);
-		overflow: visible;
 }
 
 
@@ -1729,7 +1728,7 @@ height: clamp(180px, 32dvh, 280px);
   }
   
   body.profile .business-hero-card {
-	  max-height: 14rem;
+	  max-height: 14.5rem;
   }
   
 }
