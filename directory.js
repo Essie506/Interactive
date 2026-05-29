@@ -516,6 +516,11 @@ navTitleInput?.addEventListener(
         navTitleInput.value;
     }
 
+      if (accountOnlineNameInput) {
+  accountOnlineNameInput.value =
+    navTitleInput.value;
+}
+
     autoFitProfileName();
 
   }
