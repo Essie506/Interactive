@@ -1558,7 +1558,10 @@ body.profile .profile-hero-media:active {
   
       body.profile .profile-hero--personal {
     align-items: flex-end;
-    overflow: visible;
+    overflow: hidden;
+	display: flex;
+    flex-direction: column;
+    min-height: auto;
   }
     
 
@@ -1663,6 +1666,10 @@ body.profile .profile-hero-media:active {
 	body.profile .profile-hero-media {
   touch-action: none;
 height: clamp(180px, 32dvh, 280px);
+		 position: relative;
+    width: 100%;
+    height: clamp(220px, 34dvh, 340px);
+    flex: 0 0 auto;
 }
 
 }
