@@ -70,16 +70,22 @@ detailsModalOpen?.addEventListener(
 detailsSaveBtn?.addEventListener(
   "click",
   () => {
+
     const onlineName =
-      accountOnlineNameInput?.value.trim() || "Profile";
+      accountOnlineNameInput?.value.trim()
+      || "Profile";
 
     if (navTitleInput) {
-      navTitleInput.value = onlineName;
+      navTitleInput.value =
+        onlineName;
     }
 
     if (profileNameInput) {
-      profileNameInput.value = onlineName;
+      profileNameInput.value =
+        onlineName;
     }
+
+    autoFitProfileName();
 
     localStorage.setItem(
       "profileNameInput",
@@ -92,6 +98,7 @@ detailsSaveBtn?.addEventListener(
     );
 
     closeDetailsModal();
+
   }
 );
 
