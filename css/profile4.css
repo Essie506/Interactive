@@ -1672,7 +1672,7 @@ body.profile .profile-hero-media:active {
 
 	body.profile .nav-title {
 	    position: static;
-        transform: translateX(-70%);
+        transform: translateX(-10%);
         max-width: none;
         overflow: visible;
         text-overflow: unset;
