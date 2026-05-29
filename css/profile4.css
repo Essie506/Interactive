@@ -1576,7 +1576,6 @@ body.profile .profile-hero-media:active {
     width: 100%;
     margin: 0.125rem;
      min-height: auto;
-	  max-height: 15rem;
   }
 
   body.profile .profile-no-tabs {
@@ -1728,4 +1727,9 @@ height: clamp(180px, 32dvh, 280px);
     padding: 0.2rem 0;
     justify-content: space-between;
   }
+  
+  body.profile .business-hero-card {
+	  max-height: 15rem;
+  }
+  
 }
