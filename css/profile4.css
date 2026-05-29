@@ -1731,5 +1731,9 @@ height: clamp(180px, 32dvh, 280px);
   body.profile .business-hero-card {
 	  max-height: 14.5rem;
   }
+
+	textarea#profileHandleInput {
+		max-width: 60%;
+	}
   
 }
