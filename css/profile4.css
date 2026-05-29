@@ -1729,7 +1729,7 @@ height: clamp(180px, 32dvh, 280px);
   }
   
   body.profile .business-hero-card {
-	  max-height: 15rem;
+	  max-height: 14rem;
   }
   
 }
