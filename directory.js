@@ -8,6 +8,13 @@ const bioText = document.getElementById(
   );
 
 
+const navTitleInput =
+  document.getElementById("navTitleInput");
+
+const accountOnlineNameInput =
+  document.getElementById("accountOnlineNameInput");
+
+
 const profileBioInput =
   document.getElementById(
     "profileBioInput"
@@ -285,6 +292,14 @@ autoGrowProfileBioInput();
 updateBioSaveButtonState();
 autoFitProfileName();
 
+if (
+  navTitleInput &&
+  profileNameInput
+) {
+  navTitleInput.value =
+    profileNameInput.value;
+}
+
 
 // =========================
 // EVENT LISTENERS
@@ -420,6 +435,11 @@ profileNameInput?.addEventListener(
 
     autoFitProfileName();
 
+    if (navTitleInput) {
+      navTitleInput.value =
+        profileNameInput.value;
+    }
+
   }
 );
 
@@ -442,6 +462,65 @@ field.addEventListener(
   }
 );
     });
+
+
+// -------------------------
+// PROFILE NAME BANNER
+// -------------------------
+
+editProfileBtn?.addEventListener(
+  "click",
+  () => {
+    navTitleInput?.readOnly = false;
+  }
+);
+
+profileBioSave?.addEventListener(
+  "click",
+  () => {
+    const onlineName =
+      navTitleInput.value.trim() || "Profile";
+
+    navTitleInput.value = onlineName;
+
+    if (accountOnlineNameInput) {
+      accountOnlineNameInput.value = onlineName;
+    }
+
+      if (profileNameInput) {
+  profileNameInput.value = onlineName;
+}
+
+    localStorage.setItem(
+      "accountOnlineName",
+      onlineName
+    );
+
+    navTitleInput.readOnly = true;
+  }
+);
+
+
+
+
+navTitleInput?.addEventListener(
+  "input",
+  () => {
+
+    if (profileNameInput) {
+      profileNameInput.value =
+        navTitleInput.value;
+    }
+
+    autoFitProfileName();
+
+  }
+);
+
+
+
+
+
 
 // -------------------------
 // WINDOW RESIZE
