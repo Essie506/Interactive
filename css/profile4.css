@@ -241,8 +241,7 @@ background: rgba(255, 255, 255, 0.82);
    align-items: flex-start;
 	overflow: visible;
 }
-	
-}
+
 
 body.profile .profile-info-inner {
   min-width: 0;
