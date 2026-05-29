@@ -1573,8 +1573,8 @@ body.profile .profile-hero-media:active {
 
   body.profile .business-hero-card {
     z-index: 2;
-    width: 99%;
-    margin: 0.25rem;
+    width: 100%;
+    margin: 0.125rem;
      min-height: auto;
 	  max-height: 15rem;
   }
