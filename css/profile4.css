@@ -1515,6 +1515,7 @@ body.profile .profile-hero--personal::after {
   touch-action: none;
 	  transform: scale(1.05);
 		  pointer-events: none;
+		 opacity: 0.6;
 }
 
 
