@@ -471,7 +471,9 @@ field.addEventListener(
 editProfileBtn?.addEventListener(
   "click",
   () => {
-    navTitleInput?.readOnly = false;
+    if (navTitleInput) {
+  navTitleInput.readOnly = false;
+}
   }
 );
 
@@ -496,7 +498,9 @@ profileBioSave?.addEventListener(
       onlineName
     );
 
-    navTitleInput.readOnly = true;
+    if (navTitleInput) {
+  navTitleInput.readOnly = true;
+}
   }
 );
 
