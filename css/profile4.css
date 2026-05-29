@@ -1576,6 +1576,7 @@ body.profile .profile-hero-media:active {
     width: 99%;
     margin: 0.25rem;
      min-height: auto;
+	  max-height: 15rem;
   }
 
   body.profile .profile-no-tabs {
