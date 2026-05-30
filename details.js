@@ -57,19 +57,18 @@ const accountFullNameInput =
 
 
 function syncDisplayName(name) {
+
   const displayName =
     name.trim() || "Profile";
 
   if (profileNameInput) {
-    profileNameInput.value = displayName;
+    profileNameInput.value =
+      displayName;
   }
 
   if (navTitleInput) {
-    navTitleInput.value = displayName;
-  }
-
-  if (menuProfileName) {
-    menuProfileName.textContent = displayName;
+    navTitleInput.value =
+      displayName;
   }
 
   localStorage.setItem(
@@ -77,9 +76,18 @@ function syncDisplayName(name) {
     displayName
   );
 
-  if (typeof autoFitProfileName === "function") {
+  localStorage.setItem(
+    "accountOnlineName",
+    displayName
+  );
+
+  if (
+    typeof autoFitProfileName ===
+    "function"
+  ) {
     autoFitProfileName();
   }
+
 }
 
 
@@ -109,18 +117,31 @@ detailsSaveBtn?.addEventListener(
   () => {
 
     const realName =
-      accountFullNameInput?.value.trim() || "";
+      accountFullNameInput?.value.trim()
+      || "";
+
+    const onlineName =
+      accountOnlineNameInput?.value.trim()
+      || "Profile";
 
     localStorage.setItem(
       "accountFullName",
       realName
     );
 
+    if (menuProfileName) {
+      menuProfileName.textContent =
+        realName;
+    }
+
+    syncDisplayName(
+      onlineName
+    );
+
     closeDetailsModal();
 
   }
 );
-
 
 
 detailsModalOverlay?.addEventListener(
