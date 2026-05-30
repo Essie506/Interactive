@@ -551,6 +551,9 @@ coverInput.addEventListener(
         }, 50);
 
 
+        profileCoverImage.style.objectFit =
+  "cover";
+
         coverImage.src =
           imageData;
 
@@ -769,6 +772,9 @@ heroPresetOptions.forEach(option => {
 
       profileCoverImage.src =
         coverSrc;
+
+      profileCoverImage.style.objectFit =
+  "fill";
 
       localStorage.setItem(
   "interactiveProfileCover",
