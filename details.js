@@ -51,6 +51,9 @@ const verificationSaveBtn =
 const menuProfileName =
   document.querySelector(".menu-profile-name");
 
+const accountFullNameInput =
+  document.getElementById("accountFullNameInput");
+
 
 
 function syncDisplayName(name) {
@@ -65,10 +68,6 @@ function syncDisplayName(name) {
     navTitleInput.value = displayName;
   }
 
-  if (accountOnlineNameInput) {
-    accountOnlineNameInput.value = displayName;
-  }
-
   if (menuProfileName) {
     menuProfileName.textContent = displayName;
   }
@@ -78,16 +77,10 @@ function syncDisplayName(name) {
     displayName
   );
 
-  localStorage.setItem(
-    "accountOnlineName",
-    displayName
-  );
-
- if (typeof autoFitProfileName === "function") {
-  autoFitProfileName();
+  if (typeof autoFitProfileName === "function") {
+    autoFitProfileName();
+  }
 }
-}
-
 
 
 function openDetailsModal() {
@@ -115,17 +108,18 @@ detailsSaveBtn?.addEventListener(
   "click",
   () => {
 
-    const onlineName =
-      accountOnlineNameInput?.value.trim()
-      || "Profile";
+    const realName =
+      accountFullNameInput?.value.trim() || "";
 
-    syncDisplayName(onlineName);
+    localStorage.setItem(
+      "accountFullName",
+      realName
+    );
 
     closeDetailsModal();
 
   }
 );
-
 
 
 
