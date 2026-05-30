@@ -772,14 +772,17 @@ heroPresetOptions.forEach(option => {
 
       profileCoverImage.src =
         coverSrc;
+      
+    const fit =
+        option.dataset.fit || "fill";
 
       profileCoverImage.style.objectFit =
-  "fill";
+        fit;
 
       localStorage.setItem(
-  "interactiveProfileCover",
-  coverSrc
-);
+        "interactiveProfileCover",
+        coverSrc
+      );
 
       currentX = 50;
       currentY = 50;
@@ -792,8 +795,8 @@ heroPresetOptions.forEach(option => {
       );
 
       heroPresetBtn?.classList.remove(
-  "open"
-);
+        "open"
+      );
 
     }
   );
@@ -801,4 +804,4 @@ heroPresetOptions.forEach(option => {
 });
 
 
-  
+    
