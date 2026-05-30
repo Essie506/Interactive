@@ -163,13 +163,6 @@ body.profile .profile-hero-media::after {
 		  pointer-events: none;
 }
 
-#profileCoverImage {
-  object-fit: fill;
-}
-
-#profileCoverImage.custom-cover {
-  object-fit: cover;
-}
 
 
 /* =========================
