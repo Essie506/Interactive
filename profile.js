@@ -7,6 +7,10 @@ const profileNameInput = document.getElementById("profileNameInput");
   const profileHandleInput = document.getElementById("profileHandleInput");
     const navTitle = document.getElementById("navTitle");
   const navVerifiedBadge = document.getElementById("navVerifiedBadge");
+  const profileVerifiedBadge =
+  document.querySelector(
+    ".profile-verified"
+  );
 
 const profileUser = {
   id: profilePage?.dataset.userId || null,
@@ -28,6 +32,11 @@ const profileUser = {
 
   if (navVerifiedBadge) {
   navVerifiedBadge.hidden = !profileUser.verified;
+}
+
+  if (profileVerifiedBadge) {
+  profileVerifiedBadge.hidden =
+    !profileUser.verified;
 }
 
   document.title = `${profileUser.name} - Interactive Fitness`;
