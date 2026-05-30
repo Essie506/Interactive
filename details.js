@@ -48,6 +48,47 @@ const verificationPanel =
 const verificationSaveBtn =
   document.getElementById("verificationSaveBtn");
 
+const menuProfileName =
+  document.querySelector(".menu-profile-name");
+
+
+
+function syncDisplayName(name) {
+  const displayName =
+    name.trim() || "Profile";
+
+  if (profileNameInput) {
+    profileNameInput.value = displayName;
+  }
+
+  if (navTitleInput) {
+    navTitleInput.value = displayName;
+  }
+
+  if (accountOnlineNameInput) {
+    accountOnlineNameInput.value = displayName;
+  }
+
+  if (menuProfileName) {
+    menuProfileName.textContent = displayName;
+  }
+
+  localStorage.setItem(
+    "profileNameInput",
+    displayName
+  );
+
+  localStorage.setItem(
+    "accountOnlineName",
+    displayName
+  );
+
+ if (typeof autoFitProfileName === "function") {
+  autoFitProfileName();
+}
+}
+
+
 
 function openDetailsModal() {
   detailsModalOverlay?.classList.add("open");
@@ -67,6 +108,9 @@ detailsModalOpen?.addEventListener(
   }
 );
 
+
+
+
 detailsSaveBtn?.addEventListener(
   "click",
   () => {
@@ -75,32 +119,15 @@ detailsSaveBtn?.addEventListener(
       accountOnlineNameInput?.value.trim()
       || "Profile";
 
-    if (navTitleInput) {
-      navTitleInput.value =
-        onlineName;
-    }
-
-    if (profileNameInput) {
-      profileNameInput.value =
-        onlineName;
-    }
-
-    autoFitProfileName();
-
-    localStorage.setItem(
-      "profileNameInput",
-      onlineName
-    );
-
-    localStorage.setItem(
-      "accountOnlineName",
-      onlineName
-    );
+    syncDisplayName(onlineName);
 
     closeDetailsModal();
 
   }
 );
+
+
+
 
 detailsModalOverlay?.addEventListener(
   "click",
