@@ -199,6 +199,14 @@ const savedCover =
 
 if (savedCover) {
   coverImage.src = savedCover;
+} else {
+
+  coverImage.src =
+    "../covers/logo.png";
+
+  profileCoverImage.style.objectFit =
+    "cover";
+
 }
 
 
