@@ -345,6 +345,7 @@ body.profile .nav-title-wrap {
 	transform: translateX(15%);
 	font-weight: 700;
 	font-size: var(--main-font-size);
+	display: inline-flex;
 }
 
 .nav-title-input {
