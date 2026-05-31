@@ -927,11 +927,12 @@ border-radius: inherit;
 ========================= */
 
 body.profile .profile-detail-row {
-  display: flex;
+  display: grid;
+	grid-template-columns: 0 1fr;
 
   align-items: start;
 margin-top: 0.5rem;
-  column-gap: 0.55rem;
+  column-gap: 3rem;
 
   width: 100%;
   min-width: 0;
