@@ -656,7 +656,9 @@ body.profile .profile-tabs-inner {
     opacity 0.18s ease,
     transform 0.18s ease,
     visibility 0.18s ease,
-    box-shadow 0.2s ease
+    box-shadow 0.2s ease;
+
+	  
   max-height: min(20vh, 8rem);
   overflow-y: auto;
   overscroll-behavior: contain;
