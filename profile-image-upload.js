@@ -40,6 +40,11 @@ const visitorCoverPositionDone =
     "visitorCoverPositionDone"
   );
 
+const coverPositionButtons =
+  document.querySelectorAll(
+    ".cover-position-done"
+  );
+
 const activePointers = new Map();
 
 // =========================
@@ -166,9 +171,9 @@ function resetInteractionState() {
     "repositioning"
   );
 
-  coverPositionDone.classList.remove(
-    "show"
-  );
+ coverPositionButtons.forEach(button => {
+  button.classList.remove("show");
+});
 
 }
 
@@ -402,19 +407,23 @@ profileHeroMedia.addEventListener(
   }
 );
 
-coverPositionDone.addEventListener(
-  "click",
-  () => {
+coverPositionButtons.forEach(button => {
 
-    localStorage.setItem(
-      "profileCoverPosition",
-      currentY
-    );
+  button.addEventListener(
+    "click",
+    () => {
 
-  resetInteractionState();
+      localStorage.setItem(
+        "profileCoverPosition",
+        currentY
+      );
 
-  }
-);
+      resetInteractionState();
+
+    }
+  );
+
+});
   
   // -------------------------
 // PROFILE IMAGE UPLOAD
@@ -533,9 +542,9 @@ coverInput.addEventListener(
 
           applyCoverTransform();
 
-          coverPositionDone.classList.add(
-            "show"
-          );
+         coverPositionButtons.forEach(button => {
+  button.classList.add("show");
+});
 
         };
 
