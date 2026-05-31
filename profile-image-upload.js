@@ -31,7 +31,7 @@ const coverPositionBtn =
   document.getElementById("coverPositionBtn");
 
 const coverPositionDone =
-  document.querySelector(".cover-position-done");
+  document.getElementById("coverPositionDone");
 
 const activePointers = new Map();
 
