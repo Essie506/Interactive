@@ -15,8 +15,6 @@ const avatarTargets =
 const coverInput =
   document.getElementById("profileCoverInput");
 
-const coverButtons =
-  document.querySelectorAll(".upload-cover-btn");
 
 const coverImage =
   document.querySelector(".profile-hero-media img");
@@ -30,15 +28,6 @@ const profileCoverImage =
 const coverPositionBtn =
   document.getElementById("coverPositionBtn");
 
-const selfCoverPositionDone =
-  document.getElementById(
-    "selfCoverPositionDone"
-  );
-
-const visitorCoverPositionDone =
-  document.getElementById(
-    "visitorCoverPositionDone"
-  );
 
 const coverPositionButtons =
   document.querySelectorAll(
@@ -273,13 +262,7 @@ chooseHeroImageBtn?.addEventListener(
 
     coverInput.click();
 
-    heroPresetMenu?.classList.remove(
-      "open"
-    );
-
-    heroPresetBtn?.classList.remove(
-      "open"
-    );
+  closeHeroPresetMenu();
 
   }
 );
