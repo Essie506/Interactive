@@ -396,6 +396,22 @@ body.profile .upload-photo-btn {
   padding: 0;
 }
 
+
+.upload-photo-btn,
+.hero-controls {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+body.editing-profile .upload-photo-btn,
+body.editing-profile .hero-controls {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
 body.profile .profile-top-right-actions {
   position: absolute;
  right: 1rem;
