@@ -400,16 +400,19 @@ body.profile .upload-photo-btn {
 .upload-photo-btn,
 .hero-controls {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 }
 
 body.editing-profile .upload-photo-btn,
 body.editing-profile .hero-controls {
   opacity: 1;
+  visibility: visible;
   pointer-events: auto;
 }
-
 
 
 body.profile .profile-top-right-actions {
