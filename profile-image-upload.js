@@ -30,8 +30,15 @@ const profileCoverImage =
 const coverPositionBtn =
   document.getElementById("coverPositionBtn");
 
-const coverPositionDone =
-  document.getElementById("coverPositionDone");
+const selfCoverPositionDone =
+  document.getElementById(
+    "selfCoverPositionDone"
+  );
+
+const visitorCoverPositionDone =
+  document.getElementById(
+    "visitorCoverPositionDone"
+  );
 
 const activePointers = new Map();
 
