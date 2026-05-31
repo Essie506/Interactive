@@ -415,6 +415,22 @@ body.editing-profile .hero-controls {
 }
 
 
+.profile-hero-corner {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+body.editing-profile .profile-hero-corner {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+
+
+
+
 body.profile .profile-top-right-actions {
   position: absolute;
  right: 1rem;
