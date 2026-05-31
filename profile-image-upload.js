@@ -195,6 +195,11 @@ function applyAvatarTransform() {
 
 }
 
+function closeHeroPresetMenu() {
+  heroPresetMenu?.classList.remove("open");
+  heroPresetBtn?.classList.remove("open");
+}
+
 // =========================
 // RUN ON STARTUP
 // =========================
@@ -451,6 +456,9 @@ coverPositionButtons.forEach(button => {
         "profileCoverPosition",
         currentY
       );
+
+      
+      closeHeroPresetMenu();
 
       resetInteractionState();
 
@@ -803,16 +811,11 @@ if (avatarCancelBtn) {
 
 heroPresetBtn?.addEventListener(
   "click",
-  () => {
+  event => {
+    event.stopPropagation();
 
-    heroPresetBtn.classList.toggle(
-      "open"
-    );
-
-    heroPresetMenu?.classList.toggle(
-      "open"
-    );
-
+    heroPresetBtn.classList.toggle("open");
+    heroPresetMenu?.classList.toggle("open");
   }
 );
 
@@ -865,6 +868,19 @@ heroPresetOptions.forEach(option => {
   );
 
 });
+
+
+document.addEventListener(
+  "click",
+  event => {
+    if (
+      heroPresetMenu?.contains(event.target) ||
+      heroPresetBtn?.contains(event.target)
+    ) return;
+
+    closeHeroPresetMenu();
+  }
+);
 
 
     
