@@ -1727,6 +1727,12 @@ height: clamp(180px, 32dvh, 280px);
     flex: 0 0 auto;
 }
 
+	body.profile .profile-detail.row {
+		display: grid;
+		grid-template-columns: 0 1fr;
+		column-gap: 3rem;
+	}
+
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
