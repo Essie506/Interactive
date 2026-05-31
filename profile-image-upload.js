@@ -848,6 +848,11 @@ heroPresetOptions.forEach(option => {
 
       applyCoverTransform();
 
+
+      coverPositionButtons.forEach(button => {
+  button.classList.remove("show");
+});
+
       heroPresetMenu?.classList.remove(
         "open"
       );
