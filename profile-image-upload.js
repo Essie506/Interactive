@@ -47,6 +47,11 @@ const coverPositionButtons =
 
 const activePointers = new Map();
 
+const chooseHeroImageBtn =
+  document.getElementById(
+    "chooseHeroImageBtn"
+  );
+
 // =========================
 // AVATAR EDITOR
 // =========================
@@ -239,6 +244,7 @@ if (savedPosition) {
 // =========================
 
 
+
 // -------------------------
 // OPEN FILE PICKERS
 // -------------------------
@@ -248,6 +254,34 @@ uploadButtons.forEach(button => {
     profilePhotoInput.click();
   });
 });
+
+
+// -------------------------
+// CHOOSE HERO IMAGE
+// -------------------------
+
+
+
+chooseHeroImageBtn?.addEventListener(
+  "click",
+  () => {
+
+    coverInput.click();
+
+    heroPresetMenu?.classList.remove(
+      "open"
+    );
+
+    heroPresetBtn?.classList.remove(
+      "open"
+    );
+
+  }
+);
+
+
+
+
 
 
 // -------------------------
