@@ -92,6 +92,7 @@ const roleSuggestions = [
   "Online Coach",
   "Functional Fitness Coach",
   "HYROX Coach",
+  "Class Instructor",
   "Nutrition Coach",
   "Nutritionist",
   "Diet Coach",
