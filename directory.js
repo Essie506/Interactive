@@ -629,26 +629,43 @@ profileRoleInput.addEventListener(
   "input",
   () => {
 
-    const input =
-      profileRoleInput.value
-        .toLowerCase();
+    const fullText =
+      profileRoleInput.value;
 
-    const matches =
-      roleSuggestions.filter(role =>
-        role.toLowerCase().includes(input)
-      );
+    const parts =
+      fullText.split(/[,.•]/);
+
+    const currentInput =
+      parts[parts.length - 1]
+        .trim()
+        .toLowerCase();
 
     roleSuggestionsBox.innerHTML = "";
 
-    if (matches.length) {
-      roleSuggestionsBox.classList.add(
-        "show"
-      );
-    } else {
+    if (currentInput.length < 2) {
       roleSuggestionsBox.classList.remove(
         "show"
       );
+      return;
     }
+
+    const matches =
+      roleSuggestions.filter(role =>
+        role.toLowerCase().includes(
+          currentInput
+        )
+      );
+
+    if (!matches.length) {
+      roleSuggestionsBox.classList.remove(
+        "show"
+      );
+      return;
+    }
+
+    roleSuggestionsBox.classList.add(
+      "show"
+    );
 
     matches.forEach(match => {
 
@@ -656,7 +673,6 @@ profileRoleInput.addEventListener(
         document.createElement("button");
 
       button.type = "button";
-
       button.className =
         "role-suggestion-item";
 
@@ -666,11 +682,16 @@ profileRoleInput.addEventListener(
         "click",
         () => {
 
-          profileRoleInput.value =
-            match;
+          parts[parts.length - 1] =
+            ` ${match}`;
 
-          roleSuggestionsBox.innerHTML =
-            "";
+          profileRoleInput.value =
+            parts
+              .map(part => part.trim())
+              .filter(Boolean)
+              .join(" • ");
+
+          roleSuggestionsBox.innerHTML = "";
 
           roleSuggestionsBox.classList.remove(
             "show"
@@ -685,5 +706,7 @@ profileRoleInput.addEventListener(
 
     });
 
+  }
+);
   }
 );
