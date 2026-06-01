@@ -1678,10 +1678,11 @@ body.profile .profile-hero-media:active {
 
   body.profile .business-hero-card {
     z-index: 2;
-    margin: 0.125rem;
+    margin-left: auto;
+	  margin-right: auto;
      min-height: auto;
     background: #ffff;
-	  width: stretch;
+	  width: 100%;
   }
 
   body.profile .profile-no-tabs {
