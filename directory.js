@@ -92,17 +92,19 @@ const roleSuggestions = [
   "Online Coach",
   "Functional Fitness Coach",
   "HYROX Coach",
-
   "Nutrition Coach",
   "Nutritionist",
   "Diet Coach",
-
+  "Meal Planning",
+  "Weight Loss Coach",
+  "Fat Loss Coach",
   "Physiotherapist",
   "Sports Therapist",
-
+  "Rehabilitation Coach",
+  "Injury Recovery",
+  "Mobility Specialist",
   "Yoga Instructor",
   "Pilates Instructor",
-
   "Boxing Coach",
   "MMA Coach"
 ];
