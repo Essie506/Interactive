@@ -67,7 +67,10 @@ const servicesSaveBtn =
 const servicePillOptions =
   document.querySelectorAll(".service-pill-option");
 
-
+const roleSuggestionsBox =
+  document.getElementById(
+    "roleSuggestionsBox"
+  );
 
 
 const editableFields = [
@@ -76,6 +79,8 @@ const editableFields = [
   profileRoleInput,
   profileGymInput
 ];
+
+
 
 
 
@@ -625,17 +630,43 @@ profileRoleInput.addEventListener(
   "input",
   () => {
 
+    const input =
+      profileRoleInput.value
+        .toLowerCase();
+
     const matches =
       roleSuggestions.filter(role =>
-        role.toLowerCase().includes(
-          profileRoleInput.value
-            .toLowerCase()
-        )
+        role.toLowerCase().includes(input)
       );
 
-    console.log(matches);
+    roleSuggestionsBox.innerHTML = "";
+
+    matches.forEach(match => {
+
+      const button =
+        document.createElement("button");
+
+      button.type = "button";
+      button.className =
+        "role-suggestion-item";
+
+      button.textContent = match;
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          profileRoleInput.value = match;
+
+          roleSuggestionsBox.innerHTML = "";
+
+        }
+      );
+
+      roleSuggestionsBox.appendChild(button);
+
+    });
 
   }
 );
-
 
