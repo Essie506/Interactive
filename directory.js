@@ -708,5 +708,3 @@ profileRoleInput.addEventListener(
 
   }
 );
-  }
-);
