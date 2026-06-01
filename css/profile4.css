@@ -1638,8 +1638,8 @@ body.profile .profile-hero-media:active {
   }
 
   body.profile .profile-page {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: var(--profile-page-pad-x-mobile);
+    padding-right: var(--profile-page-pad-x-mobile);
   }
   
       body.profile .profile-hero--personal {
