@@ -1595,11 +1595,9 @@ body.profile .composer-foot {
   position: absolute;
   top: calc(100% + .5rem);
   left: 0;
-  width: 260px;
+  width: 100%;
   padding: .75rem;
-  border-radius: 12px;
-  background: rgba(20,20,20,.95);
-  backdrop-filter: blur(12px);
+  background: #ffff;
   font-size: .8rem;
   line-height: 1.4;
   opacity: 0;
