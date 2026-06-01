@@ -1681,6 +1681,7 @@ body.profile .profile-hero-media:active {
     margin: 0.125rem;
      min-height: auto;
     background: #ffff;
+	  width: stretch;
   }
 
   body.profile .profile-no-tabs {
