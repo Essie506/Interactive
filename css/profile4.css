@@ -319,6 +319,22 @@ body.profile .profile-handle-input {
 }
 
 
+.role-suggestions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.role-suggestion-item {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+
+
 body.profile .profile-bio {
   margin: var(--profile-bio-margin-top) auto 0;
   width: min(100%, var(--profile-bio-max));
