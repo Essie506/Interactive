@@ -320,19 +320,33 @@ body.profile .profile-handle-input {
 
 
 .role-suggestions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
+  display: none;
   margin-top: 0.5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.role-suggestions.show {
+  display: block;
 }
 
 .role-suggestion-item {
+  width: 100%;
   border: 0;
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
+  padding: 0.75rem 1rem;
+  text-align: left;
   cursor: pointer;
+  display: block;
 }
 
+.role-suggestion-item:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+}
 
 
 body.profile .profile-bio {
