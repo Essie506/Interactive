@@ -3,40 +3,21 @@ const tooltipTriggers =
     ".tooltip-trigger"
   );
 
-tooltipTriggers.forEach(...);
+const tooltip =
+  trigger.nextElementSibling;
+
+const isOpen =
+  tooltip?.classList.contains(
+    "show"
+  );
 
 
 
-document
-  .querySelectorAll(".tooltip-trigger")
-  .forEach(trigger => {
+tooltipTriggers.forEach(trigger => {
 
-    trigger.addEventListener(
-      "click",
-      () => {
-
-        document
-          .querySelectorAll(".tooltip-content")
-          .forEach(t =>
-            t.classList.remove("show")
-          );
-
-        trigger.nextElementSibling
-          ?.classList.add("show");
-
-      }
-    );
-
-  });
-
-document.addEventListener(
-  "click",
-  e => {
-
-   if (!e.target.closest(".tooltip-wrapper"))
-  
-    
-    {
+  trigger.addEventListener(
+    "click",
+    () => {
 
       document
         .querySelectorAll(".tooltip-content")
@@ -44,7 +25,30 @@ document.addEventListener(
           t.classList.remove("show")
         );
 
+      trigger.nextElementSibling
+        ?.classList.add("show");
+
     }
+  );
+
+});
+
+document.addEventListener(
+  "click",
+  e => {
+
+   if (!e.target.closest(".tooltip-wrapper"))
+  
+  
+document
+  .querySelectorAll(".tooltip-content")
+  .forEach(t =>
+    t.classList.remove("show")
+  );
+
+if (!isOpen) {
+  tooltip?.classList.add("show");
+}
 
   }
 );
