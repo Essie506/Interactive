@@ -78,6 +78,42 @@ const editableFields = [
 ];
 
 
+
+// =========================
+// DATA
+// =========================
+
+
+
+const roleSuggestions = [
+  "Personal Trainer",
+  "Strength Coach",
+  "Running Coach",
+  "Online Coach",
+  "Functional Fitness Coach",
+  "HYROX Coach",
+
+  "Nutrition Coach",
+  "Nutritionist",
+  "Diet Coach",
+
+  "Physiotherapist",
+  "Sports Therapist",
+
+  "Yoga Instructor",
+  "Pilates Instructor",
+
+  "Boxing Coach",
+  "MMA Coach"
+];
+
+
+
+// =========================
+// OG STATE VARIABLES
+// =========================
+
+
 let originalBio =
   profileBioInput?.value || "";
 
@@ -310,8 +346,6 @@ if (
 
 
 
-
-
 // -------------------------
 // EDIT PROFILE
 // -------------------------
@@ -527,10 +561,6 @@ navTitleInput?.addEventListener(
 );
 
 
-
-
-
-
 // -------------------------
 // WINDOW RESIZE
 // -------------------------
@@ -583,5 +613,26 @@ servicesSaveBtn?.addEventListener("click", () => {
 });
 
 
+// -------------------------
+// ROLE SUGGESTIONS
+// -------------------------
+
+
+profileRoleInput.addEventListener(
+  "input",
+  () => {
+
+    const matches =
+      roleSuggestions.filter(role =>
+        role.toLowerCase().includes(
+          profileRoleInput.value
+            .toLowerCase()
+        )
+      );
+
+    console.log(matches);
+
+  }
+);
 
 
