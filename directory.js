@@ -625,7 +625,6 @@ servicesSaveBtn?.addEventListener("click", () => {
 // ROLE SUGGESTIONS
 // -------------------------
 
-
 profileRoleInput.addEventListener(
   "input",
   () => {
@@ -641,12 +640,23 @@ profileRoleInput.addEventListener(
 
     roleSuggestionsBox.innerHTML = "";
 
+    if (matches.length) {
+      roleSuggestionsBox.classList.add(
+        "show"
+      );
+    } else {
+      roleSuggestionsBox.classList.remove(
+        "show"
+      );
+    }
+
     matches.forEach(match => {
 
       const button =
         document.createElement("button");
 
       button.type = "button";
+
       button.className =
         "role-suggestion-item";
 
@@ -656,17 +666,24 @@ profileRoleInput.addEventListener(
         "click",
         () => {
 
-          profileRoleInput.value = match;
+          profileRoleInput.value =
+            match;
 
-          roleSuggestionsBox.innerHTML = "";
+          roleSuggestionsBox.innerHTML =
+            "";
+
+          roleSuggestionsBox.classList.remove(
+            "show"
+          );
 
         }
       );
 
-      roleSuggestionsBox.appendChild(button);
+      roleSuggestionsBox.appendChild(
+        button
+      );
 
     });
 
   }
 );
-
