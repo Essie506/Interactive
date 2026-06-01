@@ -1609,11 +1609,12 @@ body.profile .composer-foot {
   transition: .2s ease;
 }
 
-.tooltip-trigger:hover + .tooltip-content,
-.tooltip-trigger:focus + .tooltip-content {
+.tooltip-content.show {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
+
 
 
 
@@ -1754,6 +1755,13 @@ body.business-profile .chevron-btn {
     translateY(-1px)
     scale(1.02);
 }
+
+	.tooltip-trigger:hover + .tooltip-content,
+.tooltip-trigger:focus + .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+}
+
 }
 
 /* =========================
