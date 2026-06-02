@@ -3,41 +3,38 @@ const tooltipTriggers =
     ".tooltip-trigger"
   );
 
-
-
-
-
 tooltipTriggers.forEach(trigger => {
 
   trigger.addEventListener(
     "click",
-
     e => {
 
       e.stopPropagation();
 
       const tooltip =
-  trigger.nextElementSibling;
+        trigger.nextElementSibling;
 
-const isOpen =
-  tooltip?.classList.contains(
-    "show"
-  );
+      const isOpen =
+        tooltip?.classList.contains(
+          "show"
+        );
 
       document
-        .querySelectorAll(".tooltip-content")
+        .querySelectorAll(
+          ".tooltip-content"
+        )
         .forEach(t =>
           t.classList.remove("show")
         );
 
-if (!isOpen) {
-  tooltip?.classList.add("show");
-}
+      if (!isOpen) {
+        tooltip?.classList.add("show");
+      }
 
-  }
-);
+    }
+  );
 
-
+});
 
 document.addEventListener(
   "click",
