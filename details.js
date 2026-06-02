@@ -2,7 +2,7 @@ import {
   auth,
   EmailAuthProvider,
   reauthenticateWithCredential,
-  updatePassword
+  updatePassword,
    db,
   collection,
   addDoc,
