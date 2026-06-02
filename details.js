@@ -54,6 +54,20 @@ const menuProfileName =
 const accountFullNameInput =
   document.getElementById("accountFullNameInput");
 
+const verificationTypeInput =
+  document.getElementById("verificationTypeInput");
+
+const verificationOrganisationInput =
+  document.getElementById("verificationOrganisationInput");
+
+const verificationNumberInput =
+  document.getElementById("verificationNumberInput");
+
+const verificationLegalNameInput =
+  document.getElementById("verificationLegalNameInput");
+
+const verificationProofInput =
+  document.getElementById("verificationProofInput");
 
 
 function syncDisplayName(name) {
@@ -168,11 +182,15 @@ changePasswordBtn?.addEventListener(
 );
 
 
+
+
+
 verificationFormBtn?.addEventListener(
   "click",
   () => {
-    if (!verificationPanel) return;
 
+     if (!verificationPanel) return;
+   
     verificationPanel.hidden =
       !verificationPanel.hidden;
 
@@ -182,13 +200,46 @@ verificationFormBtn?.addEventListener(
   }
 );
 
+
+   
+
+
 verificationSaveBtn?.addEventListener(
   "click",
-  () => {
+  async () => {
 
      if (!verificationPanel) return;
-    
-    console.log("Submit verification later");
+
+    const user = auth.currentUser;
+
+    if (!user) {
+      alert("Please log in before submitting verification.");
+      return;
+    }
+
+    const proofFile =
+      verificationProofInput?.files?.[0];
+
+    const verificationRequest = {
+      userId: user.uid,
+      email: user.email,
+      type: verificationTypeInput?.value || "",
+      organisation:
+        verificationOrganisationInput?.value.trim() || "",
+      licenceNumber:
+        verificationNumberInput?.value.trim() || "",
+      legalName:
+        verificationLegalNameInput?.value.trim() || "",
+      proofFileName:
+        proofFile?.name || "",
+      status: "pending",
+      submittedAt: serverTimestamp()
+    };
+
+    await addDoc(
+      collection(db, "verificationRequests"),
+      verificationRequest
+    );
 
     verificationPanel.hidden = true;
 
@@ -197,8 +248,10 @@ verificationSaveBtn?.addEventListener(
     );
 
     alert("Verification submitted for review.");
+
   }
 );
+
 
 
 
