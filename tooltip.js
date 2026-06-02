@@ -11,7 +11,8 @@ tooltipTriggers.forEach(trigger => {
 
   trigger.addEventListener(
     "click",
-    () => {
+
+    e => {
 
       e.stopPropagation();
 
@@ -35,11 +36,6 @@ if (!isOpen) {
 
   }
 );
-
-
-
-      
-   
 
 
 
