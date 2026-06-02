@@ -698,7 +698,7 @@
 
 
 
-<div class="details-modal-overlay" id="detailsModalOverlay">
+ <div class="details-modal-overlay" id="detailsModalOverlay">
   <div class="details-modal">
 
     <header class="details-modal-header">
@@ -731,16 +731,39 @@
           id="accountFullNameInput"
           value="Esther Clarke"
         >
-      </label>
+    
 
-      <label class="details-field">
-        <span>Online name</span>
-        <input
-          type="text"
-          id="accountOnlineNameInput"
-          value="Esther"
-        >
-      </label>
+<label class="details-field">
+
+  <div class="verification-label">
+    <span>Online name</span>
+
+    <div class="tooltip-wrapper">
+      <button
+        type="button"
+        class="tooltip-trigger"
+        aria-label="Online name information"
+      >
+        <i class="fa-solid fa-circle-info"></i>
+      </button>
+
+      <div class="tooltip-content">
+        You may choose your own name, but to protect your personal identity
+        you may want to use a friendly nickname or professional title for
+        your screen name.
+      </div>
+    </div>
+  </div>
+
+  <input
+    type="text"
+    id="accountOnlineNameInput"
+    placeholder="Profile"
+  >
+
+</label>
+
+
 
       <button
         type="button"
@@ -788,137 +811,184 @@
       </button>
 
 
-
-
 <div
   class="verification-panel"
   id="verificationPanel"
   hidden
 >
+
   <label class="details-field">
-   <div class="verification-label">
-<span>Verification type</span>
 
-     <div class="tooltip-wrapper">
+    <div class="verification-label">
+      <span>Verification type</span>
 
-  <button
-    type="button"
-    class="tooltip-trigger"
-  >
-    <i class="fa-solid fa-circle-info"></i>
-  </button>
+      <div class="tooltip-wrapper">
+        <button
+          type="button"
+          class="tooltip-trigger"
+          aria-label="Verification type information"
+        >
+          <i class="fa-solid fa-circle-info"></i>
+        </button>
 
-  <div class="tooltip-content">
-    Select the qualification or professional category you would like
-    verified. You may submit multiple qualifications separately.
-    Your verification badge may display the number of verified
-    qualifications linked to your account.
-  </div>
-</div>
-   </div>
+        <div class="tooltip-content">
+          Select the qualification or professional category you would like
+          verified. You may submit multiple qualifications separately.
+          Your verification badge may display the number of verified
+          qualifications linked to your account.
+        </div>
+      </div>
+    </div>
 
-
-    
     <select id="verificationTypeInput">
-      <option value="pt">Personal Trainer / Fitness Professional</option>
-       <option value="Class Instructor">Class Instructor</option>
-      <option value="nutrition">Nutritionist / Dietician</option>
-      <option value="coach">Coach</option>
-      <option value="business">Business</option>
-       <option value="Medical">Physio / Medical Professional</option>
+      <option value="pt">
+        Personal Trainer / Fitness Professional
+      </option>
+      <option value="class-instructor">
+        Class Instructor
+      </option>
+      <option value="nutrition">
+        Nutritionist / Dietician
+      </option>
+      <option value="coach">
+        Coach
+      </option>
+      <option value="business">
+        Business
+      </option>
+      <option value="medical">
+        Physio / Medical Professional
+      </option>
     </select>
+
   </label>
 
   <label class="details-field">
-    <span>Register / organisation</span>
+
+    <div class="verification-label">
+      <span>Register / organisation</span>
+
+      <div class="tooltip-wrapper">
+        <button
+          type="button"
+          class="tooltip-trigger"
+          aria-label="Register or organisation information"
+        >
+          <i class="fa-solid fa-circle-info"></i>
+        </button>
+
+        <div class="tooltip-content">
+          Enter the professional register, awarding body, organisation,
+          or company register linked to this qualification or business.
+        </div>
+      </div>
+    </div>
+
     <input
       type="text"
       id="verificationOrganisationInput"
       placeholder="CIMSPA, AfN, Companies House..."
     >
+
   </label>
 
   <label class="details-field">
-    <span>Registration / licence number</span>
 
+    <div class="verification-label">
+      <span>Registration / licence number</span>
 
-       <div class="tooltip-wrapper">
+      <div class="tooltip-wrapper">
+        <button
+          type="button"
+          class="tooltip-trigger"
+          aria-label="Registration or licence number information"
+        >
+          <i class="fa-solid fa-circle-info"></i>
+        </button>
 
-  <button
-    type="button"
-    class="tooltip-trigger"
-  >
-    <i class="fa-solid fa-circle-info"></i>
-  </button>
-
-  <div class="tooltip-content">
-     Each qualification must belong to you and may require identity checks. 
-    Licence numbers, certificate details, or professional registration 
-    details cannot be used on more than one account unless reviewed 
-    and approved by Interactive.
-  </div>
-</div>
-
+        <div class="tooltip-content">
+          Enter the licence, certificate, registration, or membership number
+          linked to this qualification. Duplicate or disputed numbers may
+          need manual review.
+        </div>
+      </div>
+    </div>
 
     <input
       type="text"
       id="verificationNumberInput"
       placeholder="Enter registration number"
     >
+
   </label>
 
   <label class="details-field">
-    <span>Legal name</span>
+
+    <div class="verification-label">
+      <span>Legal name</span>
+
+      <div class="tooltip-wrapper">
+        <button
+          type="button"
+          class="tooltip-trigger"
+          aria-label="Legal name information"
+        >
+          <i class="fa-solid fa-circle-info"></i>
+        </button>
+
+        <div class="tooltip-content">
+          Enter the name that appears on your qualification, certificate,
+          registration, licence, ID, or official business record.
+        </div>
+      </div>
+    </div>
+
     <input
       type="text"
       id="verificationLegalNameInput"
       placeholder="Name used on register"
     >
+
   </label>
 
-  <label class="details-field">
+  <div class="details-field">
 
-<label
-  for="verificationProofInput"
-  class="verification-upload-btn"
->
-  <i class="fa-solid fa-upload"></i>
-  <span>Upload proof</span>
-   <div class="tooltip-wrapper">
+    <div class="verification-label">
+      <span>Upload proof</span>
 
-  <button
-    type="button"
-    class="tooltip-trigger"
-  >
-    <i class="fa-solid fa-circle-info"></i>
-  </button>
+      <div class="tooltip-wrapper">
+        <button
+          type="button"
+          class="tooltip-trigger"
+          aria-label="Upload proof information"
+        >
+          <i class="fa-solid fa-circle-info"></i>
+        </button>
 
-  <div class="tooltip-content">
-    
-By submitting a qualification for verification, 
-you confirm that the qualification, licence number, certificate, 
-or registration belongs to you and that the information provided is accurate.
+        <div class="tooltip-content">
+          Upload evidence of your qualification, registration, licence,
+          certificate, ID check, or business status. Accepted files may
+          include images or PDFs.
+        </div>
+      </div>
+    </div>
 
-Interactive may check submitted details against internal records, 
-professional registers, awarding bodies, or other verification sources. 
-Duplicate, suspicious, or disputed verification details may be paused, 
-rejected, removed, or reviewed manually.
+    <label
+      for="verificationProofInput"
+      class="verification-upload-btn"
+    >
+      <i class="fa-solid fa-upload"></i>
+      <span>Upload proof</span>
+    </label>
+
+    <input
+      type="file"
+      id="verificationProofInput"
+      accept="image/*,.pdf"
+      hidden
+    />
+
   </div>
-</div>
-
-
-
-  
-</label>
-
-<input
-  type="file"
-  id="verificationProofInput"
-  accept="image/*,.pdf"
-  hidden
-/>
-    
-  </label>
 
   <button
     type="button"
@@ -928,20 +998,8 @@ rejected, removed, or reviewed manually.
     <i class="fa-solid fa-paper-plane"></i>
     <span>Submit verification</span>
   </button>
+
 </div>
-
-
-
-
-
-      
-
-
-    </div>
-
-  </div>
-</div>
-
 
 
 
