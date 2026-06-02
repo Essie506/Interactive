@@ -18,6 +18,8 @@ False claims
 
 Unique Qualifications and Registrations
 
+Qualification Ownership
+
 
 
 # Verification Policy
@@ -123,4 +125,9 @@ Where the same qualification or registration information is submitted by multipl
 
 Interactive may request additional evidence to establish ownership before granting, transferring, or restoring verification.
 
+## Qualification Ownership
+
+A qualification belongs to the individual,
+not the email address, profile, employer,
+or business.
 
