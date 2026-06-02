@@ -9,7 +9,13 @@ tooltipTriggers.forEach(trigger => {
     "click",
     e => {
 
+
+         e.preventDefault();
       e.stopPropagation();
+
+      
+      const wrapper =
+        trigger.closest(".tooltip-wrapper");
 
       const tooltip =
         trigger.nextElementSibling;
@@ -40,11 +46,6 @@ document.addEventListener(
   "click",
   e => {
 
-    if (
-      !e.target.closest(
-        ".tooltip-wrapper"
-      )
-    ) {
 
       document
         .querySelectorAll(
@@ -54,7 +55,6 @@ document.addEventListener(
           t.classList.remove("show")
         );
 
-    }
 
   }
 );
