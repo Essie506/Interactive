@@ -79,6 +79,17 @@ const verificationProofInput =
   document.getElementById("verificationProofInput");
 
 
+verificationProofInput?.addEventListener(
+  "change",
+  () => {
+    console.log(
+      "Selected file:",
+      verificationProofInput.files[0]
+    );
+  }
+);
+
+
 function syncDisplayName(name) {
 
   const displayName =
