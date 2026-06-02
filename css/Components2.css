@@ -1614,13 +1614,6 @@ body.profile .composer-foot {
 }
 
 
-.tooltip-trigger:focus + .tooltip-content {
-  opacity: 1;
-  visibility: visible;
-}
-
-
-
 
 @media (min-width: 500px) and (max-width: 700px) {
   .composer-bottom-bar {
@@ -1757,10 +1750,6 @@ body.business-profile .chevron-btn {
     scale(1.02);
 }
 
-	.tooltip-trigger:hover + .tooltip-content {
-  opacity: 1;
-  visibility: visible;
-}
 
 }
 
