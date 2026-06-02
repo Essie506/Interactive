@@ -1614,7 +1614,10 @@ body.profile .composer-foot {
 }
 
 
-
+.tooltip-trigger:focus + .tooltip-content {
+  opacity: 1;
+  visibility: visible;
+}
 
 
 
@@ -1754,8 +1757,7 @@ body.business-profile .chevron-btn {
     scale(1.02);
 }
 
-	.tooltip-trigger:hover + .tooltip-content,
-.tooltip-trigger:focus + .tooltip-content {
+	.tooltip-trigger:hover + .tooltip-content {
   opacity: 1;
   visibility: visible;
 }
