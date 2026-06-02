@@ -5,6 +5,11 @@ import {
   updatePassword,
    db,
   collection,
+  storage,
+ref,
+uploadBytes,
+getDownloadURL,
+setDoc,
   addDoc,
   serverTimestamp
 } from "./firebase-config.js";
@@ -212,7 +217,7 @@ verificationSaveBtn?.addEventListener(
   "click",
   async () => {
 
-     if (!verificationPanel) return;
+    if (!verificationPanel) return;
 
     const user = auth.currentUser;
 
@@ -224,39 +229,73 @@ verificationSaveBtn?.addEventListener(
     const proofFile =
       verificationProofInput?.files?.[0];
 
-    const verificationRequest = {
-      userId: user.uid,
-      email: user.email,
-      type: verificationTypeInput?.value || "",
-      organisation:
-        verificationOrganisationInput?.value.trim() || "",
-      licenceNumber:
-        verificationNumberInput?.value.trim() || "",
-      legalName:
-        verificationLegalNameInput?.value.trim() || "",
-      proofFileName:
-        proofFile?.name || "",
-      status: "pending",
-      submittedAt: serverTimestamp()
-    };
+    if (!proofFile) {
+      alert("Please upload proof before submitting.");
+      return;
+    }
 
-    await addDoc(
-      collection(db, "verificationRequests"),
-      verificationRequest
-    );
+    try {
+      const requestRef = await addDoc(
+        collection(db, "verificationRequests"),
+        {
+          userId: user.uid,
+          email: user.email,
+          type: verificationTypeInput?.value || "",
+          organisation:
+            verificationOrganisationInput?.value.trim() || "",
+          licenceNumber:
+            verificationNumberInput?.value.trim() || "",
+          legalName:
+            verificationLegalNameInput?.value.trim() || "",
+          proofFileName: proofFile.name,
+          proofFileType: proofFile.type,
+          status: "pending",
+          submittedAt: serverTimestamp()
+        }
+      );
 
-    verificationPanel.hidden = true;
+      const proofStorageRef = ref(
+        storage,
+        `verificationUploads/${user.uid}/${requestRef.id}/${proofFile.name}`
+      );
 
-    verificationFormBtn?.classList.remove(
-      "open"
-    );
+      await uploadBytes(
+        proofStorageRef,
+        proofFile
+      );
 
-    alert("Verification submitted for review.");
+      const proofDownloadURL =
+        await getDownloadURL(proofStorageRef);
 
+      await setDoc(
+        requestRef,
+        {
+          proofStoragePath: proofStorageRef.fullPath,
+          proofDownloadURL
+        },
+        { merge: true }
+      );
+
+      verificationProofInput.value = "";
+
+      verificationPanel.hidden = true;
+
+      verificationFormBtn?.classList.remove(
+        "open"
+      );
+
+      alert("Verification submitted for review.");
+
+    } catch (error) {
+      console.error(
+        "Verification upload error:",
+        error
+      );
+
+      alert(error.message);
+    }
   }
 );
-
-
 
 
 passwordSaveBtn?.addEventListener(
