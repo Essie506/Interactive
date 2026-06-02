@@ -3,6 +3,10 @@ import {
   EmailAuthProvider,
   reauthenticateWithCredential,
   updatePassword
+   db,
+  collection,
+  addDoc,
+  serverTimestamp
 } from "./firebase-config.js";
 
 
