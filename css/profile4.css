@@ -1683,6 +1683,8 @@ body.profile .profile-hero-media:active {
      min-height: auto;
     background: #ffff;
 	  width: 100%;
+	  margin-top: 0;
+	  margin-bottom: 0;
   }
 
   body.profile .profile-no-tabs {
