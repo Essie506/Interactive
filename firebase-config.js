@@ -44,5 +44,8 @@ export {
   updatePassword,
   doc,
   setDoc,
-  serverTimestamp
+  serverTimestamp,
+    auth,
+  db,
+  storage
 };
