@@ -110,8 +110,6 @@ detailsModalOpen?.addEventListener(
 );
 
 
-
-
 detailsSaveBtn?.addEventListener(
   "click",
   () => {
@@ -157,6 +155,8 @@ changePasswordBtn?.addEventListener(
   "click",
   () => {
 
+     if (!passwordChangePanel) return;
+
     passwordChangePanel.hidden =
       !passwordChangePanel.hidden;
 
@@ -185,6 +185,9 @@ verificationFormBtn?.addEventListener(
 verificationSaveBtn?.addEventListener(
   "click",
   () => {
+
+     if (!verificationPanel) return;
+    
     console.log("Submit verification later");
 
     verificationPanel.hidden = true;
