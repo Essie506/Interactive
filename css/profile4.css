@@ -1646,7 +1646,7 @@ body.profile .profile-verified {
 }
 
 .nav-title-wrap {
-
+     width:100%;
     transform: translateX(0);
 }
 	
