@@ -1663,7 +1663,7 @@ body.profile .composer-foot {
     transform: translateX(0%);
     justify-self: start;
       font-size: larger;
-    max-width: none;
+    max-width: 100%;
     overflow: visible;
     text-overflow: unset;
   }
