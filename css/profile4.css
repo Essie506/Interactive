@@ -1415,7 +1415,7 @@ body.profile .profile-hero--personal::after {
 }
 
 .profile-name-group {
-  display: flex;
+  display: block;
   align-items: center;
   gap: 0.45rem;
 
