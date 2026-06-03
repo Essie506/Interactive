@@ -349,7 +349,7 @@ body.profile .profile-bio {
 
 
 .nav-title-wrap {
-  position: absolute;
+  position: relative;
   left: 50%;
   transform: translateX(-50%);
   width: min(58vw, 18rem);
