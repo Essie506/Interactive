@@ -1665,6 +1665,12 @@ body.profile #profileNameInput {
 body.profile .profile-verified {
   flex: 0 0 auto;
 }
+
+.nav-title-wrap {
+
+    transform: translateX(0);
+}
+	
 }
 
 
