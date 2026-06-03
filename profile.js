@@ -73,7 +73,7 @@ function updateProfileVerificationUI() {
       !profileUser.verified;
   }
 
-  if (proofSubmittedStatus) {
+  if (proofSubmittedDesktop) {
     proofSubmittedStatus.hidden =
       !profileUser.proofSubmitted;
   }
