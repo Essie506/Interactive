@@ -1802,6 +1802,10 @@ height: clamp(180px, 32dvh, 280px);
     display: inline-flex;
   }
 
+	section.business-section.mobile-only {
+    margin-bottom: 0;
+}
+
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
