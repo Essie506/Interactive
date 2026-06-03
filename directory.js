@@ -277,6 +277,17 @@ function autoFitProfileName() {
 
   }
 
+
+
+console.log(
+  profileNameInput.value,
+  fontSize
+);
+
+
+
+    
+
   profileNameInput.style.fontSize =
     `${fontSize}px`;
 
