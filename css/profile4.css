@@ -251,20 +251,6 @@ body.profile .profile-main-info {
 }
 
 
-.profile-name-group {
-  display: flex;
-  align-items: center;
-  gap: var(--profile-name-row-gap);
-	justify-self: center;
-	overflow: hidden;
-	 max-width: 100%;
-}
-
-body.profile .profile-name-heading {
-  margin: 0;
-  min-width: 0;
-  white-space: nowrap;
-}
 
 .profile-role,
 .profile-handle,
@@ -1406,55 +1392,6 @@ body.profile .profile-hero--personal::after {
     padding: 0;
   }
 
-  /* PROFILE TEXT */
-  body.profile .profile-name-row {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: var(--profile-name-row-gap);
-    flex-wrap: nowrap;
-  }
-
-
-
-.profile-name-row {
-  width: 100%;
-  overflow: hidden;
-}
-
-.profile-name-group {
-  display: block;
-  align-items: center;
-  gap: 0.45rem;
-
-  width: 100%;
-  min-width: 0;
-}
-
-.profile-name-heading {
-  flex: 1;
-  min-width: 0;
-  margin: 0;
-}
-
-.profile-name-input {
-  width: 100%;
-  min-width: 0;
-
-  border: none;
-  background: transparent;
-  outline: none;
-
-  font: inherit;
-  font-weight: 700;
-  line-height: 1;
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-
-  font-size: clamp(1.75rem, 5vw, 2.5rem);
-}
 
 .profile-verified {
   flex-shrink: 0;
@@ -1682,7 +1619,7 @@ body.profile .profile-name-heading {
   min-width: 0;
   max-width: 100%;
   overflow: hidden;
-  margin: 0;
+  margin: 0;	
 }
 
 body.profile #profileNameInput {
