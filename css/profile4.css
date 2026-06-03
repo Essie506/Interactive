@@ -1706,7 +1706,7 @@ body.profile .profile-verified {
     background: #ffff;
 	  width: 100%;
 	  margin-top: 0;
-	  margin-bottom: 0;
+	  margin-bottom: 0.9rem;
   }
 
   body.profile .profile-no-tabs {
