@@ -482,7 +482,9 @@ body.profile .profile-verified {
   display: none;
 }
 
-
+.proof-submitted-status {
+	display: none;
+}
 
 
 
@@ -1774,7 +1776,8 @@ height: clamp(180px, 32dvh, 280px);
 	}
 
 	.nav-verified-badge,
-.profile-verified {
+.profile-verified,
+	.proof-submitted-status {
   display: inline-flex;
 	position: relative;
 }
