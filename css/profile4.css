@@ -1776,6 +1776,7 @@ height: clamp(180px, 32dvh, 280px);
 	.nav-verified-badge,
 .profile-verified {
   display: inline-flex;
+	position: relative;
 }
 
 .nav-verified-badge[hidden],
