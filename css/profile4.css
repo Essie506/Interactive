@@ -300,6 +300,8 @@ align-self: center;
 
 input#profileNameInput {
 	width: 100%;
+	border: none;
+	background: transparent;
 }
 
 
