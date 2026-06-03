@@ -1629,14 +1629,10 @@ body.profile .composer-foot {
   }
 
 
-
-	body.profile .business-section-header.mobile-only {
+.business-section.mobile-only {
 	display: none;
 }
 
-body.profile .business-section-header h2.mobile-only {
-display: none;
-}
 
 
   .navbar {
