@@ -268,6 +268,76 @@ function autoFitProfileName() {
   measurer.remove();
 }
 
+
+function autoFitNavTitle() {
+
+  if (!navTitleInput) return;
+
+  const parent =
+    navTitleInput.parentElement;
+
+  if (!parent) return;
+
+  const maxWidth =
+    parent.clientWidth;
+
+  let fontSize = 20;
+  const minFontSize = 12;
+
+  const measurer =
+    document.createElement("span");
+
+  measurer.style.position =
+    "absolute";
+
+  measurer.style.visibility =
+    "hidden";
+
+  measurer.style.whiteSpace =
+    "nowrap";
+
+  measurer.style.fontFamily =
+    getComputedStyle(navTitleInput)
+      .fontFamily;
+
+  measurer.style.fontWeight =
+    getComputedStyle(navTitleInput)
+      .fontWeight;
+
+  document.body.appendChild(
+    measurer
+  );
+
+  while (fontSize > minFontSize) {
+
+    measurer.style.fontSize =
+      `${fontSize}px`;
+
+    measurer.textContent =
+      navTitleInput.value || "Profile";
+
+    if (
+      measurer.offsetWidth <=
+      maxWidth
+    ) {
+      break;
+    }
+
+    fontSize -= 1;
+  }
+
+  navTitleInput.style.fontSize =
+    `${fontSize}px`;
+
+  measurer.remove();
+}
+
+
+
+
+
+
+
 function openServicesModal() {
   servicesModalOverlay?.classList.add("open");
 }
@@ -339,6 +409,8 @@ if (
   navTitleInput.value =
     profileNameInput.value;
 }
+
+autoFitNavTitle();
 
 
 // =========================
@@ -479,6 +551,7 @@ profileNameInput?.addEventListener(
     if (navTitleInput) {
       navTitleInput.value =
         profileNameInput.value;
+         autoFitNavTitle();
     }
   }
 );
@@ -534,6 +607,9 @@ profileBioSave?.addEventListener(
   profileNameInput.value = onlineName;
 }
 
+      autoFitProfileName();
+autoFitNavTitle();
+
     localStorage.setItem(
       "accountOnlineName",
       onlineName
@@ -563,6 +639,7 @@ navTitleInput?.addEventListener(
 }
 
     autoFitProfileName();
+       autoFitNavTitle();
 
   }
 );
@@ -580,6 +657,7 @@ window.addEventListener(
 
       autoGrowProfileBioInput();
       autoFitProfileName();
+          autoFitNavTitle();
 
       autoGrowProfileField(
         profileHandleInput
@@ -624,7 +702,7 @@ servicesSaveBtn?.addEventListener("click", () => {
 // ROLE SUGGESTIONS
 // -------------------------
 
-profileRoleInput.addEventListener(
+profileRoleInput?.addEventListener(
   "input",
   () => {
 
