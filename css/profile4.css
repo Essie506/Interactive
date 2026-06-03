@@ -1649,6 +1649,56 @@ body.profile .profile-hero-media:active {
   .services-modal-overlay.open .services-modal {
     transform: translateY(0) scale(1);
   }
+
+
+
+
+	
+
+	body.profile .profile-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  min-width: 0;
+}
+
+body.profile .profile-name-group {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+body.profile .profile-name-heading {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+body.profile #profileNameInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+body.profile .profile-verified {
+  flex: 0 0 auto;
+}
 }
 
 
