@@ -29,8 +29,6 @@ const profileNameInput = document.getElementById("profileNameInput");
     ".profile-verified"
   );
   
-  const proofSubmittedStatus =
-  document.getElementById("proofSubmittedStatus");
   
   const proofSubmittedDesktop =
   document.getElementById("proofSubmittedDesktop");
@@ -73,7 +71,7 @@ function updateProfileVerificationUI() {
   }
 
   if (proofSubmittedDesktop) {
-    proofSubmittedStatus.hidden =
+    proofSubmittedDesktop.hidden =
       !profileUser.proofSubmitted;
   }
 
@@ -255,7 +253,4 @@ if (shareProfileButtons.length) {
     });
   }
 });
-
-
-
 
