@@ -1630,6 +1630,17 @@ body.profile .composer-foot {
     display: none;
   }
 
+
+
+	body.profile .business-section-header.mobile-only {
+	display: none;
+}
+
+body.profile .business-section-header h2.mobile-only {
+display: none;
+}
+
+
   .navbar {
     height: var(--bar-height-large);
     padding: 0 1.375rem;
