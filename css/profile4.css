@@ -1763,8 +1763,7 @@ body.profile .profile-verified {
   body.profile #profile-panel-media {
     display: block;
      left: 0;
-     width: 99%;
-     margin: 0 0.25rem;
+     width: 100%;
   }
 
 	body.profile .nav-title {
