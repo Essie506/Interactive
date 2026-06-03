@@ -458,9 +458,6 @@ body.editing-profile .profile-hero-corner {
 
 
 
-
-
-
 body.profile .profile-top-right-actions {
   position: absolute;
  right: 1rem;
@@ -482,10 +479,24 @@ body.profile .profile-verified {
   display: none;
 }
 
+
 .proof-submitted-status {
-	display: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
 }
 
+.proof-submitted-status[hidden] {
+  display: none;
+}
+
+.proof-submitted-desktop {
+  display: inline-flex;
+}
+
+.proof-submitted-mobile {
+  display: none;
+}
 
 
 
@@ -1775,6 +1786,16 @@ height: clamp(180px, 32dvh, 280px);
 		column-gap: 3rem;
 	}
 
+
+	
+  .proof-submitted-desktop {
+    display: none;
+  }
+
+  .proof-submitted-mobile {
+    display: inline-flex;
+  }
+
 	.nav-verified-badge,
 .profile-verified,
 	.proof-submitted-status {
@@ -1783,8 +1804,7 @@ height: clamp(180px, 32dvh, 280px);
 }
 
 .nav-verified-badge[hidden],
-.profile-verified[hidden],
-.proof-submitted-status[hidden] {
+.profile-verified[hidden] {
   display: none;
 }
 
