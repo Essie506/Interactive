@@ -218,83 +218,55 @@ function updateBioSaveButtonState() {
 
 }
 
-
 function autoFitProfileName() {
   if (!profileNameInput) return;
 
   const parent =
-    profileNameInput.closest(".profile-name-row");
+    profileNameInput.closest(".profile-name-row") ||
+    profileNameInput.parentElement;
 
   if (!parent) return;
 
-      profileNameInput.style.width =
-    "100%";
-
-  profileNameInput.style.maxWidth =
-    "100%";
+  profileNameInput.style.width = "100%";
+  profileNameInput.style.maxWidth = "100%";
 
   const maxWidth =
-    parent.clientWidth;
-
-  let fontSize = 40;
-  const minFontSize = 6;
-
-  const maxWidth =
-    parent.clientWidth;
+    parent.clientWidth || 260;
 
   let fontSize = 40;
   const minFontSize = 18;
 
-  // create hidden measurer
   const measurer =
     document.createElement("span");
 
   measurer.style.position = "absolute";
   measurer.style.visibility = "hidden";
   measurer.style.whiteSpace = "nowrap";
-
   measurer.style.fontFamily =
     getComputedStyle(profileNameInput).fontFamily;
-
   measurer.style.fontWeight =
     getComputedStyle(profileNameInput).fontWeight;
 
   document.body.appendChild(measurer);
 
   while (fontSize > minFontSize) {
-
-    measurer.style.fontSize =
-      `${fontSize}px`;
+    measurer.style.fontSize = `${fontSize}px`;
 
     measurer.textContent =
-      profileNameInput.value || "";
+      profileNameInput.value || "Profile";
 
     if (measurer.offsetWidth <= maxWidth) {
       break;
     }
 
     fontSize -= 1;
-
   }
-
-
-
-console.log(
-  profileNameInput.value,
-  fontSize
-);
-
-
-
-    
 
   profileNameInput.style.fontSize =
     `${fontSize}px`;
 
   measurer.remove();
-
 }
-
 
 function openServicesModal() {
   servicesModalOverlay?.classList.add("open");
@@ -498,16 +470,19 @@ if (profileBioSave && profileBioInput) {
 profileNameInput?.addEventListener(
   "input",
   () => {
-
     autoFitProfileName();
+
+    requestAnimationFrame(() => {
+      autoFitProfileName();
+    });
 
     if (navTitleInput) {
       navTitleInput.value =
         profileNameInput.value;
     }
-
   }
 );
+
 
 [
   profileHandleInput,
