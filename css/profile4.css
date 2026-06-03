@@ -286,22 +286,14 @@ body.profile .profile-gym i {
 align-self: center;
 }
 
-.profile-name-input {
-  background: transparent;
-  border: none;
-  outline: none;
-  max-width: 100%;
-	min-width: 0;
-  text-align: inherit;
-  font-weight: 700;
-  color: var(--profile-text);
-   font-size: clamp(2rem, 5vw, 4rem);
-}
 
 input#profileNameInput {
 	width: 100%;
+	display: block;
 	border: none;
 	background: transparent;
+	  font-size: clamp(2rem, 5vw, 4rem);
+	  font-weight: 700;
 }
 
 
