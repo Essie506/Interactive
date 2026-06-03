@@ -101,7 +101,7 @@ function syncDisplayName(name) {
   }
 
   if (navTitleInput) {
-    navTitleInput.value =
+    navTitleInput.textContent =
       displayName;
   }
 
