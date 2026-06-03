@@ -350,7 +350,7 @@ body.profile .nav-title-wrap {
 	font-weight: 700;
 	font-size: var(--main-font-size);
 	display: inline-flex;
-	min-width: 80%;
+
 }
 
 .nav-title-input {
