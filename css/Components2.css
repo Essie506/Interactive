@@ -1856,12 +1856,12 @@ body.business-profile .chevron-btn {
   }
 
 
-body.profile .business-section-header .mobile-only {
+body.profile .business-section-header.mobile-only {
   margin-bottom: 0.9rem;
 	display: flex;
 }
 
-body.profile .business-section-header h2 .mobile-only {
+body.profile .business-section-header h2.mobile-only {
   margin: 0;
   color: var(--text-dark);
 }
