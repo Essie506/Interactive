@@ -214,7 +214,7 @@ body.profile .profile-tabs-card {
 
 body.profile .profile-section-card {
   margin-bottom: 0.8rem;
-  padding: clamp(1rem, 2vw, 1.4rem);
+  padding: clamp(0.125rem, 1vw, 1rem);
 }
 
 
