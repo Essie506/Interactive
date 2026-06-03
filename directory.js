@@ -234,7 +234,7 @@ function autoFitProfileName() {
     parent.clientWidth || 260;
 
   let fontSize = 40;
-  const minFontSize = 18;
+  const minFontSize = 6;
 
   const measurer =
     document.createElement("span");
