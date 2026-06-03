@@ -338,7 +338,13 @@ navTitleInput.style.maxWidth = "100%";
 
 
 
+function autoGrowNavTitle() {
+  if (!navTitleInput) return;
 
+  navTitleInput.style.height = "0px";
+  navTitleInput.style.height =
+    `${navTitleInput.scrollHeight}px`;
+}
 
 
 
@@ -415,7 +421,7 @@ if (
 }
 
 autoFitNavTitle();
-
+autoGrowNavTitle();
 
 // =========================
 // EVENT LISTENERS
@@ -552,6 +558,7 @@ profileNameInput?.addEventListener(
 
     requestAnimationFrame(() => {
       autoFitProfileName();
+        autoGrowNavTitle();
     });
 
     if (navTitleInput) {
@@ -646,6 +653,7 @@ navTitleInput?.addEventListener(
 
     autoFitProfileName();
        autoFitNavTitle();
+      autoGrowNavTitle();
 
   }
 );
