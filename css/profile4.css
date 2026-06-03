@@ -479,14 +479,12 @@ body.profile .profile-verified {
 
 .nav-verified-badge,
 .profile-verified {
-  display: inline-flex;
-}
-
-.nav-verified-badge[hidden],
-.profile-verified[hidden],
-.proof-submitted-status[hidden] {
   display: none;
 }
+
+
+
+
 
 
 /* =========================
@@ -1774,6 +1772,18 @@ height: clamp(180px, 32dvh, 280px);
 		grid-template-columns: 0 1fr;
 		column-gap: 3rem;
 	}
+
+	.nav-verified-badge,
+.profile-verified {
+  display: inline-flex;
+}
+
+.nav-verified-badge[hidden],
+.profile-verified[hidden],
+.proof-submitted-status[hidden] {
+  display: none;
+}
+
 
 }
 
