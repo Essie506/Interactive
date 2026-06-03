@@ -231,7 +231,6 @@ body.profile .business-hero-card {
 background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: var(--shadow-strong);
   color: var(--text-dark);
    align-items: flex-start;
 	overflow: visible;
