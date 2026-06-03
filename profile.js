@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Actions
+   const followBtn = document.getElementById("followBtn"); 
+  const shareProfileButtons = document.querySelectorAll(".profile-share-btn");
+  const messageProfileBtn = document.getElementById("messageProfileBtn");
+
+  // Menus
+  const profileChevronBtn = document.getElementById("profileChevronBtn");
+  const profileCornerMenu = document.getElementById("profileCornerMenu");
+
+  // Block modal
+  const profileBlockMenuBtn = document.getElementById("profileBlockMenuBtn");
+  const blockUserModal = document.getElementById("blockUserModal");
+  const blockCloseBtn = document.getElementById("blockCloseBtn");
+  const cancelBlockBtn = document.getElementById("cancelBlockBtn");
+  const confirmBlockBtn = document.getElementById("confirmBlockBtn");
+
   const tabs = document.querySelectorAll(".profile-tab");
   const panels = document.querySelectorAll(".profile-panel");
+  
 
   const profilePage = document.querySelector(".profile-page");
 const profileNameInput = document.getElementById("profileNameInput");
@@ -11,6 +29,15 @@ const profileNameInput = document.getElementById("profileNameInput");
   document.querySelector(
     ".profile-verified"
   );
+  
+  const proofSubmittedStatus =
+  document.getElementById("proofSubmittedStatus");
+  
+
+// temporary until Firestore is read here
+   const verificationStatus = "pending"; 
+
+  
 
 const profileUser = {
   id: profilePage?.dataset.userId || null,
@@ -22,38 +49,43 @@ const profileUser = {
   handle: profileHandleInput
     ? profileHandleInput.value.trim()
     : "",
+  proofSubmitted: verificationStatus === "pending",
+  verified: verificationStatus === "approved"
 
-  verified: true
 };
 
-    if (navTitle && profileUser.name) {
+
+function updateProfileVerificationUI() {
+
+  if (navVerifiedBadge) {
+    navVerifiedBadge.hidden =
+      !profileUser.verified;
+  }
+
+  if (profileVerifiedBadge) {
+    profileVerifiedBadge.hidden =
+      !profileUser.verified;
+  }
+
+  if (proofSubmittedStatus) {
+    proofSubmittedStatus.hidden =
+      !profileUser.proofSubmitted;
+  }
+
+}
+
+if (navTitle && profileUser.name) {
   navTitle.textContent = profileUser.name;
 }
 
-  if (navVerifiedBadge) {
-  navVerifiedBadge.hidden = !profileUser.verified;
-}
+updateProfileVerificationUI();
 
-  if (profileVerifiedBadge) {
-  profileVerifiedBadge.hidden =
-    !profileUser.verified;
-}
+document.title =
+  `${profileUser.name} - Interactive Fitness`;
 
-  document.title = `${profileUser.name} - Interactive Fitness`;
 
-  const followBtn = document.getElementById("followBtn");
+  
 
-  const shareProfileButtons = document.querySelectorAll(".profile-share-btn");
-  const messageProfileBtn = document.getElementById("messageProfileBtn");
-
-  const profileChevronBtn = document.getElementById("profileChevronBtn");
-  const profileCornerMenu = document.getElementById("profileCornerMenu");
-
-  const profileBlockMenuBtn = document.getElementById("profileBlockMenuBtn");
-  const blockUserModal = document.getElementById("blockUserModal");
-  const blockCloseBtn = document.getElementById("blockCloseBtn");
-  const cancelBlockBtn = document.getElementById("cancelBlockBtn");
-  const confirmBlockBtn = document.getElementById("confirmBlockBtn");
 
 
   function setActiveProfileTab(tabName) {
@@ -123,6 +155,8 @@ const profileUser = {
       }
     });
   }
+
+
 
 
 if (messageProfileBtn) {
@@ -214,5 +248,7 @@ if (shareProfileButtons.length) {
     });
   }
 });
+
+
 
 
