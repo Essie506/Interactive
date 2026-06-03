@@ -481,6 +481,17 @@ body.profile .profile-verified {
   display: none;
 }
 
+.nav-verified-badge,
+.profile-verified {
+  display: inline-flex;
+}
+
+.nav-verified-badge[hidden],
+.profile-verified[hidden],
+.proof-submitted-status[hidden] {
+  display: none;
+}
+
 
 /* =========================
    TABS
