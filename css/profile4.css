@@ -1623,6 +1623,8 @@ body.profile #profileNameInput {
 	  border: none;
   outline: none;
   box-shadow: none;
+	font-weight: 700;
+	background: transparent;
 }
 
 	#profileNameInput:focus {
