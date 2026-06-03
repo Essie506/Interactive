@@ -33,6 +33,12 @@ const profileNameInput = document.getElementById("profileNameInput");
   const proofSubmittedStatus =
   document.getElementById("proofSubmittedStatus");
   
+  const proofSubmittedDesktop =
+  document.getElementById("proofSubmittedDesktop");
+
+const proofSubmittedMobile =
+  document.getElementById("proofSubmittedMobile");
+  
 
 // temporary until Firestore is read here
    const verificationStatus = "pending"; 
@@ -72,6 +78,11 @@ function updateProfileVerificationUI() {
       !profileUser.proofSubmitted;
   }
 
+    if (proofSubmittedMobile) {
+    proofSubmittedMobile.hidden =
+      !profileUser.proofSubmitted;
+
+}
 }
 
 if (navTitle && profileUser.name) {
