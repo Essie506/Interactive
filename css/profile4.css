@@ -1464,6 +1464,7 @@ body.profile .profile-hero--personal::after {
     white-space: nowrap;
     font-weight: 700;
     color: var(--profile-text);
+	  display: flex;
   }
 
   body.profile .profile-handle {
