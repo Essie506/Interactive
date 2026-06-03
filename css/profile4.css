@@ -1760,7 +1760,7 @@ body.profile .profile-verified {
 
 	body.profile .nav-title {
 	    position: static;
-        transform: translateX(-10%);
+        transform: translateX(0);
         max-width: none;
         overflow: visible;
         text-overflow: unset;
