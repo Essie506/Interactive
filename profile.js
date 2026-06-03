@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const profilePage = document.querySelector(".profile-page");
 const profileNameInput = document.getElementById("profileNameInput");
   const profileHandleInput = document.getElementById("profileHandleInput");
-    const navTitle = document.getElementById("navTitle");
   const navVerifiedBadge = document.getElementById("navVerifiedBadge");
   const profileVerifiedBadge =
   document.querySelector(
@@ -85,9 +84,6 @@ function updateProfileVerificationUI() {
 }
 }
 
-if (navTitle && profileUser.name) {
-  navTitle.textContent = profileUser.name;
-}
 
 updateProfileVerificationUI();
 
