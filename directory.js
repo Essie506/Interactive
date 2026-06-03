@@ -273,10 +273,14 @@ function autoFitNavTitle() {
 
   if (!navTitleInput) return;
 
-  const parent =
-    navTitleInput.parentElement;
+ const parent =
+  navTitleInput.closest(".nav-title-wrap") ||
+  navTitleInput.parentElement;
 
   if (!parent) return;
+
+    navTitleInput.style.width = "100%";
+navTitleInput.style.maxWidth = "100%";
 
   const maxWidth =
     parent.clientWidth;
