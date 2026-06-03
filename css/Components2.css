@@ -1834,9 +1834,7 @@ body.business-profile .chevron-btn {
   }
 
    .business-section-tabs {
-   left: 0;
-     width: 99%;
-     margin: 0 0.125rem 0.8rem 0.125rem;
+     width: 100%
   }
 
    .business-section {
