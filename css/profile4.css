@@ -273,16 +273,6 @@ align-self: center;
 }
 
 
-input#profileNameInput {
-	width: 100%;
-	display: block;
-	border: none;
-	background: transparent;
-	  font-size: clamp(2rem, 5vw, 4rem);
-	  font-weight: 700;
-}
-
-
 .profile-role-input,
 .profile-handle-input {
   background: transparent;
@@ -1630,6 +1620,15 @@ body.profile #profileNameInput {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+	  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+	#profileNameInput:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 body.profile .profile-verified {
