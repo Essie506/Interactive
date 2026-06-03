@@ -1840,9 +1840,7 @@ body.business-profile .chevron-btn {
   }
 
    .business-section {
-        left: 0;
-     width: 99%;
-       margin: 0.8rem 0.125rem 0.8rem 0.125rem;
+     width: 100%;
    }
 
 .profile-hero-corner {
