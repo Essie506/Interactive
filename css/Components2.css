@@ -1636,6 +1636,10 @@ body.profile .composer-foot {
 	padding: 0;
 }
 
+.business-section-header.mobile-only {
+  display: none;
+}
+
 
 
   .navbar {
