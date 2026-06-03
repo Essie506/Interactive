@@ -370,7 +370,7 @@ body.profile .profile-bio {
 
 body.profile .nav-title-wrap {
 	z-index: 3000;
-	transform: translateX(15%);
+	justify-self: center;
 	font-weight: 700;
 	font-size: var(--main-font-size);
 	display: inline-flex;
