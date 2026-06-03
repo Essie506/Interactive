@@ -344,15 +344,10 @@ body.profile .profile-bio {
 	}
 
 
-
-
-
-
 .nav-title-wrap {
   position: relative;
-  transform: translateX(50%);
+ display: inline-flex;
   width: min(58vw, 18rem);
-  min-width: 0;
 }
 
 .nav-title-heading {
