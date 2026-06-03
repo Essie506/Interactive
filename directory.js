@@ -546,6 +546,8 @@ if (profileBioSave && profileBioInput) {
 profileNameInput?.addEventListener(
   "input",
   () => {
+
+       console.log("profile name input fired");
     autoFitProfileName();
 
     requestAnimationFrame(() => {
