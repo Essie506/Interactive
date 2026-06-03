@@ -476,10 +476,6 @@ body.profile .profile-verified {
   line-height: 1;
 }
 
-.profile-verified,
-#navVerifiedBadge {
-  display: none;
-}
 
 .nav-verified-badge,
 .profile-verified {
