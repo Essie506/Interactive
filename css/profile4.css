@@ -298,6 +298,10 @@ align-self: center;
    font-size: clamp(2rem, 5vw, 4rem);
 }
 
+input#profileNameInput {
+	width: 100%;
+}
+
 
 .profile-role-input,
 .profile-handle-input {
