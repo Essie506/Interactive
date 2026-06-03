@@ -220,11 +220,24 @@ function updateBioSaveButtonState() {
 
 
 function autoFitProfileName() {
-
   if (!profileNameInput) return;
 
   const parent =
-    profileNameInput.parentElement;
+    profileNameInput.closest(".profile-name-row");
+
+  if (!parent) return;
+
+      profileNameInput.style.width =
+    "100%";
+
+  profileNameInput.style.maxWidth =
+    "100%";
+
+  const maxWidth =
+    parent.clientWidth;
+
+  let fontSize = 40;
+  const minFontSize = 6;
 
   const maxWidth =
     parent.clientWidth;
