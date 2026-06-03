@@ -1630,7 +1630,10 @@ body.profile .composer-foot {
 
 
 .business-section.mobile-only {
-	display: none;
+	background: transparent;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
 }
 
 
