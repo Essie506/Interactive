@@ -46,9 +46,20 @@ const profileGymInput =
     "profileGymInput"
   );
 
-const profileAffiliationInput =
+
+const profileAffiliationToggle =
   document.getElementById(
-    "profileAffiliationInput"
+    "profileAffiliationToggle"
+  );
+
+const profileAffiliationMenu =
+  document.getElementById(
+    "profileAffiliationMenu"
+  );
+
+const profileAffiliationText =
+  document.getElementById(
+    "profileAffiliationText"
   );
 
 
@@ -133,6 +144,28 @@ let originalProfileValues = {};
 // HELPERS
 // =========================
 
+
+function getSelectedAffiliations() {
+  return Array.from(
+    document.querySelectorAll(
+      "#profileAffiliationMenu input:checked"
+    )
+  ).map(input => input.value);
+}
+
+function updateAffiliationText() {
+  if (!profileAffiliationText) return;
+
+  const selected =
+    getSelectedAffiliations();
+
+  profileAffiliationText.textContent =
+    selected.length
+      ? selected
+          .map(item => `✓ ${item}`)
+          .join("  •  ")
+      : "Select status";
+}
 
 function autoGrowProfileField(field) {
 
@@ -372,23 +405,17 @@ function resizeNavTitleInput() {
 
 const savedAffiliations =
   JSON.parse(
-    localStorage.getItem(
-      "profileAffiliation"
-    ) || "[]"
+    localStorage.getItem("profileAffiliation") || "[]"
   );
 
 document
-  .querySelectorAll(
-    "#profileAffiliationInput input"
-  )
+  .querySelectorAll("#profileAffiliationMenu input")
   .forEach(input => {
-
     input.checked =
-      savedAffiliations.includes(
-        input.value
-      );
-
+      savedAffiliations.includes(input.value);
   });
+
+updateAffiliationText();
 
 
 // =========================
@@ -455,10 +482,25 @@ autoFitNavTitle();
 // EVENT LISTENERS
 // =========================
 
+profileAffiliationToggle?.addEventListener(
+  "click",
+  () => {
+    if (profileAffiliationMenu) {
+  profileAffiliationMenu.hidden =
+    !profileAffiliationMenu.hidden;
+}
+  }
+);
 
 
-
-
+document
+  .querySelectorAll("#profileAffiliationMenu input")
+  .forEach(input => {
+    input.addEventListener(
+      "change",
+      updateAffiliationText
+    );
+  });
 
 // -------------------------
 // EDIT PROFILE
@@ -637,19 +679,10 @@ profileBioSave?.addEventListener(
   () => {
 
 
-const affiliationValues =
-  Array.from(
-    document.querySelectorAll(
-      "#profileAffiliationInput input:checked"
-    )
-  ).map(
-    input => input.value
-  );
-
 localStorage.setItem(
   "profileAffiliation",
   JSON.stringify(
-    affiliationValues
+    getSelectedAffiliations()
   )
 );
 
