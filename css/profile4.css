@@ -114,9 +114,7 @@ body.profile::before {
   animation: satinShimmer 3.2s ease-out forwards;
 }
 
-body.profile .navbar {
-grid-template-columns: auto 1fr 1fr auto;
-}
+
 
 /* =========================
   REPOSITION & ZOOM
@@ -1228,6 +1226,9 @@ body.profile .block-btn {
     flex-direction: column;
   }
 
+	body.profile .navbar {
+grid-template-columns: auto 1fr 1fr auto;
+}
 
 
 	body.profile .profile-role-input,
