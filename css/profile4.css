@@ -1583,7 +1583,11 @@ body.profile .profile-hero-media:active {
   }
 
 
+.nav-title-input {
 
+  text-align: start;
+
+}
 
 	
 
@@ -1641,7 +1645,7 @@ body.profile #profileNameInput {
 
 
 .nav-title-wrap {
-     width:100%;
+    width:fit-content;
     transform: translateX(0);
 }
 	
