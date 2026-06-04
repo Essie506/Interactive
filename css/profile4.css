@@ -958,6 +958,7 @@ body.profile .profile-affiliation-select {
   word-break: break-word;
   field-sizing: content;
 	background: transparent;
+	outline: none;
 }
 
 #profileHandleInput,
