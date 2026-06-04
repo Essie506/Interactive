@@ -348,6 +348,28 @@ function closeServicesModal() {
 }
 
 
+function resizeNavTitleInput() {
+  if (!navTitleInput) return;
+
+  const wrap =
+    navTitleInput.closest(".nav-title-wrap");
+
+  if (!wrap) return;
+
+  navTitleInput.style.width = "0px";
+
+  const availableWidth =
+    wrap.clientWidth -
+    Array.from(wrap.children)
+      .filter(el => el !== navTitleInput && !el.hidden)
+      .reduce((total, el) => total + el.offsetWidth, 0)
+    - 12;
+
+  navTitleInput.style.width =
+    `${Math.max(40, availableWidth)}px`;
+}
+
+
 // =========================
 // RUN ON STARTUP
 // =========================
@@ -648,6 +670,17 @@ navTitleInput?.addEventListener(
 
   }
 );
+
+
+
+resizeNavTitleInput();
+
+window.addEventListener("resize", resizeNavTitleInput);
+
+navTitleInput.addEventListener("input", () => {
+  resizeNavTitleInput();
+});
+
 
 
 // -------------------------
