@@ -388,6 +388,10 @@ flex: 1 1 auto;
 }
 
 
+.nav-title-input {
+  -webkit-appearance: none;
+}
+
 
 
 body.profile .profile-avatar {
