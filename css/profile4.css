@@ -1226,10 +1226,6 @@ body.profile .block-btn {
     flex-direction: column;
   }
 
-	body.profile .navbar {
-grid-template-columns: auto 1fr 1fr auto;
-}
-
 
 	body.profile .profile-role-input,
 body.profile .profile-gym-input,
