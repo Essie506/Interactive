@@ -1683,7 +1683,6 @@ body.profile #profileNameInput {
   body.profile .profile-gym,
   body.profile .profile-bio,
 	body.profile .profile-detail-row {
-    text-align: center;
 	  z-index: 4;
 	  position: relative;
 	  font-size: medium;
