@@ -1205,12 +1205,6 @@ body.profile .block-btn {
     display: block;
   }
 
-	#profileHandleInput,
-#profileGymInput,
-#profileAffiliationInput {
-  font-size: medium;
-  font-weight: 400;
-}
 
   body.profile .profile-tabs-card {
     display: none;
