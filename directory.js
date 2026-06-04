@@ -557,6 +557,7 @@ if (editProfileBtn) {
 
   }
 );
+}
 
 
 document.addEventListener(
