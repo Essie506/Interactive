@@ -1865,6 +1865,7 @@ body.business-profile .chevron-btn {
 
 	.avatar-editor-btn-save {
 		position: absolute;
+		visibility: hidden;
 }
 	
 	.upload-btn.send-btn.ready,
