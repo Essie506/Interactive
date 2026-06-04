@@ -946,8 +946,6 @@ body.profile .profile-affiliation-select {
   min-width: 90%;
   text-align: start;
   margin: var(--profile-role-margin-top) 0;
-  font-weight: 400;
-  font-size: medium;
   line-height: 1.7;
   font-family: inherit;
   color: var(--text-dark);
@@ -965,7 +963,7 @@ body.profile .profile-affiliation-select {
 #profileGymInput,
 #profileAffiliationInput {
   font-size: medium;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 body.profile .profile-detail-row i {
