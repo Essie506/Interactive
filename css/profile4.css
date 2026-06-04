@@ -1655,6 +1655,8 @@ body.profile #profileNameInput {
 .nav-title-wrap {
     width:100%;
     transform: translateX(0);
+	position: sticky;
+	min-width: 10rem;
 }
 	
 }
