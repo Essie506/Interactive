@@ -1596,7 +1596,7 @@ body.profile #profileNameInput {
 	#profileHandleInput,
 #profileGymInput,
 #profileAffiliationInput,
-	profile-detail-input {
+	textarea#profileRoleInput {
   font-size: medium;
   font-weight: 600;
 }
