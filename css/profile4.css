@@ -988,7 +988,6 @@ body.profile .profile-detail-row {
 	grid-template-columns: auto 1fr;
 
   align-items: center;
-margin-top: 0.5rem;
   column-gap: 1.55rem;
 
   width: 100%;
