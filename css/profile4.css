@@ -376,6 +376,7 @@ flex: 1 1 auto;
   background: transparent;
 	margin-top: 1rem;
 	margin-right: 0.5rem;
+	max-height: 1.55rem;
 
   font: inherit;
   text-align: center;
