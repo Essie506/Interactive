@@ -1863,6 +1863,12 @@ body.business-profile .chevron-btn {
     width: 100%;
   }
 
+	.avatar-editor-btn-save {
+	opacity: 0.01;
+		position: absolute;
+}
+
+
 }
 
 
