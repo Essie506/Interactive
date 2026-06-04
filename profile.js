@@ -24,14 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 const profileNameInput = document.getElementById("profileNameInput");
   const profileHandleInput = document.getElementById("profileHandleInput");
   const navVerifiedBadge = document.getElementById("navVerifiedBadge");
-  const profileVerifiedBadge =
-  document.querySelector(
-    ".profile-verified"
-  );
-  
-  
-  const proofSubmittedDesktop =
-  document.getElementById("proofSubmittedDesktop");
+
 
 const proofSubmittedMobile =
   document.getElementById("proofSubmittedMobile");
@@ -65,15 +58,6 @@ function updateProfileVerificationUI() {
       !profileUser.verified;
   }
 
-  if (profileVerifiedBadge) {
-    profileVerifiedBadge.hidden =
-      !profileUser.verified;
-  }
-
-  if (proofSubmittedDesktop) {
-    proofSubmittedDesktop.hidden =
-      !profileUser.proofSubmitted;
-  }
 
     if (proofSubmittedMobile) {
     proofSubmittedMobile.hidden =
