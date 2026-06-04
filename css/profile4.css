@@ -988,11 +988,11 @@ color: var(--text-dark);
 
 body.profile .profile-detail-row {
   display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: 1.5rem 1fr;
 
   align-items: center;
-  column-gap: 1.55rem;
-
+  column-gap: 0.5rem;
+text-align: center;
   width: 100%;
   min-width: 0;
 }
