@@ -353,8 +353,15 @@ function resizeNavTitleInput() {
 
   navTitleInput.style.width = "1px";
 
+  const nextWidth =
+    Math.max(40, navTitleInput.scrollWidth);
+
   navTitleInput.style.width =
-    `${Math.max(40, navTitleInput.scrollWidth)}px`;
+    `${nextWidth}px`;
+
+  requestAnimationFrame(() => {
+    navTitleInput.scrollLeft = 0;
+  });
 }
 
 // =========================
