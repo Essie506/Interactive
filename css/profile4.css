@@ -365,9 +365,7 @@ flex: 1 1 auto;
 }
 
 .nav-title-input {
-  width: 100%;
-  min-width: 0;
-  max-width: 100%;
+  min-width: 100%;
 	flex: 0 0 auto;
 	flex-wrap: nowrap;
 	display: flex;
@@ -1647,7 +1645,7 @@ body.profile #profileNameInput {
 
 
 .nav-title-wrap {
-    width:fit-content;
+    width:100%;
     transform: translateX(0);
 }
 	
