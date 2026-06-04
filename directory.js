@@ -482,15 +482,7 @@ autoFitNavTitle();
 // EVENT LISTENERS
 // =========================
 
-profileAffiliationToggle?.addEventListener(
-  "click",
-  () => {
-    if (profileAffiliationMenu) {
-  profileAffiliationMenu.hidden =
-    !profileAffiliationMenu.hidden;
-}
-  }
-);
+
 
 
 document
@@ -543,7 +535,50 @@ if (editProfileBtn) {
     }
   );
 
-}
+
+   profileAffiliationToggle?.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      !document.body.classList.contains(
+        "editing-profile"
+      )
+    ) {
+      return;
+    }
+
+    event.stopPropagation();
+
+    if (profileAffiliationMenu) {
+      profileAffiliationMenu.hidden =
+        !profileAffiliationMenu.hidden;
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "click",
+  () => {
+
+    if (profileAffiliationMenu) {
+      profileAffiliationMenu.hidden = true;
+    }
+
+  }
+);
+
+profileAffiliationMenu?.addEventListener(
+  "click",
+  (event) => {
+
+    event.stopPropagation();
+
+  }
+);
+
 
 // -------------------------
 // BIO INPUT
@@ -677,6 +712,10 @@ editProfileBtn?.addEventListener(
 profileBioSave?.addEventListener(
   "click",
   () => {
+
+      if (profileAffiliationMenu) {
+  profileAffiliationMenu.hidden = true;
+}
 
 
 localStorage.setItem(
