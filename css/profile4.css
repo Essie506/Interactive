@@ -945,6 +945,8 @@ body.profile .profile-affiliation-select {
   width: 100%;
   min-width: 90%;
   text-align: start;
+	 font-size: medium;
+  font-weight: 500;
   margin: var(--profile-role-margin-top) 0;
   line-height: 1.7;
   font-family: inherit;
