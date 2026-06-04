@@ -1301,7 +1301,7 @@ body.profile .composer-foot {
 }
 
 .avatar-editor-btn-save {
-	opacity: 0.01;
+	opacity: 0;
 }
 
 
@@ -1864,9 +1864,9 @@ body.business-profile .chevron-btn {
   }
 
 	.avatar-editor-btn-save {
-	opacity: 0.01;
 		position: absolute;
 }
+	
 	.upload-btn.send-btn.ready,
 .ready {
   opacity: 1;
