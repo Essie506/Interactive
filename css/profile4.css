@@ -985,7 +985,7 @@ color: var(--text-dark);
 
 body.profile .profile-detail-row {
   display: grid;
-	grid-template-columns: 0 1fr;
+	grid-template-columns: auto 1fr;
 
   align-items: start;
 margin-top: 0.5rem;
