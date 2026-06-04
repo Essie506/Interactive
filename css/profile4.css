@@ -952,11 +952,10 @@ body.profile .profile-affiliation-select {
   font-family: inherit;
   color: var(--text-dark);
 	  resize: none;
-
+	border: none;
   white-space: pre-wrap;
   overflow-wrap: break-word;
   word-break: break-word;
-
   field-sizing: content;
 }
 
