@@ -455,16 +455,17 @@ body.profile .profile-top-right-actions {
 .nav-verified-badge,
 .proof-submitted-status {
   justify-content: center;
-  font-size: var(--profile-verified-size);
   line-height: 1;
 }
 
 .nav-verified-badge {
 	  color: var(--main-color);
+	 font-size: var(--profile-verified-size);
 }
 
 .proof-submitted-status {
 	  color: goldenrod;
+	font-size: 1.4rem;
 }
 
 
