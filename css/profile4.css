@@ -1770,16 +1770,6 @@ body.profile #profileNameInput {
      width: 100%;
   }
 
-	body.profile .nav-title {
-	    position: static;
-        transform: translateX(0);
-        max-width: none;
-        overflow: visible;
-        text-overflow: unset;
-    }
-
-
-	
 
 	body.profile .profile-hero-media {
   touch-action: none;
@@ -1796,6 +1786,12 @@ height: clamp(180px, 32dvh, 280px);
 		column-gap: 3rem;
 	}
 
+
+.nav-title-input {
+margin-top: 0rem;
+
+}
+	
 	
 
 	section.business-section.mobile-only {
