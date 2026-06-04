@@ -1592,6 +1592,14 @@ body.profile #profileNameInput {
     transform: translateX(0);
 	max-width: 10rem;
 }
+
+	#profileHandleInput,
+#profileGymInput,
+#profileAffiliationInput,
+	profile-detail-input {
+  font-size: medium;
+  font-weight: 600;
+}
 	
 }
 
