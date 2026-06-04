@@ -286,7 +286,7 @@ navTitleInput.style.maxWidth = "100%";
     parent.clientWidth;
 
   let fontSize = 20;
-  const minFontSize = 12;
+  const minFontSize = 6;
 
   const measurer =
     document.createElement("span");
