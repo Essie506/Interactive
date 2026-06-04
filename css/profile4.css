@@ -369,6 +369,8 @@ flex: 1 1 auto;
 	flex: 0 0 auto;
 	flex-wrap: nowrap;
 	display: flex;
+	border: none;
+	background: transparent;
 }
 	
 
