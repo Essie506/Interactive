@@ -951,6 +951,13 @@ body.profile .profile-affiliation-select {
   line-height: 1.3;
   font-family: inherit;
   color: var(--text-dark);
+	  resize: none;
+
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
+
+  field-sizing: content;
 }
 
 #profileHandleInput,
@@ -973,13 +980,7 @@ color: var(--text-dark);
 	  overflow: hidden;
 	 margin: 0;
   padding: 0;
-  resize: none;
 
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  word-break: break-word;
-
-  field-sizing: content;
 }
 
 body.profile .profile-detail-row {
