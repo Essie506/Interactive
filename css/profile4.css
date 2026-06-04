@@ -355,7 +355,7 @@ body.profile .profile-bio {
   width: 100%;
   min-width: 0;
   margin: 0;
-
+flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -366,6 +366,10 @@ body.profile .profile-bio {
   width: 100%;
   min-width: 0;
   max-width: 100%;
+	flex: 0 0 auto;
+	flex-wrap: nowrap;
+}
+	
 
   border: 0;
   outline: 0;
