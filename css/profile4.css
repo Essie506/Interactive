@@ -1656,6 +1656,25 @@ body.profile #profileNameInput {
     width:100%;
     transform: translateX(0);
 }
+
+
+  .nav-title-wrap {
+    position: absolute;
+    left: var(--space-sm);
+    transform: none;
+  }
+
+  .nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+	
 	
 }
 
