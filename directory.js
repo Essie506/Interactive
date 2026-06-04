@@ -46,7 +46,10 @@ const profileGymInput =
     "profileGymInput"
   );
 
-
+const profileAffiliationInput =
+  document.getElementById(
+    "profileAffiliationInput"
+  );
 
 
 const servicesEditBtn =
@@ -79,9 +82,6 @@ const editableFields = [
   profileRoleInput,
   profileGymInput
 ];
-
-
-
 
 
 // =========================
@@ -370,6 +370,27 @@ function resizeNavTitleInput() {
 
 
 
+const savedAffiliations =
+  JSON.parse(
+    localStorage.getItem(
+      "profileAffiliation"
+    ) || "[]"
+  );
+
+document
+  .querySelectorAll(
+    "#profileAffiliationInput input"
+  )
+  .forEach(input => {
+
+    input.checked =
+      savedAffiliations.includes(
+        input.value
+      );
+
+  });
+
+
 // =========================
 // LOAD SAVED BIO
 // =========================
@@ -614,6 +635,25 @@ editProfileBtn?.addEventListener(
 profileBioSave?.addEventListener(
   "click",
   () => {
+
+
+const affiliationValues =
+  Array.from(
+    document.querySelectorAll(
+      "#profileAffiliationInput input:checked"
+    )
+  ).map(
+    input => input.value
+  );
+
+localStorage.setItem(
+  "profileAffiliation",
+  JSON.stringify(
+    affiliationValues
+  )
+);
+
+      
     const onlineName =
       navTitleInput.value.trim() || "Profile";
 
@@ -668,7 +708,7 @@ navTitleInput?.addEventListener(
 
 resizeNavTitleInput();
 
-navTitleInput.addEventListener(
+navTitleInput?.addEventListener(
   "input",
   resizeNavTitleInput
 );
