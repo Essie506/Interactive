@@ -1867,6 +1867,12 @@ body.business-profile .chevron-btn {
 	opacity: 0.01;
 		position: absolute;
 }
+	.upload-btn.send-btn.ready,
+.ready {
+  opacity: 1;
+  pointer-events: auto;
+	display: flex;
+}
 
 
 }
