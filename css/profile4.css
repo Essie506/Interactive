@@ -362,6 +362,7 @@ flex: 1 1 auto;
   gap: 0.35rem;
 	background: transparent;
 	border: none;
+	margin-right: 1rem;
 }
 
 .nav-title-input {
