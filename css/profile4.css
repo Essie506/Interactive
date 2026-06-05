@@ -1749,7 +1749,7 @@ body.profile #profileNameInput {
 	body.profile .profile-detail-row {
 	  z-index: 4;
 	  position: relative;
-	  font-size: 1.15rem;
+	  font-size: medium;
 	  font-weight: 400;
   }
 
@@ -1859,11 +1859,20 @@ body.profile .profile-affiliation-select {
 
 	body.profile .profile-detail-input,
 body.profile .profile-affiliation-select {
-  line-height: 1.5;
+  line-height: 1.3;
 }
 
 	textarea#profileHandleInput {
 		max-width: 60%;
 	}
+
+	 body.profile .profile-handle,
+	textarea#profileHandleInput,
+  body.profile .profile-role,
+  body.profile .profile-gym,
+  body.profile .profile-bio,
+	body.profile .profile-detail-row {
+	  font-size: 1.15rem;
+  }
   
 }
