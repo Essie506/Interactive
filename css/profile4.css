@@ -1871,8 +1871,9 @@ body.profile .profile-affiliation-select {
   line-height: 1.3;
 }
 
-	textarea#profileHandleInput {
-		max-width: 60%;
-	}
+	body.profile .profile-detail-row {
+     max-width: 55%;
+
+    }
   
 }
