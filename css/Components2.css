@@ -1281,11 +1281,6 @@ body.profile .composer-foot {
   box-shadow: var(--shadow-strong);
 }
 
-.upload-btn.send-btn:hover,
-.upload-btn.send-btn:focus-visible {
-  box-shadow: var(--shadow-strong);
-  transform: translateY(0.2rem);
-}
 
 .upload-btn.send-btn {
   pointer-events: none;
@@ -1764,6 +1759,13 @@ body.business-profile .chevron-btn {
 }
 
 
+	
+.upload-btn.send-btn:hover,
+.upload-btn.send-btn:focus-visible {
+  box-shadow: var(--shadow-strong);
+  transform: translateY(0.2rem);
+}
+
 }
 
 /* =========================
@@ -1871,6 +1873,12 @@ body.business-profile .chevron-btn {
   pointer-events: auto;
 	display: flex;
 	position: absolute;
+}
+
+		body.editing-profile .upload-btn-send-btn {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 
