@@ -1791,9 +1791,12 @@ margin-top: 0rem;
 }
 	
 	
-
 	section.business-section.mobile-only {
     margin-bottom: 0;
+}
+
+	body.profile .profile-info-inner {
+  padding: 0.125rem;
 }
 
 }
