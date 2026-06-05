@@ -947,7 +947,7 @@ body.profile .profile-affiliation-select {
 	 font-size: medium;
   font-weight: 500;
   margin: var(--profile-role-margin-top) 0;
-  line-height: 1.7;
+  line-height: 1.5;
   font-family: inherit;
   color: var(--text-dark);
 	  resize: none;
@@ -1856,7 +1856,11 @@ margin-top: 0rem;
 body.profile .profile-affiliation-select {
 	margin: 0;
 }
-  
+
+	body.profile .profile-detail-input,
+body.profile .profile-affiliation-select {
+  line-height: 1.5;
+}
 
 	textarea#profileHandleInput {
 		max-width: 60%;
