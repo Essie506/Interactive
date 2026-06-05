@@ -1815,10 +1815,13 @@ margin-top: 0rem;
 	body.profile .profile-detail-input,
 body.profile .profile-affiliation-select,
 	.profile-affiliation-display {
-opacity: 0.95;
+       opacity: 0.95;
+		font-size: var(--main-font-size);
+		font-weight: 700;
+		color: rgba(9, 26, 58, 0.75);
 }
 
-}
+
 
 @media (max-width: 900px) and (orientation: landscape) {
   body.profile .saved-workout-card {
