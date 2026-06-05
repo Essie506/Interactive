@@ -109,10 +109,7 @@
   transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.desktop-nav-links a:hover {
-  opacity: 0.75;
-  transform: translateY(-1px);
-}
+
 
 .navbar.hide-top {
   transform: translateY(-100%);
@@ -180,10 +177,7 @@
   letter-spacing: -0.02em;
 }
 
-.index-login-links a:hover,
-.index-login-links .link-btn:hover {
-  text-decoration: underline;
-}
+
 
 /* =========================
    ICON BUTTONS (GLOBAL)
@@ -219,6 +213,36 @@
   cursor: pointer;
 }
 
+
+/* FOCUS VISIBLE */
+
+.media-btn a:focus-visible,
+.desktop-nav-links a:focus-visible,
+.search-toggle:focus-visible,
+.icon-btn:focus-visible,
+.directory-filter-close:focus-visible,
+.composer-close:focus-visible,
+.messages-close:focus-visible,
+.menu-toggle:focus-visible,
+.messages-back:focus-visible,
+.messages-split:focus-visible,
+.messages-open-popup:focus-visible,
+.messages-popout-btn:focus-visible,
+.messages-minimize-btn:focus-visible,
+.bottom-nav-desktop a:focus-visible,
+.bottom-nav-desktop button:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.14),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+
+  transform: translateY(-1px) scale(1.06);
+
+  background: rgba(255, 255, 255, 0.82);
+}
+
+
+
 .media-btn {
      width: var(--icon-btn-size);
   height: var(--icon-btn-size);
@@ -237,44 +261,6 @@
 }
    
 
-/* HOVER / FOCUS */
-.media-btn a:hover,
-.media-btn a:focus-visible,
-.desktop-nav-links a:hover,
-.desktop-nav-links a:focus-visible,
-.search-toggle:hover,
-.search-toggle:focus-visible,
-.icon-btn:hover,
-.icon-btn:focus-visible,
-.directory-filter-close:hover,
-.directory-filter-close:focus-visible,
-.composer-close:hover,
-.composer-close:focus-visible,
-.messages-close:hover,
-.messages-close:focus-visible,
-.menu-toggle:hover,
-.menu-toggle:focus-visible,
-.messages-back:hover,
-.messages-back:focus-visible,
-.messages-split:hover,
-.messages-split:focus-visible,
-.messages-open-popup:hover,
-.messages-open-popup:focus-visible,
-.messages-popout-btn:hover,
-.messages-popout-btn:focus-visible,
-.messages-minimize-btn:hover,
-.messages-minimize-btn:focus-visible,
-.bottom-nav-desktop a:hover,
-.bottom-nav-desktop a:focus-visible,
-.bottom-nav-desktop button:hover,
-.bottom-nav-desktop button:focus-visible {
-  box-shadow:
-    0 0 0 3px rgba(7, 153, 146, 0.12),
-    0 6px 18px rgba(0, 0, 0, 0.14),
-    inset 0 1px 2px rgba(255, 255, 255, 0.6);
-  Y(-1px) scale(1.06);
-  background: rgba(255, 255, 255, 0.82);
-}
 
 /* ACTIVE */
 .media-btn:active,
@@ -750,6 +736,7 @@ body.profile .profile-tabs-inner {
   opacity: 1;
   transform: scale(1);
 }
+
 
 .profile-corner-item i {
   font-size: 0.9rem;
@@ -1314,6 +1301,12 @@ body.editing-profile .avatar-editor-btn-save {
   transform: translateY(1px);
 }
 
+
+.upload-btn.send-btn:focus-visible {
+  box-shadow: var(--shadow-strong);
+  transform: translateY(0.2rem);
+}
+
 .upload-btn.send-btn:active,
 .avatar-editor-btn-save:active,
 .avatar-editor-btn-cancel:active {
@@ -1536,11 +1529,6 @@ body.editing-profile .avatar-editor-btn-save {
     background 0.15s ease;
 }
 
-.post-action-btn:hover {
-  transform: translateY(-0.0625rem);
-  background: rgba(255, 255, 255, 0.82);
-  border-color: rgba(9, 26, 58, 0.14);
-}
 
 .post-action-btn:focus {
   outline: none;
@@ -1759,9 +1747,34 @@ body.business-profile .chevron-btn {
 }
 
 
+/* HOVER */
+
+.media-btn a:hover,
+.desktop-nav-links a:hover,
+.search-toggle:hover,
+.icon-btn:hover,
+.directory-filter-close:hover,
+.composer-close:hover,
+.messages-close:hover,
+.menu-toggle:hover,
+.messages-back:hover,
+.messages-split:hover,
+.messages-open-popup:hover,
+.messages-popout-btn:hover,
+.messages-minimize-btn:hover,
+.bottom-nav-desktop a:hover,
+.bottom-nav-desktop button:hover {
+  box-shadow:
+    0 0 0 3px rgba(7, 153, 146, 0.12),
+    0 6px 18px rgba(0, 0, 0, 0.14),
+    inset 0 1px 2px rgba(255, 255, 255, 0.6);
+
+  transform: translateY(-1px) scale(1.06);
+
+  background: rgba(255, 255, 255, 0.82);
+}	
 	
-.upload-btn.send-btn:hover,
-.upload-btn.send-btn:focus-visible {
+.upload-btn.send-btn:hover {
   box-shadow: var(--shadow-strong);
   transform: translateY(0.2rem);
 }
