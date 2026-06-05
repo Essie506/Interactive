@@ -365,11 +365,10 @@ body.editing-profile .section-edit {
 }
 
 
-
 .section-edit-actions {
   opacity: 0;
   pointer-events: none;
-  Y(0.35rem);
+  transform: translateY(0.35rem);
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
@@ -378,7 +377,7 @@ body.editing-profile .section-edit {
 body.editing-profile .section-edit-actions {
   opacity: 1;
   pointer-events: auto;
-  Y(0);
+  transform: translateY(0);
 }
 
 
@@ -1895,6 +1894,10 @@ body.editing-profile #editProfileBtn {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+	#profileBioSave {
+ position: absolute;
 }
 
 }
