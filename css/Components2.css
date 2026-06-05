@@ -1863,16 +1863,13 @@ body.business-profile .chevron-btn {
     width: 100%;
   }
 
-	.avatar-editor-btn-save {
-		position: absolute;
-		visibility: hidden;
-}
 	
 	.upload-btn.send-btn.ready,
 .ready {
   opacity: 1;
   pointer-events: auto;
 	display: flex;
+	position: absolute;
 }
 
 
