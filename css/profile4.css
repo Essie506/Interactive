@@ -1749,7 +1749,7 @@ body.profile #profileNameInput {
 	body.profile .profile-detail-row {
 	  z-index: 4;
 	  position: relative;
-	  font-size: medium;
+	  font-size: var(--main-font-size);
 	  font-weight: 400;
   }
 
