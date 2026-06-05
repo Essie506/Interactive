@@ -962,13 +962,6 @@ body.profile .profile-affiliation-select {
 	outline: none;
 }
 
-#profileHandleInput,
-#profileGymInput,
-#profileAffiliationInput {
-  font-size: medium;
-  font-weight: 500;
-}
-
 body.profile .profile-detail-row i {
   line-height: 1.3;
   font-size: 1em;
@@ -1815,12 +1808,7 @@ margin-top: 0rem;
 
 
 
-	  body.profile .profile-handle,
-	textarea#profileHandleInput,
-  body.profile .profile-role,
-  body.profile .profile-gym,
-  body.profile .profile-bio,
-	body.profile .profile-detail-row,
+	
 	body.profile .profile-detail-input,
 body.profile .profile-affiliation-select,
 	.profile-affiliation-display {
