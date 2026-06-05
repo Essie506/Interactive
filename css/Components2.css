@@ -383,9 +383,7 @@ body.editing-profile .section-edit {
 .section-edit-actions {
   opacity: 0;
   pointer-events: none;
-
   Y(0.35rem);
-
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
@@ -394,7 +392,6 @@ body.editing-profile .section-edit {
 body.editing-profile .section-edit-actions {
   opacity: 1;
   pointer-events: auto;
-
   Y(0);
 }
 
@@ -1290,8 +1287,7 @@ body.profile .composer-foot {
   transform: translateY(0.2rem);
 }
 
-.upload-btn.send-btn,
-.avatar-editor-btn-save {
+.upload-btn.send-btn {
   pointer-events: none;
   transition: opacity 0.2s ease;
 }
@@ -1300,10 +1296,15 @@ body.profile .composer-foot {
 	opacity: 0.4;
 }
 
-.avatar-editor-btn-save {
-	opacity: 0;
-}
 
+
+
+
+body.editing-profile .avatar-editor-btn-save {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 
 
