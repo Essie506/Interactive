@@ -1245,6 +1245,9 @@ body.profile .composer-foot {
 
 .upload-btn.send-btn {
 	display: flex;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+	opacity: 0.4;
 }
 
 
@@ -1267,27 +1270,6 @@ body.profile .composer-foot {
   color: #fff;
   box-shadow: var(--shadow-strong);
 }
-
-
-.upload-btn.send-btn {
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.upload-btn.send-btn {
-	opacity: 0.4;
-}
-
-
-
-
-
-body.editing-profile .avatar-editor-btn-save {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
 
 
 .avatar-editor-btn-saved {
