@@ -1243,13 +1243,6 @@ body.profile .composer-foot {
 }
 
 
-.upload-btn.send-btn {
-	display: flex;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-	opacity: 0.4;
-}
-
 
 .avatar-editor-btn-save,
 .avatar-editor-btn-saved,
@@ -1284,6 +1277,12 @@ body.profile .composer-foot {
 }
 
 
+
+/* =========================
+   MESSAGES SEND
+========================= */
+
+
 .upload-btn.send-btn:focus-visible {
   box-shadow: var(--shadow-strong);
   transform: translateY(0.2rem);
@@ -1302,12 +1301,38 @@ body.profile .composer-foot {
   box-shadow: var(--shadow-strong);
 }
 
-.upload-btn.send-btn.ready,
-.ready {
+.upload-btn.send-btn.ready {
   opacity: 1;
   pointer-events: auto;
 	display: flex;
 }
+
+.upload-btn.send-btn {
+	display: flex;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+	opacity: 0.4;
+}
+
+/* =========================
+   SAVE PROFILE
+========================= */
+
+
+#profileBioSave {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.editing-profile #profileBioSave {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+
+
 
 .composer-bottom-bar {
    flex: 0 0 auto;
@@ -1862,20 +1887,15 @@ body.business-profile .chevron-btn {
   }
 
 	
-	.upload-btn.send-btn.ready,
-.ready {
-  opacity: 1;
-  pointer-events: auto;
-	display: flex;
+	.upload-btn.send-btn.ready {
 	position: absolute;
 }
 
-		body.editing-profile .upload-btn-send-btn {
+body.editing-profile #editProfileBtn {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
-
 
 }
 
