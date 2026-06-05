@@ -1800,7 +1800,8 @@ margin-top: 0rem;
 }
 
 	body.profile .profile-detail-input,
-body.profile .profile-affiliation-select {
+body.profile .profile-affiliation-select,
+	.profile-affiliation-display {
 opacity: 0.95;
 }
 
