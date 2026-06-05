@@ -1799,6 +1799,11 @@ margin-top: 0rem;
   padding: 0.125rem;
 }
 
+	body.profile .profile-detail-input,
+body.profile .profile-affiliation-select {
+opacity: 0.95;
+}
+
 }
 
 @media (max-width: 900px) and (orientation: landscape) {
