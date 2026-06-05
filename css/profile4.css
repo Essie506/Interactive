@@ -1868,14 +1868,5 @@ body.profile .profile-affiliation-select {
 	textarea#profileHandleInput {
 		max-width: 60%;
 	}
-
-	 body.profile .profile-handle,
-	textarea#profileHandleInput,
-  body.profile .profile-role,
-  body.profile .profile-gym,
-  body.profile .profile-bio,
-	body.profile .profile-detail-row {
-	  font-size: 1rem;
-  }
   
 }
