@@ -141,8 +141,8 @@ body.professional-profile .professional-profile-only-grid {
 }
 
 
-span#customerFitnessLevelText {
-	display: none;
+profile-detail-row.profile-affiliation.customer-profile-only {
+    display: none;
 }
 
 
