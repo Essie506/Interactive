@@ -187,19 +187,6 @@ function getSelectedAffiliations() {
 
 
 
-function updateFitnessLevelText() {
-  if (!customerFitnessLevelText) return;
-
-  const selected = document.querySelector(
-    '#customerFitnessLevelMenu input[name="fitnessLevel"]:checked'
-  );
-
-  customerFitnessLevelText.textContent =
-    selected
-      ? selected.value
-      : "Select fitness level";
-}
-
 document
   .querySelectorAll('#customerFitnessLevelMenu input[name="fitnessLevel"]')
   .forEach(input => {
@@ -565,7 +552,7 @@ document
     radio.addEventListener(
       "change",
       () => {
-        fitnessLevelText.textContent =
+        customerfitnessLevelText.textContent =
           radio.value;
 
         fitnessLevelIcon.textContent =
