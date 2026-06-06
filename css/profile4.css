@@ -90,6 +90,11 @@ body.profile {
 /* =========================
    VISIBILITY
 ========================= */
+/* =========================
+   VISIBILITY
+========================= */
+
+/* Viewer visibility */
 body.profile .self-only,
 body.profile .visitor-only {
   display: none;
@@ -100,30 +105,16 @@ body.profile[data-viewer="visitor"] .visitor-only {
   display: flex;
 }
 
-/* DEFAULT: hide account-type specific sections */
-.customer-only,
-.professional-only {
+/* Profile type visibility */
+body.profile .customer-only,
+body.profile .professional-only {
   display: none;
 }
 
-/* CUSTOMER PROFILE */
-body.customer-profile .customer-only {
+body.profile.customer-profile .customer-only,
+body.profile.professional-profile .professional-only {
   display: block;
 }
-
-body.customer-profile .professional-only {
-  display: none;
-}
-
-/* PROFESSIONAL PROFILE */
-body.professional-profile .professional-only {
-  display: block;
-}
-
-body.professional-profile .customer-only {
-  display: none;
-}
-
 /* ===========================================
    UTILITY FLEX/GRID'S FOR PROFILE EXTENSIONS
 ============================================== */
@@ -148,6 +139,7 @@ body.customer-profile .customer-only-grid,
 body.professional-profile .professional-only-grid {
   display: grid;
 }
+
 
 /* =========================
    PAGE BG
