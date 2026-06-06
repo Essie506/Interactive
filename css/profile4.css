@@ -141,7 +141,7 @@ body.professional-profile .professional-profile-only-grid {
 }
 
 
-profile-detail-row.profile-affiliation.customer-profile-only {
+.profile-detail-row.profile-affiliation.customer-profile-only {
     display: none;
 }
 
