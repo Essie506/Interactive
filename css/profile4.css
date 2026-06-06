@@ -110,11 +110,11 @@ body.profile[data-viewer="visitor"] .visitor-only {
 
 /* profile type visibility */
 body.profile[data-profile-type="customer-profile"] .customer-profile-only {
-  display: revert;
+  display: grid;
 }
 
 body.profile[data-profile-type="professional-profile"] .professional-profile-only {
-  display: revert;
+  display: grid;
 }
 
 
