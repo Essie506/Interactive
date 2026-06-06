@@ -211,18 +211,16 @@ function updateAffiliationText() {
 
 
 function updateFitnessLevelText() {
-  if (!customerFitnessLevelText)
-    return;
+  if (!customerFitnessLevelText) return;
 
-  const selected =
-    getSelectedItems(
-      "customerFitnessLevelMenu"
-    );
+  const selected = document.querySelector(
+    '#customerFitnessLevelMenu input:checked'
+  );
 
   customerFitnessLevelText.textContent =
-    selected.length
-      ? selected.join("  •  ")
-      : "Select fitness level";
+    selected
+      ? selected.value
+      : 'Select fitness level';
 }
 
 
