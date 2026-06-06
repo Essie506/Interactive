@@ -169,14 +169,18 @@ function getSelectedAffiliations() {
   ).map(input => input.value);
 }
 
-function getSelectedItems(menuId) {
-  return Array.from(
-    document.querySelectorAll(
-      `#${menuId} input:checked`
-    )
-  ).map(input => input.value);
-}
+function updateFitnessLevelText() {
+  if (!customerFitnessLevelText) return;
 
+  const selected = document.querySelector(
+    "#customerFitnessLevelMenu input:checked"
+  );
+
+  customerFitnessLevelText.textContent =
+    selected
+      ? selected.value
+      : "Select fitness level";
+}
 
 
 function updateAffiliationText() {
