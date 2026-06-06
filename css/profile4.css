@@ -307,7 +307,7 @@ body.profile .profile-bio {
 		align-items: center;
 		display: inline-flex;
 		justify-content: center;
-		top: -3.5rem;
+		top: -3rem;
 		right: 4rem;
 		z-index: 6000;
 	}
