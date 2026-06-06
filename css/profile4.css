@@ -94,9 +94,8 @@ body.profile {
 /* hide by default */
 .self-only,
 .visitor-only,
-.customer-profile-only,
-.professional-profile-only,
-.business-only {
+body.profile .customer-profile-only,
+body.profile .professional-profile-only {
   display: none;
 }
 
