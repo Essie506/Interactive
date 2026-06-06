@@ -1026,7 +1026,7 @@ color: var(--text-dark);
 
 }
 
-{
+body.profile .profile-detail-row {
   display: grid;
 	grid-template-columns: 1.5rem 1fr;
 
