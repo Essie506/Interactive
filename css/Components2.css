@@ -798,7 +798,6 @@ body.profile .profile-tabs-inner {
 .business-section-tabs {
   position: sticky;
   top: var(--bar-height-large);
-  z-index: 50;
   flex-direction: column;
 
   display: flex;
