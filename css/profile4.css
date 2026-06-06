@@ -90,9 +90,6 @@ body.profile {
 /* =========================
    VISIBILITY
 ========================= */
-/* =========================
-   VISIBILITY
-========================= */
 
 /* Viewer visibility */
 body.profile .self-only,
@@ -140,10 +137,25 @@ body.professional-profile .professional-profile-only-grid {
   display: grid;
 }
 
+/* ==========================================
+   PROFILE TYPE DETAIL ROW VISIBILITY
+========================================== */
 
-.profile-detail-row.profile-affiliation.customer-profile-only {
-    display: none;
+body.profile .profile-detail-row.customer-profile-only,
+body.profile .profile-detail-row.professional-profile-only {
+  display: none;
 }
+
+body.profile.customer-profile
+  .profile-detail-row.customer-profile-only {
+  display: grid;
+}
+
+body.profile.professional-profile
+  .profile-detail-row.professional-profile-only {
+  display: grid;
+}
+
 
 
 /* =========================
