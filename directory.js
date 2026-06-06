@@ -618,6 +618,10 @@ document.addEventListener(
       profileAffiliationMenu.hidden = true;
     }
 
+       if (customerFitnessLevelMenu) {
+    customerFitnessLevelMenu.hidden = true;
+  }
+
   }
 );
 
@@ -630,6 +634,33 @@ profileAffiliationMenu?.addEventListener(
   }
 );
 
+
+customerFitnessLevelMenu?.addEventListener(
+  "click",
+  (event) => {
+    event.stopPropagation();
+  }
+);
+
+customerFitnessLevelToggle?.addEventListener(
+  "click",
+  (event) => {
+    if (
+      !document.body.classList.contains(
+        "editing-profile"
+      )
+    ) {
+      return;
+    }
+
+    event.stopPropagation();
+
+    if (customerFitnessLevelMenu) {
+      customerFitnessLevelMenu.hidden =
+        !customerFitnessLevelMenu.hidden;
+    }
+  }
+);
 
 // -------------------------
 // BIO INPUT
