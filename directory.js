@@ -180,8 +180,14 @@ function updateFitnessLevelText() {
     selected
       ? selected.value
       : "Select fitness level";
-}
 
+  if (selected) {
+    localStorage.setItem(
+      "customerFitnessLevel",
+      selected.value
+    );
+  }
+}
 
 function updateAffiliationText() {
   if (!profileAffiliationText) return;
