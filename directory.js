@@ -737,7 +737,7 @@ customerLikesInput?.addEventListener(
   () => {
     const fullText = customerLikesInput.value;
 
-    const parts = fullText.split(/[,.•]/);
+    const parts = fullText.split(",");
 
     const currentInput =
       parts[parts.length - 1]
@@ -1065,7 +1065,7 @@ profileRoleInput?.addEventListener(
       profileRoleInput.value;
 
     const parts =
-      fullText.split(/[,.•]/);
+      fullText..split(",");
 
     const currentInput =
       parts[parts.length - 1]
