@@ -777,7 +777,7 @@ customerLikesInput?.addEventListener(
           parts
             .map(part => part.trim())
             .filter(Boolean)
-            .join(" • ");
+            .join(", ");
 
         customerLikesSuggestionsBox.innerHTML = "";
         customerLikesSuggestionsBox.classList.remove("show");
@@ -1065,7 +1065,7 @@ profileRoleInput?.addEventListener(
       profileRoleInput.value;
 
     const parts =
-      fullText..split(",");
+      fullText.split(",");
 
     const currentInput =
       parts[parts.length - 1]
@@ -1121,7 +1121,7 @@ profileRoleInput?.addEventListener(
             parts
               .map(part => part.trim())
               .filter(Boolean)
-              .join(" • ");
+              .join(", ");
 
           roleSuggestionsBox.innerHTML = "";
 
