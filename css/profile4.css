@@ -106,13 +106,13 @@ body.profile[data-viewer="visitor"] .visitor-only {
 }
 
 /* Profile type visibility */
-body.profile .customer-only,
-body.profile .professional-only {
+body.profile .customer-profile-only,
+body.profile .professional-profile-only {
   display: none;
 }
 
-body.profile.customer-profile .customer-only,
-body.profile.professional-profile .professional-only {
+body.profile.customer-profile .customer-profile-only,
+body.profile.professional-profile .professional-profile-only {
   display: block;
 }
 /* ===========================================
@@ -120,23 +120,23 @@ body.profile.professional-profile .professional-only {
 ============================================== */
 
 
-.customer-only-flex,
-.professional-only-flex {
+.customer-profile-only-flex,
+.professional-profile-only-flex {
   display: none;
 }
 
-body.customer-profile .customer-only-flex,
-body.professional-profile .professional-only-flex {
+body.customer-profile .customer-profile-only-flex,
+body.professional-profile .professional-profile-only-flex {
   display: flex;
 }
 
-.customer-only-grid,
-.professional-only-grid {
+.customer-profile-only-grid,
+.professional-profile-only-grid {
   display: none;
 }
 
-body.customer-profile .customer-only-grid,
-body.professional-profile .professional-only-grid {
+body.customer-profile .customer-profile-only-grid,
+body.professional-profile .professional-profile-only-grid {
   display: grid;
 }
 
