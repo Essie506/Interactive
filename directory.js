@@ -169,25 +169,31 @@ function getSelectedAffiliations() {
   ).map(input => input.value);
 }
 
+
+
 function updateFitnessLevelText() {
   if (!customerFitnessLevelText) return;
 
   const selected = document.querySelector(
-    "#customerFitnessLevelMenu input:checked"
+    '#customerFitnessLevelMenu input[name="fitnessLevel"]:checked'
   );
 
   customerFitnessLevelText.textContent =
     selected
       ? selected.value
       : "Select fitness level";
-
-  if (selected) {
-    localStorage.setItem(
-      "customerFitnessLevel",
-      selected.value
-    );
-  }
 }
+
+document
+  .querySelectorAll('#customerFitnessLevelMenu input[name="fitnessLevel"]')
+  .forEach(input => {
+    input.addEventListener(
+      "change",
+      updateFitnessLevelText
+    );
+  });
+
+
 
 function updateAffiliationText() {
   if (!profileAffiliationText) return;
