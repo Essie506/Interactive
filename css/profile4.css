@@ -91,71 +91,32 @@ body.profile {
    VISIBILITY
 ========================= */
 
-/* Viewer visibility */
-body.profile .self-only,
-body.profile .visitor-only {
+/* hide by default */
+.self-only,
+.visitor-only,
+.customer-profile-only,
+.professional-profile-only,
+.business-only {
   display: none;
 }
 
-body.profile[data-viewer="self"] .self-only,
+/* viewer visibility */
+body.profile[data-viewer="self"] .self-only {
+  display: revert;
+}
+
 body.profile[data-viewer="visitor"] .visitor-only {
-  display: flex;
+  display: revert;
 }
 
-/* Profile type visibility */
-body.profile .customer-profile-only,
-body.profile .professional-profile-only {
-  display: none;
+/* profile type visibility */
+body.profile[data-profile-type="customer-profile"] .customer-profile-only {
+  display: revert;
 }
 
-body.profile.customer-profile .customer-profile-only,
-body.profile.professional-profile .professional-profile-only {
-  display: grid;
+body.profile[data-profile-type="professional-profile"] .professional-profile-only {
+  display: revert;
 }
-/* ===========================================
-   UTILITY FLEX/GRID'S FOR PROFILE EXTENSIONS
-============================================== */
-
-
-.customer-profile-only-flex,
-.professional-profile-only-flex {
-  display: none;
-}
-
-body.customer-profile .customer-profile-only-flex,
-body.professional-profile .professional-profile-only-flex {
-  display: flex;
-}
-
-.customer-profile-only-grid,
-.professional-profile-only-grid {
-  display: none;
-}
-
-body.customer-profile .customer-profile-only-grid,
-body.professional-profile .professional-profile-only-grid {
-  display: grid;
-}
-
-/* ==========================================
-   PROFILE TYPE DETAIL ROW VISIBILITY
-========================================== */
-
-body.profile .profile-detail-row.customer-profile-only,
-body.profile .profile-detail-row.professional-profile-only {
-  display: none;
-}
-
-body.profile.customer-profile
-  .profile-detail-row.customer-profile-only {
-  display: grid;
-}
-
-body.profile.professional-profile
-  .profile-detail-row.professional-profile-only {
-  display: grid;
-}
-
 
 
 /* =========================
