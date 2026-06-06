@@ -7,6 +7,12 @@ const bioText = document.getElementById(
     "profileBioText"
   );
 
+const customerLikesInput =
+  document.getElementById("customerLikesInput");
+
+const customerLikesSuggestionsBox =
+  document.getElementById("customerLikesSuggestionsBox");
+
 
 const navTitleInput =
   document.getElementById("navTitleInput");
@@ -83,6 +89,31 @@ const fitnessIcons = {
 };
 
 
+const customerLikeSuggestions = [
+  "Running",
+  "Walking",
+  "Weight Training",
+  "Strength Training",
+  "Gym Workouts",
+  "Football",
+  "Gymnastics",
+  "Yoga",
+  "Pilates",
+  "Cycling",
+  "Swimming",
+  "Boxing",
+  "Martial Arts",
+  "Dance",
+  "Hiking",
+  "Netball",
+  "Tennis",
+  "Rugby",
+  "Climbing",
+  "HIIT",
+  "Functional Fitness"
+];
+
+
 const customerFitnessLevelToggle =
   document.getElementById(
     "customerFitnessLevelToggle"
@@ -123,7 +154,8 @@ const editableFields = [
   profileNameInput,
   profileHandleInput,
   profileRoleInput,
-  profileGymInput
+  profileGymInput,
+customerLikesInput
 ];
 
 
@@ -697,6 +729,69 @@ customerFitnessLevelToggle?.addEventListener(
     }
   }
 );
+
+
+
+customerLikesInput?.addEventListener(
+  "input",
+  () => {
+    const fullText = customerLikesInput.value;
+
+    const parts = fullText.split(/[,.•]/);
+
+    const currentInput =
+      parts[parts.length - 1]
+        .trim()
+        .toLowerCase();
+
+    customerLikesSuggestionsBox.innerHTML = "";
+
+    if (currentInput.length < 2) {
+      customerLikesSuggestionsBox.classList.remove("show");
+      return;
+    }
+
+    const matches =
+      customerLikeSuggestions.filter(item =>
+        item.toLowerCase().includes(currentInput)
+      );
+
+    if (!matches.length) {
+      customerLikesSuggestionsBox.classList.remove("show");
+      return;
+    }
+
+    customerLikesSuggestionsBox.classList.add("show");
+
+    matches.forEach(match => {
+      const button = document.createElement("button");
+
+      button.type = "button";
+      button.className = "role-suggestion-item";
+      button.textContent = match;
+
+      button.addEventListener("click", () => {
+        parts[parts.length - 1] = ` ${match}`;
+
+        customerLikesInput.value =
+          parts
+            .map(part => part.trim())
+            .filter(Boolean)
+            .join(" • ");
+
+        customerLikesSuggestionsBox.innerHTML = "";
+        customerLikesSuggestionsBox.classList.remove("show");
+
+        autoGrowProfileField(customerLikesInput);
+      });
+
+      customerLikesSuggestionsBox.appendChild(button);
+    });
+  }
+);
+
+
+
 
 // -------------------------
 // BIO INPUT
