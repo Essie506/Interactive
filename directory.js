@@ -67,6 +67,22 @@ const customerFitnessLevelText =
     "customerFitnessLevelText"
   );
 
+const fitnessLevelIcon =
+  document.getElementById(
+    "customerFitnessLevelIcon"
+  );
+
+const fitnessIcons = {
+  "Keeping Up Appearances": "🌱",
+  "Finding My Feet": "👟",
+  "Steady Eddy": "🚶",
+  "Gym Regular": "🏋️",
+  "Fit As A Fiddle": "💪",
+  "Seasoned Pro": "🔥",
+  "Fitter Than A Butcher's Dog": "🌭"
+};
+
+
 const customerFitnessLevelToggle =
   document.getElementById(
     "customerFitnessLevelToggle"
@@ -538,6 +554,25 @@ autoFitNavTitle();
 // =========================
 // EVENT LISTENERS
 // =========================
+
+
+
+document
+  .querySelectorAll(
+    'input[name="fitnessLevel"]'
+  )
+  .forEach((radio) => {
+    radio.addEventListener(
+      "change",
+      () => {
+        fitnessLevelText.textContent =
+          radio.value;
+
+        fitnessLevelIcon.textContent =
+          fitnessIcons[radio.value];
+      }
+    );
+  });
 
 document
   .querySelectorAll("#customerFitnessLevelMenu input")
