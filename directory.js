@@ -62,6 +62,22 @@ const profileAffiliationText =
     "profileAffiliationText"
   );
 
+const customerFitnessLevelText =
+  document.getElementById(
+    "customerFitnessLevelText"
+  );
+
+const customerFitnessLevelToggle =
+  document.getElementById(
+    "customerFitnessLevelToggle"
+  );
+
+const customerFitnessLevelMenu =
+  document.getElementById(
+    "customerFitnessLevelMenu"
+  );
+
+
 
 const servicesEditBtn =
   document.getElementById("servicesEditBtn");
@@ -153,6 +169,16 @@ function getSelectedAffiliations() {
   ).map(input => input.value);
 }
 
+function getSelectedItems(menuId) {
+  return Array.from(
+    document.querySelectorAll(
+      `#${menuId} input:checked`
+    )
+  ).map(input => input.value);
+}
+
+
+
 function updateAffiliationText() {
   if (!profileAffiliationText) return;
 
@@ -166,6 +192,23 @@ function updateAffiliationText() {
           .join("  •  ")
       : "Select status";
 }
+
+
+function updateFitnessLevelText() {
+  if (!customerFitnessLevelText)
+    return;
+
+  const selected =
+    getSelectedItems(
+      "customerFitnessLevelMenu"
+    );
+
+  customerFitnessLevelText.textContent =
+    selected.length
+      ? selected.join("  •  ")
+      : "Select fitness level";
+}
+
 
 function autoGrowProfileField(field) {
 
@@ -482,7 +525,14 @@ autoFitNavTitle();
 // EVENT LISTENERS
 // =========================
 
-
+document
+  .querySelectorAll("#customerFitnessLevelMenu input")
+  .forEach(input => {
+    input.addEventListener(
+      "change",
+      updateFitnessLevelText
+    );
+  });
 
 
 document
