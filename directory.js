@@ -552,7 +552,7 @@ document
     radio.addEventListener(
       "change",
       () => {
-        customerfitnessLevelText.textContent =
+        customerFitnessLevelText.textContent =
           radio.value;
 
         fitnessLevelIcon.textContent =
