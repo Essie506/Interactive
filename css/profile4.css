@@ -113,7 +113,7 @@ body.profile .professional-profile-only {
 
 body.profile.customer-profile .customer-profile-only,
 body.profile.professional-profile .professional-profile-only {
-  display: block;
+  display: grid;
 }
 /* ===========================================
    UTILITY FLEX/GRID'S FOR PROFILE EXTENSIONS
