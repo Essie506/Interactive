@@ -1682,6 +1682,28 @@ body:not(.has-cover) .profile-main-info {
   margin-top: 0;
 }
 
+	body:not(.has-cover) .profile-hero--personal {
+  min-height: auto;
+}
+
+body:not(.has-cover) .profile-hero-media {
+  height: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+body:not(.has-cover) .profile-main-info {
+  margin-top: 0;
+}
+
+
+
+
+
+
+
+	
+
 
   body.profile {
     --profile-page-pad-top: calc(var(--bar-height) + 0.125rem);
