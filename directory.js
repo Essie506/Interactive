@@ -83,7 +83,7 @@ const fitnessIcons = {
   "Finding My Feet": "👟",
   "Steady Eddy": "🚶",
   "Gym Regular": "🏋️",
-  "Fit As A Fiddle": "💪",
+  "Fighting fit": "💪",
   "Seasoned Pro": "🔥",
   "Fitter Than A Butcher's Dog": "🐕 "
 };
