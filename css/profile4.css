@@ -1670,35 +1670,10 @@ body.profile #profileNameInput {
 @media (max-width: 900px) {
 
 
-	/* =========================
+	
+/* =========================
    COVERS
 ========================= */
-
-body:not(.has-cover) .profile-hero {
-  min-height: 12rem;
-}
-
-body:not(.has-cover) .profile-main-info {
-  margin-top: 0;
-}
-
-	body:not(.has-cover) .profile-hero--personal {
-  min-height: auto;
-}
-
-body:not(.has-cover) .profile-hero-media {
-  height: 0;
-  min-height: 0;
-  overflow: hidden;
-}
-
-body:not(.has-cover) .profile-main-info {
-  margin-top: 0;
-}
-
-
-
-	
 
 
 	body.profile:not(.has-cover)
@@ -1714,7 +1689,15 @@ body.profile:not(.has-cover)
 }
 
 
+body.profile.has-cover
+  .profile-hero--personal {
+  min-height: clamp(28rem, 55dvh, 34rem);
+}
 
+body.profile.has-cover
+  .profile-hero-media {
+  height: clamp(220px, 34dvh, 340px);
+}
 
 
 
