@@ -210,7 +210,17 @@ const savedCover =
 
 if (savedCover) {
   coverImage.src = savedCover;
+
+   document.body.classList.add(
+    "has-cover"
+  );
+
+  
 } else {
+
+    document.body.classList.remove(
+    "has-cover"
+  );
 
   coverImage.src =
     "../covers/logo.png";
@@ -218,6 +228,7 @@ if (savedCover) {
   profileCoverImage.style.objectFit =
     "cover";
 
+  currentY = 50;
 }
 
 
@@ -563,16 +574,34 @@ coverInput.addEventListener(
 
         currentY = 50;
 
-        coverImage.onload = () => {
+      coverImage.onload = () => {
+  document.body.classList.add("has-cover");
 
           applyCoverTransform();
 
-         coverPositionButtons.forEach(button => {
-  button.classList.add("show");
-});
 
-        };
+        coverImage.src = "#";
 
+document.body.classList.remove(
+  "has-cover"
+);
+
+localStorage.removeItem(
+  "interactiveProfileCover"
+);
+
+localStorage.removeItem(
+  "profileCoverPosition"
+);
+
+currentY = 50;
+
+  applyCoverTransform();
+
+  coverPositionButtons.forEach(button => {
+    button.classList.add("show");
+  });
+};
 
         // TEMP ONLY
         // Firebase later
