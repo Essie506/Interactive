@@ -1698,6 +1698,23 @@ body:not(.has-cover) .profile-main-info {
 
 
 
+	
+
+
+	body.profile:not(.has-cover)
+  .profile-hero--personal {
+  min-height: 12rem;
+}
+
+body.profile:not(.has-cover)
+  .profile-hero-media {
+  height: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+
+
 
 
 
