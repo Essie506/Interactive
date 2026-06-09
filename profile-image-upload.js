@@ -833,52 +833,72 @@ heroPresetBtn?.addEventListener(
 
 
 heroPresetOptions.forEach(option => {
+  option.addEventListener("click", () => {
+    const coverSrc =
+      option.dataset.cover;
 
-  option.addEventListener(
-    "click",
-    () => {
+    if (!coverSrc) return;
 
-      const coverSrc =
-        option.dataset.cover;
-
-      if (!coverSrc) return;
-
-      profileCoverImage.src =
-        coverSrc;
-      
     const fit =
-        option.dataset.fit || "fill";
+      option.dataset.fit || "fill";
 
-      profileCoverImage.style.objectFit =
-        fit;
-
-      localStorage.setItem(
-        "interactiveProfileCover",
-        coverSrc
+    // No cover option
+    if (coverSrc === "#" || fit === "none") {
+      localStorage.removeItem(
+        "interactiveProfileCover"
       );
+
+      localStorage.removeItem(
+        "profileCoverPosition"
+      );
+
+      document.body.classList.remove(
+        "has-cover"
+      );
+
+      profileCoverImage.src = "#";
 
       currentX = 50;
       currentY = 50;
       currentZoom = 1.05;
 
-      applyCoverTransform();
-
-
       coverPositionButtons.forEach(button => {
-  button.classList.remove("show");
-});
+        button.classList.remove("show");
+      });
 
-      heroPresetMenu?.classList.remove(
-        "open"
-      );
+      heroPresetMenu?.classList.remove("open");
+      heroPresetBtn?.classList.remove("open");
 
-      heroPresetBtn?.classList.remove(
-        "open"
-      );
-
+      return;
     }
-  );
 
+    // Normal cover option
+    document.body.classList.add("has-cover");
+
+    profileCoverImage.src =
+      coverSrc;
+
+    profileCoverImage.style.objectFit =
+      fit;
+
+    localStorage.setItem(
+      "interactiveProfileCover",
+      coverSrc
+    );
+
+    currentX = 50;
+    currentY = 50;
+    currentZoom = 1.05;
+
+    applyCoverTransform();
+
+    coverPositionButtons.forEach(button => {
+      button.classList.remove("show");
+    });
+
+    heroPresetMenu?.classList.remove("open");
+    heroPresetBtn?.classList.remove("open");
+  });
 });
 
 
