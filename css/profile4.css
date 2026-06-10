@@ -95,7 +95,8 @@ body.profile {
 .self-only,
 .visitor-only,
 body.profile .customer-profile-only,
-body.profile .professional-profile-only {
+body.profile .professional-profile-only,
+body.profile .business-profile-only {
   display: none;
 }
 
@@ -107,6 +108,15 @@ body.profile[data-viewer="self"] .self-only {
 body.profile[data-viewer="visitor"] .visitor-only {
   display: revert;
 }
+
+
+/* profile type visibility */
+body.profile[data-profile-type="business-profile"] .customer-profile-only {
+  display: revert;
+}
+
+
+
 
 /* profile type visibility */
 body.profile[data-profile-type="customer-profile"] .customer-profile-only {
