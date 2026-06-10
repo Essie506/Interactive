@@ -117,6 +117,10 @@ body.profile[data-profile-type="professional-profile"] .professional-profile-onl
   display: grid;
 }
 
+body[data-profile-type="professional"] 
+.verification-section.professional-profile-only {
+  display: block;
+}
 
 /* =========================
    PAGE BG
