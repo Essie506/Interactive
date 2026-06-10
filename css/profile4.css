@@ -1697,6 +1697,7 @@ body.profile #profileNameInput {
 	.profile-affiliation-display {
   font-size: medium;
   font-weight: 600;
+		height: 100%;
 }
 	
 }
