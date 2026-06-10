@@ -85,7 +85,7 @@ const fitnessIcons = {
   "Joe Regular": "🏋️",
   "Fighting Fit": "💪",
   "Seasoned Pro": "🔥",
-  "Fitter Than A Butcher's Dog": "🐕 "
+  "Fitter Than A Butcher's Dog!": "🐕 "
 };
 
 
