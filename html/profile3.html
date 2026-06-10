@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="../css/block.css" />
   <link rel="stylesheet" href="../css/avatar-overlay.css" />
     <link rel="stylesheet" href="../css/Directory.css" />
+   <link rel="stylesheet" href="../css/BusinessProfile.css" />
 
 
 
@@ -492,7 +493,7 @@
 </div>
 
 
-      <div class="profile-detail-row profile-handle-row professional-profile-only">
+      <div class="profile-detail-row profile-handle-row professional-profile-only business-profile-only">
 
   <i class="fa-solid fa-at"></i>
 
@@ -635,7 +636,6 @@
   class="profile-affiliation-display"
   id="customerFitnessLevelToggle"
 >
-  <span id="customerFitnessLevelIcon"></span>
 
   <span id="customerFitnessLevelText">
     Select fitness level
@@ -720,10 +720,14 @@
 
   <div class="profile-lower-grid">
 
-<section class="business-section professional-profile-only" id="intro">
+<section class="business-section professional-profile-only business-profile-only" id="intro">
 
-  <div class="business-section-header">
+  <div class="business-section-header professional-profile-only">
     <h2>Bio</h2>
+  </div>
+
+    <div class="business-section-header business-profile-only">
+    <h2>Intro</h2>
   </div>
 
   <div class="profile-section-inner">
@@ -740,7 +744,7 @@
 
 </section>
     
-  <nav class="business-section-tabs professional-profile-only" aria-label="Business profile sections">
+  <nav class="business-section-tabs professional-profile-only business-profile-only" aria-label="Business profile sections">
      <div class="business-section-header">
       <h2>Services</h2>
         <button
@@ -751,7 +755,7 @@
     <i class="fa-solid fa-pen"></i>
   </button>
     </div>
-          <div class="profile-service-links">
+          <div class="profile-service-links professional-profile-only">
             <a href="#" class="service-link">Workouts</a>
             <a href="#" class="service-link">Nutrition Advice</a>
             <a href="#" class="service-link">Coaching Plans</a>
@@ -759,9 +763,19 @@
             <a href="#" class="service-link">1:1 PT Sessions</a>
             <a href="#" class="service-link">Custom Plans</a>
           </div>
+
+
+  <div class="profile-service-links business-profile-only">
+         <a href="#" class="service-link">Personal Training</a>
+            <a href="#" class="service-link">Strength Training</a>
+            <a href="#" class="service-link">Small Group Sessions</a>
+            <a href="#" class="service-link">Beginner Coaching</a>
+            <a href="#" class="service-link">Online Sessions</a>
+            <a href="#" class="service-link">Custom Plans</a>
+    </div>   
   </nav>
 
- <section class="profile-panel" id="profile-panel-workouts">
+ <section class="profile-panel customer-profile-only professional-profile-only" id="profile-panel-workouts">
           <div class="profile-section-card">
              <div class="business-section-header">
       <h2>Media</h2>
@@ -796,7 +810,7 @@
   </div>
 </section>
 
-    <section class="profile-panel" id="profile-panel-media">
+    <section class="profile-panel customer-profile-only professional-profile-only" id="profile-panel-media">
       <div class="profile-section-card">
 
         <div class="media-grid">
@@ -824,7 +838,69 @@
         </div>
       </div>
     </section>
-    
+
+
+
+ <section class="business-section business-profile-only" id="facilities">
+    <div class="business-section-header">
+      <h2>Facilities</h2>
+       <button type="button" class="Edit icon-btn desktop-icon-link self-only" aria-label="Edit profile">
+    <i class="fa-solid fa-pen"></i>
+  </button>
+    </div>
+
+    <div class="business-info-grid">
+      <div><i class="fa-solid fa-shower"></i> Showers</div>
+      <div><i class="fa-solid fa-square-parking"></i> Parking nearby</div>
+      <div><i class="fa-solid fa-wheelchair"></i> Accessible access</div>
+      <div><i class="fa-solid fa-lock"></i> Lockers</div>
+    </div>
+  </section>
+
+  <section class="business-section business-profile-only" id="professionals">
+    <div class="business-section-header">
+      <h2>Professionals</h2>
+      <button type="button">Manage</button>
+    </div>
+
+    <div class="business-professional-row">
+      <article class="business-professional-card">
+        <div class="business-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div>
+          <h3>Esther Clarke</h3>
+          <p>Strength & Conditioning Trainer</p>
+        </div>
+      </article>
+
+      <article class="business-professional-card">
+        <div class="business-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+        <div>
+          <h3>Jason Reed</h3>
+          <p>Personal Trainer</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+
+  <section class="business-section business-profile-only" id="contact">
+    <div class="business-section-header">
+      <h2>Contact & Location</h2>
+       <button type="button" class="Edit icon-btn desktop-icon-link self-only" aria-label="Edit profile">
+    <i class="fa-solid fa-pen"></i>
+  </button>
+    </div>
+
+    <div class="business-contact-card">
+      <p><i class="fa-solid fa-location-dot"></i> London, United Kingdom</p>
+      <p><i class="fa-solid fa-globe"></i> www.trainwell.example</p>
+      <p><i class="fa-solid fa-envelope"></i> hello@trainwell.example</p>
+    </div>
+  </section>
 </main>
   
 
@@ -952,7 +1028,7 @@
 
 </div>
 
-<div class="professional-profile-only verification-section">
+<div class="professional-profile-only business-profile-only verification-section">
       <button
         type="button"
         class="details-action-row"
