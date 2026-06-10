@@ -166,10 +166,6 @@ body.profile.has-cover
   min-height: clamp(28rem, 55dvh, 34rem);
 }
 
-body.profile.has-cover
-  .profile-hero-media {
-  height: clamp(220px, 34dvh, 340px);
-}
 
 
 
