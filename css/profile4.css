@@ -132,6 +132,12 @@ body[data-profile-type="professional"]
   display: block;
 }
 
+
+body[data-profile-type="professional"] 
+.profile-service-links.professional-profile-only {
+  display: flex;
+}
+
 /* =========================
    PAGE BG
 ========================= */
