@@ -138,6 +138,58 @@ body.profile::before {
 
 
 
+
+
+
+
+	
+/* =========================
+   COVERS
+========================= */
+
+
+	body.profile:not(.has-cover)
+  .profile-hero--personal {
+  min-height: 12rem;
+}
+
+body.profile:not(.has-cover)
+  .profile-hero-media {
+  height: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+
+body.profile.has-cover
+  .profile-hero--personal {
+  min-height: clamp(28rem, 55dvh, 34rem);
+}
+
+body.profile.has-cover
+  .profile-hero-media {
+  height: clamp(220px, 34dvh, 340px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* =========================
   REPOSITION & ZOOM
 ========================= */
