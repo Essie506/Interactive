@@ -132,6 +132,10 @@ body[data-profile-type="professional"]
   display: block;
 }
 
+body.profile[data-profile-type="professional-profile"] .business-section-header.professional-profile-only {
+    display: block
+}
+
 
 body[data-profile-type="professional"] 
 .profile-service-links.professional-profile-only {
