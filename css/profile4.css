@@ -127,7 +127,7 @@ body.profile[data-profile-type="professional-profile"] .professional-profile-onl
   display: grid;
 }
 
-body[data-profile-type="professional"] 
+body[data-profile-type="professional-profile"] 
 .verification-section.professional-profile-only {
   display: block;
 }
@@ -137,7 +137,7 @@ body.profile[data-profile-type="professional-profile"] .business-section-header.
 }
 
 
-body[data-profile-type="professional"] 
+body[data-profile-type="professional-profile"] 
 .profile-service-links.professional-profile-only {
   display: flex;
 }
