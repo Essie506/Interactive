@@ -137,11 +137,6 @@ body.profile::before {
 }
 
 
-
-
-
-
-
 	
 /* =========================
    COVERS
@@ -160,29 +155,21 @@ body.profile:not(.has-cover)
   overflow: hidden;
 }
 
+body.profile:not(.has-cover)
+  .business-section.mobile-only {
+  min-width: stretch;
+}
+
+body.profile:not(.has-cover)
+  .business-hero-card {
+  min-width: stretch;
+}
+
 
 body.profile.has-cover
   .profile-hero--personal {
   min-height: clamp(28rem, 55dvh, 34rem);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -864,10 +851,10 @@ body.profile .media-card img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: ;
 }
 
-.upload-cover-btn {
+.upload--btn {
   position: absolute;
   top: 0.5rem;
   z-index: 5;
