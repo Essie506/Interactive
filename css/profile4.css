@@ -281,10 +281,6 @@ body.profile .profile-services-card {
 }
 
 
-body.profile .profile-section-card {
-  background: var(--profile-card-bg);
-}
-
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
   background: var(--profile-card-bg-soft);
@@ -296,7 +292,8 @@ body.profile .profile-tabs-card {
 
 body.profile .profile-section-card {
   margin-bottom: 0.8rem;
-  padding: clamp(0.125rem, 1vw, 1rem);
+  padding: 0.0125rem;
+	background: var(--profile-card-bg);
 }
 
 
