@@ -1412,7 +1412,7 @@ body.profile .block-btn {
     overflow-x: clip;
     box-sizing: border-box;
     width: min(42rem, calc(100% - 2rem));
-   min-height: clamp(15rem, 28vh, 22rem);
+   min-height: 100%;
     box-shadow: var(--shadow-soft);
 	  opacity: 0.75;
   }
