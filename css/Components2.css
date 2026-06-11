@@ -808,6 +808,7 @@ body.profile .profile-tabs-inner {
   margin: 0 0 0.8rem 0;
 
   scroll-padding-inline: 0.9rem;
+	padding: 0 0.5rem;
 
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(14px);
