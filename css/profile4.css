@@ -1308,6 +1308,10 @@ body.profile .block-btn {
     flex-direction: column;
   }
 
+	body.profile .profile-hero--personal {
+    margin-bottom: 0.8rem;
+}
+
 
 
 
