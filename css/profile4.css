@@ -1022,7 +1022,6 @@ body.profile .profile-affiliation-select {
   text-align: start;
 	 font-size: medium;
   font-weight: 700;
-  margin: var(--profile-role-margin-top) 0;
   line-height: 1.5;
   font-family: inherit;
   color: var(--text-dark);
