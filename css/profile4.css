@@ -1813,12 +1813,10 @@ body.profile.has-cover
 
   body.profile .business-hero-card {
     z-index: 2;
-    margin-left: auto;
-	  margin-right: auto;
      min-height: auto;
     background: #ffff;
 	  width: 100%;
-	margin: 0;
+	margin: auto;
 	  padding: 0;
   }
 
