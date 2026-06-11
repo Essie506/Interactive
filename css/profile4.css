@@ -1067,6 +1067,7 @@ color: var(--text-dark);
 text-align: center;
   width: 100%;
   min-width: 0;
+	margin: 0.5rem 0;
 }
 
 
