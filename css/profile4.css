@@ -1755,6 +1755,7 @@ body.profile #profileNameInput {
   box-shadow: none;
 	font-weight: 700;
 	background: transparent;
+	margin-bottom: 0.75rem;
 }
 
 	#profileNameInput:focus {
