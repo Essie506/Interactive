@@ -1753,6 +1753,7 @@ body.profile #profileNameInput {
 		height: 100%;
 		max-width: 100%;
 		min-height: 0;
+		margin: 0.5rem, 0;
 }
 
 	body.profile .profile-detail-input,
