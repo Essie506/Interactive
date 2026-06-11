@@ -1726,6 +1726,11 @@ body.profile #profileNameInput {
 		max-width: 100%;
 		min-height: 0;
 }
+
+	body.profile .profile-detail-input,
+body.profile .profile-affiliation-select {
+  max-width: 100%;
+}
 	
 }
 
