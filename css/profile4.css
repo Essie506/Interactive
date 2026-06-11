@@ -1036,6 +1036,26 @@ body.profile .profile-affiliation-select {
 	outline: none;
 }
 
+
+.profile-detail-text {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.profile-detail-row:not(.editing-location) #profileGymInput {
+  display: none;
+}
+
+body.editing-profile .profile-gym #profileGymText {
+  display: none;
+}
+
+body.editing-profile .profile-gym #profileGymInput {
+  display: block;
+}
+
 textarea#profileGymInput {
     min-height: 100%;
 }
