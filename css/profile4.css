@@ -1037,6 +1037,10 @@ body.profile .profile-affiliation-select {
 	outline: none;
 }
 
+textarea#profileGymInput {
+    min-height: 100%;
+}
+
 body.profile .profile-detail-row i {
   line-height: 1.3;
   font-size: 1em;
