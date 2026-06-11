@@ -1718,6 +1718,7 @@ body.profile .profile-hero-media:active {
   max-width: 100%;
   overflow: hidden;
   min-width: 0;
+		padding-left: 0.5rem;
 }
 
 body.profile .profile-name-group {
