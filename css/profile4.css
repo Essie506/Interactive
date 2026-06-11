@@ -1813,8 +1813,8 @@ body.profile.has-cover
      min-height: auto;
     background: #ffff;
 	  width: 100%;
-	  margin-top: 0;
-	  margin-bottom: 0.9rem;
+	margin: 0;
+	  padding: 0;
   }
 
   body.profile .profile-no-tabs {
