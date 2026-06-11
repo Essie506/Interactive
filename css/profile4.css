@@ -292,7 +292,7 @@ body.profile .profile-tabs-card {
 
 body.profile .profile-section-card {
   margin-bottom: 0.8rem;
-  padding: 0.0125rem;
+  padding: 0.0125rem 0.5rem 0.5rem;
 	background: var(--profile-card-bg);
 }
 
