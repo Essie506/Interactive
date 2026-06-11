@@ -1822,9 +1822,6 @@ body.profile.has-cover
 	  padding: 0;
   }
 
-  body.profile .profile-no-tabs {
-    box-shadow: var(--shadow-soft);
-  }
 
   body.profile .profile-info-inner {
      position: relative;
