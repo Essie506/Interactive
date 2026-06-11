@@ -844,7 +844,7 @@ body.profile .profile-tabs-inner {
 
 .business-section-header h2,
 .business-professional-card h3 {
-  margin: 0.5rem;
+  margin: 0.5rem 0;
   color: var(--text-dark);
 }
 
