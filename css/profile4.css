@@ -112,7 +112,7 @@ body.profile[data-viewer="visitor"] .visitor-only {
 
 /* profile type visibility */
 body.profile[data-profile-type="business-profile"] .business-profile-only {
-  display: revert;
+  display: grid;
 }
 
 
@@ -132,13 +132,14 @@ body[data-profile-type="professional-profile"]
   display: block;
 }
 
-body.profile[data-profile-type="professional-profile"] .business-section-header.professional-profile-only {
+body.profile[data-profile-type="professional-profile"] .business-section-header.professional-profile-only,
+body.profile[data-profile-type="business-profile"] .business-section-header.business-profile-only {
     display: block
 }
 
 
-body[data-profile-type="professional-profile"] 
-.profile-service-links.professional-profile-only {
+body[data-profile-type="professional-profile"] .profile-service-links.professional-profile-only, 
+body[data-profile-type="business-profile"] .profile-service-links.business-profile-only {
   display: flex;
 }
 
