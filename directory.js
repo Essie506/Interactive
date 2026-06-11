@@ -650,6 +650,12 @@ if (editProfileBtn) {
 
       }
 
+
+if (profileGymInput) {
+  profileGymInput.readOnly = false;
+}
+
+
     }
   );
 
@@ -834,6 +840,12 @@ if (profileBioSave && profileBioInput) {
 
         profileBioInput.blur();
 
+
+
+        if (profileGymInput) {
+  profileGymInput.readOnly = true;
+}
+
       // save editable fields too
       editableFields.forEach(field => {
 
@@ -890,8 +902,7 @@ profileNameInput?.addEventListener(
 
 [
   profileHandleInput,
-  profileRoleInput,
-  profileGymInput
+  profileRoleInput
 ].forEach(field => {
 
   if (!field) return;
@@ -1020,10 +1031,6 @@ window.addEventListener(
 
       autoGrowProfileField(
         profileRoleInput
-      );
-
-      autoGrowProfileField(
-        profileGymInput
       );
 
     });
