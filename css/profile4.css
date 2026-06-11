@@ -1042,6 +1042,7 @@ body.profile .profile-affiliation-select {
   white-space: normal;
   overflow-wrap: anywhere;
   line-height: 1.35;
+	text-align: start;
 }
 
 .profile-detail-row:not(.editing-location) #profileGymInput {
