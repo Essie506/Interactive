@@ -1045,9 +1045,15 @@ body.profile .profile-affiliation-select {
 	text-align: start;
 }
 
-.profile-detail-row:not(.editing-location) #profileGymInput {
+/* normal view */
+.profile-gym #profileGymText {
+  display: block;
+}
+
+.profile-gym #profileGymInput {
   display: none;
 }
+
 
 body.editing-profile .profile-gym #profileGymText {
   display: none;
