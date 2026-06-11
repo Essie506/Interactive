@@ -79,8 +79,6 @@ body.business-profile {
 .business-hero-card {
   position: relative;
   z-index: 2;
-   padding:0.5rem
-   var(--profile-hero-inner-pad-y);
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
