@@ -26,8 +26,35 @@ const profileNameInput = document.getElementById("profileNameInput");
   const navVerifiedBadge = document.getElementById("navVerifiedBadge");
 
 
+  const servicesChecklist = document.getElementById("servicesChecklist");
+const servicesPillSection = document.getElementById("servicesPillSection");
+const servicesSaveBtn = document.getElementById("servicesSaveBtn");
+
+
 const proofSubmittedMobile =
   document.getElementById("proofSubmittedMobile");
+
+
+  const serviceOptions = [
+  "Personal Training",
+  "Strength Training",
+  "Nutrition Advice",
+  "Small Group Training",
+  "Online Coaching",
+  "Programme Writing",
+  "Mobility Coaching",
+  "Rehabilitation",
+  "Weight Loss",
+  "Muscle Gain",
+  "Home Visits",
+  "Gym Based Sessions",
+  "Outdoor Training"
+];
+
+let selectedServices = [
+  "Personal Training",
+  "Strength Training"
+];
   
 
 // temporary until Firestore is read here
@@ -108,6 +135,43 @@ document.title =
       profileChevronBtn.classList.remove("open");
     }
   }
+
+  function renderServicesChecklist() {
+  if (!servicesChecklist) return;
+
+  servicesChecklist.innerHTML = "";
+
+  serviceOptions.forEach(service => {
+    const label = document.createElement("label");
+    label.className = "service-check-option";
+
+    label.innerHTML = `
+      <input
+        type="checkbox"
+        value="${service}"
+        ${selectedServices.includes(service) ? "checked" : ""}
+      >
+      <span>${service}</span>
+    `;
+
+    servicesChecklist.appendChild(label);
+  });
+}
+
+function renderServicePills() {
+  if (!servicesPillSection) return;
+
+  servicesPillSection.innerHTML = "";
+
+  selectedServices.forEach(service => {
+    const pill = document.createElement("span");
+    pill.className = "service-pill";
+    pill.textContent = service;
+
+    servicesPillSection.appendChild(pill);
+  });
+}
+
 
   function closeBlockModal() {
     if (!blockUserModal) return;
@@ -237,4 +301,31 @@ if (shareProfileButtons.length) {
     });
   }
 });
+
+servicesSaveBtn?.addEventListener("click", () => {
+  const checkedServices = servicesChecklist.querySelectorAll(
+    "input[type='checkbox']:checked"
+  );
+
+  selectedServices = Array.from(checkedServices).map(input => input.value);
+
+  renderServicePills();
+
+  // Later this becomes your Firebase save:
+  localStorage.setItem(
+    "profileServices",
+    JSON.stringify(selectedServices)
+  );
+});
+
+const savedServices = JSON.parse(
+  localStorage.getItem("profileServices")
+);
+
+if (Array.isArray(savedServices)) {
+  selectedServices = savedServices;
+}
+
+renderServicesChecklist();
+renderServicePills();
 
