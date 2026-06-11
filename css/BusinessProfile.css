@@ -334,7 +334,6 @@ body.business-profile .business-intro {
 
   .business-section {
     scroll-margin-top: calc(var(--bar-height) + 4.5rem);
-    margin-bottom: 0;
   }
 
   .business-info-grid,
