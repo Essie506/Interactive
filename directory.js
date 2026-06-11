@@ -3,6 +3,9 @@ const editProfileBtn = document.getElementById(
     "editProfileBtn"
   );
 
+const profileGymText =
+  document.getElementById("profileGymText");
+
 const bioText = document.getElementById(
     "profileBioText"
   );
@@ -510,6 +513,7 @@ document
 updateAffiliationText();
 
 
+
 // =========================
 // LOAD SAVED BIO
 // =========================
@@ -552,6 +556,13 @@ editableFields.forEach(field => {
   field.readOnly = true;
 
 });
+
+
+if (profileGymText && profileGymInput) {
+  profileGymText.textContent =
+    profileGymInput.value.trim() || "Search location...";
+}
+
 
 
 // bio setup
@@ -845,6 +856,11 @@ if (profileBioSave && profileBioInput) {
 
         if (profileGymInput) {
   profileGymInput.readOnly = true;
+}
+
+        if (profileGymText && profileGymInput) {
+  profileGymText.textContent =
+    profileGymInput.value.trim() || "Search location...";
 }
 
       // save editable fields too
