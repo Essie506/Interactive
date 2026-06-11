@@ -111,7 +111,7 @@ body.profile[data-viewer="visitor"] .visitor-only {
 
 
 /* profile type visibility */
-body.profile[data-profile-type="business-profile"] .customer-profile-only {
+body.profile[data-profile-type="business-profile"] .business-profile-only {
   display: revert;
 }
 
