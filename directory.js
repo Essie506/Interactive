@@ -741,6 +741,7 @@ customerFitnessLevelToggle?.addEventListener(
 customerLikesInput?.addEventListener(
   "input",
   () => {
+        if (!customerLikesSuggestionsBox) return;
     const fullText = customerLikesInput.value;
 
     const parts = fullText.split(",");
@@ -1067,6 +1068,7 @@ servicesSaveBtn?.addEventListener("click", () => {
 profileRoleInput?.addEventListener(
   "input",
   () => {
+        if (!roleSuggestionsBox) return;
 
     const fullText =
       profileRoleInput.value;
