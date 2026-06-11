@@ -1062,6 +1062,33 @@ body.editing-profile .profile-gym #profileGymInput {
   display: block;
 }
 
+
+.profile-gym {
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+}
+
+.profile-gym #profileGymText {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.35;
+}
+
+.profile-gym #profileGymInput {
+  display: none;
+}
+
+body.editing-profile .profile-gym #profileGymText {
+  display: none;
+}
+
+body.editing-profile .profile-gym #profileGymInput {
+  display: block;
+}
+
 textarea#profileGymInput {
     min-height: 100%;
 }
