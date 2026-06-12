@@ -2085,7 +2085,8 @@ body.profile .profile-affiliation-select {
   line-height: 1.3;
 }
 	
-.profile-detail-row.profile-handle-row {
+.profile-detail-row.profile-handle-row, body.profile .profile-detail-row {
       max-width: 65%;
     }
+
 }
