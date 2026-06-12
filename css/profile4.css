@@ -732,6 +732,35 @@ body.profile .service-link::before {
   -webkit-overflow-scrolling: touch;
 }
 
+
+
+
+.services-pill-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.service-pill {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(7, 153, 146, 0.12);
+  border: 1px solid rgba(7, 153, 146, 0.35);
+}
+
+.service-check-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+
+
+
+
+
+
 .service-pill-option {
   border: none;
   border-radius: 999px;
