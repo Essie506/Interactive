@@ -1075,6 +1075,7 @@ body.profile .profile-affiliation-select {
   field-sizing: content;
 	background: transparent;
 	outline: none;
+	 -webkit-appearance: none;
 }
 
 
@@ -1084,6 +1085,7 @@ body.profile .profile-affiliation-select {
   overflow-wrap: anywhere;
   line-height: 1.35;
 	text-align: start;
+	 -webkit-appearance: none;
 }
 
 /* normal view */
@@ -1156,7 +1158,7 @@ color: var(--text-dark);
 .profile-detail-row {
   display: grid;
 	grid-template-columns: 1.5rem 1fr;
-	
+	 -webkit-appearance: none;
 
   align-items: center;
   column-gap: 0.5rem;
