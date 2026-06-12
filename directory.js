@@ -687,26 +687,6 @@ if (editProfileBtn) {
       }
 
 
-if (profileGymInput) {
-  profileGymInput.readOnly = false;
-}
-
-        if (profileHandleText && profileHandleInput) {
-  profileHandleText.textContent =
-    profileHandleInput.value.trim() || "@username";
-}
-
-if (profileRoleText && profileRoleInput) {
-  profileRoleText.textContent =
-    profileRoleInput.value.trim() || "Add role...";
-}
-
-if (customerLikesText && customerLikesInput) {
-  customerLikesText.textContent =
-    customerLikesInput.value.trim() ||
-    "Running • Lifting • Walking";
-}
-
 
     }
   );
@@ -912,21 +892,35 @@ if (profileBioSave && profileBioInput) {
 }
 
       // save editable fields too
-      editableFields.forEach(field => {
+    editableFields.forEach(field => {
+  if (!field) return;
 
-        if (!field) return;
+  localStorage.setItem(
+    field.id,
+    field.value.trim()
+  );
 
-        localStorage.setItem(
-          field.id,
-          field.value.trim()
-        );
+  originalProfileValues[field.id] =
+    field.value;
 
-        originalProfileValues[field.id] =
-          field.value;
+  field.readOnly = true;
+});
 
-        field.readOnly = true;
+if (profileHandleText && profileHandleInput) {
+  profileHandleText.textContent =
+    profileHandleInput.value.trim() || "@username";
+}
 
-      });
+if (profileRoleText && profileRoleInput) {
+  profileRoleText.textContent =
+    profileRoleInput.value.trim() || "Add role...";
+}
+
+if (customerLikesText && customerLikesInput) {
+  customerLikesText.textContent =
+    customerLikesInput.value.trim() ||
+    "Running • Lifting • Walking";
+}
 
       document.body.classList.remove(
         "editing-profile"
