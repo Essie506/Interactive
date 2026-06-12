@@ -48,6 +48,12 @@ const profileHandleInput =
     "profileHandleInput"
   );
 
+const profileHandleText =
+  document.getElementById("profileHandleText");
+
+const profileRoleText =
+  document.getElementById("profileRoleText");
+
 const profileRoleInput =
   document.getElementById(
     "profileRoleInput"
@@ -566,6 +572,22 @@ if (profileGymText && profileGymInput) {
     profileGymInput.value.trim() || "Search location...";
 }
 
+if (profileHandleText && profileHandleInput) {
+  profileHandleText.textContent =
+    profileHandleInput.value.trim() || "@username";
+}
+
+if (profileRoleText && profileRoleInput) {
+  profileRoleText.textContent =
+    profileRoleInput.value.trim() || "Add role...";
+}
+
+if (customerLikesText && customerLikesInput) {
+  customerLikesText.textContent =
+    customerLikesInput.value.trim() ||
+    "Running • Lifting • Walking";
+}
+
 
 
 // bio setup
@@ -667,6 +689,22 @@ if (editProfileBtn) {
 
 if (profileGymInput) {
   profileGymInput.readOnly = false;
+}
+
+        if (profileHandleText && profileHandleInput) {
+  profileHandleText.textContent =
+    profileHandleInput.value.trim() || "@username";
+}
+
+if (profileRoleText && profileRoleInput) {
+  profileRoleText.textContent =
+    profileRoleInput.value.trim() || "Add role...";
+}
+
+if (customerLikesText && customerLikesInput) {
+  customerLikesText.textContent =
+    customerLikesInput.value.trim() ||
+    "Running • Lifting • Walking";
 }
 
 
@@ -929,9 +967,9 @@ profileNameInput?.addEventListener(
 
 [
   profileHandleInput,
-  profileRoleInput
+  profileRoleInput,
+  customerLikesInput
 ].forEach(field => {
-
   if (!field) return;
 
   autoGrowProfileField(field);
