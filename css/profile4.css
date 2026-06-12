@@ -368,6 +368,18 @@ body.editing-profile div#customerLikesSuggestionsBox {
   display: flex;
 }
 
+#customerLikesInput {
+  display: none;
+}
+
+body.editing-profile #customerLikesText {
+  display: none;
+}
+
+body.editing-profile #customerLikesInput {
+  display: block;
+}
+
 
 body.profile .profile-bio {
   margin: var(--profile-bio-margin-top) auto 0;
