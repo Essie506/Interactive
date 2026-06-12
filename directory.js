@@ -1,181 +1,55 @@
+const editProfileBtn = document.getElementById("editProfileBtn");
+const profileBioSave = document.getElementById("profileBioSave");
 
-const editProfileBtn = document.getElementById(
-    "editProfileBtn"
-  );
+const navTitleInput = document.getElementById("navTitleInput");
+const accountOnlineNameInput = document.getElementById("accountOnlineNameInput");
 
-const profileGymText =
-  document.getElementById("profileGymText");
+const profileNameInput = document.getElementById("profileNameInput");
+const profileBioInput = document.getElementById("profileBioInput");
 
-const bioText = document.getElementById(
-    "profileBioText"
-  );
+const profileHandleText = document.getElementById("profileHandleText");
+const profileRoleText = document.getElementById("profileRoleText");
+const customerLikesText = document.getElementById("customerLikesText");
+const profileGymText = document.getElementById("profileGymText");
 
-const customerLikesInput =
-  document.getElementById("customerLikesInput");
+const profileHandleInput = document.getElementById("profileHandleInput");
+const profileRoleInput = document.getElementById("profileRoleInput");
+const customerLikesInput = document.getElementById("customerLikesInput");
+const profileGymInput = document.getElementById("profileGymInput");
 
-const customerLikesText =
-  document.getElementById("customerLikesText");
+const handleEditorModal = document.getElementById("handleEditorModal");
+const roleEditorModal = document.getElementById("roleEditorModal");
+const likesEditorModal = document.getElementById("likesEditorModal");
+const locationEditorModal = document.getElementById("locationEditorModal");
 
-const customerLikesSuggestionsBox =
-  document.getElementById("customerLikesSuggestionsBox");
+const saveHandleBtn = document.getElementById("saveHandleBtn");
+const saveRoleBtn = document.getElementById("saveRoleBtn");
+const saveLikesBtn = document.getElementById("saveLikesBtn");
+const saveLocationBtn = document.getElementById("saveLocationBtn");
 
+const closeHandleBtn = document.getElementById("closeHandleBtn");
+const closeRoleBtn = document.getElementById("closeRoleBtn");
+const closeLikesBtn = document.getElementById("closeLikesBtn");
+const closeLocationBtn = document.getElementById("closeLocationBtn");
 
-const navTitleInput =
-  document.getElementById("navTitleInput");
+const roleSuggestionsBox = document.getElementById("roleSuggestionsBox");
+const customerLikesSuggestionsBox = document.getElementById("customerLikesSuggestionsBox");
 
-const accountOnlineNameInput =
-  document.getElementById("accountOnlineNameInput");
+const profileAffiliationToggle = document.getElementById("profileAffiliationToggle");
+const profileAffiliationMenu = document.getElementById("profileAffiliationMenu");
+const profileAffiliationText = document.getElementById("profileAffiliationText");
 
+const customerFitnessLevelToggle = document.getElementById("customerFitnessLevelToggle");
+const customerFitnessLevelMenu = document.getElementById("customerFitnessLevelMenu");
+const customerFitnessLevelText = document.getElementById("customerFitnessLevelText");
+const fitnessLevelIcon = document.getElementById("customerFitnessLevelIcon");
 
-const profileBioInput =
-  document.getElementById(
-    "profileBioInput"
-  );
-
-const profileBioSave =
-  document.getElementById(
-    "profileBioSave"
-  );
-
-
-const profileNameInput =
-  document.getElementById(
-    "profileNameInput"
-  );
-
-const profileHandleInput =
-  document.getElementById(
-    "profileHandleInput"
-  );
-
-const profileHandleText =
-  document.getElementById("profileHandleText");
-
-const profileRoleText =
-  document.getElementById("profileRoleText");
-
-const profileRoleInput =
-  document.getElementById(
-    "profileRoleInput"
-  );
-
-const profileGymInput =
-  document.getElementById(
-    "profileGymInput"
-  );
-
-
-const profileAffiliationToggle =
-  document.getElementById(
-    "profileAffiliationToggle"
-  );
-
-const profileAffiliationMenu =
-  document.getElementById(
-    "profileAffiliationMenu"
-  );
-
-const profileAffiliationText =
-  document.getElementById(
-    "profileAffiliationText"
-  );
-
-const customerFitnessLevelText =
-  document.getElementById(
-    "customerFitnessLevelText"
-  );
-
-const fitnessLevelIcon =
-  document.getElementById(
-    "customerFitnessLevelIcon"
-  );
-
-const fitnessIcons = {
-  "Keeping Up Appearances": "🌱",
-  "Finding My Feet": "👟",
-  "Steady Eddy": "🚶",
-  "Joe Regular": "🏋️",
-  "Fighting Fit": "💪",
-  "Seasoned Pro": "🔥",
-  "Fitter Than A Butcher's Dog!": "🐕 "
-};
-
-
-const customerLikeSuggestions = [
-  "Running",
-  "Walking",
-  "Weight Training",
-  "Strength Training",
-  "Gym Workouts",
-  "Football",
-  "Gymnastics",
-  "Yoga",
-  "Pilates",
-  "Cycling",
-  "Swimming",
-  "Boxing",
-  "Martial Arts",
-  "Dance",
-  "Hiking",
-  "Netball",
-  "Tennis",
-  "Rugby",
-  "Climbing",
-  "HIIT",
-  "Functional Fitness"
-];
-
-
-const customerFitnessLevelToggle =
-  document.getElementById(
-    "customerFitnessLevelToggle"
-  );
-
-const customerFitnessLevelMenu =
-  document.getElementById(
-    "customerFitnessLevelMenu"
-  );
-
-
-
-const servicesEditBtn =
-  document.getElementById("servicesEditBtn");
-
-const servicesModalOverlay =
-  document.getElementById("servicesModalOverlay");
-
-const servicesModalClose =
-  document.getElementById("servicesModalClose");
-
-const servicesCancelBtn =
-  document.getElementById("servicesCancelBtn");
-
-const servicesSaveBtn =
-  document.getElementById("servicesSaveBtn");
-
-const servicePillOptions =
-  document.querySelectorAll(".service-pill-option");
-
-const roleSuggestionsBox =
-  document.getElementById(
-    "roleSuggestionsBox"
-  );
-
-
-const editableFields = [
-  profileNameInput,
-  profileHandleInput,
-  profileRoleInput,
-  profileGymInput,
-customerLikesInput
-];
-
-
-// =========================
-// DATA
-// =========================
-
-
+const servicesEditBtn = document.getElementById("servicesEditBtn");
+const servicesModalOverlay = document.getElementById("servicesModalOverlay");
+const servicesModalClose = document.getElementById("servicesModalClose");
+const servicesCancelBtn = document.getElementById("servicesCancelBtn");
+const servicesSaveBtn = document.getElementById("servicesSaveBtn");
+const servicePillOptions = document.querySelectorAll(".service-pill-option");
 
 const roleSuggestions = [
   "Personal Trainer",
@@ -202,157 +76,92 @@ const roleSuggestions = [
   "MMA Coach"
 ];
 
+const customerLikeSuggestions = [
+  "Running",
+  "Walking",
+  "Weight Training",
+  "Strength Training",
+  "Gym Workouts",
+  "Football",
+  "Gymnastics",
+  "Yoga",
+  "Pilates",
+  "Cycling",
+  "Swimming",
+  "Boxing",
+  "Martial Arts",
+  "Dance",
+  "Hiking",
+  "Netball",
+  "Tennis",
+  "Rugby",
+  "Climbing",
+  "HIIT",
+  "Functional Fitness"
+];
 
+const fitnessIcons = {
+  "Keeping Up Appearances": "🌱",
+  "Finding My Feet": "👟",
+  "Steady Eddy": "🚶",
+  "Joe Regular": "🏋️",
+  "Fighting Fit": "💪",
+  "Seasoned Pro": "🔥",
+  "Fitter Than A Butcher's Dog!": "🐕"
+};
 
-// =========================
-// OG STATE VARIABLES
-// =========================
+function openModal(modal, input, value) {
+  if (!document.body.classList.contains("editing-profile")) return;
 
+  modal?.classList.add("show");
 
-let originalBio =
-  profileBioInput?.value || "";
-
-let originalProfileValues = {};
-
-
-
-// =========================
-// HELPERS
-// =========================
-
-
-function getSelectedAffiliations() {
-  return Array.from(
-    document.querySelectorAll(
-      "#profileAffiliationMenu input:checked"
-    )
-  ).map(input => input.value);
+  if (input) {
+    input.value = value.trim();
+    requestAnimationFrame(() => {
+      input.focus();
+      input.setSelectionRange(input.value.length, input.value.length);
+    });
+  }
 }
 
-
-
-document
-  .querySelectorAll('#customerFitnessLevelMenu input[name="fitnessLevel"]')
-  .forEach(input => {
-    input.addEventListener(
-      "change",
-      updateFitnessLevelText
-    );
-  });
-
-
-
-function updateAffiliationText() {
-  if (!profileAffiliationText) return;
-
-  const selected =
-    getSelectedAffiliations();
-
-  profileAffiliationText.textContent =
-    selected.length
-      ? selected
-          .map(item => `✓ ${item}`)
-          .join("  •  ")
-      : "Select status";
+function closeModal(modal) {
+  modal?.classList.remove("show");
 }
 
+function saveField(input, textEl, storageKey, fallback, modal) {
+  if (!input || !textEl) return;
 
-function updateFitnessLevelText() {
-  if (!customerFitnessLevelText) return;
+  const value = input.value.trim();
 
-  const selected = document.querySelector(
-    '#customerFitnessLevelMenu input:checked'
-  );
+  textEl.textContent = value || fallback;
 
-  customerFitnessLevelText.textContent =
-    selected
-      ? selected.value
-      : 'Select fitness level';
+  localStorage.setItem(storageKey, value);
+
+  closeModal(modal);
 }
-
-
-function autoGrowProfileField(field) {
-
-  if (!field) return;
-
-  const minHeight = 32;
-  const maxHeight = 220;
-
-  field.style.height = "0px";
-
-  const nextHeight = Math.max(
-    minHeight,
-    Math.min(
-      field.scrollHeight,
-      maxHeight
-    )
-  );
-
-  field.style.height =
-    `${nextHeight}px`;
-
-void field.offsetHeight;
-
-}
-
-
 
 function autoGrowProfileBioInput() {
-
- if (!profileBioInput) return;
-
-const wrap =
-  profileBioInput.closest(".profile-section-inner");
+  if (!profileBioInput) return;
 
   const minHeight = 55.5;
   const maxHeight = 550;
 
- profileBioInput.style.height = "0px";
+  profileBioInput.style.height = "0px";
 
-  if (wrap) {
-    wrap.style.height = "auto";
-  }
+  const nextHeight = Math.max(
+    minHeight,
+    Math.min(profileBioInput.scrollHeight, maxHeight)
+  );
 
- const nextHeight = Math.max(
-  minHeight,
-  Math.min(
-    profileBioInput.scrollHeight,
-    maxHeight
-  )
-);
+  profileBioInput.style.height = `${nextHeight}px`;
 
-  profileBioInput.style.height =
-    `${nextHeight}px`;
-
-profileBioInput.style.overflowY =
-  profileBioInput.scrollHeight > maxHeight
-    ? "auto"
-    : "hidden";
-
-  if (wrap) {
-
-    wrap.style.height =
-      `${nextHeight}px`;
-
-    wrap.style.minHeight =
-      `${minHeight}px`;
-
-  }
-
+  profileBioInput.style.overflowY =
+    profileBioInput.scrollHeight > maxHeight ? "auto" : "hidden";
 }
 
 function updateBioSaveButtonState() {
-
-  const isEditing =
-    document.body.classList.contains(
-      "editing-profile"
-    );
-
-  profileBioSave?.classList.toggle(
-    "ready",
-    isEditing
-  );
-
+  const isEditing = document.body.classList.contains("editing-profile");
+  profileBioSave?.classList.toggle("ready", isEditing);
 }
 
 function autoFitProfileName() {
@@ -367,440 +176,134 @@ function autoFitProfileName() {
   profileNameInput.style.width = "100%";
   profileNameInput.style.maxWidth = "100%";
 
-  const maxWidth =
-    parent.clientWidth || 260;
-
+  const maxWidth = parent.clientWidth || 260;
   let fontSize = 40;
   const minFontSize = 6;
 
-  const measurer =
-    document.createElement("span");
+  const measurer = document.createElement("span");
 
   measurer.style.position = "absolute";
   measurer.style.visibility = "hidden";
   measurer.style.whiteSpace = "nowrap";
-  measurer.style.fontFamily =
-    getComputedStyle(profileNameInput).fontFamily;
-  measurer.style.fontWeight =
-    getComputedStyle(profileNameInput).fontWeight;
+  measurer.style.fontFamily = getComputedStyle(profileNameInput).fontFamily;
+  measurer.style.fontWeight = getComputedStyle(profileNameInput).fontWeight;
 
   document.body.appendChild(measurer);
 
   while (fontSize > minFontSize) {
     measurer.style.fontSize = `${fontSize}px`;
+    measurer.textContent = profileNameInput.value || "Profile";
 
-    measurer.textContent =
-      profileNameInput.value || "Profile";
-
-    if (measurer.offsetWidth <= maxWidth) {
-      break;
-    }
+    if (measurer.offsetWidth <= maxWidth) break;
 
     fontSize -= 1;
   }
 
-  profileNameInput.style.fontSize =
-    `${fontSize}px`;
+  profileNameInput.style.fontSize = `${fontSize}px`;
 
   measurer.remove();
 }
 
-
 function autoFitNavTitle() {
-
   if (!navTitleInput) return;
 
- const parent =
-  navTitleInput.closest(".nav-title-wrap") ||
-  navTitleInput.parentElement;
+  const parent =
+    navTitleInput.closest(".nav-title-wrap") ||
+    navTitleInput.parentElement;
 
   if (!parent) return;
 
-    navTitleInput.style.width = "100%";
-navTitleInput.style.maxWidth = "100%";
+  navTitleInput.style.width = "100%";
+  navTitleInput.style.maxWidth = "100%";
 
-  const maxWidth =
-    parent.clientWidth;
-
+  const maxWidth = parent.clientWidth;
   let fontSize = 20;
   const minFontSize = 6;
 
-  const measurer =
-    document.createElement("span");
+  const measurer = document.createElement("span");
 
-  measurer.style.position =
-    "absolute";
+  measurer.style.position = "absolute";
+  measurer.style.visibility = "hidden";
+  measurer.style.whiteSpace = "nowrap";
+  measurer.style.fontFamily = getComputedStyle(navTitleInput).fontFamily;
+  measurer.style.fontWeight = getComputedStyle(navTitleInput).fontWeight;
 
-  measurer.style.visibility =
-    "hidden";
-
-  measurer.style.whiteSpace =
-    "nowrap";
-
-  measurer.style.fontFamily =
-    getComputedStyle(navTitleInput)
-      .fontFamily;
-
-  measurer.style.fontWeight =
-    getComputedStyle(navTitleInput)
-      .fontWeight;
-
-  document.body.appendChild(
-    measurer
-  );
+  document.body.appendChild(measurer);
 
   while (fontSize > minFontSize) {
+    measurer.style.fontSize = `${fontSize}px`;
+    measurer.textContent = navTitleInput.value || "Profile";
 
-    measurer.style.fontSize =
-      `${fontSize}px`;
-
-    measurer.textContent =
-      navTitleInput.value || "Profile";
-
-    if (
-      measurer.offsetWidth <=
-      maxWidth
-    ) {
-      break;
-    }
+    if (measurer.offsetWidth <= maxWidth) break;
 
     fontSize -= 1;
   }
 
-  navTitleInput.style.fontSize =
-    `${fontSize}px`;
+  navTitleInput.style.fontSize = `${fontSize}px`;
 
   measurer.remove();
 }
 
-
-
-
-function openServicesModal() {
-  servicesModalOverlay?.classList.add("open");
+function getSelectedAffiliations() {
+  return Array.from(
+    document.querySelectorAll("#profileAffiliationMenu input:checked")
+  ).map(input => input.value);
 }
 
-function closeServicesModal() {
-  servicesModalOverlay?.classList.remove("open");
+function updateAffiliationText() {
+  if (!profileAffiliationText) return;
+
+  const selected = getSelectedAffiliations();
+
+  profileAffiliationText.textContent = selected.length
+    ? selected.map(item => `✓ ${item}`).join("  •  ")
+    : "Select status";
 }
 
+function updateFitnessLevelText() {
+  if (!customerFitnessLevelText) return;
 
-function resizeNavTitleInput() {
-  if (!navTitleInput) return;
-
-  navTitleInput.style.width = "1px";
-
-  const nextWidth =
-    Math.max(40, navTitleInput.scrollWidth);
-
-  navTitleInput.style.width =
-    `${nextWidth}px`;
-
-  requestAnimationFrame(() => {
-    navTitleInput.scrollLeft = 0;
-  });
-}
-
-// =========================
-// RUN ON STARTUP
-// =========================
-
-
-
-const savedAffiliations =
-  JSON.parse(
-    localStorage.getItem("profileAffiliation") || "[]"
+  const selected = document.querySelector(
+    '#customerFitnessLevelMenu input:checked'
   );
 
-document
-  .querySelectorAll("#profileAffiliationMenu input")
-  .forEach(input => {
-    input.checked =
-      savedAffiliations.includes(input.value);
-  });
+  customerFitnessLevelText.textContent = selected
+    ? selected.value
+    : "Select fitness level";
 
-updateAffiliationText();
-
-
-
-// =========================
-// LOAD SAVED BIO
-// =========================
-
-
-const savedBio =
-  localStorage.getItem(
-    "profileBio"
-  );
-
-if (
-  savedBio &&
-  profileBioInput
-) {
-
-  profileBioInput.value =
-    savedBio;
-
+  if (fitnessLevelIcon && selected) {
+    fitnessLevelIcon.textContent = fitnessIcons[selected.value] || "";
+  }
 }
 
-
-
-editableFields.forEach(field => {
-
-  if (!field) return;
-
-  // restore saved values
-  const savedValue =
-    localStorage.getItem(field.id);
-
-  if (savedValue) {
-    field.value = savedValue;
-  }
-
-  // store originals
-  originalProfileValues[field.id] =
-    field.value;
-
-  // lock fields
-  field.readOnly = true;
-
-});
-
-
-if (profileGymText && profileGymInput) {
-  profileGymText.textContent =
-    profileGymInput.value.trim() || "Search location...";
-}
-
-if (profileHandleText && profileHandleInput) {
-  profileHandleText.textContent =
-    profileHandleInput.value.trim() || "@username";
-}
-
-if (profileRoleText && profileRoleInput) {
-  profileRoleText.textContent =
-    profileRoleInput.value.trim() || "Add role...";
-}
-
-if (customerLikesText && customerLikesInput) {
-  customerLikesText.textContent =
-    customerLikesInput.value.trim() ||
-    "Running • Lifting • Walking";
-}
-
-
-
-// bio setup
-autoGrowProfileBioInput();
-updateBioSaveButtonState();
-autoFitProfileName();
-
-if (
-  navTitleInput &&
-  profileNameInput
-) {
-  navTitleInput.value =
-    profileNameInput.value;
-}
-
-autoFitNavTitle();
-
-
-// =========================
-// EVENT LISTENERS
-// =========================
-
-
-
-document
-  .querySelectorAll(
-    'input[name="fitnessLevel"]'
-  )
-  .forEach((radio) => {
-    radio.addEventListener(
-      "change",
-      () => {
-        customerFitnessLevelText.textContent =
-          radio.value;
-
-        fitnessLevelIcon.textContent =
-          fitnessIcons[radio.value];
-      }
-    );
-  });
-
-document
-  .querySelectorAll("#customerFitnessLevelMenu input")
-  .forEach(input => {
-    input.addEventListener(
-      "change",
-      updateFitnessLevelText
-    );
-  });
-
-
-document
-  .querySelectorAll("#profileAffiliationMenu input")
-  .forEach(input => {
-    input.addEventListener(
-      "change",
-      updateAffiliationText
-    );
-  });
-
-// -------------------------
-// EDIT PROFILE
-// -------------------------
-
-if (editProfileBtn) {
-
-  editProfileBtn.addEventListener(
-    "click",
-    () => {
-
-      document.body.classList.add(
-        "editing-profile"
-      );
-
-      
-
-      editableFields.forEach(field => {
-
-        if (!field) return;
-
-        field.readOnly = false;
-
-      });
-
-          updateBioSaveButtonState();
-
-      if (profileBioInput) {
-
-        originalBio =
-          profileBioInput.value;
-
-        profileBioInput.readOnly =
-          false;
-
-        autoGrowProfileBioInput();
-
-      }
-
-
-
-    }
-  );
-
-
-   profileAffiliationToggle?.addEventListener(
-  "click",
-  (event) => {
-
-    if (
-      !document.body.classList.contains(
-        "editing-profile"
-      )
-    ) {
-      return;
-    }
-
-    event.stopPropagation();
-
-    if (profileAffiliationMenu) {
-      profileAffiliationMenu.hidden =
-        !profileAffiliationMenu.hidden;
-    }
-
-  }
-);
-}
-
-
-document.addEventListener(
-  "click",
-  () => {
-
-    if (profileAffiliationMenu) {
-      profileAffiliationMenu.hidden = true;
-    }
-
-       if (customerFitnessLevelMenu) {
-    customerFitnessLevelMenu.hidden = true;
-  }
-
-  }
-);
-
-profileAffiliationMenu?.addEventListener(
-  "click",
-  (event) => {
-
-    event.stopPropagation();
-
-  }
-);
-
-
-customerFitnessLevelMenu?.addEventListener(
-  "click",
-  (event) => {
-    event.stopPropagation();
-  }
-);
-
-customerFitnessLevelToggle?.addEventListener(
-  "click",
-  (event) => {
-    if (
-      !document.body.classList.contains(
-        "editing-profile"
-      )
-    ) {
-      return;
-    }
-
-    event.stopPropagation();
-
-    if (customerFitnessLevelMenu) {
-      customerFitnessLevelMenu.hidden =
-        !customerFitnessLevelMenu.hidden;
-    }
-  }
-);
-
-
-
-customerLikesInput?.addEventListener(
-  "input",
-  () => {
-        if (!customerLikesSuggestionsBox) return;
-    const fullText = customerLikesInput.value;
-
+function setupSuggestions(input, box, suggestions) {
+  input?.addEventListener("input", () => {
+    if (!box) return;
+
+    const fullText = input.value;
     const parts = fullText.split(",");
 
-    const currentInput =
-      parts[parts.length - 1]
-        .trim()
-        .toLowerCase();
+    const currentInput = parts[parts.length - 1]
+      .trim()
+      .toLowerCase();
 
-    customerLikesSuggestionsBox.innerHTML = "";
+    box.innerHTML = "";
 
     if (currentInput.length < 2) {
-      customerLikesSuggestionsBox.classList.remove("show");
+      box.classList.remove("show");
       return;
     }
 
-    const matches =
-      customerLikeSuggestions.filter(item =>
-        item.toLowerCase().includes(currentInput)
-      );
+    const matches = suggestions.filter(item =>
+      item.toLowerCase().includes(currentInput)
+    );
 
     if (!matches.length) {
-      customerLikesSuggestionsBox.classList.remove("show");
+      box.classList.remove("show");
       return;
     }
 
-    customerLikesSuggestionsBox.classList.add("show");
+    box.classList.add("show");
 
     matches.forEach(match => {
       const button = document.createElement("button");
@@ -812,293 +315,345 @@ customerLikesInput?.addEventListener(
       button.addEventListener("click", () => {
         parts[parts.length - 1] = ` ${match}`;
 
-        customerLikesInput.value =
-          parts
-            .map(part => part.trim())
-            .filter(Boolean)
-            .join(", ");
+        input.value = parts
+          .map(part => part.trim())
+          .filter(Boolean)
+          .join(", ");
 
-        customerLikesSuggestionsBox.innerHTML = "";
-        customerLikesSuggestionsBox.classList.remove("show");
+        box.innerHTML = "";
+        box.classList.remove("show");
 
-        autoGrowProfileField(customerLikesInput);
+        input.focus();
 
-            customerLikesInput.focus();
-
-  const cursorPosition = customerLikesInput.value.length;
-  customerLikesInput.setSelectionRange(cursorPosition, cursorPosition);
+        const cursorPosition = input.value.length;
+        input.setSelectionRange(cursorPosition, cursorPosition);
       });
 
-      customerLikesSuggestionsBox.appendChild(button);
+      box.appendChild(button);
     });
-  }
+  });
+}
+
+function openServicesModal() {
+  servicesModalOverlay?.classList.add("open");
+}
+
+function closeServicesModal() {
+  servicesModalOverlay?.classList.remove("open");
+}
+
+/* =========================
+   LOAD SAVED VALUES
+========================= */
+
+profileHandleInput.value =
+  localStorage.getItem("profileHandleInput") ||
+  profileHandleText?.textContent.trim() ||
+  "@estherclarke";
+
+profileRoleInput.value =
+  localStorage.getItem("profileRoleInput") ||
+  profileRoleText?.textContent.trim() ||
+  "Trainer • Strength & Conditioning";
+
+customerLikesInput.value =
+  localStorage.getItem("customerLikesInput") ||
+  customerLikesText?.textContent.trim() ||
+  "Running • Lifting • Walking";
+
+profileGymInput.value =
+  localStorage.getItem("profileGymInput") ||
+  profileGymText?.textContent.trim() ||
+  "";
+
+if (profileHandleText) {
+  profileHandleText.textContent = profileHandleInput.value || "@username";
+}
+
+if (profileRoleText) {
+  profileRoleText.textContent = profileRoleInput.value || "Add role...";
+}
+
+if (customerLikesText) {
+  customerLikesText.textContent = customerLikesInput.value || "Running • Lifting • Walking";
+}
+
+if (profileGymText) {
+  profileGymText.textContent = profileGymInput.value || "Search location...";
+}
+
+const savedBio = localStorage.getItem("profileBio");
+
+if (savedBio && profileBioInput) {
+  profileBioInput.value = savedBio;
+}
+
+const savedAffiliations = JSON.parse(
+  localStorage.getItem("profileAffiliation") || "[]"
 );
 
+document
+  .querySelectorAll("#profileAffiliationMenu input")
+  .forEach(input => {
+    input.checked = savedAffiliations.includes(input.value);
+  });
 
+updateAffiliationText();
+updateFitnessLevelText();
+autoGrowProfileBioInput();
+updateBioSaveButtonState();
+autoFitProfileName();
 
-
-// -------------------------
-// BIO INPUT
-// -------------------------
-
-profileBioInput?.addEventListener(
-  "input",
-  () => {
-
-    autoGrowProfileBioInput();
-    updateBioSaveButtonState();
-
-  }
-);
-
-
-// -------------------------
-// BIO SAVE
-// -------------------------
-
-if (profileBioSave && profileBioInput) {
-
-  profileBioSave.addEventListener(
-    "click",
-    () => {
-
-      const newBio =
-        profileBioInput.value.trim();
-
-      localStorage.setItem(
-        "profileBio",
-        newBio
-      );
-
-      profileBioInput.value =
-        newBio;
-
-      profileBioInput.readOnly =
-        true;
-
-        profileBioInput.blur();
-
-
-
-        if (profileGymInput) {
-  profileGymInput.readOnly = true;
+if (navTitleInput && profileNameInput) {
+  navTitleInput.value = profileNameInput.value;
 }
 
-        if (profileGymText && profileGymInput) {
-  profileGymText.textContent =
-    profileGymInput.value.trim() || "Search location...";
-}
-
-      // save editable fields too
-    editableFields.forEach(field => {
-  if (!field) return;
-
-  localStorage.setItem(
-    field.id,
-    field.value.trim()
-  );
-
-  originalProfileValues[field.id] =
-    field.value;
-
-  field.readOnly = true;
-});
-
-if (profileHandleText && profileHandleInput) {
-  profileHandleText.textContent =
-    profileHandleInput.value.trim() || "@username";
-}
-
-if (profileRoleText && profileRoleInput) {
-  profileRoleText.textContent =
-    profileRoleInput.value.trim() || "Add role...";
-}
-
-if (customerLikesText && customerLikesInput) {
-  customerLikesText.textContent =
-    customerLikesInput.value.trim() ||
-    "Running • Lifting • Walking";
-}
-
-      document.body.classList.remove(
-        "editing-profile"
-      );
-
-        updateBioSaveButtonState();
-
-    }
-  );
-
-}
-
-
-// -------------------------
-// PROFILE NAME
-// -------------------------
-
-profileNameInput?.addEventListener(
-  "input",
-  () => {
-
-       console.log("profile name input fired");
-    autoFitProfileName();
-
-    requestAnimationFrame(() => {
-      autoFitProfileName();
-    
-    });
-
-    if (navTitleInput) {
-      navTitleInput.value =
-        profileNameInput.value;
-         autoFitNavTitle();
-    }
-  }
-);
-
-
-[
-  profileHandleInput,
-  profileRoleInput,
-  customerLikesInput
-].forEach(field => {
-  if (!field) return;
-
-  autoGrowProfileField(field);
-
-field.addEventListener(
-  "input",
-  () => {
-
-    autoGrowProfileField(field);
-
-  }
-);
-    });
-
-
-// -------------------------
-// PROFILE NAME BANNER
-// -------------------------
-
-editProfileBtn?.addEventListener(
-  "click",
-  () => {
-    if (navTitleInput) {
-  navTitleInput.readOnly = false;
-}
-  }
-);
-
-profileBioSave?.addEventListener(
-  "click",
-  () => {
-
-      if (profileAffiliationMenu) {
-  profileAffiliationMenu.hidden = true;
-}
-
-
-localStorage.setItem(
-  "profileAffiliation",
-  JSON.stringify(
-    getSelectedAffiliations()
-  )
-);
-
-      
-    const onlineName =
-      navTitleInput.value.trim() || "Profile";
-
-    navTitleInput.value = onlineName;
-
-    if (accountOnlineNameInput) {
-      accountOnlineNameInput.value = onlineName;
-    }
-
-      if (profileNameInput) {
-  profileNameInput.value = onlineName;
-}
-
-      autoFitProfileName();
 autoFitNavTitle();
 
-    localStorage.setItem(
-      "accountOnlineName",
-      onlineName
-    );
+/* =========================
+   EDIT PROFILE
+========================= */
 
-    if (navTitleInput) {
-  navTitleInput.readOnly = true;
-}
+editProfileBtn?.addEventListener("click", () => {
+  document.body.classList.add("editing-profile");
+
+  if (profileBioInput) {
+    profileBioInput.readOnly = false;
+    autoGrowProfileBioInput();
   }
-);
 
-
-
-
-navTitleInput?.addEventListener(
-  "input",
-  () => {
-
-    if (profileNameInput) {
-      profileNameInput.value =
-        navTitleInput.value;
-    }
-
-      if (accountOnlineNameInput) {
-  accountOnlineNameInput.value =
-    navTitleInput.value;
-}
-
-    autoFitProfileName();
-       autoFitNavTitle();
-
-
+  if (navTitleInput) {
+    navTitleInput.readOnly = false;
   }
-);
 
+  updateBioSaveButtonState();
+});
 
-resizeNavTitleInput();
+/* =========================
+   OPEN FIELD EDITORS
+========================= */
 
-navTitleInput?.addEventListener(
-  "input",
-  resizeNavTitleInput
-);
+document.querySelector(".profile-handle-row")?.addEventListener("click", () => {
+  openModal(handleEditorModal, profileHandleInput, profileHandleText?.textContent || "");
+});
 
+document.querySelector(".profile-role")?.addEventListener("click", () => {
+  openModal(roleEditorModal, profileRoleInput, profileRoleText?.textContent || "");
+});
 
+document.querySelector(".profile-likes")?.addEventListener("click", () => {
+  openModal(likesEditorModal, customerLikesInput, customerLikesText?.textContent || "");
+});
 
-// -------------------------
-// WINDOW RESIZE
-// -------------------------
+document.querySelector(".profile-gym")?.addEventListener("click", () => {
+  openModal(locationEditorModal, profileGymInput, profileGymText?.textContent || "");
+});
 
-window.addEventListener(
-  "resize",
-  () => {
+/* =========================
+   CLOSE FIELD EDITORS
+========================= */
 
-    requestAnimationFrame(() => {
+closeHandleBtn?.addEventListener("click", () => closeModal(handleEditorModal));
+closeRoleBtn?.addEventListener("click", () => closeModal(roleEditorModal));
+closeLikesBtn?.addEventListener("click", () => closeModal(likesEditorModal));
+closeLocationBtn?.addEventListener("click", () => closeModal(locationEditorModal));
 
-      autoGrowProfileBioInput();
-      autoFitProfileName();
-          autoFitNavTitle();
+/* =========================
+   SAVE FIELD EDITORS
+========================= */
 
-      autoGrowProfileField(
-        profileHandleInput
-      );
+saveHandleBtn?.addEventListener("click", () => {
+  saveField(
+    profileHandleInput,
+    profileHandleText,
+    "profileHandleInput",
+    "@username",
+    handleEditorModal
+  );
+});
 
-      autoGrowProfileField(
-        profileRoleInput
-      );
+saveRoleBtn?.addEventListener("click", () => {
+  saveField(
+    profileRoleInput,
+    profileRoleText,
+    "profileRoleInput",
+    "Add role...",
+    roleEditorModal
+  );
+});
 
-        autoGrowProfileField(
-  customerLikesInput
-);
+saveLikesBtn?.addEventListener("click", () => {
+  saveField(
+    customerLikesInput,
+    customerLikesText,
+    "customerLikesInput",
+    "Running • Lifting • Walking",
+    likesEditorModal
+  );
+});
 
-    });
+saveLocationBtn?.addEventListener("click", () => {
+  saveField(
+    profileGymInput,
+    profileGymText,
+    "profileGymInput",
+    "Search location...",
+    locationEditorModal
+  );
+});
 
+/* =========================
+   BIO
+========================= */
+
+profileBioInput?.addEventListener("input", () => {
+  autoGrowProfileBioInput();
+  updateBioSaveButtonState();
+});
+
+profileBioSave?.addEventListener("click", () => {
+  const newBio = profileBioInput?.value.trim() || "";
+
+  localStorage.setItem("profileBio", newBio);
+
+  if (profileBioInput) {
+    profileBioInput.value = newBio;
+    profileBioInput.readOnly = true;
+    profileBioInput.blur();
   }
+
+  localStorage.setItem(
+    "profileAffiliation",
+    JSON.stringify(getSelectedAffiliations())
+  );
+
+  if (profileAffiliationMenu) {
+    profileAffiliationMenu.hidden = true;
+  }
+
+  const onlineName = navTitleInput?.value.trim() || "Profile";
+
+  if (navTitleInput) {
+    navTitleInput.value = onlineName;
+    navTitleInput.readOnly = true;
+  }
+
+  if (profileNameInput) {
+    profileNameInput.value = onlineName;
+  }
+
+  if (accountOnlineNameInput) {
+    accountOnlineNameInput.value = onlineName;
+  }
+
+  localStorage.setItem("accountOnlineName", onlineName);
+
+  document.body.classList.remove("editing-profile");
+
+  autoFitProfileName();
+  autoFitNavTitle();
+  updateBioSaveButtonState();
+});
+
+/* =========================
+   NAME / NAV TITLE
+========================= */
+
+profileNameInput?.addEventListener("input", () => {
+  autoFitProfileName();
+
+  if (navTitleInput) {
+    navTitleInput.value = profileNameInput.value;
+    autoFitNavTitle();
+  }
+});
+
+navTitleInput?.addEventListener("input", () => {
+  if (profileNameInput) {
+    profileNameInput.value = navTitleInput.value;
+  }
+
+  if (accountOnlineNameInput) {
+    accountOnlineNameInput.value = navTitleInput.value;
+  }
+
+  autoFitProfileName();
+  autoFitNavTitle();
+});
+
+/* =========================
+   AFFILIATION / FITNESS LEVEL
+========================= */
+
+profileAffiliationToggle?.addEventListener("click", event => {
+  if (!document.body.classList.contains("editing-profile")) return;
+
+  event.stopPropagation();
+
+  if (profileAffiliationMenu) {
+    profileAffiliationMenu.hidden = !profileAffiliationMenu.hidden;
+  }
+});
+
+profileAffiliationMenu?.addEventListener("click", event => {
+  event.stopPropagation();
+});
+
+document
+  .querySelectorAll("#profileAffiliationMenu input")
+  .forEach(input => {
+    input.addEventListener("change", updateAffiliationText);
+  });
+
+customerFitnessLevelToggle?.addEventListener("click", event => {
+  if (!document.body.classList.contains("editing-profile")) return;
+
+  event.stopPropagation();
+
+  if (customerFitnessLevelMenu) {
+    customerFitnessLevelMenu.hidden = !customerFitnessLevelMenu.hidden;
+  }
+});
+
+customerFitnessLevelMenu?.addEventListener("click", event => {
+  event.stopPropagation();
+});
+
+document
+  .querySelectorAll('#customerFitnessLevelMenu input[name="fitnessLevel"]')
+  .forEach(input => {
+    input.addEventListener("change", updateFitnessLevelText);
+  });
+
+document.addEventListener("click", () => {
+  if (profileAffiliationMenu) {
+    profileAffiliationMenu.hidden = true;
+  }
+
+  if (customerFitnessLevelMenu) {
+    customerFitnessLevelMenu.hidden = true;
+  }
+});
+
+/* =========================
+   SUGGESTIONS
+========================= */
+
+setupSuggestions(
+  profileRoleInput,
+  roleSuggestionsBox,
+  roleSuggestions
 );
 
+setupSuggestions(
+  customerLikesInput,
+  customerLikesSuggestionsBox,
+  customerLikeSuggestions
+);
+
+/* =========================
+   SERVICES MODAL
+========================= */
 
 servicesEditBtn?.addEventListener("click", openServicesModal);
 servicesModalClose?.addEventListener("click", closeServicesModal);
@@ -1120,92 +675,14 @@ servicesSaveBtn?.addEventListener("click", () => {
   closeServicesModal();
 });
 
+/* =========================
+   WINDOW RESIZE
+========================= */
 
-// -------------------------
-// ROLE SUGGESTIONS
-// -------------------------
-
-profileRoleInput?.addEventListener(
-  "input",
-  () => {
-        if (!roleSuggestionsBox) return;
-
-    const fullText =
-      profileRoleInput.value;
-
-    const parts =
-      fullText.split(",");
-
-    const currentInput =
-      parts[parts.length - 1]
-        .trim()
-        .toLowerCase();
-
-    roleSuggestionsBox.innerHTML = "";
-
-    if (currentInput.length < 2) {
-      roleSuggestionsBox.classList.remove(
-        "show"
-      );
-      return;
-    }
-
-    const matches =
-      roleSuggestions.filter(role =>
-        role.toLowerCase().includes(
-          currentInput
-        )
-      );
-
-    if (!matches.length) {
-      roleSuggestionsBox.classList.remove(
-        "show"
-      );
-      return;
-    }
-
-    roleSuggestionsBox.classList.add(
-      "show"
-    );
-
-    matches.forEach(match => {
-
-      const button =
-        document.createElement("button");
-
-      button.type = "button";
-      button.className =
-        "role-suggestion-item";
-
-      button.textContent = match;
-
-      button.addEventListener(
-        "click",
-        () => {
-
-          parts[parts.length - 1] =
-            ` ${match}`;
-
-          profileRoleInput.value =
-            parts
-              .map(part => part.trim())
-              .filter(Boolean)
-              .join(", ");
-
-          roleSuggestionsBox.innerHTML = "";
-
-          roleSuggestionsBox.classList.remove(
-            "show"
-          );
-
-        }
-      );
-
-      roleSuggestionsBox.appendChild(
-        button
-      );
-
-    });
-
-  }
-);
+window.addEventListener("resize", () => {
+  requestAnimationFrame(() => {
+    autoGrowProfileBioInput();
+    autoFitProfileName();
+    autoFitNavTitle();
+  });
+});
