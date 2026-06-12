@@ -1037,133 +1037,54 @@ border-radius: inherit;
    PROFILE DETAIL ROWS
 ========================= */
 
-body.profile .profile-detail-input,
-body.profile .profile-affiliation-select {
-  text-align: start;
-	 font-size: medium;
-  font-weight: 700;
-  line-height: 1.5;
-  font-family: inherit;
-	  resize: none;
-	border: none;
-  white-space: pre-wrap;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  field-sizing: content;
-	background: transparent;
-	outline: none;
-	 -webkit-appearance: none;
-}
+.profile-detail-row {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.5rem;
 
-
-.profile-detail-text {
-	display: block;
-  min-width: 0;
-	max-width: 100%;
-  white-space: normal;
-  overflow-wrap: anywhere;
-  line-height: 1.35;
-	text-align: start;
-	 -webkit-appearance: none;
-}
-
-
-.profile-detail-input {
-  display: none;
-	 width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-}
-
-body.editing-profile .profile-detail-text {
-  display: none;
-}
-
-body.editing-profile #profileGymText {
-  display: none;
-}
-
-body:not(.editing-profile) #profileGymInput {
-  display: none;
-}
-
-body.editing-profile .profile-detail-input {
-  display: block;
   width: 100%;
   min-width: 0;
+  margin: 0.5rem 0;
+
+  font-weight: 700;
+  color: rgba(9, 26, 58, 0.75);
+  text-align: start;
 }
 
-.profile-detail-textarea {
-  resize: none;
-  overflow: hidden;
-  font: inherit;
-  line-height: 1.35;
-  min-height: 2rem;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  appearance: none;
-}
-
-
-.profile-gym {
-  grid-template-columns: 1.5rem minmax(0, 1fr);
-}
-
-.profile-gym #profileGymText {
+.profile-detail-text {
   display: block;
   min-width: 0;
   max-width: 100%;
+
   white-space: normal;
   overflow-wrap: anywhere;
   word-break: break-word;
+
   line-height: 1.35;
-}
-
-.profile-gym #profileGymInput {
-  display: none;
-}
-
-body.editing-profile .profile-gym #profileGymText {
-  display: none;
-}
-
-body.editing-profile .profile-gym #profileGymInput {
-  display: block;
-}
-
-textarea#profileGymInput {
-    min-height: 100%;
+  text-align: start;
 }
 
 body.profile .profile-detail-row i {
-  line-height: 1.3;
+  justify-self: center;
+
   font-size: 1em;
-  flex-shrink: 0;
-	  background: transparent;
+  line-height: 1.3;
+
+  background: transparent;
   border: none;
   outline: none;
-	 -webkit-appearance: none;
-	 cursor: pointer;
-	  overflow: hidden;
-	 margin: 0;
-  padding: 0;
-	justify-self: center;
-	 text-align: center;
 
+  margin: 0;
+  padding: 0;
 }
 
-.profile-detail-row {
-  display: grid;
-	grid-template-columns: 1.5rem 1fr;
-	 -webkit-appearance: none;
-	font-weight: 700;
-	color: rgba(9, 26, 58, 0.75);
-  align-items: center;
-  column-gap: 0.5rem;
-text-align: center;
-  width: 100%;
-  min-width: 0;
-	margin: 0.5rem 0;
+body.editing-profile .profile-detail-row {
+  cursor: pointer;
+}
+
+body.editing-profile .profile-detail-row:hover {
+  opacity: 0.85;
 }
 
 
@@ -1366,6 +1287,12 @@ body.profile .block-btn {
 	-webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
 }
+
+
+body.editing-profile .profile-detail-row:hover {
+  opacity: 0.85;
+}
+
 
 
 
