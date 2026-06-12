@@ -342,21 +342,10 @@ body.profile .profile-main-info {
 }
 
 
-
-
 .profile-role-content {
 align-self: center;
 }
 
-
-
-
-.role-suggestions {
-  display: none;
-  margin-top: 0.5rem;
-  border-radius: 1rem;
-  overflow: hidden;
-}
 
 .role-suggestions.show {
   display: block;
@@ -375,6 +364,9 @@ div#customerLikesSuggestionsBox {
     display: none;
 }
 
+body.editing-profile .div#customerLikesSuggestionsBox {
+  display: flex;
+}
 
 
 body.profile .profile-bio {
