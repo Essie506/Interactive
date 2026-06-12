@@ -1168,6 +1168,11 @@ text-align: center;
 
 
 
+
+
+
+
+
 .profile-affiliation-wrap {
   position: relative;
   width: 100%;
@@ -1215,6 +1220,80 @@ text-align: center;
 body.profile .block-btn {
 	opacity: 0.4;
 }
+
+
+
+
+
+/* ========================================
+   PROFILE EDITORS
+======================================== */
+
+.profile-editor-modal {
+  position: fixed;
+  inset: 0;
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+
+  background: rgba(0, 0, 0, 0.55);
+
+  z-index: 10000;
+}
+
+.profile-editor-modal.show {
+  display: flex;
+}
+
+.profile-editor-card {
+  width: min(100%, 32rem);
+
+  background: var(--card-bg);
+
+  border-radius: 1rem;
+
+  padding: 1rem;
+
+  box-sizing: border-box;
+}
+
+.profile-editor-card h3 {
+  margin: 0 0 1rem;
+}
+
+.profile-editor-input {
+  width: 100%;
+
+  min-height: 6rem;
+
+  padding: 0.75rem;
+
+  border: 1px solid var(--border-color);
+
+  border-radius: 0.75rem;
+
+  box-sizing: border-box;
+
+  resize: vertical;
+}
+
+.profile-editor-actions {
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 0.75rem;
+
+  margin-top: 1rem;
+}
+
+
+
+
 
 
 
