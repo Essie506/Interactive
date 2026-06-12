@@ -2016,8 +2016,7 @@ height: clamp(180px, 32dvh, 280px);
 
 	body.profile .profile-detail-row {
 		display: grid;
-		grid-template-columns: 0 1fr;
-		column-gap: 3rem;
+		margin-left: 0.5rem;
 	}
 
 
