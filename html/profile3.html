@@ -493,50 +493,56 @@
 </div>
 
 
-      <div class="profile-detail-row profile-handle-row professional-profile-only business-profile-only">
-
+<div class="profile-detail-row profile-handle-row professional-profile-only business-profile-only">
   <i class="fa-solid fa-at"></i>
+
+  <span class="profile-detail-text" id="profileHandleText">
+    @estherclarke
+  </span>
 
   <textarea
     rows="1"
-    class="profile-detail-input"
+    class="profile-detail-input profile-detail-textarea"
     id="profileHandleInput"
     readonly
   >@estherclarke</textarea>
-
 </div>
 
 
-<div class="profile-detail-row profile-role professional-profile-only"> 
-  <i class="fa-solid fa-dumbbell"></i> 
-  <textarea rows="1" class="profile-detail-input" id="profileRoleInput" 
-    readonly>Trainer • Strength & Conditioning</textarea> 
+<div class="profile-detail-row profile-role professional-profile-only">
+  <i class="fa-solid fa-dumbbell"></i>
+
+  <span class="profile-detail-text" id="profileRoleText">
+    Trainer • Strength &amp; Conditioning
+  </span>
+
+  <textarea
+    rows="1"
+    class="profile-detail-input profile-detail-textarea"
+    id="profileRoleInput"
+    readonly
+  >Trainer • Strength &amp; Conditioning</textarea>
 </div>
 
-      <div
+<div
   class="role-suggestions professional-profile-only"
   id="roleSuggestionsBox"
 ></div>
 
 
-
 <div class="profile-detail-row profile-likes customer-profile-only">
   <i class="fa-solid fa-heart"></i>
 
-  <span
-    class="profile-detail-text"
-    id="customerLikesText"
-  >
+  <span class="profile-detail-text" id="customerLikesText">
     Running • Lifting • Walking
   </span>
 
-  <input
-    type="text"
-    class="profile-detail-input"
+  <textarea
+    rows="1"
+    class="profile-detail-input profile-detail-textarea"
     id="customerLikesInput"
-    placeholder="Running • Lifting • Walking"
     readonly
-  >
+  >Running • Lifting • Walking</textarea>
 </div>
 
 <div
@@ -548,10 +554,7 @@
 <div class="profile-detail-row profile-gym">
   <i class="fa-solid fa-location-dot"></i>
 
-  <span
-    class="profile-detail-text"
-    id="profileGymText"
-  >
+  <span class="profile-detail-text" id="profileGymText">
     Search location...
   </span>
 
