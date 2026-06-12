@@ -458,6 +458,20 @@ closeRoleBtn?.addEventListener("click", () => closeModal(roleEditorModal));
 closeLikesBtn?.addEventListener("click", () => closeModal(likesEditorModal));
 closeLocationBtn?.addEventListener("click", () => closeModal(locationEditorModal));
 
+
+[
+  handleEditorModal,
+  roleEditorModal,
+  likesEditorModal,
+  locationEditorModal
+].forEach(modal => {
+  modal?.addEventListener("click", event => {
+    if (event.target === modal) {
+      modal.classList.remove("show");
+    }
+  });
+});
+
 /* =========================
    SAVE FIELD EDITORS
 ========================= */
