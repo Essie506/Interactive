@@ -1071,6 +1071,7 @@ body.profile .profile-affiliation-select {
 
 
 .profile-detail-text {
+	display: block;
   min-width: 0;
   white-space: normal;
   overflow-wrap: anywhere;
@@ -1079,22 +1080,30 @@ body.profile .profile-affiliation-select {
 	 -webkit-appearance: none;
 }
 
-/* normal view */
-.profile-gym #profileGymText {
-  display: block;
-}
 
-.profile-gym #profileGymInput {
+.profile-detail-input {
   display: none;
 }
 
-
-body.editing-profile .profile-gym #profileGymText {
+body.editing-profile .profile-detail-text {
   display: none;
 }
 
-body.editing-profile .profile-gym #profileGymInput {
+body.editing-profile .profile-detail-input {
   display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.profile-detail-textarea {
+  resize: none;
+  overflow: hidden;
+  font: inherit;
+  line-height: 1.35;
+  min-height: 2rem;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 
