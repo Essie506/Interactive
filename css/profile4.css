@@ -1143,6 +1143,7 @@ color: var(--text-dark);
 .profile-detail-row {
   display: grid;
 	grid-template-columns: 1.5rem 1fr;
+	
 
   align-items: center;
   column-gap: 0.5rem;
@@ -1953,6 +1954,10 @@ body.profile.has-cover
 	  z-index: 4;
 	  position: relative;
   }
+
+	body.profile .profile-detail-row {
+		max-width: 75%;
+	}
 
   body.profile .profile-bio {
     margin: 0.6rem auto 0;
