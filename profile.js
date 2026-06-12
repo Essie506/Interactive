@@ -172,6 +172,33 @@ function renderServicePills() {
   });
 }
 
+  const savedServices = JSON.parse(
+  localStorage.getItem("profileServices")
+);
+
+if (Array.isArray(savedServices)) {
+  selectedServices = savedServices;
+}
+
+servicesSaveBtn?.addEventListener("click", () => {
+  const checkedServices = servicesChecklist.querySelectorAll(
+    "input[type='checkbox']:checked"
+  );
+
+  selectedServices = Array.from(checkedServices).map(input => input.value);
+
+  renderServicePills();
+
+  // Later this becomes your Firebase save:
+  localStorage.setItem(
+    "profileServices",
+    JSON.stringify(selectedServices)
+  );
+});
+
+renderServicesChecklist();
+renderServicePills();
+
 
   function closeBlockModal() {
     if (!blockUserModal) return;
@@ -302,30 +329,6 @@ if (shareProfileButtons.length) {
   }
 });
 
-servicesSaveBtn?.addEventListener("click", () => {
-  const checkedServices = servicesChecklist.querySelectorAll(
-    "input[type='checkbox']:checked"
-  );
 
-  selectedServices = Array.from(checkedServices).map(input => input.value);
 
-  renderServicePills();
-
-  // Later this becomes your Firebase save:
-  localStorage.setItem(
-    "profileServices",
-    JSON.stringify(selectedServices)
-  );
-});
-
-const savedServices = JSON.parse(
-  localStorage.getItem("profileServices")
-);
-
-if (Array.isArray(savedServices)) {
-  selectedServices = savedServices;
-}
-
-renderServicesChecklist();
-renderServicePills();
 
