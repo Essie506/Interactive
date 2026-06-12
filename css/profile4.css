@@ -375,14 +375,6 @@ div#customerLikesSuggestionsBox {
     display: none;
 }
 
-.role-suggestion-item:hover {
-  background: rgba(
-    255,
-    255,
-    255,
-    0.08
-  );
-}
 
 
 body.profile .profile-bio {
@@ -602,14 +594,8 @@ body.profile .profile-tab i {
   transition: transform 0.22s cubic-bezier(.34, 1.56, .64, 1);
 }
 
-body.profile .profile-tab:hover {
-  color: rgba(9, 26, 58, 0.88);
-  transform: translateY(-2px) scale(1.04);
-}
 
-body.profile .profile-tab:hover i {
-  transform: scale(1.08);
-}
+
 
 body.profile .profile-tab:active {
   transform: translateY(0) scale(0.98);
@@ -645,10 +631,7 @@ body.profile .profile-tab:active {
     transform 0.2s ease;
 }
 
-.verification-upload-btn:hover {
-  border-color:
-    var(--main-color);
-}
+
 
 .verification-upload-btn:active {
   transform: scale(0.98);
@@ -1643,6 +1626,10 @@ body.profile .profile-hero--personal::after {
     border-color: var(--profile-border-soft-hover);
   }
 
+
+
+	
+
   body.profile .profile-top-icon-link i,
   body.profile .profile-top-icon-btn i {
     font-size: 1rem;
@@ -1704,6 +1691,30 @@ body.profile .profile-hero--personal::after {
   body.profile .profile-corner-item-danger:hover {
     color: #8f2d3f;
   }
+
+
+	.verification-upload-btn:hover {
+  border-color:
+    var(--main-color);
+}
+
+body.profile .profile-tab:hover {
+  color: rgba(9, 26, 58, 0.88);
+  transform: translateY(-2px) scale(1.04);
+}
+
+body.profile .profile-tab:hover i {
+  transform: scale(1.08);
+}
+
+.role-suggestion-item:hover {
+  background: rgba(
+    255,
+    255,
+    255,
+    0.08
+  );
+}
 
 
 	body.profile .profile-avatar-wrap-mobile {
