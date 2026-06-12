@@ -87,6 +87,20 @@ body.profile {
   min-height: 100dvh;
 }
 
+
+
+.profile-detail-input {
+  outline: 1px solid red;
+}
+
+.profile-detail-row {
+  outline: 1px solid blue;
+}
+
+
+
+
+
 /* =========================
    VISIBILITY
 ========================= */
