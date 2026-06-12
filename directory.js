@@ -822,6 +822,11 @@ customerLikesInput?.addEventListener(
         customerLikesSuggestionsBox.classList.remove("show");
 
         autoGrowProfileField(customerLikesInput);
+
+            customerLikesInput.focus();
+
+  const cursorPosition = customerLikesInput.value.length;
+  customerLikesInput.setSelectionRange(cursorPosition, cursorPosition);
       });
 
       customerLikesSuggestionsBox.appendChild(button);
