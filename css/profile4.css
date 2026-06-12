@@ -364,7 +364,7 @@ div#customerLikesSuggestionsBox {
     display: none;
 }
 
-body.editing-profile .div#customerLikesSuggestionsBox {
+body.editing-profile div#customerLikesSuggestionsBox {
   display: flex;
 }
 
