@@ -1146,6 +1146,7 @@ color: var(--text-dark);
   display: grid;
 	grid-template-columns: 1.5rem 1fr;
 	 -webkit-appearance: none;
+	font-weight: 700;
 
   align-items: center;
   column-gap: 0.5rem;
