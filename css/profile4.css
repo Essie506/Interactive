@@ -1047,7 +1047,6 @@ border-radius: inherit;
 
 body.profile .profile-detail-input,
 body.profile .profile-affiliation-select {
-  max-width: 65%;
   text-align: start;
 	 font-size: medium;
   font-weight: 700;
