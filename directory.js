@@ -692,13 +692,6 @@ if (editProfileBtn) {
   );
 
 
-    if (customerLikesInput && customerLikesText) {
-  customerLikesText.textContent =
-    customerLikesInput.value.trim() ||
-    "Running • Lifting • Walking";
-}
-
-
    profileAffiliationToggle?.addEventListener(
   "click",
   (event) => {
@@ -1091,6 +1084,10 @@ window.addEventListener(
       autoGrowProfileField(
         profileRoleInput
       );
+
+        autoGrowProfileField(
+  customerLikesInput
+);
 
     });
 
