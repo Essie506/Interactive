@@ -371,6 +371,10 @@ align-self: center;
   display: block;
 }
 
+div#customerLikesSuggestionsBox {
+    display: none;
+}
+
 .role-suggestion-item:hover {
   background: rgba(
     255,
