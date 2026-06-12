@@ -1845,7 +1845,7 @@ body.profile #profileNameInput {
 		height: 100%;
 		max-width: 100%;
 		min-height: 0;
-		margin: 0.5rem, 0;
+		margin: 0.5rem 0;
 }
 
 	body.profile .profile-detail-input,
@@ -1989,9 +1989,10 @@ body.profile.has-cover
 	  position: relative;
   }
 
+
 	body.profile .profile-detail-row {
-		max-width: 75%;
-	}
+  max-width: 75%;
+}
 
   body.profile .profile-bio {
     margin: 0.6rem auto 0;
@@ -2017,7 +2018,7 @@ height: clamp(180px, 32dvh, 280px);
     flex: 0 0 auto;
 }
 
-	body.profile .profile-detail.row {
+	body.profile .profile-detail-row {
 		display: grid;
 		grid-template-columns: 0 1fr;
 		column-gap: 3rem;
