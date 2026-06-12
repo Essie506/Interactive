@@ -13,6 +13,9 @@ const bioText = document.getElementById(
 const customerLikesInput =
   document.getElementById("customerLikesInput");
 
+const customerLikesText =
+  document.getElementById("customerLikesText");
+
 const customerLikesSuggestionsBox =
   document.getElementById("customerLikesSuggestionsBox");
 
@@ -669,6 +672,13 @@ if (profileGymInput) {
 
     }
   );
+
+
+    if (customerLikesInput && customerLikesText) {
+  customerLikesText.textContent =
+    customerLikesInput.value.trim() ||
+    "Running • Lifting • Walking";
+}
 
 
    profileAffiliationToggle?.addEventListener(
