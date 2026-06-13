@@ -792,8 +792,6 @@ body.profile .service-link::before {
 body.editing-profile .services-edit-btn {
   opacity: 1;
   transform: translateX(0);
-	position: absolute;
-	right: 0;
 
   pointer-events: auto;
 }
