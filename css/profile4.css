@@ -1200,6 +1200,17 @@ box-shadow: var(--shadow-strong);
   margin-top: 1rem;
 }
 
+.profile-editor-input {
+  border: 1px solid var(--border-color);
+}
+
+.profile-editor-input:focus,
+.profile-editor-input:focus-visible {
+  border-color: var(--border-color);
+  outline: none;
+  box-shadow: none;
+}
+
 
 
 /* =========================
