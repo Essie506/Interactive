@@ -117,7 +117,6 @@ body.business-profile {
 
 .business-status-row,
 .business-section-header {
-  display: block;
   align-items: center;
   justify-content: flex-start;
   gap: var(--profile-name-row-gap);
