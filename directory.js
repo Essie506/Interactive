@@ -53,6 +53,8 @@ const servicesCancelBtn = document.getElementById("servicesCancelBtn");
 const servicesSaveBtn = document.getElementById("servicesSaveBtn");
 const servicePillOptions = document.querySelectorAll(".service-pill-option");
 
+const locationEditorModal = document.getElementById("locationEditorModal");
+
 const businessFacilitiesGrid =
   document.getElementById("businessFacilitiesGrid");
 
@@ -433,6 +435,31 @@ function closeServicesModal() {
   servicesModalOverlay?.classList.remove("open");
 }
 
+
+function openModal(modal, input, value) {
+  if (!document.body.classList.contains("editing-profile")) return;
+
+  modal?.classList.add("show");
+  document.body.classList.add("modal-open");
+
+  if (input) {
+    input.value = value.trim();
+
+    requestAnimationFrame(() => {
+      input.focus();
+      input.setSelectionRange(input.value.length, input.value.length);
+    });
+  }
+}
+
+function closeModal(modal) {
+  modal?.classList.remove("show");
+  document.body.classList.remove("modal-open");
+}
+
+
+
+
 /* =========================
    LOAD SAVED VALUES
 ========================= */
@@ -591,11 +618,10 @@ document.querySelector(".profile-gym")?.addEventListener("click", () => {
 ].forEach(modal => {
   modal?.addEventListener("click", event => {
     if (event.target === modal) {
-      modal.classList.remove("show");
+      closeModal(modal);
     }
   });
 });
-
 /* =========================
    SAVE FIELD EDITORS
 ========================= */
@@ -640,15 +666,6 @@ saveLocationBtn?.addEventListener("click", () => {
   );
 });
 
-    profileGymInput?.addEventListener("click", () => {
-  locationModal?.classList.add("active");
-  document.body.classList.add("modal-open");
-});
-
-locationCloseBtn?.addEventListener("click", () => {
-  locationModal?.classList.remove("active");
-  document.body.classList.remove("modal-open");
-});
 
 /* =========================
    BIO
