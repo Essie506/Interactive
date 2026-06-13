@@ -359,10 +359,6 @@ body.editing-profile div#customerLikesSuggestionsBox {
   display: none;
 }
 
-body.editing-profile #customerLikesText {
-  display: none;
-}
-
 body.editing-profile #customerLikesInput {
   display: block;
 }
