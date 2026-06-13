@@ -640,6 +640,16 @@ saveLocationBtn?.addEventListener("click", () => {
   );
 });
 
+    profileGymInput?.addEventListener("click", () => {
+  locationModal?.classList.add("active");
+  document.body.classList.add("modal-open");
+});
+
+locationCloseBtn?.addEventListener("click", () => {
+  locationModal?.classList.remove("active");
+  document.body.classList.remove("modal-open");
+});
+
 /* =========================
    BIO
 ========================= */
