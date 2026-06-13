@@ -158,6 +158,8 @@ body.business-profile {
   min-height: 2.25rem;
   padding: 0 0.85rem;
   border-radius: 999px;
+   position: absolute;
+   right: 0.5rem;
 }
 
 .business-hero-card h1 {
