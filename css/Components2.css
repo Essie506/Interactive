@@ -839,7 +839,7 @@ body.profile .profile-tabs-inner {
 
 .business-section-header {
 	display: flex;
-	justify-content: space-between;
+	overflow: hidden;
 }
 
 .business-section-header h2,
