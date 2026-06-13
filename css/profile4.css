@@ -799,7 +799,7 @@ position: absolute;
 body.editing-profile .services-edit-btn {
   opacity: 1;
   transform: translateX(0);
-	top: 0.5rem;
+	top: 0;
 
   pointer-events: auto;
 }
