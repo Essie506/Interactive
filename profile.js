@@ -30,6 +30,12 @@ const profileNameInput = document.getElementById("profileNameInput");
 const servicesPillSection = document.getElementById("servicesPillSection");
 const servicesSaveBtn = document.getElementById("servicesSaveBtn");
 
+  const professionalServiceLinks =
+  document.getElementById("professionalServiceLinks");
+
+const businessServiceLinks =
+  document.getElementById("businessServiceLinks");
+
 
 const proofSubmittedMobile =
   document.getElementById("proofSubmittedMobile");
@@ -136,6 +142,41 @@ document.title =
     }
   }
 
+
+function renderServiceLinks(services) {
+  const target =
+    document.body.classList.contains("business-profile")
+      ? businessServiceLinks
+      : professionalServiceLinks;
+
+  if (!target) return;
+
+  target.innerHTML = "";
+
+  if (!services.length) {
+    target.innerHTML = `
+      <span class="service-link service-link-empty">
+        Add services
+      </span>
+    `;
+    return;
+  }
+
+  services.forEach(service => {
+    const link = document.createElement("a");
+
+    link.href = "#";
+    link.className = "service-link";
+    link.textContent = service;
+
+    target.appendChild(link);
+  });
+}
+
+
+
+
+  
   function renderServicesChecklist() {
   if (!servicesChecklist) return;
 
@@ -188,16 +229,21 @@ servicesSaveBtn?.addEventListener("click", () => {
   selectedServices = Array.from(checkedServices).map(input => input.value);
 
   renderServicePills();
+    renderServiceLinks(selectedServices);
 
   // Later this becomes your Firebase save:
   localStorage.setItem(
     "profileServices",
     JSON.stringify(selectedServices)
   );
+
+servicesModalOverlay?.classList.remove("open");
+  
 });
 
 renderServicesChecklist();
 renderServicePills();
+    renderServiceLinks(selectedServices);
 
 
   function closeBlockModal() {
