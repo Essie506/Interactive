@@ -1085,7 +1085,22 @@ body.editing-profile .profile-detail-row:hover {
 
 
 
+.profile-editor-input-wrap {
+  position: relative;
+}
 
+.profile-editor-save {
+  position: absolute;
+
+  top: 0.75rem;
+  right: 0.75rem;
+
+  z-index: 10;
+}
+
+.profile-editor-input {
+  padding-top: 3rem;
+}
 
 
 
