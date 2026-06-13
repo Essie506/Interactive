@@ -51,6 +51,31 @@ const servicesCancelBtn = document.getElementById("servicesCancelBtn");
 const servicesSaveBtn = document.getElementById("servicesSaveBtn");
 const servicePillOptions = document.querySelectorAll(".service-pill-option");
 
+const businessFacilitiesGrid =
+  document.getElementById("businessFacilitiesGrid");
+
+const facilityOptions = [
+  { label: "Showers", icon: "fa-solid fa-shower" },
+  { label: "Parking nearby", icon: "fa-solid fa-square-parking" },
+  { label: "Accessible access", icon: "fa-solid fa-wheelchair" },
+  { label: "Lockers", icon: "fa-solid fa-lock" }
+];
+
+let selectedFacilities = [
+  "Showers",
+  "Parking nearby",
+  "Accessible access",
+  "Lockers"
+];
+
+const savedFacilities = JSON.parse(
+  localStorage.getItem("businessFacilities") || "null"
+);
+
+if (Array.isArray(savedFacilities)) {
+  selectedFacilities = savedFacilities;
+}
+
 const roleSuggestions = [
   "Personal Trainer",
   "Strength Coach",
@@ -275,6 +300,34 @@ function updateFitnessLevelText() {
     fitnessLevelIcon.textContent = fitnessIcons[selected.value] || "";
   }
 }
+
+
+function renderBusinessFacilities() {
+  if (!businessFacilitiesGrid) return;
+
+  businessFacilitiesGrid.innerHTML = "";
+
+  selectedFacilities.forEach(facilityLabel => {
+    const facility = facilityOptions.find(
+      item => item.label === facilityLabel
+    );
+
+    if (!facility) return;
+
+    const item = document.createElement("div");
+
+    item.innerHTML = `
+      <i class="${facility.icon}"></i>
+      ${facility.label}
+    `;
+
+    businessFacilitiesGrid.appendChild(item);
+  });
+}
+
+renderBusinessFacilities();
+
+
 
 function setupSuggestions(input, box, suggestions) {
   input?.addEventListener("input", () => {
