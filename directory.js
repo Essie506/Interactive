@@ -35,6 +35,13 @@ const closeLocationBtn = document.getElementById("closeLocationBtn");
 const roleSuggestionsBox = document.getElementById("roleSuggestionsBox");
 const customerLikesSuggestionsBox = document.getElementById("customerLikesSuggestionsBox");
 
+const facilitiesEditBtn = document.getElementById("facilitiesEditBtn");
+const facilitiesModalOverlay = document.getElementById("facilitiesModalOverlay");
+const facilitiesModalClose = document.getElementById("facilitiesModalClose");
+const facilitiesCancelBtn = document.getElementById("facilitiesCancelBtn");
+const facilitiesSaveBtn = document.getElementById("facilitiesSaveBtn");
+const facilitiesChecklist = document.getElementById("facilitiesChecklist");
+
 const profileAffiliationToggle = document.getElementById("profileAffiliationToggle");
 const profileAffiliationMenu = document.getElementById("profileAffiliationMenu");
 const profileAffiliationText = document.getElementById("profileAffiliationText");
@@ -285,6 +292,42 @@ function updateAffiliationText() {
     : "Select status";
 }
 
+
+
+
+function openFacilitiesModal() {
+  facilitiesModalOverlay?.classList.add("open");
+}
+
+function closeFacilitiesModal() {
+  facilitiesModalOverlay?.classList.remove("open");
+}
+
+function renderFacilitiesChecklist() {
+  if (!facilitiesChecklist) return;
+
+  facilitiesChecklist.innerHTML = "";
+
+  facilityOptions.forEach(facility => {
+    const label = document.createElement("label");
+    label.className = "service-check-option";
+
+    label.innerHTML = `
+      <input
+        type="checkbox"
+        value="${facility.label}"
+        ${selectedFacilities.includes(facility.label) ? "checked" : ""}
+      >
+      <span>
+        <i class="${facility.icon}"></i>
+        ${facility.label}
+      </span>
+    `;
+
+    facilitiesChecklist.appendChild(label);
+  });
+}
+
 function updateFitnessLevelText() {
   if (!customerFitnessLevelText) return;
 
@@ -481,6 +524,44 @@ editProfileBtn?.addEventListener("click", () => {
 
   updateBioSaveButtonState();
 });
+
+
+
+/* =========================
+   FACILITIES SAVE
+========================= */
+
+
+facilitiesEditBtn?.addEventListener("click", openFacilitiesModal);
+facilitiesModalClose?.addEventListener("click", closeFacilitiesModal);
+facilitiesCancelBtn?.addEventListener("click", closeFacilitiesModal);
+
+facilitiesSaveBtn?.addEventListener("click", () => {
+  const checkedFacilities =
+    facilitiesChecklist.querySelectorAll("input[type='checkbox']:checked");
+
+  selectedFacilities =
+    Array.from(checkedFacilities).map(input => input.value);
+
+  localStorage.setItem(
+    "businessFacilities",
+    JSON.stringify(selectedFacilities)
+  );
+
+  renderBusinessFacilities();
+  closeFacilitiesModal();
+});
+
+renderFacilitiesChecklist();
+
+
+
+
+
+
+
+
+
 
 /* =========================
    OPEN FIELD EDITORS
