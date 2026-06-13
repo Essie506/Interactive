@@ -838,7 +838,7 @@ body.profile .profile-tabs-inner {
 }
 
 .business-section-header {
-	display: flex;
+	display: block;
 	overflow: hidden;
 }
 
