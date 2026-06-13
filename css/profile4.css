@@ -318,9 +318,7 @@ background: rgba(255, 255, 255, 0.82);
 
 body.profile .profile-info-inner {
   min-width: 0;
-  gap: var(--profile-gap-lg);
   padding: 1rem;
-   display: grid;
 }
 
 body.profile .profile-main-info {
@@ -1491,7 +1489,6 @@ body.profile .profile-hero--personal::after {
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-rows: auto auto;
     column-gap: calc(var(--profile-gap-lg) * var(--profile-scale));
-    row-gap: 0.75rem;
     align-items: start;
     width: 100%;
     background: transparent;
@@ -1971,7 +1968,6 @@ body.profile.has-cover
      position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--profile-gap-lg);
     width: 100%;
     background: transparent;
     box-shadow: none;
