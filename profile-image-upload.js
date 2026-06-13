@@ -30,9 +30,7 @@ const coverPositionBtn =
 
 
 const coverPositionButtons =
-  document.querySelectorAll(
-    ".cover-position-done"
-  );
+  document.querySelectorAll(".cover-position-done:not(.profile-editor-save)");
 
 const activePointers = new Map();
 
