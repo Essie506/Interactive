@@ -789,7 +789,8 @@ body.profile .service-link::before {
   transform: translateX(1rem);
 
   pointer-events: none;
-
+position: absolute;
+	right: 0.5rem;
   transition:
     opacity 0.2s ease,
     transform 0.2s ease;
