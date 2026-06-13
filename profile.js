@@ -144,10 +144,13 @@ document.title =
 
 
 function renderServiceLinks(services) {
-  const target =
-    document.body.classList.contains("business-profile")
-      ? businessServiceLinks
-      : professionalServiceLinks;
+ const profileType =
+  document.body.dataset.profileType;
+
+const target =
+  profileType === "business-profile"
+    ? businessServiceLinks
+    : professionalServiceLinks;
 
   if (!target) return;
 
