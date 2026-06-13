@@ -544,110 +544,61 @@ profilePhotoInput.addEventListener(
   }
 );
 
-
 // -------------------------
 // COVER IMAGE UPLOAD
 // -------------------------
 
-coverInput.addEventListener(
-  "change",
-  event => {
+coverInput?.addEventListener("change", event => {
+  const file = event.target.files?.[0];
 
-    const file =
-      event.target.files?.[0];
+  if (!file) return;
 
-    if (!file) return;
+  resetInteractionState();
 
-    resetInteractionState();
+  const reader = new FileReader();
 
-    const reader =
-      new FileReader();
+  reader.addEventListener("load", () => {
+    const imageData = reader.result;
 
-    reader.addEventListener(
-      "load",
-      () => {
+    currentX = 50;
+    currentY = 50;
+    currentZoom = 1.05;
 
-        const imageData =
-          reader.result;
+    profileCoverImage.onload = () => {
+      document.body.classList.add("has-cover");
 
-        currentY = 50;
+      profileCoverImage.style.objectFit = "cover";
 
-      coverImage.onload = () => {
-  document.body.classList.add("has-cover");
+      applyCoverTransform();
 
-          applyCoverTransform();
+      localStorage.setItem(
+        "interactiveProfileCover",
+        imageData
+      );
 
+      localStorage.setItem(
+        "profileCoverPosition",
+        currentY
+      );
 
-        coverImage.src = "#";
+      isRepositioning = true;
 
-document.body.classList.remove(
-  "has-cover"
-);
+      profileHeroMedia.classList.add("repositioning");
 
-localStorage.removeItem(
-  "interactiveProfileCover"
-);
+      coverPositionButtons.forEach(button => {
+        button.classList.add("show");
+      });
+    };
 
-localStorage.removeItem(
-  "profileCoverPosition"
-);
+    profileCoverImage.src = imageData;
 
-currentY = 50;
-
-  applyCoverTransform();
-
-  coverPositionButtons.forEach(button => {
-    button.classList.add("show");
+    requestAnimationFrame(() => {
+      coverInput.value = "";
+    });
   });
-};
 
-        // TEMP ONLY
-        // Firebase later
-
-        // localStorage.setItem(
-        //   "interactiveProfileCover",
-        //   imageData
-        // );
-
-
-        localStorage.setItem(
-          "profileCoverPosition",
-          currentY
-        );
-
-
-        setTimeout(() => {
-
-          isRepositioning = true;
-
-          profileHeroMedia.classList.add(
-            "repositioning"
-          );
-
-        }, 50);
-
-
-        profileCoverImage.style.objectFit =
-  "cover";
-
-        coverImage.src =
-          imageData;
-
-
-        requestAnimationFrame(() => {
-
-          coverInput.value = "";
-
-        });
-
-      }
-    );
-
-    reader.readAsDataURL(file);
-
-  }
-);
-
+  reader.readAsDataURL(file);
+});
 
 // -------------------------
 // ZOOM
