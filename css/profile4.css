@@ -1091,10 +1091,8 @@ body.editing-profile .profile-detail-row:hover {
 
 .profile-editor-save {
   position: absolute;
-
-  top: 0.75rem;
-  right: 0.75rem;
-
+  right: 0.25rem;
+	bottom: 0.5rem;
   z-index: 10;
 }
 
