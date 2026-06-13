@@ -27,11 +27,6 @@ const saveRoleBtn = document.getElementById("saveRoleBtn");
 const saveLikesBtn = document.getElementById("saveLikesBtn");
 const saveLocationBtn = document.getElementById("saveLocationBtn");
 
-const closeHandleBtn = document.getElementById("closeHandleBtn");
-const closeRoleBtn = document.getElementById("closeRoleBtn");
-const closeLikesBtn = document.getElementById("closeLikesBtn");
-const closeLocationBtn = document.getElementById("closeLocationBtn");
-
 const roleSuggestionsBox = document.getElementById("roleSuggestionsBox");
 const customerLikesSuggestionsBox = document.getElementById("customerLikesSuggestionsBox");
 
@@ -586,11 +581,6 @@ document.querySelector(".profile-gym")?.addEventListener("click", () => {
 /* =========================
    CLOSE FIELD EDITORS
 ========================= */
-
-closeHandleBtn?.addEventListener("click", () => closeModal(handleEditorModal));
-closeRoleBtn?.addEventListener("click", () => closeModal(roleEditorModal));
-closeLikesBtn?.addEventListener("click", () => closeModal(likesEditorModal));
-closeLocationBtn?.addEventListener("click", () => closeModal(locationEditorModal));
 
 
 [
