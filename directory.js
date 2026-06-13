@@ -53,7 +53,6 @@ const servicesCancelBtn = document.getElementById("servicesCancelBtn");
 const servicesSaveBtn = document.getElementById("servicesSaveBtn");
 const servicePillOptions = document.querySelectorAll(".service-pill-option");
 
-const locationEditorModal = document.getElementById("locationEditorModal");
 
 const businessFacilitiesGrid =
   document.getElementById("businessFacilitiesGrid");
