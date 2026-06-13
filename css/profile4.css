@@ -1163,7 +1163,7 @@ body.profile .block-btn {
 
   background: rgba(0, 0, 0, 0.55);
 
-  z-index: 10000;
+  z-index: 10;
 }
 
 .profile-editor-modal.show {
