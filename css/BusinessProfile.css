@@ -121,6 +121,7 @@ body.business-profile {
   justify-content: flex-start;
   gap: var(--profile-name-row-gap);
    flex-wrap: nowrap;
+   position: relative;
 }
 
 
