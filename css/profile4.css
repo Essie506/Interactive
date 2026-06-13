@@ -1184,33 +1184,21 @@ body.profile .block-btn {
 
 .profile-editor-input {
   width: 100%;
-
   min-height: 6rem;
-
   padding: 0.75rem;
-
   border: 1px solid var(--border-color);
-
+box-shadow: var(--shadow-strong);
   border-radius: 0.75rem;
-
   box-sizing: border-box;
-
   resize: vertical;
 }
 
 .profile-editor-actions {
   display: flex;
-
   justify-content: flex-end;
-
   gap: 0.75rem;
-
   margin-top: 1rem;
 }
-
-
-
-
 
 
 
