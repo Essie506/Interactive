@@ -478,213 +478,96 @@
   hidden
 >
 
-    <div class="profile-main-info">
-
- <div class="profile-name-row">
-
-  <div class="profile-name-group">
-  
- <h1 class="profile-name-heading">
-  <input id="profileNameInput" />
-</h1>
-    
-  </div>
-
-</div>
-
-<!-- HANDLE -->
-
-<div class="profile-detail-row profile-handle-row professional-profile-only business-profile-only">
-  <i class="fa-solid fa-at"></i>
-
-  <span
-    class="profile-detail-text"
-    id="profileHandleText"
-  >
-    @estherclarke
-  </span>
-</div>
 
 
-<!-- ROLE -->
-
-<div class="profile-detail-row profile-role professional-profile-only">
-  <i class="fa-solid fa-dumbbell"></i>
-
-  <span
-    class="profile-detail-text"
-    id="profileRoleText"
-  >
-    Trainer • Strength &amp; Conditioning
-  </span>
-</div>
-
-
-<!-- CUSTOMER LIKES -->
-
-<div class="profile-detail-row profile-likes customer-profile-only">
-  <i class="fa-solid fa-heart"></i>
-
-  <span
-    class="profile-detail-text"
-    id="customerLikesText"
-  >
-    Running • Lifting • Walking
-  </span>
-</div>
-
-
-<!-- LOCATION -->
-
-<div class="profile-detail-row profile-gym">
-  <i class="fa-solid fa-location-dot"></i>
-
-  <span
-    class="profile-detail-text"
-    id="profileGymText"
-  >
-    Search location...
-  </span>
-</div>
 
 
       
+<div class="profile-main-info">
 
-
-<div class="profile-detail-row profile-affiliation professional-profile-only">
-
-  <i class="fa-solid fa-briefcase"></i>
-
-  <div class="profile-affiliation-wrap">
-
-    <button
-      type="button"
-      class="profile-affiliation-display"
-      id="profileAffiliationToggle"
-    >
-      <span id="profileAffiliationText">
-        Select status
-      </span>
-    </button>
-
-    <div
-      class="profile-affiliation-menu"
-      id="profileAffiliationMenu"
-      hidden
-    >
-
-      <label>
-        <input type="checkbox" value="Independent">
-        Independent
-      </label>
-
-      <label>
-        <input type="checkbox" value="Freelance">
-        Freelance
-      </label>
-
-      <label>
-        <input type="checkbox" value="Affiliated With Gym">
-        Affiliated With Gym
-      </label>
-
-      <label>
-        <input type="checkbox" value="Resident Staff">
-        Resident Staff
-      </label>
-
-      <label>
-        <input type="checkbox" value="Gym Staff">
-        Gym Staff
-      </label>
-
-      <label>
-        <input type="checkbox" value="Mobile">
-        Mobile
-      </label>
-
-      <label>
-        <input type="checkbox" value="">
-        Online
-      </label>
-
+  <div class="profile-name-row">
+    <div class="profile-name-group">
+      <h1 class="profile-name-heading">
+        <input id="profileNameInput" />
+      </h1>
     </div>
+  </div>
 
+  <!-- HANDLE -->
+  <div class="profile-detail-row profile-handle-row editable-section professional-profile-only business-profile-only">
+    <i class="fa-solid fa-at"></i>
+    <span class="profile-detail-text" id="profileHandleText">@estherclarke</span>
+  </div>
+
+  <!-- ROLE -->
+  <div class="profile-detail-row profile-role editable-section professional-profile-only">
+    <i class="fa-solid fa-dumbbell"></i>
+    <span class="profile-detail-text" id="profileRoleText">Trainer • Strength &amp; Conditioning</span>
+  </div>
+
+  <!-- CUSTOMER LIKES -->
+  <div class="profile-detail-row profile-likes editable-section customer-profile-only">
+    <i class="fa-solid fa-heart"></i>
+    <span class="profile-detail-text" id="customerLikesText">Running • Lifting • Walking</span>
+  </div>
+
+  <!-- LOCATION -->
+  <div class="profile-detail-row profile-gym editable-section">
+    <i class="fa-solid fa-location-dot"></i>
+    <span class="profile-detail-text" id="profileGymText">Search location...</span>
+  </div>
+
+  <!-- PROFESSIONAL AFFILIATION -->
+  <div class="profile-detail-row profile-affiliation editable-section professional-profile-only">
+    <i class="fa-solid fa-briefcase"></i>
+
+    <div class="profile-affiliation-wrap">
+      <button type="button" class="profile-affiliation-display" id="profileAffiliationToggle">
+        <span id="profileAffiliationText">Select status</span>
+      </button>
+
+      <div class="profile-affiliation-menu" id="profileAffiliationMenu" hidden>
+        <label><input type="checkbox" value="Independent"> Independent</label>
+        <label><input type="checkbox" value="Freelance"> Freelance</label>
+        <label><input type="checkbox" value="Affiliated With Gym"> Affiliated With Gym</label>
+        <label><input type="checkbox" value="Resident Staff"> Resident Staff</label>
+        <label><input type="checkbox" value="Gym Staff"> Gym Staff</label>
+        <label><input type="checkbox" value="Mobile"> Mobile</label>
+        <label><input type="checkbox" value="Online"> Online</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUSTOMER FITNESS LEVEL -->
+  <div class="profile-detail-row profile-fitness-level editable-section customer-profile-only">
+    <span class="profile-detail-icon" id="customerFitnessLevelIcon"></span>
+
+    <div class="profile-affiliation-wrap">
+      <button type="button" class="profile-affiliation-display" id="customerFitnessLevelToggle">
+        <span id="customerFitnessLevelText">Select fitness level</span>
+      </button>
+
+      <div class="profile-affiliation-menu" id="customerFitnessLevelMenu" hidden>
+        <label><input type="radio" name="fitnessLevel" value="Keeping Up Appearances"> 🌱 Keeping Up Appearances</label>
+        <label><input type="radio" name="fitnessLevel" value="Finding My Feet"> 👟 Finding My Feet</label>
+        <label><input type="radio" name="fitnessLevel" value="Steady Eddy"> 🚶 Steady Eddy</label>
+        <label><input type="radio" name="fitnessLevel" value="Joe Regular"> 🏋️ Joe Regular</label>
+        <label><input type="radio" name="fitnessLevel" value="Fighting Fit"> 💪 Fighting Fit</label>
+        <label><input type="radio" name="fitnessLevel" value="Seasoned Pro"> 🔥 Seasoned Pro</label>
+        <label><input type="radio" name="fitnessLevel" value="Fitter Than A Butcher's Dog!"> 🐕 Fitter Than A Butcher's Dog!</label>
+      </div>
+    </div>
   </div>
 
 </div>
 
 
-<div class="profile-detail-row profile-affiliation customer-profile-only">
-
-<span class="profile-detail-icon"
-      id="customerFitnessLevelIcon">
-</span>
-
-  <div class="profile-affiliation-wrap">
-
-<button
-  type="button"
-  class="profile-affiliation-display"
-  id="customerFitnessLevelToggle"
->
-
-  <span id="customerFitnessLevelText">
-    Select fitness level
-  </span>
-</button>
-    
-    <div
-      class="profile-affiliation-menu"
-      id="customerFitnessLevelMenu"
-      hidden
-    >
 
 
-     <label>
-  <input type="radio"
-    name="fitnessLevel"
-    value="Keeping Up Appearances">
-  🌱 Keeping Up Appearances
-</label>
 
-<label>
-  <input type="radio" name="fitnessLevel" value="Finding My Feet">
-  👟 Finding My Feet
-</label>
 
-<label>
-  <input type="radio" name="fitnessLevel" value="Steady Eddy">
-  🚶 Steady Eddy
-</label>
 
-<label>
-  <input type="radio" name="fitnessLevel" value="Joe Regular">
-  🏋️ Joe Regular
-</label>
-
-<label>
-  <input type="radio" name="fitnessLevel" value="Fighting Fit">
-  💪 Fighting Fit
-</label>
-
-<label>
-  <input type="radio" name="fitnessLevel" value="Seasoned Pro">
-  🔥 Seasoned Pro
-</label>
-
-<label>
-  <input type="radio" name="fitnessLevel" value="Fitter Than A Butcher's Dog!">
-  🐕  Fitter Than A Butcher's Dog!
-</label>
-    </div>
-
-  </div>
-
-</div>
-   
-    </div>
-  
+      
 
  <nav class="profile-tabs profile-tabs-inline" aria-label="Profile sections">
 
