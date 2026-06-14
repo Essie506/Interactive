@@ -887,9 +887,8 @@ body.editing-profile .editable-section::after {
   top: -0.65rem;
   right: 0.5rem;
   padding: 0.25rem 0.55rem;
-  border-radius: 999px;
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 500;
   background: rgba(7, 153, 146, 0.95);
   color: #fff;
   pointer-events: none;
