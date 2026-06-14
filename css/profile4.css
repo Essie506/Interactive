@@ -876,8 +876,8 @@ body.editing-profile .services-edit-btn {
 
 body.editing-profile .editable-section {
   cursor: pointer;
-  box-shadow:
-    0 0 0 2px rgba(7, 153, 146, 0.55),
+    box-shadow:
+    0 0 0 2px rgb(163 212 239 / 90%);
     0 0 16px rgba(7, 153, 146, 0.25);
 }
 
@@ -889,7 +889,7 @@ body.editing-profile .editable-section::after {
   padding: 0.25rem 0.55rem;
   font-size: 0.7rem;
   font-weight: 500;
-  background: rgba(7, 153, 146, 0.95);
+  background: blue;
   color: #fff;
   pointer-events: none;
   z-index: 3;
