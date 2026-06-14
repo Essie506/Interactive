@@ -881,21 +881,6 @@ body.editing-profile .editable-section {
     0 0 16px rgba(7, 153, 146, 0.25);
 }
 
-body.editing-profile .editable-section::after {
-  content: "Tap to edit";
-  position: absolute;
-  top: -0.65rem;
-  right: 0.5rem;
-  padding: 0.25rem 0.55rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  background: blue;
-  color: #fff;
-  pointer-events: none;
-  z-index: 3;
-}
-
-
 /* =========================
    POSTS / WORKOUTS / MEDIA
 ========================= */
