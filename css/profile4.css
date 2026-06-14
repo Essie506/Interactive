@@ -871,7 +871,7 @@ body.editing-profile .services-edit-btn {
 
 .editable-section {
   position: relative;
-  border-radius: 0.9rem;
+  border-radius: 0.5rem;
 }
 
 body.editing-profile .editable-section {
