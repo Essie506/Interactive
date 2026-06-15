@@ -868,18 +868,32 @@ body.editing-profile .services-edit-btn {
   transform: rotate(180deg);
 }
 
-
-.editable-section {
-  position: relative;
-  border-radius: 0.5rem;
-}
-
 body.editing-profile .editable-section {
-  cursor: pointer;
-    box-shadow:
-    0 0 0 2px rgb(163 212 239 / 90%);
-    0 0 16px rgba(7, 153, 146, 0.25);
+  border-radius: 1rem;
+
+  background:
+    rgba(7, 153, 146, 0.08);
+
+  box-shadow:
+    0 0 0 1px rgba(7, 153, 146, 0.2),
+    0 0 25px rgba(7, 153, 146, 0.25);
 }
+
+
+
+body.editing-profile .editable-section:focus-within {
+  background:
+    rgba(7, 153, 146, 0.12);
+
+  box-shadow:
+    0 0 30px rgba(7, 153, 146, 0.35);
+}
+
+
+
+
+
+
 
 /* =========================
    POSTS / WORKOUTS / MEDIA
