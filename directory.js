@@ -30,7 +30,8 @@ const saveLocationBtn = document.getElementById("saveLocationBtn");
 const roleSuggestionsBox = document.getElementById("roleSuggestionsBox");
 const customerLikesSuggestionsBox = document.getElementById("customerLikesSuggestionsBox");
 
-const facilitiesEditBtn = document.getElementById("facilitiesEditBtn");
+const facilitiesEditableSection =
+  document.getElementById("facilitiesEditableSection");
 const facilitiesModalOverlay = document.getElementById("facilitiesModalOverlay");
 const facilitiesModalClose = document.getElementById("facilitiesModalClose");
 const facilitiesCancelBtn = document.getElementById("facilitiesCancelBtn");
@@ -552,9 +553,12 @@ editProfileBtn?.addEventListener("click", () => {
 ========================= */
 
 
-facilitiesEditBtn?.addEventListener("click", openFacilitiesModal);
-facilitiesModalClose?.addEventListener("click", closeFacilitiesModal);
-facilitiesCancelBtn?.addEventListener("click", closeFacilitiesModal);
+facilitiesEditableSection?.addEventListener("click", () => {
+  if (!document.body.classList.contains("editing-profile")) return;
+
+  openFacilitiesModal();
+});
+
 
 facilitiesSaveBtn?.addEventListener("click", () => {
   const checkedFacilities =
