@@ -384,6 +384,10 @@ body.profile .profile-bio {
   color: var(--profile-text);
 }
 
+body.profile .business-status-row.business-profile-only {
+	display: none;
+}
+
 
 	body.profile .profile-avatar-wrap-mobile {
 		position: absolute;
@@ -1451,10 +1455,6 @@ body.editing-profile .profile-detail-row:hover {
 
 	body.profile .profile-hero--personal {
     margin-bottom: 0.8rem;
-}
-
-.business-status-row.business-profile-only {
-	display: none;
 }
 
   body.profile .profile-info-grid {
