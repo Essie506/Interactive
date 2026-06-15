@@ -886,23 +886,6 @@ body.editing-profile .editable-section {
 }
 
 
-
-body.editing-profile .editable-section:focus-within {
-
-	
-  background:
-    rgba(7, 153, 146, 0.12);
-
-  box-shadow:
-    0 0 30px rgba(7, 153, 146, 0.35);
-}
-
-
-
-
-
-
-
 /* =========================
    POSTS / WORKOUTS / MEDIA
 ========================= */
@@ -1914,13 +1897,6 @@ body.profile .profile-affiliation-select {
   max-width: 100%;
 }
 
-body.editing-profile .editable-section:hover {
-  background:
-    rgba(7, 153, 146, 0.12);
-
-  box-shadow:
-    0 0 30px rgba(7, 153, 146, 0.35);
-}
 
 body.editing-profile .editable-section {
 
