@@ -986,37 +986,49 @@
           Your verification badge may display the number of verified
           qualifications linked to your account.
         </div>
+        <div class="tooltip-content business-profile-only">
+  Select business verification to confirm your gym, studio, company, or organisation.
+</div>
       </div>
     </div>
 
-    <select id="verificationTypeInput">
-      <option value="pt">
-        Personal Trainer / Fitness Professional
-      </option>
-      <option value="class-instructor">
-        Class Instructor
-      </option>
-      <option value="nutrition">
-        Nutritionist / Dietician
-      </option>
-      <option value="coach">
-        Coach
-      </option>
-      <option value="business">
-        Business
-      </option>
-      <option value="medical">
-        Physio / Medical Professional
-      </option>
-    </select>
+  <select id="verificationTypeInput">
+  <option value="business" class="business-profile-only">
+    Business
+  </option>
 
+  <option value="pt" class="professional-profile-only">
+    Personal Trainer / Fitness Professional
+  </option>
+
+  <option value="class-instructor" class="professional-profile-only">
+    Class Instructor
+  </option>
+
+  <option value="nutrition" class="professional-profile-only">
+    Nutritionist / Dietician
+  </option>
+
+  <option value="coach" class="professional-profile-only">
+    Coach
+  </option>
+
+  <option value="medical" class="professional-profile-only">
+    Physio / Medical Professional
+  </option>
+</select>
   </label>
 
   <label class="details-field">
 
     <div class="verification-label">
-      <span>Register / organisation</span>
+    <span class="professional-profile-only">
+  Register / organisation
+</span>
 
+<span class="business-profile-only">
+  Company register / organisation
+</span>
       <div class="tooltip-wrapper">
         <button
           type="button"
@@ -1044,7 +1056,13 @@
   <label class="details-field">
 
     <div class="verification-label">
-      <span>Registration / licence number</span>
+     <span class="professional-profile-only">
+  Registration / licence number
+</span>
+
+<span class="business-profile-only">
+  Company number / registration number
+</span>
 
       <div class="tooltip-wrapper">
         <button
@@ -1074,7 +1092,13 @@
   <label class="details-field">
 
     <div class="verification-label">
-      <span>Legal name</span>
+    <span class="professional-profile-only">
+  Legal name
+</span>
+
+<span class="business-profile-only">
+  Legal business name
+</span>
 
       <div class="tooltip-wrapper">
         <button
