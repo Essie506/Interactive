@@ -826,22 +826,19 @@
     </a>
   </nav>
 
-  <!-- DETAILS MODAL OVERLAY -->
+<!-- DETAILS MODAL OVERLAY -->
 
-
- <div class="details-modal-overlay" id="detailsModalOverlay">
+<div class="details-modal-overlay" id="detailsModalOverlay">
   <div class="details-modal">
 
+    <header class="details-modal-header">
+      <h2 class="customer-profile-only professional-profile-only">
+        My Details
+      </h2>
 
-
-
-<h2 class="customer-profile-only professional-profile-only customer-profile-only">
-  My Details
-</h2>
-
-<h2 class="business-profile-only">
-  Business Details
-</h2>
+      <h2 class="business-profile-only">
+        Business Details
+      </h2>
 
       <button
         class="details-modal-save icon-btn"
@@ -864,58 +861,56 @@
       </label>
 
       <label class="details-field customer-profile-only professional-profile-only">
-  <span>Name</span>
-  <input
-    type="text"
-    id="accountFullNameInput"
-    value="Esther Clarke"
-  >
-</label>
+        <span>Name</span>
+        <input
+          type="text"
+          id="accountFullNameInput"
+          value="Esther Clarke"
+        >
+      </label>
 
-<label class="details-field business-profile-only">
-  <span>Business name</span>
-  <input
-    type="text"
-     id="accountFullNameInputBusiness"
-    value="TrainWell Gym"
-  >
-</label>
-    
+      <label class="details-field business-profile-only">
+        <span>Business name</span>
+        <input
+          type="text"
+          id="accountFullNameInputBusiness"
+          value="TrainWell Gym"
+        >
+      </label>
 
-<label class="details-field">
+      <label class="details-field">
+        <div class="verification-label">
+          <span class="customer-profile-only professional-profile-only">
+            Online name
+          </span>
 
- <span class="customer-profile-only professional-profile-only">
-  Online name
-</span>
+          <span class="business-profile-only">
+            Display name
+          </span>
 
-<span class="business-profile-only">
-  Display name
-</span>
+          <div class="tooltip-wrapper professional-profile-only">
+            <button
+              type="button"
+              class="tooltip-trigger"
+              aria-label="Online name information"
+            >
+              <i class="fa-solid fa-circle-info"></i>
+            </button>
 
-    <div class="tooltip-wrapper professional-profile-only">
-      <button
-        type="button"
-        class="tooltip-trigger"
-        aria-label="Online name information"
-      >
-        <i class="fa-solid fa-circle-info"></i>
-      </button>
+            <div class="tooltip-content">
+              To help protect your personal identity
+              you may want to use a nickname or professional title for
+              your screen name.
+            </div>
+          </div>
+        </div>
 
-      <div class="tooltip-content">
-        To help protect your personal identity
-        you may want to use a nickname or professional title for
-        your screen name.
-      </div>
-    </div>
-  </div>
-
-  <input
-    type="text"
-    id="accountOnlineNameInput"
-    placeholder="Profile"
-  >
-
-</label>
+        <input
+          type="text"
+          id="accountOnlineNameInput"
+          placeholder="Profile"
+        >
+      </label>
 
 
 
