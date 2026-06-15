@@ -36,6 +36,9 @@ const servicesSaveBtn = document.getElementById("servicesSaveBtn");
 const businessServiceLinks =
   document.getElementById("businessServiceLinks");
 
+  const servicesEditableSection =
+  document.getElementById("servicesEditableSection");
+
 
 const proofSubmittedMobile =
   document.getElementById("proofSubmittedMobile");
@@ -244,6 +247,14 @@ servicesModalOverlay?.classList.remove("open");
   
 });
 
+
+servicesEditableSection?.addEventListener("click", () => {
+  if (!document.body.classList.contains("editing-profile")) return;
+
+  openServicesModal();
+});
+
+  
 renderServicesChecklist();
 renderServicePills();
     renderServiceLinks(selectedServices);
