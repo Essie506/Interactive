@@ -21,6 +21,9 @@ const detailsModalOpen =
 const detailsModalOverlay =
   document.getElementById("detailsModalOverlay");
 
+const businessDetailsModalOpen =
+  document.getElementById("businessDetailsModalOpen");
+
 const navTitleInput =
   document.getElementById("navTitleInput");
 
@@ -133,14 +136,20 @@ function closeDetailsModal() {
   detailsModalOverlay?.classList.remove("open");
 }
 
+function handleDetailsModalOpen(e) {
+  e.preventDefault();
+  console.log("details clicked");
+  openDetailsModal();
+}
 
 detailsModalOpen?.addEventListener(
   "click",
-  (e) => {
-    e.preventDefault();
-    console.log("details clicked");
-    openDetailsModal();
-  }
+  handleDetailsModalOpen
+);
+
+businessDetailsModalOpen?.addEventListener(
+  "click",
+  handleDetailsModalOpen
 );
 
 
