@@ -393,7 +393,6 @@ if (shareProfileButtons.length) {
       closeBlockModal();
     });
   }
-});
 
 
 
