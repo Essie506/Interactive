@@ -46,7 +46,6 @@ const customerFitnessLevelMenu = document.getElementById("customerFitnessLevelMe
 const customerFitnessLevelText = document.getElementById("customerFitnessLevelText");
 const fitnessLevelIcon = document.getElementById("customerFitnessLevelIcon");
 
-const servicesEditBtn = document.getElementById("servicesEditBtn");
 const servicesModalOverlay = document.getElementById("servicesModalOverlay");
 const servicesModalClose = document.getElementById("servicesModalClose");
 const servicesCancelBtn = document.getElementById("servicesCancelBtn");
@@ -819,7 +818,6 @@ setupSuggestions(
    SERVICES MODAL
 ========================= */
 
-servicesEditBtn?.addEventListener("click", openServicesModal);
 servicesModalClose?.addEventListener("click", closeServicesModal);
 servicesCancelBtn?.addEventListener("click", closeServicesModal);
 
