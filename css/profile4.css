@@ -1460,6 +1460,7 @@ body.editing-profile .profile-detail-row:hover {
 
 
 
+
   body.profile .profile-info-grid {
     gap: var(--profile-local-surface-gap);
     align-items: stretch;
@@ -1821,9 +1822,7 @@ body.profile .profile-hero-media:active {
 
 
 .nav-title-input {
-
   text-align: start;
-
 }
 
 
@@ -1906,6 +1905,16 @@ body.profile #profileNameInput {
 body.profile .profile-affiliation-select {
   max-width: 100%;
 }
+
+body.editing-profile .editable-section:hover {
+  background:
+    rgba(7, 153, 146, 0.12);
+
+  box-shadow:
+    0 0 30px rgba(7, 153, 146, 0.35);
+}
+
+	
 	
 }
 
