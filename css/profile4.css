@@ -150,10 +150,7 @@ body[data-profile-type="business-profile"] .profile-service-links.business-profi
   display: flex;
 }
 
-body.profile[data-profile-type="business-profile"]
-.business-status-row.business-profile-only {
-  display: flex;
-}
+
 
 /* =========================
    PAGE BG
@@ -1919,7 +1916,10 @@ body.editing-profile .editable-section {
 ========================= */
 @media (max-width: 900px) {
 
-
+body.profile[data-profile-type="business-profile"]
+.business-status-row.business-profile-only {
+  display: flex;
+}
 	
 /* =========================
    COVERS
