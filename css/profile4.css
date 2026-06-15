@@ -1537,11 +1537,9 @@ body.profile .profile-hero--personal::after {
 
 
   body.profile .profile-top-right-actions {
-	  display: flex;
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
-    display: flex;
     flex-direction: row;
     align-items: start;
     justify-content: flex-end;
