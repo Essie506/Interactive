@@ -187,6 +187,7 @@ services.forEach(service => {
 
   target.appendChild(link);
 });
+}
 
 
   
