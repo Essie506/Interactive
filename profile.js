@@ -395,6 +395,6 @@ if (shareProfileButtons.length) {
     });
   }
 
-
+});
 
 
