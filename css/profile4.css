@@ -519,7 +519,7 @@ body.editing-profile .profile-hero-corner {
 body.profile .profile-top-right-actions {
   position: absolute;
  right: 1rem;
-	top: 0.5rem;
+	top: 0.75rem;
 	z-index: 600;
 }
 
