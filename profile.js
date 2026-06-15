@@ -168,18 +168,25 @@ const target =
     return;
   }
 
-  services.forEach(service => {
-    const link = document.createElement("a");
+services.forEach(service => {
+  const link = document.createElement("a");
 
-    link.href = "#";
-    link.className = "service-link editable-section";
-    link.textContent = service;
+  link.href = "#";
+  link.className = "service-link editable-section";
+  link.textContent = service;
 
-    target.appendChild(link);
+  link.addEventListener("click", event => {
+    event.preventDefault();
+
+    if (!document.body.classList.contains("editing-profile")) {
+      return;
+    }
+
+    openServicesModal();
   });
-}
 
-
+  target.appendChild(link);
+});
 
 
   
@@ -254,7 +261,6 @@ servicesEditableSection?.addEventListener("click", () => {
   openServicesModal();
 });
 
-  
 renderServicesChecklist();
 renderServicePills();
     renderServiceLinks(selectedServices);
