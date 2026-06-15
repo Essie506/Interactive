@@ -172,7 +172,7 @@ const target =
     const link = document.createElement("a");
 
     link.href = "#";
-    link.className = "service-link";
+    link.className = "service-link editable-section";
     link.textContent = service;
 
     target.appendChild(link);
