@@ -872,7 +872,7 @@ body.editing-profile .editable-section {
   border-radius: 1rem;
 
   background:
-    rgba(7, 153, 146, 0.08);
+   white;
 
   box-shadow:
     0 0 0 1px rgba(7, 153, 146, 0.2),
