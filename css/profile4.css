@@ -882,13 +882,14 @@ body.editing-profile .editable-section {
     transform 0.2s ease,
     box-shadow 0.2s ease,
     background 0.2s ease;
+	  transform: scale(1.02);
 }
 
 
 
 body.editing-profile .editable-section:focus-within {
 
-	  transform: scale(1.02);
+	
   background:
     rgba(7, 153, 146, 0.12);
 
