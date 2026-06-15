@@ -1456,7 +1456,7 @@ body.editing-profile .profile-detail-row:hover {
     margin-bottom: 0.8rem;
 }
 
-business-status-row {
+body.profile .business-status-row {
 	display: none;
 }
 
