@@ -1447,9 +1447,12 @@ body.editing-profile .profile-detail-row:hover {
     flex-direction: column;
   }
 
-	.business-section-header.mobile-only.customer-profile-only.professional-profile-only {
+	.business-section-header.mobile-only.customer-profile-only.professional-profile-only,
+	body.profile .profile-avatar-wrap-mobile.customer-profile-only.professional-profile-only {
 		display: none;
 	}
+
+	
 
 	body.profile .profile-hero--personal {
     margin-bottom: 0.8rem;
@@ -1766,11 +1769,6 @@ body.profile .profile-tab:hover i {
   );
 }
 
-
-	body.profile .profile-avatar-wrap-mobile {
-		display: none;
-		position: absolute;
-	}
 
 	 body.profile .profile-hero-media img {
   transform: scale(1.08);
