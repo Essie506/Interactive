@@ -394,7 +394,6 @@ body.profile .business-status-row.business-profile-only {
 		width: clamp(6.5rem, 18vw, 8rem);
   height: clamp(6.5rem, 18vw, 8rem);
 		align-items: center;
-		display: inline-flex;
 		justify-content: center;
 		top: -3rem;
 		right: 4rem;
