@@ -133,11 +133,6 @@ body[data-profile-type="professional-profile"]
   display: block;
 }
 
-body.profile[data-profile-type="professional-profile"] .business-section-header.professional-profile-only,
-body.profile[data-profile-type="business-profile"] .business-section-header.business-profile-only {
-    display: block;
-}
-
 
 body.profile[data-profile-type="professional-profile"] .services-edit-btn.professional-profile-only,
 body.profile[data-profile-type="business-profile"] .services-edit-btn.business-profile-only {
