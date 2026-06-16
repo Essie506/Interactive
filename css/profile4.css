@@ -1452,8 +1452,12 @@ body.editing-profile .profile-detail-row:hover {
 		display: none;
 	}
 
-	button.profile-share-btn.icon-btn {
-position: absolute;
+	
+body.profile[data-profile-type="customer-profile"]
+.profile-share-btn, 
+body.profile[data-profile-type="customer-profile"]
+.profile-share-btn  {
+ position: absolute;
     left: 5rem;
 }
 
