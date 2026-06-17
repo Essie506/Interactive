@@ -2031,6 +2031,12 @@ body.profile.has-cover
 	  display: none;
   }
 
+
+	body.profile[data-profile-type="business-profile"] .business-profile-only.profile-name-row {
+		display: grid;
+		font-weight: 700;
+	}
+
   body.profile .profile-name-row h1 {
     line-height: 0.95;
     letter-spacing: -0.05em;
