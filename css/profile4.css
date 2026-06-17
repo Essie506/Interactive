@@ -1079,6 +1079,10 @@ border-radius: inherit;
   text-align: start;
 }
 
+body.profile[data-profile-type="business-profile"] .business-profile-only.profile-detail-row {
+    display: none;
+}
+
 .profile-detail-text {
   display: block;
   min-width: 0;
