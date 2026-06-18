@@ -57,28 +57,6 @@ const servicePillOptions = document.querySelectorAll(".service-pill-option");
 const businessFacilitiesGrid =
   document.getElementById("businessFacilitiesGrid");
 
-const facilityOptions = [
-  { label: "Showers", icon: "fa-solid fa-shower" },
-  { label: "Parking nearby", icon: "fa-solid fa-square-parking" },
-  { label: "Accessible access", icon: "fa-solid fa-wheelchair" },
-  { label: "Lockers", icon: "fa-solid fa-lock" },
-  { label: "Air conditioning", icon: "fa-solid fa-snowflake" },
-  { label: "Fitness studio", icon: "fa-solid fa-person-running" },
-  { label: "Swimming pool", icon: "fa-solid fa-water-ladder" },
-  { label: "Lane swimming", icon: "fa-solid fa-water" },
-  { label: "Jacuzzi", icon: "fa-solid fa-hot-tub-person" },
-  { label: "Sauna", icon: "fa-solid fa-temperature-high" },
-  { label: "Steam room", icon: "fa-solid fa-cloud" },
-  { label: "Mat area", icon: "fa-solid fa-border-all" },
-  { label: "Running track", icon: "fa-solid fa-route" },
-  { label: "Recovery area", icon: "fa-solid fa-heart-pulse" },
-  { label: "Changing rooms", icon: "fa-solid fa-shirt" },
-  { label: "Toilets", icon: "fa-solid fa-restroom" },
-  { label: "Cafe", icon: "fa-solid fa-mug-hot" },
-  { label: "Creche", icon: "fa-solid fa-child" },
-  { label: "Free WiFi", icon: "fa-solid fa-wifi" },
-  { label: "Outdoor training area", icon: "fa-solid fa-tree" }
-];
 
 let selectedFacilities = [
   "Showers",
