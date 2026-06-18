@@ -675,6 +675,10 @@ body.profile .service-link::before {
   transition: opacity 0.2s ease;
 }
 
+.services-checklist {
+	overflow-y: auto;
+}
+
 .services-modal-overlay.open {
   opacity: 1;
   pointer-events: auto;
