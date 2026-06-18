@@ -336,7 +336,6 @@ body.business-profile .business-intro {
     scroll-margin-top: calc(var(--bar-height) + 4.5rem);
   }
 
-  .business-info-grid,
   .business-professional-row,
   .business-media-grid {
     grid-template-columns: 1fr;
