@@ -698,7 +698,7 @@ body.profile .service-link::before {
 
   box-shadow: 0 -12px 34px rgba(0, 0, 0, 0.18);
 
-  transform: translateY(-50%);
+  transform: translateY(-20%);
   transition: transform 0.25s ease;
 }
 
