@@ -298,6 +298,29 @@ distanceRanges.forEach(range => {
 });
 
 
+function renderDirectoryFacilityPills() {
+  const facilitiesPillRow = document.getElementById("directoryFacilitiesPills");
+
+  if (!facilitiesPillRow) return;
+
+  facilitiesPillRow.innerHTML = facilityOptions
+    .map((facility) => {
+      return `
+        <button
+          class="directory-filter-pill"
+          type="button"
+          data-filter-group="facilities"
+          data-filter-value="${facility.value}"
+        >
+          ${facility.label}
+        </button>
+      `;
+    })
+    .join("");
+}
+
+renderDirectoryFacilityPills();
+
 // =========================
 // PILL TOGGLES
 // =========================
