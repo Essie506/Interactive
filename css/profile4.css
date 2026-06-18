@@ -56,7 +56,7 @@ body.profile {
   --profile-hero-inner-pad-x: calc(clamp(1rem, 2vw, 1.75rem) * var(--profile-scale));
 
   --profile-top-actions-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
-  --profile-name-row-gap: calc(var(--profile-gap-sm) * var(--profile-scale));
+  --profile--gap: calc(var(--profile-gap-sm) * var(--profile-scale));
 
   --profile-local-icon-btn-size: calc(var(--profile-icon-btn-size) * var(--profile-scale));
   --profile-local-avatar-size: calc(var(--profile-avatar-size) * var(--profile-scale));
@@ -2036,8 +2036,8 @@ body.profile.has-cover
   }
 
 
-	body.profile[data-profile-type="business-profile"] .business-profile-only.profile-name-row {
-		display: grid;
+	body.profile[data-profile-type="business-profile"] .profile-name-row {
+		display: block;
 		font-weight: 700;
 	}
 
