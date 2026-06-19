@@ -2014,7 +2014,6 @@ body.profile[data-profile-type="business-profile"]
 .business-status-row.business-profile-only {
   display: flex;
 }
-}
 	
 /* =========================
    COVERS
@@ -2043,11 +2042,6 @@ body.profile.has-cover
   .profile-hero-media {
   height: clamp(220px, 34dvh, 340px);
 }
-
-
-
-
-	
 
 
   body.profile {
