@@ -1842,6 +1842,24 @@ body.profile .profile-hero-media:active {
 		padding-left: 0.5rem;
 }
 
+
+body.profile #profileNameInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+	  border: none;
+  outline: none;
+  box-shadow: none;
+	font-weight: 700;
+	background: transparent;
+	margin-bottom: 0.75rem;
+}
+	
+
 body.profile .profile-name-group {
   display: flex;
   align-items: center;
@@ -1862,22 +1880,6 @@ body.profile .profile-name-heading {
   margin: 0;	
 }
 
-body.profile #profileNameInput {
-  flex: 1 1 auto;
-  min-width: 0;
-  max-width: 100%;
-  width: 100%;
-  display: block;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-	  border: none;
-  outline: none;
-  box-shadow: none;
-	font-weight: 700;
-	background: transparent;
-	margin-bottom: 0.75rem;
-}
 
 	#profileNameInput:focus {
   border: none;
