@@ -416,6 +416,7 @@ flex: 1 1 auto;
 	margin-right: 1rem;
 }
 
+
 .nav-title-input {
   min-width: 100%;
 	flex: 0 0 auto;
@@ -1637,9 +1638,11 @@ body.profile .profile-hero--personal::after {
 	  display: flex;
   }
 
- 
-
-
+ input#profileNameInput {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+}
 
 
   body.profile .profile-bio {
