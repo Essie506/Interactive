@@ -1439,10 +1439,7 @@ box-shadow: var(--shadow-strong);
   gap: 0.75rem;
 }
 
-  .business-professional-row,
-  .business-media-grid {
-    grid-template-columns: 1fr;
-  }
+  
 
 .business-media-grid {
   display: grid;
@@ -2117,6 +2114,11 @@ margin-top: 0rem;
 	margin-left: 1rem;
 
 }
+
+	.business-professional-row,
+  .business-media-grid {
+    grid-template-columns: 1fr;
+  }
 	
 	
 	section.business-section.mobile-only {
