@@ -1440,7 +1440,11 @@ body.editing-profile .profile-detail-row:hover {
   opacity: 0.5;
 }
 
-
+ input#profileNameInput {
+    background: transparent;
+    border: none;
+    font-weight: 600;
+}
 
 
 
@@ -1638,11 +1642,6 @@ body.profile .profile-hero--personal::after {
 	  display: flex;
   }
 
- input#profileNameInput {
-    background: transparent;
-    border: none;
-    font-weight: 600;
-}
 
 
   body.profile .profile-bio {
