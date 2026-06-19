@@ -830,12 +830,7 @@ body.profile .profile-tabs-inner {
   background: rgba(255,255,255,0.62);
 }
 
-.business-section {
-  scroll-margin-top: calc(var(--bar-height-large) + 5rem);
-  background: rgba(255, 255, 255, 0.72);
-	padding: 0.0125rem 0.5rem 0;
-	margin-top: 0.8rem;
-}
+
 
 .business-section-header {
 	display: block;
