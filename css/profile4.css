@@ -1516,7 +1516,6 @@ body.profile[data-profile-type="customer-profile"]
     overflow-x: clip;
     box-sizing: border-box;
     width: min(42rem, calc(100% - 2rem));
-   min-height: 100%;
     box-shadow: var(--shadow-soft);
 	  opacity: 0.75;
   }
