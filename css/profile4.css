@@ -118,7 +118,7 @@ body.profile[data-profile-type="business-profile"] .business-profile-only {
 
 body.profile[data-profile-type="business-profile"] .business-hero-card {
   min-height: auto;
-  padding: 0.5rem 0.75rem;
+  padding: 0 0.25rem;
 }
 
 body.profile[data-profile-type="business-profile"] .profile-info-inner {
