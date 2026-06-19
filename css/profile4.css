@@ -1149,7 +1149,13 @@ body.editing-profile .profile-detail-row:hover {
   background: var(--card-bg, white);
   border-radius: 1rem;
   box-shadow: 0 0.75rem 2rem rgba(0,0,0,0.15);
+    overflow-y: auto;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
 }
+
 
 .profile-affiliation-menu label {
   display: flex;
