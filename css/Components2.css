@@ -1624,19 +1624,10 @@ body.editing-profile #profileBioSave {
 	margin: 0;
 	padding: 0;
   position: relative;
-  z-index: 2;
-  display: flex;
   flex-direction: column;
 	overflow: visible;
-    background: rgba(255, 255, 255, 0.72);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    box-shadow: var(--shadow-strong);
     color: var(--text-dark);
     align-items: flex-start;
-    min-height: clamp(15rem, 28vh, 22rem);
-    margin: 0.5rem;
-    width: min(42rem, calc(100% - 2rem))
 
 }
 
