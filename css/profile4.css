@@ -1502,6 +1502,32 @@ body.editing-profile .profile-detail-row:hover {
 
 
 
+.business-professional-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem;
+  background: rgba(255,255,255,0.68);
+  box-shadow: var(--shadow-soft);
+}
+
+.business-professional-card {
+  font-size: 0.9rem;
+}
+
+
+
+.business-avatar {
+  width: 3rem;
+  height: 3rem;
+  flex: 0 0 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--glass-teal);
+  color: var(--text-dark);
+}
+
 
 /* =========================
    DESKTOP / LAPTOP
