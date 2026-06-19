@@ -703,7 +703,7 @@ body.profile .service-link::before {
 }
 
 .services-modal-overlay.open .services-modal {
-  transform: translateY(-50%);
+  transform: translateY(-10%);
 }
 
 .services-modal-header {
