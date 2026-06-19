@@ -116,7 +116,43 @@ body.profile[data-profile-type="business-profile"] .business-profile-only {
   display: grid;
 }
 
+body.profile[data-profile-type="business-profile"] .business-hero-card {
+  min-height: auto;
+  padding: 0.5rem 0.75rem;
+}
 
+body.profile[data-profile-type="business-profile"] .profile-info-inner {
+  padding: 0.25rem;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-main-info {
+  margin-top: -0.25rem;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-name-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+body.profile[data-profile-type="business-profile"] #profileNameInput {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-detail-row {
+  margin: 0.35rem 0;
+  max-width: 100%;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-tabs-inline {
+  padding-top: 0.35rem;
+  padding-bottom: 0;
+}
 
 
 /* profile type visibility */
