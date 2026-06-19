@@ -301,6 +301,7 @@ body.profile .business-hero-card {
     box-shadow: var(--shadow-strong);
     color: var(--text-dark);
     align-items: flex-start;
+	margin: 0.5rem;
 }
 
 
