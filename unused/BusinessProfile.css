@@ -243,29 +243,6 @@ body.business-profile .business-intro {
   color: var(--text-dark);
 }
 
-.business-media-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 0.65rem;
-}
-
-.business-media-grid img {
-  width: 100%;
-  height: clamp(8rem, 22vw, 14rem);
-  display: block;
-  object-fit: cover;
-  box-shadow: var(--shadow-soft);
-}
-
-.business-media-grid img:first-child {
-  height: clamp(12rem, 30vw, 18rem);
-  grid-row: span 2;
-}
-
-.business-contact-card {
-  display: grid;
-  gap: 0.65rem;
-}
 
 @media (max-width: 900px) {
   .business-profile-page {
