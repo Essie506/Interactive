@@ -1863,9 +1863,6 @@ body.profile .profile-hero-media:active {
 body.profile #profileNameInput {
   flex: 1 1 auto;
   min-width: 0;
-  max-width: 100%;
-  width: 100%;
-  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 	  border: none;
