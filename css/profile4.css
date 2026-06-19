@@ -235,7 +235,7 @@ body.profile .profile-hero-media::after {
 	
 
 	 body.profile .profile-hero-media img {
-  transform: scale(1.08);
+		   transform: scale(1.08);
   transition: transform 0.2s ease;
   width: 100%;
   height: 100%;
@@ -255,6 +255,8 @@ body.profile .profile-hero-media::after {
 
 
 
+
+
 /* =========================
    SHARED SURFACES
 ========================= */
@@ -266,31 +268,13 @@ body.profile .profile-services-card {
   border-radius: 0;
   overflow: visible;
   box-shadow: var( --shadow-strong);
-	
-}
-
-
-body.profile .profile-section-card,
-body.profile .profile-tabs-card,
-body.profile .profile-services-card {
     backdrop-filter: var(--profile-blur);
-}
-   
-
-body.profile .business-hero-card,
-body.profile .profile-tabs-card,
-body.profile .profile-services-card {
   margin-bottom: var(--profile-local-surface-gap);
 }
 
 body.profile .profile-tabs-card,
 body.profile .profile-services-card {
      padding: var(--profile-local-shell-pad);
-}
-
-
-body.profile .profile-tabs-card,
-body.profile .profile-services-card {
   background: var(--profile-card-bg-soft);
 }
 
@@ -437,10 +421,6 @@ flex: 1 1 auto;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
-
-
-.nav-title-input {
   -webkit-appearance: none;
 }
 
@@ -1135,11 +1115,6 @@ body.editing-profile .profile-detail-row:hover {
   z-index: 10;
 }
 
-.profile-editor-input {
-  padding-top: 3rem;
-}
-
-
 
 
 .profile-affiliation-wrap {
@@ -1234,6 +1209,8 @@ body.profile .block-btn {
   margin: 0 0 1rem;
 }
 
+
+
 .profile-editor-input {
   width: 100%;
   min-height: 6rem;
@@ -1250,10 +1227,6 @@ box-shadow: var(--shadow-strong);
   justify-content: flex-end;
   gap: 0.75rem;
   margin-top: 1rem;
-}
-
-.profile-editor-input {
-  border: 1px solid var(--border-color);
 }
 
 .profile-editor-input:focus,
@@ -1328,19 +1301,6 @@ box-shadow: var(--shadow-strong);
   transform: translateY(0) scale(1);
 }
 
-.details-modal-body {
-  overflow-y: auto;
-  flex: 1;
-	-webkit-overflow-scrolling: touch;
-  overscroll-behavior: contain;
-}
-
-
-body.editing-profile .profile-detail-row:hover {
-  opacity: 0.85;
-}
-
-
 
 
 /* =========================
@@ -1370,11 +1330,14 @@ body.editing-profile .profile-detail-row:hover {
 .details-modal-body {
   display: flex;
   flex-direction: column;
-
   gap: 1rem;
-
   padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+	-webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }
+
 
 /* =========================
    FIELDS
@@ -1514,9 +1477,6 @@ body.editing-profile .profile-detail-row:hover {
   padding: 0.9rem;
   background: rgba(255,255,255,0.68);
   box-shadow: var(--shadow-soft);
-}
-
-.business-professional-card {
   font-size: 0.9rem;
 }
 
@@ -1588,14 +1548,6 @@ body.profile[data-profile-type="customer-profile"]
     margin-right: 0;
   }
 
-  body.profile .profile-tabs-card {
-    margin-top: var(--profile-local-surface-gap);
-  }
-
-  body.profile .profile-tabs-card,
-  body.profile .profile-services-card {
-    background: var(--profile-card-bg-soft);
-  }
 
   /* HERO */
   body.profile .business-hero-card {
@@ -1871,21 +1823,9 @@ body.profile .profile-tab:hover i {
 }
 
 
+
 	 body.profile .profile-hero-media img {
-  transform: scale(1.08);
-  transition: transform 0.2s ease;
-  width: 100%;
-  height: 100%;
   object-fit: cover;
-  object-position: center center;
-  transition:
-    object-position 0.08s linear,
-    transform 0.2s ease;
-  user-select: none;
-  -webkit-user-drag: none;
-  touch-action: none;
-	  transform: scale(1.05);
-		  pointer-events: none;
 		 opacity: 0.6;
 }
 
@@ -1911,12 +1851,6 @@ body.profile .profile-hero-media:active {
   }
 
 
-.nav-title-input {
-  text-align: start;
-}
-
-
-	
 	body.profile .profile-name-row {
   display: flex;
   align-items: center;
@@ -1927,7 +1861,6 @@ body.profile .profile-hero-media:active {
   min-width: 0;
 		padding-left: 0.5rem;
 }
-
 
 
 body.profile #profileNameInput {
