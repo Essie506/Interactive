@@ -1476,6 +1476,11 @@ body.editing-profile .profile-detail-row:hover {
   gap: 0.75rem;
 }
 
+  .business-professional-row,
+  .business-media-grid {
+    grid-template-columns: 1fr;
+  }
+
 .business-media-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
