@@ -2053,7 +2053,6 @@ body.profile.has-cover
       body.profile .profile-hero--personal {
     align-items: flex-end;
     overflow: visible;
-	display: flex;
     flex-direction: column;
     min-height: auto;
 		  margin-bottom: 0.8rem;
