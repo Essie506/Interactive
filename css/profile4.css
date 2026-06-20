@@ -1886,7 +1886,7 @@ body.profile .profile-name-heading {
 .nav-title-wrap {
     width:100%;
     transform: translateX(0);
-	max-width: 10rem;
+	max-width: 20rem;
 }
 
 	#profileHandleInput,
