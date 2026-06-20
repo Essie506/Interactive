@@ -1478,7 +1478,6 @@ body.profile[data-profile-type="business-profile"] .profile-hero-media {
   height: auto;
   min-height: 24rem;
   max-height: none;
-  overflow: visible;
 }
 
 body.profile[data-profile-type="business-profile"] .profile-hero-media img {
