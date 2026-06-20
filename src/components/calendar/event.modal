@@ -1,0 +1,286 @@
+import { useState, useEffect } from 'react';
+import { X, Trash2 } from 'lucide-react';
+import { CalendarEvent, NewEvent, EventCategory, CATEGORY_LABELS, CATEGORY_COLORS, FOCUS_COLORS } from '@/types/event';
+
+interface EventModalProps {
+  event?: CalendarEvent | null;
+  initialDate?: Date;
+  initialHour?: number;
+  isOpen: boolean;
+  onClose: () => void;
+  onSave: (event: NewEvent) => Promise<{error: string | null;}>;
+  onUpdate?: (id: string, event: Partial<NewEvent>) => Promise<{error: string | null;}>;
+  onDelete?: (id: string) => Promise<{error: string | null;}>;
+}
+
+const getCategoryStyle = (cat: EventCategory) => {
+  const colors = CATEGORY_COLORS[cat];
+  return `${colors.border} ${colors.bgLight}`;
+};
+
+export function EventModal({
+  event,
+  initialDate,
+  initialHour,
+  isOpen,
+  onClose,
+  onSave,
+  onUpdate,
+  onDelete
+}: EventModalProps) {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [startTime, setStartTime] = useState('');
+  const [endTime, setEndTime] = useState('');
+  const [category, setCategory] = useState<EventCategory>('work');
+  const [isFocusTime, setIsFocusTime] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const isEditing = !!event;
+
+  useEffect(() => {
+    if (event) {
+      setTitle(event.title);
+      setDescription(event.description || '');
+      const start = new Date(event.start_time);
+      const end = new Date(event.end_time);
+      setStartDate(start.toISOString().split('T')[0]);
+      setStartTime(start.toTimeString().slice(0, 5));
+      setEndTime(end.toTimeString().slice(0, 5));
+      setCategory(event.category);
+      setIsFocusTime(event.is_focus_time);
+    } else if (initialDate && initialHour !== undefined) {
+      setTitle('');
+      setDescription('');
+      setStartDate(initialDate.toISOString().split('T')[0]);
+      setStartTime(`${initialHour.toString().padStart(2, '0')}:00`);
+      setEndTime(`${(initialHour + 1).toString().padStart(2, '0')}:00`);
+      setCategory('work');
+      setIsFocusTime(false);
+    }
+  }, [event, initialDate, initialHour]);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setError(null);
+    setLoading(true);
+
+    const startDateTime = new Date(`${startDate}T${startTime}`);
+    const endDateTime = new Date(`${startDate}T${endTime}`);
+
+    if (endDateTime <= startDateTime) {
+      setError('End time must be after start time');
+      setLoading(false);
+      return;
+    }
+
+    const eventData: NewEvent = {
+      title,
+      description: description || undefined,
+      start_time: startDateTime.toISOString(),
+      end_time: endDateTime.toISOString(),
+      category,
+      is_focus_time: isFocusTime
+    };
+
+    let result;
+    if (isEditing && onUpdate) {
+      result = await onUpdate(event.id, eventData);
+    } else {
+      result = await onSave(eventData);
+    }
+
+    if (result.error) {
+      setError(result.error);
+    } else {
+      onClose();
+    }
+    setLoading(false);
+  };
+
+  const handleDelete = async () => {
+    if (!event || !onDelete) return;
+    if (!confirm('Are you sure you want to delete this event?')) return;
+
+    setLoading(true);
+    const result = await onDelete(event.id);
+    if (result.error) {
+      setError(result.error);
+    } else {
+      onClose();
+    }
+    setLoading(false);
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div data-ev-id="ev_8218fdf538" className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4">
+      <div data-ev-id="ev_8fff639db0"
+      className="absolute inset-0 bg-black/20"
+      onClick={onClose} />
+
+      
+      <div data-ev-id="ev_5d38f061cd" className="relative bg-white rounded-t-xl sm:rounded-xl shadow-xl w-full sm:max-w-md border border-border max-h-[90vh] overflow-y-auto">
+        {/* Header */}
+        <div data-ev-id="ev_d580ec5ab4" className="flex items-center justify-between px-4 sm:px-5 py-3 sm:py-4 border-b border-border sticky top-0 bg-white">
+          <h2 data-ev-id="ev_e060c3dfab" className="text-lg font-semibold text-foreground font-heading">
+            {isEditing ? 'Edit Event' : 'New Event'}
+          </h2>
+          <button data-ev-id="ev_d5a399a638"
+          onClick={onClose}
+          className="w-8 h-8 rounded-lg hover:bg-background-hover flex items-center justify-center transition-colors">
+
+            <X className="w-5 h-5 text-foreground-muted" />
+          </button>
+        </div>
+
+        {/* Form */}
+        <form data-ev-id="ev_a64007a822" onSubmit={handleSubmit} className="p-4 sm:p-5 flex flex-col gap-4">
+          {/* Title */}
+          <div data-ev-id="ev_17a412b733">
+            <label data-ev-id="ev_5067b520e8" className="block text-sm font-medium text-foreground mb-1.5">Title</label>
+            <input data-ev-id="ev_f60bd1ac8c"
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Event title"
+            required
+            className="w-full px-3 py-2.5 sm:py-2 rounded-lg border border-border focus:outline-none focus:border-foreground-muted text-foreground placeholder:text-foreground-muted" />
+
+          </div>
+
+          {/* Date & Time */}
+          <div data-ev-id="ev_4ca64a40c8" className="grid grid-cols-3 gap-2 sm:gap-3">
+            <div data-ev-id="ev_02969988af">
+              <label data-ev-id="ev_33720fd1ae" className="block text-sm font-medium text-foreground mb-1.5">Date</label>
+              <input data-ev-id="ev_bde88b60b6"
+              type="date"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              required
+              className="w-full px-2 sm:px-3 py-2.5 sm:py-2 rounded-lg border border-border focus:outline-none focus:border-foreground-muted text-sm" />
+
+            </div>
+            <div data-ev-id="ev_2106ad5df5">
+              <label data-ev-id="ev_a6ebf67b58" className="block text-sm font-medium text-foreground mb-1.5">Start</label>
+              <input data-ev-id="ev_82965e9c15"
+              type="time"
+              value={startTime}
+              onChange={(e) => setStartTime(e.target.value)}
+              required
+              className="w-full px-2 sm:px-3 py-2.5 sm:py-2 rounded-lg border border-border focus:outline-none focus:border-foreground-muted text-sm" />
+
+            </div>
+            <div data-ev-id="ev_3b85d40eee">
+              <label data-ev-id="ev_d6a0ca3310" className="block text-sm font-medium text-foreground mb-1.5">End</label>
+              <input data-ev-id="ev_fb78f90188"
+              type="time"
+              value={endTime}
+              onChange={(e) => setEndTime(e.target.value)}
+              required
+              className="w-full px-2 sm:px-3 py-2.5 sm:py-2 rounded-lg border border-border focus:outline-none focus:border-foreground-muted text-sm" />
+
+            </div>
+          </div>
+
+          {/* Category */}
+          <div data-ev-id="ev_d2f81d7493">
+            <label data-ev-id="ev_7bff88cf95" className="block text-sm font-medium text-foreground mb-1.5">Category</label>
+            <div data-ev-id="ev_9081fc2f88" className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              {(Object.keys(CATEGORY_LABELS) as EventCategory[]).map((cat) =>
+              <button data-ev-id="ev_7297fe4187"
+              key={cat}
+              type="button"
+              onClick={() => setCategory(cat)}
+              className={`px-3 py-2 rounded-lg text-xs font-medium border-2 transition-all ${
+              category === cat ?
+              getCategoryStyle(cat) :
+              'border-border text-foreground-secondary hover:border-foreground-muted'}`
+              }>
+
+                  {CATEGORY_LABELS[cat]}
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Focus Time Toggle */}
+          <div data-ev-id="ev_fc2d00fc10"
+          onClick={() => setIsFocusTime(!isFocusTime)}
+          className={`flex items-center justify-between p-3 rounded-lg border-2 cursor-pointer transition-all ${
+          isFocusTime ?
+          `${FOCUS_COLORS.border} ${FOCUS_COLORS.bgLight}` :
+          'border-border hover:border-foreground-muted'}`
+          }>
+
+            <div data-ev-id="ev_d1a292b697">
+              <span data-ev-id="ev_8122603ddd" className="font-medium text-foreground text-sm">Focus Time</span>
+              <p data-ev-id="ev_7d412ba023" className="text-xs text-foreground-muted">Protected deep work block</p>
+            </div>
+            <div data-ev-id="ev_6daa31f6b6" className={`w-10 h-6 rounded-full transition-colors ${
+            isFocusTime ? 'bg-foreground' : 'bg-border'}`
+            }>
+              <div data-ev-id="ev_cb54ca4caa" className={`w-5 h-5 bg-white rounded-full shadow transition-transform mt-0.5 ${
+              isFocusTime ? 'translate-x-[18px]' : 'translate-x-0.5'}`
+              } />
+            </div>
+          </div>
+
+          {/* Description */}
+          <div data-ev-id="ev_5c939d84cc">
+            <label data-ev-id="ev_da8ebc5978" className="block text-sm font-medium text-foreground mb-1.5">Description</label>
+            <textarea data-ev-id="ev_8bc77fe9ad"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            placeholder="Add details..."
+            rows={2}
+            className="w-full px-3 py-2.5 sm:py-2 rounded-lg border border-border focus:outline-none focus:border-foreground-muted resize-none text-foreground placeholder:text-foreground-muted" />
+
+          </div>
+
+          {error &&
+          <p data-ev-id="ev_5ddf149447" className="text-sm text-error text-center">{error}</p>
+          }
+
+          {/* Actions */}
+          <div data-ev-id="ev_25b4536e67" className="flex items-center gap-3 pt-2">
+            {isEditing && onDelete &&
+            <button data-ev-id="ev_f2562640b6"
+            type="button"
+            onClick={handleDelete}
+            disabled={loading}
+            className="flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg text-error hover:bg-error-light transition-colors text-sm">
+
+                <Trash2 className="w-4 h-4" />
+                <span data-ev-id="ev_fae8af4d01" className="hidden sm:inline">Delete</span>
+              </button>
+            }
+            <div data-ev-id="ev_1ad126571a" className="flex-1" />
+            <button data-ev-id="ev_450a9a4eb7"
+            type="button"
+            onClick={onClose}
+            disabled={loading}
+            className="px-4 py-2 rounded-lg text-foreground-secondary hover:bg-background-hover transition-colors text-sm">
+
+              Cancel
+            </button>
+            <button data-ev-id="ev_1b0bca7b0e"
+            type="submit"
+            disabled={loading || !title.trim()}
+            className="px-5 py-2 rounded-lg bg-foreground text-white font-medium hover:bg-foreground/90 disabled:opacity-50 transition-all text-sm">
+
+              {loading ?
+              <div data-ev-id="ev_a60e2d59b8" className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" /> :
+
+              isEditing ? 'Save' : 'Create'
+              }
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>);
+
+}
