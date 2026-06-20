@@ -1,0 +1,168 @@
+import { useMemo } from 'react';
+import { CalendarEvent, CATEGORY_COLORS, FOCUS_COLORS, EventCategory } from '@/types/event';
+
+interface MonthlyCalendarProps {
+  events: CalendarEvent[];
+  currentDate: Date;
+  onDayClick: (date: Date) => void;
+  onEventClick: (event: CalendarEvent) => void;
+}
+
+const DAY_NAMES = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+const DAY_NAMES_SHORT = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
+
+const getEventColors = (category: EventCategory, isFocusTime: boolean) => {
+  if (isFocusTime) return `${FOCUS_COLORS.bg} ${FOCUS_COLORS.border}`;
+  const colors = CATEGORY_COLORS[category];
+  return colors ? `${colors.bg} ${colors.border}` : 'bg-background-secondary border-border';
+};
+
+const getEventDotColor = (category: EventCategory, isFocusTime: boolean) => {
+  if (isFocusTime) return FOCUS_COLORS.bg;
+  return CATEGORY_COLORS[category]?.bg ?? 'bg-background-secondary';
+};
+
+export function MonthlyCalendar({ events, currentDate, onDayClick, onEventClick }: MonthlyCalendarProps) {
+  const calendarDays = useMemo(() => {
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth();
+
+    const firstDay = new Date(year, month, 1);
+    const startDate = new Date(firstDay);
+    startDate.setDate(startDate.getDate() - firstDay.getDay());
+
+    const days: Date[] = [];
+    const current = new Date(startDate);
+
+    for (let i = 0; i < 42; i++) {
+      days.push(new Date(current));
+      current.setDate(current.getDate() + 1);
+    }
+
+    return days;
+  }, [currentDate]);
+
+  const eventsByDay = useMemo(() => {
+    const map = new Map<string, CalendarEvent[]>();
+
+    events.forEach((event) => {
+      const date = new Date(event.start_time);
+      const key = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+      if (!map.has(key)) {
+        map.set(key, []);
+      }
+      map.get(key)!.push(event);
+    });
+
+    return map;
+  }, [events]);
+
+  const isToday = (date: Date) => {
+    const today = new Date();
+    return date.toDateString() === today.toDateString();
+  };
+
+  const isCurrentMonth = (date: Date) => {
+    return date.getMonth() === currentDate.getMonth();
+  };
+
+  const isWeekend = (date: Date) => {
+    const day = date.getDay();
+    return day === 0 || day === 6;
+  };
+
+  const getEventsForDay = (date: Date) => {
+    const key = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    return eventsByDay.get(key) ?? [];
+  };
+
+  const formatEventTime = (event: CalendarEvent) => {
+    const start = new Date(event.start_time);
+    const end = new Date(event.end_time);
+    const duration = (end.getTime() - start.getTime()) / (1000 * 60 * 60);
+    return `${duration}h`;
+  };
+
+  return (
+    <div data-ev-id="ev_6ebddab287" className="bg-white border border-border rounded-xl overflow-hidden">
+      {/* Day Headers */}
+      <div data-ev-id="ev_a63f6f2330" className="grid grid-cols-7 border-b border-border">
+        {DAY_NAMES.map((day, index) =>
+        <div data-ev-id="ev_c340ec9fcb"
+        key={day}
+        className="py-2 md:py-3 text-center text-xs font-medium text-foreground-muted tracking-wider">
+
+            <span data-ev-id="ev_6edd5f24ed" className="hidden sm:inline">{day}</span>
+            <span data-ev-id="ev_e5e48243b3" className="sm:hidden">{DAY_NAMES_SHORT[index]}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Calendar Grid */}
+      <div data-ev-id="ev_bde9003647" className="grid grid-cols-7">
+        {calendarDays.map((date, index) => {
+          const dayEvents = getEventsForDay(date);
+          const showMutedBg = !isCurrentMonth(date) || isWeekend(date);
+
+          return (
+            <div data-ev-id="ev_04f3d3d256"
+            key={index}
+            onClick={() => onDayClick(date)}
+            className={`min-h-[60px] sm:min-h-[80px] md:min-h-[100px] p-1 md:p-2 border-b border-r border-border cursor-pointer hover:bg-background-hover transition-colors ${
+            showMutedBg ? 'bg-background-secondary' : 'bg-white'}`
+            }>
+
+              {/* Day Number */}
+              <div data-ev-id="ev_82640a2b41" className={`text-xs sm:text-sm mb-1 md:mb-2 ${
+              isToday(date) ?
+              'w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[var(--color-event-1)] text-foreground flex items-center justify-center font-medium' :
+              isCurrentMonth(date) ?
+              'text-foreground font-medium' :
+              'text-foreground-muted'}`
+              }>
+                {date.getDate()}
+              </div>
+
+              {/* Events - hidden on mobile, show dots instead */}
+              <div data-ev-id="ev_77ae86ae55" className="hidden sm:flex flex-col gap-1">
+                {dayEvents.slice(0, 2).map((event) =>
+                <button data-ev-id="ev_29885c739f"
+                key={event.id}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onEventClick(event);
+                }}
+                className={`w-full text-left px-1.5 md:px-2 py-0.5 md:py-1 rounded text-xs truncate border ${getEventColors(event.category, event.is_focus_time)}`
+                }>
+
+                    <span data-ev-id="ev_4f0195bd03" className="hidden md:inline text-foreground-secondary">{formatEventTime(event)} </span>
+                    <span data-ev-id="ev_b7a2698f5d" className="text-foreground">{event.title}</span>
+                  </button>
+                )}
+                {dayEvents.length > 2 &&
+                <span data-ev-id="ev_047ed4018b" className="text-xs text-foreground-muted px-2">
+                    +{dayEvents.length - 2} more
+                  </span>
+                }
+              </div>
+
+              {/* Mobile: Show dots for events */}
+              {dayEvents.length > 0 &&
+              <div data-ev-id="ev_348c9b89c2" className="sm:hidden flex gap-0.5 flex-wrap">
+                  {dayEvents.slice(0, 3).map((event) =>
+                <div data-ev-id="ev_eda2690a7f"
+                key={event.id}
+                className={`w-1.5 h-1.5 rounded-full ${getEventDotColor(event.category, event.is_focus_time)}`
+                } />
+
+                )}
+                </div>
+              }
+            </div>);
+
+        })}
+      </div>
+    </div>);
+
+}
