@@ -1,0 +1,210 @@
+<main class="business-page">
+
+  <section class="business-hero-gallery">
+    <button class="business-gallery-arrow left" type="button">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <div class="business-gallery-track">
+      <img src="../profile-cover.jpg" alt="Business photo">
+      <img src="../business1.jpg" alt="Business photo">
+      <img src="../business2.jpg" alt="Business photo">
+      <img src="../strength.jpg" alt="Business photo">
+      <img src="../functional.jpg" alt="Business photo">
+    </div>
+
+    <button class="business-gallery-arrow right" type="button">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </section>
+
+  <section class="business-profile-card editable-section">
+
+    <div class="business-profile-top">
+      <div class="business-logo-box">
+        <i class="fa-solid fa-dumbbell"></i>
+      </div>
+
+      <div class="business-title-block">
+        <h1>
+          <input id="profileNameInput" value="Strive Performance Gym">
+        </h1>
+
+        <div class="business-meta-row">
+          <span id="profileHandleText">@striveperformance</span>
+          <span><i class="fa-solid fa-circle-check"></i> Verified Business</span>
+        </div>
+
+        <p>Gym • Strength & Conditioning • Personal Training</p>
+      </div>
+
+      <div class="business-action-buttons">
+        <button class="icon-btn profile-share-btn" type="button">
+          <i class="fa-solid fa-share-nodes"></i>
+          <span>Share</span>
+        </button>
+
+        <button class="icon-btn" type="button">
+          <i class="fa-solid fa-comment"></i>
+          <span>Message</span>
+        </button>
+
+        <button class="icon-btn" type="button">
+          <i class="fa-regular fa-bookmark"></i>
+          <span>Save</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="business-info-row">
+      <div>
+        <i class="fa-solid fa-location-dot"></i>
+        <strong>Location</strong>
+        <span id="profileGymText">Cardiff, United Kingdom</span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-phone"></i>
+        <strong>Phone</strong>
+        <span>029 20 123456</span>
+      </div>
+
+      <div>
+        <i class="fa-regular fa-clock"></i>
+        <strong>Hours</strong>
+        <span>Mon – Fri 6:00am – 10:00pm</span>
+      </div>
+
+      <div>
+        <i class="fa-solid fa-globe"></i>
+        <strong>Website</strong>
+        <span>www.striveperformance.co.uk</span>
+      </div>
+    </div>
+
+    <div class="business-about editable-section" id="intro">
+      <h2>About</h2>
+      <textarea
+        class="bio-input"
+        id="profileBioInput"
+        readonly
+      >Strive Performance is more than a gym — we’re a community. Top-tier equipment, expert coaching and an environment that pushes you to be your best.</textarea>
+    </div>
+
+    <nav class="business-profile-tabs">
+      <a class="active" href="#overview"><i class="fa-solid fa-house"></i> Overview</a>
+      <a href="#servicesEditableSection"><i class="fa-solid fa-dumbbell"></i> Services</a>
+      <a href="#photos"><i class="fa-regular fa-image"></i> Photos</a>
+      <a href="#reviews"><i class="fa-regular fa-star"></i> Reviews</a>
+      <a href="#professionals"><i class="fa-solid fa-users"></i> Team</a>
+      <a href="#offers"><i class="fa-solid fa-tag"></i> Offers</a>
+      <a href="#posts"><i class="fa-regular fa-newspaper"></i> Posts</a>
+    </nav>
+
+  </section>
+
+  <section class="business-dashboard-grid" id="overview">
+
+    <article class="business-dashboard-card editable-section professional-profile-only business-profile-only" id="servicesEditableSection">
+      <header>
+        <h2>Services</h2>
+        <button type="button" class="services-edit-btn icon-btn self-only">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </header>
+
+      <div class="profile-service-links business-profile-only" id="businessServiceLinks"></div>
+      <div class="profile-service-links professional-profile-only" id="professionalServiceLinks"></div>
+    </article>
+
+    <article class="business-dashboard-card business-profile-only" id="photos">
+      <header>
+        <h2>Photos</h2>
+        <button class="see-all-btn">See all</button>
+      </header>
+
+      <div class="business-photo-grid">
+        <img src="../business1.jpg" alt="">
+        <img src="../business2.jpg" alt="">
+        <img src="../strength.jpg" alt="">
+        <img src="../functional.jpg" alt="">
+        <img src="../cardio2.jpg" alt="">
+        <img src="../physio.jpg" alt="">
+      </div>
+    </article>
+
+    <article class="business-dashboard-card business-profile-only" id="reviews">
+      <header>
+        <h2>Reviews</h2>
+        <button class="see-all-btn">See all</button>
+      </header>
+
+      <div class="business-rating">4.9 <span>★★★★★</span></div>
+      <p>124 reviews</p>
+    </article>
+
+    <article class="business-dashboard-card editable-section business-profile-only" id="facilitiesEditableSection">
+      <header>
+        <h2>Facilities</h2>
+        <button type="button" class="services-edit-btn icon-btn self-only">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </header>
+
+      <div class="business-info-grid" id="businessFacilitiesGrid"></div>
+    </article>
+
+    <article class="business-dashboard-card business-profile-only" id="professionals">
+      <header>
+        <h2>Team</h2>
+        <button type="button" class="services-edit-btn icon-btn self-only">
+          <i class="fa-solid fa-pen"></i>
+        </button>
+      </header>
+
+      <div class="business-professional-row">
+        <article class="business-professional-card">
+          <div class="business-avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <h3>Esther Clarke</h3>
+            <p>Head Coach</p>
+          </div>
+        </article>
+
+        <article class="business-professional-card">
+          <div class="business-avatar"><i class="fa-solid fa-user"></i></div>
+          <div>
+            <h3>Jason Reed</h3>
+            <p>Strength Coach</p>
+          </div>
+        </article>
+      </div>
+    </article>
+
+    <article class="business-dashboard-card business-profile-only" id="offers">
+      <header>
+        <h2>Offers</h2>
+        <button class="see-all-btn">See all</button>
+      </header>
+
+      <div class="business-offer">
+        <i class="fa-solid fa-tag"></i>
+        <div>
+          <strong>New Member Offer</strong>
+          <p>£0 joining fee</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="business-dashboard-card business-profile-only" id="posts">
+      <header>
+        <h2>Posts</h2>
+        <button class="see-all-btn">See all</button>
+      </header>
+
+      <div id="profilePosts" class="profile-posts"></div>
+    </article>
+
+  </section>
+
+</main>
