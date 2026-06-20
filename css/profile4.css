@@ -1465,6 +1465,7 @@ box-shadow: var(--shadow-strong);
   height: 3rem;
   flex: 0 0 3rem;
   display: grid;
+opacity: 1;
   place-items: center;
   border-radius: 50%;
   background: var(--glass-teal);
