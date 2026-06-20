@@ -1,84 +1,134 @@
+// =========================
+// PROFILE TYPE
+// =========================
+
+const isBusinessProfile =
+  document.body.dataset.profileType === "business-profile";
+
+const coverStorageKey =
+  isBusinessProfile
+    ? "interactiveBusinessCover"
+    : "interactiveProfileCover";
+
+const coverPositionStorageKey =
+  isBusinessProfile
+    ? "businessCoverPosition"
+    : "profileCoverPosition";
+
+const avatarStorageKey =
+  isBusinessProfile
+    ? "interactiveBusinessAvatar"
+    : "interactiveProfileAvatar";
+
 
 // =========================
 // DOM ELEMENTS
 // =========================
 
 const profilePhotoInput =
-  document.getElementById("profilePhotoInput");
+  document.getElementById(
+    isBusinessProfile
+      ? "businessProfilePhotoInput"
+      : "profilePhotoInput"
+  );
 
 const uploadButtons =
-  document.querySelectorAll(".upload-photo-btn");
+  document.querySelectorAll(
+    isBusinessProfile
+      ? ".business-upload-photo-btn"
+      : ".upload-photo-btn"
+  );
 
 const avatarTargets =
-  document.querySelectorAll(".profile-avatar");
+  document.querySelectorAll(
+    isBusinessProfile
+      ? ".business-profile-avatar"
+      : ".profile-avatar"
+  );
 
 const coverInput =
-  document.getElementById("profileCoverInput");
-
-
-const coverImage =
-  document.querySelector(".profile-hero-media img");
+  document.getElementById(
+    isBusinessProfile
+      ? "businessCoverInput"
+      : "profileCoverInput"
+  );
 
 const profileHeroMedia =
-  document.getElementById("profileHeroMedia");
+  document.getElementById(
+    isBusinessProfile
+      ? "businessHeroMedia"
+      : "profileHeroMedia"
+  );
 
 const profileCoverImage =
-  document.getElementById("profileCoverImage");
+  document.getElementById(
+    isBusinessProfile
+      ? "businessCoverImage"
+      : "profileCoverImage"
+  );
+
+const coverImage = profileCoverImage;
 
 const coverPositionBtn =
-  document.getElementById("coverPositionBtn");
-
+  document.getElementById(
+    isBusinessProfile
+      ? "businessCoverPositionBtn"
+      : "coverPositionBtn"
+  );
 
 const coverPositionButtons =
-  document.querySelectorAll(".cover-position-done:not(.profile-editor-save)");
-
-const activePointers = new Map();
+  document.querySelectorAll(
+    isBusinessProfile
+      ? ".business-cover-position-done"
+      : ".cover-position-done:not(.profile-editor-save)"
+  );
 
 const chooseHeroImageBtn =
   document.getElementById(
-    "chooseHeroImageBtn"
+    isBusinessProfile
+      ? "businessChooseHeroImageBtn"
+      : "chooseHeroImageBtn"
   );
+
+const heroPresetBtn =
+  document.getElementById(
+    isBusinessProfile
+      ? "businessHeroPresetBtn"
+      : "heroPresetBtn"
+  );
+
+const heroPresetMenu =
+  document.getElementById(
+    isBusinessProfile
+      ? "businessHeroPresetMenu"
+      : "heroPresetMenu"
+  );
+
+const heroPresetOptions =
+  document.querySelectorAll(
+    isBusinessProfile
+      ? ".business-hero-preset-option"
+      : ".hero-preset-option"
+  );
+
+const activePointers = new Map();
+
 
 // =========================
 // AVATAR EDITOR
 // =========================
 
 const avatarEditorOverlay =
-  document.querySelector(
-    ".avatar-editor-overlay"
-  );
+  document.querySelector(".avatar-editor-overlay");
 
 const avatarEditorImage =
-  document.getElementById(
-    "avatarEditorImage"
-  );
+  document.getElementById("avatarEditorImage");
 
 const avatarSaveBtn =
-  document.getElementById(
-    "avatarEditorSave"
-  );
+  document.getElementById("avatarEditorSave");
 
 const avatarCancelBtn =
-  document.getElementById(
-    "avatarEditorCancel"
-  );
-
-// =========================
-// PRESETS 
-// =========================
-
-
-
-const heroPresetBtn =
-  document.getElementById("heroPresetBtn");
-
-const heroPresetMenu =
-  document.getElementById("heroPresetMenu");
-
-
-const heroPresetOptions =
-  document.querySelectorAll(".hero-preset-option");
-
+  document.getElementById("avatarEditorCancel");
 
 
 // =========================
@@ -88,19 +138,18 @@ const heroPresetOptions =
 let currentObjectURL = null;
 
 let isRepositioning = false;
-
 let isDragging = false;
+
 let startX = 0;
 let startY = 0;
 
 let currentX = 50;
 let currentY = 50;
-
 let currentZoom = 1.05;
 
 let hasPassedDragThreshold = false;
-
 let lastPinchDistance = 0;
+
 
 // =========================
 // AVATAR EDITOR STATE
@@ -108,28 +157,25 @@ let lastPinchDistance = 0;
 
 let avatarX = 0;
 let avatarY = 0;
-
 let avatarZoom = 0.25;
 
 let isAvatarDragging = false;
-
 let avatarStartX = 0;
 let avatarStartY = 0;
 
 
 // =========================
-// DEFINE HELPERS
+// HELPERS
 // =========================
 
-
 function applyCoverTransform() {
+  if (!profileCoverImage) return;
 
   profileCoverImage.style.objectPosition =
     `${currentX}% ${currentY}%`;
 
   profileCoverImage.style.transform =
     `scale(${currentZoom})`;
-
 }
 
 
@@ -141,7 +187,6 @@ function updateAvatar(src) {
 
     img.src = src;
     img.alt = "Profile picture";
-
     img.classList.add("profile-avatar-image");
 
     avatar.appendChild(img);
@@ -150,26 +195,23 @@ function updateAvatar(src) {
 
 
 function resetInteractionState() {
-
   isDragging = false;
-
-   isRepositioning = false;
-
+  isRepositioning = false;
   hasPassedDragThreshold = false;
+  lastPinchDistance = 0;
 
-    activePointers.clear();
+  activePointers.clear();
 
-  profileHeroMedia.classList.remove(
-    "repositioning"
-  );
+  profileHeroMedia?.classList.remove("repositioning");
 
- coverPositionButtons.forEach(button => {
-  button.classList.remove("show");
-});
-
+  coverPositionButtons.forEach(button => {
+    button.classList.remove("show");
+  });
 }
 
+
 function applyAvatarTransform() {
+  if (!avatarEditorImage) return;
 
   avatarEditorImage.style.transform =
     `
@@ -179,13 +221,14 @@ function applyAvatarTransform() {
     )
     scale(${avatarZoom})
     `;
-
 }
+
 
 function closeHeroPresetMenu() {
   heroPresetMenu?.classList.remove("open");
   heroPresetBtn?.classList.remove("open");
 }
+
 
 // =========================
 // RUN ON STARTUP
@@ -194,7 +237,7 @@ function closeHeroPresetMenu() {
 // Restore avatar
 
 const savedAvatar =
-  localStorage.getItem("interactiveProfileAvatar");
+  localStorage.getItem(avatarStorageKey);
 
 if (savedAvatar) {
   updateAvatar(savedAvatar);
@@ -204,27 +247,22 @@ if (savedAvatar) {
 // Restore cover
 
 const savedCover =
-  localStorage.getItem("interactiveProfileCover");
+  localStorage.getItem(coverStorageKey);
 
-if (savedCover) {
+if (savedCover && coverImage) {
   coverImage.src = savedCover;
 
-   document.body.classList.add(
-    "has-cover"
-  );
-
-  
+  document.body.classList.add("has-cover");
 } else {
+  document.body.classList.remove("has-cover");
 
-    document.body.classList.remove(
-    "has-cover"
-  );
+  if (coverImage) {
+    coverImage.src = "../covers/logo.png";
+  }
 
-  coverImage.src =
-    "../covers/logo.png";
-
-  profileCoverImage.style.objectFit =
-    "cover";
+  if (profileCoverImage) {
+    profileCoverImage.style.objectFit = "cover";
+  }
 
   currentY = 50;
 }
@@ -233,11 +271,10 @@ if (savedCover) {
 // Restore cover position
 
 const savedPosition =
-  localStorage.getItem("profileCoverPosition");
+  localStorage.getItem(coverPositionStorageKey);
 
 if (savedPosition) {
   currentY = parseFloat(savedPosition);
-
   applyCoverTransform();
 }
 
@@ -247,14 +284,13 @@ if (savedPosition) {
 // =========================
 
 
-
 // -------------------------
 // OPEN FILE PICKERS
 // -------------------------
 
 uploadButtons.forEach(button => {
   button.addEventListener("click", () => {
-    profilePhotoInput.click();
+    profilePhotoInput?.click();
   });
 });
 
@@ -263,75 +299,51 @@ uploadButtons.forEach(button => {
 // CHOOSE HERO IMAGE
 // -------------------------
 
-
-
 chooseHeroImageBtn?.addEventListener(
   "click",
   () => {
-
-    coverInput.click();
-
-  closeHeroPresetMenu();
-
+    coverInput?.click();
+    closeHeroPresetMenu();
   }
 );
-
-
-
-
 
 
 // -------------------------
 // TOGGLE REPOSITION MODE
 // -------------------------
 
-if (coverPositionBtn) {
-  coverPositionBtn.addEventListener("click", () => {
+coverPositionBtn?.addEventListener("click", () => {
+  isRepositioning = !isRepositioning;
 
-    isRepositioning = !isRepositioning;
-
-    profileHeroMedia.classList.toggle(
-      "repositioning",
-      isRepositioning
-    );
-
-  });
-}
+  profileHeroMedia?.classList.toggle(
+    "repositioning",
+    isRepositioning
+  );
+});
 
 
 // -------------------------
 // DRAG START
 // -------------------------
 
-profileHeroMedia.addEventListener(
+profileHeroMedia?.addEventListener(
   "pointerdown",
   event => {
-
-     if (
-      event.target.closest(
-        ".hero-controls"
-      )
-    ) return;
-
+    if (event.target.closest(".hero-controls")) return;
     if (!isRepositioning) return;
 
     isDragging = true;
-
     hasPassedDragThreshold = false;
 
     startX = event.clientX;
-startY = event.clientY;
+    startY = event.clientY;
 
-    profileHeroMedia.setPointerCapture(
-      event.pointerId
-    );
+    profileHeroMedia.setPointerCapture(event.pointerId);
 
     activePointers.set(event.pointerId, {
-  x: event.clientX,
-  y: event.clientY
-      
-});
-
+      x: event.clientX,
+      y: event.clientY
+    });
   }
 );
 
@@ -340,11 +352,9 @@ startY = event.clientY;
 // DRAG MOVE
 // -------------------------
 
-
-profileHeroMedia.addEventListener(
+profileHeroMedia?.addEventListener(
   "pointermove",
   event => {
-
     if (!isRepositioning) return;
 
     activePointers.set(event.pointerId, {
@@ -352,41 +362,35 @@ profileHeroMedia.addEventListener(
       y: event.clientY
     });
 
-if (activePointers.size === 2) {
+    if (activePointers.size === 2) {
+      const pointers =
+        Array.from(activePointers.values());
 
-  const pointers =
-    Array.from(activePointers.values());
+      const dx =
+        pointers[1].x - pointers[0].x;
 
-  const dx =
-    pointers[1].x - pointers[0].x;
+      const dy =
+        pointers[1].y - pointers[0].y;
 
-  const dy =
-    pointers[1].y - pointers[0].y;
+      const distance =
+        Math.hypot(dx, dy);
 
-  const distance =
-    Math.hypot(dx, dy);
+      if (lastPinchDistance > 0) {
+        const delta =
+          distance - lastPinchDistance;
 
-  if (lastPinchDistance > 0) {
+        currentZoom += delta * 0.002;
 
-    const delta =
-      distance - lastPinchDistance;
+        currentZoom = Math.max(
+          1,
+          Math.min(1.5, currentZoom)
+        );
 
-    currentZoom += delta * 0.002;
+        applyCoverTransform();
+      }
 
-    currentZoom = Math.max(
-      1,
-      Math.min(1.5, currentZoom)
-    );
-
-    applyCoverTransform();
-
-  }
-
-  lastPinchDistance = distance;
-
-} else if (isDragging) {
-
-
+      lastPinchDistance = distance;
+    } else if (isDragging) {
       const deltaX =
         event.clientX - startX;
 
@@ -410,206 +414,170 @@ if (activePointers.size === 2) {
 
       startX = event.clientX;
       startY = event.clientY;
-
     }
-
   }
 );
+
+
 // -------------------------
 // DRAG END
 // -------------------------
 
-profileHeroMedia.addEventListener(
+profileHeroMedia?.addEventListener(
   "pointerup",
   event => {
-
-    activePointers.delete(
-      event.pointerId
-    );
+    activePointers.delete(event.pointerId);
 
     if (activePointers.size < 2) {
-  lastPinchDistance = 0;
-}
+      lastPinchDistance = 0;
+    }
 
     if (!isDragging) return;
 
     isDragging = false;
-
   }
 );
 
+
+// -------------------------
+// SAVE COVER POSITION
+// -------------------------
+
 coverPositionButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    localStorage.setItem(
+      coverPositionStorageKey,
+      currentY
+    );
 
-  button.addEventListener(
-    "click",
-    () => {
-
-      localStorage.setItem(
-        "profileCoverPosition",
-        currentY
-      );
-
-      
-      closeHeroPresetMenu();
-
-      resetInteractionState();
-
-    }
-  );
-
+    closeHeroPresetMenu();
+    resetInteractionState();
+  });
 });
-  
-  // -------------------------
+
+
+// -------------------------
 // PROFILE IMAGE UPLOAD
 // -------------------------
 
-profilePhotoInput.addEventListener(
+profilePhotoInput?.addEventListener(
   "change",
   event => {
-
     const file =
       event.target.files?.[0];
 
     if (!file) return;
 
-
-    // VALIDATION
-
-    if (
-      !file.type.startsWith(
-        "image/"
-      )
-    ) {
-
-      alert(
-        "Please upload an image file."
-      );
-
+    if (!file.type.startsWith("image/")) {
+      alert("Please upload an image file.");
       return;
-
     }
 
     const maxSize =
       5 * 1024 * 1024;
 
     if (file.size > maxSize) {
-
-      alert(
-        "Image must be under 5MB."
-      );
-
+      alert("Image must be under 5MB.");
       return;
-
     }
-
-
-    // CLEAN OLD OBJECT URL
 
     if (currentObjectURL) {
-
-      URL.revokeObjectURL(
-        currentObjectURL
-      );
-
+      URL.revokeObjectURL(currentObjectURL);
     }
-
-
-    // CREATE TEMP IMAGE URL
 
     const imageURL =
       URL.createObjectURL(file);
 
-    currentObjectURL =
-      imageURL;
+    currentObjectURL = imageURL;
 
+    if (!avatarEditorImage || !avatarEditorOverlay) return;
 
-    // OPEN EDITOR
-
-    avatarEditorImage.src =
-      imageURL;
+    avatarEditorImage.src = imageURL;
 
     avatarX = 0;
     avatarY = 0;
-
     avatarZoom = 0.5;
 
     applyAvatarTransform();
 
-    avatarEditorOverlay.classList.add(
-      "open"
-    );
+    avatarEditorOverlay.classList.add("open");
 
     profilePhotoInput.value = "";
-
   }
 );
+
 
 // -------------------------
 // COVER IMAGE UPLOAD
 // -------------------------
 
-coverInput?.addEventListener("change", event => {
-  const file = event.target.files?.[0];
+coverInput?.addEventListener(
+  "change",
+  event => {
+    const file =
+      event.target.files?.[0];
 
-  if (!file) return;
+    if (!file || !profileCoverImage) return;
 
-  resetInteractionState();
+    resetInteractionState();
 
-  const reader = new FileReader();
+    const reader =
+      new FileReader();
 
-  reader.addEventListener("load", () => {
-    const imageData = reader.result;
+    reader.addEventListener("load", () => {
+      const imageData =
+        reader.result;
 
-    currentX = 50;
-    currentY = 50;
-    currentZoom = 1.05;
+      currentX = 50;
+      currentY = 50;
+      currentZoom = 1.05;
 
-    profileCoverImage.onload = () => {
-      document.body.classList.add("has-cover");
+      profileCoverImage.onload = () => {
+        document.body.classList.add("has-cover");
 
-      profileCoverImage.style.objectFit = "cover";
+        profileCoverImage.style.objectFit = "cover";
 
-      applyCoverTransform();
+        applyCoverTransform();
 
-      localStorage.setItem(
-        "interactiveProfileCover",
-        imageData
-      );
+        localStorage.setItem(
+          coverStorageKey,
+          imageData
+        );
 
-      localStorage.setItem(
-        "profileCoverPosition",
-        currentY
-      );
+        localStorage.setItem(
+          coverPositionStorageKey,
+          currentY
+        );
 
-      isRepositioning = true;
+        isRepositioning = true;
 
-      profileHeroMedia.classList.add("repositioning");
+        profileHeroMedia?.classList.add("repositioning");
 
-      coverPositionButtons.forEach(button => {
-        button.classList.add("show");
+        coverPositionButtons.forEach(button => {
+          button.classList.add("show");
+        });
+      };
+
+      profileCoverImage.src = imageData;
+
+      requestAnimationFrame(() => {
+        coverInput.value = "";
       });
-    };
-
-    profileCoverImage.src = imageData;
-
-    requestAnimationFrame(() => {
-      coverInput.value = "";
     });
-  });
 
-  reader.readAsDataURL(file);
-});
+    reader.readAsDataURL(file);
+  }
+);
+
 
 // -------------------------
 // ZOOM
 // -------------------------
 
-profileHeroMedia.addEventListener(
+profileHeroMedia?.addEventListener(
   "wheel",
   event => {
-
-    if (!isRepositioning)
-      return;
+    if (!isRepositioning) return;
 
     event.preventDefault();
 
@@ -622,7 +590,6 @@ profileHeroMedia.addEventListener(
     );
 
     applyCoverTransform();
-
   },
   { passive: false }
 );
@@ -632,62 +599,45 @@ profileHeroMedia.addEventListener(
 // AVATAR DRAG
 // =========================
 
-avatarEditorImage.addEventListener(
+avatarEditorImage?.addEventListener(
   "pointerdown",
   event => {
-
     isAvatarDragging = true;
 
-    avatarStartX =
-      event.clientX;
-
-    avatarStartY =
-      event.clientY;
+    avatarStartX = event.clientX;
+    avatarStartY = event.clientY;
 
     avatarEditorImage.setPointerCapture(
       event.pointerId
     );
-
   }
 );
 
-
-avatarEditorImage.addEventListener(
+avatarEditorImage?.addEventListener(
   "pointermove",
   event => {
-
-    if (!isAvatarDragging)
-      return;
+    if (!isAvatarDragging) return;
 
     const deltaX =
-      event.clientX -
-      avatarStartX;
+      event.clientX - avatarStartX;
 
     const deltaY =
-      event.clientY -
-      avatarStartY;
+      event.clientY - avatarStartY;
 
     avatarX += deltaX;
     avatarY += deltaY;
 
     applyAvatarTransform();
 
-    avatarStartX =
-      event.clientX;
-
-    avatarStartY =
-      event.clientY;
-
+    avatarStartX = event.clientX;
+    avatarStartY = event.clientY;
   }
 );
 
-
-avatarEditorImage.addEventListener(
+avatarEditorImage?.addEventListener(
   "pointerup",
   () => {
-
     isAvatarDragging = false;
-
   }
 );
 
@@ -696,10 +646,9 @@ avatarEditorImage.addEventListener(
 // AVATAR ZOOM
 // =========================
 
-avatarEditorImage.addEventListener(
+avatarEditorImage?.addEventListener(
   "wheel",
   event => {
-
     event.preventDefault();
 
     avatarZoom +=
@@ -711,7 +660,6 @@ avatarEditorImage.addEventListener(
     );
 
     applyAvatarTransform();
-
   },
   { passive: false }
 );
@@ -721,49 +669,33 @@ avatarEditorImage.addEventListener(
 // SAVE AVATAR
 // =========================
 
-if (avatarSaveBtn) {
+avatarSaveBtn?.addEventListener(
+  "click",
+  () => {
+    if (!avatarEditorImage || !avatarEditorOverlay) return;
 
-  avatarSaveBtn.addEventListener(
-    "click",
-    () => {
+    updateAvatar(avatarEditorImage.src);
 
-      updateAvatar(
-        avatarEditorImage.src
-      );
+    localStorage.setItem(
+      avatarStorageKey,
+      avatarEditorImage.src
+    );
 
-      localStorage.setItem(
-        "interactiveProfileAvatar",
-        avatarEditorImage.src
-      );
-
-      avatarEditorOverlay.classList.remove(
-        "open"
-      );
-
-    }
-  );
-
-}
+    avatarEditorOverlay.classList.remove("open");
+  }
+);
 
 
 // =========================
 // CANCEL AVATAR
 // =========================
 
-if (avatarCancelBtn) {
-
-  avatarCancelBtn.addEventListener(
-    "click",
-    () => {
-
-      avatarEditorOverlay.classList.remove(
-        "open"
-      );
-
-    }
-  );
-
-}
+avatarCancelBtn?.addEventListener(
+  "click",
+  () => {
+    avatarEditorOverlay?.classList.remove("open");
+  }
+);
 
 
 // =========================
@@ -780,30 +712,21 @@ heroPresetBtn?.addEventListener(
   }
 );
 
-
 heroPresetOptions.forEach(option => {
   option.addEventListener("click", () => {
     const coverSrc =
       option.dataset.cover;
 
-    if (!coverSrc) return;
+    if (!coverSrc || !profileCoverImage) return;
 
     const fit =
       option.dataset.fit || "fill";
 
-    // No cover option
     if (coverSrc === "#" || fit === "none") {
-      localStorage.removeItem(
-        "interactiveProfileCover"
-      );
+      localStorage.removeItem(coverStorageKey);
+      localStorage.removeItem(coverPositionStorageKey);
 
-      localStorage.removeItem(
-        "profileCoverPosition"
-      );
-
-      document.body.classList.remove(
-        "has-cover"
-      );
+      document.body.classList.remove("has-cover");
 
       profileCoverImage.src = "#";
 
@@ -815,23 +738,18 @@ heroPresetOptions.forEach(option => {
         button.classList.remove("show");
       });
 
-      heroPresetMenu?.classList.remove("open");
-      heroPresetBtn?.classList.remove("open");
+      closeHeroPresetMenu();
 
       return;
     }
 
-    // Normal cover option
     document.body.classList.add("has-cover");
 
-    profileCoverImage.src =
-      coverSrc;
-
-    profileCoverImage.style.objectFit =
-      fit;
+    profileCoverImage.src = coverSrc;
+    profileCoverImage.style.objectFit = fit;
 
     localStorage.setItem(
-      "interactiveProfileCover",
+      coverStorageKey,
       coverSrc
     );
 
@@ -845,11 +763,9 @@ heroPresetOptions.forEach(option => {
       button.classList.remove("show");
     });
 
-    heroPresetMenu?.classList.remove("open");
-    heroPresetBtn?.classList.remove("open");
+    closeHeroPresetMenu();
   });
 });
-
 
 document.addEventListener(
   "click",
@@ -862,6 +778,3 @@ document.addEventListener(
     closeHeroPresetMenu();
   }
 );
-
-
-    
