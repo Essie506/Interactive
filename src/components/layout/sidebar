@@ -1,0 +1,146 @@
+import { Link, useLocation } from 'react-router';
+import {
+  Calendar,
+  Settings,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
+  X } from
+'lucide-react';
+import { Logo } from '@/components/ui/Logo';
+
+interface SidebarProps {
+  collapsed: boolean;
+  onToggle: () => void;
+  mobileOpen: boolean;
+  onMobileClose: () => void;
+}
+
+export function Sidebar({ collapsed, onToggle, mobileOpen, onMobileClose }: SidebarProps) {
+  const location = useLocation();
+
+  const navItems = [
+  { path: '/calendar', label: 'Calendar', icon: Calendar },
+  { path: '/insights', label: 'Insights', icon: Sparkles },
+  { path: '/settings', label: 'Settings', icon: Settings }];
+
+
+  return (
+    <>
+      {/* Desktop Sidebar */}
+      <aside data-ev-id="ev_f030f3791e"
+      className={`hidden lg:flex fixed left-0 top-0 h-screen bg-white border-r border-border flex-col transition-all duration-200 z-50 ${
+      collapsed ? 'w-16' : 'w-52'}`
+      }>
+
+        {/* Logo */}
+        <div data-ev-id="ev_5c47df4c47" className={`h-14 flex items-center border-b border-border px-4 ${
+        collapsed ? 'justify-center' : 'gap-3'}`
+        }>
+          <Logo className="w-8 h-8 text-foreground flex-shrink-0" />
+          {!collapsed &&
+          <span data-ev-id="ev_96b493e949" className="font-semibold text-foreground font-heading">Planner</span>
+          }
+        </div>
+
+        {/* Navigation */}
+        <nav data-ev-id="ev_f94804a386" className="flex-1 py-3 px-2">
+          <ul data-ev-id="ev_0a8b766830" className="flex flex-col gap-1">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.path;
+
+              return (
+                <li data-ev-id="ev_1c18b7b877" key={item.path}>
+                  <Link
+                    to={item.path}
+                    className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-colors ${
+                    isActive ?
+                    'bg-foreground text-white' :
+                    'text-foreground-secondary hover:bg-background-hover hover:text-foreground'} ${
+
+                    collapsed ? 'justify-center' : ''}`
+                    }
+                    title={collapsed ? item.label : undefined}>
+
+                    <Icon className="w-4 h-4 flex-shrink-0" />
+                    {!collapsed &&
+                    <span data-ev-id="ev_bd90ef9925" className="text-sm">{item.label}</span>
+                    }
+                  </Link>
+                </li>);
+
+            })}
+          </ul>
+        </nav>
+
+        {/* Collapse Button */}
+        <div data-ev-id="ev_79277a4571" className="p-2 border-t border-border">
+          <button data-ev-id="ev_2810c05852"
+          onClick={onToggle}
+          className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-foreground-muted hover:bg-background-hover hover:text-foreground transition-colors ${
+          collapsed ? 'justify-center' : ''}`
+          }>
+
+            {collapsed ?
+            <ChevronRight className="w-4 h-4" /> :
+
+            <>
+                <ChevronLeft className="w-4 h-4" />
+                <span data-ev-id="ev_ae3b8fe7d8" className="text-sm">Collapse</span>
+              </>
+            }
+          </button>
+        </div>
+      </aside>
+
+      {/* Mobile Sidebar */}
+      <aside data-ev-id="ev_6dc7779897"
+      className={`lg:hidden fixed left-0 top-0 h-screen w-64 bg-white border-r border-border flex flex-col z-50 transition-transform duration-200 ${
+      mobileOpen ? 'translate-x-0' : '-translate-x-full'}`
+      }>
+
+        {/* Header with close */}
+        <div data-ev-id="ev_87f587af1b" className="h-14 flex items-center justify-between border-b border-border px-4">
+          <div data-ev-id="ev_f9d8a96a02" className="flex items-center gap-3">
+            <Logo className="w-8 h-8 text-foreground" />
+            <span data-ev-id="ev_10b7c969ea" className="font-semibold text-foreground font-heading">Planner</span>
+          </div>
+          <button data-ev-id="ev_e0ad64ba91"
+          onClick={onMobileClose}
+          className="w-8 h-8 rounded-lg hover:bg-background-hover flex items-center justify-center">
+
+            <X className="w-5 h-5 text-foreground-muted" />
+          </button>
+        </div>
+
+        {/* Navigation */}
+        <nav data-ev-id="ev_5ecfe2abd8" className="flex-1 py-3 px-2">
+          <ul data-ev-id="ev_1292ebb170" className="flex flex-col gap-1">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = location.pathname === item.path;
+
+              return (
+                <li data-ev-id="ev_3fa853d4f5" key={item.path}>
+                  <Link
+                    to={item.path}
+                    onClick={onMobileClose}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                    isActive ?
+                    'bg-foreground text-white' :
+                    'text-foreground-secondary hover:bg-background-hover hover:text-foreground'}`
+                    }>
+
+                    <Icon className="w-5 h-5 flex-shrink-0" />
+                    <span data-ev-id="ev_3ea0a51958" className="text-sm">{item.label}</span>
+                  </Link>
+                </li>);
+
+            })}
+          </ul>
+        </nav>
+      </aside>
+    </>);
+
+}
