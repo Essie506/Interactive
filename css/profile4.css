@@ -1532,7 +1532,7 @@ body.profile[data-profile-type="business-profile"] .profile-tabs-inline {
 
 /* profile type visibility */
 body.profile[data-profile-type="customer-profile"] .customer-profile-only {
-  display: grid;
+  display: flex;
 }
 
 body.profile[data-profile-type="professional-profile"] .professional-profile-only {
