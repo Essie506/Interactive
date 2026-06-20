@@ -1486,6 +1486,76 @@ body.profile[data-profile-type="business-profile"] .profile-hero-media img {
   object-fit: cover;
 }
 
+/* profile type visibility */
+body.profile[data-profile-type="business-profile"] .business-profile-only {
+  display: grid;
+}
+
+body.profile[data-profile-type="business-profile"] .business-hero-card {
+  min-height: auto;
+  padding: 0 0.25rem;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-info-inner {
+  padding: 0.25rem;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-main-info {
+  margin-top: -0.25rem;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-name-row {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+body.profile[data-profile-type="business-profile"] #profileNameInput {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-detail-row {
+  margin: 0.35rem 0;
+  max-width: 100%;
+}
+
+body.profile[data-profile-type="business-profile"] .profile-tabs-inline {
+  padding-top: 0.35rem;
+  padding-bottom: 0;
+}
+
+
+/* profile type visibility */
+body.profile[data-profile-type="customer-profile"] .customer-profile-only {
+  display: grid;
+}
+
+body.profile[data-profile-type="professional-profile"] .professional-profile-only {
+  display: grid;
+}
+
+body[data-profile-type="professional-profile"] 
+.verification-section.professional-profile-only {
+  display: block;
+}
+
+
+body.profile[data-profile-type="professional-profile"] .services-edit-btn.professional-profile-only,
+body.profile[data-profile-type="business-profile"] .services-edit-btn.business-profile-only {
+    display: inline-flex;
+}
+
+
+body[data-profile-type="professional-profile"] .profile-service-links.professional-profile-only, 
+body[data-profile-type="business-profile"] .profile-service-links.business-profile-only {
+  display: flex;
+}
+
 
 /* =========================
    DESKTOP / LAPTOP
