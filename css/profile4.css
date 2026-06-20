@@ -204,7 +204,7 @@ body.profile .profile-hero-media::after {
   transition: transform 0.2s ease;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   object-position: center center;
   transition:
     object-position 0.08s linear,
