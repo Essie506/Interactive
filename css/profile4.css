@@ -1144,6 +1144,7 @@ body.editing-profile .profile-detail-row:hover {
 
 body.profile .block-btn {
 	opacity: 0.4;
+	z-index: 50;
 }
 
 
