@@ -64,52 +64,148 @@
 
   <div class="menu-overlay" id="menuOverlay"></div>
 
+  <!-------- MENU ------->
+
+    
+
+<div class="menu-overlay" id="menuOverlay"></div>
+
 <nav class="menu" aria-label="Main menu">
   <ul>
-    <li class="menu-profile">
-      <a href="profile3.html" class="menu-item menu-profile-info">
-        <i class="fa-solid fa-user"></i>
+
+  <li class="submenu-back-link menu-item submenu-li-a">
+    <a href="feed.html">
+     <i class="fa-solid fa-arrow-turn-up"></i>
+      Back to Feed
+    </a>
+  </li>
+
+      <li class="has-submenu">
+ <a href="profile3.html" class="menu-item menu-profile-info">
+          <i class="fa-solid fa-user"></i>
+         
         <div class="menu-profile-text">
           <div class="menu-profile-name">Esther</div>
-          <div class="menu-profile-sub">Your profile</div>
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
       </a>
+
+      <ul class="submenu">
+        
+<li class="customer-profile-only professional-profile-only">
+  <a
+    href="#"
+    class="submenu-link"
+    id="detailsModalOpen"
+  >
+    ~ My Details
+  </a>
+</li>
+        <li class="business-profile-only">
+  <a
+    href="#"
+    class="submenu-link"
+    id="businessDetailsModalOpen"
+  >
+    ~ Business Details
+  </a>
+</li>
+<li class="customer-profile-only professional-profile-only">
+  <a href="#">
+    ~ Schedule
+  </a>
+</li>
+
+<li class="customer-profile-only professional-profile-only">
+  <a href="#">
+    ~ Saved Workouts
+  </a>
+</li>
+
+<li class="business-profile-only">
+  <a href="#">
+    ~ Staff
+  </a>
+</li>
+
+<li class="business-profile-only">
+  <a href="#">
+    ~ Media
+  </a>
+</li>
+      </ul>
     </li>
 
-    <li class="has-submenu">
-      <a href="html/directory.html" class="menu-item">
-        <i class="fa-solid fa-fire"></i>
+
+       <li class="has-submenu">
+      <a href="#" class="menu-item" aria-expanded="false">
+        <i class="fa-solid fa-dumbbell"></i>
+        <div class="menu-profile-text">
+        <span>Workouts</span>
+           <i class="fa-solid fa-chevron-down"></i>
+           </div>
+      </a>
+
+      <ul class="submenu">
+        <li><a href="#">~ Browse Workouts</a></li>
+        <li><a href="#">~ Trending</a></li>
+      </ul>
+    </li>
+
+
+   <li class="has-submenu">
+      <a href="#" class="menu-item">
+        <i class="fa-solid fa-bolt"></i>
+        <div class="menu-profile-text">
         <span>Explore</span>
+           <i class="fa-solid fa-chevron-down"></i>
+        </div>
       </a>
      <ul class="submenu">
-<li><a href="directory.html?type=gyms">Gyms, Studios and Clubs</a></li>
-<li><a href="directory.html?type=professionals">Trainers</a></li>
-       <li><a href="directory.html?type=professionals">Nutrition</a></li>
+       <li><a href="directory.html?type=nutrition">~ Nutrition</a></li>
+           <li><a href="directory.html?type=recovery">~ Recovery</a></li>
+      <li><a href="directory.html?type=mental">~ Mental Health</a></li>
+        <li><a href="directory.html?type=pregnancy">~ Fitness For Every Stage</a></li>
 </ul>
 </li>
 
-    <li class="has-submenu">
-      <a href="#" class="menu-item" aria-expanded="false">
-        <i class="fa-solid fa-dumbbell"></i>
-        <span>Workouts</span>
+
+     <li class="has-submenu">
+      <a href="directory.html" class="menu-item">
+        <i class="fa-solid fa-fire"></i>
+        <div class="menu-profile-text">
+        <span>Discover</span>
+         <i class="fa-solid fa-chevron-down"></i>
+        </div>
       </a>
-      
-      <ul class="submenu">
-        <li><a href="#">Browse Workouts</a></li>
-        <li><a href="#">My Saved Workouts</a></li>
-        <li><a href="BusinessProfile.html">Trending</a></li>
+     <ul class="submenu">
+<li><a href="directory.html?type=gyms">~ Gyms, Studios and Clubs</a></li>
+<li><a href="directory.html?type=professionals">~ Trainers</a></li>
+        <li><a href="directory.html?type=events">~ Events</a></li>
+</ul>
+</li>
+
+
+
+    
+
+   <li class="has-submenu">
+      <a href="settings.html" class="menu-item">
+        <i class="fa-solid fa-cog"></i>
+        <div class="menu-profile-text">
+        <span>Settings</span>
+             <i class="fa-solid fa-chevron-down"></i>
+        </div>
+      </a>
+
+   <ul class="submenu">
+        <li><a href="#">~ Personal</a></li>
+        <li><a href="#">~ Interactive T&Cs</a></li>
       </ul>
     </li>
 
     <li>
-      <a href="settings.html" class="menu-item">
-        <i class="fa-solid fa-cog"></i>
-        <span>Settings</span>
-      </a>
-    </li>
-
-    <li>
-      <a href="index.html" class="menu-item">
+      <a href="../index.html" class="menu-item">
         <i class="fa-solid fa-right-from-bracket"></i>
         <span>Logout</span>
       </a>
@@ -121,8 +217,10 @@
         <input type="text" id="menuSearchInput" placeholder="Search..." />
       </div>
     </li>
+
   </ul>
 </nav>
+
 
   <div class="page-layout">
     <aside class="left-col">
